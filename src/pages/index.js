@@ -6,18 +6,21 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Button, Checkbox, Container, Typography } from '@mui/material';
 import styles from './index.module.css'
 import { StyledEngineProvider } from '@mui/material/styles';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const GetStarted = () => {
   return (
     <Button variant="contained" disableElevation className={styles.getstarted} style={{
       textTransform: 'none',
       fontWeight: 'bold',
+      fontSize: '16px',
       borderRadius: '10px',
       padding: '12px',
       paddingLeft : '18px',
       paddingRight: '18px'
-    }}>
-      Get started &nbsp;&nbsp;&gt;
+    }}
+    endIcon={<ChevronRightIcon />} >
+      Get started
     </Button>
   )
 }
