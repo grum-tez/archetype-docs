@@ -1,0 +1,15 @@
+.getstarted {
+  background-color: var(--ifm-color-primary-lighter);
+}
+
+.getstarted:hover {
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+[data-theme='dark'] .getstarted {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+[data-theme='dark'] .getstarted:hover {
+  background-color: var(--ifm-color-primary-darkest);
+}
