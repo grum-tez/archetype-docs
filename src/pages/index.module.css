@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+/* Get Started Button */
 .getstarted {
-  background-color: var(--ifm-color-primary-lighter);
+  background-color: var(--ifm-color-primary);
 }
 
 .getstarted:hover {
@@ -11,5 +14,60 @@
 }
 
 [data-theme='dark'] .getstarted:hover {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+/* Left Pannel */
+.leftpannel {
+  background-color: white;
+}
+
+[data-theme='dark'] .leftpannel {
   background-color: var(--ifm-color-primary-darkest);
+}
+/* Right Pannel */
+.rightpannel {
+  background-color: #F5F6F7;
+}
+
+[data-theme='dark'] .rightpannel {
+  background-color: rgba(0,0,0,0);
+}
+
+/* Big Logo */
+.biglogo {
+  background-image: url(/static/img/big-logo-light.svg);
+}
+
+[data-theme='dark'] .biglogo {
+  background-image: url(/static/img/big-logo-dark.svg);
+}
+
+/* Control */
+
+.control {
+  color: var(--ifm-color-primary)
+}
+
+[data-theme='dark'] .control {
+  color: var(--ifm-color-primary)
+}
+
+/* Npm Install */
+.npminstall {
+  color: #575757;
+  border-color: var(--ifm-color-primary-lightest);
+}
+
+.npminstall:hover {
+  border-color: var(--ifm-color-primary-lightest)
+}
+
+[data-theme='dark'] .npminstall {
+  color: #a09f9f;
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .npminstall:hover {
+  border-color: var(--ifm-color-primary-lightest)
 }
