@@ -8,7 +8,7 @@ var theme = {
     backgroundColor: "#242526"
   },
   styles: [{
-    types: ["prolog", "constant", "builtin"],
+    types: ["prolog", "constant"],
     style: {
       color: "rgb(189, 147, 249)",
       fontStyle: "italic"
@@ -55,7 +55,7 @@ var theme = {
       color: "#2FCAC3"
     }
   }, {
-    types: ["entry", "storage"],
+    types: ["entry", "storage", "verif"],
     style: {
       color: "rgb(233, 72, 21)"
     }
@@ -69,7 +69,17 @@ var theme = {
     style: {
       color: "rgb(241, 250, 140)"
     }
-  },]
+  }, {
+    types: ["control", "decl"],
+    style: {
+      color: "rgb(189, 147, 249)"
+    }
+  }, {
+    types: ["boolean", "builtin", "logic", "asset", "crypto", "arith"],
+    style: {
+      color: "rgb(68, 134, 255)"
+    }
+  }]
 };
 
 module.exports = theme;
