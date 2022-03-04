@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+//const lightCodeTheme = require('prism-react-renderer/themes/github');
+//const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const codeTheme = require('./src/theme/prism-theme');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -63,8 +64,9 @@ const config = {
           },
           {
             href: 'https://github.com/edukera/archetype-lang',
-            label: 'GitHub',
             position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
           },
         ],
       },
@@ -72,16 +74,6 @@ const config = {
         defaultMode: 'light',
         disableSwitch: false,
         respectPrefersColorScheme: false,
-        switchConfig: {
-          darkIcon: '🌙',
-          darkIconStyle: {
-            marginLeft: '2px',
-          },
-          lightIcon: '☀️',
-          lightIconStyle: {
-            marginLeft: '1px',
-          },
-        },
       },
       footer: {
         style: 'dark',
@@ -125,8 +117,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Edukera, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: codeTheme,
+        darkTheme: codeTheme,
       },
     }),
 };

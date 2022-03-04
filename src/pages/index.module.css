@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Roboto+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 /* Get Started Button */
 .getstarted {
   background-color: var(--ifm-color-primary);
@@ -70,4 +68,39 @@
 
 [data-theme='dark'] .npminstall:hover {
   border-color: var(--ifm-color-primary-lightest)
+}
+
+/* Design tagline */
+.designtagline {
+  color: #575757;
+}
+
+[data-theme='dark'] .designtagline {
+  color: #a09f9f;
+}
+
+/* Smart Design */
+
+.smartdesign {
+  border : 1px solid rgba(255, 255, 255, 0)
+}
+
+.smartdesign:hover {
+  background-color: white;
+  cursor: pointer
+}
+
+[data-theme='dark'] .smartdesign:hover {
+  background-color: var(--ifm-color-primary-darkest);
+}
+
+.selectedsd {
+  background-color: white;
+  /*border: 1px solid var(--ifm-color-primary)*/
+  border: 1px solid #57575759
+}
+
+[data-theme='dark'] .selectedsd {
+  background-color: var(--ifm-color-primary-darkest);
+  border: 1px solid var(--ifm-color-primary)
 }

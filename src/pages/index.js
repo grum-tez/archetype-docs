@@ -8,11 +8,13 @@ import styles from './index.module.css'
 import { StyledEngineProvider } from '@mui/material/styles';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import CodeBlock from '@theme/CodeBlock';
 
 const GetStarted = () => {
   return (
     <Button variant="contained" disableElevation className={styles.getstarted} style={{
       textTransform: 'none',
+      fontFamily: 'IBM Plex Sans',
       fontWeight: 'bold',
       fontSize: '16px',
       borderRadius: '10px',
@@ -42,7 +44,7 @@ const TagLine = () => {
 
 const Introduction = () => {
   return (
-    <Typography>Archetype is a general purpose language to develop Smart Contracts on the Tezos blockchain, with exclusive features to ease development, tests and formal verification.</Typography>
+    <Typography style={{ fontFamily: 'IBM Plex Sans' }}>Archetype is a general purpose language to develop Smart Contracts on the Tezos blockchain, with exclusive features to ease development, tests and formal verification.</Typography>
   )
 }
 
@@ -117,10 +119,87 @@ const LeftPannel = () => {
   )
 }
 
+const designs = [
+  { title : 'Easy Business Logic', tagline: 'Rational, date and duration types make business logic easy to express.', link: '' },
+  { title : 'Explicit Execution Conditions', tagline: 'Execution conditions for the contractto execute are easy to read and check.', link: '' },
+  { title : 'State Machine Design', tagline: 'Design the contract as a state machine, with guard conditions on transitions.', link: '' },
+  { title : 'Rich Storage API', tagline: 'Rich API to access and manipulate collections of records.', link: '' },
+]
+
+const SmartDesign = (props) => {
+  return (
+    <Grid item xs={12} sm={12} md={6}>
+      <div onClick={() => props.setSelected(props.id)}><Grid className={styles.smartdesign + ' ' + (props.selected? styles.selectedsd:'')} container direction="column" style={{
+      padding: '12px',
+      borderRadius: '8px',
+    }}>
+        <Grid item style={{ marginBottom: '4px' }}>
+          <Typography style={{
+            fontFamily: 'Montserrat',
+            fontSize: '18px'
+          }}>
+            {props.title}
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography className={styles.designtagline} style={{
+            fontFamily: 'IBM Plex Sans'
+          }}>
+            {props.tagline}
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Link style={{ position: 'relative', marginTop: '4px' }}>Learn more{<ChevronRightIcon style={{ position: 'absolute', top: '0px'  }}/>}</Link>
+        </Grid>
+      </Grid></div>
+    </Grid>
+  )
+}
+
+const SmartDesigns = (props) => {
+  return (
+    <Grid container spacing={2} style={{ paddingLeft: '3%', paddingRight: '5%', marginTop: '10px' }}>
+      { designs.map((d, i) => {
+          return <SmartDesign key={'sd'+i} id={i} title={d.title} tagline={d.tagline} selected={props.selected == i} setSelected={props.setSelected}/>
+        })
+      }
+    </Grid>
+  )
+}
+
 const RightPannel = () => {
+  const [selected, setSelected] = useState(0);
   return (
     <Container maxWidth={false} className={styles.rightpannel} sx={{ height: 'calc(100vh - 60px)' }}>
+      <Grid container style={{ height: '100%' }} direction="column" justifyContent="flex-start" alignItems="center">
+        <Grid item>
+          <Typography variant="h5" style={{
+            fontFamily: 'Montserrat',
+            margin: '40px'
+          }}>Control with Smart Designs</Typography>
+        </Grid>
+        <Grid item>
+          <SmartDesigns selected={selected} setSelected={setSelected}/>
+        </Grid>
+        <Grid item style={{ width: '100%' }}>
+          <CodeBlock className="language-archetype" style={{ borderRadius: '0px' }}>{`archetype state_machine_demo(value : tez, holder : address)
 
+states =
+| Created initial
+| Initialized
+| Terminated
+
+transition initialize () {
+  from Created to Initialized
+  when { transferred > value }
+}
+
+transition terminate () {
+  from Initialized to Terminated
+  effect { transfer balance to holder }
+}`}</CodeBlock>
+        </Grid>
+      </Grid>
     </Container>
   )
 }

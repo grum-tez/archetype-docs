@@ -14,17 +14,22 @@ Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 
 Create a file at `src/pages/my-react-page.js`:
 
-```jsx title="src/pages/my-react-page.js"
-import React from 'react';
-import Layout from '@theme/Layout';
+```archetype
+archetype state_machine_demo(value : tez, holder : address)
 
-export default function MyReactPage() {
-  return (
-    <Layout>
-      <h1>My React page</h1>
-      <p>This is a React page</p>
-    </Layout>
-  );
+states =
+| Created initial
+| Initialized
+| Terminated
+
+transition initialize () {
+  from Created to Initialized
+  when { transferred > value }
+}
+
+transition terminate () {
+  from Initialized to Terminated
+  effect { transfer balance to holder }
 }
 ```
 
