@@ -27,7 +27,7 @@
     //  pattern: /\(transfer\)\s+\w\s+\(to\)\s+\w/,
     //},
     'transfer-rule': {
-      pattern: /transfer\s+\w+\s+to/,
+      pattern: /transfer\s+(((?!to).)*)\s+to/,
       inside: {
         'builtin': {
           pattern: /\b(?:transfer|to)\b/,
