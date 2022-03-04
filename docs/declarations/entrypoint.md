@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Create a Document
+# Entrypoint
 
 Documents are **groups of pages** connected through:
 
