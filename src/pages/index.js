@@ -15,6 +15,7 @@ import Comment4 from './comment4.mdx';
 
 const GetStarted = () => {
   return (
+    <Link to="/docs/install" style={{ textDecoration: 'none' }}>
     <Button variant="contained" disableElevation className={styles.getstarted} style={{
       textTransform: 'none',
       fontFamily: 'IBM Plex Sans',
@@ -28,7 +29,7 @@ const GetStarted = () => {
     sx={{ mr: { xs: 0, sm: 2 } }}
     endIcon={<ChevronRightIcon />} >
       Get started
-    </Button>
+    </Button></Link>
   )
 }
 
@@ -123,10 +124,10 @@ const LeftPannel = () => {
 }
 
 const designs = [
-  { title : 'Easy Business Logic', tagline: 'Rational, date and duration types make business logic easy to express.', link: '' },
-  { title : 'Explicit Execution Conditions', tagline: 'Execution conditions for the contract to execute are easy to read and check.', link: '' },
-  { title : 'State Machine Design', tagline: 'Design the contract as a state machine, with guard conditions on transitions.', link: '' },
-  { title : 'Rich Storage API', tagline: 'Rich API to access and manipulate collections of records.', link: '' },
+  { title : 'Easy Business Logic', tagline: 'Rational, date and duration types make business logic easy to express.', link: '/docs/language-basics/number' },
+  { title : 'Explicit Execution Conditions', tagline: 'Execution conditions for the contract to execute are easy to read and check.', link: '/docs/declarations/entrypoint' },
+  { title : 'State Machine Design', tagline: 'Design the contract as a state machine, with guard conditions on transitions.', link: '/docs/state-machine/state' },
+  { title : 'Rich Storage API', tagline: 'Rich API to access and manipulate collections of records.', link: '/docs/assets/intro' },
 ]
 
 const examples = [
@@ -212,7 +213,7 @@ const SmartDesign = (props) => {
           </Typography>
         </Grid>
         <Grid item>
-          <Link style={{ position: 'relative', marginTop: '4px' }}>Learn more{<ChevronRightIcon style={{ position: 'absolute', top: '0px'  }}/>}</Link>
+          <Link to={props.link} style={{ position: 'relative', marginTop: '4px', textDecoration: 'none' }}>Learn more{<ChevronRightIcon style={{ position: 'absolute', top: '0px'  }}/>}</Link>
         </Grid>
       </Grid></div>
     </Grid>
@@ -223,7 +224,7 @@ const SmartDesigns = (props) => {
   return (
     <Grid container spacing={2} style={{ paddingLeft: '3%', paddingRight: '5%', marginTop: '10px' }}>
       { designs.map((d, i) => {
-          return <SmartDesign key={'sd'+i} id={i} title={d.title} tagline={d.tagline} selected={props.selected == i} setSelected={props.setSelected}/>
+          return <SmartDesign key={'sd'+i} id={i} title={d.title} tagline={d.tagline} link={d.link} selected={props.selected == i} setSelected={props.setSelected}/>
         })
       }
     </Grid>
