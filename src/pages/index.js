@@ -9,6 +9,9 @@ import { StyledEngineProvider } from '@mui/material/styles';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CodeBlock from '@theme/CodeBlock';
+import Comment0 from './comment0.mdx';
+import Comment1 from './comment1.mdx';
+import Comment4 from './comment4.mdx';
 
 const GetStarted = () => {
   return (
@@ -126,6 +129,66 @@ const designs = [
   { title : 'Rich Storage API', tagline: 'Rich API to access and manipulate collections of records.', link: '' },
 ]
 
+const examples = [
+  {
+    code : `archetype pay_with_delay_penalty(holder : address, cost : tez, deadline : date)
+
+entry pay () {
+  var penalty := if now > deadline then (7% * (now - deadline) / 1d) * cost else 0;
+  transfer (cost + penalty) to holder
+}`,
+    comment : <Comment0 />
+  },
+  {
+    code : `archetype exec_cond_demo(admin : address, value : nat)
+
+entry set_value (v : nat) {
+  called by admin
+  require {
+    r1: transferred > value otherwise "INSUFFICIENT_TRANSFERRED_AMOUNT";
+    r2: now < 2023-01-01    otherwise "TOO_LATE";
+  }
+  effect { value := v; }
+}`,
+    comment : <Comment1 />
+  },
+  {
+    code: `archetype state_machine_demo(value : tez, holder : address)
+
+states =
+| Created initial
+| Initialized
+| Terminated
+
+transition initialize () {
+  from Created to Initialized
+  when { transferred > value }
+}
+
+transition terminate () {
+  from Initialized to Terminated
+  effect { transfer balance to holder }
+}`,
+    comment: ''
+  },
+  {
+    code: `archetype asset_demo
+
+asset vehicle {
+  vin          : string;
+  nbrepairs    : nat  = 0;
+  dateofrepair : date = now;
+}
+
+entry repair_oldest () {
+  for v in vehicle.sort(dateofrepair).select(the.nbrepairs = 0).head(3) do
+    vehicle.update(v, { nbrepairs += 1; dateofrepair = now })
+  done
+}`,
+    comment: <Comment4 />
+  }
+]
+
 const SmartDesign = (props) => {
   return (
     <Grid item xs={12} sm={12} md={6}>
@@ -170,7 +233,7 @@ const SmartDesigns = (props) => {
 const RightPannel = () => {
   const [selected, setSelected] = useState(0);
   return (
-    <Container maxWidth={false} className={styles.rightpannel} sx={{ height: 'calc(100vh - 60px)' }}>
+    <Container maxWidth={false} className={styles.rightpannel} sx={{ minHeight: 'calc(100vh - 60px)' }}>
       <Grid container style={{ height: '100%' }} direction="column" justifyContent="flex-start" alignItems="center">
         <Grid item>
           <Typography variant="h5" style={{
@@ -182,22 +245,20 @@ const RightPannel = () => {
           <SmartDesigns selected={selected} setSelected={setSelected}/>
         </Grid>
         <Grid item style={{ width: '100%' }}>
-          <CodeBlock className="language-archetype" style={{ borderRadius: '0px' }}>{`archetype state_machine_demo(value : tez, holder : address)
-
-states =
-| Created initial
-| Initialized
-| Terminated
-
-transition initialize () {
-  from Created to Initialized
-  when { transferred > value }
-}
-
-transition terminate () {
-  from Initialized to Terminated
-  effect { transfer balance to holder }
-}`}</CodeBlock>
+          <Grid container direction="row" justifyContent="flex-start" style={{ paddingLeft: 'calc(3% + 12px)', paddingRight: '5%', marginTop: '10px' }}>
+            <Typography style={{
+              fontFamily: 'IBM Plex Sans',
+              marginBottom: '12px'
+            }}>Example:</Typography>
+          </Grid>
+        </Grid>
+        <Grid item style={{ width: '100%' }}>
+          <CodeBlock className="language-archetype" style={{ borderRadius: '0px' }}>{examples[selected].code}</CodeBlock>
+        </Grid>
+        <Grid item className={styles.designtagline} style={{ paddingLeft: 'calc(3% + 12px)', paddingRight: '5%' }}>
+          <Typography style={{
+            fontFamily: 'IBM Plex Sans',
+          }}>{examples[selected].comment}</Typography>
         </Grid>
       </Grid>
     </Container>
@@ -206,7 +267,7 @@ transition terminate () {
 
 const Landing = () => {
   return (
-      <Container style={{ padding: 0 }} maxWidth={false}>
+      <Container maxWidth={false} style={{ padding: 0, overflow: 'scroll' }}>
         <Grid container>
           <Grid item xs={12} sm={12} md={6}>
             <LeftPannel />

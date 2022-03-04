@@ -3,7 +3,8 @@
 
 //const lightCodeTheme = require('prism-react-renderer/themes/github');
 //const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const codeTheme = require('./src/theme/prism-theme');
+const darkCodeTheme = require('./src/theme/prism-dark-theme');
+const lightCodeTheme = require('./src/theme/prism-light-theme');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -117,8 +118,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Edukera, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: codeTheme,
-        darkTheme: codeTheme,
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
       },
     }),
 };
