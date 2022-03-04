@@ -5,7 +5,7 @@
 var theme = {
   plain: {
     color: "#F8F8F2",
-    backgroundColor: "#172626",
+    backgroundColor: "rgb(31 58 58)",
     borderRadius: "0px",
     paddingLeft: "12px"
   },

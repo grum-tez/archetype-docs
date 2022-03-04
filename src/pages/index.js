@@ -124,7 +124,7 @@ const LeftPannel = () => {
 
 const designs = [
   { title : 'Easy Business Logic', tagline: 'Rational, date and duration types make business logic easy to express.', link: '' },
-  { title : 'Explicit Execution Conditions', tagline: 'Execution conditions for the contractto execute are easy to read and check.', link: '' },
+  { title : 'Explicit Execution Conditions', tagline: 'Execution conditions for the contract to execute are easy to read and check.', link: '' },
   { title : 'State Machine Design', tagline: 'Design the contract as a state machine, with guard conditions on transitions.', link: '' },
   { title : 'Rich Storage API', tagline: 'Rich API to access and manipulate collections of records.', link: '' },
 ]
