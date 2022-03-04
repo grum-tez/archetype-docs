@@ -17,10 +17,10 @@
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #30cfc7;
+  --ifm-menu-color-background-active: #2aada632;
   --ifm-code-font-size: 90%;
   --ifm-font-family-base: 'IBM Plex Sans';
   --ifm-font-family-monospace: 'Roboto Mono';
-
 }
 
 pre {
@@ -37,6 +37,7 @@ code {
   /*border: 1px solid #21af90a1*/
 }
 
+/*
 h1 {
   font-family: 'Montserrat';
 }
@@ -47,7 +48,7 @@ h2 {
 
 h3 {
   font-family: 'Montserrat';
-}
+}*/
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
@@ -58,6 +59,9 @@ h3 {
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
+  --ifm-menu-color-background-active: rgba(77, 185, 179, 0.144);
+  --ifm-toc-border-color: rgba(3, 71, 67, 0.52);
+  --ifm-color-emphasis-300:rgba(3, 71, 67, 0.52);
 }
 
 .docusaurus-highlight-code-line {
