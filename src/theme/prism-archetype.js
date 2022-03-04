@@ -29,8 +29,13 @@
     'transfer-rule': {
       pattern: /transfer\s+\w+\s+to/,
       inside: {
-        'builtin': /\b(?:transfer|to)\b/,
-      }
+        'builtin': {
+          pattern: /\b(?:transfer|to)\b/,
+        },
+        'constant': {
+          pattern: /\b(?:now|balance|transferred|self|caller|sender|selfaddress|state|operations)\b/,
+        }
+      },
     },
     'archetype': /\b(?:archetype)\b/,
     'storage': /\b(?:constant|archetype|enum|states|variable|asset|record|as|initial|identified by|initialized by)\b/,
