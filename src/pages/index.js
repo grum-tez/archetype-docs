@@ -267,7 +267,7 @@ const RightPannel = () => {
 
 const Landing = () => {
   return (
-      <Container maxWidth={false} style={{ padding: 0, overflow: 'scroll' }}>
+      <Container maxWidth={false} style={{ padding: 0 }}>
         <Grid container>
           <Grid item xs={12} sm={12} md={6}>
             <LeftPannel />
