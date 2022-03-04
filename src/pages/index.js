@@ -134,7 +134,7 @@ const examples = [
     code : `archetype pay_with_delay_penalty(holder : address, cost : tez, deadline : date)
 
 entry pay () {
-  var penalty := if now > deadline then (7% * (now - deadline) / 1d) * cost else 0;
+  var penalty = if now > deadline then (7% * (now - deadline) / 1d) * cost else 0tz;
   transfer (cost + penalty) to holder
 }`,
     comment : <Comment0 />
