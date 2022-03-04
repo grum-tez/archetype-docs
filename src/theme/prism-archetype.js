@@ -23,6 +23,15 @@
 		//},
 		// For the list of keywords and operators,
 		// see: http://caml.inria.fr/pub/docs/manual-ocaml/lex.html#sec84
+    //'transfer': {
+    //  pattern: /\(transfer\)\s+\w\s+\(to\)\s+\w/,
+    //},
+    'transfer-rule': {
+      pattern: /transfer\s+\w+\s+to/,
+      inside: {
+        'builtin': /\b(?:transfer|to)\b/,
+      }
+    },
     'archetype': /\b(?:archetype)\b/,
     'storage': /\b(?:constant|archetype|enum|states|variable|asset|record|as|initial|identified by|initialized by)\b/,
     'entry': /\b(?:entry|transition|function|getter|view)\b/,
@@ -40,6 +49,6 @@
     'arith': /\b(?:mod|abs|min|max)\b/,
 		// Custom operators are allowed
 		'function': /:=|\+=|\-=|[=<>@^|&+\-*\/$%!?~][!$%&*+\-.\/:<=>?@^|~]*\b/,
-		'punctuation': /[(){}\[\]|.,:;]|\b_\b/
+		'punctuation': /[(){}\[\]|.,:;]|\b_\b/,
 	};
 }(Prism));

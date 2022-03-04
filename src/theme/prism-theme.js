@@ -79,6 +79,11 @@ var theme = {
     style: {
       color: "rgb(68, 134, 255)"
     }
+  }, {
+    types: ["transfer"],
+    style: {
+      color: "rgb(255, 85, 85)"
+    }
   }]
 };
 
