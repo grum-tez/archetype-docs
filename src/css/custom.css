@@ -7,6 +7,7 @@
  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Roboto+Mono&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 /* You can override the default Infima variables here. */
 :root {
@@ -21,6 +22,11 @@
   --ifm-code-font-size: 90%;
   --ifm-font-family-base: 'IBM Plex Sans';
   --ifm-font-family-monospace: 'Roboto Mono';
+  --ifm-container-width-xl: 1100px;
+}
+
+.menu__list-item-collapsible > .menu__link--sublist:after {
+  background: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16px\" height=\"16px\" viewBox=\"0 0 24 24\"><path fill=\"rgba(77, 185, 179)\" d=\"M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z\"></path></svg>') 50% / 2rem 2rem;
 }
 
 pre {
@@ -37,18 +43,18 @@ code {
   /*border: 1px solid #21af90a1*/
 }
 
-/*
+
 h1 {
-  font-family: 'Montserrat';
+  font-family: 'Roboto';
 }
 
 h2 {
-  font-family: 'Montserrat';
+  font-family: 'Roboto';
 }
 
 h3 {
-  font-family: 'Montserrat';
-}*/
+  font-family: 'Roboto';
+}
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
