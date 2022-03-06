@@ -17,7 +17,7 @@ const getMichelsonUrl = () => ""
 export default function Type(props) {
   return (
     <StyledEngineProvider injectFirst>
-    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={2} style={{ marginBottom: '60px' }}>
+    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={1} style={{ marginBottom: '60px' }}>
       <Grid item xs={12} style={{ marginBottom: '18px' }}>
         <Typography style={{
           fontFamily: 'IBM Plex Sans'
@@ -27,7 +27,7 @@ export default function Type(props) {
       </Grid>
 
       <Grid item xs={2}>
-        <Typography style={{ fontFamily: 'IBM Plex Sans' }}>
+        <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
           Type
         </Typography>
       </Grid>
@@ -37,7 +37,7 @@ export default function Type(props) {
       <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
 
       <Grid item xs={2}>
-        <Typography style={{ fontFamily: 'IBM Plex Sans' }}>
+        <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
           Michelson
         </Typography>
       </Grid>
@@ -54,7 +54,7 @@ export default function Type(props) {
       <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
 
       <Grid item xs={2}>
-        <Typography style={{ fontFamily: 'IBM Plex Sans' }}>
+        <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
           Related
         </Typography>
       </Grid>

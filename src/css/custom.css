@@ -26,6 +26,10 @@
   --ifm-footer-background-color: #23346a;
 }
 
+.navbar__logo {
+  margin-left: 11px
+}
+
 .menu__list-item-collapsible > .menu__link--sublist:after {
   background: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16px\" height=\"16px\" viewBox=\"0 0 24 24\"><path fill=\"rgba(77, 185, 179)\" d=\"M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z\"></path></svg>') 50% / 2rem 2rem;
 }
