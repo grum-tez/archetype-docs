@@ -23,6 +23,7 @@
   --ifm-font-family-base: 'IBM Plex Sans';
   --ifm-font-family-monospace: 'Roboto Mono';
   --ifm-container-width-xl: 1100px;
+  --ifm-footer-background-color: #23346a;
 }
 
 .menu__list-item-collapsible > .menu__link--sublist:after {
@@ -68,6 +69,14 @@ h3 {
   --ifm-menu-color-background-active: rgba(77, 185, 179, 0.144);
   --ifm-toc-border-color: rgba(3, 71, 67, 0.52);
   --ifm-color-emphasis-300:rgba(3, 71, 67, 0.52);
+}
+
+.footer {
+  --ifm-footer-background-color: #23346a;
+}
+
+[data-theme='dark'] .footer {
+  --ifm-footer-background-color: #23346a40;
 }
 
 .docusaurus-highlight-code-line {
