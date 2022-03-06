@@ -370,17 +370,6 @@ export const types = {
       { keyword: "Presentation", link:"/docs/language-basics/ticket" }
     ],
   },
-  timestamp :
-  {
-    desc: 'TODO',
-    examples: [],
-    tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
-    michelson: "timestamp",
-    michelson_ref_url: michelson_ref_base_url + '/#type-timestamp',
-    related: [
-      { keyword: "Presentation", link:"/docs/language-basics/date#timestamp" }
-    ],
-  },
   tuple :
   {
     desc: 'TODO',
