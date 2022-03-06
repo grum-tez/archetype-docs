@@ -19,6 +19,15 @@ export const types = {
       { keyword: "Presentation", link:"/docs/language-basics/address" }
     ],
   },
+  asset :
+  {
+    desc: 'TODO',
+    examples: [],
+    tags: [ ],
+    related: [
+      { keyword: "Presentation", link:"/docs/assets/intro" }
+    ],
+  },
   big_map :
   {
     desc: 'TODO',
@@ -149,6 +158,24 @@ export const types = {
     michelson_ref_url: michelson_ref_base_url + '/#type-int',
     related: [
       { keyword: "Presentation", link:"/docs/language-basics/date" }
+    ],
+  },
+  enum :
+  {
+    desc: 'TODO',
+    examples: [],
+    tags: [ ],
+    related: [
+      { keyword: "Presentation", link:"/docs/language-basics/composite#enum" }
+    ],
+  },
+  event :
+  {
+    desc: 'TODO',
+    examples: [],
+    tags: [ ],
+    related: [
+      { keyword: "Presentation", link:"/docs/language-basics/event" }
     ],
   },
   int :
@@ -282,6 +309,15 @@ export const types = {
       { keyword: "Presentation", link:"/docs/language-basics/address" }
     ],
   },
+  record :
+  {
+    desc: 'TODO',
+    examples: [],
+    tags: [ ],
+    related: [
+      { keyword: "Presentation", link:"/docs/language-basics/composite#record" }
+    ],
+  },
   sapling_state :
   {
     desc: 'TODO',
@@ -324,16 +360,6 @@ export const types = {
     michelson_ref_url: michelson_ref_base_url + '/#type-signature',
     related: [
       { keyword: "Presentation", link:"/docs/language-basics/crypto#signature" }
-    ],
-  },
-  state :
-  {
-    desc: 'TODO',
-    examples: [],
-    tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
-    michelson: undefined,
-    related: [
-      { keyword: "Presentation", link:"/docs/state-machine/state" }
     ],
   },
   string :
