@@ -29,6 +29,14 @@ export const constants = {
       michelson_ref_url: michelson_ref_base_url + '/#instr-CHAIN_ID',
       related: [ ],
     },
+    level :
+    {
+      desc: 'TODO',
+      type: 'nat',
+      michelson: "LEVEL",
+      michelson_ref_url: michelson_ref_base_url + '/#instr-LEVEL',
+      related: [ ],
+    },
     now :
     {
       desc: 'TODO',
