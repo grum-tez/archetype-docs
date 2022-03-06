@@ -12,39 +12,12 @@ const Related = (props) => {
   }}>{props.value}</Typography></Link></Grid>)
 }
 
-const TypeExample = (props) => {
-  return (
-    <Grid item>
-      <code>{props.value}</code>
-    </Grid>
-  )
-}
-
-const TranslateProperty = (v) => {
-  switch(v) {
-    case 0: return 'STORABLE'
-    case 1: return 'PASSABLE'
-  }
-}
-
-const TypeProperty = (props) => {
-  return (
-    <Grid item>
-      <code style={{
-        color: 'grey',
-        fontWeight: 'bold',
-        fontSize: '11px',
-        backgroundColor: 'rgba(0,0,0,0)',
-        border: 0,
-      }}>{ TranslateProperty(props.value) }</code>
-    </Grid>
-  )
-}
+const getMichelsonUrl = () => ""
 
 export default function Type(props) {
   return (
     <StyledEngineProvider injectFirst>
-    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={2}>
+    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={2} style={{ marginBottom: '60px' }}>
       <Grid item xs={12} style={{ marginBottom: '18px' }}>
         <Typography style={{
           fontFamily: 'IBM Plex Sans'
@@ -55,25 +28,11 @@ export default function Type(props) {
 
       <Grid item xs={2}>
         <Typography style={{ fontFamily: 'IBM Plex Sans' }}>
-          { (props.data.examples.length > 1) ? 'Examples' : 'Example' }
+          Type
         </Typography>
       </Grid>
       <Grid item xs={10}>
-        <Grid container direction="row" spacing={2}>
-          {props.data.examples.map((p,i) => <TypeExample key={'te'+i} value={p} />)}
-        </Grid>
-      </Grid>
-      <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
-
-      <Grid item xs={2}>
-        <Typography style={{ fontFamily: 'IBM Plex Sans' }}>
-          { (props.data.tags.length > 1) ? 'Properties' : 'Property' }
-        </Typography>
-      </Grid>
-      <Grid item xs={10}>
-        <Grid container direction="row" spacing={1}>
-          {props.data.tags.map((p,i) => <TypeProperty key={'tp'+i} value={p} />)}
-        </Grid>
+        <code>{props.data.type}</code>
       </Grid>
       <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
 
@@ -83,7 +42,7 @@ export default function Type(props) {
         </Typography>
       </Grid>
       <Grid item xs={10}>
-        <Link to={""}><Button style={{
+        <Link to={getMichelsonUrl(props.data.michelson)}><Button style={{
           fontFamily: 'Roboto Mono',
           color: 'var(--ifm-color-primary)'
           }}
@@ -101,6 +60,9 @@ export default function Type(props) {
       </Grid>
       <Grid item xs={10}>
         <Grid container direction="row" spacing={3}>
+          <Grid item>
+            <Related value={props.data.type} link={'/docs/reference/types#'+props.data.type} />
+          </Grid>
           {props.data.related.map((r,i) => <Related key={'rel'+i} value={r.keyword} link={r.link}></Related>)}
         </Grid>
       </Grid>
