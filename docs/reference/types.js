@@ -269,7 +269,7 @@ export const types = {
     michelson: "or",
     michelson_ref_url: michelson_ref_base_url + '/#type-or',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/or" }
+      { keyword: "Presentation", link:"/docs/language-basics/composite#or" }
     ],
   },
   rational :
@@ -378,7 +378,7 @@ export const types = {
     michelson: "pair",
     michelson_ref_url: michelson_ref_base_url + '/#type-pair',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/pair" }
+      { keyword: "Presentation", link:"/docs/language-basics/composite#tuple" }
     ],
   },
   unit :

@@ -64,20 +64,17 @@ export const constants = {
         { keyword: "sourced by", link:"/docs/declarations/entrypoint" },
       ],
     },
+    state :
+    {
+      desc: 'TODO',
+      related: [ ],
+    },
     transferred :
     {
       desc: 'TODO',
       type: 'tez',
       michelson: "AMOUNT",
       michelson_ref_url: michelson_ref_base_url + '/#instr-AMOUNT',
-      related: [ ],
-    },
-    Unit :
-    {
-      desc: 'TODO',
-      type: 'unit',
-      michelson: "UNIT",
-      michelson_ref_url: michelson_ref_base_url + '/#instr-UNIT',
       related: [ ],
     }
   };
