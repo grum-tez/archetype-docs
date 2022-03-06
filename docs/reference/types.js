@@ -85,7 +85,7 @@ export const types = {
       { keyword: "Presentation", link:"/docs/language-basics/bytes" }
     ],
   },
-  chainid :
+  chain_id :
   {
     desc: 'TODO',
     examples: [],
