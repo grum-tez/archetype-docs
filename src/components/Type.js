@@ -22,8 +22,10 @@ const TypeExample = (props) => {
 
 const TranslateProperty = (v) => {
   switch(v) {
-    case 0: return 'STORABLE'
+    case 0: return 'COMPARABLE'
     case 1: return 'PASSABLE'
+    case 2: return 'STORABLE'
+    case 3: return 'PACKABLE'
   }
 }
 
