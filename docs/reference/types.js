@@ -85,7 +85,7 @@ export const types = {
       { keyword: "Presentation", link:"/docs/language-basics/bytes" }
     ],
   },
-  chainid :
+  chain_id :
   {
     desc: 'TODO',
     examples: [],
@@ -173,7 +173,7 @@ export const types = {
       { keyword: "Presentation", link:"/docs/language-basics/crypto#key" }
     ],
   },
-  keyhash :
+  key_hash :
   {
     desc: 'TODO',
     examples: [],
@@ -181,7 +181,7 @@ export const types = {
     michelson: "key_hash",
     michelson_ref_url: michelson_ref_base_url + '/#type-key_hash',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/crypto#keyhash" }
+      { keyword: "Presentation", link:"/docs/language-basics/crypto#key_hash" }
     ],
   },
   lambda :
