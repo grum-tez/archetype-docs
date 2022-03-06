@@ -83,7 +83,7 @@ export default function Type(props) {
         </Typography>
       </Grid>
       <Grid item xs={10}>
-        <Link to={""}><Button style={{
+        <Link to={props.data.michelson_ref_url}><Button style={{
           fontFamily: 'Roboto Mono',
           color: 'var(--ifm-color-primary)'
           }}
