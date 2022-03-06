@@ -15,7 +15,7 @@ const Related = (props) => {
 export default function Type(props) {
   return (
     <StyledEngineProvider injectFirst>
-    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={1} style={{ marginBottom: '60px' }}>
+    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={1} style={{ marginBottom: '60px', maxWidth:'820px' }}>
       <Grid item xs={12} style={{ marginBottom: '18px' }}>
         <Typography style={{
           fontFamily: 'IBM Plex Sans'
@@ -24,22 +24,22 @@ export default function Type(props) {
         </Typography>
       </Grid>
 
-      <Grid item xs={2}>
+      <Grid item xs={3} sm={2} md={2}>
         <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
           Type
         </Typography>
       </Grid>
-      <Grid item xs={10}>
+      <Grid item xs={9} sm={10} md={10}>
         <code>{props.data.type}</code>
       </Grid>
       <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
 
-      <Grid item xs={2}>
+      <Grid item xs={3} sm={2} md={2}>
         <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
           Michelson
         </Typography>
       </Grid>
-      <Grid item xs={10}>
+      <Grid item xs={9} sm={10} md={10}>
         <Link to={props.data.michelson_ref_url}><Button style={{
           fontFamily: 'Roboto Mono',
           color: 'var(--ifm-color-primary)'
@@ -51,12 +51,12 @@ export default function Type(props) {
       </Grid>
       <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
 
-      <Grid item xs={2}>
+      <Grid item xs={3} sm={2} md={2}>
         <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
           Related
         </Typography>
       </Grid>
-      <Grid item xs={10}>
+      <Grid item xs={9} sm={10} md={10}>
         <Grid container direction="row" spacing={3}>
           <Grid item>
             <Related value={props.data.type} link={'/docs/reference/types#'+props.data.type} />

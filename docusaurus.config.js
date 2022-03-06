@@ -45,6 +45,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
+        hideOnScroll: true,
         logo: {
           alt: 'Archetype Logo',
           src: 'img/logo-light.svg',

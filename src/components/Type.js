@@ -55,36 +55,36 @@ export default function Type(props) {
         </Typography>
       </Grid>
 
-      <Grid item xs={2}>
+      <Grid item xs={3} sm={2} md={2}>
         <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
           { (props.data.examples.length > 1) ? 'Examples' : 'Example' }
         </Typography>
       </Grid>
-      <Grid item xs={10}>
+      <Grid item xs={9} sm={10} md={10}>
         <Grid container direction="row" spacing={2}>
           {props.data.examples.map((p,i) => <TypeExample key={'te'+i} value={p} />)}
         </Grid>
       </Grid>
       <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
 
-      <Grid item xs={2}>
+      <Grid item xs={3} sm={2} md={2}>
         <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
           { (props.data.tags.length > 1) ? 'Properties' : 'Property' }
         </Typography>
       </Grid>
-      <Grid item xs={10}>
+      <Grid item xs={9} sm={10} md={10}>
         <Grid container direction="row" spacing={1}>
           {props.data.tags.map((p,i) => <TypeProperty key={'tp'+i} value={p} />)}
         </Grid>
       </Grid>
       <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
 
-      <Grid item xs={2}>
+      <Grid item xs={3} sm={2} md={2}>
         <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
           Michelson
         </Typography>
       </Grid>
-      <Grid item xs={10}>
+      <Grid item xs={9} sm={10} md={10}>
         <Link to={props.data.michelson_ref_url}><Button style={{
           textTransform: 'none',
           fontFamily: 'Roboto Mono',
@@ -97,12 +97,12 @@ export default function Type(props) {
       </Grid>
       <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
 
-      <Grid item xs={2}>
+      <Grid item xs={3} sm={2} md={2}>
         <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
           Related
         </Typography>
       </Grid>
-      <Grid item xs={10}>
+      <Grid item xs={9} sm={10} md={10}>
         <Grid container direction="row" spacing={3}>
           {props.data.related.map((r,i) => <Related key={'rel'+i} value={r.keyword} link={r.link}></Related>)}
         </Grid>
