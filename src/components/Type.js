@@ -44,7 +44,7 @@ const TypeProperty = (props) => {
 export default function Type(props) {
   return (
     <StyledEngineProvider injectFirst>
-    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={2}>
+    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={2} style={{ marginBottom: '60px' }}>
       <Grid item xs={12} style={{ marginBottom: '18px' }}>
         <Typography style={{
           fontFamily: 'IBM Plex Sans'
@@ -84,6 +84,7 @@ export default function Type(props) {
       </Grid>
       <Grid item xs={10}>
         <Link to={props.data.michelson_ref_url}><Button style={{
+          textTransform: 'none',
           fontFamily: 'Roboto Mono',
           color: 'var(--ifm-color-primary)'
           }}
