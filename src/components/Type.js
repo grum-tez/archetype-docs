@@ -14,7 +14,7 @@ const Related = (props) => {
 
 const TypeExample = (props) => {
   return (
-    <Grid item>
+    <Grid item style={{ maxWidth: '700px' }}>
       <code>{props.value}</code>
     </Grid>
   )
@@ -43,10 +43,90 @@ const TypeProperty = (props) => {
   )
 }
 
+const MichelsonType = (props) => {
+  return ((props.michelson_ref_url === undefined) ? (
+    (Object.prototype.toString.call(props.michelson) !== '[object Array]') ? (
+      <Button style={{
+        textTransform: 'none',
+        fontFamily: 'Roboto Mono',
+        color: 'var(--ifm-color-primary)'
+        }}
+        disableFocusRipple
+        size="small"
+        disableRipple
+      >{props.michelson}</Button>
+    ) : (
+      <Grid container spacing={1}>
+        { props.michelson.map((m,i) => {
+          return <Grid item key={'mt'+i}>
+            <Button style={{
+              textTransform: 'none',
+              fontFamily: 'Roboto Mono',
+              color: 'var(--ifm-color-primary)'
+              }}
+              disableFocusRipple
+              size="small"
+              disableRipple
+            >{m}</Button>
+          </Grid>
+        }) }
+      </Grid>
+    )
+  ) : (
+      <Link to={props.michelson_ref_url}><Button style={{
+        textTransform: 'none',
+        fontFamily: 'Roboto Mono',
+        color: 'var(--ifm-color-primary)'
+        }}
+        size="small"
+        disableRipple
+        endIcon={<OpenInNewIcon fontSize="small"/>}
+      >{props.michelson}</Button></Link>
+    )
+  )
+}
+
+const Parameter = (props) => {
+  return (
+    <Grid container>
+      <Grid item>
+        <code style={{ marginRight: '4px' }}>{props.value.keyword}</code>
+      </Grid>
+      <Grid item xs={4}>
+        <Typography style={{
+          fontFamily: 'Roboto Mono',
+          fontSize: '14px',
+          color: 'grey',
+          paddingTop: '4px'
+        }}>
+          ({props.value.type})
+        </Typography>
+      </Grid>
+      <Grid item xs={8}>
+        <Typography style={{
+          fontFamily: 'IBM Plex Sans',
+          paddingTop: '2px',
+          marginBottom: props.last ? '4px' : '0px'
+        }}>{props.value.desc}</Typography>
+      </Grid>
+      { (! props.last) ? (
+        <Grid item xs={12} style={{
+          marginTop: '10px',
+          marginBottom: '10px'
+        }}>
+          <Divider className={ styles.divider }/>
+        </Grid>
+      ) : (<div/>)
+      }
+
+    </Grid>
+  )
+}
+
 export default function Type(props) {
   return (
     <StyledEngineProvider injectFirst>
-    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={1} style={{ marginBottom: '60px', maxWidth:'820px' }}>
+    <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginBottom: '60px', maxWidth:'820px' }}>
       <Grid item xs={12} style={{ marginBottom: '18px' }}>
         <Typography style={{
           fontFamily: 'IBM Plex Sans'
@@ -54,6 +134,26 @@ export default function Type(props) {
           {props.data.desc}
         </Typography>
       </Grid>
+
+      { (props.data.parameters !== undefined) ? (
+          <Grid item xs={3} sm={2} md={2}>
+            <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
+              { (props.data.parameters.length > 1) ? 'Parameters' : 'Parameter' }
+            </Typography>
+          </Grid>
+        ) : (<div/>)
+      }
+      { (props.data.parameters !== undefined) ? (
+          <Grid item xs={9} sm={10} md={10}>
+            <Grid container direction="row">
+              {props.data.parameters.map((p,i) => <Parameter key={'te'+i} last={i+1 === props.data.parameters.length} value={p} />)}
+            </Grid>
+          </Grid>
+      ) : (<div/>)
+      }
+      { (props.data.parameters !== undefined) ? (
+          <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
+      ) : (<div/>) }
 
       <Grid item xs={3} sm={2} md={2}>
         <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
@@ -85,15 +185,7 @@ export default function Type(props) {
         </Typography>
       </Grid>
       <Grid item xs={9} sm={10} md={10}>
-        <Link to={props.data.michelson_ref_url}><Button style={{
-          textTransform: 'none',
-          fontFamily: 'Roboto Mono',
-          color: 'var(--ifm-color-primary)'
-          }}
-          size="small"
-          disableRipple
-          endIcon={<OpenInNewIcon fontSize="small"/>}
-        >{props.data.michelson}</Button></Link>
+        <MichelsonType michelson={props.data.michelson} michelson_ref_url={props.data.michelson_ref_url} />
       </Grid>
       <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
 

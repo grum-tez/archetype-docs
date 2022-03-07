@@ -152,21 +152,21 @@ export const types = {
   duration :
   {
     desc: 'TODO',
-    examples: [ '3w8d4h34m18s' ],
+    examples: [ '1m', '5d', '3w8d4h34m18s', ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "int",
-    michelson_ref_url: michelson_ref_base_url + '/#type-int',
     related: [
       { keyword: "Presentation", link:"/docs/language-basics/date" }
     ],
   },
   enum :
   {
-    desc: 'TODO',
-    examples: [],
-    tags: [ ],
+    desc: 'Union of several types: its value is one of the possible declared values; values can be parameterized.',
+    examples: [ `enum color = | Red | Green | Blue`, `Red`, `Green`, `Blue` ],
+    tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
+    michelson: [ "int", "or" ],
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/composite#enum" }
+      { keyword: "Enum", link:"/docs/language-basics/composite#enum" }
     ],
   },
   event :
@@ -224,24 +224,32 @@ export const types = {
   },
   list :
   {
-    desc: 'TODO',
-    examples: [],
+    desc: 'Immutable (read-only) list of elements.',
+    parameters: [
+      { keyword: 'T', type: 'any type', desc: 'type of the elements of the list' }
+    ],
+    examples: ['[]', '[ 1 ]', '[ "abc", "def" ]'],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "list",
     michelson_ref_url: michelson_ref_base_url + '/#type-list',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/container#list" }
+      { keyword: "List", link:"/docs/language-basics/container#list" },
+      { keyword: "Iter", link:"/doc/language-basics/control/#iter"}
     ],
   },
   map :
   {
-    desc: 'TODO',
-    examples: [],
+    desc: 'Imutable (read only) maps from key to value; keys are sorted.',
+    parameters: [
+      { keyword: 'K', type: 'any comparable type', desc: 'type of the key' },
+      { keyword: 'V', type: 'any type', desc: 'type of the associated value' },
+    ],
+    examples: ['variable m : map<nat, string> = [ (0, "a string"); (1, "another string") ]'],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "map",
     michelson_ref_url: michelson_ref_base_url + '/#type-map',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/container#map" }
+      { keyword: "Map", link:"/docs/language-basics/container#map" }
     ],
   },
   nat :
@@ -279,24 +287,31 @@ export const types = {
   },
   option :
   {
-    desc: 'TODO',
-    examples: [],
+    desc: 'Type for optional value, that is either some value of some type, or none.',
+    parameters: [
+      { keyword: 'T', type: 'any type', desc: 'type of the value when the option is some value' },
+    ],
+    examples: ['variable opt : option<nat> = none', 'variable opt : option<string> = some("abcd")'],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "option",
     michelson_ref_url: michelson_ref_base_url + '/#type-option',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/composite#option" }
+      { keyword: "Option", link:"/docs/language-basics/composite#option" }
     ],
   },
   or :
   {
-    desc: 'TODO',
-    examples: [],
+    desc: 'Union of two types: its value can either be of the one or the other type (left or right).',
+    parameters: [
+      { keyword: 'T1', type: 'any type', desc: 'left type' },
+      { keyword: 'T2', type: 'any type', desc: 'right type' },
+    ],
+    examples: ['variable o : or<nat, string> = left<string>(2)', 'variable o : or<nat, string> = right<nat>("#a56fG")'],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
-    michelson: "or",
+    michelson: "or T1 T2",
     michelson_ref_url: michelson_ref_base_url + '/#type-or',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/composite#or" }
+      { keyword: "Or", link:"/docs/language-basics/composite#or" }
     ],
   },
   rational :
