@@ -24,32 +24,44 @@ export default function Type(props) {
         </Typography>
       </Grid>
 
-      <Grid item xs={3} sm={2} md={2}>
-        <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
-          Type
-        </Typography>
-      </Grid>
-      <Grid item xs={9} sm={10} md={10}>
-        <code>{props.data.type}</code>
-      </Grid>
-      <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
+      {(props.data.type !== undefined) ? (
+        <Grid item xs={3} sm={2} md={2}>
+          <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
+            Type
+          </Typography>
+        </Grid>
+      ) : (<div />)}
+      {(props.data.type !== undefined) ? (
+        <Grid item xs={9} sm={10} md={10}>
+          <code>{props.data.type}</code>
+        </Grid>
+      ) : (<div />)}
+      {(props.data.type !== undefined) ? (
+        <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
+      ) : (<div />)}
 
-      <Grid item xs={3} sm={2} md={2}>
-        <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
-          Michelson
-        </Typography>
-      </Grid>
-      <Grid item xs={9} sm={10} md={10}>
-        <Link to={props.data.michelson_ref_url}><Button style={{
-          fontFamily: 'Roboto Mono',
-          color: 'var(--ifm-color-primary)'
-          }}
-          size="small"
-          disableRipple
-          endIcon={<OpenInNewIcon fontSize="small"/>}
-        >{props.data.michelson}</Button></Link>
-      </Grid>
-      <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
+      {(props.data.michelson !== undefined) ? (
+        <Grid item xs={3} sm={2} md={2}>
+          <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
+            Michelson
+          </Typography>
+        </Grid>
+      ) : (<div />)}
+      {(props.data.michelson !== undefined) ? (
+        <Grid item xs={9} sm={10} md={10}>
+          <Link to={props.data.michelson_ref_url}><Button style={{
+            fontFamily: 'Roboto Mono',
+            color: 'var(--ifm-color-primary)'
+            }}
+            size="small"
+            disableRipple
+            endIcon={<OpenInNewIcon fontSize="small"/>}
+          >{props.data.michelson}</Button></Link>
+        </Grid>
+      ) : (<div />)}
+      {(props.data.michelson !== undefined) ? (
+        <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
+      ) : (<div />)}
 
       <Grid item xs={3} sm={2} md={2}>
         <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
