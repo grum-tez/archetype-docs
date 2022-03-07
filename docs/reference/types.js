@@ -97,7 +97,7 @@ export const types = {
   chain_id :
   {
     desc: 'TODO',
-    examples: [],
+    examples: [ '"NetXdQprcVkpaWU"', 'chainid' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "chain_id",
     michelson_ref_url: michelson_ref_base_url + '/#type-chain_id',
@@ -192,7 +192,7 @@ export const types = {
   key :
   {
     desc: 'TODO',
-    examples: [],
+    examples: [ '"edpkurLzuFFL1XyP3fed4u7MsgeywQoQmHM45Bz91PBzDvUjQ9bvdn"' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "key",
     michelson_ref_url: michelson_ref_base_url + '/#type-key',
@@ -203,7 +203,7 @@ export const types = {
   key_hash :
   {
     desc: 'TODO',
-    examples: [],
+    examples: [ '"tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg"' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "key_hash",
     michelson_ref_url: michelson_ref_base_url + '/#type-key_hash',
