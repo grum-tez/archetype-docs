@@ -354,7 +354,7 @@ export const types = {
   signature :
   {
     desc: 'TODO',
-    examples: [],
+    examples: [ '"edsigtvwtJaiM7phNNkZjazqKtthDxc3WswYNL961GKgz7VxvPJmWJ8WEkmEZd9oFM1RvwABYW3uYgwGRP7nuBns5WrqyfYsUaB"' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "signature",
     michelson_ref_url: michelson_ref_base_url + '/#type-signature',
