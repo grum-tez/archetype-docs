@@ -1,32 +1,45 @@
-const michelson_prefix = 'https://tezos.gitlab.io/michelson-reference/'
+import React from "react"
+
+const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
 export const builtins = {
   check_signature : {
-    desc: 'Verfies that a signature is obtained by signing a sequence of bytes with an account public key.',
+    desc: <div>
+      Checks whether signature <code>s</code> is obtained by signing sequence of bytes <code>b</code> with account public key <code>k</code>.
+    </div>,
     parameters: [
       {
         type: 'key',
-        desc: 'Public key of the account to sign the sequence of bytes.'
+        alias: 'k',
+        desc: <div>
+          Public key of the account to sign <code>b</code>.
+        </div>
       },
       {
         type: 'signature',
-        desc: 'Signature to be compared to the one obtained by signing the sequence of bytes by the key.'
+        alias: 's',
+        desc: <div>
+          Signature to be compared with the one obtained by signing <code>b</code> with <code>k</code>.
+        </div>
       },
       {
         type: 'bytes',
-        desc: 'Sequence of bytes to sign by the key and to be compared to the signature.'
+        alias: 'b',
+        desc: <div>
+          Sequence of bytes to sign with <code>k</code> and to compare to <code>s</code>.
+        </div>
       },
     ],
     returns: {
       type : 'bool',
-      desc: 'Returns true if the parameter signature is obtained by signing the sequence of bytes with the key, false otherwise.'
+      desc: <div>
+        Returns <code>true</code> if <code>s</code> is obtained by signing <code>b</code> with <code>k</code>, <code>false</code> otherwise.
+      </div>
     },
-    michelson: {
-      keyword: 'CHECK_SIGNATURE',
-      link: michelson_prefix + '#instr-CHECK_SIGNATURE'
-    },
+    michelson: "CHECK_SIGNATURE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-CHECK_SIGNATURE',
     related: [
-      { keyword: 'Check signature', link: '' },
+      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   }
 }

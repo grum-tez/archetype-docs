@@ -7,7 +7,7 @@ sidebar_position: 4
 import Builtin from '@site/src/components/Builtin.js';
 import { builtins } from './builtins.js';
 
-### `check_signature`
+### `check_signature(k, s, b)`
 
 <Builtin data={builtins['check_signature']} />
 

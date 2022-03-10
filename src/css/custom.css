@@ -41,6 +41,8 @@ pre {
 code {
   --ifm-code-font-size: 85%;
   --ifm-code-border-radius: 0px;
+  position: relative;
+  top: -1px;
 }
 
 [data-theme='dark'] code {

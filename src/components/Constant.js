@@ -4,13 +4,7 @@ import Link from '@docusaurus/Link';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import styles from './component.module.css';
 import { StyledEngineProvider } from '@mui/material/styles';
-
-const Related = (props) => {
-  return (
-  <Grid item><Link to={props.link}><Typography style={{
-    fontFamily: 'IBM Plex Sans'
-  }}>{props.value}</Typography></Link></Grid>)
-}
+import { Related } from './Related';
 
 export default function Type(props) {
   return (
@@ -33,7 +27,7 @@ export default function Type(props) {
       ) : (<div />)}
       {(props.data.type !== undefined) ? (
         <Grid item xs={9} sm={10} md={10}>
-          <code>{props.data.type}</code>
+          <Link to={'/docs/reference/types#' + props.data.type}><code>{props.data.type}</code></Link>
         </Grid>
       ) : (<div />)}
       {(props.data.type !== undefined) ? (
@@ -70,9 +64,6 @@ export default function Type(props) {
       </Grid>
       <Grid item xs={9} sm={10} md={10}>
         <Grid container direction="row" spacing={3}>
-          <Grid item>
-            <Related value={props.data.type} link={'/docs/reference/types#'+props.data.type} />
-          </Grid>
           {props.data.related.map((r,i) => <Related key={'rel'+i} value={r.keyword} link={r.link}></Related>)}
         </Grid>
       </Grid>
