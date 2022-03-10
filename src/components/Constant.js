@@ -9,7 +9,7 @@ import { Related } from './Related';
 export default function Type(props) {
   return (
     <StyledEngineProvider injectFirst>
-    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={1} style={{ marginBottom: '60px', maxWidth:'820px' }}>
+    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={1} style={{ marginBottom: '60px' }}>
       <Grid item xs={12} style={{ marginBottom: '18px' }}>
         <Typography style={{
           fontFamily: 'IBM Plex Sans'

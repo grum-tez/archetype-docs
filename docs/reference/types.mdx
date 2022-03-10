@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Types
@@ -9,156 +9,176 @@ hide_table_of_contents: true
 
 import Type from "@site/src/components/Type.js";
 import { types } from "./types.js";
+import { MDXProvider } from "@mdx-js/react";
+import NoH2 from "@site/src/components/NoH2.js";
+import H3 from "@site/src/components/H3.js";
 
-### `address`
+<MDXProvider components={{ h2: NoH2 }}>
+
+## `A ... C`
+
+<H3 value="address" />
 
 <Type data={types["address"]} />
 
-### `asset`
+<H3 value="asset" />
 
 <Type data={types["asset"]} />
 
-### `big_map`
+<H3 value="big_map" />
 
 <Type data={types["big_map"]} />
 
-### `bls12_381_fr`
+<H3 value="bls12_381_fr" />
 
 <Type data={types["bls12_381_fr"]} />
 
-### `bls12_381_g1`
+<H3 value="bls12_381_g1" />
 
 <Type data={types["bls12_381_g1"]} />
 
-### `bls12_381_g2`
+<H3 value="bls12_381_g2" />
 
 <Type data={types["bls12_381_g2"]} />
 
-### `bool`
+<H3 value="bool" />
 
 <Type data={types["bool"]} />
 
-### `bytes`
+<H3 value="bytes" />
 
 <Type data={types["bytes"]} />
 
-### `chain_id`
+<H3 value="chain_id" />
 
 <Type data={types["chain_id"]} />
 
-### `chest`
+<H3 value="chest" />
 
 <Type data={types["chest"]} />
 
-### `chest_key`
+<H3 value="chest_key" />
 
 <Type data={types["chest_key"]} />
 
-### `contract`
+<H3 value="contract" />
 
 <Type data={types["contract"]} />
 
-### `date`
+## `D ... C`
+
+<H3 value="date" />
 
 <Type data={types["date"]} />
 
-### `duration`
+<H3 value="duration" />
 
 <Type data={types["duration"]} />
 
-### `enum`
+<H3 value="enum" />
 
 <Type data={types["enum"]} />
 
-### `event`
+<H3 value="event" />
 
 <Type data={types["event"]} />
 
-### `int`
+## `G ... H`
+
+<H3 value="int" />
 
 <Type data={types["int"]} />
 
-### `key`
+## `J ... L`
+
+<H3 value="key" />
 
 <Type data={types["key"]} />
 
-### `key_hash`
+<H3 value="key_hash" />
 
 <Type data={types["key_hash"]} />
 
-### `lambda`
+<H3 value="lambda" />
 
 <Type data={types["lambda"]} />
 
-### `list<T>`
+<H3 value="list<T>" />
 
 <Type data={types["list"]} />
 
-### `map<K, V>`
+## `M ... O`
+
+<H3 value="map<K, V>" />
 
 <Type data={types["map"]} />
 
-### `nat`
+<H3 value="nat" />
 
 <Type data={types["nat"]} />
 
-### `never`
+<H3 value="never" />
 
 <Type data={types["never"]} />
 
-### `operation`
+<H3 value="operation" />
 
 <Type data={types["operation"]} />
 
-### `option<T>`
+<H3 value="option<T>" />
 
 <Type data={types["option"]} />
 
-### `or<T1, T2>`
+<H3 value="or<T1, T2>" />
 
 <Type data={types["or"]} />
 
-### `rational`
+## `P ... R`
+
+<H3 value="rational" />
 
 <Type data={types["rational"]} />
 
-### `record`
+<H3 value="record" />
 
 <Type data={types["record"]} />
 
-### `sapling_state`
+## `S ... U`
+
+<H3 value="sapling_state" />
 
 <Type data={types["sapling_state"]} />
 
-### `sapling_transaction`
+<H3 value="sapling_transaction" />
 
 <Type data={types["sapling_transaction"]} />
 
-### `set`
+<H3 value="set" />
 
 <Type data={types["set"]} />
 
-### `signature`
+<H3 value="signature" />
 
 <Type data={types["signature"]} />
 
-### `string`
+<H3 value="string" />
 
 <Type data={types["string"]} />
 
-### `tez`
+<H3 value="tez" />
 
 <Type data={types["tez"]} />
 
-### `ticket`
+<H3 value="ticket" />
 
 <Type data={types["ticket"]} />
 
-### `tuple`
+<H3 value="tuple" />
 
 <Type data={types["tuple"]} />
 
-### `unit`
+<H3 value="unit" />
 
 <Type data={types["unit"]} />
 
+</MDXProvider>

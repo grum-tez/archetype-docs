@@ -9,10 +9,15 @@ import { MichelsonType } from './MichelsonType';
 import { Related } from './Related';
 
 const TypeExample = (props) => {
-  return (
-    <Grid item style={{ maxWidth: '700px' }}>
+  return (props.value.length < 100 ? (
+    <Grid item>
       <code>{props.value}</code>
-    </Grid>
+    </Grid>) : (
+    <Grid item style={{ overflowX: 'scroll' }}>
+      <pre>
+        <code>{props.value}</code>
+      </pre>
+    </Grid>)
   )
 }
 
@@ -79,7 +84,7 @@ const Parameter = (props) => {
 export default function Type(props) {
   return (
     <StyledEngineProvider injectFirst>
-    <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginBottom: '60px', maxWidth:'820px' }}>
+    <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginBottom: '60px' }}>
       <Grid item xs={12} style={{ marginBottom: '18px' }}>
         <Typography style={{
           fontFamily: 'IBM Plex Sans'

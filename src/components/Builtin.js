@@ -70,7 +70,7 @@ const Returns = (props) => {
 
 const Info = (props) => {
   return (
-    <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ maxWidth:'820px', marginTop: '12px' }}>
+    <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginTop: '12px' }}>
 
     <Grid item xs={3} sm={2} md={2}>
       <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
@@ -99,7 +99,7 @@ const Info = (props) => {
 export default function Builtin(props) {
   return (
     <StyledEngineProvider injectFirst>
-    <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginBottom: '60px', maxWidth:'820px' }}>
+    <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginBottom: '60px' }}>
       <Grid item xs={12} >
         <Typography style={{
           fontFamily: 'IBM Plex Sans',
