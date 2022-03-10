@@ -53,20 +53,22 @@ export default function Type(props) {
           >{props.data.michelson}</Button></Link>
         </Grid>
       ) : (<div />)}
-      {(props.data.michelson !== undefined) ? (
+      {(props.data.related !== undefined && props.data.related.length > 0) ? (
         <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
       ) : (<div />)}
 
-      <Grid item xs={3} sm={2} md={2}>
-        <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
-          Related
-        </Typography>
-      </Grid>
-      <Grid item xs={9} sm={10} md={10}>
-        <Grid container direction="row" spacing={3}>
-          {props.data.related.map((r,i) => <Related key={'rel'+i} value={r.keyword} link={r.link}></Related>)}
-        </Grid>
-      </Grid>
+      {(props.data.related !== undefined && props.data.related.length > 0) ? (
+        <Grid item xs={3} sm={2} md={2}>
+          <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
+            Related
+          </Typography>
+        </Grid>) : (<div/>)}
+      {(props.data.related !== undefined && props.data.related.length > 0) ? (
+        <Grid item xs={9} sm={10} md={10}>
+          <Grid container direction="row" spacing={3}>
+            {props.data.related.map((r,i) => <Related key={'rel'+i} value={r.keyword} link={r.link}></Related>)}
+          </Grid>
+        </Grid>) : (<div/>)}
 
     </Grid>
     </StyledEngineProvider>
