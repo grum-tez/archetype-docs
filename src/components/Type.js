@@ -13,7 +13,7 @@ const TypeExample = (props) => {
     <Grid item>
       <code>{props.value}</code>
     </Grid>) : (
-    <Grid item style={{ overflowX: 'scroll' }}>
+    <Grid item style={{ overflowX: 'auto' }}>
       <pre>
         <code>{props.value}</code>
       </pre>
