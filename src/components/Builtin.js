@@ -72,10 +72,10 @@ const Fails = (props) => {
   return ((props.fails === undefined || props.fails.length === 0) ? (
     <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', fontStyle: 'italic'}}>does not fail</Typography>
   ) : (
-    <Grid container spacing={2}>
+    <Grid container>
       { (props.fails.map((f,i) => {
         return (
-          <Grid container>
+          <Grid container style={{ marginBottom: (props.fails.length > 1 ? '4px' : '0px') }}>
           <Grid key={"f"+i} item xs={2}>
             <Typography><code>{f.keyword}</code></Typography>
           </Grid>
