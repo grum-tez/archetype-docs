@@ -68,19 +68,57 @@ const Returns = (props) => {
   )
 }
 
+const Fails = (props) => {
+  return ((props.fails === undefined || props.fails.length === 0) ? (
+    <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', fontStyle: 'italic'}}>does not fail</Typography>
+  ) : (
+    <Grid container>
+      { (props.fails.map((f,i) => {
+        return (
+          <Grid container>
+          <Grid key={"f"+i} item xs={2}>
+            <Typography><code>{f.keyword}</code></Typography>
+          </Grid>
+          <Grid key={"f"+i} item xs={10}>
+            <Typography style={{
+              fontFamily: 'IBM Plex Sans'
+              }}>{f.desc}</Typography>
+          </Grid>
+          </Grid>
+        )
+      }))}
+    </Grid>
+  ))
+}
+
 const Info = (props) => {
   return (
     <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginTop: '12px' }}>
 
     <Grid item xs={3} sm={2} md={2}>
       <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
-        Michelson
+        Fails with
       </Typography>
     </Grid>
     <Grid item xs={9} sm={10} md={10}>
-      <MichelsonType michelson={props.michelson} michelson_ref_url={props.michelson_ref_url} />
+      <Fails fails={props.fails} />
     </Grid>
     <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
+    {(props.michelson !== undefined) ? (
+      <Grid item xs={3} sm={2} md={2}>
+        <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
+          Michelson
+        </Typography>
+      </Grid>
+    ) : (<div />)}
+    {(props.michelson !== undefined) ? (
+      <Grid item xs={9} sm={10} md={10}>
+        <MichelsonType michelson={props.michelson} michelson_ref_url={props.michelson_ref_url} />
+      </Grid>
+    ) : (<div />)}
+    {(props.michelson !== undefined) ? (
+      <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
+    ) : (<div />)}
 
     <Grid item xs={3} sm={2} md={2}>
       <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
@@ -110,7 +148,7 @@ export default function Builtin(props) {
       </Grid>
       {(props.data.parameters !== undefined) ? (
         <Grid item>
-          <h4 style={{ marginBottom: '0px', color: 'grey', fontWeight: 'normal' }}>Parameters</h4>
+          <h4 style={{ marginBottom: '0px', color: 'grey', fontWeight: 'normal' }}>{ (props.data.parameters.length > 1) ? 'Parameters' : 'Parameter'}</h4>
         </Grid>
         ) : (<div />)
       }
@@ -125,7 +163,7 @@ export default function Builtin(props) {
       </Grid>
       <Returns type={props.data.returns.type} desc={props.data.returns.desc} />
       <Grid item xs={12}>
-        <Info michelson={props.data.michelson} michelson_ref_url={props.data.michelson_ref_url} related={props.data.related} />
+        <Info fails={props.data.fails} michelson={props.data.michelson} michelson_ref_url={props.data.michelson_ref_url} related={props.data.related} />
       </Grid>
     </Grid>
     </StyledEngineProvider>

@@ -1,4 +1,5 @@
 import React from "react"
+import OptGetDesc from "./opt_get_desc.mdx"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -30,6 +31,30 @@ export const builtins = {
     michelson_ref_url: michelson_ref_base_url + '#instr-CHECK_SIGNATURE',
     related: [
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+    ]
+  },
+  opt_get: {
+    desc: <OptGetDesc />,
+    parameters: [
+      {
+        type: 'option<T>',
+        alias: 'o',
+        desc: 'Optional value to extract some value from.'
+      },
+    ],
+    returns: {
+      type : 'T',
+      desc: <div>Returns <code>v</code> of type <code>T</code> when <code>o</code> is <code>some(v)</code></div>
+    },
+    fails: [
+      {
+        keyword: '"NotFound"',
+        desc: <div>when <code>o</code> is <code>none</code></div>
+      }
+    ],
+    related: [
+      { keyword: 'Option', link: '/docs/language-basics/composite' },
+      { keyword: 'issome', link: '#issome' },
     ]
   }
 }
