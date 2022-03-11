@@ -72,7 +72,7 @@ const Fails = (props) => {
   return ((props.fails === undefined || props.fails.length === 0) ? (
     <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', fontStyle: 'italic'}}>does not fail</Typography>
   ) : (
-    <Grid container>
+    <Grid container spacing={2}>
       { (props.fails.map((f,i) => {
         return (
           <Grid container>
