@@ -40,3 +40,6 @@ import { constants } from './constants.js';
 
 <Constant data={constants['transferred']} />
 
+### `total_voting_power`
+
+<Constant data={constants['total_voting_power']} />

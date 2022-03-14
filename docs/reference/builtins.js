@@ -4,7 +4,7 @@ import OptGetDesc from "../../src/components/opt_get_desc.mdx"
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
 export const builtins = {
-  template : {
+  template: {
     desc: <div>TODO</div>,
     parameters: [
       {
@@ -14,7 +14,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'TODO',
+      type: 'TODO',
       desc: <div></div>
     },
     michelson: "TODO",
@@ -23,7 +23,7 @@ export const builtins = {
       { keyword: 'TODO', link: '/docs/language-basics/TODO' },
     ]
   },
-  callview : {
+  callview: {
     desc: <div>Call an on-chain view</div>,
     parameters: [
       {
@@ -43,7 +43,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'option<T>',
+      type: 'option<T>',
       desc: <div>none if problem, some(val) with val as returned value</div>
     },
     michelson: "VIEW",
@@ -52,7 +52,7 @@ export const builtins = {
       { keyword: 'view', link: '/docs/language-basics/TODO' },
     ]
   },
-  mkoperation : {
+  mkoperation: {
     desc: <div>Make an operation</div>,
     parameters: [
       {
@@ -72,7 +72,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'operation',
+      type: 'operation',
       desc: <div>The generated operation</div>
     },
     michelson: "TRANSFER_TOKENS",
@@ -81,7 +81,7 @@ export const builtins = {
       { keyword: 'operations', link: '/docs/language-basics/operation' },
     ]
   },
-  blake2b : {
+  blake2b: {
     desc: <div>Hash bytes value with blake2b algorithm.</div>,
     parameters: [
       {
@@ -91,7 +91,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'bytes',
+      type: 'bytes',
       desc: <div>Hash of b bytes</div>
     },
     michelson: "BLAKE2B",
@@ -100,7 +100,7 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  sha256 : {
+  sha256: {
     desc: <div>Hash bytes value with sha256 algorithm.</div>,
     parameters: [
       {
@@ -110,7 +110,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'bytes',
+      type: 'bytes',
       desc: <div>Hash of b bytes</div>
     },
     michelson: "SHA256",
@@ -119,7 +119,7 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  sha512 : {
+  sha512: {
     desc: <div>Hash bytes value with sha512 algorithm.</div>,
     parameters: [
       {
@@ -129,7 +129,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'bytes',
+      type: 'bytes',
       desc: <div>Hash of b bytes</div>
     },
     michelson: "SHA512",
@@ -138,7 +138,7 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  sha3 : {
+  sha3: {
     desc: <div>Hash bytes value with sha3 algorithm.</div>,
     parameters: [
       {
@@ -148,7 +148,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'bytes',
+      type: 'bytes',
       desc: <div>Hash of b bytes</div>
     },
     michelson: "SHA3",
@@ -157,7 +157,7 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  keccak : {
+  keccak: {
     desc: <div>Hash bytes value with keccak algorithm.</div>,
     parameters: [
       {
@@ -167,7 +167,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'bytes',
+      type: 'bytes',
       desc: <div>Hash of b bytes</div>
     },
     michelson: "KECCAK",
@@ -176,7 +176,7 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  hash_key : {
+  hash_key: {
     desc: <div>Convert key to key_hash</div>,
     parameters: [
       {
@@ -186,7 +186,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'key_hash',
+      type: 'key_hash',
       desc: <div>The key_hash result</div>
     },
     michelson: "HASH_KEY",
@@ -205,7 +205,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'contract<unit>',
+      type: 'contract<unit>',
       desc: <div>The extracted contract unit</div>
     },
     michelson: "IMPLICIT_ACCOUNT",
@@ -214,7 +214,7 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  key_address : {
+  key_address: {
     desc: <div>Convert a key to an address</div>,
     parameters: [
       {
@@ -224,14 +224,14 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'address',
+      type: 'address',
       desc: <div>The result address</div>
     },
     related: [
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  contract_address : {
+  contract_address: {
     desc: <div>Extract address from a contract</div>,
     parameters: [
       {
@@ -241,14 +241,14 @@ export const builtins = {
       }
     ],
     returns: {
-      type : 'address',
+      type: 'address',
       desc: <div>The extracted address</div>
     },
     related: [
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  check_signature : {
+  check_signature: {
     desc: <div>Checks whether signature <code>s</code> is obtained by signing sequence of bytes <code>b</code> with account public key <code>k</code>.</div>,
     parameters: [
       {
@@ -268,13 +268,49 @@ export const builtins = {
       },
     ],
     returns: {
-      type : 'bool',
+      type: 'bool',
       desc: <div>Returns <code>true</code> if <code>s</code> is obtained by signing <code>b</code> with <code>k</code>, <code>false</code> otherwise.</div>
     },
     michelson: "CHECK_SIGNATURE",
     michelson_ref_url: michelson_ref_base_url + '#instr-CHECK_SIGNATURE',
     related: [
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+    ]
+  },
+  contract_address: {
+    desc: <div>Extract address from a contract</div>,
+    parameters: [
+      {
+        type: 'contract',
+        alias: 'c',
+        desc: <div>The contract to be extracted</div>
+      }
+    ],
+    returns: {
+      type: 'address',
+      desc: <div>The extracted address</div>
+    },
+    related: [
+      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+    ]
+  },
+  voting_power: {
+    desc: <div>Get the voting power from a key_hash</div>,
+    parameters: [
+      {
+        type: 'key_hash',
+        alias: 'k',
+        desc: <div>The from key_hash</div>
+      }
+    ],
+    returns: {
+      type: 'nat',
+      desc: <div>The result voting power</div>
+    },
+    michelson: "VOTING_POWER",
+    michelson_ref_url: michelson_ref_base_url + '#instr-VOTING_POWER',
+    related: [
+      { keyword: 'Protocol', link: '/docs/language-basics/protocol' },
     ]
   },
   opt_get: {
@@ -287,7 +323,7 @@ export const builtins = {
       },
     ],
     returns: {
-      type : 'T',
+      type: 'T',
       desc: <div>Returns <code>v</code> of type <code>T</code> when <code>o</code> is <code>some(v)</code></div>
     },
     fails: [
