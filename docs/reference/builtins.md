@@ -59,6 +59,22 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['voting_power']} />
 
+### `sapling_empty_state(k : key_hash)`
+
+<Builtin data={builtins['sapling_empty_state']} />
+
+### `sapling_verify_update(k : key_hash)`
+
+<Builtin data={builtins['sapling_verify_update']} />
+
+### `pairing_check(l : list<bls12_381_g1 * bls12_381_g2>)`
+
+<Builtin data={builtins['pairing_check']} />
+
+### `open_chest(k : chest_key, b : chest, t : nat)`
+
+<Builtin data={builtins['open_chest']} />
+
 ### `opt_get(o : option<T>)`
 
 <Builtin data={builtins['opt_get']} />

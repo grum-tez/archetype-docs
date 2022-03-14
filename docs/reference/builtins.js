@@ -313,6 +313,92 @@ export const builtins = {
       { keyword: 'Protocol', link: '/docs/language-basics/protocol' },
     ]
   },
+  sapling_empty_state: {
+    desc: <div></div>,
+    parameters: [
+      {
+        type: 'nat',
+        alias: 'n',
+        desc: <div>The memo size</div>
+      }
+    ],
+    returns: {
+      type: 'nat',
+      desc: <div>The result voting power</div>
+    },
+    michelson: "SAPLING_EMPTY_STATE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-SAPLING_EMPTY_STATE',
+    related: [
+      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+    ]
+  },
+  sapling_verify_update: {
+    desc: <div></div>,
+    parameters: [
+      {
+        type: 'nat',
+        alias: 'n',
+        desc: <div>The memo size</div>
+      }
+    ],
+    returns: {
+      type: 'nat',
+      desc: <div>The result voting power</div>
+    },
+    michelson: "SAPLING_VERIFY_UPDATE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-SAPLING_VERIFY_UPDATE',
+    related: [
+      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+    ]
+  },
+  pairing_check: {
+    desc: <div></div>,
+    parameters: [
+      {
+        type: 'list<bls12_381_g1 * bls12_381_g2>',
+        alias: 'n',
+        desc: <div>The memo size</div>
+      }
+    ],
+    returns: {
+      type: 'bool',
+      desc: <div>The result</div>
+    },
+    michelson: "PAIRING_CHECK",
+    michelson_ref_url: michelson_ref_base_url + '#instr-PAIRING_CHECK',
+    related: [
+      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+    ]
+  },
+  open_chest: {
+    desc: <div></div>,
+    parameters: [
+      {
+        type: 'chest_key',
+        alias: 'k',
+        desc: <div>The key of the chest</div>
+      },
+      {
+        type: 'chest',
+        alias: 'c',
+        desc: <div>The chest</div>
+      },
+      {
+        type: 'nat',
+        alias: 't',
+        desc: <div>Time</div>
+      }
+    ],
+    returns: {
+      type: 'bool',
+      desc: <div>The result</div>
+    },
+    michelson: "OPEN_CHEST",
+    michelson_ref_url: michelson_ref_base_url + '#instr-OPEN_CHEST',
+    related: [
+      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+    ]
+  },
   opt_get: {
     desc: <OptGetDesc />,
     parameters: [
