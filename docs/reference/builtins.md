@@ -55,7 +55,7 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['check_signature']} />
 
-### `voting_power(a : address)`
+### `voting_power(k : key_hash)`
 
 <Builtin data={builtins['voting_power']} />
 
