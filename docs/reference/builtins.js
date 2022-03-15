@@ -314,7 +314,7 @@ export const builtins = {
     ]
   },
   sapling_empty_state: {
-    desc: <div></div>,
+    desc: <div>Create a sapling state with the specified memo size.</div>,
     parameters: [
       {
         type: 'nat',
@@ -323,8 +323,8 @@ export const builtins = {
       }
     ],
     returns: {
-      type: 'nat',
-      desc: <div>The result voting power</div>
+      type: 'sapling_state(n)',
+      desc: <div>The fresh sapling state</div>
     },
     michelson: "SAPLING_EMPTY_STATE",
     michelson_ref_url: michelson_ref_base_url + '#instr-SAPLING_EMPTY_STATE',
@@ -333,17 +333,22 @@ export const builtins = {
     ]
   },
   sapling_verify_update: {
-    desc: <div></div>,
+    desc: <div>Apply sapling transaction on sapling state</div>,
     parameters: [
       {
-        type: 'nat',
-        alias: 'n',
-        desc: <div>The memo size</div>
+        type: 'sapling_state(n)',
+        alias: 's',
+        desc: <div>The sapling state</div>
+      },
+      {
+        type: 'sapling_transaction(n)',
+        alias: 't',
+        desc: <div>The transaction</div>
       }
     ],
     returns: {
-      type: 'nat',
-      desc: <div>The result voting power</div>
+      type: 'option<int * sapling_state(n)>',
+      desc: <div>The result</div>
     },
     michelson: "SAPLING_VERIFY_UPDATE",
     michelson_ref_url: michelson_ref_base_url + '#instr-SAPLING_VERIFY_UPDATE',
@@ -357,7 +362,7 @@ export const builtins = {
       {
         type: 'list<bls12_381_g1 * bls12_381_g2>',
         alias: 'n',
-        desc: <div>The memo size</div>
+        desc: <div>List of pairings</div>
       }
     ],
     returns: {

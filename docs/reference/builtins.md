@@ -63,7 +63,7 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['sapling_empty_state']} />
 
-### `sapling_verify_update(k : key_hash)`
+### `sapling_verify_update(s : sapling_state(n), t : sapling_transaction(n))`
 
 <Builtin data={builtins['sapling_verify_update']} />
 
@@ -71,7 +71,7 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['pairing_check']} />
 
-### `open_chest(k : chest_key, b : chest, t : nat)`
+### `open_chest(k : chest_key, c : chest, t : nat)`
 
 <Builtin data={builtins['open_chest']} />
 
