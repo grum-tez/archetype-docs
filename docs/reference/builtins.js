@@ -313,6 +313,102 @@ export const builtins = {
       { keyword: 'Protocol', link: '/docs/language-basics/protocol' },
     ]
   },
+  create_ticket: {
+    desc: <div>Create a ticket from a value typed T and an amount</div>,
+    parameters: [
+      {
+        type: 'T',
+        alias: 's',
+        desc: <div>The information of the ticket</div>
+      },
+      {
+        type: 'n',
+        alias: 'nat',
+        desc: <div>The amount of the ticket</div>
+      }
+    ],
+    returns: {
+      type: 'ticket<T>',
+      desc: <div>The result ticket</div>
+    },
+    michelson: "TICKET",
+    michelson_ref_url: michelson_ref_base_url + '#instr-TICKET',
+    related: [
+      { keyword: 'Tickets', link: '/docs/language-basics/ticket' },
+    ]
+  },
+  read_ticket: {
+    desc: <div>Read a ticket to get the origin contract, the value and the amount</div>,
+    parameters: [
+      {
+        type: 'ticket<T>',
+        alias: 't',
+        desc: <div>The ticket to read</div>
+      }
+    ],
+    returns: {
+      type: 'address * T * nat',
+      desc: <div>The address of the origin contract, the value and the amount</div>
+    },
+    michelson: "READ_TICKET",
+    michelson_ref_url: michelson_ref_base_url + '#instr-READ_TICKET',
+    related: [
+      { keyword: 'Tickets', link: '/docs/language-basics/ticket' },
+    ]
+  },
+  split_ticket: {
+    desc: <div>Split ticket in two amounts</div>,
+    parameters: [
+      {
+        type: 'ticket<T>',
+        alias: 't',
+        desc: <div>The ticket</div>
+      },
+      {
+        type: 'nat',
+        alias: 'n1',
+        desc: <div>The first amount</div>
+      },
+      {
+        type: 'nat',
+        alias: 'n2',
+        desc: <div>The second amount</div>
+      }
+    ],
+    returns: {
+      type: 'option<ticket<T> * ticket<T>>',
+      desc: <div>The splited tickets</div>
+    },
+    michelson: "SPLIT_TICKET",
+    michelson_ref_url: michelson_ref_base_url + '#instr-SPLIT_TICKET',
+    related: [
+      { keyword: 'Tickets', link: '/docs/language-basics/ticket' },
+    ]
+  },
+  join_tickets: {
+    desc: <div>Join two compatible tickets</div>,
+    parameters: [
+      {
+        type: 'ticket<T>',
+        alias: 't1',
+        desc: <div>The first ticket to join</div>
+      },
+      {
+        type: 'ticket<T>',
+        alias: 't2',
+        desc: <div>The second ticket to join</div>
+      }
+    ],
+    returns: {
+      type: 'option<ticket<T>>',
+      desc: <div>The joined ticket</div>
+    },
+    michelson: "JOIN_TICKETS",
+    michelson_ref_url: michelson_ref_base_url + '#instr-JOIN_TICKETS',
+    related: [
+      { keyword: 'Tickets', link: '/docs/language-basics/ticket' },
+    ]
+  },
   sapling_empty_state: {
     desc: <div>Create a sapling state with the specified memo size.</div>,
     parameters: [

@@ -59,6 +59,22 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['voting_power']} />
 
+### `create_ticket(s : T, n : nat)`
+
+<Builtin data={builtins['create_ticket']} />
+
+### `read_ticket(t : ticket<T>)`
+
+<Builtin data={builtins['read_ticket']} />
+
+### `split_ticket(t : ticket<T>, n1 : nat, n2 : nat)`
+
+<Builtin data={builtins['split_ticket']} />
+
+### `join_tickets(t1 : ticket<T>, t2 : ticket<T>)`
+
+<Builtin data={builtins['join_tickets']} />
+
 ### `sapling_empty_state(k : key_hash)`
 
 <Builtin data={builtins['sapling_empty_state']} />
