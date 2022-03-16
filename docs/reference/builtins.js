@@ -24,7 +24,7 @@ export const builtins = {
     ]
   },
   callview: {
-    desc: <div>Call an on-chain view</div>,
+    desc: <div>Calls an on-chain view</div>,
     parameters: [
       {
         type: 'address',
@@ -53,12 +53,12 @@ export const builtins = {
     ]
   },
   mkoperation: {
-    desc: <div>Make an operation</div>,
+    desc: <div>Makes an operation.</div>,
     parameters: [
       {
         type: 'tez',
         alias: 'a',
-        desc: <div>The amount of tez</div>
+        desc: <div>The amount of tez sent with the operation</div>
       },
       {
         type: 'contract',
@@ -82,17 +82,17 @@ export const builtins = {
     ]
   },
   blake2b: {
-    desc: <div>Hash bytes value with blake2b algorithm.</div>,
+    desc: <div>Hashes bytes value with <a href="https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29" target="_blank">blake2b</a> algorithm.</div>,
     parameters: [
       {
         type: 'bytes',
         alias: 'b',
-        desc: <div>Message to be hashed</div>
+        desc: <div>Array of byte to hash</div>
       }
     ],
     returns: {
       type: 'bytes',
-      desc: <div>Hash of b bytes</div>
+      desc: <div>Hash of bytes <code>b</code></div>
     },
     michelson: "BLAKE2B",
     michelson_ref_url: michelson_ref_base_url + '#instr-BLAKE2B',
@@ -158,17 +158,17 @@ export const builtins = {
     ]
   },
   keccak: {
-    desc: <div>Hash bytes value with keccak algorithm.</div>,
+    desc: <div>Hashes bytes value with <a href="https://en.wikipedia.org/wiki/SHA-3" target="_blank">keccak</a> algorithm.</div>,
     parameters: [
       {
         type: 'bytes',
         alias: 'b',
-        desc: <div>Message to be hashed</div>
+        desc: <div>Array of byte to hash</div>
       }
     ],
     returns: {
       type: 'bytes',
-      desc: <div>Hash of b bytes</div>
+      desc: <div>Hash of <code>b</code></div>
     },
     michelson: "KECCAK",
     michelson_ref_url: michelson_ref_base_url + '#instr-KECCAK',
@@ -177,17 +177,17 @@ export const builtins = {
     ]
   },
   hash_key: {
-    desc: <div>Convert key to key_hash</div>,
+    desc: <div>Converts key to key_hash.</div>,
     parameters: [
       {
         type: 'key',
         alias: 'k',
-        desc: <div>The key to convert</div>
+        desc: <div>key to hash</div>
       }
     ],
     returns: {
       type: 'key_hash',
-      desc: <div>The key_hash result</div>
+      desc: <div>hashed value of <code>k</code></div>
     },
     michelson: "HASH_KEY",
     michelson_ref_url: michelson_ref_base_url + '#instr-HASH_KEY',
@@ -196,12 +196,12 @@ export const builtins = {
     ]
   },
   implicit_account: {
-    desc: <div>Convert a key_hash to a contract</div>,
+    desc: <div>Converts key_hash to contract.</div>,
     parameters: [
       {
         type: 'key_hash',
         alias: 'pkh',
-        desc: <div>The key hash to convert</div>
+        desc: <div>key hash to convert</div>
       }
     ],
     returns: {
@@ -232,17 +232,17 @@ export const builtins = {
     ]
   },
   contract_address: {
-    desc: <div>Extract address from a contract</div>,
+    desc: <div>Gets the address of a contract.</div>,
     parameters: [
       {
         type: 'contract',
         alias: 'c',
-        desc: <div>The contract to be extracted</div>
+        desc: <div>Contract to get the address of</div>
       }
     ],
     returns: {
       type: 'address',
-      desc: <div>The extracted address</div>
+      desc: <div>Address of <code>c</code></div>
     },
     related: [
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
@@ -277,30 +277,13 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  contract_address: {
-    desc: <div>Extract address from a contract</div>,
-    parameters: [
-      {
-        type: 'contract',
-        alias: 'c',
-        desc: <div>The contract to be extracted</div>
-      }
-    ],
-    returns: {
-      type: 'address',
-      desc: <div>The extracted address</div>
-    },
-    related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
-    ]
-  },
   voting_power: {
-    desc: <div>Get the voting power from a key_hash</div>,
+    desc: <div>Gets the voting power from a <code>key_hash</code> value.</div>,
     parameters: [
       {
         type: 'key_hash',
         alias: 'k',
-        desc: <div>The from key_hash</div>
+        desc: <div>Value to get the voting power of</div>
       }
     ],
     returns: {
@@ -314,7 +297,7 @@ export const builtins = {
     ]
   },
   create_ticket: {
-    desc: <div>Create a ticket from a value typed T and an amount</div>,
+    desc: <div>Creates a ticket from a value typed T and an amount.</div>,
     parameters: [
       {
         type: 'T',
@@ -329,7 +312,7 @@ export const builtins = {
     ],
     returns: {
       type: 'ticket<T>',
-      desc: <div>The result ticket</div>
+      desc: <div>Created ticket</div>
     },
     michelson: "TICKET",
     michelson_ref_url: michelson_ref_base_url + '#instr-TICKET',
@@ -338,17 +321,17 @@ export const builtins = {
     ]
   },
   read_ticket: {
-    desc: <div>Read a ticket to get the origin contract, the value and the amount</div>,
+    desc: <div>Reads ticket's origin contract, value and amount.</div>,
     parameters: [
       {
         type: 'ticket<T>',
         alias: 't',
-        desc: <div>The ticket to read</div>
+        desc: <div>Ticket to read</div>
       }
     ],
     returns: {
       type: 'address * T * nat',
-      desc: <div>The address of the origin contract, the value and the amount</div>
+      desc: <div>Tuple of ticket's address of origin contract, value and the amount</div>
     },
     michelson: "READ_TICKET",
     michelson_ref_url: michelson_ref_base_url + '#instr-READ_TICKET',
@@ -357,27 +340,27 @@ export const builtins = {
     ]
   },
   split_ticket: {
-    desc: <div>Split ticket in two amounts</div>,
+    desc: <div>Splits ticket in two new tickets.</div>,
     parameters: [
       {
         type: 'ticket<T>',
         alias: 't',
-        desc: <div>The ticket</div>
+        desc: <div>Ticket to split</div>
       },
       {
         type: 'nat',
         alias: 'n1',
-        desc: <div>The first amount</div>
+        desc: <div>Amount of first created ticket</div>
       },
       {
         type: 'nat',
         alias: 'n2',
-        desc: <div>The second amount</div>
+        desc: <div>Amount of second created ticket</div>
       }
     ],
     returns: {
       type: 'option<ticket<T> * ticket<T>>',
-      desc: <div>The splited tickets</div>
+      desc: <div>Option of pair of created tickets, respectively with <code>n1</code> and <code>n2</code> values.</div>
     },
     michelson: "SPLIT_TICKET",
     michelson_ref_url: michelson_ref_base_url + '#instr-SPLIT_TICKET',
@@ -386,22 +369,22 @@ export const builtins = {
     ]
   },
   join_tickets: {
-    desc: <div>Join two compatible tickets</div>,
+    desc: <div>Joins two compatible tickets (same value, same origin contract).</div>,
     parameters: [
       {
         type: 'ticket<T>',
         alias: 't1',
-        desc: <div>The first ticket to join</div>
+        desc: <div>First ticket to join</div>
       },
       {
         type: 'ticket<T>',
         alias: 't2',
-        desc: <div>The second ticket to join</div>
+        desc: <div>Second ticket to join</div>
       }
     ],
     returns: {
       type: 'option<ticket<T>>',
-      desc: <div>The joined ticket</div>
+      desc: <div>Joined ticket</div>
     },
     michelson: "JOIN_TICKETS",
     michelson_ref_url: michelson_ref_base_url + '#instr-JOIN_TICKETS',
@@ -410,12 +393,12 @@ export const builtins = {
     ]
   },
   sapling_empty_state: {
-    desc: <div>Create a sapling state with the specified memo size.</div>,
+    desc: <div>Creates a sapling state with the specified memo size. The memo is an arbitrary string message encrypted and available to anyone owning the outgoing viewing key.</div>,
     parameters: [
       {
         type: 'nat',
         alias: 'n',
-        desc: <div>The memo size</div>
+        desc: <div>Memo size.</div>
       }
     ],
     returns: {
@@ -429,17 +412,17 @@ export const builtins = {
     ]
   },
   sapling_verify_update: {
-    desc: <div>Apply sapling transaction on sapling state</div>,
+    desc: <div>Applies sapling transaction on sapling state.</div>,
     parameters: [
       {
         type: 'sapling_state(n)',
         alias: 's',
-        desc: <div>The sapling state</div>
+        desc: <div>Sapling state</div>
       },
       {
         type: 'sapling_transaction(n)',
         alias: 't',
-        desc: <div>The transaction</div>
+        desc: <div>Sapling transaction</div>
       }
     ],
     returns: {
@@ -477,17 +460,17 @@ export const builtins = {
       {
         type: 'chest_key',
         alias: 'k',
-        desc: <div>The key of the chest</div>
+        desc: <div>Chest key</div>
       },
       {
         type: 'chest',
         alias: 'c',
-        desc: <div>The chest</div>
+        desc: <div>Chest</div>
       },
       {
         type: 'nat',
         alias: 't',
-        desc: <div>Time</div>
+        desc: <div>Number of operations ("Time")</div>
       }
     ],
     returns: {

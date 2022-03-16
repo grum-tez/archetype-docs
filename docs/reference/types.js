@@ -407,6 +407,9 @@ export const types = {
   {
     desc: 'TODO',
     examples: [],
+    parameters: [
+      { keyword: 'T', type: 'any type', desc: 'type of the value held by the ticket' },
+    ],
     tags: [ PASSABLE, STORABLE ],
     michelson: "ticket",
     michelson_ref_url: michelson_ref_base_url + '/#type-ticket',

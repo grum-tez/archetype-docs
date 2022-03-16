@@ -65,7 +65,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["contract"]} />
 
-## `D ... C`
+## `D ... F`
 
 <H3 value="date" />
 
@@ -83,7 +83,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["event"]} />
 
-## `G ... H`
+## `G ... I`
 
 <H3 value="int" />
 
@@ -169,7 +169,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["tez"]} />
 
-<H3 value="ticket" />
+<H3 value="ticket<T>" />
 
 <Type data={types["ticket"]} />
 

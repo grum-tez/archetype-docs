@@ -5,19 +5,18 @@ import { StyledEngineProvider } from '@mui/material/styles';
 import React from 'react';
 
 import styles from './component.module.css';
-
 import { MichelsonType } from './MichelsonType';
 import { Related } from './Related';
 
 const Parameter = (props) => {
-  console.log(props)
+  //console.log(props)
   return (
     <Grid item xs={12}>
       <Grid container>
         <Grid item xs={12}><Divider className={ styles.divider } style={{ marginBottom: '12px' }}/></Grid>
-        <Grid item xs={2}>
+        <Grid item xs={props.xs}>
           <Grid container>
-            <Grid item xs={3}>
+            <Grid item xs={props.xs>4?2:4}>
               <Typography>
                 <code>{props.alias}</code> :
               </Typography>
@@ -26,14 +25,14 @@ const Parameter = (props) => {
               <Typography>typed</Typography>
             </Grid>
              */ }
-            <Grid item xs={9}>
+            <Grid item xs={props.xs>4?10:8}>
               <Typography>
                 <Link to={'/docs/reference/types#'+props.type}><code>{props.type}</code></Link>
               </Typography>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={12-props.xs}>
           <Typography style={{
             fontFamily: 'IBM Plex Sans'
           }}>
@@ -46,12 +45,12 @@ const Parameter = (props) => {
 }
 
 const Returns = (props) => {
-  console.log(props)
+  //console.log(props)
   return (
     <Grid item xs={12}>
       <Grid container>
         <Grid item xs={12}><Divider className={ styles.divider } style={{ marginBottom: '12px' }}/></Grid>
-        <Grid item xs={2}>
+        <Grid item xs={12}>
           <Typography>
             <Link to={'/docs/reference/types#'+props.type}><code>{props.type}</code></Link>
           </Typography>
@@ -134,7 +133,31 @@ const Info = (props) => {
   )
 }
 
+const fold = (reducer, init, xs) => {
+  let acc = init;
+  for (const x of xs) {
+      acc = reducer(acc, x);
+  }
+  return acc;
+};
+
+const maximum = xs => fold((acc, x) => (acc >= x) ? acc : x, -Infinity, xs);
+
+const getParameterXS = (params) => {
+  const max = maximum(params.map(p => p.type.length));
+  if (max > 30) {
+    return 6
+  } else if (max > 20) {
+    return 5
+  } else if (max > 10) {
+    return 3
+  }
+  return 2
+}
+
 export default function Builtin(props) {
+  const paramXS = getParameterXS(props.data.parameters);
+  console.log(paramXS);
   return (
     <StyledEngineProvider injectFirst>
     <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginBottom: '60px' }}>
@@ -154,7 +177,7 @@ export default function Builtin(props) {
       }
       {(props.data.parameters !== undefined) ? (
         props.data.parameters.map((p,i) => {
-          return <Parameter key={"bp"+i} alias={p.alias} type={p.type} desc={p.desc}/>
+          return <Parameter key={"bp"+i} alias={p.alias} type={p.type} desc={p.desc} xs={paramXS}/>
         })
         ) : (<div />)
       }
