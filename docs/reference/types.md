@@ -149,7 +149,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["sapling_state"]} />
 
-<H3 value="sapling_transaction" />
+<H3 value="sapling_transaction(n)" />
 
 <Type data={types["sapling_transaction"]} />
 
