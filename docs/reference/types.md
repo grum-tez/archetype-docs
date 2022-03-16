@@ -145,7 +145,7 @@ import H3 from "@site/src/components/H3.js";
 
 ## `S ... U`
 
-<H3 value="sapling_state" />
+<H3 value="sapling_state(n)" />
 
 <Type data={types["sapling_state"]} />
 

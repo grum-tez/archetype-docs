@@ -340,6 +340,9 @@ export const types = {
   {
     desc: 'TODO',
     examples: [],
+    parameters: [
+      { keyword: 'n', type: 'natural integer value', desc: 'Memo size' },
+    ],
     tags: [ PASSABLE, STORABLE ],
     michelson: "sapling_state",
     michelson_ref_url: michelson_ref_base_url + '/#type-sapling_state',
