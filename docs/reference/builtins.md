@@ -50,11 +50,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['join_tickets']} />
 
-<<<<<<< HEAD
-### `sapling_empty_state(n : nat)`
-=======
 <H3 value="keccak(b : bytes)" />
->>>>>>> 2db6d3bdf5d746db42c88342c1c61d055c109a39
 
 <Builtin data={builtins['keccak']} />
 
