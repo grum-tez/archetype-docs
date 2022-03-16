@@ -50,7 +50,7 @@ const Returns = (props) => {
     <Grid item xs={12}>
       <Grid container>
         <Grid item xs={12}><Divider className={ styles.divider } style={{ marginBottom: '12px' }}/></Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} style={{ marginBottom: '6px' }}>
           <Typography>
             <Link to={'/docs/reference/types#'+props.type}><code>{props.type}</code></Link>
           </Typography>
