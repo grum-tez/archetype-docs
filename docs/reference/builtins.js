@@ -500,6 +500,40 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
+  mutez_to_nat : {
+    desc: <div>Convert tez to nat in mutez</div>,
+    parameters: [
+      {
+        type: 'tez',
+        alias: 'v',
+        desc: <div>The amount of tez to convert</div>
+      }
+    ],
+    returns: {
+      type: 'nat',
+      desc: <div>The amount of mutez</div>
+    },
+    related: [
+      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+    ]
+  },
+  date_from_timestamp : {
+    desc: <div>Convert int to date</div>,
+    parameters: [
+      {
+        type: 'int',
+        alias: 'i',
+        desc: <div>The timestamp to convert</div>
+      }
+    ],
+    returns: {
+      type: 'date',
+      desc: <div>The result</div>
+    },
+    related: [
+      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+    ]
+  },
   opt_get: {
     desc: <OptGetDesc />,
     parameters: [

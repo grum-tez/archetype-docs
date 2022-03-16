@@ -75,7 +75,7 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['join_tickets']} />
 
-### `sapling_empty_state(k : key_hash)`
+### `sapling_empty_state(n : nat)`
 
 <Builtin data={builtins['sapling_empty_state']} />
 
@@ -90,6 +90,14 @@ import { builtins } from './builtins.js';
 ### `open_chest(k : chest_key, c : chest, t : nat)`
 
 <Builtin data={builtins['open_chest']} />
+
+### `mutez_to_nat(v : tez)`
+
+<Builtin data={builtins['mutez_to_nat']} />
+
+### `date_from_timestamp(i : int)`
+
+<Builtin data={builtins['date_from_timestamp']} />
 
 ### `opt_get(o : option<T>)`
 
