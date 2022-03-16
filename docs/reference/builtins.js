@@ -24,7 +24,7 @@ export const builtins = {
     ]
   },
   callview: {
-    desc: <div>Call an on-chain view</div>,
+    desc: <div>Calls an on-chain view</div>,
     parameters: [
       {
         type: 'address',
@@ -82,17 +82,17 @@ export const builtins = {
     ]
   },
   blake2b: {
-    desc: <div>Hash bytes value with blake2b algorithm.</div>,
+    desc: <div>Hashes bytes value with <a href="https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29" target="_blank">blake2b</a> algorithm.</div>,
     parameters: [
       {
         type: 'bytes',
         alias: 'b',
-        desc: <div>Message to be hashed</div>
+        desc: <div>Array of byte to hash</div>
       }
     ],
     returns: {
       type: 'bytes',
-      desc: <div>Hash of b bytes</div>
+      desc: <div>Hash of bytes <code>b</code></div>
     },
     michelson: "BLAKE2B",
     michelson_ref_url: michelson_ref_base_url + '#instr-BLAKE2B',
@@ -158,17 +158,17 @@ export const builtins = {
     ]
   },
   keccak: {
-    desc: <div>Hash bytes value with keccak algorithm.</div>,
+    desc: <div>Hashes bytes value with <a href="https://en.wikipedia.org/wiki/SHA-3" target="_blank">keccak</a> algorithm.</div>,
     parameters: [
       {
         type: 'bytes',
         alias: 'b',
-        desc: <div>Message to be hashed</div>
+        desc: <div>Array of byte to hash</div>
       }
     ],
     returns: {
       type: 'bytes',
-      desc: <div>Hash of b bytes</div>
+      desc: <div>Hash of <code>b</code></div>
     },
     michelson: "KECCAK",
     michelson_ref_url: michelson_ref_base_url + '#instr-KECCAK',
@@ -177,17 +177,17 @@ export const builtins = {
     ]
   },
   hash_key: {
-    desc: <div>Convert key to key_hash</div>,
+    desc: <div>Converts key to key_hash.</div>,
     parameters: [
       {
         type: 'key',
         alias: 'k',
-        desc: <div>The key to convert</div>
+        desc: <div>key to hash</div>
       }
     ],
     returns: {
       type: 'key_hash',
-      desc: <div>The key_hash result</div>
+      desc: <div>hashed value of <code>k</code></div>
     },
     michelson: "HASH_KEY",
     michelson_ref_url: michelson_ref_base_url + '#instr-HASH_KEY',
@@ -196,12 +196,12 @@ export const builtins = {
     ]
   },
   implicit_account: {
-    desc: <div>Convert a key_hash to a contract</div>,
+    desc: <div>Converts key_hash to contract.</div>,
     parameters: [
       {
         type: 'key_hash',
         alias: 'pkh',
-        desc: <div>The key hash to convert</div>
+        desc: <div>key hash to convert</div>
       }
     ],
     returns: {
@@ -232,17 +232,17 @@ export const builtins = {
     ]
   },
   contract_address: {
-    desc: <div>Extract address from a contract</div>,
+    desc: <div>Gets the address of a contract.</div>,
     parameters: [
       {
         type: 'contract',
         alias: 'c',
-        desc: <div>The contract to be extracted</div>
+        desc: <div>Contract to get the address of</div>
       }
     ],
     returns: {
       type: 'address',
-      desc: <div>The extracted address</div>
+      desc: <div>Address of <code>c</code></div>
     },
     related: [
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
@@ -273,23 +273,6 @@ export const builtins = {
     },
     michelson: "CHECK_SIGNATURE",
     michelson_ref_url: michelson_ref_base_url + '#instr-CHECK_SIGNATURE',
-    related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
-    ]
-  },
-  contract_address: {
-    desc: <div>Extract address from a contract</div>,
-    parameters: [
-      {
-        type: 'contract',
-        alias: 'c',
-        desc: <div>The contract to be extracted</div>
-      }
-    ],
-    returns: {
-      type: 'address',
-      desc: <div>The extracted address</div>
-    },
     related: [
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
