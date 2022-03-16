@@ -341,7 +341,7 @@ export const types = {
     desc: 'TODO',
     examples: [],
     parameters: [
-      { keyword: 'n', type: 'natural value', desc: 'Memo size' },
+      { keyword: 'n', type: 'natural number', desc: 'Memo size' },
     ],
     tags: [ PASSABLE, STORABLE ],
     michelson: "sapling_state",
@@ -355,7 +355,7 @@ export const types = {
     desc: 'TODO',
     examples: [ ],
     parameters: [
-      { keyword: 'n', type: 'natural value', desc: 'Memo size' },
+      { keyword: 'n', type: 'natural number', desc: 'Memo size' },
     ],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "sapling_transaction",
