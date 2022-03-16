@@ -398,7 +398,7 @@ export const builtins = {
       {
         type: 'nat',
         alias: 'n',
-        desc: <div>Memo size.</div>
+        desc: <div>Memo size</div>
       }
     ],
     returns: {
