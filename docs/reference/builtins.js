@@ -101,7 +101,7 @@ export const builtins = {
     ]
   },
   sha256: {
-    desc: <div>Hash bytes value with sha256 algorithm.</div>,
+    desc: <div>Hashes bytes value with sha256 algorithm.</div>,
     parameters: [
       {
         type: 'bytes',
@@ -120,7 +120,7 @@ export const builtins = {
     ]
   },
   sha512: {
-    desc: <div>Hash bytes value with sha512 algorithm.</div>,
+    desc: <div>Hashes bytes value with sha512 algorithm.</div>,
     parameters: [
       {
         type: 'bytes',
@@ -139,7 +139,7 @@ export const builtins = {
     ]
   },
   sha3: {
-    desc: <div>Hash bytes value with sha3 algorithm.</div>,
+    desc: <div>Hashes bytes value with <a href="https://en.wikipedia.org/wiki/SHA-3" target="_blank">sha3</a> algorithm.</div>,
     parameters: [
       {
         type: 'bytes',
@@ -215,17 +215,17 @@ export const builtins = {
     ]
   },
   key_address: {
-    desc: <div>Convert a key to an address</div>,
+    desc: <div>Converts a key to an address</div>,
     parameters: [
       {
         type: 'key',
         alias: 'k',
-        desc: <div>The key to convert</div>
+        desc: <div>Key to convert</div>
       }
     ],
     returns: {
       type: 'address',
-      desc: <div>The result address</div>
+      desc: <div>Key converted to address</div>
     },
     related: [
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
@@ -288,7 +288,7 @@ export const builtins = {
     ],
     returns: {
       type: 'nat',
-      desc: <div>The result voting power</div>
+      desc: <div>Voting power</div>
     },
     michelson: "VOTING_POWER",
     michelson_ref_url: michelson_ref_base_url + '#instr-VOTING_POWER',
