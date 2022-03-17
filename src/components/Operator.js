@@ -5,8 +5,7 @@ import { StyledEngineProvider } from '@mui/material/styles';
 import React from 'react';
 
 import styles from './component.module.css';
-import { MichelsonType } from './MichelsonType';
-import { Related } from './Related';
+import Info from './Info';
 
 const Types = (props) => {
   return (<Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1}>
@@ -20,6 +19,15 @@ const Types = (props) => {
     <Grid item xs={4}>
       <Typography><Link to={'/docs/reference/types#'+props.typr}><code>{props.typr}</code></Link></Typography>
     </Grid>
+    { (props.comment !== undefined) ? (
+      <Grid item xs={12}>
+        <Typography style={{
+          fontFamily: 'IBM Plex Sans',
+        }}>
+          {props.comment}
+        </Typography>
+      </Grid>
+    ) : (<div />) }
   </Grid>)
 }
 
@@ -48,25 +56,28 @@ export default function Operator(props) {
           </Grid>
           { props.data.types.map((t,i) => {
             return <Grid key={'typs'+i} item xs={12}>
-                <Types typa={t.typa} typb={t.typb} typr={t.typr}/>
+                <Types typa={t.typa} typb={t.typb} typr={t.typr} comment={t.comment}/>
               </Grid>
           })}
           { (props.data.promotions !== undefined) ? (
             <Grid item xs={12}>
               <Typography style={{
                 fontFamily: 'IBM Plex Sans', color: 'grey',
-                marginTop: '6px', marginBottom: '6px', fontSize: '12px'
+                marginTop: '12px', marginBottom: '6px', fontSize: '12px'
               }}>WITH TYPE PROMOTION</Typography>
             </Grid>
           ) : (<div />) }
           { (props.data.promotions !== undefined) ? (
             props.data.promotions.map((t,i) => {
               return <Grid key={'typs'+i} item xs={12}>
-                <Types typa={t.typa} typb={t.typb} typr={t.typr}/>
+                <Types typa={t.typa} typb={t.typb} typr={t.typr} comment={t.comment} />
               </Grid>
             })
           ) : (<div />) }
         </Grid>
+      </Grid>
+      <Grid item xs={12} style={{ marginTop: '12px' }}>
+        <Info fails={props.data.fails} michelson={props.data.michelson} michelson_ref_url={props.data.michelson_ref_url} related={props.data.related} />
       </Grid>
     </Grid>
     </StyledEngineProvider>)

@@ -1,4 +1,7 @@
 import React from "react"
+import { MichelsonType } from "../../src/components/MichelsonType"
+
+const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
 export const operators = {
   add: {
@@ -7,11 +10,12 @@ export const operators = {
       { typa: 'nat',          typb : 'nat',          typr: 'nat' },
       { typa: 'int',          typb : 'int',          typr: 'int' },
       { typa: 'rational',     typb : 'rational',     typr: 'rational' },
-      { typa: 'tez',     typb : 'tez',     typr: 'tez' },
-      { typa: 'string',       typb : 'string',       typr: 'string' },
-      { typa: 'duration',       typb : 'duration',       typr: 'duration' },
-      { typa: 'date', typb : 'duration', typr: 'date' },
-      { typa: 'duration', typb : 'date', typr: 'date' },
+      { typa: 'tez',          typb : 'tez',          typr: 'tez' },
+      { typa: 'string',       typb : 'string',       typr: 'string',
+        comment: <div>(compiles to Michelson instruction <MichelsonType michelson="CONCAT" michelson_ref_url={michelson_ref_base_url} />)</div> },
+      { typa: 'duration',     typb : 'duration',     typr: 'duration' },
+      { typa: 'date',         typb : 'duration',     typr: 'date' },
+      { typa: 'duration',     typb : 'date',         typr: 'date' },
       { typa: 'bls12_381_fr', typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
       { typa: 'bls12_381_g1', typb : 'bls12_381_g1', typr: 'bls12_381_g1' },
       { typa: 'bls12_381_g2', typb : 'bls12_381_g2', typr: 'bls12_381_g2' },
@@ -27,6 +31,8 @@ export const operators = {
       { typa: 'bls12_381_fr', typb : 'int', typr: 'bls12_381_fr' },
       { typa: 'nat', typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
       { typa: 'int', typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
-    ]
+    ],
+    michelson: "ADD",
+    michelson_ref_url: michelson_ref_base_url + '#instr-ADD',
   }
 }
