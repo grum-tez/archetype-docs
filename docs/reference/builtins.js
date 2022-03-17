@@ -71,6 +71,7 @@ export const builtins = {
       },
       {
         type: 'T',
+        withLink: false,
         alias: 'arg',
         desc: <div>The argument of the called entrypoint</div>
       }
