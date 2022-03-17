@@ -41,7 +41,9 @@ export const operators = {
       { typa: 'nat',          typb : 'nat',          typr: 'int' },
       { typa: 'int',          typb : 'int',          typr: 'int' },
       { typa: 'tez',          typb : 'tez',          typr: 'option<tez>',
-        comment: <div>(compiles to Michelson instruction <MichelsonType michelson="SUB_MUTEZ" michelson_ref_url={michelson_ref_base_url} />)</div> },
+        comment: <div>(compiles to Michelson instruction <MichelsonType michelson="SUB_MUTEZ" michelson_ref_url={michelson_ref_base_url} />)</div>,
+        withLink: false
+      },
       { typa: 'rational',     typb : 'rational',     typr: 'rational' },
       { typa: 'duration',     typb : 'duration',     typr: 'duration' },
       { typa: 'date',         typb : 'duration',     typr: 'date' },
@@ -64,5 +66,22 @@ export const operators = {
     ],
     michelson: "SUB",
     michelson_ref_url: michelson_ref_base_url + '#instr-SUB',
+  },
+  slash : {
+    desc: 'Divides two numbers.',
+    types: [
+      { typa: 'nat',          typb : 'nat',          typr: 'rational' },
+      { typa: 'int',          typb : 'int',          typr: 'rational' },
+      { typa: 'duration',     typb : 'duration',     typr: 'rational' },
+      { typa: 'rational',     typb : 'rational',     typr: 'rational' },
+    ],
+    promotions: [
+      { typa: 'nat',          typb : 'int',          typr: 'rational' },
+      { typa: 'int',          typb : 'nat',          typr: 'rational' },
+      { typa: 'nat',          typb : 'rational',     typr: 'rational' },
+      { typa: 'rational',     typb : 'nat',          typr: 'rational' },
+      { typa: 'int',          typb : 'rational',     typr: 'rational' },
+      { typa: 'rational',     typb : 'int',          typr: 'rational' },
+    ]
   }
 }

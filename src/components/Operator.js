@@ -17,7 +17,11 @@ const Types = (props) => {
       <Typography><Link to={'/docs/reference/types#'+props.typb}><code>{props.typb}</code></Link></Typography>
     </Grid>
     <Grid item xs={4}>
-      <Typography><Link to={'/docs/reference/types#'+props.typr}><code>{props.typr}</code></Link></Typography>
+      { (props.withLink !== undefined && !props.withLink) ? (
+        <Typography><code>{props.typr}</code></Typography>
+      ) : (
+        <Typography><Link to={'/docs/reference/types#'+props.typr}><code>{props.typr}</code></Link></Typography>
+      ) }
     </Grid>
     { (props.comment !== undefined) ? (
       <Grid item xs={12}>
@@ -56,7 +60,7 @@ export default function Operator(props) {
           </Grid>
           { props.data.types.map((t,i) => {
             return <Grid key={'typs'+i} item xs={12}>
-                <Types typa={t.typa} typb={t.typb} typr={t.typr} comment={t.comment}/>
+                <Types typa={t.typa} typb={t.typb} typr={t.typr} comment={t.comment} withLink={t.withLink}/>
               </Grid>
           })}
           { (props.data.promotions !== undefined) ? (
@@ -70,7 +74,7 @@ export default function Operator(props) {
           { (props.data.promotions !== undefined) ? (
             props.data.promotions.map((t,i) => {
               return <Grid key={'typs'+i} item xs={12}>
-                <Types typa={t.typa} typb={t.typb} typr={t.typr} comment={t.comment} />
+                <Types typa={t.typa} typb={t.typb} typr={t.typr} comment={t.comment} withLink={t.withLink}/>
               </Grid>
             })
           ) : (<div />) }

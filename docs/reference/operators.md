@@ -14,3 +14,7 @@ import { operators } from './operators.js';
 ### `a - b`
 
 <Operator data={operators['sub']} />
+
+### `a / b`
+
+<Operator data={operators['slash']} />
