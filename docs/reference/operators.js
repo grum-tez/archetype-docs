@@ -2,7 +2,7 @@ import React from "react"
 
 export const operators = {
   add: {
-    desc: <div>Adds numbers or concatenates string.</div>,
+    desc: <div>Adds numbers or concatenates strings.</div>,
     types: [
       { typa: 'nat',          typb : 'nat',          typr: 'nat' },
       { typa: 'int',          typb : 'int',          typr: 'int' },
