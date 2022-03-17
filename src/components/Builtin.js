@@ -9,7 +9,6 @@ import { MichelsonType } from './MichelsonType';
 import { Related } from './Related';
 
 const Parameter = (props) => {
-  //console.log(props)
   return (
     <Grid item xs={12}>
       <Grid container>
@@ -45,7 +44,6 @@ const Parameter = (props) => {
 }
 
 const Returns = (props) => {
-  //console.log(props)
   return (
     <Grid item xs={12}>
       <Grid container>
@@ -75,10 +73,10 @@ const Fails = (props) => {
       { (props.fails.map((f,i) => {
         return (
           <Grid container style={{ marginBottom: (props.fails.length > 1 ? '4px' : '0px') }}>
-          <Grid key={"f"+i} item xs={2}>
+          <Grid key={"fk"+i} item xs={2}>
             <Typography><code>{f.keyword}</code></Typography>
           </Grid>
-          <Grid key={"f"+i} item xs={10}>
+          <Grid key={"fd"+i} item xs={10}>
             <Typography style={{
               fontFamily: 'IBM Plex Sans'
               }}>{f.desc}</Typography>
@@ -157,7 +155,6 @@ const getParameterXS = (params) => {
 
 export default function Builtin(props) {
   const paramXS = getParameterXS(props.data.parameters);
-  console.log(paramXS);
   return (
     <StyledEngineProvider injectFirst>
     <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginBottom: '60px' }}>

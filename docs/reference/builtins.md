@@ -12,7 +12,7 @@ import H3 from "@site/src/components/H3.js";
 
 <MDXProvider components={{ h2: NoH2 }}>
 
-## `A ... C`
+## `A B C`
 
 <H3 value="blake2b(b : bytes)" />
 
@@ -34,7 +34,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['create_ticket']} />
 
-## `G ... I`
+## `G H I`
 
 <H3 value="hash_key(k : key)" />
 
@@ -44,7 +44,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['implicit_account']} />
 
-## `J ... L`
+## `J K L`
 
 <H3 value="join_tickets(t1 : ticket<T>, t2 : ticket<T>)" />
 
@@ -58,7 +58,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['key_address']} />
 
-## `M ... 0`
+## `M N O`
 
 <H3 value="mkoperation(a : tez, c : contract<T>, arg : T)" />
 
@@ -80,7 +80,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['opt_get']} />
 
-## `P ... R`
+## `P Q R`
 
 <H3 value="pairing_check(l : list<bls12_381_g1 * bls12_381_g2>)" />
 
@@ -90,13 +90,15 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['read_ticket']} />
 
-## `S ... U`
+## `S T U`
 
 <H3 value="sapling_empty_state(k : key_hash)" />
 
 <Builtin data={builtins['sapling_empty_state']} />
 
-<H3 value="sapling_verify_update(s : sapling_state(n), t : sapling_transaction(n))" />
+<H3 value="sapling_verify_update">
+    sapling_verify_update(<br/>&nbsp;&nbsp;s : sapling_state(n),<br/>&nbsp;&nbsp;t : sapling_transaction(n)<br/>)
+</H3>
 
 <Builtin data={builtins['sapling_verify_update']} />
 
@@ -116,7 +118,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['split_ticket']} />
 
-## `V ... X`
+## `V W X`
 
 <H3 value="voting_power(k : key_hash)" />
 

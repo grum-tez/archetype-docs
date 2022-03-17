@@ -8,7 +8,6 @@ function getAnchor(text) {
 }
 
 const NoH2 = ({ children }) => {
-    console.log(children)
     const anchor = getAnchor(children.props.children);
     const link = `#${anchor}`;
     return (

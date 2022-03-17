@@ -15,7 +15,7 @@ import H3 from "@site/src/components/H3.js";
 
 <MDXProvider components={{ h2: NoH2 }}>
 
-## `A ... C`
+## `A B C`
 
 <H3 value="address" />
 
@@ -65,7 +65,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["contract"]} />
 
-## `D ... F`
+## `D E F`
 
 <H3 value="date" />
 
@@ -83,13 +83,13 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["event"]} />
 
-## `G ... I`
+## `G H I`
 
 <H3 value="int" />
 
 <Type data={types["int"]} />
 
-## `J ... L`
+## `J K L`
 
 <H3 value="key" />
 
@@ -107,7 +107,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["list"]} />
 
-## `M ... O`
+## `M N O`
 
 <H3 value="map<K, V>" />
 
@@ -133,7 +133,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["or"]} />
 
-## `P ... R`
+## `P Q R`
 
 <H3 value="rational" />
 
@@ -143,7 +143,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["record"]} />
 
-## `S ... U`
+## `S T U`
 
 <H3 value="sapling_state(n)" />
 

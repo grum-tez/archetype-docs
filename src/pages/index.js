@@ -85,7 +85,7 @@ const NpmInstall = () => {
 const LeftPannel = () => {
   return (
     <Container maxWidth={false} className={styles.leftpannel} sx={{ height: 'calc(100vh - 60px)' }}>
-      <Grid container style={{ height: '100%', marginTop: '0px' }} spacing={4} container direction="column" justifyContent="flex-start" alignItems="stretch">
+      <Grid container style={{ height: '100%', marginTop: '0px' }} spacing={4} direction="column" justifyContent="flex-start" alignItems="stretch">
         <Grid item style={{ height: '30%' }}>
           <Grid container direction="column" justifyContent="flex-end" style={{ height: '100%' }}>
             <Grid item xs={8}>
@@ -135,8 +135,10 @@ const examples = [
     code : `archetype pay_with_delay_penalty(holder : address, cost : tez, deadline : date)
 
 entry pay () {
-  var penalty = if now > deadline then (7% * (now - deadline) / 1d) * cost else 0tz;
-  transfer (cost + penalty) to holder
+  if now > deadline then begin
+    var penalty = (7% * (now - deadline) / 1d) * cost;
+    transfer (cost+ penalty) to holder
+  end
 }`,
     comment : <Comment0 />
   },
@@ -257,9 +259,7 @@ const RightPannel = () => {
           <CodeBlock className="language-archetype" style={{ borderRadius: '0px' }}>{examples[selected].code}</CodeBlock>
         </Grid>
         <Grid item className={styles.designtagline} style={{ paddingLeft: 'calc(3% + 12px)', paddingRight: '5%' }}>
-          <Typography style={{
-            fontFamily: 'IBM Plex Sans',
-          }}>{examples[selected].comment}</Typography>
+          {examples[selected].comment}
         </Grid>
       </Grid>
     </Container>
