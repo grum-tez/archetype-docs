@@ -206,6 +206,7 @@ export const builtins = {
     ],
     returns: {
       type: 'contract<unit>',
+      withLink: false,
       desc: <div>The extracted contract unit</div>
     },
     michelson: "IMPLICIT_ACCOUNT",
@@ -331,6 +332,7 @@ export const builtins = {
     ],
     returns: {
       type: 'address * T * nat',
+      withLink: false,
       desc: <div>Tuple of ticket's address of origin contract, value and the amount</div>
     },
     michelson: "READ_TICKET",
@@ -360,6 +362,7 @@ export const builtins = {
     ],
     returns: {
       type: 'option<ticket<T> * ticket<T>>',
+      withLink: false,
       desc: <div>Option of pair of created tickets, respectively with <code>n1</code> and <code>n2</code> values.</div>
     },
     michelson: "SPLIT_TICKET",
@@ -384,6 +387,7 @@ export const builtins = {
     ],
     returns: {
       type: 'option<ticket<T>>',
+      withLink: false,
       desc: <div>Joined ticket</div>
     },
     michelson: "JOIN_TICKETS",
@@ -427,6 +431,7 @@ export const builtins = {
     ],
     returns: {
       type: 'option<int * sapling_state(n)>',
+      withLink: false,
       desc: <div>The result</div>
     },
     michelson: "SAPLING_VERIFY_UPDATE",
@@ -528,6 +533,7 @@ export const builtins = {
     ],
     returns: {
       type: 'T',
+      withLink: false,
       desc: <div>Returns <code>v</code> of type <code>T</code> when <code>o</code> is <code>some(v)</code></div>
     },
     fails: [

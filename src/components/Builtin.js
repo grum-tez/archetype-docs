@@ -50,7 +50,11 @@ const Returns = (props) => {
         <Grid item xs={12}><Divider className={ styles.divider } style={{ marginBottom: '12px' }}/></Grid>
         <Grid item xs={12} style={{ marginBottom: '6px' }}>
           <Typography>
-            <Link to={'/docs/reference/types#'+props.type}><code>{props.type}</code></Link>
+            { (props.withLink !== undefined && !props.withLink) ? (
+              <code>{props.type}</code>
+            ) : (
+              <Link to={'/docs/reference/types#'+props.type}><code>{props.type}</code></Link>
+            )}
           </Typography>
         </Grid>
         <Grid item xs={10}>
@@ -181,7 +185,7 @@ export default function Builtin(props) {
       <Grid item style={{ marginTop: '12px', color: 'grey' }}>
         <h4 style={{ marginTop: '12px', marginBottom: '0px', fontWeight: 'normal' }}>Returns</h4>
       </Grid>
-      <Returns type={props.data.returns.type} desc={props.data.returns.desc} />
+      <Returns type={props.data.returns.type} withLink={props.data.returns.withLink} desc={props.data.returns.desc} />
       <Grid item xs={12}>
         <Info fails={props.data.fails} michelson={props.data.michelson} michelson_ref_url={props.data.michelson_ref_url} related={props.data.related} />
       </Grid>

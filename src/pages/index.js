@@ -132,7 +132,7 @@ const designs = [
 
 const examples = [
   {
-    code : `archetype pay_with_delay_penalty(holder : address, cost : tez, deadline : date)
+    code : `archetype pay_with_penalty(holder : address, cost : tez, deadline : date)
 
 entry pay () {
   var penalty =
