@@ -24,27 +24,31 @@ export const builtins = {
     ]
   },
   callview: {
-    desc: <div>Calls an on-chain view</div>,
+    desc: <div>Calls an on-chain view.</div>,
     parameters: [
       {
         type: 'address',
         alias: 'a',
-        desc: <div>TODO</div>
+        desc: <div>Address of the contract to call</div>
       },
       {
         type: 'string',
         alias: 'id',
-        desc: <div>Must be a literal string (e.g. <code>"ext_view"</code>)</div>
+        desc: <div>Name of the view; must be a literal string (e.g. <code>"my_view"</code>)</div>
       },
       {
         type: 'X',
+        withLink: false,
         alias: 'arg',
-        desc: <div>The argument of the called view</div>
+        desc: <div>Argument of the called view</div>
       }
     ],
     returns: {
       type: 'option<T>',
-      desc: <div>none if problem, some(val) with val as returned value</div>
+      desc: <div><ul>
+        <li><code>none</code> if a problem occured (view not found, or view execution failed)</li>
+        <li><code>some(v)</code>, <code>v</code> being the value returned by the view</li>
+      </ul></div>
     },
     michelson: "VIEW",
     michelson_ref_url: michelson_ref_base_url + '#VIEW',
@@ -441,12 +445,13 @@ export const builtins = {
     ]
   },
   pairing_check: {
-    desc: <div></div>,
+    desc: <div>Checks pairing of pairs of <a href="https://en.wikipedia.org/wiki/BLS_digital_signature" target="_blank">BLS</a> values.</div>,
     parameters: [
       {
         type: 'list<bls12_381_g1 * bls12_381_g2>',
-        alias: 'n',
-        desc: <div>List of pairings</div>
+        withLink: false,
+        alias: 'l',
+        desc: <div>List of pairs of bls curves</div>
       }
     ],
     returns: {

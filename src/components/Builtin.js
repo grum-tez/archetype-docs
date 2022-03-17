@@ -15,7 +15,7 @@ const Parameter = (props) => {
         <Grid item xs={12}><Divider className={ styles.divider } style={{ marginBottom: '12px' }}/></Grid>
         <Grid item xs={props.xs}>
           <Grid container>
-            <Grid item xs={props.xs>4?2:4}>
+            <Grid item xs={props.xs>4?1:4}>
               <Typography>
                 <code>{props.alias}</code> :
               </Typography>
@@ -24,9 +24,12 @@ const Parameter = (props) => {
               <Typography>typed</Typography>
             </Grid>
              */ }
-            <Grid item xs={props.xs>4?10:8}>
-              <Typography>
+            <Grid item xs={props.xs>4?11:8}>
+              <Typography> { (props.withLink !== undefined && !props.withLink) ? (
+                <code>{props.type}</code>
+              ) : (
                 <Link to={'/docs/reference/types#'+props.type}><code>{props.type}</code></Link>
+              )}
               </Typography>
             </Grid>
           </Grid>
@@ -94,7 +97,7 @@ const Fails = (props) => {
 
 const Info = (props) => {
   return (
-    <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginTop: '12px' }}>
+    <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginTop: '0px' }}>
 
     <Grid item xs={3} sm={2} md={2}>
       <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
@@ -178,7 +181,7 @@ export default function Builtin(props) {
       }
       {(props.data.parameters !== undefined) ? (
         props.data.parameters.map((p,i) => {
-          return <Parameter key={"bp"+i} alias={p.alias} type={p.type} desc={p.desc} xs={paramXS}/>
+          return <Parameter key={"bp"+i} alias={p.alias} type={p.type} desc={p.desc} xs={paramXS} withLink={p.withLink}/>
         })
         ) : (<div />)
       }
