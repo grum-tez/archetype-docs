@@ -40,7 +40,8 @@ export const operators = {
     types: [
       { typa: 'nat',          typb : 'nat',          typr: 'int' },
       { typa: 'int',          typb : 'int',          typr: 'int' },
-      { typa: 'tez',          typb : 'tez',          typr: 'tez' },
+      { typa: 'tez',          typb : 'tez',          typr: 'option<tez>',
+        comment: <div>(compiles to Michelson instruction <MichelsonType michelson="SUB_MUTEZ" michelson_ref_url={michelson_ref_base_url} />)</div> },
       { typa: 'rational',     typb : 'rational',     typr: 'rational' },
       { typa: 'duration',     typb : 'duration',     typr: 'duration' },
       { typa: 'date',         typb : 'duration',     typr: 'date' },
