@@ -10,3 +10,7 @@ import { operators } from './operators.js';
 ### `a + b`
 
 <Operator data={operators['add']} />
+
+### `a - b`
+
+<Operator data={operators['sub']} />
