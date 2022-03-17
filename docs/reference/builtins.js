@@ -460,7 +460,7 @@ export const builtins = {
     ]
   },
   open_chest: {
-    desc: <div></div>,
+    desc: <div>Opens chest <code>c</code> with key <code>k</code> under time <code>t</code>.</div>,
     parameters: [
       {
         type: 'chest_key',
@@ -475,12 +475,17 @@ export const builtins = {
       {
         type: 'nat',
         alias: 't',
-        desc: <div>Number of operations ("Time")</div>
+        desc: <div>"Time" (number of operations) used to lock the chest</div>
       }
     ],
     returns: {
-      type: 'bool',
-      desc: <div>The result</div>
+      type: 'or<bytes, bool>',
+      withLink: false,
+      desc: <div>The returned value has 3 possible values:<ul>
+        <li><code>left(v)</code>, <code>v</code> being the value in the chest</li>
+        <li><code>right(true)</code> when chest key <code>k</code> does not open the chest</li>
+        <li><code>right(false)</code> when chest key <code>k</code> opens the chest but <code>t</code> parameter is not the value used to lock the chest</li>
+        </ul></div>
     },
     michelson: "OPEN_CHEST",
     michelson_ref_url: michelson_ref_base_url + '#instr-OPEN_CHEST',
