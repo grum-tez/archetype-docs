@@ -1,6 +1,7 @@
 import React from "react"
 import { MichelsonType } from "../../src/components/MichelsonType"
 import ModDesc from "../../src/components/mod_desc.mdx"
+import DivDesc from "../../src/components/div_desc.mdx"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -127,7 +128,7 @@ export const operators = {
   },
   div : {
     label: 'a div b',
-    desc: 'Returns the euclidean quotient of two numbers.',
+    desc: <DivDesc/>,
     types: [
       { typa: 'nat',          typb : 'nat',          typr: 'nat' },
       { typa: 'int',          typb : 'int',          typr: 'int' },
@@ -140,7 +141,13 @@ export const operators = {
       { typa: 'int',          typb : 'nat',          typr: 'int' },
       { typa: 'nat',          typb : 'int',          typr: 'int' },
       { typa: 'int',          typb : 'nat',          typr: 'int' },
-    ]
+    ],
+    fails: [
+      {
+        keyword: '"DivByZero"',
+        desc: <div>when <code>b</code> is equal to 0</div>
+      }
+    ],
   },
   mod: {
     label: 'a % b',
