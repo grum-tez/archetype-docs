@@ -152,5 +152,65 @@ export const operators = {
       { typa: 'int',          typb : 'nat',          typr: 'option<int * nat>', withLink: false },
       { typa: 'tez',          typb : 'nat',          typr: 'option<tez * tez>', withLink: false },
     ]
-  }
+  },
+  lsl: {
+    label: 'a <<| b',
+    desc: <div>Shifts the bits of <code>a</code> to the left by the number of positions specified by <code>b</code>. Simultaneously, the empty spaces created by the bits shifted to the left are then filled with zeroes.
+      It is a fast way to multiply by a power of 2.<br></br><br></br>
+      Defined only if <code>b</code> is less or equal to 256.
+    </div>,
+    types: [
+      { typa: 'nat',          typb : 'nat',          typr: 'nat' },
+    ]
+  },
+  lsr: {
+    label: 'a |>> b',
+    desc: <div>Shifts the bits of <code>a</code> to the right by the number of positions specified by <code>b</code>. It is a fast way to divide by a power of 2.<br/><br/>
+      Defined only if <code>b</code> is less or equal to 256.
+    </div>,
+    types: [
+      { typa: 'nat',          typb : 'nat',          typr: 'nat' },
+    ]
+  },
+  and: {
+    label: 'a and b',
+    desc: <div><ul>
+      <li><code>true</code> if <code>a</code> and <code>b</code> are <code>true</code></li>
+      <li><code>false</code> otherwise.</li>
+      </ul></div>,
+    types: [
+      { typa: 'bool',          typb : 'bool',          typr: 'bool' },
+    ]
+  },
+  or: {
+    label: 'a or b',
+    desc: <div><ul>
+    <li><code>true</code> if <code>a</code> or <code>b</code> is <code>true</code></li>
+    <li><code>false</code> otherwise</li>
+    </ul></div>,
+    types: [
+      { typa: 'bool',          typb : 'bool',          typr: 'bool' },
+    ]
+  },
+  xor: {
+    label: 'a xor b',
+    desc: <div><ul>
+    <li><code>true</code> if <code>a</code> and <code>b</code> are different</li>
+    <li><code>false</code> otherwise</li>
+    </ul></div>,
+    types: [
+      { typa: 'bool',          typb : 'bool',          typr: 'bool' },
+    ]
+  },
+  not: {
+    label: 'not a',
+    binary: false,
+    desc: <div><ul>
+    <li><code>true</code> if <code>a</code> is <code>false</code></li>
+    <li><code>false</code> if <code>a</code> is <code>true</code></li>
+    </ul></div>,
+    types: [
+      { typa: 'bool', typr: 'bool' },
+    ]
+  },
 }

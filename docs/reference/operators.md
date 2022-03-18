@@ -34,3 +34,27 @@ import { operators } from './operators.js';
 ### `a /% b`
 
 <Operator data={operators['divmod']} />
+
+### `a <<| b`
+
+<Operator data={operators['lsl']} />
+
+### `a |>> b`
+
+<Operator data={operators['lsr']} />
+
+### `a and b`
+
+<Operator data={operators['and']} />
+
+### `a or b`
+
+<Operator data={operators['and']} />
+
+### `a xor b`
+
+<Operator data={operators['xor']} />
+
+### `not a`
+
+<Operator data={operators['not']} />

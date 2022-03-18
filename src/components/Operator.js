@@ -13,9 +13,11 @@ const Types = (props) => {
     <Grid item xs={4}>
       <Typography><Link to={'/docs/reference/types#'+props.typa}><code>{props.typa}</code></Link></Typography>
     </Grid>
-    <Grid item xs={4}>
-      <Typography><Link to={'/docs/reference/types#'+props.typb}><code>{props.typb}</code></Link></Typography>
-    </Grid>
+    { (props.typb !== undefined) ? (
+        <Grid item xs={4}>
+          <Typography><Link to={'/docs/reference/types#'+props.typb}><code>{props.typb}</code></Link></Typography>
+        </Grid>
+    ) : (<div />) }
     <Grid item xs={4}>
       { (props.withLink !== undefined && !props.withLink) ? (
         <Typography><code>{props.typr}</code></Typography>
@@ -52,9 +54,12 @@ export default function Operator(props) {
           <Grid item xs={4}>
             <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', marginBottom: '12px'}}>Type of <code>a</code></Typography>
           </Grid>
-          <Grid item xs={4}>
-            <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', marginBottom: '12px'}}>Type of <code>b</code></Typography>
-          </Grid>
+          { (props.data.binary === undefined || props.data.binary)? (
+              <Grid item xs={4}>
+                <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', marginBottom: '12px'}}>Type of <code>b</code></Typography>
+              </Grid>
+            ) : (<div />)
+          }
           <Grid item xs={4}>
             <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', marginBottom: '12px'}}>Type of <code>{props.data.label}</code></Typography>
           </Grid>
