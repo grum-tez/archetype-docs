@@ -1,7 +1,6 @@
 import React from "react"
-import { MichelsonType } from "../../src/components/MichelsonType"
-import ModDesc from "../../src/components/mod_desc.mdx"
-import DivDesc from "../../src/components/div_desc.mdx"
+import ModDesc from "../../../src/components/mod_desc.mdx"
+import DivDesc from "../../../src/components/div_desc.mdx"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 

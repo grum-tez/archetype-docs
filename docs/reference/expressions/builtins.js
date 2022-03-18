@@ -1,5 +1,5 @@
 import React from "react"
-import OptGetDesc from "../../src/components/opt_get_desc.mdx"
+import OptGetDesc from "../../../src/components/opt_get_desc.mdx"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
