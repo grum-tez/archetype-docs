@@ -1,4 +1,5 @@
 
+import React from "react"
 
 export const COMPARABLE = 0
 export const PASSABLE = 1
@@ -400,8 +401,14 @@ export const types = {
   },
   tez :
   {
-    desc: 'TODO',
-    examples: [ '1tz', '1mtz', '1utz', '1.2tz', '1.2mtz'],
+    desc: <div>Tezos currency in mutez (millionth of XTZ); several literal units are provided:<ul>
+      <li><code>1tz</code> is 1000000 mutez</li>
+      <li><code>1mtz</code> is 1000 mutez</li>
+      <li><code>1utz</code> is 1 mutez</li>
+    </ul>
+    For <code>tz</code> and <code>mtz</code> it is possible to use floating point literals with a maximum of respectively 6 and 3 decimal places; hence <code>1.5324235tz</code> and <code>1.5324mtz</code> are not valid.
+    </div>,
+    examples: [ '1tz', '1mtz', '1utz', '1.23tz', '1.2mtz'],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "mutez",
     michelson_ref_url: michelson_ref_base_url + '/#type-mutez',
