@@ -17,167 +17,167 @@ import H3 from "@site/src/components/H3.js";
 
 ## `A B C`
 
-<H3 value="address" />
+<H3 page="types" value="address" />
 
 <Type data={types["address"]} />
 
-<H3 value="asset" />
+<H3 page="types" value="asset" />
 
 <Type data={types["asset"]} />
 
-<H3 value="big_map" />
+<H3 page="types" value="big_map" />
 
 <Type data={types["big_map"]} />
 
-<H3 value="bls12_381_fr" />
+<H3 page="types" value="bls12_381_fr" />
 
 <Type data={types["bls12_381_fr"]} />
 
-<H3 value="bls12_381_g1" />
+<H3 page="types" value="bls12_381_g1" />
 
 <Type data={types["bls12_381_g1"]} />
 
-<H3 value="bls12_381_g2" />
+<H3 page="types" value="bls12_381_g2" />
 
 <Type data={types["bls12_381_g2"]} />
 
-<H3 value="bool" />
+<H3 page="types" value="bool" />
 
 <Type data={types["bool"]} />
 
-<H3 value="bytes" />
+<H3 page="types" value="bytes" />
 
 <Type data={types["bytes"]} />
 
-<H3 value="chain_id" />
+<H3 page="types" value="chain_id" />
 
 <Type data={types["chain_id"]} />
 
-<H3 value="chest" />
+<H3 page="types" value="chest" />
 
 <Type data={types["chest"]} />
 
-<H3 value="chest_key" />
+<H3 page="types" value="chest_key" />
 
 <Type data={types["chest_key"]} />
 
-<H3 value="contract" />
+<H3 page="types" value="contract" />
 
 <Type data={types["contract"]} />
 
 ## `D E F`
 
-<H3 value="date" />
+<H3 page="types" value="date" />
 
 <Type data={types["date"]} />
 
-<H3 value="duration" />
+<H3 page="types" value="duration" />
 
 <Type data={types["duration"]} />
 
-<H3 value="enum" />
+<H3 page="types" value="enum" />
 
 <Type data={types["enum"]} />
 
-<H3 value="event" />
+<H3 page="types" value="event" />
 
 <Type data={types["event"]} />
 
 ## `G H I`
 
-<H3 value="int" />
+<H3 page="types" value="int" />
 
 <Type data={types["int"]} />
 
 ## `J K L`
 
-<H3 value="key" />
+<H3 page="types" value="key" />
 
 <Type data={types["key"]} />
 
-<H3 value="key_hash" />
+<H3 page="types" value="key_hash" />
 
 <Type data={types["key_hash"]} />
 
-<H3 value="lambda" />
+<H3 page="types" value="lambda" />
 
 <Type data={types["lambda"]} />
 
-<H3 value="list<T>" />
+<H3 page="types" value="list<T>" />
 
 <Type data={types["list"]} />
 
 ## `M N O`
 
-<H3 value="map<K, V>" />
+<H3 page="types" value="map<K, V>" />
 
 <Type data={types["map"]} />
 
-<H3 value="nat" />
+<H3 page="types" value="nat" />
 
 <Type data={types["nat"]} />
 
-<H3 value="never" />
+<H3 page="types" value="never" />
 
 <Type data={types["never"]} />
 
-<H3 value="operation" />
+<H3 page="types" value="operation" />
 
 <Type data={types["operation"]} />
 
-<H3 value="option<T>" />
+<H3 page="types" value="option<T>" />
 
 <Type data={types["option"]} />
 
-<H3 value="or<T1, T2>" />
+<H3 page="types" value="or<T1, T2>" />
 
 <Type data={types["or"]} />
 
 ## `P Q R`
 
-<H3 value="rational" />
+<H3 page="types" value="rational" />
 
 <Type data={types["rational"]} />
 
-<H3 value="record" />
+<H3 page="types" value="record" />
 
 <Type data={types["record"]} />
 
 ## `S T U`
 
-<H3 value="sapling_state(n)" />
+<H3 page="types" value="sapling_state(n)" />
 
 <Type data={types["sapling_state"]} />
 
-<H3 value="sapling_transaction(n)" />
+<H3 page="types" value="sapling_transaction(n)" />
 
 <Type data={types["sapling_transaction"]} />
 
-<H3 value="set" />
+<H3 page="types" value="set" />
 
 <Type data={types["set"]} />
 
-<H3 value="signature" />
+<H3 page="types" value="signature" />
 
 <Type data={types["signature"]} />
 
-<H3 value="string" />
+<H3 page="types" value="string" />
 
 <Type data={types["string"]} />
 
-<H3 value="tez" />
+<H3 page="types" value="tez" />
 
 <Type data={types["tez"]} />
 
-<H3 value="ticket<T>" />
+<H3 page="types" value="ticket<T>" />
 
 <Type data={types["ticket"]} />
 
-<H3 value="tuple" />
+<H3 page="types" value="tuple" />
 
 <Type data={types["tuple"]} />
 
-<H3 value="unit" />
+<H3 page="types" value="unit" />
 
 <Type data={types["unit"]} />
 
