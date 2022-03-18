@@ -7,7 +7,6 @@ var theme = {
     color: "#F8F8F2",
     backgroundColor: "#242526",
     borderRadius: "0px",
-    paddingLeft: "12px"
   },
   styles: [{
     types: ["prolog", "constant"],

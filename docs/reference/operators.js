@@ -1,5 +1,6 @@
 import React from "react"
 import { MichelsonType } from "../../src/components/MichelsonType"
+import ModDesc from "../../src/components/mod_desc.mdx"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -69,17 +70,20 @@ export const operators = {
       { typa: 'nat',          typb : 'nat',          typr: 'nat' },
       { typa: 'int',          typb : 'int',          typr: 'int' },
       { typa: 'rational',     typb : 'rational',     typr: 'rational' },
-      { typa: 'nat',     typb : 'tez',     typr: 'tez' },
-      { typa: 'int',     typb : 'tez',     typr: 'tez' },
-      { typa: 'rational',     typb : 'tez',     typr: 'tez', comment:'explain process' },
+      { typa: 'nat',          typb : 'tez',          typr: 'tez' },
+      { typa: 'int',          typb : 'tez',          typr: 'tez' },
+      { typa: 'rational',     typb : 'tez',          typr: 'tez',
+        comment:'(quotient of euclidean division)' },
+      { typa: 'nat',          typb : 'duration',     typr: 'duration' },
+      { typa: 'int',          typb : 'duration',     typr: 'duration' },
     ],
     promotions: [
       { typa: 'nat',          typb : 'int',          typr: 'int' },
       { typa: 'int',          typb : 'nat',          typr: 'int' },
       { typa: 'rational',     typb : 'nat',          typr: 'rational' },
       { typa: 'nat',          typb : 'rational',     typr: 'rational' },
-      { typa: 'int',          typb : 'rational',     typr: 'rational' },
       { typa: 'rational',     typb : 'int',          typr: 'rational' },
+      { typa: 'int',          typb : 'rational',     typr: 'rational' },
     ]
   },
   slash : {
@@ -119,7 +123,7 @@ export const operators = {
   },
   mod: {
     label: 'a % b',
-    desc: 'Euclidean remainder of a divided by b (modulus).',
+    desc: <ModDesc/>,
     types: [
       { typa: 'nat',          typb : 'nat',          typr: 'nat' },
       { typa: 'int',          typb : 'int',          typr: 'int' },

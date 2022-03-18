@@ -256,8 +256,8 @@ const RightPannel = () => {
             }}>Example:</Typography>
           </Grid>
         </Grid>
-        <Grid item style={{ width: '100%' }}>
-          <CodeBlock className="language-archetype" style={{ borderRadius: '0px' }}>{examples[selected].code}</CodeBlock>
+        <Grid item style={{ width: '100%', paddingLeft: '20px' }}>
+          <CodeBlock className="language-archetype">{examples[selected].code}</CodeBlock>
         </Grid>
         <Grid item className={styles.designtagline} style={{ paddingLeft: 'calc(3% + 12px)', paddingRight: '5%' }}>
           {examples[selected].comment}
