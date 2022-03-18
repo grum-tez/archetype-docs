@@ -181,4 +181,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["unit"]} />
 
+## `V W X`
+
+<H3 page="types" value="view<A>" />
+
+<Type data={types["view"]} />
+
 </MDXProvider>

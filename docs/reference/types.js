@@ -451,5 +451,17 @@ export const types = {
     related: [
       { keyword: "Presentation", link:"/docs/language-basics/unit" }
     ],
+  },
+  view :
+  {
+    desc: 'TODO',
+    examples: [ '[]' ],
+    tags: [ PASSABLE, PACKABLE ],
+    related: [
+      { keyword: "select", link:"/docs/reference/expressions/asset#select" },
+      { keyword: "sort", link:"/docs/reference/expressions/asset#sort" },
+      { keyword: "head", link:"/docs/reference/expressions/asset#head" },
+      { keyword: "tail", link:"/docs/reference/expressions/asset#tail" },
+    ]
   }
 };
