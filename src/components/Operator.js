@@ -56,7 +56,7 @@ export default function Operator(props) {
             <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', marginBottom: '12px'}}>Type of <code>b</code></Typography>
           </Grid>
           <Grid item xs={4}>
-            <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', marginBottom: '12px'}}>Type of <code>a + b</code></Typography>
+            <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', marginBottom: '12px'}}>Type of <code>{props.data.label}</code></Typography>
           </Grid>
           { props.data.types.map((t,i) => {
             return <Grid key={'typs'+i} item xs={12}>

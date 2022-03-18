@@ -15,6 +15,22 @@ import { operators } from './operators.js';
 
 <Operator data={operators['sub']} />
 
+### `a * b`
+
+<Operator data={operators['mult']} />
+
 ### `a / b`
 
 <Operator data={operators['slash']} />
+
+### `a div b`
+
+<Operator data={operators['div']} />
+
+### `a % b`
+
+<Operator data={operators['mod']} />
+
+### `a /% b`
+
+<Operator data={operators['divmod']} />
