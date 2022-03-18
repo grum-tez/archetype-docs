@@ -63,6 +63,20 @@ export const operators = {
       { typa: 'int', typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
     ],
   },
+  minus : {
+    label: '- a',
+    desc: <div>Returns the opposite of <code>a</code>.</div>,
+    binary: false,
+    types: [
+      { typa: 'int', typr: 'int' },
+      { typa: 'nat', typr: 'int' },
+      { typa: 'duration', typr: 'duration' },
+      { typa: 'rational', typr: 'rational' },
+      { typa: 'bls12_381_fr', typr: 'bls12_381_fr' },
+      { typa: 'bls12_381_g1', typr: 'bls12_381_g1' },
+      { typa: 'bls12_381_g2', typr: 'bls12_381_g2' },
+    ]
+  },
   mult: {
     label: 'a * b',
     desc: 'Multiplies two numbers',
@@ -76,6 +90,9 @@ export const operators = {
         comment:'(quotient of euclidean division)' },
       { typa: 'nat',          typb : 'duration',     typr: 'duration' },
       { typa: 'int',          typb : 'duration',     typr: 'duration' },
+      { typa: 'bls12_381_fr', typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
+      { typa: 'bls12_381_g1', typb : 'bls12_381_fr', typr: 'bls12_381_g1' },
+      { typa: 'bls12_381_g2', typb : 'bls12_381_fr', typr: 'bls12_381_g2' },
     ],
     promotions: [
       { typa: 'nat',          typb : 'int',          typr: 'int' },
@@ -84,6 +101,10 @@ export const operators = {
       { typa: 'nat',          typb : 'rational',     typr: 'rational' },
       { typa: 'rational',     typb : 'int',          typr: 'rational' },
       { typa: 'int',          typb : 'rational',     typr: 'rational' },
+      { typa: 'bls12_381_fr', typb : 'nat',          typr: 'bls12_381_fr' },
+      { typa: 'nat',          typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
+      { typa: 'bls12_381_fr', typb : 'int',          typr: 'bls12_381_fr' },
+      { typa: 'int',          typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
     ]
   },
   slash : {
@@ -106,7 +127,7 @@ export const operators = {
   },
   div : {
     label: 'a div b',
-    desc: 'Euclidean quotient of two numbers.',
+    desc: 'Returns the euclidean quotient of two numbers.',
     types: [
       { typa: 'nat',          typb : 'nat',          typr: 'nat' },
       { typa: 'int',          typb : 'int',          typr: 'int' },
@@ -140,7 +161,7 @@ export const operators = {
   },
   divmod: {
     label: 'a /% b',
-    desc: <div>Euclidean division of <code>a</code> by <code>b</code>; returns an option of quotient and remainder:<ul>
+    desc: <div>Returns the euclidean division of <code>a</code> by <code>b</code>; returns an option of quotient and remainder:<ul>
       <li><code>some(q, r)</code>, when <code>b</code> is different from 0, <code></code><code>q</code> being the quotient and <code>r</code> the remainder</li>
       <li><code>none</code>, when <code>b</code> is equal to 0</li>
     </ul></div>,

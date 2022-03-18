@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Operators
@@ -14,6 +14,10 @@ import { operators } from './operators.js';
 ### `a - b`
 
 <Operator data={operators['sub']} />
+
+### `- a`
+
+<Operator data={operators['minus']} />
 
 ### `a * b`
 
