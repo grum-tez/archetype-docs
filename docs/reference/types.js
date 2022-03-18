@@ -43,7 +43,7 @@ export const types = {
   bls12_381_fr :
   {
     desc: 'TODO',
-    examples: [ '0x02', 2 ],
+    examples: [ '0x02', '2' ],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "bls12_381_fr",
     michelson_ref_url: michelson_ref_base_url + '/#type-bls12_381_fr',
