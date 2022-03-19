@@ -1,5 +1,6 @@
 import React from "react"
 import OptGetDesc from "../../../src/components/opt_get_desc.mdx"
+import RequireSomeDesc from "../../../src/components/require_some_desc.mdx"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -167,7 +168,36 @@ export const builtins = {
       { keyword: 'issome', link: '#issome' },
     ]
   },
-  // TODO: Mrequiresome
+  requiresome: {
+    desc: <RequireSomeDesc />,
+    parameters: [
+      {
+        type: 'option<T>',
+        alias: 'o',
+        desc: 'Optional value to extract some value from.'
+      },
+      {
+        type: 'S',
+        alias: 's',
+        desc: 'Object to fail if none, the type of S must be storable'
+      }
+    ],
+    returns: {
+      type: 'T',
+      withLink: false,
+      desc: <div>Returns <code>v</code> of type <code>T</code> when <code>o</code> is <code>some(v)</code></div>
+    },
+    fails: [
+      {
+        keyword: '`s`',
+        desc: <div>Value of <code>s</code></div>
+      }
+    ],
+    related: [
+      { keyword: 'Option', link: '/docs/language-basics/composite' },
+      { keyword: 'issome', link: '#issome' },
+    ]
+  },
   // TODO: Mfloor
   // TODO: Mceil
   // TODO: Mtostring

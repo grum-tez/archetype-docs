@@ -94,6 +94,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['read_ticket']} />
 
+<H3 page="builtins" value="require_some(o : option<T>, s : S)" />
+
+<Builtin data={builtins['requiresome']} />
+
 ## `S T U`
 
 <H3 page="builtins" value="sapling_empty_state(k : key_hash)" />
