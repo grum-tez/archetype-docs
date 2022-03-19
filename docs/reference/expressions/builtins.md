@@ -102,6 +102,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['sapling_verify_update']} />
 
+<H3 page="builtins" value="set_delegate(opkh : option<key_hash>)" />
+
+<Builtin data={builtins['setdelegate']} />
+
 <H3 page="builtins" value="sha256(b : bytes)" />
 
 <Builtin data={builtins['sha256']} />

@@ -174,6 +174,28 @@ export const builtins = {
   // TODO: Mpack
   // TODO: Munpack
   // TODO: Msetdelegate
+  setdelegate: {
+    desc: <div>[NEW] Sets delegate account for current contract.</div>,
+    parameters: [
+      {
+        type: 'option<key_hash>',
+        alias: 'opkh',
+        desc: <div><ul>
+        <li><code>none</code> remove delegation of current contract</li>
+        <li><code>some(pkh)</code> update delegation of current contract with address behind <code>pkh</code> </li>
+      </ul></div>
+      }
+    ],
+    returns: {
+      type: 'operation',
+      desc: <div>Operation of type </div>
+    },
+    michelson: "SET_DELEGATE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-SET_DELEGATE',
+    related: [
+      { keyword: 'Protocol', link: '/docs/language-basics/protocol' },
+    ]
+  },
   implicit_account: {
     desc: <div>Converts key_hash to contract.</div>,
     parameters: [
