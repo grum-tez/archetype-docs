@@ -144,6 +144,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['split_ticket']} />
 
+<H3 page="builtins" value={builtins['tostring'].sig} />
+
+<Builtin data={builtins['tostring']} />
+
 <H3 page="builtins" value="unpack<T>(b : bytes)" />
 
 <Builtin data={builtins['unpack']} />

@@ -6,6 +6,7 @@ const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
 export const builtins = {
   template: {
+    sig: 'TODO',
     desc: <div>TODO</div>,
     parameters: [
       {
@@ -232,7 +233,25 @@ export const builtins = {
       { keyword: 'Numbers', link: '/docs/language-basics/number#rational' },
     ]
   },
-  // TODO: Mtostring
+  tostring: {
+    sig: 'to_string(n : nat)',
+    desc: <div>Converts a nat to a string</div>,
+    parameters: [
+      {
+        type: 'nat',
+        alias: 'n',
+        desc: <div>Nat to convert</div>
+      }
+    ],
+    returns: {
+      type: 'string',
+      desc: <div>String converted to nat</div>
+    },
+    related: [
+      { keyword: 'Numbers', link: '/docs/language-basics/number' },
+      { keyword: 'String', link: '/docs/language-basics/string' },
+    ]
+  },
   pack: {
     sig: 'pack(o : T)',
     desc: <div>[NEW] Packs data</div>,
