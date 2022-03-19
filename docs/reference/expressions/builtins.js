@@ -1,4 +1,7 @@
 import React from "react"
+
+import IsNoneDesc from "../../../src/components/is_none_desc.mdx"
+import IsSomeDesc from "../../../src/components/is_some_desc.mdx"
 import OptGetDesc from "../../../src/components/opt_get_desc.mdx"
 import RequireSomeDesc from "../../../src/components/require_some_desc.mdx"
 
@@ -7,7 +10,7 @@ const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 export const builtins = {
   template: {
     sig: 'TODO',
-    desc: <div>TODO</div>,
+    desc: <div>[NEW] TODO</div>,
     parameters: [
       {
         type: 'TODO',
@@ -142,8 +145,52 @@ export const builtins = {
   // TODO: Mconcatlist
   // TODO: Mslice
   // TODO: Mlength
-  // TODO: Misnone
-  // TODO: Missome
+  isnone: {
+    sig: 'isnone(o : option<T>)',
+    desc: <IsNoneDesc/>,
+    parameters: [
+      {
+        type: 'option<T>',
+        alias: 'o',
+        desc: <div>Optional value to test if it is none</div>
+      }
+    ],
+    returns: {
+      type: 'bool',
+      desc: <div>
+        <ul>
+          <li><code>true</code> when <code>o</code> is none</li>
+          <li><code>false</code> when <code>o</code> is some </li>
+        </ul>
+      </div>
+    },
+    related: [
+      { keyword: 'Option', link: '/docs/language-basics/composite#option' },
+    ]
+  },
+  issome: {
+    sig: 'issome(o : option<T>)',
+    desc: <IsSomeDesc/>,
+    parameters: [
+      {
+        type: 'option<T>',
+        alias: 'o',
+        desc: <div>Optional value to test if it is some</div>
+      }
+    ],
+    returns: {
+      type: 'bool',
+      desc: <div>
+        <ul>
+          <li><code>true</code> when <code>o</code> is some</li>
+          <li><code>false</code> when <code>o</code> is none </li>
+        </ul>
+      </div>
+    },
+    related: [
+      { keyword: 'Option', link: '/docs/language-basics/composite#option' },
+    ]
+  },
   opt_get: {
     desc: <OptGetDesc />,
     parameters: [
@@ -235,7 +282,7 @@ export const builtins = {
   },
   tostring: {
     sig: 'to_string(n : nat)',
-    desc: <div>Converts a nat to a string</div>,
+    desc: <div>[NEW] Converts a nat to a string</div>,
     parameters: [
       {
         type: 'nat',

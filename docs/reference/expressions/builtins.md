@@ -58,6 +58,14 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['implicit_account']} />
 
+<H3 page="builtins" value={builtins['isnone'].sig} />
+
+<Builtin data={builtins['isnone']} />
+
+<H3 page="builtins" value={builtins['issome'].sig} />
+
+<Builtin data={builtins['issome']} />
+
 ## `J K L`
 
 <H3 page="builtins" value="join_tickets(t1 : ticket<T>, t2 : ticket<T>)" />
