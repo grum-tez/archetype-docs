@@ -140,6 +140,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['split_ticket']} />
 
+<H3 page="builtins" value="unpack<T>(b : bytes)" />
+
+<Builtin data={builtins['unpack']} />
+
 ## `V W X`
 
 <H3 page="builtins" value="voting_power(k : key_hash)" />

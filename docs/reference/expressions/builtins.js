@@ -234,7 +234,31 @@ export const builtins = {
   },
   // TODO: Mtostring
   // TODO: Mpack
-  // TODO: Munpack
+  unpack: {
+    desc: <div>[NEW] Unpack data from bytes value.</div>,
+    parameters: [
+      {
+        type: 'bytes',
+        alias: 'b',
+        desc: <div>Bytes to unpack</div>
+      }
+    ],
+    returns: {
+      type: 'option<T>',
+      desc: <div>
+        <code>T</code> must be packable
+        <ul>
+          <li><code>none</code> when <code>b</code> is unpackable of type <code>T</code></li>
+          <li><code>some(v)</code> <code>v</code> being the value returned by unpacking process </li>
+        </ul>
+      </div>
+    },
+    michelson: "UNPACK",
+    michelson_ref_url: michelson_ref_base_url + '#instr-UNPACK',
+    related: [
+      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+    ]
+  },
   setdelegate: {
     desc: <div>[NEW] Sets delegate account for current contract.</div>,
     parameters: [
@@ -242,9 +266,9 @@ export const builtins = {
         type: 'option<key_hash>',
         alias: 'opkh',
         desc: <div><ul>
-        <li><code>none</code> remove delegation of current contract</li>
-        <li><code>some(pkh)</code> update delegation of current contract with address behind <code>pkh</code> </li>
-      </ul></div>
+          <li><code>none</code> remove delegation of current contract</li>
+          <li><code>some(pkh)</code> update delegation of current contract with address behind <code>pkh</code> </li>
+        </ul></div>
       }
     ],
     returns: {
@@ -697,7 +721,7 @@ export const builtins = {
         <li><code>left(v)</code>, <code>v</code> being the value in the chest</li>
         <li><code>right(true)</code> when chest key <code>k</code> does not open the chest</li>
         <li><code>right(false)</code> when chest key <code>k</code> opens the chest but <code>t</code> parameter is not the value used to lock the chest</li>
-        </ul></div>
+      </ul></div>
     },
     michelson: "OPEN_CHEST",
     michelson_ref_url: michelson_ref_base_url + '#instr-OPEN_CHEST',
@@ -707,7 +731,7 @@ export const builtins = {
   },
 
   // others
-  date_from_timestamp : {
+  date_from_timestamp: {
     desc: <div>Convert int to date</div>,
     parameters: [
       {
@@ -724,7 +748,7 @@ export const builtins = {
       { keyword: 'TODO', link: '/docs/language-basics/TODO' },
     ]
   },
-  mutez_to_nat : {
+  mutez_to_nat: {
     desc: <div>Convert tez to nat in mutez</div>,
     parameters: [
       {
