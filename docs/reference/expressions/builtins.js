@@ -173,7 +173,6 @@ export const builtins = {
   // TODO: Mtostring
   // TODO: Mpack
   // TODO: Munpack
-  // TODO: Msetdelegate
   setdelegate: {
     desc: <div>[NEW] Sets delegate account for current contract.</div>,
     parameters: [
@@ -233,7 +232,29 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  // TODO: Maddresscontract
+  addresscontract: {
+    desc: <div>[NEW] Converts an address to a contract.</div>,
+    parameters: [
+      {
+        type: 'address',
+        alias: 'a',
+        desc: <div>Address to convert</div>
+      }
+    ],
+    returns: {
+      type: 'contract<unit>',
+      desc: <div>Contract converted</div>
+    },
+    fails: [
+      {
+        keyword: '*',
+        desc: <div>if the address behind is not a tz[1-3]* or a contract with a unique entrypoint of type unit </div>
+      }
+    ],
+    related: [
+      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+    ]
+  },
   key_address: {
     desc: <div>Converts a key to an address</div>,
     parameters: [
