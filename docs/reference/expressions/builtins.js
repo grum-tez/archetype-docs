@@ -233,7 +233,26 @@ export const builtins = {
     ]
   },
   // TODO: Mtostring
-  // TODO: Mpack
+  pack: {
+    sig: 'pack(o : T)',
+    desc: <div>[NEW] Packs data</div>,
+    parameters: [
+      {
+        type: 'T',
+        alias: 'o',
+        desc: <div>Object to be packed, <code>T</code> must be packable</div>
+      }
+    ],
+    returns: {
+      type: 'bytes',
+      desc: <div>Bytes packed</div>
+    },
+    michelson: "PACK",
+    michelson_ref_url: michelson_ref_base_url + '#instr-PACK',
+    related: [
+      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+    ]
+  },
   unpack: {
     desc: <div>[NEW] Unpack data from bytes value.</div>,
     parameters: [

@@ -96,6 +96,10 @@ import H3 from "@site/src/components/H3.js";
 
 ## `P Q R`
 
+<H3 page="builtins" value={builtins['pack'].sig} />
+
+<Builtin data={builtins['pack']} />
+
 <H3 page="builtins" value="pairing_check(l : list<bls12_381_g1 * bls12_381_g2>)" />
 
 <Builtin data={builtins['pairing_check']} />
