@@ -38,6 +38,12 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['create_ticket']} />
 
+## `D E F`
+
+<H3 page="builtins" value="floor(r : rational)" />
+
+<Builtin data={builtins['floor']} />
+
 ## `G H I`
 
 <H3 page="builtins" value="hash_key(k : key)" />

@@ -198,7 +198,23 @@ export const builtins = {
       { keyword: 'issome', link: '#issome' },
     ]
   },
-  // TODO: Mfloor
+  floor: {
+    desc: <div>[NEW] Converts rational to int with <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions" target="_blank">floor</a> policy</div>,
+    parameters: [
+      {
+        type: 'rational',
+        alias: 'r',
+        desc: <div>Rational to floor</div>
+      }
+    ],
+    returns: {
+      type: 'int',
+      desc: <div>Integer floored</div>
+    },
+    related: [
+      { keyword: 'Numbers', link: '/docs/language-basics/number#rational' },
+    ]
+  },
   // TODO: Mceil
   // TODO: Mtostring
   // TODO: Mpack
