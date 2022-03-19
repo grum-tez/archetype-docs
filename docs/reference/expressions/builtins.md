@@ -152,6 +152,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['sha512']} />
 
+<H3 page="builtins" value={builtins['slice'].sig} />
+
+<Builtin data={builtins['slice']} />
+
 <H3 page="builtins" value="split_ticket(t : ticket<T>, n1 : nat, n2 : nat)" />
 
 <Builtin data={builtins['split_ticket']} />

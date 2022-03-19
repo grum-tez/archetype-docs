@@ -144,7 +144,48 @@ export const builtins = {
   // TODO: Mabs
   // TODO: Mconcat
   // TODO: Mconcatlist
-  // TODO: Mslice
+  slice: {
+    sig: 'slice(s : T, o : nat, l : nat)',
+    desc: <div>[NEW] Gets a sub sequence of argument <code>s</code></div>,
+    parameters: [
+      {
+        type: 'T',
+        alias: 's',
+        desc: <div>
+          Sequence to slice, T must be either:
+          <ul>
+            <li><Link to={'/docs/reference/types#string'}><code>string</code></Link></li>
+            <li><Link to={'/docs/reference/types#bytes'}><code>bytes</code></Link></li>
+          </ul>
+        </div>
+      },
+      {
+        type: 'nat',
+        alias: 'o',
+        desc: <div>Offset to start sub sequence</div>
+      },
+      {
+        type: 'nat',
+        alias: 'l',
+        desc: <div>Length of sub sequence</div>
+      }
+    ],
+    returns: {
+      type: 'option<T>',
+      desc: <div>
+        <ul>
+          <li><code>none</code> if a problem occured (offset + length out of bounds)</li>
+          <li><code>some(v)</code>, <code>v</code> being the value of sub sequence</li>
+        </ul>
+      </div>
+    },
+    michelson: "SLICE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-SLICE',
+    related: [
+      { keyword: 'String', link: '/docs/language-basics/string' },
+      { keyword: 'Bytes', link: '/docs/language-basics/bytes' },
+    ]
+  },
   length: {
     sig: 'length(o : T)',
     desc: <div>[NEW] Returns the length of a string or bytes; or the size of a container.</div>,
