@@ -26,6 +26,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['callview']} />
 
+<H3 page="builtins" value="ceil(r : rational)" />
+
+<Builtin data={builtins['ceil']} />
+
 <H3 page="builtins" value="check_signature(k : key, s : signature, b : bytes)" />
 
 <Builtin data={builtins['check_signature']} />

@@ -215,7 +215,23 @@ export const builtins = {
       { keyword: 'Numbers', link: '/docs/language-basics/number#rational' },
     ]
   },
-  // TODO: Mceil
+  ceil: {
+    desc: <div>[NEW] Converts rational to int with <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions" target="_blank">ceiling</a> policy</div>,
+    parameters: [
+      {
+        type: 'rational',
+        alias: 'r',
+        desc: <div>Rational to ceil</div>
+      }
+    ],
+    returns: {
+      type: 'int',
+      desc: <div>Integer ceiled</div>
+    },
+    related: [
+      { keyword: 'Numbers', link: '/docs/language-basics/number#rational' },
+    ]
+  },
   // TODO: Mtostring
   // TODO: Mpack
   // TODO: Munpack
