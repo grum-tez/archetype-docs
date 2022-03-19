@@ -80,6 +80,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['key_address']} />
 
+<H3 page="builtins" value={builtins['length'].sig} />
+
+<Builtin data={builtins['length']} />
+
 ## `M N O`
 
 <H3 page="builtins" value="mkoperation(a : tez, c : contract<T>, arg : T)" />

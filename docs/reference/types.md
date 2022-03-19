@@ -153,7 +153,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["sapling_transaction"]} />
 
-<H3 page="types" value="set" />
+<H3 page="types" value="set<T>" />
 
 <Type data={types["set"]} />
 

@@ -1,3 +1,4 @@
+import Link from '@docusaurus/Link';
 import React from "react"
 
 import IsNoneDesc from "../../../src/components/is_none_desc.mdx"
@@ -144,10 +145,40 @@ export const builtins = {
   // TODO: Mconcat
   // TODO: Mconcatlist
   // TODO: Mslice
-  // TODO: Mlength
+  length: {
+    sig: 'length(o : T)',
+    desc: <div>[NEW] Returns the length of a string or bytes; or the size of a container.</div>,
+    parameters: [
+      {
+        type: 'T',
+        alias: 'o',
+        desc: <div>
+          T must be either:
+          <ul>
+            <li><Link to={'/docs/reference/types#string'}><code>string</code></Link></li>
+            <li><Link to={'/docs/reference/types#bytes'}><code>bytes</code></Link></li>
+            <li><Link to={'/docs/reference/types#set<T>'}><code>set</code></Link></li>
+            <li><Link to={'/docs/reference/types#list<T>'}><code>list</code></Link></li>
+            <li><Link to={'/docs/reference/types#map<K,%20V>'}><code>map</code></Link></li>
+          </ul>
+        </div>
+      }
+    ],
+    returns: {
+      type: 'nat',
+      desc: <div>Length or size of argument <code>o</code></div>
+    },
+    michelson: "SIZE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-SIZE',
+    related: [
+      { keyword: 'String', link: '/docs/language-basics/string' },
+      { keyword: 'Bytes', link: '/docs/language-basics/bytes' },
+      { keyword: 'Containers', link: '/docs/language-basics/container' },
+    ]
+  },
   isnone: {
     sig: 'isnone(o : option<T>)',
-    desc: <IsNoneDesc/>,
+    desc: <IsNoneDesc />,
     parameters: [
       {
         type: 'option<T>',
@@ -170,7 +201,7 @@ export const builtins = {
   },
   issome: {
     sig: 'issome(o : option<T>)',
-    desc: <IsSomeDesc/>,
+    desc: <IsSomeDesc />,
     parameters: [
       {
         type: 'option<T>',
