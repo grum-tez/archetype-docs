@@ -72,6 +72,11 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownActiveClassDisabled: false,
+          },
+          {
             href: 'https://tezos.com',
             label: 'Tezos',
             position: 'right',
