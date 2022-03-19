@@ -23,6 +23,8 @@ export const builtins = {
       { keyword: 'TODO', link: '/docs/language-basics/TODO' },
     ]
   },
+
+  // entrypoint
   callview: {
     desc: <div>Calls an on-chain view.</div>,
     parameters: [
@@ -56,6 +58,8 @@ export const builtins = {
       { keyword: 'view', link: '/docs/language-basics/TODO' },
     ]
   },
+
+  // operation
   mkoperation: {
     desc: <div>Makes an operation.</div>,
     parameters: [
@@ -86,6 +90,147 @@ export const builtins = {
       { keyword: 'operations', link: '/docs/language-basics/operation' },
     ]
   },
+
+  // control expression
+  // TODO: Mfold
+  // TODO: Mmap
+  // TODO: Mexeclambda
+  // TODO: Mapplylambda
+
+  // arithmetic function
+  // TODO: Msubnat
+
+  // composite type constructors
+  // TODO: Mleft
+  // TODO: Mright
+  // TODO: Mnone
+  // TODO: Msome
+
+  // set api expression
+  // TODO: Msetadd
+  // TODO: Msetremove
+  // TODO: Msetcontains
+  // TODO: Msetlength
+  // TODO: Msetfold
+
+  // list api expression
+  // TODO: Mlistprepend
+  // TODO: Mlistlength
+  // TODO: Mlistcontains
+  // TODO: Mlistnth
+  // TODO: Mlistreverse
+  // TODO: Mlistconcat
+  // TODO: Mlistfold
+
+  // map api expression
+  // TODO: Mmapput
+  // TODO: Mmapremove
+  // TODO: Mmapupdate
+  // TODO: Mmapget
+  // TODO: Mmapgetopt
+  // TODO: Mmapcontains
+  // TODO: Mmaplength
+  // TODO: Mmapfold
+
+  // builtin functions
+  // TODO: Mmin
+  // TODO: Mmax
+  // TODO: Mabs
+  // TODO: Mconcat
+  // TODO: Mconcatlist
+  // TODO: Mslice
+  // TODO: Mlength
+  // TODO: Misnone
+  // TODO: Missome
+  opt_get: {
+    desc: <OptGetDesc />,
+    parameters: [
+      {
+        type: 'option<T>',
+        alias: 'o',
+        desc: 'Optional value to extract some value from.'
+      },
+    ],
+    returns: {
+      type: 'T',
+      withLink: false,
+      desc: <div>Returns <code>v</code> of type <code>T</code> when <code>o</code> is <code>some(v)</code></div>
+    },
+    fails: [
+      {
+        keyword: '"NotFound"',
+        desc: <div>when <code>o</code> is <code>none</code></div>
+      }
+    ],
+    related: [
+      { keyword: 'Option', link: '/docs/language-basics/composite' },
+      { keyword: 'issome', link: '#issome' },
+    ]
+  },
+  // TODO: Mrequiresome
+  // TODO: Mfloor
+  // TODO: Mceil
+  // TODO: Mtostring
+  // TODO: Mpack
+  // TODO: Munpack
+  // TODO: Msetdelegate
+  implicit_account: {
+    desc: <div>Converts key_hash to contract.</div>,
+    parameters: [
+      {
+        type: 'key_hash',
+        alias: 'pkh',
+        desc: <div>key hash to convert</div>
+      }
+    ],
+    returns: {
+      type: 'contract<unit>',
+      withLink: false,
+      desc: <div>The extracted contract unit</div>
+    },
+    michelson: "IMPLICIT_ACCOUNT",
+    michelson_ref_url: michelson_ref_base_url + '#instr-IMPLICIT_ACCOUNT',
+    related: [
+      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+    ]
+  },
+  contract_address: {
+    desc: <div>Gets the address of a contract.</div>,
+    parameters: [
+      {
+        type: 'contract',
+        alias: 'c',
+        desc: <div>Contract to get the address of</div>
+      }
+    ],
+    returns: {
+      type: 'address',
+      desc: <div>Address of <code>c</code></div>
+    },
+    related: [
+      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+    ]
+  },
+  // TODO: Maddresscontract
+  key_address: {
+    desc: <div>Converts a key to an address</div>,
+    parameters: [
+      {
+        type: 'key',
+        alias: 'k',
+        desc: <div>Key to convert</div>
+      }
+    ],
+    returns: {
+      type: 'address',
+      desc: <div>Key converted to address</div>
+    },
+    related: [
+      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+    ]
+  },
+
+  //crypto functions
   blake2b: {
     desc: <div>Hashes bytes value with <a href="https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29" target="_blank">blake2b</a> algorithm.</div>,
     parameters: [
@@ -200,60 +345,6 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  implicit_account: {
-    desc: <div>Converts key_hash to contract.</div>,
-    parameters: [
-      {
-        type: 'key_hash',
-        alias: 'pkh',
-        desc: <div>key hash to convert</div>
-      }
-    ],
-    returns: {
-      type: 'contract<unit>',
-      withLink: false,
-      desc: <div>The extracted contract unit</div>
-    },
-    michelson: "IMPLICIT_ACCOUNT",
-    michelson_ref_url: michelson_ref_base_url + '#instr-IMPLICIT_ACCOUNT',
-    related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
-    ]
-  },
-  key_address: {
-    desc: <div>Converts a key to an address</div>,
-    parameters: [
-      {
-        type: 'key',
-        alias: 'k',
-        desc: <div>Key to convert</div>
-      }
-    ],
-    returns: {
-      type: 'address',
-      desc: <div>Key converted to address</div>
-    },
-    related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
-    ]
-  },
-  contract_address: {
-    desc: <div>Gets the address of a contract.</div>,
-    parameters: [
-      {
-        type: 'contract',
-        alias: 'c',
-        desc: <div>Contract to get the address of</div>
-      }
-    ],
-    returns: {
-      type: 'address',
-      desc: <div>Address of <code>c</code></div>
-    },
-    related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
-    ]
-  },
   check_signature: {
     desc: <div>Checks whether signature <code>s</code> is obtained by signing sequence of bytes <code>b</code> with account public key <code>k</code>.</div>,
     parameters: [
@@ -283,6 +374,8 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
+
+  // voting
   voting_power: {
     desc: <div>Gets the voting power from a <code>key_hash</code> value.</div>,
     parameters: [
@@ -302,6 +395,8 @@ export const builtins = {
       { keyword: 'Protocol', link: '/docs/language-basics/protocol' },
     ]
   },
+
+  // ticket
   create_ticket: {
     desc: <div>Creates a ticket from a value typed T and an amount.</div>,
     parameters: [
@@ -401,6 +496,8 @@ export const builtins = {
       { keyword: 'Tickets', link: '/docs/language-basics/ticket' },
     ]
   },
+
+  // sapling
   sapling_empty_state: {
     desc: <div>Creates a sapling state with the specified memo size. The memo is an arbitrary string message encrypted and available to anyone owning the outgoing viewing key.</div>,
     parameters: [
@@ -445,6 +542,8 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
+
+  // bls curve
   pairing_check: {
     desc: <div>Checks pairing of pairs of <a href="https://en.wikipedia.org/wiki/BLS_digital_signature" target="_blank">BLS</a> values.</div>,
     parameters: [
@@ -465,6 +564,8 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
+
+  // timelock
   open_chest: {
     desc: <div>Opens chest <code>c</code> with key <code>k</code> under time <code>t</code>.</div>,
     parameters: [
@@ -499,23 +600,8 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  mutez_to_nat : {
-    desc: <div>Convert tez to nat in mutez</div>,
-    parameters: [
-      {
-        type: 'tez',
-        alias: 'v',
-        desc: <div>The amount of tez to convert</div>
-      }
-    ],
-    returns: {
-      type: 'nat',
-      desc: <div>The amount of mutez</div>
-    },
-    related: [
-      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
-    ]
-  },
+
+  // others
   date_from_timestamp : {
     desc: <div>Convert int to date</div>,
     parameters: [
@@ -533,29 +619,21 @@ export const builtins = {
       { keyword: 'TODO', link: '/docs/language-basics/TODO' },
     ]
   },
-  opt_get: {
-    desc: <OptGetDesc />,
+  mutez_to_nat : {
+    desc: <div>Convert tez to nat in mutez</div>,
     parameters: [
       {
-        type: 'option<T>',
-        alias: 'o',
-        desc: 'Optional value to extract some value from.'
-      },
-    ],
-    returns: {
-      type: 'T',
-      withLink: false,
-      desc: <div>Returns <code>v</code> of type <code>T</code> when <code>o</code> is <code>some(v)</code></div>
-    },
-    fails: [
-      {
-        keyword: '"NotFound"',
-        desc: <div>when <code>o</code> is <code>none</code></div>
+        type: 'tez',
+        alias: 'v',
+        desc: <div>The amount of tez to convert</div>
       }
     ],
+    returns: {
+      type: 'nat',
+      desc: <div>The amount of mutez</div>
+    },
     related: [
-      { keyword: 'Option', link: '/docs/language-basics/composite' },
-      { keyword: 'issome', link: '#issome' },
+      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
     ]
   }
 }
