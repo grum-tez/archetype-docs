@@ -322,7 +322,7 @@ export const builtins = {
     michelson: "UPDATE",
     michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
     related: [
-      { keyword: 'Map', link: '/docs/language-basics/containers' },
+      { keyword: 'Map', link: '/docs/language-basics/container' },
     ]
   },
   update: {
@@ -357,10 +357,39 @@ export const builtins = {
     michelson: "UPDATE",
     michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
     related: [
-      { keyword: 'Map', link: '/docs/language-basics/containers' },
+      { keyword: 'Map', link: '/docs/language-basics/container#map' },
     ]
-  },  // TODO: Mmapget
-  // TODO: Mmapgetopt
+  },
+  getopt: {
+    sig: 'getopt(m : (big_)?map<K, V>, k : K)',
+    desc: <div>[NEW] Returns the value associated for the key <code>k</code> on the map <code>m</code>.</div>,
+    parameters: [
+      {
+        type: 'map',
+        alias: 'm',
+        desc: <div>Map to get</div>
+      },
+      {
+        type: 'K',
+        alias: 'k',
+        desc: <div>Key to get</div>
+      }
+    ],
+    returns: {
+      type: 'option<V>',
+      desc: <div>
+        <ul>
+          <li><code>none</code> when <code>k</code> is not in the map <code>m</code></li>
+          <li><code>some(v)</code>, when <code>k</code> is in the map <code>m</code> associated with the value <code>v</code></li>
+        </ul>
+      </div>
+    },
+    michelson: "GET",
+    michelson_ref_url: michelson_ref_base_url + '#instr-GET',
+    related: [
+      { keyword: 'Map', link: '/docs/language-basics/container#map' },
+    ]
+  },
   // TODO: Mmapfold
 
   remove: {

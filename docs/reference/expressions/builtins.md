@@ -86,6 +86,10 @@ import H3 from "@site/src/components/H3.js";
 
 ## `G H I`
 
+<H3 page="builtins" value={builtins['getopt'].sig} />
+
+<Builtin data={builtins['getopt']} />
+
 <H3 page="builtins" value={builtins['hash_key'].sig} />
 
 <Builtin data={builtins['hash_key']} />
