@@ -145,7 +145,33 @@ export const builtins = {
   // TODO: Mmax
   // TODO: Mabs
   // TODO: Mconcat
-  // TODO: Mconcatlist
+  concatlist: {
+    sig: 'concat(l : list<T>)',
+    desc: <div>[NEW] Concatenates all items in list <code>l</code>.</div>,
+    parameters: [
+      {
+        type: 'list<T>',
+        alias: 'l',
+        desc: <div>
+          List to concatenate, T must be either:
+          <ul>
+            <li><Link to={'/docs/reference/types#string'}><code>string</code></Link></li>
+            <li><Link to={'/docs/reference/types#bytes'}><code>bytes</code></Link></li>
+          </ul>
+        </div>
+      }
+    ],
+    returns: {
+      type: 'T',
+      desc: <div>Sequence concatenated</div>
+    },
+    michelson: "CONCAT",
+    michelson_ref_url: michelson_ref_base_url + '#instr-CONCAT',
+    related: [
+      { keyword: 'String', link: '/docs/language-basics/string' },
+      { keyword: 'Bytes', link: '/docs/language-basics/bytes' },
+    ]
+  },
   slice: {
     sig: 'slice(s : T, o : nat, l : nat)',
     desc: <div>[NEW] Gets a sub sequence of argument <code>s</code></div>,

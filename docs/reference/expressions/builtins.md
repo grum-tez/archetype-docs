@@ -34,6 +34,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['check_signature']} />
 
+<H3 page="builtins" value={builtins['concatlist'].sig} />
+
+<Builtin data={builtins['concatlist']} />
+
 <H3 page="builtins" value={builtins['contract_address'].sig} />
 
 <Builtin data={builtins['contract_address']} />
