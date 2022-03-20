@@ -144,7 +144,36 @@ export const builtins = {
   // TODO: Mmin
   // TODO: Mmax
   // TODO: Mabs
-  // TODO: Mconcat
+  concat: {
+    sig: 'concat(a : T, b : T)',
+    desc: <div>[NEW] Concatenates two items.</div>,
+    parameters: [
+      {
+        type: 'T',
+        alias: 'a',
+        desc: <div>First item</div>
+      },
+      {
+        type: 'T',
+        alias: 'b',
+        desc: <div>Second item</div>
+      }
+    ],
+    returns: {
+      type: 'T',
+      desc: <div>Sequence concatenated, T must be either:
+      <ul>
+        <li><Link to={'/docs/reference/types#string'}><code>string</code></Link></li>
+        <li><Link to={'/docs/reference/types#bytes'}><code>bytes</code></Link></li>
+      </ul></div>
+    },
+    michelson: "CONCAT",
+    michelson_ref_url: michelson_ref_base_url + '#instr-CONCAT',
+    related: [
+      { keyword: 'String', link: '/docs/language-basics/string' },
+      { keyword: 'Bytes', link: '/docs/language-basics/bytes' },
+    ]
+  },
   concatlist: {
     sig: 'concat(l : list<T>)',
     desc: <div>[NEW] Concatenates all items in list <code>l</code>.</div>,
