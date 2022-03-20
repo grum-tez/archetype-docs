@@ -117,14 +117,10 @@ export const builtins = {
   // set api expression
   // TODO: Msetadd
   // TODO: Msetremove
-  // TODO: Msetcontains
-  // TODO: Msetlength
   // TODO: Msetfold
 
   // list api expression
   // TODO: Mlistprepend
-  // TODO: Mlistlength
-  // TODO: Mlistcontains
   // TODO: Mlistnth
   // TODO: Mlistreverse
   // TODO: Mlistconcat
@@ -136,9 +132,46 @@ export const builtins = {
   // TODO: Mmapupdate
   // TODO: Mmapget
   // TODO: Mmapgetopt
-  // TODO: Mmapcontains
-  // TODO: Mmaplength
   // TODO: Mmapfold
+
+  contains: {
+    sig: 'contains(c : C, i : T)',
+    desc: <div>[NEW] Tests if item <code>i</code> is contained in <code>c</code>.</div>,
+    parameters: [
+      {
+        type: 'C',
+        alias: 'o',
+        desc: <div>
+          C must be either:
+          <ul>
+            <li><Link to={'/docs/reference/types#set<T>'}><code>set</code></Link></li>
+            <li><Link to={'/docs/reference/types#list<T>'}><code>list</code></Link></li>
+            <li><Link to={'/docs/reference/types#map<K,%20V>'}><code>map</code></Link></li>
+            <li><Link to={'/docs/reference/types#big_map<K,%20V>'}><code>map</code></Link></li>
+          </ul>
+        </div>
+      },
+      {
+        type: 'T',
+        alias: 'i',
+        desc: <div>Item to test</div>
+      }
+    ],
+    returns: {
+      type: 'bool',
+      desc: <div>
+        <ul>
+          <li><code>true</code> when <code>i</code> is contained in <code>c</code></li>
+          <li><code>false</code> when <code>i</code> is not contained in <code>c</code></li>
+        </ul>
+      </div>
+    },
+    michelson: "MEM",
+    michelson_ref_url: michelson_ref_base_url + '#instr-MEM',
+    related: [
+      { keyword: 'Containers', link: '/docs/language-basics/container' },
+    ]
+  },
 
   // builtin functions
   min: {
@@ -243,10 +276,10 @@ export const builtins = {
     returns: {
       type: 'T',
       desc: <div>Sequence concatenated, T must be either:
-      <ul>
-        <li><Link to={'/docs/reference/types#string'}><code>string</code></Link></li>
-        <li><Link to={'/docs/reference/types#bytes'}><code>bytes</code></Link></li>
-      </ul></div>
+        <ul>
+          <li><Link to={'/docs/reference/types#string'}><code>string</code></Link></li>
+          <li><Link to={'/docs/reference/types#bytes'}><code>bytes</code></Link></li>
+        </ul></div>
     },
     michelson: "CONCAT",
     michelson_ref_url: michelson_ref_base_url + '#instr-CONCAT',

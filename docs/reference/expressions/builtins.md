@@ -50,6 +50,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['concatlist']} />
 
+<H3 page="builtins" value={builtins['contains'].sig} />
+
+<Builtin data={builtins['contains']} />
+
 <H3 page="builtins" value={builtins['contract_address'].sig} />
 
 <Builtin data={builtins['contract_address']} />
