@@ -141,8 +141,52 @@ export const builtins = {
   // TODO: Mmapfold
 
   // builtin functions
-  // TODO: Mmin
-  // TODO: Mmax
+  min: {
+    sig: 'min(a : T, b : T)',
+    desc: <div>[NEW] Returns minimum value between <code>a</code> and <code>b</code></div>,
+    parameters: [
+      {
+        type: 'T',
+        alias: 'a',
+        desc: <div>First element to compare</div>
+      },
+      {
+        type: 'T',
+        alias: 'b',
+        desc: <div>Second element to compare</div>
+      }
+    ],
+    returns: {
+      type: 'T',
+      desc: <div>Minimum value, T must be a comparable type.</div>
+    },
+    related: [
+      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+    ]
+  },
+  max: {
+    sig: 'max(a : T, b : T)',
+    desc: <div>[NEW] Returns maximum value between <code>a</code> and <code>b</code></div>,
+    parameters: [
+      {
+        type: 'T',
+        alias: 'a',
+        desc: <div>First element to compare</div>
+      },
+      {
+        type: 'T',
+        alias: 'b',
+        desc: <div>Second element to compare</div>
+      }
+    ],
+    returns: {
+      type: 'T',
+      desc: <div>Maximum value, T must be a comparable type.</div>
+    },
+    related: [
+      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+    ]
+  },
   abs: {
     sig: 'abs(i : int)',
     desc: <div>[NEW] Converts int to nat.</div>,

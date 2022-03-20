@@ -106,6 +106,14 @@ import H3 from "@site/src/components/H3.js";
 
 ## `M N O`
 
+<H3 page="builtins" value={builtins['max'].sig} />
+
+<Builtin data={builtins['max']} />
+
+<H3 page="builtins" value={builtins['min'].sig} />
+
+<Builtin data={builtins['min']} />
+
 <H3 page="builtins" value={builtins['mkoperation'].sig} />
 
 <Builtin data={builtins['mkoperation']} />
