@@ -5,6 +5,7 @@ import IsNoneDesc from "../../../src/components/is_none_desc.mdx"
 import IsSomeDesc from "../../../src/components/is_some_desc.mdx"
 import OptGetDesc from "../../../src/components/opt_get_desc.mdx"
 import RequireSomeDesc from "../../../src/components/require_some_desc.mdx"
+import ToNatDesc from "../../../src/components/to_nat_desc.mdx"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -871,7 +872,30 @@ export const builtins = {
       { keyword: 'Numbers', link: '/docs/language-basics/number' },
     ]
   },
-  // TODO: tonat
+  tonat: {
+    sig: 'to_nat(i : int)',
+    desc: <ToNatDesc/>,
+    parameters: [
+      {
+        type: 'int',
+        alias: 'i',
+        desc: <div>Int to convert</div>
+      }
+    ],
+    returns: {
+      type: 'nat',
+      desc: <div>Nat converted</div>
+    },
+    fails: [
+      {
+        keyword: '"NEG_VALUE"',
+        desc:<div>when value <code>i</code> is negative</div>
+      }
+    ],
+    related: [
+      { keyword: 'Numbers', link: '/docs/language-basics/number' },
+    ]
+  },
   opt_get: {
     sig: 'opt_get(o : option<T>)',
     desc: <OptGetDesc />,

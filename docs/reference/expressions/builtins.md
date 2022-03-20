@@ -260,6 +260,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['subnat']} />
 
+<H3 page="builtins" value={builtins['tonat'].sig} />
+
+<Builtin data={builtins['tonat']} />
+
 <H3 page="builtins" value={builtins['tostring'].sig} />
 
 <Builtin data={builtins['tostring']} />
