@@ -124,6 +124,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['key_address']} />
 
+<H3 page="builtins" value={builtins['left'].sig} />
+
+<Builtin data={builtins['left']} />
+
 <H3 page="builtins" value={builtins['length'].sig} />
 
 <Builtin data={builtins['length']} />
@@ -191,6 +195,10 @@ import H3 from "@site/src/components/H3.js";
 <H3 page="builtins" value={builtins['reverse'].sig} />
 
 <Builtin data={builtins['reverse']} />
+
+<H3 page="builtins" value={builtins['right'].sig} />
+
+<Builtin data={builtins['right']} />
 
 ## `S T U`
 

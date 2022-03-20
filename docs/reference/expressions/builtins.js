@@ -185,8 +185,46 @@ export const builtins = {
   },
 
   // composite type constructors
-  // TODO: Mleft
-  // TODO: Mright
+  left: {
+    sig: 'left<(L,)? T>(x : L)',
+    desc: <div>[NEW] Converts to a left literal</div>,
+    parameters: [
+      {
+        type: 'L',
+        alias: 'x',
+        desc: <div>Value to convert</div>
+      }
+    ],
+    returns: {
+      type: 'or<L, T>',
+      desc: <div>Value converted to left literal</div>
+    },
+    michelson: "LEFT",
+    michelson_ref_url: michelson_ref_base_url + '#instr-LEFT',
+    related: [
+      { keyword: 'Or', link: '/docs/language-basics/composite#or' },
+    ]
+  },
+  right: {
+    sig: 'right<T(, R)>(x : R)',
+    desc: <div>[NEW] Converts to a right literal</div>,
+    parameters: [
+      {
+        type: 'R',
+        alias: 'x',
+        desc: <div>Value to convert</div>
+      }
+    ],
+    returns: {
+      type: 'or<T, R>',
+      desc: <div>Value converted to right literal</div>
+    },
+    michelson: "RIGHT",
+    michelson_ref_url: michelson_ref_base_url + '#instr-RIGHT',
+    related: [
+      { keyword: 'Or', link: '/docs/language-basics/composite#or' },
+    ]
+  },
   // TODO: Mnone
   // TODO: Msome
 
