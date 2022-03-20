@@ -22,6 +22,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['absrat']} />
 
+<H3 page="builtins" value={builtins['add'].sig} />
+
+<Builtin data={builtins['add']} />
+
 <H3 page="builtins" value={builtins['addresscontract'].sig} />
 
 <Builtin data={builtins['addresscontract']} />

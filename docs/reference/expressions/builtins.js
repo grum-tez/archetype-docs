@@ -191,7 +191,31 @@ export const builtins = {
   // TODO: Msome
 
   // set api expression
-  // TODO: Msetadd
+  add: {
+    sig: 'add(s : set<T>, i : T)',
+    desc: <div>[NEW] Returns a copy of set <code>s</code>, which adds item <code>i</code></div>,
+    parameters: [
+      {
+        type: 'set<T>',
+        alias: 's',
+        desc: <div>Set to add</div>
+      },
+      {
+        type: 'T',
+        alias: 'i',
+        desc: <div>Item to add</div>
+      }
+    ],
+    returns: {
+      type: 'set<T>',
+      desc: <div>Set added</div>
+    },
+    michelson: "UPDATE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
+    related: [
+      { keyword: 'Set', link: '/docs/language-basics/container#set' },
+    ]
+  },
   // TODO: Msetremove
   // TODO: Msetfold
 
