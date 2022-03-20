@@ -208,6 +208,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['split_ticket']} />
 
+<H3 page="builtins" value={builtins['subnat'].sig} />
+
+<Builtin data={builtins['subnat']} />
+
 <H3 page="builtins" value={builtins['tostring'].sig} />
 
 <Builtin data={builtins['tostring']} />

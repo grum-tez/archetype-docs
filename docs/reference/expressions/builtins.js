@@ -154,7 +154,35 @@ export const builtins = {
   },
 
   // arithmetic function
-  // TODO: Msubnat
+  subnat: {
+    sig: 'sub_nat(a : nat, b : nat)',
+    desc: <div>[NEW] Subtracts <code>a</code> to <code>b</code> and returns a nat value.</div>,
+    parameters: [
+      {
+        type: 'nat',
+        alias: 'a',
+        desc: <div>Left-hand side operand to subtract</div>
+      },
+      {
+        type: 'nat',
+        alias: 'b',
+        desc: <div>Right-hand side operand to subtract</div>
+      }
+    ],
+    returns: {
+      type: 'nat',
+      desc: <div>Result of operation</div>
+    },
+    fails: [
+      {
+        keyword: '"NegResult"',
+        desc: <div>when result is negative</div>
+      }
+    ],
+    related: [
+      { keyword: 'Numbers', link: '/docs/language-basics/number#nat' },
+    ]
+  },
 
   // composite type constructors
   // TODO: Mleft
