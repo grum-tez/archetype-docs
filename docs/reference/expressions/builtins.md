@@ -88,6 +88,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['floor']} />
 
+<H3 page="builtins" value={builtins['fold'].sig} />
+
+<Builtin data={builtins['fold']} />
+
 ## `G H I`
 
 <H3 page="builtins" value={builtins['getopt'].sig} />

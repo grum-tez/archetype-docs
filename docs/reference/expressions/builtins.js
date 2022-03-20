@@ -100,7 +100,26 @@ export const builtins = {
   },
 
   // control expression
-  // TODO: Mfold
+  fold: {
+    sig: 'fold (i : L, id -> (body(id : L) : or<L, R>))',
+    desc: <div>[NEW] Apply a function which takes a L typed argument, returns value type or and continues until this function returns a right value.</div>,
+    parameters: [
+      {
+        type: 'L',
+        alias: 'i',
+        desc: <div>Initial value</div>
+      }
+    ],
+    returns: {
+      type: 'R',
+      desc: <div>Compute value</div>
+    },
+    michelson: "LOOP_LEFT",
+    michelson_ref_url: michelson_ref_base_url + '#instr-LOOP_LEFT',
+    related: [
+      { keyword: 'Or', link: '/docs/language-basics/composite#or' },
+    ]
+  },
   map: {
     sig: 'map(l : list<T>, id -> (body(id : T) : R))',
     desc: <div>[NEW] Returns a list with application of a function which take T typed argument and returns R typed value for each item of the original list.</div>,
@@ -305,7 +324,6 @@ export const builtins = {
       { keyword: 'Set', link: '/docs/language-basics/container#set' },
     ]
   },
-  // TODO: Msetfold
 
   // list api expression
   prepend: {
@@ -403,7 +421,6 @@ export const builtins = {
       { keyword: 'List', link: '/docs/language-basics/container#list' },
     ]
   },
-  // TODO: Mlistfold
 
   // map api expression
   put: {
@@ -501,7 +518,6 @@ export const builtins = {
       { keyword: 'Map', link: '/docs/language-basics/container#map' },
     ]
   },
-  // TODO: Mmapfold
 
   remove: {
     sig: 'remove(c : C, i : T)',
