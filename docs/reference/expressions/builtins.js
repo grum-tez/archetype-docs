@@ -145,7 +145,35 @@ export const builtins = {
       { keyword: 'List', link: '/docs/language-basics/container#list' },
     ]
   },
-  // TODO: Mlistnth
+  nth: {
+    sig: 'nth(l : list<T>, n : nat)',
+    desc: <div>[NEW] Returns the nth <code>n</code> of list <code>l</code>.</div>,
+    parameters: [
+      {
+        type: 'list<T>',
+        alias: 'l',
+        desc: <div>List</div>
+      },
+      {
+        type: 'nat',
+        alias: 'n',
+        desc: <div>Nth</div>
+      }
+    ],
+    returns: {
+      type: 'T',
+      desc: <div>Item located at the nth</div>
+    },
+    fails: [
+      {
+        keyword: '"EmptyList"',
+        desc: <div>Out of Bound</div>
+      }
+    ],
+    related: [
+      { keyword: 'List', link: '/docs/language-basics/container#list' },
+    ]
+  },
   // TODO: Mlistreverse
   // TODO: Mlistconcat
   // TODO: Mlistfold

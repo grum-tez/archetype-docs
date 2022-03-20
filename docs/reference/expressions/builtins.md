@@ -126,6 +126,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['mutez_to_nat']} />
 
+<H3 page="builtins" value={builtins['nth'].sig} />
+
+<Builtin data={builtins['nth']} />
+
 <H3 page="builtins" value={builtins['open_chest'].sig} />
 
 <Builtin data={builtins['open_chest']} />
