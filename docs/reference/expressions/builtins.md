@@ -106,6 +106,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['implicit_account']} />
 
+<H3 page="builtins" value={builtins['isnat'].sig} />
+
+<Builtin data={builtins['isnat']} />
+
 <H3 page="builtins" value={builtins['isnone'].sig} />
 
 <Builtin data={builtins['isnone']} />

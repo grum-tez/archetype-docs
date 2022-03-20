@@ -101,11 +101,11 @@ export const builtins = {
 
   // control expression
   fold: {
-    sig: 'fold (i : L, id -> (body(id : L) : or<L, R>))',
+    sig: 'fold (i : or<L, R>, id -> (body(id : L) : or<L, R>))',
     desc: <div>[NEW] Apply a function which takes a L typed argument, returns value type or and continues until this function returns a right value.</div>,
     parameters: [
       {
-        type: 'L',
+        type: 'or<L, R>',
         alias: 'i',
         desc: <div>Initial value</div>
       }
@@ -851,6 +851,27 @@ export const builtins = {
       { keyword: 'Option', link: '/docs/language-basics/composite#option' },
     ]
   },
+  isnat: {
+    sig: 'isnat(i : int)',
+    desc: <div>[NEW] Converts an int to an optional nat</div>,
+    parameters: [
+      {
+        type: 'int',
+        alias: 'i',
+        desc: <div>Int to convert</div>
+      }
+    ],
+    returns: {
+      type: 'option<nat>',
+      desc: <div>Optional nat converted</div>
+    },
+    michelson: "ISNAT",
+    michelson_ref_url: michelson_ref_base_url + '#instr-ISNAT',
+    related: [
+      { keyword: 'Numbers', link: '/docs/language-basics/number' },
+    ]
+  },
+  // TODO: tonat
   opt_get: {
     sig: 'opt_get(o : option<T>)',
     desc: <OptGetDesc />,
