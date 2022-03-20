@@ -216,7 +216,6 @@ export const builtins = {
       { keyword: 'Set', link: '/docs/language-basics/container#set' },
     ]
   },
-  // TODO: Msetremove
   // TODO: Msetfold
 
   // list api expression
@@ -326,12 +325,43 @@ export const builtins = {
       { keyword: 'Map', link: '/docs/language-basics/containers' },
     ]
   },
-  // TODO: Mmapremove
   // TODO: Mmapupdate
   // TODO: Mmapget
   // TODO: Mmapgetopt
   // TODO: Mmapfold
 
+  remove: {
+    sig: 'remove(c : C, i : T)',
+    desc: <div>[NEW] Remove item <code>i</code> in <code>c</code>.</div>,
+    parameters: [
+      {
+        type: 'C',
+        alias: 'o',
+        desc: <div>
+          C must be either:
+          <ul>
+            <li><Link to={'/docs/reference/types#set<T>'}><code>set</code></Link></li>
+            <li><Link to={'/docs/reference/types#map<K,%20V>'}><code>map</code></Link></li>
+            <li><Link to={'/docs/reference/types#big_map<K,%20V>'}><code>big_map</code></Link></li>
+          </ul>
+        </div>
+      },
+      {
+        type: 'T',
+        alias: 'i',
+        desc: <div>Item to remove</div>
+      }
+    ],
+    returns: {
+      type: 'C',
+      desc: <div>Copy of container, with <code>i</code> removed</div>
+    },
+    michelson: "UPDATE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
+    related: [
+      { keyword: 'Containers', link: '/docs/language-basics/container' },
+    ]
+  },
   contains: {
     sig: 'contains(c : C, i : T)',
     desc: <div>[NEW] Tests if item <code>i</code> is contained in <code>c</code>.</div>,
@@ -345,7 +375,7 @@ export const builtins = {
             <li><Link to={'/docs/reference/types#set<T>'}><code>set</code></Link></li>
             <li><Link to={'/docs/reference/types#list<T>'}><code>list</code></Link></li>
             <li><Link to={'/docs/reference/types#map<K,%20V>'}><code>map</code></Link></li>
-            <li><Link to={'/docs/reference/types#big_map<K,%20V>'}><code>map</code></Link></li>
+            <li><Link to={'/docs/reference/types#big_map<K,%20V>'}><code>big_map</code></Link></li>
           </ul>
         </div>
       },

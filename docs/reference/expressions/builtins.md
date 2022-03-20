@@ -172,6 +172,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['read_ticket']} />
 
+<H3 page="builtins" value={builtins['remove'].sig} />
+
+<Builtin data={builtins['remove']} />
+
 <H3 page="builtins" value={builtins['requiresome'].sig} />
 
 <Builtin data={builtins['requiresome']} />
