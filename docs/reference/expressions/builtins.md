@@ -14,47 +14,51 @@ import H3 from "@site/src/components/H3.js";
 
 ## `A B C`
 
-<H3 page="builtins" value="address_to_contract(a : address)" />
+<H3 page="builtins" value={builtins['addresscontract'].sig} />
 
 <Builtin data={builtins['addresscontract']} />
 
-<H3 page="builtins" value="blake2b(b : bytes)" />
+<H3 page="builtins" value={builtins['blake2b'].sig} />
 
 <Builtin data={builtins['blake2b']} />
 
-<H3 page="builtins" value="callview<T>(a : address, id : string, arg : X)"/>
+<H3 page="builtins" value={builtins['callview'].sig}/>
 
 <Builtin data={builtins['callview']} />
 
-<H3 page="builtins" value="ceil(r : rational)" />
+<H3 page="builtins" value={builtins['ceil'].sig} />
 
 <Builtin data={builtins['ceil']} />
 
-<H3 page="builtins" value="check_signature(k : key, s : signature, b : bytes)" />
+<H3 page="builtins" value={builtins['check_signature'].sig} />
 
 <Builtin data={builtins['check_signature']} />
 
-<H3 page="builtins" value="contract_address(c : contract<T>)" />
+<H3 page="builtins" value={builtins['contract_address'].sig} />
 
 <Builtin data={builtins['contract_address']} />
 
-<H3 page="builtins" value="create_ticket(s : T, n : nat)" />
+<H3 page="builtins" value={builtins['create_ticket'].sig} />
 
 <Builtin data={builtins['create_ticket']} />
 
 ## `D E F`
 
-<H3 page="builtins" value="floor(r : rational)" />
+<H3 page="builtins" value={builtins['date_from_timestamp'].sig} />
+
+<Builtin data={builtins['date_from_timestamp']} />
+
+<H3 page="builtins" value={builtins['floor'].sig} />
 
 <Builtin data={builtins['floor']} />
 
 ## `G H I`
 
-<H3 page="builtins" value="hash_key(k : key)" />
+<H3 page="builtins" value={builtins['hash_key'].sig} />
 
 <Builtin data={builtins['hash_key']} />
 
-<H3 page="builtins" value="implicit_account(pkh : key_hash)" />
+<H3 page="builtins" value={builtins['implicit_account'].sig} />
 
 <Builtin data={builtins['implicit_account']} />
 
@@ -68,15 +72,15 @@ import H3 from "@site/src/components/H3.js";
 
 ## `J K L`
 
-<H3 page="builtins" value="join_tickets(t1 : ticket<T>, t2 : ticket<T>)" />
+<H3 page="builtins" value={builtins['join_tickets'].sig} />
 
 <Builtin data={builtins['join_tickets']} />
 
-<H3 page="builtins" value="keccak(b : bytes)" />
+<H3 page="builtins" value={builtins['keccak'].sig} />
 
 <Builtin data={builtins['keccak']} />
 
-<H3 page="builtins" value="key_address(k : key)" />
+<H3 page="builtins" value={builtins['key_address'].sig} />
 
 <Builtin data={builtins['key_address']} />
 
@@ -86,23 +90,19 @@ import H3 from "@site/src/components/H3.js";
 
 ## `M N O`
 
-<H3 page="builtins" value="mkoperation(a : tez, c : contract<T>, arg : T)" />
+<H3 page="builtins" value={builtins['mkoperation'].sig} />
 
 <Builtin data={builtins['mkoperation']} />
 
-<H3 page="builtins" value="open_chest(k : chest_key, c : chest, t : nat)" />
-
-<Builtin data={builtins['open_chest']} />
-
-<H3 page="builtins" value="mutez_to_nat(v : tez)" />
+<H3 page="builtins" value={builtins['mutez_to_nat'].sig} />
 
 <Builtin data={builtins['mutez_to_nat']} />
 
-<H3 page="builtins" value="date_from_timestamp(i : int)" />
+<H3 page="builtins" value={builtins['open_chest'].sig} />
 
-<Builtin data={builtins['date_from_timestamp']} />
+<Builtin data={builtins['open_chest']} />
 
-<H3 page="builtins" value="opt_get(o : option<T>)" />
+<H3 page="builtins" value={builtins['opt_get'].sig} />
 
 <Builtin data={builtins['opt_get']} />
 
@@ -112,21 +112,21 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['pack']} />
 
-<H3 page="builtins" value="pairing_check(l : list<bls12_381_g1 * bls12_381_g2>)" />
+<H3 page="builtins" value={builtins['pairing_check'].sig} />
 
 <Builtin data={builtins['pairing_check']} />
 
-<H3 page="builtins" value="read_ticket(t : ticket<T>)" />
+<H3 page="builtins" value={builtins['read_ticket'].sig} />
 
 <Builtin data={builtins['read_ticket']} />
 
-<H3 page="builtins" value="require_some(o : option<T>, s : S)" />
+<H3 page="builtins" value={builtins['requiresome'].sig} />
 
 <Builtin data={builtins['requiresome']} />
 
 ## `S T U`
 
-<H3 page="builtins" value="sapling_empty_state(k : key_hash)" />
+<H3 page="builtins" value={builtins['sapling_empty_state'].sig} />
 
 <Builtin data={builtins['sapling_empty_state']} />
 
@@ -136,19 +136,19 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['sapling_verify_update']} />
 
-<H3 page="builtins" value="set_delegate(opkh : option<key_hash>)" />
+<H3 page="builtins" value={builtins['setdelegate'].sig} />
 
 <Builtin data={builtins['setdelegate']} />
 
-<H3 page="builtins" value="sha256(b : bytes)" />
+<H3 page="builtins" value={builtins['sha256'].sig} />
 
 <Builtin data={builtins['sha256']} />
 
-<H3 page="builtins" value="sha3(b : bytes)" />
+<H3 page="builtins" value={builtins['sha3'].sig} />
 
 <Builtin data={builtins['sha3']} />
 
-<H3 page="builtins" value="sha512(b : bytes)" />
+<H3 page="builtins" value={builtins['sha512'].sig} />
 
 <Builtin data={builtins['sha512']} />
 
@@ -156,7 +156,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['slice']} />
 
-<H3 page="builtins" value="split_ticket(t : ticket<T>, n1 : nat, n2 : nat)" />
+<H3 page="builtins" value={builtins['split_ticket'].sig} />
 
 <Builtin data={builtins['split_ticket']} />
 
@@ -164,13 +164,13 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['tostring']} />
 
-<H3 page="builtins" value="unpack<T>(b : bytes)" />
+<H3 page="builtins" value={builtins['unpack'].sig} />
 
 <Builtin data={builtins['unpack']} />
 
 ## `V W X`
 
-<H3 page="builtins" value="voting_power(k : key_hash)" />
+<H3 page="builtins" value={builtins['voting_power'].sig} />
 
 <Builtin data={builtins['voting_power']} />
 

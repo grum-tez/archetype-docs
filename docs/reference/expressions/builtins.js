@@ -32,6 +32,7 @@ export const builtins = {
 
   // entrypoint
   callview: {
+    sig: 'callview<T>(a : address, id : string, arg : X)',
     desc: <div>Calls an on-chain view.</div>,
     parameters: [
       {
@@ -67,6 +68,7 @@ export const builtins = {
 
   // operation
   mkoperation: {
+    sig: 'mkoperation(a : tez, c : contract<T>, arg : T)',
     desc: <div>Makes an operation.</div>,
     parameters: [
       {
@@ -264,6 +266,7 @@ export const builtins = {
     ]
   },
   opt_get: {
+    sig: 'opt_get(o : option<T>)',
     desc: <OptGetDesc />,
     parameters: [
       {
@@ -289,6 +292,7 @@ export const builtins = {
     ]
   },
   requiresome: {
+    sig: 'require_some(o : option<T>, s : S)',
     desc: <RequireSomeDesc />,
     parameters: [
       {
@@ -319,6 +323,7 @@ export const builtins = {
     ]
   },
   floor: {
+    sig: 'floor(r : rational)',
     desc: <div>[NEW] Converts rational to int with <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions" target="_blank">floor</a> policy</div>,
     parameters: [
       {
@@ -336,6 +341,7 @@ export const builtins = {
     ]
   },
   ceil: {
+    sig: 'ceil(r : rational)',
     desc: <div>[NEW] Converts rational to int with <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions" target="_blank">ceiling</a> policy</div>,
     parameters: [
       {
@@ -392,6 +398,7 @@ export const builtins = {
     ]
   },
   unpack: {
+    sig: 'unpack<T>(b : bytes)',
     desc: <div>[NEW] Unpack data from bytes value.</div>,
     parameters: [
       {
@@ -417,6 +424,7 @@ export const builtins = {
     ]
   },
   setdelegate: {
+    sig: 'set_delegate(opkh : option<key_hash>)',
     desc: <div>[NEW] Sets delegate account for current contract.</div>,
     parameters: [
       {
@@ -439,6 +447,7 @@ export const builtins = {
     ]
   },
   implicit_account: {
+    sig: 'implicit_account(pkh : key_hash)',
     desc: <div>Converts key_hash to contract.</div>,
     parameters: [
       {
@@ -459,6 +468,7 @@ export const builtins = {
     ]
   },
   contract_address: {
+    sig: 'contract_address(c : contract<T>)',
     desc: <div>Gets the address of a contract.</div>,
     parameters: [
       {
@@ -476,6 +486,7 @@ export const builtins = {
     ]
   },
   addresscontract: {
+    sig: 'address_to_contract(a : address)',
     desc: <div>[NEW] Converts an address to a contract.</div>,
     parameters: [
       {
@@ -499,6 +510,7 @@ export const builtins = {
     ]
   },
   key_address: {
+    sig: 'key_address(k : key)',
     desc: <div>Converts a key to an address</div>,
     parameters: [
       {
@@ -518,6 +530,7 @@ export const builtins = {
 
   //crypto functions
   blake2b: {
+    sig: 'blake2b(b : bytes)',
     desc: <div>Hashes bytes value with <a href="https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29" target="_blank">blake2b</a> algorithm.</div>,
     parameters: [
       {
@@ -537,6 +550,7 @@ export const builtins = {
     ]
   },
   sha256: {
+    sig: 'sha256(b : bytes)',
     desc: <div>Hashes bytes value with sha256 algorithm.</div>,
     parameters: [
       {
@@ -556,6 +570,7 @@ export const builtins = {
     ]
   },
   sha512: {
+    sig: 'sha512(b : bytes)',
     desc: <div>Hashes bytes value with sha512 algorithm.</div>,
     parameters: [
       {
@@ -575,6 +590,7 @@ export const builtins = {
     ]
   },
   sha3: {
+    sig: 'sha3(b : bytes)',
     desc: <div>Hashes bytes value with <a href="https://en.wikipedia.org/wiki/SHA-3" target="_blank">sha3</a> algorithm.</div>,
     parameters: [
       {
@@ -594,6 +610,7 @@ export const builtins = {
     ]
   },
   keccak: {
+    sig: 'keccak(b : bytes)',
     desc: <div>Hashes bytes value with <a href="https://en.wikipedia.org/wiki/SHA-3" target="_blank">keccak</a> algorithm.</div>,
     parameters: [
       {
@@ -613,6 +630,7 @@ export const builtins = {
     ]
   },
   hash_key: {
+    sig: 'hash_key(k : key)',
     desc: <div>Converts key to key_hash.</div>,
     parameters: [
       {
@@ -632,6 +650,7 @@ export const builtins = {
     ]
   },
   check_signature: {
+    sig: 'check_signature(k : key, s : signature, b : bytes)',
     desc: <div>Checks whether signature <code>s</code> is obtained by signing sequence of bytes <code>b</code> with account public key <code>k</code>.</div>,
     parameters: [
       {
@@ -663,6 +682,7 @@ export const builtins = {
 
   // voting
   voting_power: {
+    sig: 'voting_power(k : key_hash)',
     desc: <div>Gets the voting power from a <code>key_hash</code> value.</div>,
     parameters: [
       {
@@ -684,6 +704,7 @@ export const builtins = {
 
   // ticket
   create_ticket: {
+    sig: 'create_ticket(s : T, n : nat)',
     desc: <div>Creates a ticket from a value typed T and an amount.</div>,
     parameters: [
       {
@@ -692,8 +713,8 @@ export const builtins = {
         desc: <div>The information of the ticket</div>
       },
       {
-        type: 'n',
-        alias: 'nat',
+        type: 'nat',
+        alias: 'n',
         desc: <div>The amount of the ticket</div>
       }
     ],
@@ -708,6 +729,7 @@ export const builtins = {
     ]
   },
   read_ticket: {
+    sig: 'read_ticket(t : ticket<T>)',
     desc: <div>Reads ticket's origin contract, value and amount.</div>,
     parameters: [
       {
@@ -728,6 +750,7 @@ export const builtins = {
     ]
   },
   split_ticket: {
+    sig: 'split_ticket(t : ticket<T>, n1 : nat, n2 : nat)',
     desc: <div>Splits ticket in two new tickets.</div>,
     parameters: [
       {
@@ -758,6 +781,7 @@ export const builtins = {
     ]
   },
   join_tickets: {
+    sig: 'join_tickets(t1 : ticket<T>, t2 : ticket<T>)',
     desc: <div>Joins two compatible tickets (same value, same origin contract).</div>,
     parameters: [
       {
@@ -785,6 +809,7 @@ export const builtins = {
 
   // sapling
   sapling_empty_state: {
+    sig: 'sapling_empty_state(k : key_hash)',
     desc: <div>Creates a sapling state with the specified memo size. The memo is an arbitrary string message encrypted and available to anyone owning the outgoing viewing key.</div>,
     parameters: [
       {
@@ -831,6 +856,7 @@ export const builtins = {
 
   // bls curve
   pairing_check: {
+    sig: 'pairing_check(l : list<bls12_381_g1 * bls12_381_g2>)',
     desc: <div>Checks pairing of pairs of <a href="https://en.wikipedia.org/wiki/BLS_digital_signature" target="_blank">BLS</a> values.</div>,
     parameters: [
       {
@@ -853,6 +879,7 @@ export const builtins = {
 
   // timelock
   open_chest: {
+    sig: 'open_chest(k : chest_key, c : chest, t : nat)',
     desc: <div>Opens chest <code>c</code> with key <code>k</code> under time <code>t</code>.</div>,
     parameters: [
       {
@@ -889,6 +916,7 @@ export const builtins = {
 
   // others
   date_from_timestamp: {
+    sig: 'date_from_timestamp(i : int)',
     desc: <div>Convert int to date</div>,
     parameters: [
       {
@@ -906,6 +934,7 @@ export const builtins = {
     ]
   },
   mutez_to_nat: {
+    sig: 'mutez_to_nat(v : tez)',
     desc: <div>Convert tez to nat in mutez</div>,
     parameters: [
       {
