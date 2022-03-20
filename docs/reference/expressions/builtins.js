@@ -24,7 +24,7 @@ export const builtins = {
       desc: <div></div>
     },
     michelson: "TODO",
-    michelson_ref_url: michelson_ref_base_url + '#TODO',
+    michelson_ref_url: michelson_ref_base_url + '#instr-TODO',
     related: [
       { keyword: 'TODO', link: '/docs/language-basics/TODO' },
     ]
@@ -296,7 +296,36 @@ export const builtins = {
   // TODO: Mlistfold
 
   // map api expression
-  // TODO: Mmapput
+  put: {
+    sig: 'put<m : (big_)?map<K, V>, k : K, v : V)',
+    desc: <div>[NEW] Puts a pair of key-value on the map <code>m</code>.</div>,
+    parameters: [
+      {
+        type: 'map',
+        alias: 'm',
+        desc: <div>Map to put</div>
+      },
+      {
+        type: 'K',
+        alias: 'k',
+        desc: <div>Key to put</div>
+      },
+      {
+        type: 'V',
+        alias: 'v',
+        desc: <div>Value to put</div>
+      }
+    ],
+    returns: {
+      type: '(big_)?map<K, V>',
+      desc: <div>Copy of the map which contains the new pair key-value</div>
+    },
+    michelson: "UPDATE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
+    related: [
+      { keyword: 'Map', link: '/docs/language-basics/containers' },
+    ]
+  },
   // TODO: Mmapremove
   // TODO: Mmapupdate
   // TODO: Mmapget
