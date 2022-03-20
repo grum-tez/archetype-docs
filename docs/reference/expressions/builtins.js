@@ -101,7 +101,26 @@ export const builtins = {
 
   // control expression
   // TODO: Mfold
-  // TODO: Mmap
+  map: {
+    sig: 'map(l : list<T>, id -> (body(id : T) : R))',
+    desc: <div>[NEW] Returns a list with application of a function which take T typed argument and returns R typed value for each item of the original list.</div>,
+    parameters: [
+      {
+        type: 'list<T>',
+        alias: 'l',
+        desc: <div>List to map</div>
+      }
+    ],
+    returns: {
+      type: 'list<R>',
+      desc: <div>List mapped</div>
+    },
+    michelson: "MAP",
+    michelson_ref_url: michelson_ref_base_url + '#instr-MAP',
+    related: [
+      { keyword: 'List', link: '/docs/language-basics/container#list' },
+    ]
+  },
   execlambda: {
     sig: 'exec_lambda(f : lambda<A, R>, x : A)',
     desc: <div>[NEW] Executes lambda and returns its value.</div>,

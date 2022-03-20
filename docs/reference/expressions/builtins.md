@@ -134,6 +134,10 @@ import H3 from "@site/src/components/H3.js";
 
 ## `M N O`
 
+<H3 page="builtins" value={builtins['map'].sig} />
+
+<Builtin data={builtins['map']} />
+
 <H3 page="builtins" value={builtins['max'].sig} />
 
 <Builtin data={builtins['max']} />
