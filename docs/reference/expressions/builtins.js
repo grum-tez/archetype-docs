@@ -296,7 +296,7 @@ export const builtins = {
 
   // map api expression
   put: {
-    sig: 'put<m : (big_)?map<K, V>, k : K, v : V)',
+    sig: 'put(m : (big_)?map<K, V>, k : K, v : V)',
     desc: <div>[NEW] Puts a pair of key-value on the map <code>m</code>.</div>,
     parameters: [
       {
@@ -325,8 +325,41 @@ export const builtins = {
       { keyword: 'Map', link: '/docs/language-basics/containers' },
     ]
   },
-  // TODO: Mmapupdate
-  // TODO: Mmapget
+  update: {
+    sig: 'update(m : (big_)?map<K, V>, k : K, v : option<V>)',
+    desc: <div>[NEW] Adds or removes a pair of key-value on the map <code>m</code>.</div>,
+    parameters: [
+      {
+        type: 'map',
+        alias: 'm',
+        desc: <div>Map to add/remove</div>
+      },
+      {
+        type: 'K',
+        alias: 'k',
+        desc: <div>Key to add/remove</div>
+      },
+      {
+        type: 'V',
+        alias: 'v',
+        desc: <div>
+          <ul>
+          <li><code>none</code> remove key <code>k</code></li>
+          <li><code>some(v)</code>, add key <code>k</code> with value <code>v</code></li>
+        </ul>
+        </div>
+      }
+    ],
+    returns: {
+      type: '(big_)?map<K, V>',
+      desc: <div>Copy of the new map</div>
+    },
+    michelson: "UPDATE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
+    related: [
+      { keyword: 'Map', link: '/docs/language-basics/containers' },
+    ]
+  },  // TODO: Mmapget
   // TODO: Mmapgetopt
   // TODO: Mmapfold
 

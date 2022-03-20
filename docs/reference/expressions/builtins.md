@@ -232,6 +232,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['unpack']} />
 
+<H3 page="builtins" value={builtins['update'].sig} />
+
+<Builtin data={builtins['update']} />
+
 ## `V W X`
 
 <H3 page="builtins" value={builtins['voting_power'].sig} />
