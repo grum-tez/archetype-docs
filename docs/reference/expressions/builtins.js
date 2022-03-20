@@ -291,7 +291,29 @@ export const builtins = {
       { keyword: 'List', link: '/docs/language-basics/container#list' },
     ]
   },
-  // TODO: Mlistconcat
+  listconcat: {
+    sig: 'concat(a : list<T>, b : list<T>)',
+    desc: <div>[NEW] Concatenates two lists.</div>,
+    parameters: [
+      {
+        type: 'list<T>',
+        alias: 'a',
+        desc: <div>First list</div>
+      },
+      {
+        type: 'list<T>',
+        alias: 'b',
+        desc: <div>Second list</div>
+      }
+    ],
+    returns: {
+      type: 'list<T>',
+      desc: <div>List concatenated</div>
+    },
+    related: [
+      { keyword: 'List', link: '/docs/language-basics/container#list' },
+    ]
+  },
   // TODO: Mlistfold
 
   // map api expression
