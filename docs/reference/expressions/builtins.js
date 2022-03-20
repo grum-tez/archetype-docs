@@ -143,7 +143,44 @@ export const builtins = {
   // builtin functions
   // TODO: Mmin
   // TODO: Mmax
-  // TODO: Mabs
+  abs: {
+    sig: 'abs(i : int)',
+    desc: <div>[NEW] Converts int to nat.</div>,
+    parameters: [
+      {
+        type: 'int',
+        alias: 'i',
+        desc: <div>Integer to convert</div>
+      }
+    ],
+    returns: {
+      type: 'nat',
+      desc: <div>Nat converted</div>
+    },
+    michelson: "ABS",
+    michelson_ref_url: michelson_ref_base_url + '#instr-ABS',
+    related: [
+      { keyword: 'Numbers', link: '/docs/language-basics/number' },
+    ]
+  },
+  absrat: {
+    sig: 'abs(r : rational)',
+    desc: <div>[NEW] Returns absolute value of <code>r</code></div>,
+    parameters: [
+      {
+        type: 'rational',
+        alias: 'r',
+        desc: <div>Rational to make absolute value</div>
+      }
+    ],
+    returns: {
+      type: 'rational',
+      desc: <div>Absolute value</div>
+    },
+    related: [
+      { keyword: 'Numbers', link: '/docs/language-basics/number#rational' },
+    ]
+  },
   concat: {
     sig: 'concat(a : T, b : T)',
     desc: <div>[NEW] Concatenates two items.</div>,
