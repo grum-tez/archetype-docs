@@ -236,6 +236,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['slice']} />
 
+<H3 page="builtins" value={builtins['some'].sig} />
+
+<Builtin data={builtins['some']} />
+
 <H3 page="builtins" value={builtins['split_ticket'].sig} />
 
 <Builtin data={builtins['split_ticket']} />

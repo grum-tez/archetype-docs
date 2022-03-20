@@ -239,7 +239,26 @@ export const builtins = {
       { keyword: 'Option', link: '/docs/language-basics/composite#option' },
     ]
   },
-  // TODO: Msome
+  some: {
+    sig: 'some(v : T)',
+    desc: <div>[NEW] Returns some value.</div>,
+    parameters: [
+      {
+        type: 'T',
+        alias: 'v',
+        desc: <div>Value to convert</div>
+      }
+    ],
+    returns: {
+      type: 'option<T>',
+      desc: <div>Value of some(v)</div>
+    },
+    michelson: "SOME",
+    michelson_ref_url: michelson_ref_base_url + '#instr-SOME',
+    related: [
+      { keyword: 'Option', link: '/docs/language-basics/composite#option' },
+    ]
+  },
 
   // set api expression
   add: {
