@@ -120,7 +120,31 @@ export const builtins = {
   // TODO: Msetfold
 
   // list api expression
-  // TODO: Mlistprepend
+  prepend: {
+    sig: 'prepend(l : list<T>, i : T)',
+    desc: <div>[NEW] Prepends an item <code>i</code> to list <code>l</code>.</div>,
+    parameters: [
+      {
+        type: 'list<T>',
+        alias: 'l',
+        desc: <div>List to be prepended</div>
+      },
+      {
+        type: 'T',
+        alias: 'i',
+        desc: <div>Item to prepend</div>
+      }
+    ],
+    returns: {
+      type: 'list<T>',
+      desc: <div>List prepended</div>
+    },
+    michelson: "CONS",
+    michelson_ref_url: michelson_ref_base_url + '#instr-CONS',
+    related: [
+      { keyword: 'List', link: '/docs/language-basics/container#list' },
+    ]
+  },
   // TODO: Mlistnth
   // TODO: Mlistreverse
   // TODO: Mlistconcat

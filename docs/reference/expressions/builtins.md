@@ -144,6 +144,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['pairing_check']} />
 
+<H3 page="builtins" value={builtins['prepend'].sig} />
+
+<Builtin data={builtins['prepend']} />
+
 <H3 page="builtins" value={builtins['read_ticket'].sig} />
 
 <Builtin data={builtins['read_ticket']} />
