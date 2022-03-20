@@ -68,6 +68,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['date_from_timestamp']} />
 
+<H3 page="builtins" value={builtins['execlambda'].sig} />
+
+<Builtin data={builtins['execlambda']} />
+
 <H3 page="builtins" value={builtins['floor'].sig} />
 
 <Builtin data={builtins['floor']} />

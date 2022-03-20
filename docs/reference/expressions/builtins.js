@@ -103,6 +103,31 @@ export const builtins = {
   // TODO: Mfold
   // TODO: Mmap
   // TODO: Mexeclambda
+  execlambda: {
+    sig: 'exec_lambda(f : lambda<A, R>, x : A)',
+    desc: <div>[NEW] Executes lambda and returns its value.</div>,
+    parameters: [
+      {
+        type: 'lambda<A, R>',
+        alias: 'f',
+        desc: <div>Lambda to execute</div>
+      },
+      {
+        type: 'A',
+        alias: 'x',
+        desc: <div>Argument</div>
+      }
+    ],
+    returns: {
+      type: 'T',
+      desc: <div>Computes of f(x)</div>
+    },
+    michelson: "EXEC",
+    michelson_ref_url: michelson_ref_base_url + '#instr-EXEC',
+    related: [
+      { keyword: 'lambda', link: '/docs/language-basics/lambda' },
+    ]
+  },
   // TODO: Mapplylambda
 
   // arithmetic function
