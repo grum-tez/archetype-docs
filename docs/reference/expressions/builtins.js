@@ -174,7 +174,24 @@ export const builtins = {
       { keyword: 'List', link: '/docs/language-basics/container#list' },
     ]
   },
-  // TODO: Mlistreverse
+  reverse: {
+    sig: 'reverse(l : list<T>)',
+    desc: <div>[NEW] Returns a copy of list <code>l</code> in the reverse order.</div>,
+    parameters: [
+      {
+        type: 'list<T>',
+        alias: 'l',
+        desc: <div>List to reverse</div>
+      }
+    ],
+    returns: {
+      type: 'list<T>',
+      desc: <div>Reversed list</div>
+    },
+    related: [
+      { keyword: 'List', link: '/docs/language-basics/container#list' },
+    ]
+  },
   // TODO: Mlistconcat
   // TODO: Mlistfold
 

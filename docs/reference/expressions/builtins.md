@@ -160,6 +160,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['requiresome']} />
 
+<H3 page="builtins" value={builtins['reverse'].sig} />
+
+<Builtin data={builtins['reverse']} />
+
 ## `S T U`
 
 <H3 page="builtins" value={builtins['sapling_empty_state'].sig} />
