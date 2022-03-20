@@ -26,6 +26,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['addresscontract']} />
 
+<H3 page="builtins" value={builtins['applylambda'].sig} />
+
+<Builtin data={builtins['applylambda']} />
+
 <H3 page="builtins" value={builtins['blake2b'].sig} />
 
 <Builtin data={builtins['blake2b']} />

@@ -102,7 +102,6 @@ export const builtins = {
   // control expression
   // TODO: Mfold
   // TODO: Mmap
-  // TODO: Mexeclambda
   execlambda: {
     sig: 'exec_lambda(f : lambda<A, R>, x : A)',
     desc: <div>[NEW] Executes lambda and returns its value.</div>,
@@ -128,7 +127,31 @@ export const builtins = {
       { keyword: 'lambda', link: '/docs/language-basics/lambda' },
     ]
   },
-  // TODO: Mapplylambda
+  applylambda: {
+    sig: 'apply_lambda(f : lambda<A * T, R>, x : A)',
+    desc: <div>[NEW] Applies lambda and returns its value.</div>,
+    parameters: [
+      {
+        type: 'lambda<A * T, R>',
+        alias: 'f',
+        desc: <div>Lambda to apply</div>
+      },
+      {
+        type: 'A',
+        alias: 'x',
+        desc: <div>Argument</div>
+      }
+    ],
+    returns: {
+      type: 'lambda<T, R>',
+      desc: <div>Lambda applied</div>
+    },
+    michelson: "APPLY",
+    michelson_ref_url: michelson_ref_base_url + '#instr-APPLY',
+    related: [
+      { keyword: 'lambda', link: '/docs/language-basics/lambda' },
+    ]
+  },
 
   // arithmetic function
   // TODO: Msubnat
