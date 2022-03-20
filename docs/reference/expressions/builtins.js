@@ -225,7 +225,20 @@ export const builtins = {
       { keyword: 'Or', link: '/docs/language-basics/composite#or' },
     ]
   },
-  // TODO: Mnone
+  none: {
+    sig: 'none<T>',
+    desc: <div>[NEW] Returns none value typed option of T, which may be optional when it can be inferred.</div>,
+    parameters: [],
+    returns: {
+      type: 'option<T>',
+      desc: <div>Value none</div>
+    },
+    michelson: "NONE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-NONE',
+    related: [
+      { keyword: 'Option', link: '/docs/language-basics/composite#option' },
+    ]
+  },
   // TODO: Msome
 
   // set api expression

@@ -150,6 +150,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['mutez_to_nat']} />
 
+<H3 page="builtins" value={builtins['none'].sig} />
+
+<Builtin data={builtins['none']} />
+
 <H3 page="builtins" value={builtins['nth'].sig} />
 
 <Builtin data={builtins['nth']} />
