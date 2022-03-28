@@ -1,4 +1,3 @@
-
 import React from "react"
 
 export const COMPARABLE = 0
@@ -316,6 +315,17 @@ export const types = {
     michelson_ref_url: michelson_ref_base_url + '/#type-or',
     related: [
       { keyword: "Or", link:"/docs/language-basics/composite#or" }
+    ],
+  },
+  pkey : {
+    desc: <div>Type of the key of asset <code>A</code>.</div>,
+    examples: [   ],
+    parameters: [
+      { keyword: 'A', type: 'asset', desc: 'Any declared asset.' },
+    ],
+    tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
+    related: [
+      { keyword: "Asset", link:"/docs/asset" }
     ],
   },
   rational :

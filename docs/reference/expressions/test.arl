@@ -1,0 +1,10 @@
+archetype test
+
+asset myasset {
+    k : nat;
+    name : string
+}
+
+entry exec () {
+    var hd = myasset.head(2)
+}

@@ -1,21 +1,39 @@
 ---
 sidebar_position: 6
 ---
+import Builtin from '@site/src/components/Builtin.js';
+import { assetbuiltins } from './assetbuiltins.js';
 
 # Asset
 
-### contains
+### `A.contains(k : pkey<A>)`
 
-### nth
+<Builtin data={assetbuiltins["contains"]} />
 
-### sort
+### `A.count()`
 
-### count
+<Builtin data={assetbuiltins["count"]} />
 
-### sum
+### `A.nth(i : nat)`
 
-### select
+<Builtin data={assetbuiltins["nth"]} />
 
-### head
+### `A.sort(f)`
 
-### tail
+<Builtin data={assetbuiltins["sort"]} />
+
+### `A.sum(f)`
+
+<Builtin data={assetbuiltins["sum"]} />
+
+### `A.select(p)`
+
+<Builtin data={assetbuiltins["select"]} />
+
+### `A.head(i : nat)`
+
+<Builtin data={assetbuiltins["head"]} />
+
+### `A.tail(i : nat)`
+
+<Builtin data={assetbuiltins["tail"]} />

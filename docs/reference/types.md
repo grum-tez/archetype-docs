@@ -135,6 +135,10 @@ import H3 from "@site/src/components/H3.js";
 
 ## `P Q R`
 
+<H3 page="types" value="pkey<A>" />
+
+<Type data={types["pkey"]} />
+
 <H3 page="types" value="rational" />
 
 <Type data={types["rational"]} />

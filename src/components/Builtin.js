@@ -6,6 +6,7 @@ import React from 'react';
 
 import styles from './component.module.css';
 import Info from './Info';
+import AppliesTo from './AppliesTo';
 
 const Parameter = (props) => {
   return (
@@ -94,25 +95,28 @@ const getParameterXS = (params) => {
 }
 
 export default function Builtin(props) {
-  const paramXS = getParameterXS(props.data.parameters);
+  const paramXS = (props.data.parameters !== undefined) ? getParameterXS(props.data.parameters) : 0;
   return (
     <StyledEngineProvider injectFirst>
     <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginBottom: '60px' }}>
       <Grid item xs={12} >
         <Typography style={{
           fontFamily: 'IBM Plex Sans',
-          marginBottom: '12px'
         }}>
           {props.data.desc}
         </Typography>
       </Grid>
-      {(props.data.parameters !== undefined) ? (
+      {(props.data.appliesto !== undefined) ? (
+          <AppliesTo data={props.data.appliesto} />
+        ) : (<div />)
+      }
+      {(props.data.parameters !== undefined && props.data.parameters.length > 0) ? (
         <Grid item>
-          <h4 style={{ marginBottom: '0px', color: 'grey', fontWeight: 'normal' }}>{ (props.data.parameters.length > 1) ? 'Parameters' : 'Parameter'}</h4>
+          <h4 style={{ marginBottom: '0px', marginTop: '12px', color: 'grey', fontWeight: 'normal' }}>{ (props.data.parameters.length > 1) ? 'Parameters' : 'Parameter'}</h4>
         </Grid>
         ) : (<div />)
       }
-      {(props.data.parameters !== undefined) ? (
+      {(props.data.parameters !== undefined && props.data.parameters.length > 0) ? (
         props.data.parameters.map((p,i) => {
           return <Parameter key={"bp"+i} alias={p.alias} type={p.type} desc={p.desc} xs={paramXS} withLink={p.withLink}/>
         })
