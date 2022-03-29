@@ -7,8 +7,8 @@ export const PACKABLE = 3
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference'
 
-import AggregateDesc from '../../src/components/aggregate_desc.mdx'
-import PartitionDesc from '../../src/components/partition_desc.mdx'
+import AggregateDesc from '../../src/components/desc/aggregate_desc.mdx'
+import PartitionDesc from '../../src/components/desc/partition_desc.mdx'
 
 export const types = {
   address :
