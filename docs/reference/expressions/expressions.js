@@ -6,7 +6,7 @@ export const expressions = {
     { label : 'match with'  , link : link_prefix + '/controls' },
   ],
   asset: [
-    { label : '[]'      , link : link_prefix + '/asset#akf' },
+    { label : '[]'      , link : link_prefix + '/asset#ak--pkeyaf' },
     { label : 'contains', link : link_prefix + '/asset#acontainsk--pkeya' },
     { label : 'count'   , link : link_prefix + '/asset#acount' },
     { label : 'nth'     , link : link_prefix + '/asset#anthi--nat' },

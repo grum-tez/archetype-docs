@@ -21,11 +21,11 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["address"]} />
 
-<H3 page="types" value="asset" />
+<H3 page="types" value="aggregate<A>" />
 
-<Type data={types["asset"]} />
+<Type data={types["aggregate"]} />
 
-<H3 page="types" value="big_map" />
+<H3 page="types" value="big_map<K, V>" />
 
 <Type data={types["big_map"]} />
 
@@ -134,6 +134,10 @@ import H3 from "@site/src/components/H3.js";
 <Type data={types["or"]} />
 
 ## `P Q R`
+
+<H3 page="types" value="partition<A>" />
+
+<Type data={types["partition"]} />
 
 <H3 page="types" value="pkey<A>" />
 

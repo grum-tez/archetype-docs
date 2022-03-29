@@ -8,7 +8,13 @@ import styles from './component.module.css';
 import Info from './Info';
 import Builtin from './Builtin';
 
-const appliestotypes = ['asset', 'asset to big_map', 'aggregate', 'partition', 'view']
+const appliestotypes = [
+  { label : 'asset',            link : '/docs/asset' },
+  { label : 'asset to big_map', link : '/docs/asset' },
+  { label : 'aggregate',        link : '/docs/reference/types#aggregate<A>' },
+  { label : 'partition',        link : '/docs/reference/types#partition<A>' },
+  { label : 'view',             link : '/docs/reference/types#view<A>' }
+]
 
 export default function AppliesTo(props) {
   console.log(props.data.includes('asset to big_map'));
@@ -21,7 +27,7 @@ export default function AppliesTo(props) {
       <Grid container spacing={2}>
         { appliestotypes.map((t,i) => {
           return (<Grid item>
-            <div ><code style={{ textDecoration: props.data.includes(t)?"none":"line-through"}}>{t}</code></div>
+            <Link to={t.link} ><code style={{ textDecoration: props.data.includes(t.label)?"none":"line-through"}}>{t.label}</code></Link>
           </Grid>)
           })
         }

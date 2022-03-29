@@ -43,7 +43,7 @@ This is the Archetype language reference.
 ## Types
 
 <EagleEyeView data={Object.entries(types).map(([k,v]) => {
-    return { label: k, link: '/docs/reference/types#' + k }
+    return { label: k, link: '/docs/reference/types' + types[k].link }
   })
 } xs={4}/>
 

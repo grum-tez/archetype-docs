@@ -6,7 +6,7 @@ import { assetbuiltins } from './assetbuiltins.js';
 
 # Asset
 
-### `A[k].f`
+### `A[k : pkey<A>].f`
 
 <Builtin data={assetbuiltins["get"]} />
 
