@@ -62,3 +62,31 @@ import { operators } from './operators.js';
 ### `not a`
 
 <Operator data={operators['not']} />
+
+### `a = b`
+
+<Operator data={operators['eq']} />
+
+### `a <> b`
+
+<Operator data={operators['neq']} />
+
+### `a < b`
+
+<Operator data={operators['lt']} />
+
+### `a <= b`
+
+<Operator data={operators['lteq']} />
+
+### `a > b`
+
+<Operator data={operators['gt']} />
+
+### `a >= b`
+
+<Operator data={operators['gteq']} />
+
+### `a <=> b`
+
+<Operator data={operators['cmp']} />

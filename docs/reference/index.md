@@ -80,7 +80,7 @@ This is the Archetype language reference.
 } xs={4}/>
 
 <EagleEyeView title="Operators" data={Object.entries(operators).map(([k,v]) => {
-    return { label: k, link: '/docs/reference/expressions/operators#' + k }
+    return { label: operators[k].label, link: '/docs/reference/expressions/operators' + operators[k].link }
   })
 } xs={4}/>
 

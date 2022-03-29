@@ -2,6 +2,7 @@ import React from "react"
 
 import SelectDesc from "../../../src/components/select_desc.mdx"
 import SortDesc from "../../../src/components/sort_desc.mdx"
+import SumDesc from "../../../src/components/sum_desc.mdx"
 
 export const assetbuiltins = {
   get: {
@@ -17,6 +18,7 @@ export const assetbuiltins = {
     ],
     returns: {
       type: 'T',
+      withLink: false,
       desc: <div>Returns field <code>f</code> value of asset <code>k</code>.</div>
     },
     fails : [
@@ -92,6 +94,7 @@ export const assetbuiltins = {
     parameters: [
       {
         type: 'asset field',
+        withLink: false,
         alias: 'f',
         desc: <div>Asset field name of comparable type; it accepts wrapping decorator to specify sort order:<ul>
             <li><code>asc(f)</code> for ascending order; <code>asc</code> is by default and may be omitted</li>
@@ -109,11 +112,12 @@ export const assetbuiltins = {
   },
   sum: {
     sig: 'A.sum(f)',
-    desc: <div>Sums values of asset field <code>f</code> over collection <code>A</code>.</div>,
+    desc: <SumDesc />,
     appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
     parameters: [
       {
         type: 'asset field',
+        withLink: false,
         alias: 'f',
         desc: <div>Asset field name of type <code>int</code> or <code>nat</code>.</div>
       },
@@ -135,6 +139,7 @@ export const assetbuiltins = {
     parameters: [
       {
         type: 'predicate',
+        withLink: false,
         alias: 'p',
         desc: <div>Predicate to select assets.</div>
       },

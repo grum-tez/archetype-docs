@@ -4,9 +4,47 @@ import DivDesc from "../../../src/components/div_desc.mdx"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
+const cmp_types = (ret) => [
+  { typa: 'bool',         typb : 'bool',         typr: ret },
+  { typa: 'nat',          typb : 'nat',          typr: ret },
+  { typa: 'int',          typb : 'int',          typr: ret },
+  { typa: 'tez',          typb : 'tez',          typr: ret },
+  { typa: 'rational',     typb : 'rational',     typr: ret },
+  { typa: 'date',         typb : 'date',         typr: ret },
+  { typa: 'duration',     typb : 'duration',     typr: ret },
+  { typa: 'enum',         typb : 'enum',         typr: ret },
+  { typa: 'key',          typb : 'key',          typr: ret },
+  { typa: 'key_hash',     typb : 'key_hash',     typr: ret },
+  { typa: 'signature',    typb : 'signature',    typr: ret },
+  { typa: 'option<T>',    typb : 'option<T>',    typr: ret,
+    comment: <div>when <code>T</code> is comparable.</div> },
+  { typa: 'or<T1,T2>',    typb : 'or<T1,T2>',    typr: ret,
+    comment: <div>when <code>T1</code> and <code>T2</code> are comparable.</div> },
+  { typa: 'pkey<A>',      typb : 'pkey<A>',      typr: ret },
+  { typa: 'tuple',        typb : 'tuple',        typr: ret,
+    comment: <div>when all composing types are comparable</div> },
+  { typa: 'string',       typb : 'string',       typr: ret },
+  { typa: 'bytes',        typb : 'bytes',        typr: ret },
+  { typa: 'address',      typb : 'address',      typr: ret },
+  { typa: 'chain_id',     typb : 'chain_id',     typr: ret },
+  { typa: 'unit',         typb : 'unit',         typr: ret },
+  { typa: 'never',        typb : 'never',        typr: ret },
+]
+
+const cmp_types_promotions = (ret) => [
+  { typa: 'int',         typb : 'nat',         typr: ret },
+  { typa: 'nat',         typb : 'int',         typr: ret },
+  { typa: 'int',         typb : 'rational',    typr: ret },
+  { typa: 'rational',    typb : 'int',         typr: ret },
+  { typa: 'nat',         typb : 'rational',    typr: ret },
+  { typa: 'rational',    typb : 'nat',         typr: ret },
+
+]
+
 export const operators = {
   add: {
     label: 'a + b',
+    link: '#a--b',
     desc: <div>Adds numbers or concatenates strings.</div>,
     types: [
       { typa: 'nat',          typb : 'nat',          typr: 'nat' },
@@ -42,6 +80,7 @@ export const operators = {
   },
   sub : {
     label: 'a - b',
+    link: '#a---b',
     desc: 'Subtracts numbers.',
     types: [
       { typa: 'nat',          typb : 'nat',          typr: 'int' },
@@ -75,6 +114,7 @@ export const operators = {
   },
   minus : {
     label: '- a',
+    link: '#--a',
     desc: <div>Returns the opposite of <code>a</code>.</div>,
     binary: false,
     types: [
@@ -89,6 +129,7 @@ export const operators = {
   },
   mult: {
     label: 'a * b',
+    link: '#a--b-1',
     desc: 'Multiplies two numbers',
     types: [
       { typa: 'nat',          typb : 'nat',          typr: 'nat' },
@@ -119,7 +160,8 @@ export const operators = {
   },
   slash : {
     label: 'a / b',
-    desc: 'Divides two numbers.',
+    link: '#a--b-2',
+    desc: 'Divides two numbers as a rational.',
     types: [
       { typa: 'nat',          typb : 'nat',          typr: 'rational' },
       { typa: 'int',          typb : 'int',          typr: 'rational' },
@@ -137,6 +179,7 @@ export const operators = {
   },
   div : {
     label: 'a div b',
+    link: '#a-div-b',
     desc: <DivDesc/>,
     types: [
       { typa: 'nat',          typb : 'nat',          typr: 'nat' },
@@ -160,6 +203,7 @@ export const operators = {
   },
   mod: {
     label: 'a % b',
+    link: '#a--b-3',
     desc: <ModDesc/>,
     types: [
       { typa: 'nat',          typb : 'nat',          typr: 'nat' },
@@ -177,6 +221,7 @@ export const operators = {
   },
   divmod: {
     label: 'a /% b',
+    link: '#a--b-4',
     desc: <div>Returns the euclidean division of <code>a</code> by <code>b</code>; returns an option of quotient and remainder:<ul>
       <li><code>some(q, r)</code>, when <code>b</code> is different from 0, <code></code><code>q</code> being the quotient and <code>r</code> the remainder</li>
       <li><code>none</code>, when <code>b</code> is equal to 0</li>
@@ -192,6 +237,7 @@ export const operators = {
   },
   lsl: {
     label: 'a <<| b',
+    link: '#a--b-5',
     desc: <div>Shifts the bits of <code>a</code> to the left by the number of positions specified by <code>b</code>. Simultaneously, the empty spaces created by the bits shifted to the left are then filled with zeroes.
       It is a fast way to multiply by a power of 2.<br></br><br></br>
     </div>,
@@ -207,6 +253,7 @@ export const operators = {
   },
   lsr: {
     label: 'a |>> b',
+    link: '#a--b-6',
     desc: <div>Shifts the bits of <code>a</code> to the right by the number of positions specified by <code>b</code>. It is a fast way to divide by a power of 2.<br/><br/>
     </div>,
     types: [
@@ -221,6 +268,7 @@ export const operators = {
   },
   and: {
     label: 'a and b',
+    link: '#a-and-b',
     desc: <div><ul>
       <li><code>true</code> if <code>a</code> and <code>b</code> are <code>true</code></li>
       <li><code>false</code> otherwise.</li>
@@ -231,6 +279,7 @@ export const operators = {
   },
   or: {
     label: 'a or b',
+    link: '#a-or-b',
     desc: <div><ul>
     <li><code>true</code> if <code>a</code> or <code>b</code> is <code>true</code></li>
     <li><code>false</code> otherwise</li>
@@ -241,6 +290,7 @@ export const operators = {
   },
   xor: {
     label: 'a xor b',
+    link: 'a-xor-b',
     desc: <div><ul>
     <li><code>true</code> if <code>a</code> and <code>b</code> are different</li>
     <li><code>false</code> otherwise</li>
@@ -251,6 +301,7 @@ export const operators = {
   },
   not: {
     label: 'not a',
+    link: 'not-a',
     binary: false,
     desc: <div><ul>
     <li><code>true</code> if <code>a</code> is <code>false</code></li>
@@ -260,4 +311,57 @@ export const operators = {
       { typa: 'bool', typr: 'bool' },
     ]
   },
+  eq: {
+    label: 'a = b',
+    link: '#a--b-7',
+    desc: <div>Equality operator</div>,
+    types: cmp_types('bool'),
+    promotions: cmp_types_promotions('bool')
+  },
+  neq: {
+    label: 'a <> b',
+    link: '#a--b-8',
+    desc: <div>Difference operator, equivalent to <code>not (a = b)</code>.</div>,
+    types: cmp_types('bool'),
+    promotions: cmp_types_promotions('bool')
+  },
+  lt: {
+    label: 'a < b',
+    link: '#a--b-9',
+    desc: <div>'Less than' operator</div>,
+    types: cmp_types('bool'),
+    promotions: cmp_types_promotions('bool')
+  },
+  lteq: {
+    label: 'a <= b',
+    link: '#a--b-10',
+    desc: <div>'Less than or equal to' operator</div>,
+    types: cmp_types('bool'),
+    promotions: cmp_types_promotions('bool')
+  },
+  gt: {
+    label: 'a > b',
+    link: '#a--b-11',
+    desc: <div>'Greater than' operator</div>,
+    types: cmp_types('bool'),
+    promotions: cmp_types_promotions('bool')
+  },
+  gteq: {
+    label: 'a >= b',
+    link: '#a--b-12',
+    desc: <div>'Greater than or equal to' operator</div>,
+    types: cmp_types('bool'),
+    promotions: cmp_types_promotions('bool')
+  },
+  cmp: {
+    label: 'a <=> b',
+    link: '#a--b-13',
+    desc: <div>Comparison operator on which above comparison operators are built; it returns:<ul>
+        <li><code>-1</code> when <code>a &lt; b</code></li>
+        <li><code>1</code>  when <code>a &gt; b</code></li>
+        <li><code>0</code> when <code>a = b</code></li>
+      </ul></div>,
+    types: cmp_types('int'),
+    promotions: cmp_types_promotions('int')
+  }
 }
