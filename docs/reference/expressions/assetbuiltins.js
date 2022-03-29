@@ -1,8 +1,34 @@
 import React from "react"
 
 import SelectDesc from "../../../src/components/select_desc.mdx"
+import SortDesc from "../../../src/components/sort_desc.mdx"
 
 export const assetbuiltins = {
+  get: {
+    sig: 'A[k].f',
+    desc: <div>Accesses field <code>f</code> of asset with key <code>k</code> in collection <code>A</code>.</div>,
+    appliesto: [ 'asset', 'asset to big_map' ],
+    parameters: [
+      {
+        type: 'pkey<A>',
+        alias: 'k',
+        desc: <div>Key of asset to access</div>
+      },
+    ],
+    returns: {
+      type: 'T',
+      desc: <div>Returns field <code>f</code> value of asset <code>k</code>.</div>
+    },
+    fails : [
+      {
+        keyword: 'Pair("A", "AssetNotFound")',
+        desc: <div>when asset with key <code>k</code> is not found in collection <code>A</code>.</div>
+      }
+    ],
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
+    ]
+  },
   contains: {
     sig: 'A.contains(k)',
     desc: <div>Tests whether collection <code>A</code> contains asset with key <code>k</code>.</div>,
@@ -36,7 +62,7 @@ export const assetbuiltins = {
   },
   nth: {
     sig: 'A.nth(i)',
-    desc: <div>Returns the key of element number <code>i</code> (starting from 0) of collection <code>A</code>, based on the natural order of asset key.</div>,
+    desc: <div>Returns the key of element number <code>i</code> (starting from 0) of collection <code>A</code>, according to its order (natural key order for <code>asset</code> collection).</div>,
     appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
     parameters: [
       {
@@ -61,13 +87,16 @@ export const assetbuiltins = {
   },
   sort: {
     sig: 'A.sort(f)',
-    desc: <div>Sorts collection <code>A</code> according to asset field <code>f</code> values in ascending order.</div>,
+    desc: <SortDesc />,
     appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
     parameters: [
       {
         type: 'asset field',
         alias: 'f',
-        desc: <div>Asset field name of comparable type.</div>
+        desc: <div>Asset field name of comparable type; it accepts wrapping decorator to specify sort order:<ul>
+            <li><code>asc(f)</code> for ascending order; <code>asc</code> is by default and may be omitted</li>
+            <li><code>desc(f)</code> for descending order</li>
+          </ul></div>
       },
     ],
     returns: {
@@ -120,7 +149,7 @@ export const assetbuiltins = {
   },
   head: {
     sig: 'A.head(i : nat)',
-    desc: <div>Returns the first i elements of collection <code>A</code> according to asset key ascending order.</div>,
+    desc: <div>Returns the first i elements of collection <code>A</code> according to its order (natural key order for <code>asset</code> collection).</div>,
     appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
     parameters: [
       {
@@ -139,7 +168,7 @@ export const assetbuiltins = {
   },
   tail: {
     sig: 'A.head(i : nat)',
-    desc: <div>Returns the last i elements of collection <code>A</code> according to asset key ascending order.</div>,
+    desc: <div>Returns the last i elements of collection <code>A</code> according to its order (natural key order for <code>asset</code> collection).</div>,
     appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
     parameters: [
       {

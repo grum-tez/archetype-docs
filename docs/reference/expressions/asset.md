@@ -6,6 +6,10 @@ import { assetbuiltins } from './assetbuiltins.js';
 
 # Asset
 
+### `A[k].f`
+
+<Builtin data={assetbuiltins["get"]} />
+
 ### `A.contains(k : pkey<A>)`
 
 <Builtin data={assetbuiltins["contains"]} />
