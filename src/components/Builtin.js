@@ -4,9 +4,9 @@ import { Button, Divider, Grid, Typography } from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
 import React from 'react';
 
+import AppliesTo from './AppliesTo';
 import styles from './component.module.css';
 import Info from './Info';
-import AppliesTo from './AppliesTo';
 
 const Parameter = (props) => {
   return (
@@ -122,10 +122,19 @@ export default function Builtin(props) {
         })
         ) : (<div />)
       }
-      <Grid item style={{ marginTop: '12px', color: 'grey' }}>
-        <h4 style={{ marginTop: '12px', marginBottom: '0px', fontWeight: 'normal' }}>Returns</h4>
-      </Grid>
-      <Returns type={props.data.returns.type} withLink={props.data.returns.withLink} desc={props.data.returns.desc} />
+      { (props.data.returns !== undefined) ? (
+        <Grid item style={{ marginTop: '12px', color: 'grey' }}>
+          <h4 style={{ marginTop: '12px', marginBottom: '0px', fontWeight: 'normal' }}>Returns</h4>
+        </Grid>
+      ) : (
+        <Grid item style={{ marginTop: '12px', color: 'grey' }}>
+          <h4 style={{ marginTop: '12px', marginBottom: '0px', fontWeight: 'normal' }}></h4>
+        </Grid>
+      )}
+      {(props.data.returns !== undefined) ? (
+          <Returns type={props.data.returns.type} withLink={props.data.returns.withLink} desc={props.data.returns.desc} />
+        ) : (<div />)
+      }
       <Grid item xs={12}>
         <Info fails={props.data.fails} michelson={props.data.michelson} michelson_ref_url={props.data.michelson_ref_url} related={props.data.related} />
       </Grid>

@@ -1,4 +1,4 @@
-const link_prefix = 'docs/reference/instructions#'
+const link_prefix = '/docs/reference/instructions#'
 
 export const instructions = {
     sequence: [
@@ -43,7 +43,7 @@ export const instructions = {
       { label : 'update', link : link_prefix + 'map' },
     ],
     assets: [
-      { label : 'add', link : link_prefix + 'assets' },
+      { label : 'add', link : link_prefix + 'aadda' },
       { label : 'update', link : link_prefix + 'assets' },
       { label : 'addupdate', link : link_prefix + 'assets' },
       { label : 'remove', link : link_prefix + 'assets' },

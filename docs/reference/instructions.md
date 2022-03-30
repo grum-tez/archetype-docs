@@ -4,6 +4,10 @@ sidebar_position: 2.5
 
 # Instructions
 
+import Builtin from '@site/src/components/Builtin.js';
+import { assetinstructions } from './assetinstructions.js';
+
+
 An instruction has a side effect on the storage, the operations or the execution (fail).
 
 ## Sequence
@@ -76,9 +80,13 @@ update
 
 ## Assets
 
-add
+### `A.add(a)`
 
-update
+<Builtin data={assetinstructions['add']} />
+
+### `A.update(k, { u })`
+
+<Builtin data={assetinstructions['update']} />
 
 addupdate
 

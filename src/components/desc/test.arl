@@ -1,0 +1,18 @@
+archetype test
+
+variable toto : int = 0
+
+asset a {
+    id : string;
+    val : int;
+}
+
+(* this is a comment *)
+
+// this is a comment
+
+/* this is a comment */
+
+entry exec () {
+    a.update("toto", { val = 3 })
+}
