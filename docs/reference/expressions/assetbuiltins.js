@@ -3,11 +3,12 @@ import React from "react"
 import SelectDesc from "../../../src/components/desc/select_desc.mdx"
 import SortDesc from "../../../src/components/desc/sort_desc.mdx"
 import SumDesc from "../../../src/components/desc/sum_desc.mdx"
+import GetDesc from "../../../src/components/desc/get_desc.mdx"
 
 export const assetbuiltins = {
   get: {
     sig: 'A[k].f',
-    desc: <div>Accesses field <code>f</code> of asset with key <code>k</code> in collection <code>A</code>.</div>,
+    desc: <GetDesc />,
     appliesto: [ 'asset', 'asset to big_map' ],
     parameters: [
       {

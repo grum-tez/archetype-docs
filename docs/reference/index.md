@@ -70,7 +70,7 @@ This is the Archetype language reference.
 
 <EagleEyeView title="Assets" data={instructions.assets} xs={4}/>
 
-<EagleEyeView title="Blockchain" data={instructions.blockchain} xs={4}/>
+<EagleEyeView title="Operations" data={instructions.blockchain} xs={4}/>
 
 ## Expressions
 

@@ -88,7 +88,9 @@ update
 
 <Builtin data={assetinstructions['update']} />
 
-addupdate
+### `A.addupdate(k, { u })`
+
+<Builtin data={assetinstructions['addupdate']} />
 
 remove
 
@@ -99,7 +101,7 @@ removeall
 clear
 
 
-## Blockchain
+## Operations
 
 transfer
 

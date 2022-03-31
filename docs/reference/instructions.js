@@ -44,8 +44,8 @@ export const instructions = {
     ],
     assets: [
       { label : 'add', link : link_prefix + 'aadda' },
-      { label : 'update', link : link_prefix + 'assets' },
-      { label : 'addupdate', link : link_prefix + 'assets' },
+      { label : 'update', link : link_prefix + 'aupdatek--u-' },
+      { label : 'addupdate', link : link_prefix + 'aaddupdatek--u-' },
       { label : 'remove', link : link_prefix + 'assets' },
       { label : 'removeif', link : link_prefix + 'assets' },
       { label : 'removeall', link : link_prefix + 'assets' },

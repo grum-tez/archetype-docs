@@ -5,6 +5,7 @@ variable toto : int = 0
 asset a {
     id : string;
     val : int;
+    val2 : int;
 }
 
 (* this is a comment *)
