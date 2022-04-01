@@ -121,7 +121,7 @@ export const builtins = {
       { keyword: 'Or', link: '/docs/language-basics/composite#or' },
     ]
   },
-  map: {
+  maplist: {
     sig: 'map(l : list<T>, id -> (body(id : T) : R))',
     desc: <div>[NEW] Returns a list with application of a function which take T typed argument and returns R typed value for each item of the original list.</div>,
     parameters: [
@@ -139,6 +139,26 @@ export const builtins = {
     michelson_ref_url: michelson_ref_base_url + '#instr-MAP',
     related: [
       { keyword: 'List', link: '/docs/language-basics/container#list' },
+    ]
+  },
+  mapoption: {
+    sig: 'map(l : option<T>, id -> (body(id : T) : R))',
+    desc: <div>[NEW] Returns an option with application of a function which take T typed argument and returns R typed value.</div>,
+    parameters: [
+      {
+        type: 'option<T>',
+        alias: 'l',
+        desc: <div>Option to map</div>
+      }
+    ],
+    returns: {
+      type: 'option<R>',
+      desc: <div>Option mapped</div>
+    },
+    michelson: "MAP",
+    michelson_ref_url: michelson_ref_base_url + '#instr-MAP',
+    related: [
+      { keyword: 'Option', link: '/docs/language-basics/composite#option' },
     ]
   },
   execlambda: {
@@ -220,6 +240,37 @@ export const builtins = {
     ],
     related: [
       { keyword: 'Numbers', link: '/docs/language-basics/number#nat' },
+    ]
+  },
+
+  submutez: {
+    sig: 'sub_mutez(a : tez, b : tez)',
+    desc: <div>[NEW] Subtracts <code>a</code> to <code>b</code> and returns an option tez value.</div>,
+    parameters: [
+      {
+        type: 'tez',
+        alias: 'a',
+        desc: <div>Left-hand side operand to subtract</div>
+      },
+      {
+        type: 'tez',
+        alias: 'b',
+        desc: <div>Right-hand side operand to subtract</div>
+      }
+    ],
+    returns: {
+      type: 'option<tez>',
+      desc: <div>
+        <ul>
+          <li><code>none</code> if result is negative</li>
+          <li><code>some(v)</code>, result <code>v</code> of subtraction</li>
+        </ul>
+      </div>
+    },
+    michelson: "SUB_MUTEZ",
+    michelson_ref_url: michelson_ref_base_url + '#instr-SUB_MUTEZ',
+    related: [
+      { keyword: 'Tez', link: '/docs/language-basics/tez' },
     ]
   },
 
@@ -473,9 +524,9 @@ export const builtins = {
         alias: 'v',
         desc: <div>
           <ul>
-          <li><code>none</code> remove key <code>k</code></li>
-          <li><code>some(v)</code>, add key <code>k</code> with value <code>v</code></li>
-        </ul>
+            <li><code>none</code> remove key <code>k</code></li>
+            <li><code>some(v)</code>, add key <code>k</code> with value <code>v</code></li>
+          </ul>
         </div>
       }
     ],
@@ -874,7 +925,7 @@ export const builtins = {
   },
   tonat: {
     sig: 'to_nat(i : int)',
-    desc: <ToNatDesc/>,
+    desc: <ToNatDesc />,
     parameters: [
       {
         type: 'int',
@@ -889,7 +940,7 @@ export const builtins = {
     fails: [
       {
         keyword: '"NEG_VALUE"',
-        desc:<div>when value <code>i</code> is negative</div>
+        desc: <div>when value <code>i</code> is negative</div>
       }
     ],
     related: [
