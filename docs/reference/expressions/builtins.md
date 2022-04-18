@@ -142,9 +142,13 @@ import H3 from "@site/src/components/H3.js";
 
 ## `M N O`
 
-<H3 page="builtins" value={builtins['map'].sig} />
+<H3 page="builtins" value={builtins['maplist'].sig} />
 
-<Builtin data={builtins['map']} />
+<Builtin data={builtins['maplist']} />
+
+<H3 page="builtins" value={builtins['mapoption'].sig} />
+
+<Builtin data={builtins['mapoption']} />
 
 <H3 page="builtins" value={builtins['max'].sig} />
 
@@ -255,6 +259,10 @@ import H3 from "@site/src/components/H3.js";
 <H3 page="builtins" value={builtins['split_ticket'].sig} />
 
 <Builtin data={builtins['split_ticket']} />
+
+<H3 page="builtins" value={builtins['submutez'].sig} />
+
+<Builtin data={builtins['submutez']} />
 
 <H3 page="builtins" value={builtins['subnat'].sig} />
 
