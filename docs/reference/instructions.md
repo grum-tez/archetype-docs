@@ -92,14 +92,21 @@ update
 
 <Builtin data={assetinstructions['addupdate']} />
 
-remove
+### `A.remove(k)`
 
-removeif
+<Builtin data={assetinstructions['remove']} />
 
-removeall
+### `A.removeif(p)`
 
-clear
+<Builtin data={assetinstructions['removeif']} />
 
+### `A.clear()`
+
+<Builtin data={assetinstructions['clear']} />
+
+### `A.removeall()`
+
+<Builtin data={assetinstructions['removeall']} />
 
 ## Operations
 

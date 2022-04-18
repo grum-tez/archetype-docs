@@ -1,19 +1,15 @@
 archetype test
 
-variable toto : int = 0
-
-asset a {
-    id : string;
-    val : int;
-    val2 : int;
+asset partitioned identified by k {
+  k : nat;
+  v : nat
 }
 
-(* this is a comment *)
-
-// this is a comment
-
-/* this is a comment */
+asset partitioning identified by a {
+  a      : address;
+  assets : aggregate<partitioned>
+}
 
 entry exec () {
-    a.update("toto", { val = 3 })
+    partitioning.tail(3).removeif(1 >= 2)
 }

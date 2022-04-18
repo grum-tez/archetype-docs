@@ -24,3 +24,11 @@ var k = "1G1AF1F57A7192174";
 car[k].nbrepairs += 1;
 car[k].owner := tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg;
 ```
+
+#### Aggregate and partition
+
+A partition or aggregate field does *not* provide the `update` instruction, as it does not impact the reference to the asset. The `update` instruction is done straightorwardly on the (partitioned or aggregated) asset collection.
+
+#### View
+
+As a *read-only* set of asset references, a [view](/docs/reference/types#view<A>) does *not* provide the `update` instruction.

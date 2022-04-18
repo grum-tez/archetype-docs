@@ -20,3 +20,22 @@ ledger.addupdate(%to, { tokens += value });
 :::info
 Note that it is possible to use the `+=` assignement instruction on field `tokens` because `tokens` has a *default value* specified (`0`) in asset declaration.
 :::
+
+#### Partition
+
+As for the `add` instruction, the `addupdate` instruction is available for [partition](/docs/reference/types#partition<A>) field.
+
+For example, the following instruction adds or updates the expiration date of mile `"#1"` of flyer `caller`:
+```archetype
+flyer[caller].miles.addupdate("#1", { expiration := (now + 40d) })
+```
+
+See the [paritition](/docs/reference/instructions#partition) section above for more information.
+
+#### Aggregate
+
+An [aggregate](/docs/reference/types#aggregate<A>) field does *not* provide the `addupdate` instruction.
+
+#### View
+
+As a *read-only* set of asset references, a [view](/docs/reference/types#view<A>) does *not* provide the `addupdate` instruction.

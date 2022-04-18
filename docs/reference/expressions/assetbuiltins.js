@@ -1,9 +1,9 @@
 import React from "react"
 
-import SelectDesc from "../../../src/components/desc/select_desc.mdx"
-import SortDesc from "../../../src/components/desc/sort_desc.mdx"
-import SumDesc from "../../../src/components/desc/sum_desc.mdx"
-import GetDesc from "../../../src/components/desc/get_desc.mdx"
+import GetDesc from "../../../src/components/desc/get_desc.md"
+import SelectDesc from "../../../src/components/desc/select_desc.md"
+import SortDesc from "../../../src/components/desc/sort_desc.md"
+import SumDesc from "../../../src/components/desc/sum_desc.md"
 
 export const assetbuiltins = {
   get: {

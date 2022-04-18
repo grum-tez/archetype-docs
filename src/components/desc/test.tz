@@ -1,26 +1,13 @@
-# (Pair 0 { })
+# (Pair { } { })
 {
-  storage (pair (int %toto) (map %a string (pair (int %val) (int %val2))));
+  storage (pair (map %partitioned nat nat) (map %partitioning address (set nat)));
   parameter (unit %exec);
   code { UNPAIR;
          DIP { UNPAIR 2 };
          DROP;
          DUP 2;
-         DUP 3;
-         PUSH string "toto";
-         GET;
-         IF_NONE
-           { PUSH string "a";
-             PUSH string "AssetNotFound";
-             PAIR;
-             FAILWITH }
-           {  };
-         UNPAIR;
-         DROP;
-         PUSH int 3;
-         PAIR;
-         SOME;
-         PUSH string "toto";
+         NONE (set nat);
+         SENDER;
          UPDATE;
          DIP { DIG 1; DROP };
          DUG 1;

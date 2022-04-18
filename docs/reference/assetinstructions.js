@@ -1,13 +1,18 @@
-import AssetAddDesc from '../../src/components/desc/assetadd_desc.mdx'
-import AssetUpdateDesc from '../../src/components/desc/assetupdate_desc.mdx'
-import AssetAddUpdateDesc from '../../src/components/desc/assetaddupdate_desc.mdx'
 import React from "react"
+
+import AssetAddDesc from '../../src/components/desc/assetadd_desc.md'
+import AssetAddUpdateDesc from '../../src/components/desc/assetaddupdate_desc.md'
+import AssetUpdateDesc from '../../src/components/desc/assetupdate_desc.md'
+import AssetRemoveDesc from '../../src/components/desc/assetremove_desc.md'
+import AssetRemoveIfDesc from '../../src/components/desc/assetremoveif_desc.md'
+import AssetRemoveAllDesc from '../../src/components/desc/assetremoveall_desc.md'
+import AssetClearDesc from '../../src/components/desc/assetclear_desc.md'
 
 export const assetinstructions = {
   add : {
     desc: <AssetAddDesc />,
     sig: 'A.add(a)',
-    appliesto: [ 'asset', 'asset to big_map', 'aggregate' ],
+    appliesto: [ 'asset', 'asset to big_map', 'aggregate', 'partition' ],
     parameters: [
       {
         type: 'asset literal',
@@ -28,7 +33,7 @@ export const assetinstructions = {
   },
   update : {
     desc: <AssetUpdateDesc />,
-    appliesto: [ 'asset', 'asset to big_map', 'aggregate', 'partition' ],
+    appliesto: [ 'asset', 'asset to big_map' ],
     parameters: [
       {
         type: 'pkey<A>',
@@ -63,7 +68,7 @@ export const assetinstructions = {
   },
   addupdate : {
     desc: <AssetAddUpdateDesc />,
-    appliesto: [ 'asset', 'asset to big_map', 'aggregate' ],
+    appliesto: [ 'asset', 'asset to big_map', 'partition' ],
     parameters: [
       {
         type: 'pkey<A>',
@@ -96,6 +101,57 @@ export const assetinstructions = {
       { keyword: 'Assignment', link: '/docs/reference/instructions#assignment' },
       { keyword: 'add', link: '/docs/reference/instructions#aadda' },
       { keyword: 'update', link: '/docs/reference/instructions#aupdatek--u-' },
+    ]
+  },
+  remove : {
+    desc: <AssetRemoveDesc/>,
+    appliesto: ['asset', 'asset to big_map', 'aggregate', 'partition'],
+    parameters: [
+      {
+        type: 'pkey<A>',
+        alias: 'k',
+        desc: <div>Key of the asset to remove.</div>
+      },
+    ],
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
+      { keyword: 'add', link: '/docs/reference/instructions#aadda' },
+    ]
+  },
+  removeif : {
+    desc: <AssetRemoveIfDesc/>,
+    appliesto: ['asset', 'aggregate', 'partition'],
+    parameters: [
+      {
+        type: 'predicate',
+        alias: 'p',
+        withLink: false,
+        desc: <div>Predicate.</div>
+      },
+    ],
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
+      { keyword: 'remove', link: '/docs/reference/instructions#remove' },
+    ]
+  },
+  clear: {
+    desc: <AssetClearDesc />,
+    appliesto: ['asset', 'aggregate'],
+    parameters: [],
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
+      { keyword: 'remove', link: '/docs/reference/instructions#remove' },
+      { keyword: 'removeall', link: '/docs/reference/instructions#removeall' },
+    ]
+  },
+  removeall: {
+    desc: <AssetRemoveAllDesc />,
+    appliesto: ['asset', 'aggregate'],
+    parameters: [],
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
+      { keyword: 'remove', link: '/docs/reference/instructions#remove' },
+      { keyword: 'clear', link: '/docs/reference/instructions#clear' },
     ]
   }
 }

@@ -1,11 +1,11 @@
 import Link from '@docusaurus/Link';
 import React from "react"
 
-import IsNoneDesc from "../../../src/components/desc/is_none_desc.mdx"
-import IsSomeDesc from "../../../src/components/desc/is_some_desc.mdx"
-import OptGetDesc from "../../../src/components/desc/opt_get_desc.mdx"
-import RequireSomeDesc from "../../../src/components/desc/require_some_desc.mdx"
-import ToNatDesc from "../../../src/components/desc/to_nat_desc.mdx"
+import IsNoneDesc from "../../../src/components/desc/is_none_desc.md"
+import IsSomeDesc from "../../../src/components/desc/is_some_desc.md"
+import OptGetDesc from "../../../src/components/desc/opt_get_desc.md"
+import RequireSomeDesc from "../../../src/components/desc/require_some_desc.md"
+import ToNatDesc from "../../../src/components/desc/to_nat_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
