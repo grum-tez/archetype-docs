@@ -76,7 +76,7 @@ var theme = {
       color: "rgb(189, 147, 249)"
     }
   }, {
-    types: ["boolean", "builtin", "logic", "asset", "crypto", "arith"],
+    types: ["boolean", "builtin", "logic", "asset", "access", "crypto", "arith"],
     style: {
       color: "rgb(68, 134, 255)"
     }

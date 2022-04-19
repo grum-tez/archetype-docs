@@ -73,7 +73,7 @@ record loan_data {
   delay      : duration;
 }
 
-variable loan : map<string, loan> = []
+variable loan : map<string, loan_data> = []
 ```
 
 ## Iteration
@@ -84,7 +84,7 @@ For example, the following code iterates on the *loan* collection:
 ```archetype
 var total = 0tz;
 for k in loan do /* k is a loan key */
-  /* do something on asset with key k */
+  /* do something with asset with key k */
   total += loan[k].interest * loan[k].principal
 done
 ```
