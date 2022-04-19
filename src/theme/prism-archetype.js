@@ -41,10 +41,11 @@
     	'builtin': /\b(?:exec_lambda|opt_get|issome|left|right|some|none|isempty|length|put|get|transfer|emit)\b/,
     	'logic': /\b(?:and|or|=|not|asr|land|lor|lsl|lsr|lxor)\b/,
     	'asset': /\b(?:count|sum|asc|desc|removeif|remove|update|contains|clear|select|sort|head|nth|add|put|addupdate)\b/,
+		'access': /(?:\[|\])/,
     	'crypto': /\b(?:unpack|open_chest)\b/,
     	'arith': /\b(?:mod|abs|min|max)\b/,
 		// Custom operators are allowed
 		'function': /:=|\+=|\-=|[=<>@^|&+\-*\/$%!?~][!$%&*+\-.\/:<=>?@^|~]*\b/,
-		'punctuation': /[(){}\[\]|.,:;]|\b_\b/,
+		'punctuation': /[(){}|.,:;]|\b_\b/,
 	};
 }(Prism));
