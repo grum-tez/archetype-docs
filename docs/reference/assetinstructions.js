@@ -5,7 +5,7 @@ import AssetAddUpdateDesc from '../../src/components/desc/assetaddupdate_desc.md
 import AssetUpdateDesc from '../../src/components/desc/assetupdate_desc.md'
 import AssetRemoveDesc from '../../src/components/desc/assetremove_desc.md'
 import AssetRemoveIfDesc from '../../src/components/desc/assetremoveif_desc.md'
-import AssetRemoveAllDesc from '../../src/components/desc/assetremoveall_desc.md'
+import AssetRemoveClearDesc from '../../src/components/desc/assetremoveclear_desc.md'
 import AssetClearDesc from '../../src/components/desc/assetclear_desc.md'
 
 export const assetinstructions = {
@@ -136,17 +136,18 @@ export const assetinstructions = {
   },
   clear: {
     desc: <AssetClearDesc />,
-    appliesto: ['asset', 'aggregate'],
+    appliesto: ['asset', 'aggregate', 'partition', 'view'],
     parameters: [],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
       { keyword: 'remove', link: '/docs/reference/instructions#remove' },
       { keyword: 'removeall', link: '/docs/reference/instructions#removeall' },
+      { keyword: 'select', link: '/docs/reference/expressions/asset#aselectp' },
     ]
   },
-  removeall: {
-    desc: <AssetRemoveAllDesc />,
-    appliesto: ['asset', 'aggregate'],
+  removeclear: {
+    desc: <AssetRemoveClearDesc />,
+    appliesto: [ 'aggregate' ],
     parameters: [],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },

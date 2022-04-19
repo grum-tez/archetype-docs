@@ -49,7 +49,7 @@ export const instructions = {
       { label : 'remove', link : link_prefix + 'aremovek' },
       { label : 'removeif', link : link_prefix + 'aremoveifp' },
       { label : 'clear', link : link_prefix + 'aclear' },
-      { label : 'removeall', link : link_prefix + 'aremoveall' },
+      { label : 'removeclear', link : link_prefix + 'aremoveclear' },
     ],
     blockchain: [
       { label : 'transfer', link : link_prefix + 'blockchain' },

@@ -45,6 +45,10 @@ The effect of the above instruction is to:
 * remove all expired miles belonging to `caller`
 * remove all references to these expired miles from `flyer[caller].miles`
 
+:::info
+`removeif` is not available if the partitioned asset is declared as `big_map`.
+:::
+
 #### Aggregate
 
 The `removeif` instruction is available for [aggregate](/docs/reference/types#aggregate<A>) fields.
@@ -55,6 +59,10 @@ driver[caller].drives.removeif(the.nbdoors = 3);
 ```
 
 See the [Aggregate](/docs/reference/instructions#aggregate) section above for more information.
+
+:::info
+`removeif` is not available on aggregate fields if the aggregated asset is declared as `big_map`.
+:::
 
 #### View
 

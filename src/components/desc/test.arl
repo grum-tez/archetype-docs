@@ -11,5 +11,4 @@ asset partitioning identified by a {
 }
 
 entry exec () {
-    partitioning.tail(3).removeif(1 >= 2)
 }

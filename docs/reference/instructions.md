@@ -104,9 +104,9 @@ update
 
 <Builtin data={assetinstructions['clear']} />
 
-### `A.removeall()`
+### `A.removeclear()`
 
-<Builtin data={assetinstructions['removeall']} />
+<Builtin data={assetinstructions['removeclear']} />
 
 ## Operations
 
