@@ -128,7 +128,7 @@ const designs = [
   { title : 'Easy Business Logic', tagline: 'Rational, date and duration types make business logic easy to express.', link: '/docs/language-basics/number' },
   { title : 'Explicit Execution Conditions', tagline: 'Execution conditions for the contract to execute are easy to read and check.', link: '/docs/declarations/entrypoint' },
   { title : 'State Machine Design', tagline: 'Design the contract as a state machine, with guard conditions on transitions.', link: '/docs/state-machine/state' },
-  { title : 'Rich Storage API', tagline: 'Rich API to access and manipulate collections of records.', link: '/docs/assets/intro' },
+  { title : 'Rich Storage API', tagline: 'Rich API to access and manipulate collections of records.', link: '/docs/asset' },
 ]
 
 const examples = [

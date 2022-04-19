@@ -22,9 +22,9 @@ import { keywords } from './keywords.js'
 
 ## Storage
 
-variable
+### Variable
 
-asset
+### Asset
 
 ## Types
 
