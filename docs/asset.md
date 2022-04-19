@@ -91,7 +91,7 @@ done
 
 Note that:
 * assets are iterated in the natural key order.
-* Note also that *the above loop instruction is equivalent to the following expression:
+* Note also that the above loop instruction is equivalent to the following expression:
 ```archetype
 var total = loan.sum(interest * principal);
 ```
