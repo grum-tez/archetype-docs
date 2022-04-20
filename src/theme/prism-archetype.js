@@ -29,7 +29,7 @@
     	  },
     	},
     	'archetype': /\b(?:archetype)\b/,
-    	'storage': /\b(?:constant|archetype|enum|states|variable|asset|record|as|initial|identified by|initialized by)\b/,
+    	'storage': /\b(?:constant|archetype|enum|states|variable|asset|to big_map|record|as|initial|identified by|initialized by)\b/,
     	'entry': /\b(?:entry|transition|function|getter|view)\b/,
     	'section': /\b(?:called by|require|fail if|effect|with effect|from|to|when|otherwise|shadow|postcondition|fails)\b/,
     	'verif': /\b(?:invariant|specification)\b/,

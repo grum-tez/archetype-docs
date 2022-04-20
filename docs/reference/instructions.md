@@ -110,6 +110,6 @@ update
 
 ## Operations
 
-transfer
+### `transfer`
 
 emit
