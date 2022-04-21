@@ -133,7 +133,7 @@ asset vehicle {
 
 Fields with default value are not required when adding a new asset in collection; for example, the following instruction adds a new `vehicle` asset with release date equal to `now` and nbdoors equal to `5`:
 ```archetype
-vehicle.add({ vin : "1G1AF1F57A7192174"; manufacturer : "Renault" })
+vehicle.add({ vin = "1G1AF1F57A7192174"; manufacturer = "Renault" })
 ```
 
 See the [`add`](/docs/reference/instructions#aadda) instruction for more information.
@@ -180,12 +180,57 @@ For example:
 
 ```archetype
 record voter {
-  weight   : nat     /* weight is accumulated by delegation */
-  voted    : bool    /* if true, that person already voted  */
-  delegate : address /* person delegated to                 */
-  vote     : nat     /* index of the voted proposal         */
+  weight   : nat;             /* weight is accumulated by delegation */
+  voted    : bool;            /* if true, that person already voted  */
+  delegate : option<address>; /* person delegated to                 */
+  vote     : nat;             /* index of the voted proposal         */
 }
 ```
+
+#### Default value
+
+It is possible to specify the default value of a record field.
+
+For example, the following declaration specifies that the default values of `voted` and `delegate` fields:
+```archetype
+record voter {
+  weight   : nat;
+  voted    : bool = false;
+  delegate : option<address> = none;
+  vote     : nat;
+}
+```
+
+The effect is that fields with a default value may not be specified when creating a record value. For example, the following creates a `voter` record without specified values for these fields:
+```archetype
+var v = { weight = 1; vote = 234523 };
+```
+
+#### Michelson representation
+
+By default, the Michelson structure of a record is a *right comb* of pairs.
+
+It means for example that the Michelson type of the `voter` record declared above is:
+```js
+pair (nat %weight) (pair (bool %voted) pair ((option address %delegate) (nat %vote)))
+```
+
+It is possible to specify another structure and/or other field names, with the `as` keyword, as illustrated below:
+
+```archetype
+record voter {
+  weight   : nat;
+  voted    : bool = false;
+  delegate : option<address> = none;
+  vote     : nat;
+} as (((w, has_voted), (del, vote)))
+```
+
+The resulting Michelson type is then:
+```js
+pair (pair (nat %w) (bool %has_voted)) (pair (option address %del) (nat %vote))
+```
+
 ### Enum
 
 An [enumeration](/docs/language-basics/composite#enum) is a union type of a fixed set of named types. It is declared by the `enum` keyword followed by an [identifier](/docs/reference/declarations#identifier) and the list of names types separated by `|`.

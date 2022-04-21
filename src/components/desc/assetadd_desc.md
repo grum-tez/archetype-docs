@@ -14,10 +14,10 @@ asset loan {
 The following instruction adds a new loan to the collection of loans:
 ```archetype
 loan.add({
-  id         : "1a3245";
-  subscriber : tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg;
-  interest   : 5%;
-  time       : 50w;
+  id         = "1a3245";
+  subscriber = tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg;
+  interest   = 5%;
+  time       = 50w;
 })
 ```
 
@@ -29,8 +29,8 @@ loan.add({ "1a3245"; tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg; 5%; 50w5d })
 Fields with default values (like `interest` and `time`) may be omitted in asset literal; other fields labels must then be present:
 ```archetype
 loan.add({
-  id         : "1a3245";
-  subscriber : tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg;
+  id         = "1a3245";
+  subscriber = tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg;
 })  /* interest and time are defaulted to 2% and 10 weeks respectively */
 ```
 

@@ -1,5 +1,12 @@
 archetype test
 
+record voter {
+  weight   : nat;
+  voted    : bool = false;
+  delegate : option<address> = none;
+  vote     : nat;
+}
+
 asset partitioned identified by k {
   k : nat;
   v : nat
@@ -11,4 +18,6 @@ asset partitioning identified by a {
 }
 
 entry exec () {
+    var vo = { weight = 1; vote = 234523 };
+    partitioned.add({ k = 0; v = 0 })
 }

@@ -34,7 +34,7 @@
     	'entry': /\b(?:entry|transition|function|getter|view)\b/,
     	'section': /\b(?:called by|require|fail if|effect|with effect|from|to|when|otherwise|shadow|postcondition|fails)\b/,
     	'verif': /\b(?:invariant|specification)\b/,
-    	'type': /\b(?:big_map|map|set|list|int|nat|tez|string|rational|bytes|key|key_hash|address|sapling|signature|date|duration|bool|operation|aggregate|partition|asset_view)\b/,
+    	'type': /\b(?:big_map|map|set|option|list|int|nat|tez|string|rational|bytes|key|key_hash|address|sapling|signature|date|duration|bool|operation|aggregate|partition|asset_view)\b/,
     	'constant': /\b(?:now|balance|transferred|self|caller|sender|selfaddress|state|operations)\b/,
 		'control': /\b(?:assert|begin|end|do|done|else|return|before|for|if|in|match|in|forall|added|removed|exists|then|the|from|to|while|with|InvalidCondition|InvalidCaller|NotFound|NatAssign|SliceError|DivByZero|OutOfBound)\b/,
 		'decl': /\b(?:var|let some)\b/,
