@@ -56,7 +56,7 @@ var theme = {
       color: "#2FCAC3"
     }
   }, {
-    types: ["entry", "storage", "verif"],
+    types: ["entry", "declaration", "verif"],
     style: {
       color: "rgb(233, 72, 21)"
     }

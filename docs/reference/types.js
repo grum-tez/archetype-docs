@@ -32,8 +32,25 @@ export const types = {
     related: [
       { keyword: "Asset", link:"/docs/asset" },
       { keyword: "partition", link:"/docs/reference/types#partition<A>" },
-      { keyword: "view", link:"/docs/reference/types#view<A>" }
+      { keyword: "asset_view", link:"/docs/reference/types#asset_view<A>" }
     ],
+  },
+  asset_view :
+  {
+    desc: <div>Read-only view on asset collection returned by asset methods (<code>select</code> <code>sort</code> <code>head</code> <code>tail</code>). It is possible to iterate on asset_views. They are internally represented as list of asset keys.</div>,
+    link: '#asset_view<A>',
+    examples: [ '[]' ],
+    tags: [ PASSABLE, PACKABLE ],
+    related: [
+      { keyword: "Asset", link:"/docs/asset" },
+      { keyword: "aggregate", link:"/docs/reference/types#aggregate<A>" },
+      { keyword: "partition", link:"/docs/reference/types#partition<A>" },
+      { keyword: "select", link:"/docs/reference/expressions/asset#aselectp" },
+      { keyword: "sort", link:"/docs/reference/expressions/asset#asortf" },
+      { keyword: "head", link:"/docs/reference/expressions/asset#aheadi--nat" },
+      { keyword: "tail", link:"/docs/reference/expressions/asset#ataili--nat" },
+      { keyword: "for do done", link:"/docs/reference/instructions/control" },
+    ]
   },
   big_map :
   {
@@ -358,7 +375,7 @@ export const types = {
     related: [
       { keyword: "Asset", link:"/docs/asset" },
       { keyword: "aggregate", link:"/docs/reference/types#aggregate<A>" },
-      { keyword: "view", link:"/docs/reference/types#view<A>" }
+      { keyword: "asset_view", link:"/docs/reference/types#asset_view<A>" }
     ],
   },
   pkey : {
@@ -517,22 +534,5 @@ export const types = {
     related: [
       { keyword: "Presentation", link:"/docs/language-basics/unit" }
     ],
-  },
-  view :
-  {
-    desc: <div>Read-only view on asset collection returned by asset methods (<code>select</code> <code>sort</code> <code>head</code> <code>tail</code>). It is possible to iterate on views. They are internally represented as list of asset keys.</div>,
-    link: '#view<A>',
-    examples: [ '[]' ],
-    tags: [ PASSABLE, PACKABLE ],
-    related: [
-      { keyword: "Asset", link:"/docs/asset" },
-      { keyword: "aggregate", link:"/docs/reference/types#aggregate<A>" },
-      { keyword: "partition", link:"/docs/reference/types#partition<A>" },
-      { keyword: "select", link:"/docs/reference/expressions/asset#aselectp" },
-      { keyword: "sort", link:"/docs/reference/expressions/asset#asortf" },
-      { keyword: "head", link:"/docs/reference/expressions/asset#aheadi--nat" },
-      { keyword: "tail", link:"/docs/reference/expressions/asset#ataili--nat" },
-      { keyword: "for do done", link:"/docs/reference/instructions/control" },
-    ]
   }
 };

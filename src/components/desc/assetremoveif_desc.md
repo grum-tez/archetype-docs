@@ -64,7 +64,7 @@ See the [Aggregate](/docs/reference/instructions#aggregate) section above for mo
 `removeif` is not available on aggregate fields if the aggregated asset is declared as `big_map`.
 :::
 
-#### View
+#### Asset view
 
-A [view](/docs/reference/types#view<A>) does *not* provide the `removeif` instruction.
+An [asset_view](/docs/reference/types#asset_view<A>) does *not* provide the `removeif` instruction.
 

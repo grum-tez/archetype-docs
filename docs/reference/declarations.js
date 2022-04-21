@@ -3,17 +3,18 @@ const link_prefix = '/docs/reference/declarations#'
 
 export const declarations = {
   storage : [
-    { label: 'variable', link: link_prefix + 'storage' },
-    { label: 'asset', link: link_prefix + 'storage' },
+    { label: 'parameter', link: link_prefix + 'parameter' },
+    { label: 'variable', link: link_prefix + 'variable' },
+    { label: 'asset', link: link_prefix + 'asset' },
   ],
   types : [
-    { label: 'record', link: link_prefix + '#types' },
-    { label: 'enum', link: link_prefix + '#types' },
-    { label: 'states', link: link_prefix + '#types' },
-    { label: 'event', link: link_prefix + '#types' },
+    { label: 'record', link: link_prefix + 'record' },
+    { label: 'enum', link: link_prefix + 'enum' },
+    { label: 'states', link: link_prefix + 'states' },
+    { label: 'event', link: link_prefix + 'event' },
   ],
   inlined : [
-    { label: 'record', link: link_prefix + '#inlined' },
+    { label: 'constant', link: link_prefix + 'constant' },
   ],
   entrypoints : [
     { label: 'entry', link: link_prefix + '#entrypoints' },

@@ -19,7 +19,7 @@ This is the Archetype language reference.
     <EagleEyeView title="Storage" data={declarations.storage} xs={4}/>
   </Grid>
   <Grid item md={8} xs={12} sm={12}>
-    <EagleEyeView title="Types" data={declarations.types} xs={3}/>
+    <EagleEyeView title="Composite types" data={declarations.types} xs={3}/>
   </Grid>
   <Grid item md={4} xs={12} sm={12}>
     <EagleEyeView title="Inlined" data={declarations.inlined} xs={4}/>

@@ -29,6 +29,6 @@ car[k].owner := tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg;
 
 A partition or aggregate field does *not* provide the `update` instruction, as it does not impact the reference to the asset. The `update` instruction is done straightorwardly on the (partitioned or aggregated) asset collection.
 
-#### View
+#### Asset view
 
-As a *read-only* set of asset references, a [view](/docs/reference/types#view<A>) does *not* provide the `update` instruction.
+As a *read-only* set of asset references, an [asset_view](/docs/reference/types#asset_view<A>) does *not* provide the `update` instruction.

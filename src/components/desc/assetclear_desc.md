@@ -43,9 +43,9 @@ The only effect of above instruction is to empty the list of vehicles driven by 
 
 See [aggregate](/docs/reference/instructions#aggregate) section above for more information.
 
-#### View
+#### Asset view
 
-The `clear` instruction on a [view](/docs/reference/types#view<A>) removes all assets referenced by the view.
+The `clear` instruction on an [asset_view](/docs/reference/types#asset_view<A>) removes all assets referenced by the view.
 
 For example, the following instruction removes vehicles with number of doors equal to 3:
 ```archetype

@@ -74,7 +74,7 @@ driver[caller].drives.remove("1G1AF1F57A7192174");
 The instruction above does not fail if vehicle `"1G1AF1F57A7192174"` is not referenced by `drives`.
 :::
 
-#### View
+#### Asset view
 
-As a *read-only* set of asset references, a [view](/docs/reference/types#view<A>) does *not* provide the `remove` instruction.
+As a *read-only* set of asset references, an [asset_view](/docs/reference/types#asset_view<A>) does *not* provide the `remove` instruction.
 

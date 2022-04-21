@@ -10,7 +10,7 @@ asset result {
 }
 ```
 
-The following expression sorts `result` assets in `score` decreasing order, then in `time` increasing order; so that the first asset of the resulting view is the result with the highest score and minimal time:
+The following expression sorts `result` assets in `score` decreasing order, then in `time` increasing order; so that the first asset of the resulting [asset_view](/docs/reference/types#asset_view<A>) is the result with the highest score and minimal time:
 ```archetype
 var v := result.sort(desc(score), time)
 ```

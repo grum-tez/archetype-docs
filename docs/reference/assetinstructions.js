@@ -136,7 +136,7 @@ export const assetinstructions = {
   },
   clear: {
     desc: <AssetClearDesc />,
-    appliesto: ['asset', 'aggregate', 'partition', 'view'],
+    appliesto: ['asset', 'aggregate', 'partition', 'asset_view'],
     parameters: [],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },

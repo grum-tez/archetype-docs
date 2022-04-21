@@ -7,6 +7,7 @@ export const keywords= [
 { id:"as"                 } ,
 { id:"assert"             } ,
 { id:"asset"              } ,
+{ id:"asset_view"         } ,
 { id:"at"                 } ,
 { id:"before"             } ,
 { id:"begin"              } ,

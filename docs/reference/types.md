@@ -25,6 +25,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["aggregate"]} />
 
+<H3 page="types" value="asset_view<A>" />
+
+<Type data={types["asset_view"]} />
+
 <H3 page="types" value="big_map<K, V>" />
 
 <Type data={types["big_map"]} />
@@ -188,11 +192,5 @@ import H3 from "@site/src/components/H3.js";
 <H3 page="types" value="unit" />
 
 <Type data={types["unit"]} />
-
-## `V W X`
-
-<H3 page="types" value="view<A>" />
-
-<Type data={types["view"]} />
 
 </MDXProvider>

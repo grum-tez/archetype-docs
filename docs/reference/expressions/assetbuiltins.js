@@ -35,7 +35,7 @@ export const assetbuiltins = {
   contains: {
     sig: 'A.contains(k)',
     desc: <div>Tests whether collection <code>A</code> contains asset with key <code>k</code>.</div>,
-    appliesto: [ 'asset', 'asset to big_map', 'aggregate', 'partition', 'view' ],
+    appliesto: [ 'asset', 'asset to big_map', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'pkey<A>',
@@ -57,7 +57,7 @@ export const assetbuiltins = {
   count: {
     sig: 'A.count()',
     desc: <div>Retuns the number of elements in collection <code>A</code>.</div>,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
+    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
     returns: {
       type: 'nat',
       desc: 'Number of elements'
@@ -66,7 +66,7 @@ export const assetbuiltins = {
   nth: {
     sig: 'A.nth(i)',
     desc: <div>Returns the key of element number <code>i</code> (starting from 0) of collection <code>A</code>, according to its order (natural key order for <code>asset</code> collection).</div>,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
+    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'nat',
@@ -91,7 +91,7 @@ export const assetbuiltins = {
   sort: {
     sig: 'A.sort(f)',
     desc: <SortDesc />,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
+    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'asset field',
@@ -104,8 +104,8 @@ export const assetbuiltins = {
       },
     ],
     returns: {
-      type: 'view<A>',
-      desc: <div>A view of asset <code>A</code> sorted by values of field <code>f</code>.</div>
+      type: 'asset_view<A>',
+      desc: <div>A asset_view of asset <code>A</code> sorted by values of field <code>f</code>.</div>
     },
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
@@ -114,7 +114,7 @@ export const assetbuiltins = {
   sum: {
     sig: 'A.sum(f)',
     desc: <SumDesc />,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
+    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'asset field',
@@ -136,7 +136,7 @@ export const assetbuiltins = {
   select: {
     sig: 'A.select(p)',
     desc: <SelectDesc />,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
+    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'predicate',
@@ -146,8 +146,8 @@ export const assetbuiltins = {
       },
     ],
     returns: {
-      type: 'view<A>',
-      desc: <div>A view of asset <code>A</code> that verifies predicate <code>p</code>.</div>
+      type: 'asset_view<A>',
+      desc: <div>A asset_view of asset <code>A</code> that verifies predicate <code>p</code>.</div>
     },
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
@@ -156,7 +156,7 @@ export const assetbuiltins = {
   head: {
     sig: 'A.head(i : nat)',
     desc: <div>Returns the first i elements of collection <code>A</code> according to its order (natural key order for <code>asset</code> collection).</div>,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
+    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'nat',
@@ -165,8 +165,8 @@ export const assetbuiltins = {
       }
     ],
     returns: {
-      type: 'view<A>',
-      desc: <div>A view of the first <code>i</code> elements of <code>A</code> (or all elements if <code>A.count() &lt;= i</code>).</div>
+      type: 'asset_view<A>',
+      desc: <div>A asset_view of the first <code>i</code> elements of <code>A</code> (or all elements if <code>A.count() &lt;= i</code>).</div>
     },
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
@@ -175,7 +175,7 @@ export const assetbuiltins = {
   tail: {
     sig: 'A.head(i : nat)',
     desc: <div>Returns the last i elements of collection <code>A</code> according to its order (natural key order for <code>asset</code> collection).</div>,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'view' ],
+    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'nat',
@@ -184,8 +184,8 @@ export const assetbuiltins = {
       }
     ],
     returns: {
-      type: 'view<A>',
-      desc: <div>A view of the last <code>i</code> elements of <code>A</code> (or all elements if <code>A.count() &lt;= i</code>).</div>
+      type: 'asset_view<A>',
+      desc: <div>A asset_view of the last <code>i</code> elements of <code>A</code> (or all elements if <code>A.count() &lt;= i</code>).</div>
     },
     related: [
       { keyword: 'Asset', link: '/docs/asset' },

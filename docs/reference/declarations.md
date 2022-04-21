@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+toc_max_heading_level: 3
 ---
 
 # Declarations
@@ -15,7 +16,7 @@ The identifier of a contract element ([parameter](/docs/reference/declarations#p
 
 ### Keywords
 
-A keyword is an reserved identifier that cannot be used as identifier, unless it is prefixed by the `%` character.
+A keyword is a reserved identifier that cannot be used as identifier, unless it is prefixed by the `%` character.
 
 For example, [`transfer`](/docs/reference/instructions#transfer) is the builtin instruction to call an external contract; in order to declare an entrypoint named `transfer`, prefix it with `%`:
 
@@ -168,19 +169,86 @@ asset vehicle {
 
 The initial value of an asset collection is interpreted by the completium CLI's `deploy` command to set the initial storage Michelson value.
 
-## Types
+## Composite types
 
-record
+Archetype provides user-defined [composite types](/docs/language-basics/composite) on top of basic [types](/docs/reference/types).
+### Record
 
-enum
+A [record](/docs/language-basics/composite#record) is a list of named fields of different types. It is declared by the `record` keyword followed by a list of pairs of an [identifier](/docs/reference/declarations#identifier) and a basic [type](/docs/reference/types) or a [composite type](/docs/language-basics/composite). It *cannot* be recursive though.
 
-states
+For example:
 
-event
+```archetype
+record voter {
+  weight   : nat     /* weight is accumulated by delegation */
+  voted    : bool    /* if true, that person already voted  */
+  delegate : address /* person delegated to                 */
+  vote     : nat     /* index of the voted proposal         */
+}
+```
+### Enum
+
+An [enumeration](/docs/language-basics/composite#enum) is a union type of a fixed set of named types. It is declared by the `enum` keyword followed by an [identifier](/docs/reference/declarations#identifier) and the list of names types separated by `|`.
+
+For example:
+```archetype
+enum juice_size =
+| Small
+| Medium
+| Large
+```
+
+By default, enumerated types are of type [`unit`](/docs/reference/types#unit), but they may be of any basic [type](/docs/reference/types) or composite type ([tuple](/docs/language-basics/composite#tuple), [record](/docs/language-basics/composite#record), ...). It *cannot* be recursive though.
+
+For example, the type `RGB` below is the tuple of 3 [`nat`](/docs/reference/types#nat):
+```archetype
+enum color =
+| RGB<nat * nat * nat>
+| Hex<bytes>
+| Css<string>
+```
+
+### States
+
+When designing the contract a [state machine](/docs/statemachine), the `states` keyword is used to declare the list of states.
+
+For example:
+```archetype
+states =
+| Pending initial
+| Shipped
+| Accepted
+| Rejected
+| Canceled
+```
+
+One state may be followed by the `initial` keyword to specify the initial machine's state. If omitted, the first state is the initial state.
+
+### Event
+
+Archetype defines [events](/docs/language-basics/events) with the `event` keyword declaration. An event may possess several fields, like a record.
+
+For example the following declares the HighestBidIncreased event with two fields bidder and amount:
+
+```archetype
+event HighestBidIncreased {
+  bidder : address;
+  amount : tez
+}
+```
 
 ## Inlined
 
-constant
+### Constant
+
+A constant is a globally declared value that cannot be modified by [entrypoints](/docs/reference/declarations#entrypoints). The `constant` keyword is used to declare a constant, followed by the [identifier](/docs/reference/declarations#identifier), a [type](/docs/reference/types) and a value.
+
+It is inlined at compilation time, hence it is *not* an element of the contract's storage.
+
+For example:
+```archetype
+constant nb_iterations : nat = 20
+```
 
 ## Entrypoints
 

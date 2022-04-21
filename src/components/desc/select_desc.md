@@ -10,5 +10,5 @@ asset car {
 
 The following expression returns cars with number of doors greater than 3:
 ```archetype
-var v : view<car> = car.select(the.nbdoors > 3);
+var v : asset_view<car> = car.select(the.nbdoors > 3);
 ```

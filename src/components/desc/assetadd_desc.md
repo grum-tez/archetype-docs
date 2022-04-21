@@ -93,9 +93,9 @@ driver[caller].drives.add("1G1AF1F57A7192174");
 The instruction above fails if vehicle `"1G1AF1F57A7192174"` does not exist.
 :::
 
-#### View
+#### Asset view
 
-As a *read-only* set of asset references, a [view](/docs/reference/types#view<A>) does *not* provide the `add` instruction.
+As a *read-only* set of asset references, an [asset_view](/docs/reference/types#asset_view<A>) does *not* provide the `add` instruction.
 
 
 
