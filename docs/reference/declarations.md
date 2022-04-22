@@ -441,12 +441,12 @@ The benefit of the `view` feature is that it does not require to split the execu
 The body of an entrypoint ('entry', 'transition', 'getter') is made of the following *sections*. Each section is optional and appears in the order of presentation below.
 
 <Grid container>
-<Grid xs={12} sm={12} md={3}>
+<Grid xs={12} sm={12} md={2.5}>
 
 #### `refuse transfer`
 
 </Grid>
-<Grid xs={12} sm={12} md={9}>
+<Grid xs={12} sm={12} md={9.5}>
 
 Fails with `"NoTransfer"` if the value of [`transferred`](/docs/reference/expressions/constants#transferred) is different from `0tz`
 
@@ -456,12 +456,12 @@ Fails with `"NoTransfer"` if the value of [`transferred`](/docs/reference/expres
 <ThemedDivider />
 
 <Grid container style={{ marginTop: '18px' }}>
-<Grid xs={12} sm={12} md={3}>
+<Grid xs={12} sm={12} md={2.5}>
 
 #### `sourced by`
 
 </Grid>
-<Grid xs={12} sm={12} md={9}>
+<Grid xs={12} sm={12} md={9.5}>
 
 Fails with `"InvalidCaller"` if the value of [`source`](/docs/reference/expressions/constants#source) is different from the argument address.
 
@@ -473,18 +473,20 @@ entry set_owner_candidate(oc : address) {
 }
 ```
 
+See `called by` section below for more information.
+
 </Grid>
 </Grid>
 
 <ThemedDivider />
 
 <Grid container style={{ marginTop: '18px' }}>
-<Grid xs={12} sm={12} md={3}>
+<Grid xs={12} sm={12} md={2.5}>
 
 #### `called by`
 
 </Grid>
-<Grid xs={12} sm={12} md={9}>
+<Grid xs={12} sm={12} md={9.5}>
 
 Fails with `"InvalidCaller"` if the value of [`caller`](/docs/reference/expressions/constants#caller) is different from the argument address.
 
@@ -496,18 +498,48 @@ entry set_owner_candidate(oc : address) {
 }
 ```
 
+The argument of the section may also be:
+* a list of addresses separated by the `or` keyword
+* an [asset](/docs/asset) identified by an [`address`](/docs/reference/types#address) typed field
+* a [set](/docs/language-basics/container) or [list](/docs/language-basics/container) of addresses
+
+(this also applies to `source by` section above)
+
+For example:
+```archetype
+entry set_owner_candidate(oc : address) {
+  called by owner or admin
+  /* ... other sections ... */
+}
+```
+
+The `vote` entry below fails if [`caller`](/docs/reference/expressions/constants#caller) is not a `voter` (that is if `voter.contains(caller)` evaluates to `false`):
+```archetype
+asset voter {
+  id       : address;
+  nb_votes : nat = 0;
+}
+
+entry vote(proposal : nat) {
+  called by voter
+  /* ... other sections ... */
+}
+```
+
+
+
 </Grid>
 </Grid>
 
 <ThemedDivider />
 
 <Grid container style={{ marginTop: '18px' }}>
-<Grid xs={12} sm={12} md={3}>
+<Grid xs={12} sm={12} md={2.5}>
 
 #### `state is`
 
 </Grid>
-<Grid xs={12} sm={12} md={9}>
+<Grid xs={12} sm={12} md={9.5}>
 
 Fails with `"InvalidState"` if the value of [`state`](/docs/reference/expressions/constants#state) is different from the argument state.
 
@@ -526,12 +558,12 @@ entry redeem() {
 <ThemedDivider />
 
 <Grid container style={{ marginTop: '18px' }}>
-<Grid xs={12} sm={12} md={3}>
+<Grid xs={12} sm={12} md={2.5}>
 
 #### `require`
 
 </Grid>
-<Grid xs={12} sm={12} md={9}>
+<Grid xs={12} sm={12} md={9.5}>
 
 Fails if at least one of the requirements is **not** true. A requirement is defined by a unique identifier, a [`bool`](/docs/reference/types#bool) typed expression and an optional error value (introduced by the `otherwise` keyword).
 
@@ -555,12 +587,12 @@ entry pay() {
 <ThemedDivider />
 
 <Grid container style={{ marginTop: '18px' }}>
-<Grid xs={12} sm={12} md={3}>
+<Grid xs={12} sm={12} md={2.5}>
 
 #### `failif`
 
 </Grid>
-<Grid xs={12} sm={12} md={9}>
+<Grid xs={12} sm={12} md={9.5}>
 
 Fails if at least one of the failing conditions **is** true. A failing condition is defined by a unique identifier, a [`bool`](/docs/reference/types#bool) typed expression and an optional message value (introduced by the `with` keyword).
 
@@ -582,12 +614,12 @@ entry pay() {
 <ThemedDivider />
 
 <Grid container style={{ marginTop: '18px' }}>
-<Grid xs={12} sm={12} md={3}>
+<Grid xs={12} sm={12} md={2.5}>
 
 #### `effect`
 
 </Grid>
-<Grid xs={12} sm={12} md={9}>
+<Grid xs={12} sm={12} md={9.5}>
 
 This section contains the code (a list of [instructions](/docs/reference/instructions)) to modify the contract's storage and to generate [operations](/docs/language-basics/operations).
 
