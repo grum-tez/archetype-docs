@@ -28,6 +28,14 @@
     	    }
     	  },
     	},
+		'iter-rule': {
+			pattern: /iter\s+(((?!to).)*)\s+to/,
+      inside: {
+        'builtin': {
+          pattern: /\b(?:iter|to)\b/,
+        }
+      }
+		},
 		'unkeyworded' : /%(?:.*)/,
     	'archetype': /\b(?:archetype)\b/,
     	'builtin': /\b(?:exec_lambda|opt_get|issome|left|right|some|none|isempty|length|put|get|transfer|call|emit)\b/,
@@ -37,7 +45,7 @@
     	'verif': /\b(?:invariant|specification)\b/,
     	'type': /\b(?:contract|big_map|map|set|option|list|int|nat|tez|string|rational|bytes|key|key_hash|address|sapling|signature|date|duration|bool|operation|aggregate|partition|asset_view)\b/,
     	'constant': /\b(?:now|balance|transferred|self|caller|sender|selfaddress|state|operations)\b/,
-		'control': /\b(?:assert|begin|end|do|done|else|return|before|for|if|in|match|in|forall|added|removed|exists|then|the|from|to|while|with|InvalidCondition|InvalidCaller|NotFound|NatAssign|SliceError|DivByZero|OutOfBound)\b/,
+		'control': /\b(?:assert|iter|begin|end|do|done|else|return|before|for|if|in|match|in|forall|added|removed|exists|then|the|from|to|while|with|InvalidCondition|InvalidCaller|NotFound|NatAssign|SliceError|DivByZero|OutOfBound)\b/,
 		'decl': /\b(?:var|let some)\b/,
 		'boolean': /\b(?:false|true)\b/,
     	'logic': /\b(?:and|or|=|not|asr|land|lor|lsl|lsr|lxor)\b/,
