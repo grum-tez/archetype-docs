@@ -1,5 +1,10 @@
 archetype test
 
+variable bar : nat = 0
+
+entry getBar(cb : contract<int>) {
+  transfer transferred to entry cb(bar)
+}
 record voter {
   weight   : nat;
   voted    : bool = false;
@@ -12,12 +17,36 @@ asset partitioned identified by k {
   v : nat
 }
 
+states =
+| OK
+| KO
+| Canceled
+
+transition accept(success : bool) {
+  refuse transfer
+  sourced by selfaddress
+  from KO
+  to OK when { success } with effect {
+    transfer balance to selfaddress
+  }
+  to Canceled /* when success is false */
+}
+
+transition tr() {
+    from OK to KO
+}
+
 asset partitioning identified by a {
   a      : address;
   assets : aggregate<partitioned>
 }
 
 entry exec () {
-    var vo = { weight = 1; vote = 234523 };
-    partitioned.add({ k = 0; v = 0 })
+    require {
+        r1: transferred > 2tz
+    }
+    effect {
+        var vo = { weight = 1; vote = 234523 };
+        partitioned.add({ k = 0; v = 0 })
+    }
 }

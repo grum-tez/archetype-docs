@@ -1,18 +1,131 @@
-# (Pair { } { })
+# (Pair 0 (Pair { } (Pair 0 { })))
 {
-  storage (pair (map %partitioned nat nat) (map %partitioning address (set nat)));
-  parameter (unit %exec);
-  code { UNPAIR;
-         DIP { UNPAIR 2 };
-         DROP;
-         DUP 2;
-         NONE (set nat);
-         SENDER;
-         UPDATE;
-         DIP { DIG 1; DROP };
-         DUG 1;
-         PAIR 2;
-         NIL operation;
-         PAIR };
+  storage (pair (nat %bar) (pair (map %partitioned nat nat) (pair (int %_state) (map %partitioning address (set nat)))));
+  parameter (or (or (contract %getBar int) (bool %accept)) (or (unit %tr) (unit %exec)));
+  code { NIL operation;
+         DIG 1;
+         UNPAIR;
+         DIP { UNPAIR 4 };
+         IF_LEFT
+           { IF_LEFT
+               { DUP 6;
+                 DUP 2;
+                 AMOUNT;
+                 DUP 5;
+                 INT;
+                 TRANSFER_TOKENS;
+                 CONS;
+                 DIP { DIG 5; DROP };
+                 DUG 5;
+                 DROP;
+                 PAIR 4;
+                 DIG 1;
+                 PAIR }
+               { SELF_ADDRESS;
+                 SOURCE;
+                 COMPARE;
+                 EQ;
+                 NOT;
+                 IF
+                   { PUSH string "InvalidCaller";
+                     FAILWITH }
+                   {  };
+                 PUSH mutez 0;
+                 AMOUNT;
+                 COMPARE;
+                 EQ;
+                 NOT;
+                 IF
+                   { PUSH string "NoTransfer";
+                     FAILWITH }
+                   {  };
+                 DUP 4;
+                 DUP;
+                 PUSH int 1;
+                 COMPARE;
+                 EQ;
+                 IF
+                   { DUP 2;
+                     IF
+                       { DUP 7;
+                         SELF_ADDRESS;
+                         CONTRACT unit;
+                         IF_NONE
+                           { PUSH string "EntryNotFound";
+                             FAILWITH }
+                           {  };
+                         BALANCE;
+                         UNIT;
+                         TRANSFER_TOKENS;
+                         CONS;
+                         DIP { DIG 6; DROP };
+                         DUG 6;
+                         PUSH int 0;
+                         DIP { DIG 4; DROP };
+                         DUG 4 }
+                       { PUSH int 2;
+                         DIP { DIG 4; DROP };
+                         DUG 4 } }
+                   { PUSH string "InvalidState";
+                     FAILWITH };
+                 DROP 2;
+                 PAIR 4;
+                 DIG 1;
+                 PAIR } }
+           { IF_LEFT
+               { DROP;
+                 DUP 3;
+                 DUP;
+                 PUSH int 0;
+                 COMPARE;
+                 EQ;
+                 IF
+                   { PUSH int 1;
+                     DIP { DIG 3; DROP };
+                     DUG 3 }
+                   { PUSH string "InvalidState";
+                     FAILWITH };
+                 DROP;
+                 PAIR 4;
+                 DIG 1;
+                 PAIR }
+               { DROP;
+                 PUSH mutez 2000000;
+                 AMOUNT;
+                 COMPARE;
+                 GT;
+                 NOT;
+                 IF
+                   { PUSH string "r1";
+                     PUSH string "InvalidCondition";
+                     PAIR;
+                     FAILWITH }
+                   {  };
+                 PUSH nat 234523;
+                 NONE address;
+                 PAIR;
+                 PUSH bool False;
+                 PAIR;
+                 PUSH nat 1;
+                 PAIR;
+                 DUP 3;
+                 PUSH nat 0;
+                 MEM;
+                 IF
+                   { PUSH string "partitioned";
+                     PUSH string "KeyExists";
+                     PAIR;
+                     FAILWITH }
+                   { DUP 3;
+                     PUSH nat 0;
+                     SOME;
+                     PUSH nat 0;
+                     UPDATE;
+                     DIP { DIG 2; DROP };
+                     DUG 2 };
+                 DROP;
+                 PAIR 4;
+                 DIG 1;
+                 PAIR } } };
 }
 
