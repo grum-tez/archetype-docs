@@ -9,6 +9,7 @@ const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference'
 
 import AggregateDesc from '../../src/components/desc/aggregate_desc.md'
 import PartitionDesc from '../../src/components/desc/partition_desc.md'
+import BigmapDesc from '../../src/components/desc/bigmap_desc.md'
 
 export const types = {
   address :
@@ -54,9 +55,9 @@ export const types = {
   },
   big_map :
   {
-    desc: 'TODO',
+    desc: <BigmapDesc />,
     link: '#big_map<K,%20V>',
-    examples: [],
+    examples: [ `[]`, `[ ("#1G1AF1F57A7192174", 5); ("#2F4AH1J77O7132095", 10) ]` ],
     tags: [ PASSABLE, STORABLE ],
     michelson: "big_map",
     michelson_ref_url: michelson_ref_base_url + '/#type-big_map',

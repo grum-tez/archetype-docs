@@ -15,17 +15,6 @@ export const constants = {
     michelson_ref_url: michelson_ref_base_url + '/#instr-BALANCE',
     related: [],
   },
-  caller:
-  {
-    desc: 'Address of the account (or contract) calling the entrypoint.',
-    type: 'address',
-    michelson: "SENDER",
-    michelson_ref_url: michelson_ref_base_url + '/#instr-SENDER',
-    related: [
-      { keyword: "caller", link: "/docs/reference/constants#caller" },
-      { keyword: "called by", link: "/docs/declarations/entrypoint" },
-    ],
-  },
   chainid:
   {
     desc: <ChainidDesc />,
@@ -33,6 +22,17 @@ export const constants = {
     michelson: "CHAIN_ID",
     michelson_ref_url: michelson_ref_base_url + '/#instr-CHAIN_ID',
     related: [],
+  },
+  caller:
+  {
+    desc: 'Address calling the contract. It may be an account or another smart contract.',
+    type: 'address',
+    michelson: "SENDER",
+    michelson_ref_base_url: michelson_ref_base_url + '/#SENDER',
+    related: [
+      { keyword: "source", link: "/docs/reference/expressions/constants#source" },
+      { keyword: "called by", link: "/docs/reference/declarations#called-by" },
+    ]
   },
   level:
   {
@@ -65,8 +65,8 @@ export const constants = {
     michelson: "SOURCE",
     michelson_ref_url: michelson_ref_base_url + '/#instr-SOURCE',
     related: [
-      { keyword: "source", link: "/docs/reference/constants#source" },
-      { keyword: "sourced by", link: "/docs/declarations/entrypoint" },
+      { keyword: "caller", link: "/docs/reference/expressions/constants#caller" },
+      { keyword: "sourced by", link: "/docs/reference/declarations#sourced-by" },
     ],
   },
   state:

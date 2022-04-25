@@ -43,11 +43,11 @@ if then else
 
 match with end
 
-for ( in ) do done
+#### `for`
 
-while do done
+#### `while`
 
-iter i from to do done
+#### `iter`
 
 ## Divergent
 

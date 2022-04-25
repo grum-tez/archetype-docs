@@ -16,6 +16,10 @@ import { constants } from './constants.js';
 
 <Constant data={constants['chainid']} />
 
+### `caller`
+
+<Constant data={constants['caller']} />
+
 ### `level`
 
 <Constant data={constants['level']} />
