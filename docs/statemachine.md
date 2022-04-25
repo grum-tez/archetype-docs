@@ -49,7 +49,7 @@ See the [`transition`](/docs/reference/declarations#transition) article for more
 ### Section
 The [`state is`](/docs/reference/declarations#state-is) section allows the execution of an entrypoint (ie does not fail) only when the contract is in the specified state.
 
-For example, the following entrypoint does not fail when the current contract state is `Accepted`, and fails otherwise:
+For example, the following entrypoint fails if the current contract state is *not* `Accepted`:
 ```archetype
 entry pay() {
   state is Accepted

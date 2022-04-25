@@ -126,14 +126,14 @@ export const types = {
   },
   chain_id :
   {
-    desc: 'TODO',
+    desc: <div>Type of the chain network identifier.</div>,
     link: '#chain_id',
     examples: [ '"NetXdQprcVkpaWU"', 'chainid' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "chain_id",
     michelson_ref_url: michelson_ref_base_url + '/#type-chain_id',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/protocol" }
+      { keyword: "chainid", link:"/docs/reference/expressions/constants#chainid" }
     ],
   },
   chest :
