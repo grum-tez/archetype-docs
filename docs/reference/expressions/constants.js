@@ -2,6 +2,7 @@
 import React from "react"
 
 import BalanceDesc from '../../../src/components/desc/balance_desc.md'
+import ChainidDesc from '../../../src/components/desc/chainid_desc.md'
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference'
 
@@ -27,7 +28,7 @@ export const constants = {
   },
   chainid:
   {
-    desc: 'TODO',
+    desc: <ChainidDesc />,
     type: 'chain_id',
     michelson: "CHAIN_ID",
     michelson_ref_url: michelson_ref_base_url + '/#instr-CHAIN_ID',
