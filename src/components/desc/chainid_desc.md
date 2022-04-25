@@ -3,7 +3,7 @@ import ThemedDivider from '../Divider.js'
 
 Chain unique identifier.
 
-It is typically used in *signed* permits data to be *verified* on chain, in order to avoid replay attacks from testnet to mainnet (so that a permit cannot from testnet cannot be used on mainnet).
+It is typically used in *signed* permits data to be *verified* on chain, in order to avoid replay attacks from testnet to mainnet (so that a permit from testnet cannot be used on mainnet).
 
 The table below shows the chain id of the main networks:
 
