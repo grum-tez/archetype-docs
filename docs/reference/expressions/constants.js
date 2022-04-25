@@ -1,10 +1,14 @@
 
+import React from "react"
+
+import BalanceDesc from '../../../src/components/desc/balance_desc.md'
+
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference'
 
 export const constants = {
   balance:
   {
-    desc: 'TODO',
+    desc: <BalanceDesc />,
     type: 'tez',
     michelson: "BALANCE",
     michelson_ref_url: michelson_ref_base_url + '/#instr-BALANCE',
@@ -66,8 +70,15 @@ export const constants = {
   },
   state:
   {
-    desc: 'TODO',
-    related: [],
+    desc: <div>State of the contract when designed as a state machine. It is changed with <code>transition</code> entrypoints, not assignment instructions.<p></p>
+    The Michelson representation is a <code>nat</code> storage variable named <code>_state</code>.
+    </div>,
+    related: [
+      { keyword: "State Machine", link: "/docs/statemachine" },
+      { keyword: "States declaration", link: "/docs/reference/declarations#states" },
+      { keyword: "Transition", link: "/docs/reference/declarations#transition" },
+      { keyword: "Assignment", link: "/docs/reference/instructions#assignment"}
+    ],
   },
   transferred:
   {
