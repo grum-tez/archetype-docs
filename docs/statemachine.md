@@ -47,7 +47,7 @@ See the [`transition`](/docs/reference/declarations#transition) article for more
 ## Check state
 
 ### Section
-The [`state is`](/docs/reference/declarations#state-is) section allows to allow the exection of an entrypoint only when the contract is in the specified state.
+The [`state is`](/docs/reference/declarations#state-is) section allows the execution of an entrypoint (ie does not fail) only when the contract is in the specified state.
 
 For example, the following entrypoint does not fail when the current contract state is `Accepted`, and fails otherwise:
 ```archetype
