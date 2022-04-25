@@ -62,7 +62,8 @@ export const types = {
     michelson: "big_map",
     michelson_ref_url: michelson_ref_base_url + '/#type-big_map',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/container#big_map" }
+      { keyword: "Presentation", link:"/docs/language-basics/container#big_map" },
+      { keyword: ":=", link:"/docs/reference/instructions#assignment" },
     ],
   },
   bls12_381_fr :

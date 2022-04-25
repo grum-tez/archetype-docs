@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2.5
+toc_max_heading_level: 2
 ---
 
 # Instructions
@@ -20,34 +21,37 @@ begin end
 
 ## Assignment
 
-`:=`
+### `:=`
 
-`+=`
+### `+=`
 
-`-=`
+### `-=`
 
-`*=`
+### `*=`
 
-`/=`
+### `/=`
 
-`&=`
+### `&=`
 
-`|=`
+### `|=`
 
 
 ## Control
 
+### `if`
 if then
 
 if then else
 
+### `match with`
+
 match with end
 
-#### `for`
+### `for`
 
-#### `while`
+### `while`
 
-#### `iter`
+### `iter`
 
 ## Divergent
 
