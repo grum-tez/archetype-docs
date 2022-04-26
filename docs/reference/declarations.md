@@ -170,6 +170,27 @@ asset vehicle {
 
 The initial value of an asset collection is interpreted by the completium CLI's `deploy` command to set the initial storage Michelson value.
 
+#### Michelson representation
+
+The asset collection is compiled to Michelson as a [map](/docs/reference/types#map<K,%20V>) (or [big_map](/docs/reference/types#big_map<K,%20V>)) of records (right comb of pairs of annotated data).
+
+An asset with only one field is compiled to a Michelson [set](/docs/reference/types#set<T>).
+
+For example, the declaration above is quasi equivalent to the following lower-level code:
+
+```archetype
+record vehicle_data {
+  manufacturer : string;
+  release      : date;
+  nbdoors      : nat;
+}
+
+variable vehicle : map<string, vehicle_data> = [
+  ("1G1AF1F57A7192174", { "Renault"; 2021-06-28; 5 });
+  ("JNKCV61E49M014581", { "Peugeot"; 2021-07-12; 3 })
+]
+```
+
 ## Composite types
 
 Archetype provides user-defined [composite types](/docs/language-basics/composite) on top of basic [types](/docs/reference/types).
@@ -212,7 +233,7 @@ var v = { weight = 1; vote = 234523 };
 By default, the Michelson structure of a record is a *right comb* of pairs.
 
 It means for example that the Michelson type of the `voter` record declared above is:
-```js
+```
 pair (nat %weight) (pair (bool %voted) pair ((option %delegate address) (nat %vote)))
 ```
 
@@ -228,7 +249,7 @@ record voter {
 ```
 
 The resulting Michelson type is then:
-```js
+```
 pair (pair (nat %w) (bool %has_voted)) (pair (option %del address) (nat %vote))
 ```
 

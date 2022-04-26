@@ -56,26 +56,6 @@ The following one line code removes the top 3 recently repaired vehicles with to
 vehicle.sort(dateofrepair).select(the.nbrepairs = 2).head(3).clear();
 ```
 
-## Michelson representation
-
-The asset collection is compiled to Michelson as a [map](/docs/reference/types#map<K,%20V>) (or [big_map](/docs/reference/types#big_map<K,%20V>)) of records (right comb of pairs of annotated data).
-
-An asset with only one field is compiled to a Michelson [set](/docs/reference/types#set<T>).
-
-For example, the declaration above is quasi equivalent to the following lower-level code:
-
-```archetype
-record loan_data {
-  subscriber : address;
-  principal  : tez;
-  interest   : rational;
-  creation   : date;
-  delay      : duration;
-}
-
-variable loan : map<string, loan_data> = []
-```
-
 ## Iteration
 
 An *asset* collection is iterable with the `for k in ... do ... done` loop instruction.
