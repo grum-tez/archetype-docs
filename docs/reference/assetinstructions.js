@@ -29,6 +29,8 @@ export const assetinstructions = {
     ],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
+      { keyword: 'update', link: '/docs/reference/instructions#aupdatek--u-' },
+      { keyword: 'remove', link: '/docs/reference/instructions#aremovek' },
     ]
   },
   update : {

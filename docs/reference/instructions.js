@@ -29,8 +29,8 @@ export const instructions = {
       { label : 'dofailif', link : link_prefix + 'divergent' },
     ],
     sets: [
-      { label : 'add', link : link_prefix + 'set' },
-      { label : 'remove', link : link_prefix + 'set' },
+      { label : 'add', link : link_prefix + 'sadde' },
+      { label : 'remove', link : link_prefix + 'sremovee' },
     ],
     lists: [
       { label : 'prepend', link : link_prefix + 'list' },

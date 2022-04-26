@@ -9,6 +9,7 @@ import Builtin from '@site/src/components/Builtin.js';
 import { assetinstructions } from './assetinstructions.js';
 import Operator from '@site/src/components/Operator.js';
 import { assignments } from './assignments.js';
+import { containerinstructions } from './containerinstructions.js';
 
 
 An instruction has a side effect on the storage, operations or execution (may fail).
@@ -168,9 +169,13 @@ dofailif
 ## Containers
 
 ### Set
-add
+#### `S.add(e)`
 
-remove
+<Builtin data={containerinstructions['setadd']} />
+
+#### `S.remove(e)`
+
+<Builtin data={containerinstructions['setremove']} />
 
 ### List
 prepend
