@@ -127,7 +127,7 @@ else
 
 That is that it is equivalent to:
 ```archetype
-/* 'begin end' is optional, it is to emphasis the logical structure */
+/* 'begin end' is optional here, it is to emphasis the logical structure */
 if a = 1 then begin
   if b = 1 then
     a := 42
