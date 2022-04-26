@@ -260,7 +260,7 @@ When named types have no argument (like in `juice_size` example above), they are
 
 With argument (like in `color` example above), named types are represented with imbricated [`or`](/docs/reference/types#or<T1,%20T2>) values. For example the Michelson type of `color` is:
 ```
-or (pair %RGB nat (pair nat nat)) (or (bytes %bytes) (string %Css))
+or (pair %RGB nat (pair nat nat)) (or (bytes %Hex) (string %Css))
 ```
 
 ### States
