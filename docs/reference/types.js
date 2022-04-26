@@ -342,7 +342,7 @@ export const types = {
     parameters: [
       { keyword: 'T', type: 'any type', desc: 'type of the value when the option is some value' },
     ],
-    examples: ['variable opt : option<nat> = none', 'variable opt : option<string> = some("abcd")'],
+    examples: ['none', 'some("abcd")'],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "option",
     michelson_ref_url: michelson_ref_base_url + '/#type-option',
