@@ -6,6 +6,10 @@ export const instructions = {
       { label : '( )', link : link_prefix + 'sequence' },
       { label : ' ; ', link : link_prefix + 'sequence' },
     ],
+    localvar: [
+      { label : 'var', link : link_prefix + 'var' },
+      { label : 'const', link : link_prefix + 'const' },
+    ],
     assignements: [
       { label : ':=', link : link_prefix + 'a--b' },
       { label : '+=', link : link_prefix + 'a--b-1' },

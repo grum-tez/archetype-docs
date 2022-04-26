@@ -49,7 +49,14 @@ This is the Archetype language reference.
 
 ## Instructions
 
-<EagleEyeView title="Sequence" data={instructions.sequence} xs={4}/>
+<Grid container>
+  <Grid item md={4} xs={12} sm={12}>
+    <EagleEyeView title="Sequence" data={instructions.sequence} xs={4}/>
+  </Grid>
+  <Grid item md={8} xs={12} sm={12}>
+    <EagleEyeView title="Local variable" data={instructions.localvar} xs={4}/>
+  </Grid>
+</Grid>
 
 <EagleEyeView title="Assignements" data={instructions.assignements} xs={1}/>
 

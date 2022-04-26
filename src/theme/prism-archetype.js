@@ -48,7 +48,7 @@
     'type': /\b(?:contract|big_map|map|set|option|list|int|nat|tez|string|rational|bytes|key|key_hash|address|sapling|signature|date|duration|bool|operation|aggregate|partition|asset_view)\b/,
     'constant': /\b(?:now|balance|transferred|self|caller|sender|selfaddress|state|operations)\b/,
 		'control': /\b(?:assert|iter|begin|end|do|done|else|return|before|for|if|in|match|in|forall|added|removed|exists|then|the|from|to|while|with|InvalidCondition|InvalidCaller|NotFound|NatAssign|SliceError|DivByZero|OutOfBound)\b/,
-		'decl': /\b(?:var|let some)\b/,
+		'decl': /\b(?:const|var|let some)\b/,
 		'boolean': /\b(?:false|true)\b/,
     'logic': /\b(?:and|or|=|not|asr|land|lor|lsl|lsr|lxor)\b/,
     'asset': /\b(?:count|sum|asc|desc|removeif|remove|update|contains|clear|select|sort|head|nth|add|put|addupdate)\b/,
