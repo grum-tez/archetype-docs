@@ -88,9 +88,42 @@ All [types](/docs/reference/types) are assignable, except [`ticket`](/docs/refer
 ## Control
 
 ### `if`
-if then
 
-if then else
+The conditional branching instruction `if ... then` executes a sequence of instruction depending on a [bool](/docs/reference/types#bool) expression value.
+
+For example, *instr1* is executed if *expr1* is `true`:
+```archetype
+if expr1 then
+  instr1
+```
+
+The sequence of instructions to execute when expression *expr1* is false follows the `else` keyword:
+```archetype
+if expr1 then
+  instr1
+else
+  instr2
+```
+
+[Sequence](/docs/reference/instructions#sequence) of instructions are delimited by `begin ... end` and separated by `;`:
+```archetype
+if expr1 then begin
+  instr1;
+  instr2
+end else begin
+  instr3;
+  instr4
+end
+```
+
+There is no need for parenthesis in the bool expression; for example:
+```archetype
+var max : nat = 0;
+if a < b then
+  min := b
+else
+  min := a
+```
 
 ### `match with`
 
