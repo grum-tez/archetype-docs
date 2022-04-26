@@ -79,12 +79,11 @@ All [types](/docs/reference/types) are assignable, except [`ticket`](/docs/refer
 
 ### `a &= b`
 
-Assigns `a and b` to variable `a` (see [`and`](/docs/reference/expressions/operators#a-and-b) operator)
+<Operator data={assignments['andequal']} />
 
 ### `a |= b`
 
-Assigns `a or b` to variable `b` (see [`or`](/docs/reference/expressions/operators#a-or-b) operator)
-
+<Operator data={assignments['orequal']} />
 
 ## Control
 

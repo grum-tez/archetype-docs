@@ -96,5 +96,23 @@ export const assignments = {
       { typa: 'rational', typr: 'nat' },
       { typa: 'rational', typr: 'int' },
     ]
+  },
+  andequal: {
+    label: 'b',
+    link: '--a',
+    desc: <div>Assigns <code>a and b</code> to <i>variable</i> <code>a</code> (see <Link to="/docs/reference/expressions/operators#a-and-b"><code>and</code></Link> operator).</div>,
+    binary: false,
+    types: [
+      { typa: 'bool', typr : 'bool' },
+    ]
+  },
+  orequal: {
+    label: 'b',
+    link: '--a',
+    desc: <div>Assigns <code>a and b</code> to <i>variable</i> <code>a</code> (see <Link to="/docs/reference/expressions/operators#a-or-b"><code>or</code></Link> operator).</div>,
+    binary: false,
+    types: [
+      { typa: 'bool', typr : 'bool' },
+    ]
   }
 }
