@@ -22,8 +22,6 @@ states =
 | Canceled
 ```
 
-The Michelson representation of the contract state is a storage variable named `_state` and typed [`nat`](/docs/reference/types#nat).
-
 See the [`states`](/docs/reference/declarations#states) article for more information.
 
 ## Transitions

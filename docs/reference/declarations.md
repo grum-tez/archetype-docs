@@ -244,7 +244,7 @@ enum juice_size =
 | Large
 ```
 
-By default, enumerated types are of type [`unit`](/docs/reference/types#unit), but they may be of any basic [type](/docs/reference/types) or composite type ([tuple](/docs/language-basics/composite#tuple), [record](/docs/language-basics/composite#record), ...). It *cannot* be recursive though.
+Named types may take an argument of any basic [type](/docs/reference/types) or composite type ([tuple](/docs/language-basics/composite#tuple), [record](/docs/language-basics/composite#record), ...) (it *cannot* be recursive though).
 
 For example, the type `RGB` below is the tuple of 3 [`nat`](/docs/reference/types#nat):
 ```archetype
@@ -252,6 +252,15 @@ enum color =
 | RGB<nat * nat * nat>
 | Hex<bytes>
 | Css<string>
+```
+
+#### Michelson representation
+
+When named types have no argument (like in `juice_size` example above), they are represented by an [int](/docs/reference/types#nat) value from `0` to `n-1` if `n` is the number of named types.
+
+With argument (like in `color` example above), named types are represented with imbricated `or` values. For example the Michelson type of `color` is:
+```
+or (pair %RGB nat (pair nat nat) (or (bytes %bytes) (string %Css)))
 ```
 
 ### States
@@ -269,6 +278,8 @@ states =
 ```
 
 One state may be followed by the `initial` keyword to specify the initial machine's state. If omitted, the first state is the initial state.
+
+The Michelson representation of the contract state is a storage variable named `_state` and typed [`nat`](/docs/reference/types#nat).
 
 ### Event
 
