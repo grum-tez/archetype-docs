@@ -39,11 +39,16 @@ export const assignments = {
       { typa: 'duration', typr: 'duration' },
       { typa: 'date', typr: 'duration' },
       { typa: 'tez', typr: 'tez' },
+      { typa: 'bls12_381_fr', typr: 'bls12_381_fr' },
+      { typa: 'bls12_381_g1', typr: 'bls12_381_g1' },
+      { typa: 'bls12_381_g2', typr: 'bls12_381_g2' },
     ],
     promotions: [
       { typa: 'int', typr: 'nat' },
       { typa: 'rational', typr: 'nat' },
       { typa: 'rational', typr: 'int' },
+      { typa: 'bls12_381_fr', typr: 'nat' },
+      { typa: 'bls12_381_fr', typr: 'int' },
     ],
     fails: [
       {
