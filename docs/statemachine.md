@@ -22,7 +22,7 @@ states =
 | Canceled
 ```
 
-See the [`states`](/docs/reference/declarations#states) article for more information.
+See the [states](/docs/reference/declarations#states) article for more information.
 
 ## Transitions
 
@@ -40,7 +40,7 @@ transition accept() {
 }
 ```
 
-See the [`transition`](/docs/reference/declarations#transition) article for more information.
+See the [transition](/docs/reference/declarations#transition) article for more information.
 
 ## Check state
 

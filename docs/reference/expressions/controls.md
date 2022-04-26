@@ -4,6 +4,6 @@ sidebar_position: 5
 
 # Controls
 
-## `if`
+### `if`
 
-## `match with`
+### `match with`
