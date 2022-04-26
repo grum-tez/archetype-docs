@@ -85,6 +85,12 @@ var theme = {
     style: {
       color: "rgb(255, 85, 85)"
     }
+  }, {
+    types: ["instr", "expr"],
+    style: {
+      color: "rgb(248, 248, 242)",
+      fontStyle: "italic"
+    }
   }]
 };
 

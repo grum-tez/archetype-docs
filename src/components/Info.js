@@ -12,7 +12,7 @@ const Fails = (props) => {
       <Grid container>
         { (props.fails.map((f,i) => {
           return (
-            <Grid container style={{ marginBottom: (props.fails.length > 1 ? '4px' : '0px') }}>
+            <Grid container style={{ marginBottom: (props.fails.length > 1 ? '22px' : '0px') }}>
             <Grid key={"fk"+i} item xs={(f.keyword.length > 15)? 12: 2} style={{ marginBottom: (f.keyword.length > 15)? '12px': '0px' }}>
               <Typography><code>{f.keyword}</code></Typography>
             </Grid>
