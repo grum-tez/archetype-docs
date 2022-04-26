@@ -166,30 +166,42 @@ dorequire
 
 dofailif
 
-## Containers
-
-### Set
-#### `S.add(e)`
+## Set
+### `S.add(e)`
 
 <Builtin data={containerinstructions['setadd']} />
 
-#### `S.remove(e)`
+### `S.remove(e)`
 
 <Builtin data={containerinstructions['setremove']} />
 
-### List
-prepend
+## List
 
-reverse
+### `L.prepend(e)`
 
-concat
+<Builtin data={containerinstructions['prepend']} />
 
-### Map
-put
+### `L.reverse()`
 
-remove
+<Builtin data={containerinstructions['reverse']} />
 
-update
+### `L.concat(l)`
+
+<Builtin data={containerinstructions['concat']} />
+
+## Map
+
+### `M.put(k, v)`
+
+<Builtin data={containerinstructions['put']} />
+
+### `M.remove(k)`
+
+<Builtin data={containerinstructions['mapremove']} />
+
+### `M.update(k : K, o : option<T>)`
+
+<Builtin data={containerinstructions['update']} />
 
 ## Assets
 

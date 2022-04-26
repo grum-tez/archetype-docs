@@ -1,6 +1,9 @@
 import React from "react";
 import Link from '@docusaurus/Link';
 
+import ReverseDesc from '../../src/components/desc/reverse_desc.md'
+import ConcatDesc from '../../src/components/desc/concat_desc.md'
+
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
 export const containerinstructions = {
@@ -45,5 +48,133 @@ export const containerinstructions = {
       { keyword: 'add', link: '/docs/reference/instructions#sadde' },
       { keyword: 'contains', link: '/docs/reference/expressions/builtins#contains(c%20:%20C,%20i%20:%20T)' },
     ]
-  }
+  },
+  prepend: {
+    desc: <div>Prepends element <code>e</code> to (ie. puts <code>e</code> in first position of) list <code>L</code>.<p></p>
+    (see <Link to="/docs/reference/instructions#match-with"><code>match with</code></Link> instruction to <i>remove</i> the head element of the list).
+    </div>,
+    sig: 'L.prepend(e)',
+    parameters: [
+      {
+        type: 'T',
+        withLink : false,
+        alias: 'e',
+        desc: <div>Element to prepend to the set. Type of <code>e</code> is defined at <Link to="/docs/reference/types#list<T>"><code>list</code></Link> declaration.</div>
+      },
+    ],
+    michelson: "CONS",
+    michelson_ref_url: michelson_ref_base_url + '#instr-CONS',
+    fails: [
+    ],
+    related: [
+      { keyword: 'list', link: '/docs/reference/types#list<T>' },
+      { keyword: 'contains', link: '/docs/reference/expressions/builtins#contains(c%20:%20C,%20i%20:%20T)' },
+      { keyword: 'match with', link: '/docs/reference/instructions#match-with' }
+    ]
+  },
+  reverse: {
+    desc: <ReverseDesc />,
+    sig: 'L.reverse()',
+    fails: [
+    ],
+    related: [
+      { keyword: 'list', link: '/docs/reference/types#list<T>' },
+      { keyword: 'prepend', link: '/docs/reference/instructions#lprepende' }
+    ]
+  },
+  concat: {
+    desc: <ConcatDesc/>,
+    sig: 'L.concat(l)',
+    parameters: [
+      {
+        type: 'list<T>',
+        alias: 'l',
+        desc: <div>List to append to list <code>L</code>.</div>
+      },
+    ],
+    fails: [
+    ],
+    related: [
+      { keyword: 'list', link: '/docs/reference/types#list<T>' },
+      { keyword: 'prepend', link: '/docs/reference/instructions#lprepende' },
+      { keyword: 'reverse', link: '/docs/reference/instructions#lreverse' }
+    ]
+  },
+  put : {
+    desc: <div>Associates key <code>k</code> with value <code>v</code> in map (or big_map) <code>M</code>.</div>,
+    sig: 'M.put(k, v)',
+    parameters: [
+      {
+        type: `K`,
+        withLink : false,
+        alias: 'k',
+        desc: <div>Key to associate a value to.</div>
+      },
+      {
+        type: `V`,
+        withLink : false,
+        alias: `v`,
+        desc: <div>Value associated to the key.</div>
+      }
+    ],
+    fails: [
+    ],
+    michelson: "UPDATE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
+    related: [
+      { keyword: 'map', link: '/docs/reference/types#map<K,%20V>' },
+      { keyword: 'big_map', link: '/docs/reference/types#big_map<K,%20V>' },
+    ]
+  },
+  mapremove : {
+    desc: <div>Removes entry key <code>k</code> in map (or big_map) <code>M</code>.</div>,
+    sig: 'M.remove(k)',
+    parameters: [
+      {
+        type: `K`,
+        withLink : false,
+        alias: 'k',
+        desc: <div>Key to remove association of.</div>
+      },
+    ],
+    fails: [
+    ],
+    michelson: "UPDATE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
+    related: [
+      { keyword: 'map', link: '/docs/reference/types#map<K,%20V>' },
+      { keyword: 'big_map', link: '/docs/reference/types#big_map<K,%20V>' },
+    ]
+  },
+  update : {
+    desc: <div>Associates or removes the association of key <code>k</code> in map (or big_map) <code>M</code> depending on the value of <code>o</code>:
+    <ul>
+      <li><code>some(v)</code>: associates key <code>k</code> with value <code>v</code> </li>
+      <li><code>none</code>: removes entry key <code>k</code> </li>
+    </ul></div>,
+    sig: 'M.update(k, v)',
+    parameters: [
+      {
+        type: `K`,
+        withLink : false,
+        alias: 'k',
+        desc: <div>Key to associate or remove.</div>
+      },
+      {
+        type: `option<T>`,
+        alias: `v`,
+        desc: <div>Option Value to associate a value to the key or remove the key.</div>
+      }
+    ],
+    fails: [
+    ],
+    michelson: "UPDATE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
+    related: [
+      { keyword: 'map', link: '/docs/reference/types#map<K,%20V>' },
+      { keyword: 'big_map', link: '/docs/reference/types#big_map<K,%20V>' },
+      { keyword: 'option', link: '/docs/reference/types#option<T>' },
+    ]
+  },
+
 }
