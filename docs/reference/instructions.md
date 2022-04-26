@@ -97,7 +97,7 @@ if expr1 then
   instr1
 ```
 
-The sequence of instructions to execute when expression *expr1* is false follows the `else` keyword:
+The sequence of instructions to execute when expression *expr1* is `false`, follows the `else` keyword:
 ```archetype
 if expr1 then
   instr1
@@ -116,7 +116,7 @@ end else begin
 end
 ```
 
-A dangling `else` keyword is attached to the *last* `if`. For example in the following expression, the `else` branch is attached to `if b = 1 then a := 42` instruction:
+A dangling `else` is attached to the *last* `if`. For example in the following expression, the `else` branch is attached to `if b = 1 then a := 42` instruction:
 ```archetype
 if a = 1 then
   if b = 1 then
