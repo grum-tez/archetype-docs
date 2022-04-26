@@ -4,6 +4,6 @@ sidebar_position: 5
 
 # Controls
 
-if then else
+## `if`
 
-match with end
+## `match with`

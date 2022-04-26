@@ -105,7 +105,7 @@ else
   instr2
 ```
 
-[Sequence](/docs/reference/instructions#sequence) of instructions are delimited by `begin ... end` and separated by `;`:
+A [sequence](/docs/reference/instructions#sequence) of instructions is delimited by `begin ... end` and  instructions are separated by `;`:
 ```archetype
 if expr1 then begin
   instr1;
@@ -116,14 +116,36 @@ end else begin
 end
 ```
 
-There is no need for parenthesis in the bool expression; for example:
+A dangling `else` keyword is attached to the *last* `if`. For example in the following expression, the `else` branch is attached to `if b = 1 then a := 42` instruction:
+```archetype
+if a = 1 then
+  if b = 1 then
+    a := 42
+else
+  b := 42
+```
+
+That is that it is equivalent to:
+```archetype
+/* 'begin end' is optional, it is to emphasis the logical structure */
+if a = 1 then begin
+  if b = 1 then
+    a := 42
+  else
+    b := 42
+end
+```
+
+Note that there is no need for parenthesis in the bool expression; for example:
 ```archetype
 var max : nat = 0;
 if a < b then
-  min := b
+  max := b
 else
-  min := a
+  max := a
 ```
+
+A conditional [`if`](/docs/reference/expressions/controls#if) *expression* is also available.
 
 ### `match with`
 
