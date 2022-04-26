@@ -3,7 +3,6 @@ const link_prefix = '/docs/reference/instructions#'
 export const instructions = {
     sequence: [
       { label : 'begin end', link : link_prefix + 'sequence' },
-      { label : '( )', link : link_prefix + 'sequence' },
       { label : ' ; ', link : link_prefix + 'sequence' },
     ],
     localvar: [
