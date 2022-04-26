@@ -256,7 +256,7 @@ enum color =
 
 #### Michelson representation
 
-When named types have no argument (like in `juice_size` example above), they are represented by an [int](/docs/reference/types#nat) value from `0` to `n-1` if `n` is the number of named types.
+When named types have no argument (like in `juice_size` example above), they are represented by an [`int`](/docs/reference/types#nat) value from `0` to `n-1` if `n` is the number of named types.
 
 With argument (like in `color` example above), named types are represented with imbricated [`or`](/docs/reference/types#or<T1,%20T2>) values. For example the Michelson type of `color` is:
 ```
