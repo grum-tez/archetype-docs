@@ -101,7 +101,7 @@ export const containerinstructions = {
     ]
   },
   put : {
-    desc: <div>Associates key <code>k</code> with value <code>v</code> in map (or big_map) <code>M</code>.</div>,
+    desc: <div>Associates key <code>k</code> with value <code>v</code> in <Link to="/docs/reference/types#map<K,%20V>">map</Link> (or <Link to="/docs/reference/types#big_map<K,%20V>">big_map</Link>) <code>M</code>.</div>,
     sig: 'M.put(k, v)',
     parameters: [
       {
@@ -127,7 +127,7 @@ export const containerinstructions = {
     ]
   },
   mapremove : {
-    desc: <div>Removes entry key <code>k</code> in map (or big_map) <code>M</code>.</div>,
+    desc: <div>Removes entry key <code>k</code> in <Link to="/docs/reference/types#map<K,%20V>">map</Link> (or <Link to="/docs/reference/types#big_map<K,%20V>">big_map</Link>) <code>M</code>.</div>,
     sig: 'M.remove(k)',
     parameters: [
       {
@@ -147,7 +147,7 @@ export const containerinstructions = {
     ]
   },
   update : {
-    desc: <div>Associates or removes the association of key <code>k</code> in map (or big_map) <code>M</code> depending on the value of <code>o</code>:
+    desc: <div>Associates or removes the association of key <code>k</code> in <Link to="/docs/reference/types#map<K,%20V>">map</Link> (or <Link to="/docs/reference/types#big_map<K,%20V>">big_map</Link>) <code>M</code> depending on the value of <code>o</code>:
     <ul>
       <li><code>some(v)</code>: associates key <code>k</code> with value <code>v</code> </li>
       <li><code>none</code>: removes entry key <code>k</code> </li>
