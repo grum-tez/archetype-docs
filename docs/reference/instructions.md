@@ -393,6 +393,23 @@ There is no guarantee that the iteration terminates. In such a case the entrypoi
 
 ### `iter`
 
+The `iter` instruction iterates over a integer value in a specified range. The generic syntax is:
+```archetype
+iter i from expr1 to expr2 do
+  instr1 /* declares an integer constant 'i' between expr1 and expr2 included */
+done
+```
+
+In the instruction above, *expr1* and *expr2* are expressions typed [`int`](/docs/reference/types#nat). It does not iterate if *expr1* is greater than *expr2*.
+
+The initial `from` value may be omitted, it is then defaulted to `1`:
+```archetype
+iter i to expr2 do
+  instr1 /* declares an integer constant 'i' between 1 and expr2 included */
+done
+```
+
+
 ## Divergent
 
 fail

@@ -31,8 +31,8 @@
 		'iter-rule': {
 			pattern: /iter\s+(((?!to).)*)\s+to/,
       inside: {
-        'builtin': {
-          pattern: /\b(?:iter|to)\b/,
+        'control': {
+          pattern: /\b(?:iter|from|to)\b/,
         }
       }
 		},
