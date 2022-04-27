@@ -354,18 +354,42 @@ asset visitor identified by login {
 
 The following iterates on the `visitor` asset collection:
 ```archetype
-for l in visitor do
-  instr1 /* l is the visitor 'login' typed 'address' */
+for log in visitor do
+  instr1 /* 'log' is the visitor 'login' typed 'address' */
 done
 ```
 
-Since `l` is the visitor login, visitor fileds are accessed with [`[]`](/docs/reference/expressions/asset#ak--pkeyaf) operator, like for example:
+Since `log` is the iterated visitor's login, visitor data is accessed with [`[]`](/docs/reference/expressions/asset#ak--pkeyaf) operator, like for example:
 
 ```archetype
-var nbv = visitor[l].nbvisits
+var nbv = visitor[log].nbvisits
 ```
 
 ### `while`
+
+The `while` instruction executes an instruction as long as a condition holds true.
+
+The generic syntax is:
+```archetype
+while expr1 do
+  intr1
+done
+```
+
+where *expr1* is a [`bool`](/docs/reference/types#bool) typed expression.
+
+For example:
+```archetype
+var i = 0;
+while i < 20 do
+  instr1;
+  i += 1
+done
+```
+
+:::danger
+There is no guarantee that the iteration terminates. In such a case the entrypoint fails with a `gas exceeded` error.
+:::
 
 ### `iter`
 
