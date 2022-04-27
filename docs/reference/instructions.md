@@ -288,10 +288,82 @@ match color with
 end
 ```
 
-
-
-
 ### `for`
+
+The `for` instruction iterates the elements of a *container* ([`set`](/docs/reference/types#set<T>), [`list`](/docs/reference/types#list<T>), [`map`](/docs/reference/types#map<K,%20V>) and [`asset`](/docs/asset)).
+
+The generic syntax structure is presented below, given `c` is a container:
+```archetype
+for e in c do
+  instr1      /* declares constant element 'e' in instr1 */
+done
+```
+
+The type of element `e` above depends on the type of the container. See below for more information.
+
+Note that it is *not* possible to break an iteration. See the [`fold`](/docs/reference/expressions/builtins#fold%20(i%20:%20or<L,%20R>,%20id%20->%20(body(id%20:%20L)%20:%20or<L,%20R>))) builtin for an iteration process with a possiblity to break.
+
+#### `set`
+
+Elements of a [`set`](/docs/reference/types#set<T>) are iterated in the element's type natural order.
+
+For example, suppose set `s` is typed `set<string>`:
+```archetype
+for e in s do
+  instr1 /* constant e is typed 'string' and is an element of s */
+done
+```
+
+#### `list`
+
+Elements of a [`list`](/docs/reference/types#list<T>) are iterated in the order of the list's construction process. See [`prepend`](/docs/reference/instructions#lprepende) and [`concat`](/docs/reference/instructions#lconcatl) instructions.
+
+For example, suppose list `l` is typed `list<nat>`:
+```archetype
+for e in l do
+  instr1 /* constant 'e' is typed `nat` */
+done
+```
+
+#### `map`
+
+Elements of a [`map`](/docs/reference/types#map<K,%20V>) are iterated in the natural order of the key.
+
+For example, suppose map `m` is typed `map<string, bytes>`:
+```archetype
+for (k, v) in m do
+  instr1
+end
+```
+In the example above:
+* `k` is a key of the map typed `string`
+* `v` is the associated value typed `bytes`
+
+#### `asset`
+
+Elements of a [`asset`](/docs/asset) are iterated in the natural order of the asset identifier.
+
+Consider the following `visitor` asset declaration identified by `login` field:
+```archetype
+asset visitor identified by login {
+  login    : address;
+  fullname : string;
+  nbvisits : nat = 0
+}
+```
+
+The following iterates on the `visitor` asset collection:
+```archetype
+for l in visitor do
+  instr1 /* l is the visitor 'login' typed 'address' */
+done
+```
+
+Since `l` is the visitor login, visitor fileds are accessed with [`[]`](/docs/reference/expressions/asset#ak--pkeyaf) operator, like for example:
+
+```archetype
+var nbv = visitor[l].nbvisits
+```
 
 ### `while`
 

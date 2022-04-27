@@ -62,7 +62,7 @@ This is the Archetype language reference.
 
 <EagleEyeView title="Controls" data={instructions.controls} xs={2}/>
 
-<EagleEyeView title="Divergent" data={instructions.divergent} xs={4}/>
+<EagleEyeView title="Divergent" data={instructions.divergent} xs={2}/>
 
 <Grid container>
   <Grid item md={4} xs={12} sm={12}>
