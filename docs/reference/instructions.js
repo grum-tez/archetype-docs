@@ -19,12 +19,11 @@ export const instructions = {
       { label : '|=', link : link_prefix + 'a--b-5' },
     ],
     controls: [
-      { label : 'if then', link : link_prefix + 'control' },
-      { label : 'if then else', link : link_prefix + 'control' },
-      { label : 'match with end', link : link_prefix + 'control' },
-      { label : 'for in do done', link : link_prefix + 'control' },
-      { label : 'while do done', link : link_prefix + 'control' },
-      { label : 'iter from to do done', link : link_prefix + 'control' },
+      { label : 'if', link : link_prefix + 'if' },
+      { label : 'match', link : link_prefix + 'match-with' },
+      { label : 'for', link : link_prefix + 'for' },
+      { label : 'while', link : link_prefix + 'while' },
+      { label : 'iter', link : link_prefix + 'iter' },
     ],
     divergent: [
       { label : 'fail', link : link_prefix + 'divergent' },
@@ -36,14 +35,14 @@ export const instructions = {
       { label : 'remove', link : link_prefix + 'sremovee' },
     ],
     lists: [
-      { label : 'prepend', link : link_prefix + 'list' },
-      { label : 'add', link : link_prefix + 'list' },
-      { label : 'remove', link : link_prefix + 'list' },
+      { label : 'prepend', link : link_prefix + 'lprepende' },
+      { label : 'reverse', link : link_prefix + 'lreverse' },
+      { label : 'concat', link : link_prefix + 'lconcatl' },
     ],
     maps: [
-      { label : 'put', link : link_prefix + 'map' },
-      { label : 'remove', link : link_prefix + 'map' },
-      { label : 'update', link : link_prefix + 'map' },
+      { label : 'put', link : link_prefix + 'mputk-v' },
+      { label : 'remove', link : link_prefix + 'mremovek' },
+      { label : 'update', link : link_prefix + 'mupdatek--k-o--optiont' },
     ],
     assets: [
       { label : 'add', link : link_prefix + 'aadda', desc : 'Adds a new asset in collection' },

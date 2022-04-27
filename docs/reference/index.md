@@ -60,7 +60,7 @@ This is the Archetype language reference.
 
 <EagleEyeView title="Assignements" data={instructions.assignements} xs={1}/>
 
-<EagleEyeView title="Controls" data={instructions.controls} xs={4}/>
+<EagleEyeView title="Controls" data={instructions.controls} xs={2}/>
 
 <EagleEyeView title="Divergent" data={instructions.divergent} xs={4}/>
 
@@ -69,13 +69,13 @@ This is the Archetype language reference.
     <EagleEyeView title="Sets" data={instructions.sets} xs={6}/>
   </Grid>
   <Grid item md={8} xs={12} sm={12}>
-    <EagleEyeView title="Lists" data={instructions.lists} xs={6}/>
+    <EagleEyeView title="Lists" data={instructions.lists} xs={3}/>
   </Grid>
 </Grid>
 
-<EagleEyeView title="Maps" data={instructions.maps} xs={4}/>
+<EagleEyeView title="Maps" data={instructions.maps} xs={2}/>
 
-<EagleEyeView title="Assets" data={instructions.assets} xs={4}/>
+<EagleEyeView title="Assets" data={instructions.assets} xs={2}/>
 
 <EagleEyeView title="Operations" data={instructions.blockchain} xs={4}/>
 
