@@ -26,9 +26,9 @@ export const instructions = {
       { label : 'iter', link : link_prefix + 'iter' },
     ],
     divergent: [
-      { label : 'fail', link : link_prefix + 'divergent' },
-      { label : 'dorequire', link : link_prefix + 'divergent' },
-      { label : 'dofailif', link : link_prefix + 'divergent' },
+      { label : 'fail', link : link_prefix + 'faile' },
+      { label : 'dorequire', link : link_prefix + 'dorequiret-e' },
+      { label : 'dofailif', link : link_prefix + 'dofailift-e' },
     ],
     sets: [
       { label : 'add', link : link_prefix + 'sadde' },

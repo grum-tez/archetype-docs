@@ -10,7 +10,7 @@ import { assetinstructions } from './assetinstructions.js';
 import Operator from '@site/src/components/Operator.js';
 import { assignments } from './assignments.js';
 import { containerinstructions } from './containerinstructions.js';
-
+import { divergent } from './divergent.js';
 
 An instruction has a side effect on the storage, operations or execution (may fail).
 
@@ -372,7 +372,7 @@ The `while` instruction executes an instruction as long as a condition holds tru
 The generic syntax is:
 ```archetype
 while expr1 do
-  intr1
+  instr1
 done
 ```
 
@@ -409,14 +409,23 @@ iter i to expr2 do
 done
 ```
 
-
 ## Divergent
 
-fail
+A divergent instruction is an instruction that *fails*. The effect of a failing instruction is to cancel all modifications (storage, operations) executed by the entrypoint so far. Hence a failing operation does **not** change anything on the contract state.
 
-dorequire
+The only effect of a failing injected operation is that the operation fee is spent and not paid back. That's why the correct process is to *simulate* (dry run) the entrypoint before injection to make sure the entrypoint does not fail (as wallets do for example).
 
-dofailif
+### `fail(e)`
+
+<Builtin data={divergent['fail']} />
+
+### `dorequire(t, e)`
+
+<Builtin data={divergent['dorequire']} />
+
+### `dofailif(t, e)`
+
+<Builtin data={divergent['dofailif']} />
 
 ## Set
 ### `S.add(e)`
@@ -489,4 +498,4 @@ dofailif
 
 ### `transfer`
 
-emit
+### `emit`

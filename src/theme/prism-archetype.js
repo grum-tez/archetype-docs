@@ -55,6 +55,7 @@
 		'access': /(?:\[|\]|::)/,
     'crypto': /\b(?:unpack|open_chest)\b/,
     'arith': /\b(?:mod|abs|min|max)\b/,
+    'fail': /\b(?:fail|dorequire|dofail)\b/,
 		// Custom operators are allowed
 		'function': /:=|\+=|\-=|[=<>@^|&+\-*\/$%!?~][!$%&*+\-.\/:<=>?@^|~]*\b/,
 		'punctuation': /[(){}|.,:;]|\b_\b/,
