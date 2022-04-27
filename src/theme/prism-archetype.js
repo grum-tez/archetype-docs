@@ -36,8 +36,8 @@
         }
       }
 		},
-    'instr' : /\b(?:instr[0-9])\b/,
-    'expr' : /\b(?:expr[0-9])\b/,
+    'instr' : /\b(?:instr([0-9]|n))\b/,
+    'expr' : /\b(?:expr[0-9]|E([0-9]|n))\b/,
 		'unkeyworded' : /%(?:.*)/,
     'archetype': /\b(?:archetype)\b/,
     'builtin': /\b(?:exec_lambda|opt_get|issome|left|right|some|none|isempty|length|put|get|transfer|call|emit)\b/,
@@ -52,7 +52,7 @@
 		'boolean': /\b(?:false|true)\b/,
     'logic': /\b(?:and|or|=|not|asr|land|lor|lsl|lsr|lxor)\b/,
     'asset': /\b(?:count|sum|asc|desc|removeif|remove|update|contains|clear|select|sort|head|nth|add|put|addupdate)\b/,
-		'access': /(?:\[|\])/,
+		'access': /(?:\[|\]|::)/,
     'crypto': /\b(?:unpack|open_chest)\b/,
     'arith': /\b(?:mod|abs|min|max)\b/,
 		// Custom operators are allowed

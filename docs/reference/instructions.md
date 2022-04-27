@@ -80,7 +80,7 @@ Similar to `var` except that a `const` local variable *cannot* be modified by an
 For example, the following instructions generates a compilation error:
 ```archetype
 const amount = 10tz;
-amount += 1tz
+amount += 1tz        /* compilation error */
 ```
 
 ## Assignment
@@ -179,7 +179,117 @@ A conditional [`if`](/docs/reference/expressions/controls#if) *expression* is al
 
 ### `match with`
 
-match with end
+The `match with` instruction, inspired by the [Ocaml](https://ocaml.org/) language, desconstructs an *enumerated* type to retreive data from it. Enumerated types are [`option`](/docs/reference/types#option<T>), [`or`](/docs/reference/types#or<T1,%20T2>), [`list`](/docs/reference/types#list<T>), [`states`](/docs/reference/declarations#states) and composite type [`enum`](/docs/reference/types#enum).
+
+Its generic syntactic structure is presented below, given that *E1* ... *En* are the named values of the enumerated type of *expr1*:
+```archetype
+match expr1 with
+| E1 -> instr1 /* instruction when expr1 is E1 */
+| E2 -> instr2 /* instruction when expr1 is E2 */
+/* ... */
+| En -> instrn /* instruction when expr1 is En */
+end
+```
+If one named type *Ei* is missing, the compiler fails with the message:
+```
+Partial match (missing "Ei")
+```
+
+It is possible to escape the enumeration with the `_` keyword; for example:
+```archetype
+match expr1 with
+| E1 -> instr1
+| E2 -> instr2
+| _  -> instr3  /* instruction when expr1 is E3 or E4 ... or En */
+end
+```
+
+#### `option`
+
+An [`option`](/docs/reference/types#option<T>) value has two named values: `some` and `none`.
+
+For example, suppose `opt` is typed `option<string>`:
+```archetype
+match opt with
+| some(s) -> instr1 /* declares constant 's' typed 'string' in instr1 */
+| none    -> instr2
+end
+```
+
+#### `or`
+
+An [`or`](/docs/reference/types#or<T1,%20T2>) value has two named values: `left` and `right`.
+
+For example, suppose `o` is typed `or<string, nat>`:
+```archetype
+match o with
+| left(s)  -> instr1 /* declares constant 's' typed 'string' in instr1 */
+| right(n) -> instr2 /* declares constant 'n' typed 'nat' in instr2    */
+end
+```
+
+#### `list`
+
+A [`list`](/docs/reference/types#list<T>) value has two named values: `[]` for empty list and `::` for recursive composition.
+
+For example, suppose `l` is typed `list<bytes>`:
+```archetype
+match l with
+| h::tl -> instr1 /* declares constants h typed 'bytes' and tl typed 'list<bytes' */
+| []    -> instr2 /* when l is empty */
+end
+```
+
+In the example above, `h` is the first element of the list `l`, and `tl` is the list `l` without the first element.
+
+Note that Archetype does not support recursive calls, hence the `match` instruction cannot be used to fold a list as in Ocaml; it is rather used to retrieve the first element of a list and manage the case of an empty list. The [`for`](/docs/reference/instructions#for) instruction is used to iterate over list elements.
+
+#### `states`
+
+Contract's [`states`](/docs/reference/declarations#states) may be interrogated with the `match` instruction.
+
+Consider the states declaration:
+```archetype
+states =
+| Pending initial
+| Shipped
+| Accepted
+| Canceled
+```
+
+The following enables acting based on contract's state:
+```archetype
+match state with
+| Pending  -> instr1 /* when in Pending  state */
+| Shipped  -> instr2 /* when in Shipped  state */
+| Accepted -> instr3 /* when in Accepted state */
+| Canceled -> instr4 /* when in Canceled state */
+end;
+```
+
+#### `enum`
+
+An [`enum`](/docs/reference/types#enum) value has a user-defined list of values.
+
+Consider the following declaration:
+```archetype
+enum color =
+| RGB<nat * nat * nat>
+| Hex<bytes>
+| Css<string>
+```
+
+The following enables acting based on `color`'s values:
+```archetype
+match color with
+| RGB(rgb) -> instr1 /* declares 'rgb' as a tuple of 3 values typed 'nat' in instr1 */
+| Hex(h)   -> instr2 /* declares 'h' as a bytes value in instr2                     */
+| Css(css) -> instr3 /* declares 'css' as a string value in instr3                  */
+end
+```
+
+
+
 
 ### `for`
 

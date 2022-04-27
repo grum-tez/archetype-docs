@@ -62,7 +62,7 @@ See the [Sections](/docs/reference/declarations#sections) article for more infor
 
 It is possible to interrogate the contract state anywhere in any entrypoint effect with the [`state`](/docs/reference/expressions/constants#state) constant. It is not possible to assign a value with an [assignment](/docs/reference/instructions#assignment) instruction. Use a [transition](/docs/statemachine#transitions) to change contract's state.
 
-The constant may be interrogated with an `if` or a `match with` instruction.
+The constant may be interrogated with an [`if`](/docs/reference/instructions#if) or a [`match with`](/docs/reference/instructions#match-with) instruction.
 
 For example:
 ```archetype
@@ -72,10 +72,10 @@ if state = Canceled then /* ... */
 or:
 ```archetype
 match state with
-| Pending  -> /* do something in Pending  state */
-| Shipped  -> /* do something in Shipped  state */
-| Accepted -> /* do something in Accepted state */
-| Rejected -> /* do something in Rejected state */
-| Canceled -> /* do something in Canceled state */
+| Pending  -> instr1 /* when in Pending  state */
+| Shipped  -> instr2 /* when in Shipped  state */
+| Accepted -> instr3 /* when in Accepted state */
+| Rejected -> instr4 /* when in Rejected state */
+| Canceled -> instr5 /* when in Canceled state */
 end;
 ```
