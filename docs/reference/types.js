@@ -29,7 +29,6 @@ export const types = {
     related: [
       { keyword: 'sourced by', link: declaration_prefix + 'sourced-by' },
       { keyword: 'called by', link: declaration_prefix + 'called-by' },
-      { keyword: "asset_view", link:"/docs/reference/types#asset_view<A>" },
       { keyword : 'transfer', link : instruction_prefix + 'transfer' },
       { keyword : 'caller', link : constant_prefix + 'caller' },
       { keyword : 'source', link : constant_prefix + 'source' },
@@ -50,6 +49,7 @@ export const types = {
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     related: [
       { keyword: "Asset", link:"/docs/asset", code : false },
+      { keyword: "asset_view", link:"/docs/reference/types#asset_view<A>" },
       { keyword: "partition", link:"/docs/reference/types#partition<A>" }
     ],
   },
