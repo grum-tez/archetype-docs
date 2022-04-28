@@ -59,7 +59,7 @@ export const types = {
       { keyword: "[]", link: asset_prefix + 'ak--pkeyaf' },
       { keyword: "contains", link: asset_prefix + 'acontainsk--pkeya' },
       { keyword: "count", link: asset_prefix + 'acount' },
-      { keyword: "net", link: asset_prefix + 'anthi--nat' },
+      { keyword: "nth", link: asset_prefix + 'anthi--nat' },
       { keyword: "sort", link: asset_prefix + 'asortf' },
       { keyword: "sum", link: asset_prefix + 'asumf' },
       { keyword: "select", link: asset_prefix + 'aselectp' },
