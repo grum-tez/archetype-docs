@@ -68,7 +68,7 @@ export default function Info(props) {
       { (props.related !== undefined) ? (
         <Grid item xs={9} sm={10} md={10}>
           <Grid container direction="row" spacing={3}>
-            {props.related.map((r,i) => <Related key={'rel'+i} value={r.keyword} link={r.link}></Related>)}
+            {props.related.map((r,i) => <Related key={'rel'+i} value={r.keyword} link={r.link} code={r.code}></Related>)}
           </Grid>
         </Grid>
       ) : (<div />)

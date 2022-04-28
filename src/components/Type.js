@@ -1,10 +1,10 @@
-import React from 'react';
-import { Grid, Typography, Button, Divider } from '@mui/material';
 import Link from '@docusaurus/Link';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import styles from './component.module.css';
+import { Button, Divider, Grid, Typography } from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
+import React from 'react';
 
+import styles from './component.module.css';
 import { MichelsonType } from './MichelsonType';
 import { Related } from './Related';
 
@@ -153,8 +153,8 @@ export default function Type(props) {
         </Typography>
       </Grid>
       <Grid item xs={9} sm={10} md={10}>
-        <Grid container direction="row" spacing={3}>
-          {props.data.related.map((r,i) => <Related key={'rel'+i} value={r.keyword} link={r.link}></Related>)}
+        <Grid container direction="row" spacing={2}>
+          {props.data.related.map((r,i) => <Related key={'rel'+i} value={r.keyword} link={r.link} code={r.code}></Related>)}
         </Grid>
       </Grid>
 

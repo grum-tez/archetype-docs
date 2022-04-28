@@ -7,6 +7,12 @@ export const PACKABLE = 3
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference'
 
+const declaration_prefix = '/docs/reference/declarations#'
+const instruction_prefix = '/docs/reference/instructions#'
+const constant_prefix = '/docs/reference/expressions/contants#'
+const operator_prefix = '/docs/reference/expressions/operators#'
+const builtin_prefix = '/docs/reference/expressions/builtins#'
+
 import AggregateDesc from '../../src/components/desc/aggregate_desc.md'
 import PartitionDesc from '../../src/components/desc/partition_desc.md'
 import BigmapDesc from '../../src/components/desc/bigmap_desc.md'
@@ -21,7 +27,19 @@ export const types = {
     michelson: "address",
     michelson_ref_url: michelson_ref_base_url + '/#type-address',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/address" }
+      { keyword: 'sourced by', link: declaration_prefix + 'sourced-by' },
+      { keyword: 'called by', link: declaration_prefix + 'called-by' },
+      { keyword: "asset_view", link:"/docs/reference/types#asset_view<A>" },
+      { keyword : 'transfer', link : instruction_prefix + 'transfer' },
+      { keyword : 'caller', link : constant_prefix + 'caller' },
+      { keyword : 'source', link : constant_prefix + 'source' },
+      { keyword : '=', link : operator_prefix + 'a--b-7' },
+      { keyword : 'callview', link : builtin_prefix + 'callview<T>(a%20:%20address,%20id%20:%20string,%20arg%20:%20X)' },
+      { keyword : 'set_delegate', link : builtin_prefix + 'set_delegate(opkh%20:%20option<key_hash>)' },
+      { keyword : 'contract_address', link : builtin_prefix + 'contract_address(c%20:%20contract<T>)' },
+      { keyword : 'address_to_contract', link : builtin_prefix + 'address_to_contract(a%20:%20address)' },
+      { keyword : 'key_address', link : builtin_prefix + 'key_address(k%20:%20key)' },
+      { keyword : 'read_ticket', link : builtin_prefix + 'read_ticket(t%20:%20ticket<T>)' },
     ],
   },
   aggregate :
@@ -31,9 +49,8 @@ export const types = {
     examples: [ '[ "1G1AF1F57A7192174" ]' ],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     related: [
-      { keyword: "Asset", link:"/docs/asset" },
-      { keyword: "partition", link:"/docs/reference/types#partition<A>" },
-      { keyword: "asset_view", link:"/docs/reference/types#asset_view<A>" }
+      { keyword: "Asset", link:"/docs/asset", code : false },
+      { keyword: "partition", link:"/docs/reference/types#partition<A>" }
     ],
   },
   asset_view :

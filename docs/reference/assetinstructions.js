@@ -2,11 +2,11 @@ import React from "react"
 
 import AssetAddDesc from '../../src/components/desc/assetadd_desc.md'
 import AssetAddUpdateDesc from '../../src/components/desc/assetaddupdate_desc.md'
-import AssetUpdateDesc from '../../src/components/desc/assetupdate_desc.md'
-import AssetRemoveDesc from '../../src/components/desc/assetremove_desc.md'
-import AssetRemoveIfDesc from '../../src/components/desc/assetremoveif_desc.md'
-import AssetRemoveClearDesc from '../../src/components/desc/assetremoveclear_desc.md'
 import AssetClearDesc from '../../src/components/desc/assetclear_desc.md'
+import AssetRemoveDesc from '../../src/components/desc/assetremove_desc.md'
+import AssetRemoveClearDesc from '../../src/components/desc/assetremoveclear_desc.md'
+import AssetRemoveIfDesc from '../../src/components/desc/assetremoveif_desc.md'
+import AssetUpdateDesc from '../../src/components/desc/assetupdate_desc.md'
 
 export const assetinstructions = {
   add : {
@@ -28,7 +28,7 @@ export const assetinstructions = {
       }
     ],
     related: [
-      { keyword: 'Asset', link: '/docs/asset' },
+      { keyword: 'Asset', link: '/docs/asset', code : false },
       { keyword: 'update', link: '/docs/reference/instructions#aupdatek--u-' },
       { keyword: 'remove', link: '/docs/reference/instructions#aremovek' },
     ]
