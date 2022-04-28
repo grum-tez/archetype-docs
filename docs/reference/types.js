@@ -27,6 +27,7 @@ export const types = {
     michelson: "address",
     michelson_ref_url: michelson_ref_base_url + '/#type-address',
     related: [
+      { keyword: 'Basic types', link: '/docs/language-basics/types', code: false },
       { keyword: 'sourced by', link: declaration_prefix + 'sourced-by' },
       { keyword: 'called by', link: declaration_prefix + 'called-by' },
       { keyword : 'transfer', link : instruction_prefix + 'transfer' },
