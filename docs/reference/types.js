@@ -12,6 +12,7 @@ const instruction_prefix = '/docs/reference/instructions#'
 const constant_prefix = '/docs/reference/expressions/contants#'
 const operator_prefix = '/docs/reference/expressions/operators#'
 const builtin_prefix = '/docs/reference/expressions/builtins#'
+const asset_prefix = '/docs/reference/expressions/asset#'
 
 import AggregateDesc from '../../src/components/desc/aggregate_desc.md'
 import PartitionDesc from '../../src/components/desc/partition_desc.md'
@@ -50,8 +51,20 @@ export const types = {
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     related: [
       { keyword: "Asset", link:"/docs/asset", code : false },
-      { keyword: "asset_view", link:"/docs/reference/types#asset_view<A>" },
-      { keyword: "partition", link:"/docs/reference/types#partition<A>" }
+      { keyword: "add", link: instruction_prefix + 'aadda' },
+      { keyword: "remove", link: instruction_prefix + 'aremovek' },
+      { keyword: "removeif", link: instruction_prefix + 'aremoveifp' },
+      { keyword: "clear", link: instruction_prefix + 'aclear' },
+      { keyword: "removeclear", link: instruction_prefix + 'aremoveclear' },
+      { keyword: "[]", link: asset_prefix + 'ak--pkeyaf' },
+      { keyword: "contains", link: asset_prefix + 'acontainsk--pkeya' },
+      { keyword: "count", link: asset_prefix + 'acount' },
+      { keyword: "net", link: asset_prefix + 'anthi--nat' },
+      { keyword: "sort", link: asset_prefix + 'asortf' },
+      { keyword: "sum", link: asset_prefix + 'asumf' },
+      { keyword: "select", link: asset_prefix + 'aselectp' },
+      { keyword: "head", link: asset_prefix + 'aheadi--nat' },
+      { keyword: "tail", link: asset_prefix + 'ataili--nat'},
     ],
   },
   asset_view :
@@ -63,7 +76,7 @@ export const types = {
     related: [
       { keyword: "Asset", link:"/docs/asset" },
       { keyword: "aggregate", link:"/docs/reference/types#aggregate<A>" },
-      { keyword: "partition", link:"/docs/reference/types#partition<A>" },
+      { keyword: "partition", link:asset_prefix },
       { keyword: "select", link:"/docs/reference/expressions/asset#aselectp" },
       { keyword: "sort", link:"/docs/reference/expressions/asset#asortf" },
       { keyword: "head", link:"/docs/reference/expressions/asset#aheadi--nat" },

@@ -11,9 +11,9 @@ import ThemedDivider from '../../src/components/Divider.js'
 
 ## Identifier
 
-The identifier of a contract element ([parameter](/docs/reference/declarations#parameter), [variable](/docs/reference/declarations#variable), [entrypoint](/docs/reference/declarations#entrypoints), ...) is a string that starts with an alphabetic character (lower or upper case) followed by alphanumeric characters (lower or upper case) or underscores. That is to say that an identifier verifies the following regular expression:
+The identifier of a contract element ([parameter](/docs/reference/declarations#parameter), [variable](/docs/reference/declarations#variable), [entrypoint](/docs/reference/declarations#entrypoints), ...) is a string that starts with an alphabetic character (lower or upper case) followed by a string of alphanumeric characters (lower or upper case) or underscores. The maximum size of an identifier is 254. That is to say that an identifier verifies the following regular expression:
 
-`[A-Za-z][A-Za-z0-9_]*`
+`([A-Za-z][A-Za-z0-9_]*){1,254}`
 
 ### Keywords
 
