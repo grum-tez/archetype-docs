@@ -91,7 +91,8 @@ export const types = {
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     related: [
       { keyword: "Asset", link:"/docs/asset" },
-      { keyword: "[]", link: asset_prefix + 'ak--pkeyaf' },
+      { keyword: "[]", link: asset_prefix + 'ak--asset_keya' },
+      { keyword: "getopt", link: asset_prefix + 'agetoptk--asset_keya' },
     ],
   },
   asset_view :
