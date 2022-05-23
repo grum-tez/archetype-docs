@@ -118,7 +118,7 @@ The key is then the [tuple](/docs/reference/types#tuple) of fields' value, which
 var a = liquidity[(0,tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb)].amount;
 ```
 
-See access operator [`[]`](/docs/reference/expressions/asset#ak--pkeyaf) for more information.
+See access operator [`[]`](/docs/reference/expressions/asset#ak--asset_keyaf) for more information.
 
 #### Default value
 

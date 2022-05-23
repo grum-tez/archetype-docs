@@ -1,4 +1,4 @@
-Accesses field `f` of asset with key `k` in collection `A`.
+Returns an [`asset_record`](/docs/reference/types#asset_record<A>) value from key `k` in collection `A`, and fails if `k` is not found in collection `A`.
 
 For example, consider the `ledger` asset:
 ```archetype
@@ -8,7 +8,15 @@ asset ledger {
 }
 ```
 
-The following retrieves the value of `amount` field of `caller` address:
+The following returns the record value associated with `caller` address:
 ```archetype
-var a = ledger[caller].amount;
+const h = ledger[caller];
 ```
+
+It is equivalent to:
+```archetype
+const h = match ledger.getopt(caller) with
+ | some ar -> ar
+ | none    -> fail(("ledger","AssetNotFound")
+ end
+ ```

@@ -1,4 +1,5 @@
-import React from "react"
+import Link from '@docusaurus/Link';
+import React from "react";
 
 export const COMPARABLE = 0
 export const PASSABLE = 1
@@ -17,11 +18,12 @@ const asset_prefix = '/docs/reference/expressions/asset#'
 import AggregateDesc from '../../src/components/desc/aggregate_desc.md'
 import PartitionDesc from '../../src/components/desc/partition_desc.md'
 import BigmapDesc from '../../src/components/desc/bigmap_desc.md'
+import AssetRecordDesc from '../../src/components/desc/asset_record_desc.md'
 
 export const types = {
   address :
   {
-    desc: <div>Tezos address. An address is formed of a prefix (<code>tz1</code> <code>tz2</code> <code>tz3</code> and <code>KT1</code> for contracts) followed by a Base58 encoded hash and terminated by a 4-byte checksum.</div>,
+    desc: <div>Account or contract address on the Tezos blockchain. <p></p>An address is formed of a prefix (<code>tz1</code> <code>tz2</code> <code>tz3</code> and <code>KT1</code> for contracts) followed by a Base58 encoded hash and terminated by a 4-byte checksum.</div>,
     link: '#address',
     examples: [ 'tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg', 'tz2BFTyPeYRzxd5aiBchbXN3WCZhx7BqbMBq', 'tz3hFR7NZtjT2QtzgMQnWb4xMuD6yt2YzXUt', 'KT1VMCj69PwwKK7aRLRPnWoYh4X1xQqk2Vm2' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
@@ -67,15 +69,39 @@ export const types = {
       { keyword: "tail", link: asset_prefix + 'ataili--nat'},
     ],
   },
+  asset_key : {
+    desc: <div>Type of the key of asset <code>A</code>.</div>,
+    link: '#asset_key<A>',
+    examples: [   ],
+    parameters: [
+      { keyword: 'A', type: 'asset', desc: 'Any declared asset.' },
+    ],
+    tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
+    related: [
+      { keyword: "Asset", link:"/docs/asset" }
+    ],
+  },
+  asset_record : {
+    desc: <AssetRecordDesc />,
+    link: '#asset_record<A>',
+    examples: [ ],
+    parameters: [
+      { keyword: 'A', type: 'asset', desc: 'Any declared asset.' },
+    ],
+    tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
+    related: [
+      { keyword: "Asset", link:"/docs/asset" },
+      { keyword: "[]", link: asset_prefix + 'ak--pkeyaf' },
+    ],
+  },
   asset_view :
   {
-    desc: <div>Read-only view on asset collection returned by asset methods (<code>select</code> <code>sort</code> <code>head</code> <code>tail</code>). It is possible to iterate on asset_views. They are internally represented as list of asset keys.</div>,
+    desc: <div>Read-only view on asset collection returned by asset methods. It is possible to iterate on an <code>asset_view</code> with the <Link to="/docs/reference/instructions#for"><code>for</code></Link> instruction. They are internally represented as list of asset keys.</div>,
     link: '#asset_view<A>',
     examples: [ '[]' ],
     tags: [ PASSABLE, PACKABLE ],
     related: [
       { keyword: "Asset", link:"/docs/asset", code : false },
-      { keyword: "[]", link: asset_prefix + 'ak--pkeyaf' },
       { keyword: "contains", link: asset_prefix + 'acontainsk--pkeya' },
       { keyword: "count", link: asset_prefix + 'acount' },
       { keyword: "nth", link: asset_prefix + 'anthi--nat' },
@@ -95,9 +121,15 @@ export const types = {
     michelson: "big_map",
     michelson_ref_url: michelson_ref_base_url + '/#type-big_map',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/container#big_map" },
-      { keyword: "map", link:"/docs/reference/types#map<K,%20V>" },
-      { keyword: ":=", link:"/docs/reference/instructions#assignment" },
+      { keyword: "Basic containers", link:"/docs/language-basics/container#map", code : false },
+      { keyword: "put", link: instruction_prefix + 'mputk-v' },
+      { keyword: "remove", link: instruction_prefix + 'mremovek' },
+      { keyword: "update", link: instruction_prefix + 'mupdatek--k-o--optiont' },
+      { keyword: "contains", link: builtin_prefix + 'contains(c%20:%20C,%20i%20:%20T)' },
+      { keyword: "getopt", link: builtin_prefix + 'getopt(m%20:%20(big_)?map<K,%20V>,%20k%20:%20K)' },
+      { keyword: "put", link: builtin_prefix + 'put(m%20:%20(big_)?map<K,%20V>,%20k%20:%20K,%20v%20:%20V)' },
+      { keyword: "remove", link: builtin_prefix + 'remove(c%20:%20C,%20i%20:%20T)' },
+      { keyword: "update", link: builtin_prefix + 'update(m%20:%20(big_)?map<K,%20V>,%20k%20:%20K,%20v%20:%20option<V>)' },
     ],
   },
   bls12_381_fr :
@@ -412,18 +444,6 @@ export const types = {
       { keyword: "Asset", link:"/docs/asset" },
       { keyword: "aggregate", link:"/docs/reference/types#aggregate<A>" },
       { keyword: "asset_view", link:"/docs/reference/types#asset_view<A>" }
-    ],
-  },
-  pkey : {
-    desc: <div>Type of the key of asset <code>A</code>.</div>,
-    link: '#pkey<A>',
-    examples: [   ],
-    parameters: [
-      { keyword: 'A', type: 'asset', desc: 'Any declared asset.' },
-    ],
-    tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
-    related: [
-      { keyword: "Asset", link:"/docs/asset" }
     ],
   },
   rational :

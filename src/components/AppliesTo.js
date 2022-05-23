@@ -11,6 +11,7 @@ import Builtin from './Builtin';
 const appliestotypes = [
   { label : 'asset',            link : '/docs/asset' },
   { label : 'asset to big_map', link : '/docs/asset' },
+  { label : 'asset to iterable_big_map', link : '/docs/asset' },
   { label : 'aggregate',        link : '/docs/reference/types#aggregate<A>' },
   { label : 'partition',        link : '/docs/reference/types#partition<A>' },
   { label : 'asset_view',             link : '/docs/reference/types#asset_view<A>' }

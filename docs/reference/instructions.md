@@ -359,7 +359,7 @@ for log in visitor do
 done
 ```
 
-Since `log` is the iterated visitor's login, visitor data is accessed with [`[]`](/docs/reference/expressions/asset#ak--pkeyaf) operator, like for example:
+Since `log` is the iterated visitor's login, visitor data is accessed with [`[]`](/docs/reference/expressions/asset#ak--asset_keyaf) operator, like for example:
 
 ```archetype
 var nbv = visitor[log].nbvisits

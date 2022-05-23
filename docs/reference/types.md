@@ -25,6 +25,14 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["aggregate"]} />
 
+<H3 page="types" value="asset_key<A>" />
+
+<Type data={types["asset_key"]} />
+
+<H3 page="types" value="asset_record<A>" />
+
+<Type data={types["asset_record"]} />
+
 <H3 page="types" value="asset_view<A>" />
 
 <Type data={types["asset_view"]} />
@@ -142,10 +150,6 @@ import H3 from "@site/src/components/H3.js";
 <H3 page="types" value="partition<A>" />
 
 <Type data={types["partition"]} />
-
-<H3 page="types" value="pkey<A>" />
-
-<Type data={types["pkey"]} />
 
 <H3 page="types" value="rational" />
 

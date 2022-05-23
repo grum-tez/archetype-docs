@@ -6,11 +6,23 @@ import { assetbuiltins } from './assetbuiltins.js';
 
 # Asset
 
-### `A[k : pkey<A>].f`
+### `A.getopt(k : asset_key<A>)`
+
+<Builtin data={assetbuiltins["getopt"]} />
+
+### `A[k : asset_key<A>]`
 
 <Builtin data={assetbuiltins["get"]} />
 
-### `A.contains(k : pkey<A>)`
+### `A[k : asset_key<A>]?f`
+
+<Builtin data={assetbuiltins["getof"]} />
+
+### `A[k : asset_key<A>]? f : d`
+
+<Builtin data={assetbuiltins["getfd"]} />
+
+### `A.contains(k : asset_key<A>)`
 
 <Builtin data={assetbuiltins["contains"]} />
 

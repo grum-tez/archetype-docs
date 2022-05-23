@@ -14,7 +14,7 @@ Archetype *assets* provide a high-level abstraction to handle collection of stru
 
 Similarly to a SQL table, an *asset* is a collection of data, stored in the contract storage, organized in rows and columns and defined by an identifier and a list of fields.
 
-An *asset* collection provides a set of instructions ([add](/docs/reference/instructions#aadda), [update](/docs/reference/instructions#aupdatek--u-), [addupdate](/docs/reference/instructions#aaddupdatek--u-), [remove](/docs/reference/instructions#aremovek), [removeif](/docs/reference/instructions#aremoveifp), [clear](/docs/reference/instructions#aclear)) to manage the collection, and expressions ([contains](/docs/reference/expressions/asset#acontainsk--pkeya), [count](/docs/reference/expressions/asset#acount), [sum](/docs/reference/expressions/asset#asumf), [sort](/docs/reference/expressions/asset#asortf), ...) to interrogate the collection (see [API](/docs/asset#api) section below for more information).
+An *asset* collection provides a set of instructions to manage the collection, and expressions to interrogate the collection (see [API](/docs/asset#api) section below for more information).
 
 For example, the following declaration defines a collection of loan data:
 ```archetype

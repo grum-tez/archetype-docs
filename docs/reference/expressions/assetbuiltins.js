@@ -1,26 +1,50 @@
 import React from "react"
 
 import GetDesc from "../../../src/components/desc/get_desc.md"
+import GetoptDesc from "../../../src/components/desc/getopt_desc.md"
+import GetOptionFieldDesc from "../../../src/components/desc/get_option_field_desc.md"
+import GetFieldDefaultDesc from "../../../src/components/desc/get_field_default_desc.md"
 import SelectDesc from "../../../src/components/desc/select_desc.md"
 import SortDesc from "../../../src/components/desc/sort_desc.md"
 import SumDesc from "../../../src/components/desc/sum_desc.md"
 
 export const assetbuiltins = {
-  get: {
-    sig: 'A[k].f',
-    desc: <GetDesc />,
-    appliesto: [ 'asset', 'asset to big_map' ],
+  getopt: {
+    sig: 'getopt',
+    desc: <GetoptDesc />,
+    appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map' ],
     parameters: [
       {
-        type: 'pkey<A>',
+        type: 'asset_key<A>',
         alias: 'k',
-        desc: <div>Key of asset to access</div>
+        desc: <div>Asset key</div>
       },
     ],
     returns: {
-      type: 'T',
+      type: 'option<asset_record<A>>',
       withLink: false,
-      desc: <div>Returns field <code>f</code> value of asset <code>k</code>.</div>
+      desc: <div>Returns an option of the record value of asset <code>k</code>.</div>
+    },
+    fails : [],
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
+      { keyword: 'getopt', link: '/docs/reference/expressions/builtins#getopt(m%20:%20(big_)?map<K,%20V>,%20k%20:%20K)' }
+    ]
+  },
+  get: {
+    sig: 'A[k]',
+    desc: <GetDesc />,
+    appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map' ],
+    parameters: [
+      {
+        type: 'asset_key<A>',
+        alias: 'k',
+        desc: <div>Asset key</div>
+      },
+    ],
+    returns: {
+      type: 'asset_record<A>',
+      desc: <div>Returns a record value of asset <code>k</code>.</div>
     },
     fails : [
       {
@@ -32,10 +56,70 @@ export const assetbuiltins = {
       { keyword: 'Asset', link: '/docs/asset' },
     ]
   },
+  getof: {
+    sig: 'A[k]?f',
+    desc: <GetOptionFieldDesc />,
+    appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map' ],
+    parameters: [
+      {
+        type: 'asset_key<A>',
+        alias: 'k',
+        desc: <div>Key of asset to access</div>
+      },
+      {
+        type: 'literal',
+        withLink : false,
+        alias: 'f',
+        desc: <div>field name to access</div>
+      },
+    ],
+    returns: {
+      type: 'T',
+      withLink: false,
+      desc: <div>Returns an option of field <code>f</code> value of asset <code>k</code>.</div>
+    },
+    fails : [ ],
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
+    ]
+  },
+  getfd: {
+    sig: 'A[k]?f:d',
+    desc: <GetFieldDefaultDesc />,
+    appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map' ],
+    parameters: [
+      {
+        type: 'asset_key<A>',
+        alias: 'k',
+        desc: <div>Key of asset to access</div>
+      },
+      {
+        type: 'literal',
+        withLink : false,
+        alias: 'f',
+        desc: <div>Field name to access</div>
+      },
+      {
+        type: 'any',
+        withLink : false,
+        alias: 'd',
+        desc: <div>Default value to return when key not found (same type as <code>f</code>)</div>
+      },
+    ],
+    returns: {
+      type: 'T',
+      withLink: false,
+      desc: <div>Returns field <code>f</code> value of asset <code>k</code> when found in collection <code>A</code>, and <code>d</code> otherwise.</div>
+    },
+    fails : [ ],
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
+    ]
+  },
   contains: {
     sig: 'A.contains(k)',
     desc: <div>Tests whether collection <code>A</code> contains asset with key <code>k</code>.</div>,
-    appliesto: [ 'asset', 'asset to big_map', 'aggregate', 'partition', 'asset_view' ],
+    appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'pkey<A>',
@@ -57,7 +141,7 @@ export const assetbuiltins = {
   count: {
     sig: 'A.count()',
     desc: <div>Retuns the number of elements in collection <code>A</code>.</div>,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
+    appliesto: [ 'asset', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view' ],
     returns: {
       type: 'nat',
       desc: 'Number of elements'
@@ -66,7 +150,7 @@ export const assetbuiltins = {
   nth: {
     sig: 'A.nth(i)',
     desc: <div>Returns the key of element number <code>i</code> (starting from 0) of collection <code>A</code>, according to its order (natural key order for <code>asset</code> collection).</div>,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
+    appliesto: [ 'asset', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'nat',
@@ -91,7 +175,7 @@ export const assetbuiltins = {
   sort: {
     sig: 'A.sort(f)',
     desc: <SortDesc />,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
+    appliesto: [ 'asset', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'asset field',
@@ -114,7 +198,7 @@ export const assetbuiltins = {
   sum: {
     sig: 'A.sum(f)',
     desc: <SumDesc />,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
+    appliesto: [ 'asset', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'asset field',
@@ -136,7 +220,7 @@ export const assetbuiltins = {
   select: {
     sig: 'A.select(p)',
     desc: <SelectDesc />,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
+    appliesto: [ 'asset', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'predicate',
@@ -156,7 +240,7 @@ export const assetbuiltins = {
   head: {
     sig: 'A.head(i : nat)',
     desc: <div>Returns the first i elements of collection <code>A</code> according to its order (natural key order for <code>asset</code> collection).</div>,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
+    appliesto: [ 'asset', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'nat',
@@ -175,7 +259,7 @@ export const assetbuiltins = {
   tail: {
     sig: 'A.head(i : nat)',
     desc: <div>Returns the last i elements of collection <code>A</code> according to its order (natural key order for <code>asset</code> collection).</div>,
-    appliesto: [ 'asset', 'aggregate', 'partition', 'asset_view' ],
+    appliesto: [ 'asset', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
         type: 'nat',
