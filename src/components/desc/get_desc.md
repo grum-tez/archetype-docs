@@ -1,4 +1,4 @@
-Returns an [`asset_record`](/docs/reference/types#asset_record<A>) value from key `k` in collection `A`, and fails if `k` is not found in collection `A`.
+Returns an [`asset_value`](/docs/reference/types#asset_value<A>) value from key `k` in collection `A`, and fails if `k` is not found in collection `A`.
 
 For example, consider the `ledger` asset:
 ```archetype

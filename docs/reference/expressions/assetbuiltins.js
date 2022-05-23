@@ -21,7 +21,7 @@ export const assetbuiltins = {
       },
     ],
     returns: {
-      type: 'option<asset_record<A>>',
+      type: 'option<asset_value<A>>',
       withLink: false,
       desc: <div>Returns an option of the record value of asset <code>k</code>.</div>
     },
@@ -43,7 +43,7 @@ export const assetbuiltins = {
       },
     ],
     returns: {
-      type: 'asset_record<A>',
+      type: 'asset_value<A>',
       desc: <div>Returns a record value of asset <code>k</code>.</div>
     },
     fails : [

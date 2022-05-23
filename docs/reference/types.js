@@ -18,7 +18,7 @@ const asset_prefix = '/docs/reference/expressions/asset#'
 import AggregateDesc from '../../src/components/desc/aggregate_desc.md'
 import PartitionDesc from '../../src/components/desc/partition_desc.md'
 import BigmapDesc from '../../src/components/desc/bigmap_desc.md'
-import AssetRecordDesc from '../../src/components/desc/asset_record_desc.md'
+import AssetRecordDesc from '../../src/components/desc/asset_value_desc.md'
 
 export const types = {
   address :
@@ -81,9 +81,9 @@ export const types = {
       { keyword: "Asset", link:"/docs/asset" }
     ],
   },
-  asset_record : {
+  asset_value : {
     desc: <AssetRecordDesc />,
-    link: '#asset_record<A>',
+    link: '#asset_value<A>',
     examples: [ ],
     parameters: [
       { keyword: 'A', type: 'asset', desc: 'Any declared asset.' },

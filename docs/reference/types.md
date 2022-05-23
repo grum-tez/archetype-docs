@@ -29,9 +29,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["asset_key"]} />
 
-<H3 page="types" value="asset_record<A>" />
+<H3 page="types" value="asset_value<A>" />
 
-<Type data={types["asset_record"]} />
+<Type data={types["asset_value"]} />
 
 <H3 page="types" value="asset_view<A>" />
 
