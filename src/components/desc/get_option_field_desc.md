@@ -21,3 +21,7 @@ const a : option<nat> =
   | none    -> none
   end
 ```
+
+:::info
+When accessing several fields' values of the same asset, it is better gas-wise to retrieve first the [`asset_value`](/docs/reference/types#asset_value<A>) locally with [`[]`](/docs/reference/expressions/asset#ak--asset_keya) or [`getopt`](/docs/reference/expressions/asset#agetoptk--asset_keya) operators, and then access a field value with the `.` operator.
+:::
