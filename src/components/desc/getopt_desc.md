@@ -10,5 +10,5 @@ asset ledger {
 
 The following returns an option of the record value associated with `caller` address:
 ```archetype
-const h : option<asset_value<ledger>> = ledger.getop(caller);
+const h : option<asset_value<ledger>> = ledger.getopt(caller);
 ```
