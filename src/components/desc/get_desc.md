@@ -15,8 +15,9 @@ const h = ledger[caller];
 
 It is equivalent to:
 ```archetype
-const h = match ledger.getopt(caller) with
- | some av -> av
- | none    -> fail(("ledger","AssetNotFound"))
- end
- ```
+const h =
+  match ledger.getopt(caller) with
+  | some av -> av
+  | none    -> fail(("ledger","AssetNotFound"))
+  end
+```

@@ -15,8 +15,9 @@ const a : option<nat> = ledger[caller]? amount : 0;
 
 It is equivalent to:
 ```archetype
-const a : option<nat> = match ledger.getopt(caller) with
- | some av -> av.amount
- | none    -> 0
-end
+const a : option<nat> =
+  match ledger.getopt(caller) with
+  | some av -> av.amount
+  | none    -> 0
+  end
 ```
