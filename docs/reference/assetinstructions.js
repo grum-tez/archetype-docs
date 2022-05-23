@@ -38,7 +38,7 @@ export const assetinstructions = {
     appliesto: [ 'asset', 'asset to big_map' ],
     parameters: [
       {
-        type: 'pkey<A>',
+        type: 'asset_key<A>',
         alias: 'k',
         desc: <div>Key of the asset to update fields of.</div>
       },
@@ -73,7 +73,7 @@ export const assetinstructions = {
     appliesto: [ 'asset', 'asset to big_map', 'partition' ],
     parameters: [
       {
-        type: 'pkey<A>',
+        type: 'asset_key<A>',
         alias: 'k',
         desc: <div>Key of the asset to update fields of.</div>
       },
@@ -110,7 +110,7 @@ export const assetinstructions = {
     appliesto: ['asset', 'asset to big_map', 'aggregate', 'partition'],
     parameters: [
       {
-        type: 'pkey<A>',
+        type: 'asset_key<A>',
         alias: 'k',
         desc: <div>Key of the asset to remove.</div>
       },

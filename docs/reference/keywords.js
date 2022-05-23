@@ -69,7 +69,7 @@ export const keywords= [
 { id:"or"                 } ,
 { id:"otherwise"          } ,
 { id:"partition"          } ,
-{ id:"pkey"               } ,
+{ id:"asset_key"               } ,
 { id:"postcondition"      } ,
 { id:"predicate"          } ,
 { id:"record"             } ,

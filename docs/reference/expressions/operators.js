@@ -21,7 +21,7 @@ const cmp_types = (ret) => [
     comment: <div>when <code>T</code> is comparable.</div> },
   { typa: 'or<T1,T2>',    typb : 'or<T1,T2>',    typr: ret,
     comment: <div>when <code>T1</code> and <code>T2</code> are comparable.</div> },
-  { typa: 'pkey<A>',      typb : 'pkey<A>',      typr: ret },
+  { typa: 'asset_key<A>',      typb : 'asset_key<A>',      typr: ret },
   { typa: 'tuple',        typb : 'tuple',        typr: ret,
     comment: <div>when all composing types are comparable</div> },
   { typa: 'string',       typb : 'string',       typr: ret },

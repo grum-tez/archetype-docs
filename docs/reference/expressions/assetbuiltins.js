@@ -122,7 +122,7 @@ export const assetbuiltins = {
     appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
-        type: 'pkey<A>',
+        type: 'asset_key<A>',
         alias: 'k',
         desc: <div>Key value to test</div>
       },
@@ -159,7 +159,7 @@ export const assetbuiltins = {
       }
     ],
     returns: {
-      type: 'pkey<A>',
+      type: 'asset_key<A>',
       desc: 'Key of the ith element of the collection.'
     },
     fails : [
