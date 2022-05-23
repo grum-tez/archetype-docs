@@ -52,7 +52,7 @@
 		'boolean': /\b(?:false|true)\b/,
     	'logic': /\b(?:and|or|=|not|asr|land|lor|lsl|lsr|lxor)\b/,
     	'asset': /\b(?:count|sum|asc|desc|removeif|remove|update|contains|clear|select|sort|head|nth|add|put|addupdate|getopt)\b/,
-		'access': /(?:\[|\]|::)/,
+		'access': /(?:\[|\]|\?|::)/,
     	'crypto': /\b(?:unpack|open_chest)\b/,
     	'arith': /\b(?:mod|abs|min|max)\b/,
     	'fail': /\b(?:fail|dorequire|dofail)\b/,
