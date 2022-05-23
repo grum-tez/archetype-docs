@@ -19,6 +19,7 @@ import AggregateDesc from '../../src/components/desc/aggregate_desc.md'
 import PartitionDesc from '../../src/components/desc/partition_desc.md'
 import BigmapDesc from '../../src/components/desc/bigmap_desc.md'
 import AssetRecordDesc from '../../src/components/desc/asset_value_desc.md'
+import IterableBigMapDesc from '../../src/components/desc/iterable_big_map_desc.md'
 
 export const types = {
   address :
@@ -126,11 +127,7 @@ export const types = {
       { keyword: "put", link: instruction_prefix + 'mputk-v' },
       { keyword: "remove", link: instruction_prefix + 'mremovek' },
       { keyword: "update", link: instruction_prefix + 'mupdatek--k-o--optiont' },
-      { keyword: "contains", link: builtin_prefix + 'contains(c%20:%20C,%20i%20:%20T)' },
-      { keyword: "getopt", link: builtin_prefix + 'getopt(m%20:%20(big_)?map<K,%20V>,%20k%20:%20K)' },
-      { keyword: "put", link: builtin_prefix + 'put(m%20:%20(big_)?map<K,%20V>,%20k%20:%20K,%20v%20:%20V)' },
-      { keyword: "remove", link: builtin_prefix + 'remove(c%20:%20C,%20i%20:%20T)' },
-      { keyword: "update", link: builtin_prefix + 'update(m%20:%20(big_)?map<K,%20V>,%20k%20:%20K,%20v%20:%20option<V>)' },
+      { keyword: "iterable_big_map", link : "/docs/reference/types#iterable_big_map" }
     ],
   },
   bls12_381_fr :
@@ -295,6 +292,18 @@ export const types = {
     michelson_ref_url: michelson_ref_base_url + '/#type-int',
     related: [
       { keyword: "Presentation", link:"/docs/language-basics/number#int" }
+    ],
+  },
+  iterable_big_map: {
+    desc: <IterableBigMapDesc />,
+    link: '#iterable_big_map',
+    examples: [ `[]`, `[ ("#1G1AF1F57A7192174", 5); ("#2F4AH1J77O7132095", 10) ]` ],
+    tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
+    related: [
+      { keyword: "big_map", link:"/docs/reference/types#big_map<K,%20V>" },
+      { keyword: "put", link: instruction_prefix + 'mputk-v' },
+      { keyword: "remove", link: instruction_prefix + 'mremovek' },
+      { keyword: "update", link: instruction_prefix + 'mupdatek--k-o--optiont' },
     ],
   },
   key :

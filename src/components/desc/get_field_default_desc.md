@@ -10,7 +10,7 @@ asset ledger {
 
 The following retrieves the value of `amount` field of `caller` address and assigns value `0` to `a` when `caller` is not found in `ledger` collection:
 ```archetype
-const a = ledger[caller]? amount : 0;
+const a = ledger[caller].? amount : 0;
 ```
 
 It is equivalent to:

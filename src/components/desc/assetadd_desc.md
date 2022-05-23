@@ -1,4 +1,4 @@
-Adds a new asset `a` in collection `A`.
+Adds a new asset `a` in collection `A`. It fails when the key of asset `a` is already contained in collection `A`.
 
 For example, given the following asset declaration with 5 fields:
 ```archetype

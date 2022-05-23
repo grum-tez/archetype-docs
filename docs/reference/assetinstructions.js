@@ -12,7 +12,7 @@ export const assetinstructions = {
   add : {
     desc: <AssetAddDesc />,
     sig: 'A.add(a)',
-    appliesto: [ 'asset', 'asset to big_map', 'aggregate', 'partition' ],
+    appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map', 'aggregate', 'partition' ],
     parameters: [
       {
         type: 'asset literal',
@@ -35,7 +35,7 @@ export const assetinstructions = {
   },
   update : {
     desc: <AssetUpdateDesc />,
-    appliesto: [ 'asset', 'asset to big_map' ],
+    appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map' ],
     parameters: [
       {
         type: 'asset_key<A>',
@@ -70,7 +70,7 @@ export const assetinstructions = {
   },
   addupdate : {
     desc: <AssetAddUpdateDesc />,
-    appliesto: [ 'asset', 'asset to big_map', 'partition' ],
+    appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map', 'partition' ],
     parameters: [
       {
         type: 'asset_key<A>',
@@ -107,7 +107,7 @@ export const assetinstructions = {
   },
   remove : {
     desc: <AssetRemoveDesc/>,
-    appliesto: ['asset', 'asset to big_map', 'aggregate', 'partition'],
+    appliesto: ['asset', 'asset to big_map', 'asset to iterable_big_map', 'aggregate', 'partition'],
     parameters: [
       {
         type: 'asset_key<A>',
@@ -138,7 +138,7 @@ export const assetinstructions = {
   },
   clear: {
     desc: <AssetClearDesc />,
-    appliesto: ['asset', 'aggregate', 'partition', 'asset_view'],
+    appliesto: ['asset', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view'],
     parameters: [],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },

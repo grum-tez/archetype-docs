@@ -101,6 +101,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["int"]} />
 
+<H3 page="types" value="iterable_big_map" />
+
+<Type data={types["iterable_big_map"]} />
+
 ## `J K L`
 
 <H3 page="types" value="key" />
