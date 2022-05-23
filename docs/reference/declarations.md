@@ -141,11 +141,23 @@ See the [`add`](/docs/reference/instructions#aadda) instruction for more informa
 
 #### Big map
 
-The `to big_map` modifier compiles the collection as a Michelson [big_map](/docs/reference/types#big_map<K,%20V>).
+The `to big_map` modifier compiles the collection as a [`big_map`](/docs/reference/types#big_map<K,%20V>).
 
 For example:
 ```archetype
 asset vehicle to big_map {
+  vin          : string;
+  /* ... */
+}
+```
+
+#### Iterable big map
+
+The `to iterable_big_map` modifier compiles the collection as an [`iterable_big_map`](/docs/reference/types#iterable_big_map<K,%20V>).
+
+For example:
+```archetype
+asset vehicle to iterable_big_map {
   vin          : string;
   /* ... */
 }

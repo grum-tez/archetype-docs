@@ -1,4 +1,4 @@
-An iterable big map has the scalability property of a big map and can be iterated.
+An iterable big map has the scalability property of a [`big_map`](/docs/reference/types#big_map<K,%20V>) and can be iterated.
 
 Consider the following declaration:
 ```archetype
