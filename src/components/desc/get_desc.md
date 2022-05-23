@@ -17,6 +17,6 @@ It is equivalent to:
 ```archetype
 const h = match ledger.getopt(caller) with
  | some ar -> ar
- | none    -> fail(("ledger","AssetNotFound")
+ | none    -> fail(("ledger","AssetNotFound"))
  end
  ```

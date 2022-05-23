@@ -1,4 +1,4 @@
-Type of an asset value generated from asset declaration. An asset record provides all asset fields but the asset identifier field(s).
+Type of an asset value generated from asset declaration. An asset value is a record that provides all asset fields but the asset identifier field(s).
 
 Consider for example the following asset declaration:
 ```archetype
