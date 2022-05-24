@@ -1,8 +1,14 @@
-endi:
-  name: Endilie Yacop Sucipto
-  title: Maintainer of Docusaurus
-  url: https://github.com/endiliey
-  image_url: https://github.com/endiliey.png
+br:
+  name: Benoit Rognier
+  title: CEO Completium
+  url: https://www.linkedin.com/in/benoitrognier/
+  image_url: https://media-exp1.licdn.com/dms/image/C4E03AQF04rtSnCch5A/profile-displayphoto-shrink_400_400/0/1517720007405?e=1658966400&v=beta&t=MkbCyKfZt4yuEkvDxxBk_nMUHtDFJsS42zfhcLlHVX4
+
+gd:
+  name: Guillaume Duhamel
+  title: CTO Completium
+  url: https://www.linkedin.com/in/guillaumeduhamel/
+  image_url: https://media-exp1.licdn.com/dms/image/C4D03AQGxFFOLb-0sew/profile-displayphoto-shrink_400_400/0/1516528565176?e=1658966400&v=beta&t=w8NwuTiiP--EwNxQK57UHYvBGFvcTccj8NTFav5unVo
 
 yangshun:
   name: Yangshun Tay
