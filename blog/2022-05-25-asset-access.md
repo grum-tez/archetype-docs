@@ -67,10 +67,10 @@ end
 
 Situations where a single asset field is accessed is very common though. In this case, version [`1.2.16`](https://github.com/edukera/archetype-lang/releases/tag/1.2.16) provides two new dedicated operators: [`[].?`](/docs/reference/expressions/asset#ak--asset_keyaf) and [`[].?:`](/docs/reference/expressions/asset#ak--asset_keya-f--d).
 
-For example, the following retrieves the number of doors of vehicle `"1G1AF1F57A7192174"` and provide value `4` as a default value if vehicle is not found:
+For example, `is_break` below is true if field `nbdoors` is greater or equal to 5, and `false` if asset is not found:
 
 ```archetype
-const n = vehicle["1G1AF1F57A7192174"].? nbdoors : 4
+const is_break = vehicle["1G1AF1F57A7192174"].? the.nbdoors >= 5 : false
 ```
 
 The following retrieves an [`option`](/docs/reference/types#option<T>) of [`nat`](/docs/reference/types#nat) to treat more specifically the case when the asset is not found:
