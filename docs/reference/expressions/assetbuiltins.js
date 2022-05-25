@@ -1,9 +1,9 @@
 import React from "react"
 
 import GetDesc from "../../../src/components/desc/get_desc.md"
-import GetoptDesc from "../../../src/components/desc/getopt_desc.md"
-import GetOptionFieldDesc from "../../../src/components/desc/get_option_field_desc.md"
 import GetFieldDefaultDesc from "../../../src/components/desc/get_field_default_desc.md"
+import GetOptionFieldDesc from "../../../src/components/desc/get_option_field_desc.md"
+import GetoptDesc from "../../../src/components/desc/getopt_desc.md"
 import SelectDesc from "../../../src/components/desc/select_desc.md"
 import SortDesc from "../../../src/components/desc/sort_desc.md"
 import SumDesc from "../../../src/components/desc/sum_desc.md"
@@ -84,7 +84,7 @@ export const assetbuiltins = {
     ]
   },
   getfd: {
-    sig: 'A[k]?f:d',
+    sig: 'A[k]?e:d',
     desc: <GetFieldDefaultDesc />,
     appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map' ],
     parameters: [
@@ -94,10 +94,10 @@ export const assetbuiltins = {
         desc: <div>Key of asset to access</div>
       },
       {
-        type: 'literal',
+        type: 'expression',
         withLink : false,
-        alias: 'f',
-        desc: <div>Field name to access</div>
+        alias: 'e',
+        desc: <div>Expression to evaluate when asset <code>k</code> is found</div>
       },
       {
         type: 'any',
@@ -109,7 +109,7 @@ export const assetbuiltins = {
     returns: {
       type: 'T',
       withLink: false,
-      desc: <div>Returns field <code>f</code> value of asset <code>k</code> when found in collection <code>A</code>, and <code>d</code> otherwise.</div>
+      desc: <div>Evaluation of expression <code>e</code> when asset <code>k</code> is found in collection <code>A</code>, and <code>d</code> otherwise.</div>
     },
     fails : [ ],
     related: [

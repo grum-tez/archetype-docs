@@ -1,6 +1,7 @@
 import React from "react"
 
 import AssetAddDesc from '../../src/components/desc/assetadd_desc.md'
+import AssetPutDesc from '../../src/components/desc/assetput_desc.md'
 import AssetAddUpdateDesc from '../../src/components/desc/assetaddupdate_desc.md'
 import AssetClearDesc from '../../src/components/desc/assetclear_desc.md'
 import AssetRemoveDesc from '../../src/components/desc/assetremove_desc.md'
@@ -27,6 +28,25 @@ export const assetinstructions = {
         desc: <div>when an asset with same key is already in the collection. (<code>"A"</code> being the name of the asset collection).</div>
       }
     ],
+    related: [
+      { keyword: 'Asset', link: '/docs/asset', code : false },
+      { keyword: 'update', link: '/docs/reference/instructions#aupdatek--u-' },
+      { keyword: 'remove', link: '/docs/reference/instructions#aremovek' },
+    ]
+  },
+  put: {
+    desc: <AssetPutDesc />,
+    sig: 'A.put(a)',
+    appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map' ],
+    parameters: [
+      {
+        type: 'asset literal',
+        withLink : false,
+        alias: 'a',
+        desc: <div>Asset literal to be added.</div>
+      },
+    ],
+    fails: [],
     related: [
       { keyword: 'Asset', link: '/docs/asset', code : false },
       { keyword: 'update', link: '/docs/reference/instructions#aupdatek--u-' },

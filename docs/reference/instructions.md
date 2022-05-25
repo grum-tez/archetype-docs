@@ -470,6 +470,10 @@ The only effect of a failing injected operation is that the operation fee is spe
 
 <Builtin data={assetinstructions['add']} />
 
+### `A.put(a)`
+
+<Builtin data={assetinstructions['put']} />
+
 ### `A.update(k, { u })`
 
 <Builtin data={assetinstructions['update']} />

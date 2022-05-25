@@ -46,6 +46,7 @@ export const instructions = {
     ],
     assets: [
       { label : 'add', link : link_prefix + 'aadda', desc : 'Adds a new asset in collection' },
+      { label : 'put', link : link_prefix + 'aputa', desc : 'Adds or replace an asset in collection' },
       { label : 'update', link : link_prefix + 'aupdatek--u-', desc : 'Updates one or several fields of an asset in collection ' },
       { label : 'addupdate', link : link_prefix + 'aaddupdatek--u-', desc : 'Adds a new asset or updates an asset in collection' },
       { label : 'remove', link : link_prefix + 'aremovek', desc : 'Removes asset from collection' },

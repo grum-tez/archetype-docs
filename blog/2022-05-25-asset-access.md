@@ -60,7 +60,7 @@ match vehicle.getopt(k) with
   const y = v.year;
   const n = v.nbdoors;
   /* ... */
-| none -> fail("Key" + k + " not found in collection")
+| none -> fail("Key " + k + " not found in collection")
 end
 ```
 

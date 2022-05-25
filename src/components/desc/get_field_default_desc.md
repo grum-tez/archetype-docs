@@ -1,4 +1,6 @@
-Accesses field `f` of asset with key `k` in collection `A`. It returns value `d` when asset `k` is not found in collection `A`.
+Evaluates expression `e` when asset with key `k` is found in collection `A`. It returns value `d` when asset `k` is not found in collection `A`.
+
+When asset is found, asset field `f` in expression `e` is accessed with the `the.f` syntax.
 
 For example, consider the `ledger` asset:
 ```archetype
@@ -8,17 +10,17 @@ asset ledger {
 }
 ```
 
-The following retrieves the value of `amount` field of `caller` address and assigns value `0` to `a` when `caller` is not found in `ledger` collection:
+The following determines whether the [`caller`](/docs/reference/expressions/constants#caller) has a positive balance or not:
 ```archetype
-const a = ledger[caller].? amount : 0;
+const pos_balance = ledger[caller].? the.amount > 0 : false;
 ```
 
 It is equivalent to:
 ```archetype
-const a =
+const pos_balance =
   match ledger.getopt(caller) with
-  | some av -> av.amount
-  | none    -> 0
+  | some av -> av.amount > 0
+  | none    -> false
   end
 ```
 
