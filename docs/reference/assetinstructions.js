@@ -30,6 +30,7 @@ export const assetinstructions = {
     ],
     related: [
       { keyword: 'Asset', link: '/docs/asset', code : false },
+      { keyword: 'put',    link: '/docs/reference/instructions#aputa' },
       { keyword: 'update', link: '/docs/reference/instructions#aupdatek--u-' },
       { keyword: 'remove', link: '/docs/reference/instructions#aremovek' },
     ]
@@ -49,6 +50,7 @@ export const assetinstructions = {
     fails: [],
     related: [
       { keyword: 'Asset', link: '/docs/asset', code : false },
+      { keyword: 'add',    link: '/docs/reference/instructions#aadda' },
       { keyword: 'update', link: '/docs/reference/instructions#aupdatek--u-' },
       { keyword: 'remove', link: '/docs/reference/instructions#aremovek' },
     ]
