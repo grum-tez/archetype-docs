@@ -70,7 +70,8 @@ Situations where a single asset field is accessed is very common though. In this
 For example, `is_break` below is true if field `nbdoors` is greater or equal to 5, and `false` if asset is not found:
 
 ```archetype
-const is_break = vehicle["1G1AF1F57A7192174"].? the.nbdoors >= 5 : false
+const k = "1G1AF1F57A7192174";
+const is_break = vehicle[k].? the.nbdoors >= 5 : false
 ```
 
 The following retrieves an [`option`](/docs/reference/types#option<T>) of [`nat`](/docs/reference/types#nat) to treat more specifically the case when the asset is not found:
