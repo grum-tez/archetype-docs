@@ -17,7 +17,7 @@ An iterable big map is compiled in Michelson as a triplet:
 * a big map for the values
 * a counter
 
-The detailed mechanism is presented in this blog entry.
+The detailed mechanism is presented in this [blog entry](/blog/iterable-big-map).
 
 :::info
 The order in which keys are iterated is *not* the natural order.
