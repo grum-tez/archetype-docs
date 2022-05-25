@@ -16,12 +16,12 @@ This feature was suggested by [Nomadic Labs](https://www.nomadic-labs.com/). Tha
 
 Consider the following declaration of an iterable big map between a `nat` key and a `bytes` value:
 ```archetype
-variable m : iterable_big_map<nat, bytes> = []
+variable ibm : iterable_big_map<nat, bytes> = []
 ```
 
-While `m` has the scalability of a big map (in terms of number of entries), it can also be iterated with the `for` control instruction:
+While `ibm` has the scalability of a big map (in terms of number of entries), it can also be iterated with the `for` control instruction:
 ```archetype
-for (k,v) in m do
+for (k,v) in ibm do
   /* k is the key, v is the value */
 done
 ```
@@ -94,7 +94,7 @@ It is then necessary to associate the last added element with the removed iterat
 - removing the last iteration integer and associate back the removed iteration integer with the last added key in the *Keys* mpa
 - updating the iteration integer of last added key in the *Values* map
 
-The process is illustrated below with the removal of the entry `29`:
+The process is illustrated below with the removal of the entry `29` (associated with iteration value `2`):
 <center>
 <ThemedImage style={{ width: '80%' }}
   alt="IBM1"
