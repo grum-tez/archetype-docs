@@ -65,7 +65,7 @@ end
 
 ### Single field access
 
-Situations where a single asset field is accessed is very common though. In this case, version [`1.2.16`](https://github.com/edukera/archetype-lang/releases/tag/1.2.16) provides two new dedicated operators [`[].?`](/docs/reference/expressions/asset#ak--asset_keyaf) and [`[].?:`](/docs/reference/expressions/asset#ak--asset_keya-f--d).
+Situations where a single asset field is accessed is very common though. In this case, version [`1.2.16`](https://github.com/edukera/archetype-lang/releases/tag/1.2.16) provides two new dedicated operators: [`[].?`](/docs/reference/expressions/asset#ak--asset_keyaf) and [`[].?:`](/docs/reference/expressions/asset#ak--asset_keya-f--d).
 
 For example, the following retrieves the number of doors of vehicle `"1G1AF1F57A7192174"` and provide value `4` as a default value if vehicle is not found:
 
@@ -73,7 +73,7 @@ For example, the following retrieves the number of doors of vehicle `"1G1AF1F57A
 const n = vehicle["1G1AF1F57A7192174"].? nbdoors : 4
 ```
 
-The following retrieves an option of `nat` to treat more specifically the case when asset is not found:
+The following retrieves an [`option`](/docs/reference/types#option<T>) of [`nat`](/docs/reference/types#nat) to treat more specifically the case when the asset is not found:
 ```archetype
 const on = vehicle["1G1AF1F57A7192174"].?nbdoors
 ```
