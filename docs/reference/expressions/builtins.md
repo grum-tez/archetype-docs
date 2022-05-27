@@ -226,9 +226,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['sapling_empty_state']} />
 
-<H3 page="builtins" value="sapling_verify_update">
-    sapling_verify_update(<br/>&nbsp;&nbsp;s : sapling_state(n),<br/>&nbsp;&nbsp;t : sapling_transaction(n)<br/>)
-</H3>
+<H3 page="builtins" value={builtins['sapling_verify_update'].sig} />
 
 <Builtin data={builtins['sapling_verify_update']} />
 
