@@ -1,11 +1,13 @@
 ---
 slug: asset-access
 title: Accessing assets
-authors: [br, gd]
+authors: [gd]
 tags: [asset, new feature]
 ---
 
 We present an improvement in the way [assets](/docs/asset) data are accessed since version [`1.2.16`](https://github.com/edukera/archetype-lang/releases/tag/1.2.16) of Archetype.
+
+<!--truncate-->
 
 ### Problem
 

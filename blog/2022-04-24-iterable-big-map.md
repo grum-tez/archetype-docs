@@ -1,7 +1,7 @@
 ---
 slug: iterable-big-map
 title: Iterable big map
-authors: [br, gd]
+authors: [br]
 tags: [big map, new feature]
 ---
 
@@ -11,6 +11,9 @@ import ThemedImage from '@theme/ThemedImage';
 We present a new type of map called [`iterable_big_map`](/docs/reference/types#iterable_big_map<K,%20V>), which has the scalability property of a [`big_map`](/docs/reference/types#big_map<K,%20V>), and which can be [iterated](/docs/reference/instructions#map) like a basic [`map`](/docs/reference/types#map<K,%20V>).
 
 This feature was suggested by [Nomadic Labs](https://www.nomadic-labs.com/). Thank you to [Lucas Feli](https://www.linkedin.com/in/lucas-felli-815653111/) and [Charles Delhinger](https://www.linkedin.com/in/charles-dehlinger-a34699166/) for the algorithm.
+
+<!--truncate-->
+
 
 ## Example
 
