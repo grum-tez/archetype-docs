@@ -1,123 +1,10 @@
 ---
-sidebar_position: 2.5
-toc_max_heading_level: 2
+sidebar_position: 3
 ---
 
-# Instructions
+# Control
 
-import Builtin from '@site/src/components/Builtin.js';
-import { assetinstructions } from './assetinstructions.js';
-import Operator from '@site/src/components/Operator.js';
-import { assignments } from './assignments.js';
-import { containerinstructions } from './containerinstructions.js';
-import { divergent } from './divergent.js';
-
-An instruction has a side effect on the storage, operations or execution (may fail).
-
-## Sequence
-
-The [effect](/docs/reference/declarations#effect) of an [entrypoint](/docs/reference/declarations#entrypoints) is composed of zero, one or several instructions presented below.
-
-The literal for zero instruction is `()`; several instructions are separated with `;`.
-
-For example, `exec` entry point does nothing:
-```archetype
-entry exec() {
-  ()
-}
-```
-
-Entry `exec` below executes instructions *instr1* and *instr2*; note there is no `;` after *instr2*:
-```archetype
-entry exec() {
-  instr1;
-  instr2   /* no ';' after last instruction */
-}
-```
-In conditional branches of instructions like `if then`, it is necessary to delimit a sequence of instructions with `begin ... end`.
-
-For example, *instr2* below is *always* executed because it does not belong to the conditional branch of the `if` instruction:
-```archetype
-entry exec() {
-  if expr0 then   /* first instruction  */
-    instr1;
-    instr2        /* second instruction */
-}
-```
-In order to execute *instr1* and *intr2* when epxression *expr0* is `true`, use `begin ... end`:
-```archetype
-entry exec() {
-  if expr0 then begin
-    instr1;
-    instr2
-  end
-}
-```
-
-## Local variable
-
-These instructions declare a *local* variable in entrypoints' [effect](/docs/reference/declarations#effect) section.
-### `var`
-
-A local variable is declared by the `var` keyword followed by the variable [identifier](docs/reference/declarations#identifier) and the initial value.
-
-For example, the following declares a variable `counter` with initial value `0`:
-```archetype
-var counter = 0
-```
-
-It is possible to specify the variable type:
-```archetype
-var counter : nat = 0
-```
-
-Specifying the type is ususally optional as the typer may *infer* the type of the initial value. It is mandatory though for some types like [`or`](/docs/reference/types#or<T1,%20T2>), or some literals like [`none`](/docs/reference/types#option<T>) or [`[]`](/docs/reference/types#list<T>).
-
-### `const`
-
-Similar to `var` except that a `const` local variable *cannot* be modified by an [assignment](/docs/reference/instructions#assignment) instruction.
-
-For example, the following instructions generates a compilation error:
-```archetype
-const amount = 10tz;
-amount += 1tz        /* compilation error */
-```
-
-## Assignment
-
-### `a := b`
-
-Assigns value of expression `b` to *variable* `a`. Type of `b` must be the same as (or compliant with) the type of `a`.
-
-All [types](/docs/reference/types) are assignable, except [`ticket`](/docs/reference/types#ticket<T>)
-
-### `a += b`
-
-<Operator data={assignments['plusequal']} />
-
-### `a -= b`
-
-<Operator data={assignments['minusequal']} />
-
-### `a *= b`
-
-<Operator data={assignments['timesequal']} />
-
-### `a /= b`
-
-<Operator data={assignments['divequal']} />
-
-### `a &= b`
-
-<Operator data={assignments['andequal']} />
-
-### `a |= b`
-
-<Operator data={assignments['orequal']} />
-
-## Control
-
-### `if`
+## `if`
 
 The conditional branching instruction `if ... then` executes a sequence of instruction depending on a [bool](/docs/reference/types#bool) expression value.
 
@@ -177,7 +64,7 @@ else
 
 A conditional [`if`](/docs/reference/expressions/controls#if) *expression* is also available.
 
-### `match with`
+## `match with`
 
 The `match with` instruction, inspired by the [Ocaml](https://ocaml.org/) language, desconstructs an *enumerated* type to retreive data from it. Enumerated types are [`option`](/docs/reference/types#option<T>), [`or`](/docs/reference/types#or<T1,%20T2>), [`list`](/docs/reference/types#list<T>), [`states`](/docs/reference/declarations#states) and composite type [`enum`](/docs/reference/types#enum).
 
@@ -204,7 +91,7 @@ match expr1 with
 end
 ```
 
-#### `option`
+### `option`
 
 An [`option`](/docs/reference/types#option<T>) value has two named values: `some` and `none`.
 
@@ -216,7 +103,7 @@ match opt with
 end
 ```
 
-#### `or`
+### `or`
 
 An [`or`](/docs/reference/types#or<T1,%20T2>) value has two named values: `left` and `right`.
 
@@ -228,7 +115,7 @@ match o with
 end
 ```
 
-#### `list`
+### `list`
 
 A [`list`](/docs/reference/types#list<T>) value has two named values: `[]` for empty list and `::` for recursive composition.
 
@@ -244,7 +131,7 @@ In the example above, `h` is the first element of the list `l`, and `tl` is the 
 
 Note that Archetype does not support recursive calls, hence the `match` instruction cannot be used to fold a list as in Ocaml; it is rather used to retrieve the first element of a list and manage the case of an empty list. The [`for`](/docs/reference/instructions#for) instruction is used to iterate over list elements.
 
-#### `states`
+### `states`
 
 Contract's [`states`](/docs/reference/declarations#states) may be interrogated with the `match` instruction.
 
@@ -267,7 +154,7 @@ match state with
 end;
 ```
 
-#### `enum`
+### `enum`
 
 An [`enum`](/docs/reference/types#enum) value has a user-defined list of values.
 
@@ -288,7 +175,7 @@ match color with
 end
 ```
 
-### `for`
+## `for`
 
 The `for` instruction iterates the elements of a *container* ([`set`](/docs/reference/types#set<T>), [`list`](/docs/reference/types#list<T>), [`map`](/docs/reference/types#map<K,%20V>) and [`asset`](/docs/asset)).
 
@@ -303,7 +190,7 @@ The type of element `e` above depends on the type of the container. See below fo
 
 Note that it is *not* possible to break an iteration. See the [`fold`](/docs/reference/expressions/builtins#fold%20(i%20:%20or<L,%20R>,%20id%20->%20(body(id%20:%20L)%20:%20or<L,%20R>))) builtin for an iteration process with a possiblity to break.
 
-#### `set`
+### `set`
 
 Elements of a [`set`](/docs/reference/types#set<T>) are iterated in the element's type natural order.
 
@@ -314,7 +201,7 @@ for e in s do
 done
 ```
 
-#### `list`
+### `list`
 
 Elements of a [`list`](/docs/reference/types#list<T>) are iterated in the order of the list's construction process. See [`prepend`](/docs/reference/instructions#lprepende) and [`concat`](/docs/reference/instructions#lconcatl) instructions.
 
@@ -325,7 +212,7 @@ for e in l do
 done
 ```
 
-#### `map`
+### `map`
 
 Elements of a [`map`](/docs/reference/types#map<K,%20V>) are iterated in the natural order of the key.
 
@@ -339,7 +226,7 @@ In the example above:
 * `k` is a key of the map typed `string`
 * `v` is the associated value typed `bytes`
 
-#### `asset`
+### `asset`
 
 Elements of a [`asset`](/docs/asset) are iterated in the natural order of the asset identifier.
 
@@ -365,7 +252,7 @@ Since `log` is the iterated visitor's login, visitor data is accessed with [`[]`
 var nbv = visitor[log].nbvisits
 ```
 
-### `while`
+## `while`
 
 The `while` instruction executes an instruction as long as a condition holds true.
 
@@ -391,7 +278,7 @@ done
 There is no guarantee that the iteration terminates. In such a case the entrypoint fails with a `gas exceeded` error.
 :::
 
-### `iter`
+## `iter`
 
 The `iter` instruction iterates over a integer value in a specified range. The generic syntax is:
 ```archetype
@@ -408,98 +295,3 @@ iter i to expr2 do
   instr1 /* declares an integer constant 'i' between 1 and expr2 included */
 done
 ```
-
-## Divergent
-
-A divergent instruction is an instruction that *fails*. The effect of a failing instruction is to cancel all modifications (storage, operations) executed by the entrypoint so far. Hence a failing operation does **not** change anything on the contract state.
-
-The only effect of a failing injected operation is that the operation fee is spent and not paid back. That's why the correct process is to *simulate* (dry run) the entrypoint before injection to make sure the entrypoint does not fail (as wallets do for example).
-
-### `fail(e)`
-
-<Builtin data={divergent['fail']} />
-
-### `dorequire(t, e)`
-
-<Builtin data={divergent['dorequire']} />
-
-### `dofailif(t, e)`
-
-<Builtin data={divergent['dofailif']} />
-
-## Set
-### `S.add(e)`
-
-<Builtin data={containerinstructions['setadd']} />
-
-### `S.remove(e)`
-
-<Builtin data={containerinstructions['setremove']} />
-
-## List
-
-### `L.prepend(e)`
-
-<Builtin data={containerinstructions['prepend']} />
-
-### `L.reverse()`
-
-<Builtin data={containerinstructions['reverse']} />
-
-### `L.concat(l)`
-
-<Builtin data={containerinstructions['concat']} />
-
-## Map
-
-### `M.put(k, v)`
-
-<Builtin data={containerinstructions['put']} />
-
-### `M.remove(k)`
-
-<Builtin data={containerinstructions['mapremove']} />
-
-### `M.update(k : K, o : option<T>)`
-
-<Builtin data={containerinstructions['update']} />
-
-## Assets
-
-### `A.add(a)`
-
-<Builtin data={assetinstructions['add']} />
-
-### `A.put(a)`
-
-<Builtin data={assetinstructions['put']} />
-
-### `A.update(k, { u })`
-
-<Builtin data={assetinstructions['update']} />
-
-### `A.addupdate(k, { u })`
-
-<Builtin data={assetinstructions['addupdate']} />
-
-### `A.remove(k)`
-
-<Builtin data={assetinstructions['remove']} />
-
-### `A.removeif(p)`
-
-<Builtin data={assetinstructions['removeif']} />
-
-### `A.clear()`
-
-<Builtin data={assetinstructions['clear']} />
-
-### `A.removeclear()`
-
-<Builtin data={assetinstructions['removeclear']} />
-
-## Operations
-
-### `transfer`
-
-### `emit`

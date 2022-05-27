@@ -296,7 +296,7 @@ export const types = {
   },
   iterable_big_map: {
     desc: <IterableBigMapDesc />,
-    link: '#iterable_big_map',
+    link: '#iterable_big_map<K,%20V>',
     examples: [ `[]`, `[ ("#1G1AF1F57A7192174", 5); ("#2F4AH1J77O7132095", 10) ]` ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     related: [
@@ -480,7 +480,7 @@ export const types = {
   sapling_state :
   {
     desc: 'TODO',
-    link: '#sapling_state',
+    link: '#sapling_state(n)',
     examples: [],
     parameters: [
       { keyword: 'n', type: 'natural number', desc: 'Memo size' },
@@ -495,7 +495,7 @@ export const types = {
   sapling_transaction :
   {
     desc: 'TODO',
-    link: '#sapling_transaction',
+    link: '#sapling_transaction(n)',
     examples: [ ],
     parameters: [
       { keyword: 'n', type: 'natural number', desc: 'Memo size' },

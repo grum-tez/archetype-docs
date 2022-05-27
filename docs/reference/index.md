@@ -6,7 +6,7 @@ import { instructions } from "./instructions.js";
 import { types } from "./types.js";
 import { constants } from "./expressions/constants.js";
 import { operators } from "./expressions/operators.js";
-import { builtins } from "./expressions/builtins.js";
+import { builtins, to_link } from "./expressions/builtins.js";
 import { expressions } from "./expressions/expressions.js";
 import { Grid } from "@mui/material";
 
@@ -58,26 +58,26 @@ This is the Archetype language reference.
   </Grid>
 </Grid>
 
-<EagleEyeView title="Assignements" data={instructions.assignements} xs={1}/>
+<EagleEyeView title="Assignement" data={instructions.assignements} xs={1}/>
 
-<EagleEyeView title="Controls" data={instructions.controls} xs={2}/>
+<EagleEyeView title="Control" data={instructions.controls} xs={2}/>
 
 <EagleEyeView title="Divergent" data={instructions.divergent} xs={2}/>
 
 <Grid container>
   <Grid item md={4} xs={12} sm={12}>
-    <EagleEyeView title="Sets" data={instructions.sets} xs={6}/>
+    <EagleEyeView title="Set" data={instructions.sets} xs={6}/>
   </Grid>
   <Grid item md={8} xs={12} sm={12}>
-    <EagleEyeView title="Lists" data={instructions.lists} xs={3}/>
+    <EagleEyeView title="List" data={instructions.lists} xs={3}/>
   </Grid>
 </Grid>
 
-<EagleEyeView title="Maps" data={instructions.maps} xs={2}/>
+<EagleEyeView title="Map" data={instructions.maps} xs={2}/>
 
-<EagleEyeView title="Assets" data={instructions.assets} xs={2}/>
+<EagleEyeView title="Asset" data={instructions.assets} xs={2}/>
 
-<EagleEyeView title="Operations" data={instructions.blockchain} xs={4}/>
+<EagleEyeView title="Operation" data={instructions.blockchain} xs={4}/>
 
 ## Expressions
 
@@ -91,8 +91,8 @@ This is the Archetype language reference.
   })
 } xs={4}/>
 
-<EagleEyeView title="Builtins" data={Object.entries(builtins).map(([k,v]) => {
-    return { label: k, link: '/docs/reference/expressions/builtins#' + k }
+<EagleEyeView title="Builtins" data={Object.entries(builtins).sort().map(([k,v]) => {
+    return { label: k, link: '/docs/reference/expressions/builtins#' + to_link(v.sig) }
   })
 } xs={4}/>
 

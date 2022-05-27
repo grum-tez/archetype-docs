@@ -9,28 +9,9 @@ import ToNatDesc from "../../../src/components/desc/to_nat_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
-export const builtins = {
-  template: {
-    sig: 'TODO',
-    desc: <div>[NEW] TODO</div>,
-    parameters: [
-      {
-        type: 'TODO',
-        alias: 'TODO',
-        desc: <div>TODO</div>
-      }
-    ],
-    returns: {
-      type: 'TODO',
-      desc: <div></div>
-    },
-    michelson: "TODO",
-    michelson_ref_url: michelson_ref_base_url + '#instr-TODO',
-    related: [
-      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
-    ]
-  },
+export const to_link = s => s.replace(/ /g, '%20')
 
+export const builtins = {
   // entrypoint
   callview: {
     sig: 'callview<T>(a : address, id : string, arg : X)',
@@ -1511,6 +1492,7 @@ export const builtins = {
     ]
   },
   sapling_verify_update: {
+    sig: 'sapling_verify_update(s, t)',
     desc: <div>Applies sapling transaction on sapling state.</div>,
     parameters: [
       {
