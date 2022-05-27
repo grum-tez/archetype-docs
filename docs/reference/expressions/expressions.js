@@ -2,8 +2,9 @@ const link_prefix = '/docs/reference/expressions'
 
 export const expressions = {
   controls: [
-    { label : 'if then else', link : link_prefix + '/controls' },
-    { label : 'match with'  , link : link_prefix + '/controls' },
+    { label : 'if then else', link : link_prefix + '/controls#if-then-else' },
+    { label : 'match with'  , link : link_prefix + '/controls#match-with' },
+    { label : ': ?'  , link : link_prefix + '/controls#a--b--c' },
   ],
   asset: [
     { label : 'getopt'      , link : link_prefix + '/asset#agetoptk--asset_keya', desc : 'Gets an option of asset record value from key' },

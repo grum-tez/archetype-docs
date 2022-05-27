@@ -66,7 +66,7 @@ A conditional [`if`](/docs/reference/expressions/controls#if) *expression* is al
 
 ## `match with`
 
-The `match with` instruction, inspired by the [Ocaml](https://ocaml.org/) language, desconstructs an *enumerated* type to retreive data from it. Enumerated types are [`option`](/docs/reference/types#option<T>), [`or`](/docs/reference/types#or<T1,%20T2>), [`list`](/docs/reference/types#list<T>), [`states`](/docs/reference/declarations#states) and composite type [`enum`](/docs/reference/types#enum).
+The `match with` instruction, inspired by the [Ocaml](https://ocaml.org/) language, desconstructs a value of *enumerated* type to extract data from it. Enumerated types are [`option`](/docs/reference/types#option<T>), [`or`](/docs/reference/types#or<T1,%20T2>), [`list`](/docs/reference/types#list<T>), [`states`](/docs/reference/declarations#states) and composite type [`enum`](/docs/reference/types#enum).
 
 Its generic syntactic structure is presented below, given that *E1* ... *En* are the named values of the enumerated type of *expr1*:
 ```archetype
