@@ -12,7 +12,7 @@ asset ledger {
 
 The following determines whether the [`caller`](/docs/reference/expressions/constants#caller) has a positive balance or not:
 ```archetype
-const pos_balance = ledger[caller].? the.amount > 0 : false;
+const pos_balance = ledger[caller] ? the.amount > 0 : false;
 ```
 
 It is equivalent to:

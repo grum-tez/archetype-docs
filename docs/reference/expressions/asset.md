@@ -18,7 +18,7 @@ import { assetbuiltins } from './assetbuiltins.js';
 
 <Builtin data={assetbuiltins["getof"]} />
 
-### `A[k : asset_key<A>].? e : d`
+### `A[k : asset_key<A>] ? e : d`
 
 <Builtin data={assetbuiltins["getfd"]} />
 
