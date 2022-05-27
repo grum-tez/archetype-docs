@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ## `if`
 
-The conditional branching instruction `if ... then` executes a sequence of instruction depending on a [bool](/docs/reference/types#bool) expression value.
+The conditional branching instruction `if e then i` executes instruction `i` if the [bool](/docs/reference/types#bool) expression `e` is `true`.
 
 For example, *instr1* is executed if *expr1* is `true`:
 ```archetype
@@ -14,7 +14,7 @@ if expr1 then
   instr1
 ```
 
-The sequence of instructions to execute when expression *expr1* is `false`, follows the `else` keyword:
+The instruction to execute when expression *expr1* is `false` follows the `else` keyword:
 ```archetype
 if expr1 then
   instr1
