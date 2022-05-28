@@ -4,7 +4,6 @@ import React from "react"
 import IsNoneDesc from "../../../src/components/desc/is_none_desc.md"
 import IsSomeDesc from "../../../src/components/desc/is_some_desc.md"
 import OptGetDesc from "../../../src/components/desc/opt_get_desc.md"
-import RequireSomeDesc from "../../../src/components/desc/require_some_desc.md"
 import AbsDesc from "../../../src/components/desc/abs_desc.md"
 import ApplyLambdaDesc from "../../../src/components/desc/applylambda_desc.md"
 import ExecLambdaDesc from "../../../src/components/desc/execlambda_desc.md"
@@ -916,37 +915,6 @@ export const builtins = {
       {
         keyword: '"NotFound"',
         desc: <div>when <code>o</code> is <code>none</code></div>
-      }
-    ],
-    related: [
-      { keyword: 'Option', link: '/docs/language-basics/composite' },
-      { keyword: 'is_some', link: '#is_some' },
-    ]
-  },
-  requiresome: {
-    sig: 'require_some(o : option<T>, s : S)',
-    desc: <RequireSomeDesc />,
-    parameters: [
-      {
-        type: 'option<T>',
-        alias: 'o',
-        desc: 'Optional value to extract some value from.'
-      },
-      {
-        type: 'S',
-        alias: 's',
-        desc: 'Object to fail if none, the type of S must be storable'
-      }
-    ],
-    returns: {
-      type: 'T',
-      withLink: false,
-      desc: <div>Returns <code>v</code> of type <code>T</code> when <code>o</code> is <code>some(v)</code></div>
-    },
-    fails: [
-      {
-        keyword: '`s`',
-        desc: <div>Value of <code>s</code></div>
       }
     ],
     related: [
