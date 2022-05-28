@@ -26,9 +26,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['addresscontract']} />
 
-<H3 page="builtins" value={builtins['applylambda'].sig} />
+<H3 page="builtins" value={builtins['apply_lambda'].sig} />
 
-<Builtin data={builtins['applylambda']} />
+<Builtin data={builtins['apply_lambda']} />
 
 <H3 page="builtins" value={builtins['blake2b'].sig} />
 
@@ -76,9 +76,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['date_from_timestamp']} />
 
-<H3 page="builtins" value={builtins['execlambda'].sig} />
+<H3 page="builtins" value={builtins['exec_lambda'].sig} />
 
-<Builtin data={builtins['execlambda']} />
+<Builtin data={builtins['exec_lambda']} />
 
 <H3 page="builtins" value={builtins['floor'].sig} />
 

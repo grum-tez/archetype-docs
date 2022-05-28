@@ -40,7 +40,7 @@
     	'expr' : /\b(?:expr[0-9]|E([0-9]|n))\b/,
 		'unkeyworded' : /%(?:.*)/,
     	'archetype': /\b(?:archetype)\b/,
-    	'builtin': /\b(?:exec_lambda|opt_get|issome|left|right|some|none|isempty|length|put|get|transfer|call|emit)\b/,
+    	'builtin': /\b(?:exec_lambda|apply_lambda|opt_get|issome|left|right|some|none|isempty|length|put|get|transfer|call|emit)\b/,
     	'declaration': /\b(?:event|constant|archetype|enum|states|variable|asset|to big_map|to iterable_big_map|record|as|initial|identified by|initialized by)\b/,
     	'entry': /\b(?:entry|transition|function|getter|view)\b/,
     	'section': /\b(?:state is|called by|sourced by|require|failif|effect|with effect|from|to|when|otherwise|shadow|postcondition|fails)\b/,

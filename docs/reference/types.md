@@ -115,7 +115,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["key_hash"]} />
 
-<H3 page="types" value="lambda" />
+<H3 page="types" value="lambda<T, R>" />
 
 <Type data={types["lambda"]} />
 

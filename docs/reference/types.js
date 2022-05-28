@@ -333,7 +333,7 @@ export const types = {
   lambda :
   {
     desc: 'TODO',
-    link: '#lambda',
+    link: '#lambda<T,%20R>',
     examples: [],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "lambda",

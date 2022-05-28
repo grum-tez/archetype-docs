@@ -7,6 +7,8 @@ import OptGetDesc from "../../../src/components/desc/opt_get_desc.md"
 import RequireSomeDesc from "../../../src/components/desc/require_some_desc.md"
 import ToNatDesc from "../../../src/components/desc/to_nat_desc.md"
 import AbsDesc from "../../../src/components/desc/abs_desc.md"
+import ApplyLambdaDesc from "../../../src/components/desc/applylambda_desc.md"
+import ExecLambdaDesc from "../../../src/components/desc/execlambda_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -143,54 +145,59 @@ export const builtins = {
       { keyword: 'Option', link: '/docs/language-basics/composite#option' },
     ]
   },
-  execlambda: {
-    sig: 'exec_lambda(f : lambda<A, R>, x : A)',
-    desc: <div>[NEW] Executes lambda and returns its value.</div>,
+  exec_lambda: {
+    sig: 'exec_lambda(f : lambda<T, R>, x : T)',
+    desc: <ExecLambdaDesc />,
     parameters: [
       {
-        type: 'lambda<A, R>',
+        type: 'lambda<T, R>',
         alias: 'f',
         desc: <div>Lambda to execute</div>
       },
       {
-        type: 'A',
+        type: 'T',
+        withLink: false,
         alias: 'x',
         desc: <div>Argument</div>
       }
     ],
     returns: {
       type: 'T',
-      desc: <div>Computes of f(x)</div>
+      desc: <div>Evaluation of <i>f(x)</i></div>
     },
     michelson: "EXEC",
     michelson_ref_url: michelson_ref_base_url + '#instr-EXEC',
     related: [
-      { keyword: 'lambda', link: '/docs/language-basics/lambda' },
+      { keyword: 'lambda', link: '/docs/reference/types#lambda<T,%20R>' },
+      { keyword: 'apply_lambda', link: '/docs/reference/expressions/builtins#apply_lambda(f%20:%20lambda<A%20*%20T,%20R>,%20x%20:%20A)' },
     ]
   },
-  applylambda: {
+  apply_lambda: {
     sig: 'apply_lambda(f : lambda<A * T, R>, x : A)',
-    desc: <div>[NEW] Applies lambda and returns its value.</div>,
+    desc: <ApplyLambdaDesc />,
     parameters: [
       {
-        type: 'lambda<A * T, R>',
+        type: 'lambda<A*T,R>',
+        withLink: false,
         alias: 'f',
-        desc: <div>Lambda to apply</div>
+        desc: <div>Lambda to partially apply</div>
       },
       {
         type: 'A',
         alias: 'x',
-        desc: <div>Argument</div>
+        withLink: false,
+        desc: <div>Lambda argument</div>
       }
     ],
     returns: {
       type: 'lambda<T, R>',
-      desc: <div>Lambda applied</div>
+      desc: <div>Partially applied lambda value</div>
     },
     michelson: "APPLY",
     michelson_ref_url: michelson_ref_base_url + '#instr-APPLY',
     related: [
-      { keyword: 'lambda', link: '/docs/language-basics/lambda' },
+      { keyword: 'lambda', link: '/docs/reference/types#lambda<T,%20R>' },
+      { keyword: 'exec_lambda', link: '/docs/reference/expressions/builtins#exec_lambda(f%20:%20lambda<T,%20R>,%20x%20:%20T)' },
     ]
   },
 
@@ -334,28 +341,30 @@ export const builtins = {
 
   // set api expression
   add: {
-    sig: 'add(s : set<T>, i : T)',
-    desc: <div>[NEW] Returns a copy of set <code>s</code>, which adds item <code>i</code></div>,
+    sig: 'add(s : set<T>, e : T)',
+    desc: <div>Returns a copy of set <code>s</code> augmented with element <code>e</code>.<p></p>If <code>e</code> is already present in <code>s</code>, it returns a copy of <code>s</code>.</div>,
     parameters: [
       {
         type: 'set<T>',
         alias: 's',
-        desc: <div>Set to add</div>
+        desc: <div>Input set</div>
       },
       {
         type: 'T',
-        alias: 'i',
-        desc: <div>Item to add</div>
+        withLink: false,
+        alias: 'e',
+        desc: <div>Element to add</div>
       }
     ],
     returns: {
       type: 'set<T>',
-      desc: <div>Set added</div>
+      desc: <div>Set that contains all elements of <code>s</code> and element <code>e</code></div>
     },
     michelson: "UPDATE",
     michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
     related: [
       { keyword: 'Set', link: '/docs/language-basics/container#set' },
+      { keyword: 'remove', link: '/docs/reference/expressions/builtins#remove(c%20:%20C,%20i%20:%20T)' },
     ]
   },
 
@@ -1135,7 +1144,10 @@ export const builtins = {
   },
   addresscontract: {
     sig: 'address_to_contract(a : address)',
-    desc: <div>[NEW] Converts an address to a contract.</div>,
+    desc: <div>Converts an address <code>a</code> that is either:<ul>
+      <li>a <code>tz ...</code> address (account)</li>
+      <li>a <code>KT1 ...</code> contract address without a unique entrypoint typed <code>unit</code></li>
+    </ul>to a <code>contract&lt;unit&gt;</code> value.</div>,
     parameters: [
       {
         type: 'address',
@@ -1145,12 +1157,12 @@ export const builtins = {
     ],
     returns: {
       type: 'contract<unit>',
-      desc: <div>Contract converted</div>
+      desc: <div>Contract with address <code>a</code></div>
     },
     fails: [
       {
         keyword: '*',
-        desc: <div>if the address behind is not a tz[1-3]* or a contract with a unique entrypoint of type unit </div>
+        desc: <div>if the address behind is not a <code>tz</code> or a contract with a unique entrypoint of type <code>unit</code></div>
       }
     ],
     related: [
