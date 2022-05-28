@@ -1142,7 +1142,7 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  addresscontract: {
+  address_to_contract: {
     sig: 'address_to_contract(a : address)',
     desc: <div>Converts an address <code>a</code> that is either:<ul>
       <li>a <code>tz ...</code> address (account)</li>

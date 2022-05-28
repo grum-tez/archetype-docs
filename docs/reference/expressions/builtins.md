@@ -22,9 +22,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['add']} />
 
-<H3 page="builtins" value={builtins['addresscontract'].sig} />
+<H3 page="builtins" value={builtins['address_to_contract'].sig} />
 
-<Builtin data={builtins['addresscontract']} />
+<Builtin data={builtins['address_to_contract']} />
 
 <H3 page="builtins" value={builtins['apply_lambda'].sig} />
 

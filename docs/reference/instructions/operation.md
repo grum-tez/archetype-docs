@@ -74,7 +74,7 @@ transfer a to c call e<T>(x)
 
 is equivalent to:
 ```archetype
-const e = require_entrypoint<T>("%e", c, "ENTRY_NOT_FOUND");
+const e = get_entrypoint<T>("%e", c) ? the : fail("ENTRY_NOT_FOUND");
 const o = mkoperation(a, e, x);
 operations := reverse(prepend(reverse(operations), o))
 ```
