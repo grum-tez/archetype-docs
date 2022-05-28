@@ -1,7 +1,14 @@
-[NEW] Tests if an optional value `o` is none. It is equivalent to the following expression:
+Returns `false` if an optional value `o` is `some`, `true` otherwise.
+
+It is equivalent to the following expression:
+```archetype
+o ? false : true
+```
+
+or equivalently:
 ```archetype
 match o with
 | some(v) -> false
-| none -> true
+| none    -> true
 end
 ```

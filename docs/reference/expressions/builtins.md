@@ -50,14 +50,6 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['concat']} />
 
-<H3 page="builtins" value={builtins['concatlist'].sig} />
-
-<Builtin data={builtins['concatlist']} />
-
-<H3 page="builtins" value={builtins['listconcat'].sig} />
-
-<Builtin data={builtins['listconcat']} />
-
 <H3 page="builtins" value={builtins['contains'].sig} />
 
 <Builtin data={builtins['contains']} />
@@ -71,10 +63,6 @@ import H3 from "@site/src/components/H3.js";
 <Builtin data={builtins['create_ticket']} />
 
 ## `D E F`
-
-<H3 page="builtins" value={builtins['timestamp_to_date'].sig} />
-
-<Builtin data={builtins['timestamp_to_date']} />
 
 <H3 page="builtins" value={builtins['exec_lambda'].sig} />
 
@@ -165,6 +153,10 @@ import H3 from "@site/src/components/H3.js";
 <H3 page="builtins" value={builtins['mutez_to_nat'].sig} />
 
 <Builtin data={builtins['mutez_to_nat']} />
+
+<H3 page="builtins" value={builtins['nat_to_string'].sig} />
+
+<Builtin data={builtins['nat_to_string']} />
 
 <H3 page="builtins" value={builtins['none'].sig} />
 
@@ -262,9 +254,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['sub_nat']} />
 
-<H3 page="builtins" value={builtins['nat_to_string'].sig} />
+<H3 page="builtins" value={builtins['timestamp_to_date'].sig} />
 
-<Builtin data={builtins['nat_to_string']} />
+<Builtin data={builtins['timestamp_to_date']} />
 
 <H3 page="builtins" value={builtins['unpack'].sig} />
 

@@ -23,6 +23,6 @@ The detailed mechanism is presented in this [blog entry](/blog/iterable-big-map)
 The order in which keys are iterated is *not* the natural order.
 :::
 
-:::warning
+:::caution
 The possiblity to iterate comes with an increased cost of [`put`](/docs/reference/instructions#mputk-v) [`remove`](/docs/reference/instructions#mremovek) and [`update`](/docs/reference/instructions#mupdatek--k-o--optiont) operations.
 :::

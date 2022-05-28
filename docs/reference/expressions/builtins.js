@@ -8,6 +8,10 @@ import AbsDesc from "../../../src/components/desc/abs_desc.md"
 import ApplyLambdaDesc from "../../../src/components/desc/applylambda_desc.md"
 import ExecLambdaDesc from "../../../src/components/desc/execlambda_desc.md"
 import GetEntrypointDesc from "../../../src/components/desc/getentrypoint_desc.md"
+import ConcatDesc from "../../../src/components/desc/concat_desc.md"
+import FoldDesc from "../../../src/components/desc/fold_desc.md"
+import LeftDesc from "../../../src/components/desc/left_desc.md"
+import RightDesc from "../../../src/components/desc/right_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -86,23 +90,32 @@ export const builtins = {
 
   // control expression
   fold: {
-    sig: 'fold (i : or<L, R>, id -> (body(id : L) : or<L, R>))',
-    desc: <div>[NEW] Apply a function which takes a L typed argument, returns value type or and continues until this function returns a right value.</div>,
+    sig: 'fold (i : or<L, R>, f : L -> or<L, R>)',
+    desc: <FoldDesc />,
     parameters: [
       {
         type: 'or<L, R>',
         alias: 'i',
         desc: <div>Initial value</div>
-      }
+      },
+      {
+        type: 'function',
+        withLink: false,
+        alias: 'f',
+        desc: <div><i>Inlined</i> folding function that:<ul><li>takes a parameter of type <code>L</code></li><li>returns a values of type <code>or&lt;L, R&gt;</code> </li></ul></div>
+      },
     ],
     returns: {
       type: 'R',
-      desc: <div>Compute value</div>
+      withLink: false,
+      desc: <div>Folded value</div>
     },
     michelson: "LOOP_LEFT",
     michelson_ref_url: michelson_ref_base_url + '#instr-LOOP_LEFT',
     related: [
-      { keyword: 'Or', link: '/docs/language-basics/composite#or' },
+      { keyword: 'or', link: '/docs/reference/types#or<T1,%20T2>' },
+      { keyword: 'left', link: '/docs/reference/expressions/builtins#left<(L,)?%20T>(x%20:%20L)' },
+      { keyword: 'right', link: '/docs/reference/expressions/builtins#right<T(,%20R)>(x%20:%20R)' },
     ]
   },
   maplist: {
@@ -266,11 +279,12 @@ export const builtins = {
   // composite type constructors
   left: {
     sig: 'left<(L,)? T>(x : L)',
-    desc: <div>[NEW] Converts to a left literal</div>,
+    desc: <LeftDesc />,
     parameters: [
       {
         type: 'L',
         alias: 'x',
+        withLink: false,
         desc: <div>Value to convert</div>
       }
     ],
@@ -281,15 +295,17 @@ export const builtins = {
     michelson: "LEFT",
     michelson_ref_url: michelson_ref_base_url + '#instr-LEFT',
     related: [
-      { keyword: 'Or', link: '/docs/language-basics/composite#or' },
+      { keyword: 'or', link: '/docs/reference/types#or<T1,%20T2>' },
+      { keyword: 'right', link: '/docs/reference/expressions/builtins#right<T(,%20R)>(x%20:%20R)' },
     ]
   },
   right: {
     sig: 'right<T(, R)>(x : R)',
-    desc: <div>[NEW] Converts to a right literal</div>,
+    desc: <RightDesc />,
     parameters: [
       {
         type: 'R',
+        withLink: false,
         alias: 'x',
         desc: <div>Value to convert</div>
       }
@@ -301,7 +317,8 @@ export const builtins = {
     michelson: "RIGHT",
     michelson_ref_url: michelson_ref_base_url + '#instr-RIGHT',
     related: [
-      { keyword: 'Or', link: '/docs/language-basics/composite#or' },
+      { keyword: 'or', link: '/docs/reference/types#or<T1,%20T2>' },
+      { keyword: 'left', link: '/docs/reference/expressions/builtins#left<(L,)?%20T>(x%20:%20L)' },
     ]
   },
   none: {
@@ -441,30 +458,6 @@ export const builtins = {
       { keyword: 'List', link: '/docs/language-basics/container#list' },
     ]
   },
-  listconcat: {
-    sig: 'concat(a : list<T>, b : list<T>)',
-    desc: <div>[NEW] Concatenates two lists.</div>,
-    parameters: [
-      {
-        type: 'list<T>',
-        alias: 'a',
-        desc: <div>First list</div>
-      },
-      {
-        type: 'list<T>',
-        alias: 'b',
-        desc: <div>Second list</div>
-      }
-    ],
-    returns: {
-      type: 'list<T>',
-      desc: <div>List concatenated</div>
-    },
-    related: [
-      { keyword: 'List', link: '/docs/language-basics/container#list' },
-    ]
-  },
-
   // map api expression
   put: {
     sig: 'put(m : (big_)?map<K, V>, k : K, v : V)',
@@ -532,26 +525,29 @@ export const builtins = {
     ]
   },
   get: {
-    sig: 'get(m : (big_)?map<K, V>, k : K)',
-    desc: <div>[NEW] Returns the value associated for the key <code>k</code> on the map <code>m</code>.</div>,
+    sig: 'get(m : map<K, T>, k : K)',
+    desc: <div>Returns an option of the value associated to key <code>k</code> in map <code>m</code>.<p></p>
+    It is also available for types <Link to="/docs/reference/types#big_map<K,%20V>"><code>big_map</code></Link> and
+    <Link to="/docs/reference/types#iterable_big_map<K,%20V>"><code>iterable_big_map</code></Link>.</div>,
     parameters: [
       {
-        type: 'map',
+        type: 'map<K, V>',
         alias: 'm',
         desc: <div>Map to get</div>
       },
       {
         type: 'K',
+        withLink: false,
         alias: 'k',
         desc: <div>Key to get</div>
       }
     ],
     returns: {
-      type: 'option<V>',
+      type: 'option<T>',
       desc: <div>
         <ul>
           <li><code>none</code> when <code>k</code> is not in the map <code>m</code></li>
-          <li><code>some(v)</code>, when <code>k</code> is in the map <code>m</code> associated with the value <code>v</code></li>
+          <li><code>some(v)</code>, when <code>k</code> is in the map <code>m</code> associated with value <code>v</code></li>
         </ul>
       </div>
     },
@@ -595,8 +591,8 @@ export const builtins = {
     ]
   },
   contains: {
-    sig: 'contains(c : C, i : T)',
-    desc: <div>[NEW] Tests if item <code>i</code> is contained in <code>c</code>.</div>,
+    sig: 'contains(c : C, e : T)',
+    desc: <div>Tests whether element <code>e</code> is contained in <code>c</code> or not.</div>,
     parameters: [
       {
         type: 'C',
@@ -608,21 +604,22 @@ export const builtins = {
             <li><Link to={'/docs/reference/types#list<T>'}><code>list</code></Link></li>
             <li><Link to={'/docs/reference/types#map<K,%20V>'}><code>map</code></Link></li>
             <li><Link to={'/docs/reference/types#big_map<K,%20V>'}><code>big_map</code></Link></li>
+            <li><Link to={'/docs/reference/types#iterable_big_map<K,%20V>'}><code>iterable_big_map</code></Link></li>
           </ul>
         </div>
       },
       {
         type: 'T',
-        alias: 'i',
-        desc: <div>Item to test</div>
+        alias: 'e',
+        desc: <div>Element to test</div>
       }
     ],
     returns: {
       type: 'bool',
       desc: <div>
         <ul>
-          <li><code>true</code> when <code>i</code> is contained in <code>c</code></li>
-          <li><code>false</code> when <code>i</code> is not contained in <code>c</code></li>
+          <li><code>true</code> when <code>e</code> is contained in <code>c</code></li>
+          <li><code>false</code> when <code>e</code> is <i>not</i> contained in <code>c</code></li>
         </ul>
       </div>
     },
@@ -699,64 +696,28 @@ export const builtins = {
     michelson_ref_url: michelson_ref_base_url + '#instr-ABS',
     related: [
       { keyword: 'Numbers', link: '/docs/language-basics/number' },
-      { keyword: 'tonat', link: '/docs/reference/expressions/builtins#to_nat(i%20:%20int)' },
+      { keyword: 'int_to_nat', link: '/docs/reference/expressions/builtins#int_to_nat(i%20:%20int)' },
     ]
   },
   concat: {
-    sig: 'concat(a : T, b : T)',
-    desc: <div>[NEW] Concatenates two items.</div>,
-    parameters: [
-      {
-        type: 'T',
-        alias: 'a',
-        desc: <div>First item</div>
-      },
-      {
-        type: 'T',
-        alias: 'b',
-        desc: <div>Second item</div>
-      }
-    ],
+    sig: 'concat',
+    desc: <ConcatDesc />,
     returns: {
       type: 'T',
-      desc: <div>Sequence concatenated, T must be either:
+      withLink: false,
+      desc: <div>Concantenation of 2 values or list of values of type
         <ul>
           <li><Link to={'/docs/reference/types#string'}><code>string</code></Link></li>
           <li><Link to={'/docs/reference/types#bytes'}><code>bytes</code></Link></li>
+          <li><Link to={'/docs/reference/types#list<T>'}><code>list&lt;T&gt;</code></Link></li>
         </ul></div>
     },
     michelson: "CONCAT",
     michelson_ref_url: michelson_ref_base_url + '#instr-CONCAT',
     related: [
-      { keyword: 'String', link: '/docs/language-basics/string' },
-      { keyword: 'Bytes', link: '/docs/language-basics/bytes' },
-    ]
-  },
-  concatlist: {
-    sig: 'concat(l : list<T>)',
-    desc: <div>[NEW] Concatenates all items in list <code>l</code>.</div>,
-    parameters: [
-      {
-        type: 'list<T>',
-        alias: 'l',
-        desc: <div>
-          List to concatenate, T must be either:
-          <ul>
-            <li><Link to={'/docs/reference/types#string'}><code>string</code></Link></li>
-            <li><Link to={'/docs/reference/types#bytes'}><code>bytes</code></Link></li>
-          </ul>
-        </div>
-      }
-    ],
-    returns: {
-      type: 'T',
-      desc: <div>Sequence concatenated</div>
-    },
-    michelson: "CONCAT",
-    michelson_ref_url: michelson_ref_base_url + '#instr-CONCAT',
-    related: [
-      { keyword: 'String', link: '/docs/language-basics/string' },
-      { keyword: 'Bytes', link: '/docs/language-basics/bytes' },
+      { keyword: 'string', link: '/docs/reference/types#string' },
+      { keyword: 'bytes', link: '/docs/reference/types#bytes' },
+      { keyword: '+', link: '/docs/reference/expressions/operators#a--b' },
     ]
   },
   slice: {
@@ -797,13 +758,12 @@ export const builtins = {
     michelson: "SLICE",
     michelson_ref_url: michelson_ref_base_url + '#instr-SLICE',
     related: [
-      { keyword: 'String', link: '/docs/language-basics/string' },
-      { keyword: 'Bytes', link: '/docs/language-basics/bytes' },
+      { keyword: 'string', link: '/docs/reference/types#string' },
     ]
   },
   length: {
     sig: 'length(o : T)',
-    desc: <div>[NEW] Returns the length of a string or bytes; or the size of a container.</div>,
+    desc: <div>Returns the length of a string or bytes value, or the number of elements of a container.</div>,
     parameters: [
       {
         type: 'T',
@@ -816,6 +776,7 @@ export const builtins = {
             <li><Link to={'/docs/reference/types#set<T>'}><code>set</code></Link></li>
             <li><Link to={'/docs/reference/types#list<T>'}><code>list</code></Link></li>
             <li><Link to={'/docs/reference/types#map<K,%20V>'}><code>map</code></Link></li>
+            <li><Link to={'/docs/reference/types#iterable_big_map<K,%20V>'}><code>iterable_big_map</code></Link></li>
           </ul>
         </div>
       }
@@ -827,8 +788,8 @@ export const builtins = {
     michelson: "SIZE",
     michelson_ref_url: michelson_ref_base_url + '#instr-SIZE',
     related: [
-      { keyword: 'String', link: '/docs/language-basics/string' },
-      { keyword: 'Bytes', link: '/docs/language-basics/bytes' },
+      { keyword: 'string', link: '/docs/reference/types#string' },
+      { keyword: 'bytes', link: '/docs/reference/types#bytes' },
       { keyword: 'Containers', link: '/docs/language-basics/container' },
     ]
   },
@@ -880,22 +841,27 @@ export const builtins = {
   },
   int_to_nat: {
     sig: 'int_to_nat(i : int)',
-    desc: <div>[NEW] Converts an int to an optional nat</div>,
+    desc: <div>Converts an <Link to="/docs/reference/types#int"><code>int</code></Link> value to an <Link to="/docs/reference/types#option<T>"><code>option</code></Link>` of <Link to="/docs/reference/types#nat"><code>nat</code></Link> value.</div>,
     parameters: [
       {
         type: 'int',
         alias: 'i',
-        desc: <div>Int to convert</div>
+        desc: <div>Integer to convert</div>
       }
     ],
     returns: {
       type: 'option<nat>',
-      desc: <div>Optional nat converted</div>
+      withLink: false,
+      desc: <div>Optional natural value:<ul><li><code>some(n)</code> when <code>i</code> is positive</li><li><code>none</code> otherwise</li></ul></div>
     },
     michelson: "ISNAT",
     michelson_ref_url: michelson_ref_base_url + '#instr-ISNAT',
     related: [
       { keyword: 'Numbers', link: '/docs/language-basics/number' },
+      { keyword: 'nat', link: '/docs/reference/types#nat' },
+      { keyword: 'int', link: '/docs/reference/types#int' },
+      { keyword: 'option', link: '/docs/reference/types#option<T>' },
+      { keyword: 'abs', link: '/docs/reference/expressions/builtins#abs(t%20:%20T)' },
     ]
   },
   get_some: {
@@ -926,38 +892,39 @@ export const builtins = {
   },
   floor: {
     sig: 'floor(r : rational)',
-    desc: <div>[NEW] Converts rational to int with <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions" target="_blank">floor</a> policy</div>,
-    parameters: [
+    desc: <div>Converts a <Link to="/docs/reference/types#rational"><code>rational</code></Link> to an <Link to="/docs/reference/types#int"><code>int</code></Link> with <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions" target="_blank">floor</a> policy</div>,    parameters: [
       {
         type: 'rational',
         alias: 'r',
-        desc: <div>Rational to floor</div>
+        desc: <div></div>
       }
     ],
     returns: {
       type: 'int',
-      desc: <div>Integer floored</div>
+      desc: <div>Floored integer</div>
     },
     related: [
       { keyword: 'Numbers', link: '/docs/language-basics/number#rational' },
+      { keyword: 'ceil', link: '/docs/reference/expressions/builtins#ceil(r%20:%20rational)' },
     ]
   },
   ceil: {
     sig: 'ceil(r : rational)',
-    desc: <div>[NEW] Converts rational to int with <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions" target="_blank">ceiling</a> policy</div>,
+    desc: <div>Converts a <Link to="/docs/reference/types#rational"><code>rational</code></Link> to an <Link to="/docs/reference/types#int"><code>int</code></Link> with <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions" target="_blank">ceiling</a> policy</div>,
     parameters: [
       {
         type: 'rational',
         alias: 'r',
-        desc: <div>Rational to ceil</div>
+        desc: <div></div>
       }
     ],
     returns: {
       type: 'int',
-      desc: <div>Integer ceiled</div>
+      desc: <div>Ceiled integer</div>
     },
     related: [
       { keyword: 'Numbers', link: '/docs/language-basics/number#rational' },
+      { keyword: 'floor', link: '/docs/reference/expressions/builtins#floor(r%20:%20rational)' },
     ]
   },
   nat_to_string: {
@@ -1071,7 +1038,7 @@ export const builtins = {
   },
   contract_address: {
     sig: 'contract_address(c : contract<T>)',
-    desc: <div>Gets the address of a contract.</div>,
+    desc: <div>Returns the address of a contract.</div>,
     parameters: [
       {
         type: 'contract',
