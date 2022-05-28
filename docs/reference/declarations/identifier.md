@@ -4,7 +4,7 @@ sidebar_position: 0
 import { Grid } from '@mui/material';
 import { keywords } from '../keywords.js'
 
-# Identifer
+# Identifier
 
 The identifier of a contract element ([parameter](/docs/reference/declarations/storage#parameter), [variable](/docs/reference/declarations/storage#variable), [entrypoint](/docs/reference/declarations/entrypoint), ...) is a string that starts with an alphabetic character (lower or upper case) followed by a string of alphanumeric characters (lower or upper case) or underscores. The maximum size of an identifier is 254. That is to say that an identifier verifies the following regular expression:
 
