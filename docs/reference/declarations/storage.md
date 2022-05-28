@@ -77,7 +77,7 @@ var a = liquidity[(0,tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb)].amount;
 
 See access operator [`[]`](/docs/reference/expressions/asset#ak--asset_keyaf) for more information.
 
-### Default value
+### Default field value
 
 It is possible to define a default value for an asset field; for example:
 ```archetype

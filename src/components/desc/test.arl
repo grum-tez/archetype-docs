@@ -61,3 +61,15 @@ entry exec () {
         partitioned.add({ k = 0; v = 0 })
     }
 }
+
+variable r : nat = 0
+
+entry exec2(x : nat, y : nat) {
+    r := r * x + y
+}
+
+entry calling() {
+  const e = require_entrypoint<nat *nat>("%exec", selfaddress, "ENTRY_NOT_FOUND");
+  const o = mkoperation(0tz, e, (5,3));
+  operations := prepend(operations, o)
+}
