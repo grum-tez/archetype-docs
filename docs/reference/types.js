@@ -229,7 +229,7 @@ export const types = {
   contract :
   {
     desc: 'TODO',
-    link: '#contract',
+    link: '#contract<T>',
     examples: [],
     tags: [ PASSABLE, PACKABLE ],
     michelson: "contract",

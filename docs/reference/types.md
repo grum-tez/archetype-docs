@@ -73,7 +73,7 @@ import H3 from "@site/src/components/H3.js";
 
 <Type data={types["chest_key"]} />
 
-<H3 page="types" value="contract" />
+<H3 page="types" value="contract<T>" />
 
 <Type data={types["contract"]} />
 

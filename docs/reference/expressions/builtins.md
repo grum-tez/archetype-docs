@@ -94,6 +94,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['get']} />
 
+<H3 page="builtins" value={builtins['get_entrypoint'].sig} />
+
+<Builtin data={builtins['get_entrypoint']} />
+
 <H3 page="builtins" value={builtins['key_to_hash_key'].sig} />
 
 <Builtin data={builtins['key_to_hash_key']} />
@@ -203,10 +207,6 @@ import H3 from "@site/src/components/H3.js";
 <H3 page="builtins" value={builtins['remove'].sig} />
 
 <Builtin data={builtins['remove']} />
-
-<H3 page="builtins" value={builtins['requiresome'].sig} />
-
-<Builtin data={builtins['requiresome']} />
 
 <H3 page="builtins" value={builtins['reverse'].sig} />
 

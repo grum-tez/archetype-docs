@@ -7,6 +7,7 @@ import OptGetDesc from "../../../src/components/desc/opt_get_desc.md"
 import AbsDesc from "../../../src/components/desc/abs_desc.md"
 import ApplyLambdaDesc from "../../../src/components/desc/applylambda_desc.md"
 import ExecLambdaDesc from "../../../src/components/desc/execlambda_desc.md"
+import GetEntrypointDesc from "../../../src/components/desc/getentrypoint_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -79,6 +80,7 @@ export const builtins = {
     michelson_ref_url: michelson_ref_base_url + '#instr-TRANSFER_TOKENS',
     related: [
       { keyword: 'operations', link: '/docs/language-basics/operation' },
+      { keyword: 'get_description', link: '/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)' },
     ]
   },
 
@@ -1554,5 +1556,33 @@ export const builtins = {
     related: [
       { keyword: 'TODO', link: '/docs/language-basics/TODO' },
     ]
+  },
+  get_entrypoint: {
+    sig: 'get_entrypoint<T>(s, a : address)',
+    desc: <GetEntrypointDesc />,
+    parameters: [
+      {
+        type: 'string literal',
+        withLink: false,
+        alias: 's',
+        desc: <div>Entrypoint name as string literal prefixed by <code>%</code></div>
+      },
+      {
+        type: 'address',
+        alias: 'a',
+        desc: <div>Address of the entrypoint's contract</div>
+      }
+    ],
+    returns: {
+      type: 'option<contract<T>>',
+      withLink: false,
+      desc: <div>Option of entrypoint as a <code>contract</code> value</div>
+    },
+    related: [
+      { keyword: 'transfer', link: '/docs/reference/instructions/operation#transfer' },
+      { keyword: 'make_operation', link: '/docs/reference/expressions/builtins#make_operation(a%20:%20tez,%20c%20:%20contract<T>,%20arg%20:%20T)' },
+    ],
+    michelson: "CONTRACT",
+    michelson_ref_url: michelson_ref_base_url + '#instr-CONTRACT',
   }
 }
