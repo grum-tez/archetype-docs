@@ -27,8 +27,8 @@ export const instructions = {
     ],
     divergent: [
       { label : 'fail', link : link_prefix + '/divergent#faile' },
-      { label : 'dorequire', link : link_prefix + '/divergent#dorequiret-e' },
-      { label : 'dofailif', link : link_prefix + '/divergent#dofailift-e' },
+      { label : 'do_require', link : link_prefix + '/divergent#do_requiret-e' },
+      { label : 'do_fail_if', link : link_prefix + '/divergent#do_fail_ift-e' },
     ],
     sets: [
       { label : 'add', link : link_prefix + '/containers#sadde' },

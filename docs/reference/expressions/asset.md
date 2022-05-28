@@ -6,9 +6,9 @@ import { assetbuiltins } from './assetbuiltins.js';
 
 # Asset
 
-### `A.getopt(k : asset_key<A>)`
+### `A.get(k : asset_key<A>)`
 
-<Builtin data={assetbuiltins["getopt"]} />
+<Builtin data={assetbuiltins["get"]} />
 
 ### `A[k : asset_key<A>]`
 

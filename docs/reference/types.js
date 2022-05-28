@@ -38,7 +38,7 @@ export const types = {
       { keyword : 'caller', link : constant_prefix + 'caller' },
       { keyword : 'source', link : constant_prefix + 'source' },
       { keyword : '=', link : operator_prefix + 'a--b-7' },
-      { keyword : 'callview', link : builtin_prefix + 'callview<T>(a%20:%20address,%20id%20:%20string,%20arg%20:%20X)' },
+      { keyword : 'call_view', link : builtin_prefix + 'call_view<T>(a%20:%20address,%20id%20:%20string,%20arg%20:%20X)' },
       { keyword : 'set_delegate', link : builtin_prefix + 'set_delegate(opkh%20:%20option<key_hash>)' },
       { keyword : 'contract_address', link : builtin_prefix + 'contract_address(c%20:%20contract<T>)' },
       { keyword : 'address_to_contract', link : builtin_prefix + 'address_to_contract(a%20:%20address)' },
@@ -93,7 +93,7 @@ export const types = {
     related: [
       { keyword: "Asset", link:"/docs/asset" },
       { keyword: "[]", link: asset_prefix + 'ak--asset_keya' },
-      { keyword: "getopt", link: asset_prefix + 'agetoptk--asset_keya' },
+      { keyword: "get", link: asset_prefix + 'agetk--asset_keya' },
     ],
   },
   asset_view :
@@ -194,12 +194,12 @@ export const types = {
   {
     desc: <div>Type of the chain network identifier.</div>,
     link: '#chain_id',
-    examples: [ '"NetXdQprcVkpaWU"', 'chainid' ],
+    examples: [ '"NetXdQprcVkpaWU"', 'chain_id' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "chain_id",
     michelson_ref_url: michelson_ref_base_url + '/#type-chain_id',
     related: [
-      { keyword: "chainid", link:"/docs/reference/expressions/constants#chainid" }
+      { keyword: "chain_id", link:"/docs/reference/expressions/constants#chain_id" }
     ],
   },
   chest :

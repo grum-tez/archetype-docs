@@ -27,7 +27,7 @@ export const declarations = {
     { label: 'called by', link: link_prefix + '/entrypoint#called-by' },
     { label: 'state is', link: link_prefix + '/entrypoint#state-is' },
     { label: 'require', link: link_prefix + '/entrypoint#require' },
-    { label: 'failif', link: link_prefix + '/entrypoint#failif' },
+    { label: 'fail if', link: link_prefix + '/entrypoint#fail-if' },
     { label: 'effect', link: link_prefix + '/entrypoint#effect' },
   ],
   functions : [

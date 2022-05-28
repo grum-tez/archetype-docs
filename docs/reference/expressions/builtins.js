@@ -531,8 +531,8 @@ export const builtins = {
       { keyword: 'Map', link: '/docs/language-basics/container#map' },
     ]
   },
-  getopt: {
-    sig: 'getopt(m : (big_)?map<K, V>, k : K)',
+  get: {
+    sig: 'get(m : (big_)?map<K, V>, k : K)',
     desc: <div>[NEW] Returns the value associated for the key <code>k</code> on the map <code>m</code>.</div>,
     parameters: [
       {
@@ -1576,8 +1576,8 @@ export const builtins = {
   },
 
   // others
-  date_from_timestamp: {
-    sig: 'date_from_timestamp(i : int)',
+  timestamp_to_date: {
+    sig: 'timestamp_to_date(i : int)',
     desc: <div>Convert int to date</div>,
     parameters: [
       {

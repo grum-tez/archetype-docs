@@ -27,14 +27,14 @@ export const divergent = {
     ],
     related: [
       { keyword: 'require', link: '/docs/reference/declarations#require' },
-      { keyword: 'failif', link: '/docs/reference/declarations#failif' },
-      { keyword: 'dorequire', link: '/docs/reference/instructions#dorequire' },
-      { keyword: 'dofailif', link: '/docs/reference/instructions#dofailif' },
+      { keyword: 'fail if', link: '/docs/reference/declarations#fail-if' },
+      { keyword: 'do_require', link: '/docs/reference/instructions#do_require' },
+      { keyword: 'do_fail_if', link: '/docs/reference/instructions#do_fail_if' },
     ]
   },
-  dorequire: {
+  do_require: {
     desc: <DoRequireDesc/>,
-    sig: 'dorequire(t, e)',
+    sig: 'do_require(t, e)',
     parameters: [
       {
         type: 'bool',
@@ -62,9 +62,9 @@ export const divergent = {
       { keyword: 'if', link: '/docs/reference/instructions#if' },
     ]
   },
-  dofailif: {
+  do_fail_if: {
     desc: <DoFailifDesc/>,
-    sig: 'dofailif(t, e)',
+    sig: 'do_fail_if(t, e)',
     parameters: [
       {
         type: 'bool',
@@ -87,7 +87,7 @@ export const divergent = {
       }
     ],
     related: [
-      { keyword: 'failif', link: '/docs/reference/declarations#failif' },
+      { keyword: 'fail if', link: '/docs/reference/declarations#fail-if' },
       { keyword: 'fail', link: '/docs/reference/instructions#faile' },
       { keyword: 'if', link: '/docs/reference/instructions#if' },
     ]

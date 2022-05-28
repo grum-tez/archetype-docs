@@ -18,12 +18,12 @@ const pos_balance = ledger[caller] ? the.amount > 0 : false;
 It is equivalent to:
 ```archetype
 const pos_balance =
-  match ledger.getopt(caller) with
+  match ledger.get(caller) with
   | some av -> av.amount > 0
   | none    -> false
   end
 ```
 
 :::info
-When accessing several fields' values of the same asset, it is better gas-wise to retrieve first the [`asset_value`](/docs/reference/types#asset_value<A>) locally with [`[]`](/docs/reference/expressions/asset#ak--asset_keya) or [`getopt`](/docs/reference/expressions/asset#agetoptk--asset_keya) operators, and then access a field value with the `.` operator.
+When accessing several fields' values of the same asset, it is better gas-wise to retrieve first the [`asset_value`](/docs/reference/types#asset_value<A>) locally with [`[]`](/docs/reference/expressions/asset#ak--asset_keya) or [`get`](/docs/reference/expressions/asset#agetk--asset_keya) operators, and then access a field value with the `.` operator.
 :::

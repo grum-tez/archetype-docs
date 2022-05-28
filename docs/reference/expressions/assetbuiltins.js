@@ -9,8 +9,8 @@ import SortDesc from "../../../src/components/desc/sort_desc.md"
 import SumDesc from "../../../src/components/desc/sum_desc.md"
 
 export const assetbuiltins = {
-  getopt: {
-    sig: 'getopt',
+  get: {
+    sig: 'get',
     desc: <GetoptDesc />,
     appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map' ],
     parameters: [
@@ -28,7 +28,7 @@ export const assetbuiltins = {
     fails : [],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
-      { keyword: 'getopt', link: '/docs/reference/expressions/builtins#getopt(m%20:%20(big_)?map<K,%20V>,%20k%20:%20K)' }
+      { keyword: 'get', link: '/docs/reference/expressions/builtins#get(m%20:%20(big_)?map<K,%20V>,%20k%20:%20K)' }
     ]
   },
   get: {

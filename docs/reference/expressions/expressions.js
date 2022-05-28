@@ -10,7 +10,7 @@ export const expressions = {
     { label : 'let in', link : link_prefix + '/declaration' }
   ],
   asset: [
-    { label : 'getopt'      , link : link_prefix + '/asset#agetoptk--asset_keya', desc : 'Gets an option of asset record value from key' },
+    { label : 'get'      , link : link_prefix + '/asset#agetk--asset_keya', desc : 'Gets an option of asset record value from key' },
     { label : '[]'      , link : link_prefix + '/asset#ak--asset_keya', desc : 'Gets asset record value from key' },
     { label : '[].?'      , link : link_prefix + '/asset#ak--asset_keyaf', desc : 'Gets an option of asset field from key' },
     { label : '[]?:'      , link : link_prefix + '/asset#ak--asset_keya--e--d', desc : 'Evaluates an expression on asset' },

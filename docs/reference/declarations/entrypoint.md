@@ -298,7 +298,7 @@ entry pay() {
 <Grid container style={{ marginTop: '18px' }}>
 <Grid xs={12} sm={12} md={2.5}>
 
-### `failif`
+### `fail if`
 
 </Grid>
 <Grid xs={12} sm={12} md={9.5}>
@@ -309,7 +309,7 @@ For example, the code below is equivalent to the code in the above section:
 
 ```archetype
 entry pay() {
-  failif {
+  fail if {
     f1: transferred <= amount;
     f2: now >= deadline with "PAYMENT_PERIOD_IS_OVER"
   }

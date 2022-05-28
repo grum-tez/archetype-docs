@@ -72,9 +72,9 @@ import H3 from "@site/src/components/H3.js";
 
 ## `D E F`
 
-<H3 page="builtins" value={builtins['date_from_timestamp'].sig} />
+<H3 page="builtins" value={builtins['timestamp_to_date'].sig} />
 
-<Builtin data={builtins['date_from_timestamp']} />
+<Builtin data={builtins['timestamp_to_date']} />
 
 <H3 page="builtins" value={builtins['exec_lambda'].sig} />
 
@@ -90,9 +90,9 @@ import H3 from "@site/src/components/H3.js";
 
 ## `G H I`
 
-<H3 page="builtins" value={builtins['getopt'].sig} />
+<H3 page="builtins" value={builtins['get'].sig} />
 
-<Builtin data={builtins['getopt']} />
+<Builtin data={builtins['get']} />
 
 <H3 page="builtins" value={builtins['hash_key'].sig} />
 

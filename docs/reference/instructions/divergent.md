@@ -15,11 +15,11 @@ The only effect of a failing injected operation is that the operation fee is spe
 
 <Builtin data={divergent['fail']} />
 
-### `dorequire(t, e)`
+### `do_require(t, e)`
 
-<Builtin data={divergent['dorequire']} />
+<Builtin data={divergent['do_require']} />
 
-### `dofailif(t, e)`
+### `do_fail_if(t, e)`
 
-<Builtin data={divergent['dofailif']} />
+<Builtin data={divergent['do_fail_if']} />
 
