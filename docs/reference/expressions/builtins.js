@@ -6,6 +6,7 @@ import IsSomeDesc from "../../../src/components/desc/is_some_desc.md"
 import OptGetDesc from "../../../src/components/desc/opt_get_desc.md"
 import RequireSomeDesc from "../../../src/components/desc/require_some_desc.md"
 import ToNatDesc from "../../../src/components/desc/to_nat_desc.md"
+import AbsDesc from "../../../src/components/desc/abs_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -13,8 +14,8 @@ export const to_link = s => s.replace(/ /g, '%20')
 
 export const builtins = {
   // entrypoint
-  callview: {
-    sig: 'callview<T>(a : address, id : string, arg : X)',
+  call_view: {
+    sig: 'call_view<T>(a : address, id : string, arg : X)',
     desc: <div>Calls an on-chain view.</div>,
     parameters: [
       {
@@ -671,41 +672,25 @@ export const builtins = {
     ]
   },
   abs: {
-    sig: 'abs(i : int)',
-    desc: <div>[NEW] Converts int to nat.</div>,
+    sig: 'abs(t : T)',
+    desc: <AbsDesc />,
     parameters: [
       {
-        type: 'int',
-        alias: 'i',
-        desc: <div>Integer to convert</div>
+        type: 'T',
+        alias: 't',
+        desc: <div>Value of type <code>int</code> or <code>rational</code></div>
       }
     ],
     returns: {
-      type: 'nat',
-      desc: <div>Nat converted</div>
+      type: 'R',
+      withLink: false,
+      desc: <div>Absolute value of <code>t</code></div>
     },
     michelson: "ABS",
     michelson_ref_url: michelson_ref_base_url + '#instr-ABS',
     related: [
       { keyword: 'Numbers', link: '/docs/language-basics/number' },
-    ]
-  },
-  absrat: {
-    sig: 'abs(r : rational)',
-    desc: <div>[NEW] Returns absolute value of <code>r</code></div>,
-    parameters: [
-      {
-        type: 'rational',
-        alias: 'r',
-        desc: <div>Rational to make absolute value</div>
-      }
-    ],
-    returns: {
-      type: 'rational',
-      desc: <div>Absolute value</div>
-    },
-    related: [
-      { keyword: 'Numbers', link: '/docs/language-basics/number#rational' },
+      { keyword: 'tonat', link: '/docs/reference/expressions/builtins#to_nat(i%20:%20int)' },
     ]
   },
   concat: {

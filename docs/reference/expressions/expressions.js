@@ -6,6 +6,9 @@ export const expressions = {
     { label : 'match with'  , link : link_prefix + '/controls#match-with' },
     { label : ': ?'  , link : link_prefix + '/controls#a--b--c' },
   ],
+  declaration: [
+    { label : 'let in', link : link_prefix + '/declaration' }
+  ],
   asset: [
     { label : 'getopt'      , link : link_prefix + '/asset#agetoptk--asset_keya', desc : 'Gets an option of asset record value from key' },
     { label : '[]'      , link : link_prefix + '/asset#ak--asset_keya', desc : 'Gets asset record value from key' },

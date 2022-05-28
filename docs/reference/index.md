@@ -96,6 +96,8 @@ This is the Archetype language reference.
   })
 } xs={4}/>
 
-<EagleEyeView title="Controls" data={expressions.controls} xs={4}/>
+<EagleEyeView title="Control" data={expressions.controls} xs={4}/>
+
+<EagleEyeView title="Declaration" data={expressions.declaration} xs={4} />
 
 <EagleEyeView title="Asset" data={expressions.asset} xs={4}/>

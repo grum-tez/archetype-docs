@@ -18,10 +18,6 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['abs']} />
 
-<H3 page="builtins" value={builtins['absrat'].sig} />
-
-<Builtin data={builtins['absrat']} />
-
 <H3 page="builtins" value={builtins['add'].sig} />
 
 <Builtin data={builtins['add']} />
@@ -38,9 +34,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['blake2b']} />
 
-<H3 page="builtins" value={builtins['callview'].sig}/>
+<H3 page="builtins" value={builtins['call_view'].sig}/>
 
-<Builtin data={builtins['callview']} />
+<Builtin data={builtins['call_view']} />
 
 <H3 page="builtins" value={builtins['ceil'].sig} />
 
