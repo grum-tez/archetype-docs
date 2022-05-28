@@ -61,9 +61,9 @@ export const builtins = {
         desc: <div>The amount of tez sent with the operation</div>
       },
       {
-        type: 'contract',
+        type: 'contract<T>',
         alias: 'c',
-        desc: <div>The entrypoint typed T</div>
+        desc: <div>Entrypoint with argument of type <code>T</code> (as returned by <code>get_entrypoint</code>)</div>
       },
       {
         type: 'T',
