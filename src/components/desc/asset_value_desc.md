@@ -17,7 +17,7 @@ record ledger_asset_value {
 }
 ```
 
-An asset record value is returned by the [`[]`](/docs/reference/expressions/asset#ak--asset_keya) asset method (and [`getopt`](/docs/reference/expressions/asset#agetoptk--asset_keya)). As for any record, fields are accessed normally with `.` operator:
+An asset record value is returned by the [`[]`](/docs/reference/expressions/asset#ak--asset_keya) asset method (and [`get`](/docs/reference/expressions/asset#agetk--asset_keya)). As for any record, fields are accessed normally with `.` operator:
 ```archetype
 const v : asset_value<result> = result["#sub001"];
 const s = v.score;
