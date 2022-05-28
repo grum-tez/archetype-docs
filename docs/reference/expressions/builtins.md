@@ -226,9 +226,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['sapling_verify_update']} />
 
-<H3 page="builtins" value={builtins['setdelegate'].sig} />
+<H3 page="builtins" value={builtins['set_delegate'].sig} />
 
-<Builtin data={builtins['setdelegate']} />
+<Builtin data={builtins['set_delegate']} />
 
 <H3 page="builtins" value={builtins['sha256'].sig} />
 
@@ -254,21 +254,17 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['split_ticket']} />
 
-<H3 page="builtins" value={builtins['submutez'].sig} />
+<H3 page="builtins" value={builtins['sub_mutez'].sig} />
 
-<Builtin data={builtins['submutez']} />
+<Builtin data={builtins['sub_mutez']} />
 
-<H3 page="builtins" value={builtins['subnat'].sig} />
+<H3 page="builtins" value={builtins['sub_nat'].sig} />
 
-<Builtin data={builtins['subnat']} />
+<Builtin data={builtins['sub_nat']} />
 
-<H3 page="builtins" value={builtins['tonat'].sig} />
+<H3 page="builtins" value={builtins['nat_to_string'].sig} />
 
-<Builtin data={builtins['tonat']} />
-
-<H3 page="builtins" value={builtins['tostring'].sig} />
-
-<Builtin data={builtins['tostring']} />
+<Builtin data={builtins['nat_to_string']} />
 
 <H3 page="builtins" value={builtins['unpack'].sig} />
 

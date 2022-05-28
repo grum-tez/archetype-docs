@@ -201,7 +201,7 @@ export const builtins = {
   },
 
   // arithmetic function
-  subnat: {
+  sub_nat: {
     sig: 'sub_nat(a : nat, b : nat)',
     desc: <div>[NEW] Subtracts <code>a</code> to <code>b</code> and returns a nat value.</div>,
     parameters: [
@@ -231,7 +231,7 @@ export const builtins = {
     ]
   },
 
-  submutez: {
+  sub_mutez: {
     sig: 'sub_mutez(a : tez, b : tez)',
     desc: <div>[NEW] Subtracts <code>a</code> to <code>b</code> and returns an option tez value.</div>,
     parameters: [
@@ -1055,7 +1055,7 @@ export const builtins = {
       { keyword: 'TODO', link: '/docs/language-basics/TODO' },
     ]
   },
-  setdelegate: {
+  set_delegate: {
     sig: 'set_delegate(opkh : option<key_hash>)',
     desc: <div>[NEW] Sets delegate account for current contract.</div>,
     parameters: [
