@@ -54,7 +54,7 @@ vehicle.select(the.nbdoors = 3).clear()
 
 The view itself is left unchanged as a view is a *read-only* list of references to assets.
 
-Note that the above instruction is equivalent to a [`removeif`](/docs/reference/instructions#aremoveifp) instruction.
+Note that the above instruction is equivalent to a [`remove_if`](/docs/reference/instructions#aremove_ifp) instruction.
 
 :::info
 `clear` is not available on view if referenced asset is declared as `big_map`.

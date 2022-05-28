@@ -19,22 +19,22 @@ import Builtin from '@site/src/components/Builtin.js';
 
 <Builtin data={assetinstructions['update']} />
 
-### `A.addupdate(k, { u })`
+### `A.add_update(k, { u })`
 
-<Builtin data={assetinstructions['addupdate']} />
+<Builtin data={assetinstructions['add_update']} />
 
 ### `A.remove(k)`
 
 <Builtin data={assetinstructions['remove']} />
 
-### `A.removeif(p)`
+### `A.remove_if(p)`
 
-<Builtin data={assetinstructions['removeif']} />
+<Builtin data={assetinstructions['remove_if']} />
 
 ### `A.clear()`
 
 <Builtin data={assetinstructions['clear']} />
 
-### `A.removeclear()`
+### `A.remove_clear()`
 
-<Builtin data={assetinstructions['removeclear']} />
+<Builtin data={assetinstructions['remove_clear']} />

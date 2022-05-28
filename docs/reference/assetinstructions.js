@@ -87,10 +87,10 @@ export const assetinstructions = {
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
       { keyword: 'Assignment', link: '/docs/reference/instructions#assignment' },
-      { keyword: 'addupdate', link: '/docs/reference/instructions#aaddupdatek--u-' },
+      { keyword: 'add_update', link: '/docs/reference/instructions#aadd_updatek--u-' },
     ]
   },
-  addupdate : {
+  add_update : {
     desc: <AssetAddUpdateDesc />,
     appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map', 'partition' ],
     parameters: [
@@ -142,7 +142,7 @@ export const assetinstructions = {
       { keyword: 'add', link: '/docs/reference/instructions#aadda' },
     ]
   },
-  removeif : {
+  remove_if : {
     desc: <AssetRemoveIfDesc/>,
     appliesto: ['asset', 'aggregate', 'partition'],
     parameters: [
@@ -169,7 +169,7 @@ export const assetinstructions = {
       { keyword: 'select', link: '/docs/reference/expressions/asset#aselectp' },
     ]
   },
-  removeclear: {
+  remove_clear: {
     desc: <AssetRemoveClearDesc />,
     appliesto: [ 'aggregate' ],
     parameters: [],

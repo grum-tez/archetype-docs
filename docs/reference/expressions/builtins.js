@@ -5,7 +5,6 @@ import IsNoneDesc from "../../../src/components/desc/is_none_desc.md"
 import IsSomeDesc from "../../../src/components/desc/is_some_desc.md"
 import OptGetDesc from "../../../src/components/desc/opt_get_desc.md"
 import RequireSomeDesc from "../../../src/components/desc/require_some_desc.md"
-import ToNatDesc from "../../../src/components/desc/to_nat_desc.md"
 import AbsDesc from "../../../src/components/desc/abs_desc.md"
 import ApplyLambdaDesc from "../../../src/components/desc/applylambda_desc.md"
 import ExecLambdaDesc from "../../../src/components/desc/execlambda_desc.md"
@@ -52,8 +51,8 @@ export const builtins = {
   },
 
   // operation
-  mkoperation: {
-    sig: 'mkoperation(a : tez, c : contract<T>, arg : T)',
+  make_operation: {
+    sig: 'make_operation(a : tez, c : contract<T>, arg : T)',
     desc: <div>Makes an operation.</div>,
     parameters: [
       {
@@ -832,8 +831,8 @@ export const builtins = {
       { keyword: 'Containers', link: '/docs/language-basics/container' },
     ]
   },
-  isnone: {
-    sig: 'isnone(o : option<T>)',
+  is_none: {
+    sig: 'is_none(o : option<T>)',
     desc: <IsNoneDesc />,
     parameters: [
       {
@@ -855,8 +854,8 @@ export const builtins = {
       { keyword: 'Option', link: '/docs/language-basics/composite#option' },
     ]
   },
-  issome: {
-    sig: 'issome(o : option<T>)',
+  is_some: {
+    sig: 'is_some(o : option<T>)',
     desc: <IsSomeDesc />,
     parameters: [
       {
@@ -878,8 +877,8 @@ export const builtins = {
       { keyword: 'Option', link: '/docs/language-basics/composite#option' },
     ]
   },
-  isnat: {
-    sig: 'isnat(i : int)',
+  int_to_nat: {
+    sig: 'int_to_nat(i : int)',
     desc: <div>[NEW] Converts an int to an optional nat</div>,
     parameters: [
       {
@@ -898,32 +897,8 @@ export const builtins = {
       { keyword: 'Numbers', link: '/docs/language-basics/number' },
     ]
   },
-  tonat: {
-    sig: 'to_nat(i : int)',
-    desc: <ToNatDesc />,
-    parameters: [
-      {
-        type: 'int',
-        alias: 'i',
-        desc: <div>Int to convert</div>
-      }
-    ],
-    returns: {
-      type: 'nat',
-      desc: <div>Nat converted</div>
-    },
-    fails: [
-      {
-        keyword: '"NEG_VALUE"',
-        desc: <div>when value <code>i</code> is negative</div>
-      }
-    ],
-    related: [
-      { keyword: 'Numbers', link: '/docs/language-basics/number' },
-    ]
-  },
-  opt_get: {
-    sig: 'opt_get(o : option<T>)',
+  get_some: {
+    sig: 'get_some(o : option<T>)',
     desc: <OptGetDesc />,
     parameters: [
       {
@@ -945,7 +920,7 @@ export const builtins = {
     ],
     related: [
       { keyword: 'Option', link: '/docs/language-basics/composite' },
-      { keyword: 'issome', link: '#issome' },
+      { keyword: 'is_some', link: '#is_some' },
     ]
   },
   requiresome: {
@@ -976,7 +951,7 @@ export const builtins = {
     ],
     related: [
       { keyword: 'Option', link: '/docs/language-basics/composite' },
-      { keyword: 'issome', link: '#issome' },
+      { keyword: 'is_some', link: '#is_some' },
     ]
   },
   floor: {
@@ -1015,9 +990,9 @@ export const builtins = {
       { keyword: 'Numbers', link: '/docs/language-basics/number#rational' },
     ]
   },
-  tostring: {
-    sig: 'to_string(n : nat)',
-    desc: <div>[NEW] Converts a nat to a string</div>,
+  nat_to_string: {
+    sig: 'nat_to_string(n : nat)',
+    desc: <div>Converts a natural to a string.</div>,
     parameters: [
       {
         type: 'nat',
@@ -1103,8 +1078,8 @@ export const builtins = {
       { keyword: 'Protocol', link: '/docs/language-basics/protocol' },
     ]
   },
-  implicit_account: {
-    sig: 'implicit_account(pkh : key_hash)',
+  key_hash_to_contract_unit: {
+    sig: 'key_hash_to_contract_unit(pkh : key_hash)',
     desc: <div>Converts key_hash to contract.</div>,
     parameters: [
       {
@@ -1169,8 +1144,8 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  key_address: {
-    sig: 'key_address(k : key)',
+  key_to_address: {
+    sig: 'key_to_address(k : key)',
     desc: <div>Converts a key to an address</div>,
     parameters: [
       {
@@ -1289,9 +1264,9 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  hash_key: {
-    sig: 'hash_key(k : key)',
-    desc: <div>Converts key to key_hash.</div>,
+  key_to_hash_key: {
+    sig: 'key_to_hash_key(k : key)',
+    desc: <div>Converts a key to key_hash.</div>,
     parameters: [
       {
         type: 'key',

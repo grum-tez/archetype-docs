@@ -94,25 +94,25 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['get']} />
 
-<H3 page="builtins" value={builtins['hash_key'].sig} />
+<H3 page="builtins" value={builtins['key_to_hash_key'].sig} />
 
-<Builtin data={builtins['hash_key']} />
+<Builtin data={builtins['key_to_hash_key']} />
 
-<H3 page="builtins" value={builtins['implicit_account'].sig} />
+<H3 page="builtins" value={builtins['key_hash_to_contract_unit'].sig} />
 
-<Builtin data={builtins['implicit_account']} />
+<Builtin data={builtins['key_hash_to_contract_unit']} />
 
-<H3 page="builtins" value={builtins['isnat'].sig} />
+<H3 page="builtins" value={builtins['int_to_nat'].sig} />
 
-<Builtin data={builtins['isnat']} />
+<Builtin data={builtins['int_to_nat']} />
 
-<H3 page="builtins" value={builtins['isnone'].sig} />
+<H3 page="builtins" value={builtins['is_none'].sig} />
 
-<Builtin data={builtins['isnone']} />
+<Builtin data={builtins['is_none']} />
 
-<H3 page="builtins" value={builtins['issome'].sig} />
+<H3 page="builtins" value={builtins['is_some'].sig} />
 
-<Builtin data={builtins['issome']} />
+<Builtin data={builtins['is_some']} />
 
 ## `J K L`
 
@@ -124,9 +124,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['keccak']} />
 
-<H3 page="builtins" value={builtins['key_address'].sig} />
+<H3 page="builtins" value={builtins['key_to_address'].sig} />
 
-<Builtin data={builtins['key_address']} />
+<Builtin data={builtins['key_to_address']} />
 
 <H3 page="builtins" value={builtins['left'].sig} />
 
@@ -154,9 +154,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['min']} />
 
-<H3 page="builtins" value={builtins['mkoperation'].sig} />
+<H3 page="builtins" value={builtins['make_operation'].sig} />
 
-<Builtin data={builtins['mkoperation']} />
+<Builtin data={builtins['make_operation']} />
 
 <H3 page="builtins" value={builtins['mutez_to_nat'].sig} />
 
@@ -174,9 +174,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['open_chest']} />
 
-<H3 page="builtins" value={builtins['opt_get'].sig} />
+<H3 page="builtins" value={builtins['get_some'].sig} />
 
-<Builtin data={builtins['opt_get']} />
+<Builtin data={builtins['get_some']} />
 
 ## `P Q R`
 

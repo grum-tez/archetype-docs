@@ -65,7 +65,7 @@ transfer 0tz to entry self.exec(4,5)
 
 ### Low level instruction
 
-The `transfer` instruction is pre-compiled to the low level instruction [`mkoperation`](/docs/reference/expressions/builtins#mkoperation(a%20:%20tez,%20c%20:%20contract<T>,%20arg%20:%20T)).
+The `transfer` instruction is pre-compiled to the low level instruction [`make_operation`](/docs/reference/expressions/builtins#make_operation(a%20:%20tez,%20c%20:%20contract<T>,%20arg%20:%20T)).
 
 The following instruction:
 ```archetype
@@ -75,7 +75,7 @@ transfer a to c call e<T>(x)
 is equivalent to:
 ```archetype
 const e = get_entrypoint<T>("%e", c) ? the : fail("ENTRY_NOT_FOUND");
-const o = mkoperation(a, e, x);
+const o = make_operation(a, e, x);
 operations := reverse(prepend(reverse(operations), o))
 ```
 

@@ -2,7 +2,7 @@ Removes all references and referenced assets from an [aggregate](/docs/reference
 
 For example, the following instruction removes all `vehicle` assets referenced by driver `caller` :
 ```archetype
-driver[caller].drives.removeclear()
+driver[caller].drives.remove_clear()
 ```
 
 The effect of the above instruction is to:
