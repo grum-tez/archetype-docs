@@ -7,14 +7,13 @@ tags: [and, or, if, new feature]
 
 We present a change in version `1.2.17` of the evaluation process of boolean operators [`and`](/docs/reference/expressions/operators#a-and-b) and [`or`](/docs/reference/expressions/operators#a-or-b) in test expression of the [`if`](/docs/reference/instructions#if) instruction and expression.
 
-<!--truncate-->
-
 Consider the following `if` instruction:
 ```archetype
 if a and b then
  /* */
 end
 ```
+<!--truncate-->
 
 Before version `1.2.7`, both expressions `a` and `b` were evaluated, meaning that if `b` is a [failing](/docs/reference/instructions#faile) expression, the evaluation fails even if `a` is true.
 

@@ -137,7 +137,7 @@ const examples = [
 
 entry pay () {
   const penalty = now > deadline ? 7% * (now - deadline) / 1d : 0;
-  transfer (1 + penalty) * cost to holder
+  transfer ((1 + penalty) * cost) to holder
 }`,
     comment : <Comment0 />
   },

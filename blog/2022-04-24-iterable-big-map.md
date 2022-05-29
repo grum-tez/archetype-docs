@@ -12,15 +12,13 @@ We present a new type of map called [`iterable_big_map`](/docs/reference/types#i
 
 This feature was suggested by [Nomadic Labs](https://www.nomadic-labs.com/). Thank you to [Lucas Feli](https://www.linkedin.com/in/lucas-felli-815653111/) and [Charles Delhinger](https://www.linkedin.com/in/charles-dehlinger-a34699166/) for the algorithm.
 
-<!--truncate-->
-
-
 ## Example
 
 Consider the following declaration of an iterable big map between a `nat` key and a `bytes` value:
 ```archetype
 variable ibm : iterable_big_map<nat, bytes> = []
 ```
+<!--truncate-->
 
 While `ibm` has the scalability of a big map (in terms of number of entries), it can also be iterated with the `for` control instruction:
 ```archetype
