@@ -71,5 +71,7 @@ entry exec2(x : nat, y : nat) {
 entry calling() {
   const e = require_entrypoint<nat *nat>("%exec", selfaddress, "ENTRY_NOT_FOUND");
   const o = mkoperation(0tz, e, (5,3));
-  operations := prepend(operations, o)
+  operations := prepend(operations, o);
+  const m : map<nat,string> = [ (0,"abc"); (1, "def") ];
+  var t = map(some(5), x -> x +1);
 }

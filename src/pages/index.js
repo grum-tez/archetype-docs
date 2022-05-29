@@ -125,9 +125,9 @@ const LeftPannel = () => {
 }
 
 const designs = [
-  { title : 'Easy Business Logic', tagline: 'Rational, date and duration types make business logic easy to express.', link: '/docs/language-basics/number' },
-  { title : 'Explicit Execution Conditions', tagline: 'Execution conditions for the contract to execute are easy to read and check.', link: '/docs/declarations/entrypoint' },
-  { title : 'State Machine Design', tagline: 'Design the contract as a state machine, with guard conditions on transitions.', link: '/docs/state-machine/state' },
+  { title : 'Easy Business Logic', tagline: 'Rational, date and duration types make business logic easy to express.', link: '/docs/language-basics/types' },
+  { title : 'Explicit Execution Conditions', tagline: 'Execution conditions for the contract to execute are easy to read and check.', link: '/docs/reference/declarations/entrypoint#sections' },
+  { title : 'State Machine Design', tagline: 'Design the contract as a state machine, with guard conditions on transitions.', link: '/docs/statemachine' },
   { title : 'Rich Storage API', tagline: 'Rich API to access and manipulate collections of records.', link: '/docs/asset' },
 ]
 
@@ -136,11 +136,8 @@ const examples = [
     code : `archetype pay_with_penalty(holder : address, cost : tez, deadline : date)
 
 entry pay () {
-  var penalty =
-    if now > deadline then
-      (7% * (now - deadline) / 1d) * cost
-    else 0tz;
-  transfer (cost + penalty) to holder
+  const penalty = now > deadline ? 7% * (now - deadline) / 1d : 0;
+  transfer (1 + penalty) * cost to holder
 }`,
     comment : <Comment0 />
   },
@@ -180,15 +177,16 @@ transition terminate () {
     code: `archetype asset_demo
 
 asset vehicle {
-  vin          : string;
-  nbrepairs    : nat  = 0;
-  dateofrepair : date = now;
+  vin         : string;
+  nb_repairs  : nat  = 0;
+  last_repair : date = now;
 }
 
 entry repair_oldest () {
-  for v in vehicle.sort(dateofrepair).select(the.nbrepairs = 0).head(3) do
-    vehicle.update(v, { nbrepairs += 1; dateofrepair = now })
-  done
+  vehicle.select(the.nb_repairs = 0).sort(last_repair).head(3).update_all({
+    nbrepairs   = 1;
+    last_repair = now
+  })
 }`,
     comment: <Comment4 />
   }
@@ -260,7 +258,7 @@ const RightPannel = () => {
         <Grid item style={{ width: '100%', paddingLeft: '20px' }}>
           <CodeBlock className="language-archetype">{examples[selected].code}</CodeBlock>
         </Grid>
-        <Grid item className={styles.designtagline} style={{ paddingLeft: 'calc(3% + 12px)', paddingRight: '5%' }}>
+        <Grid item className={styles.designtagline} style={{ paddingLeft: 'calc(3% + 12px)', paddingRight: '5%', width: '100%' }}>
           {examples[selected].comment}
         </Grid>
       </Grid>
