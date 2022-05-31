@@ -33,3 +33,7 @@ List of conversion functions
 ### Comparable
 
 All types are comparable except:
+
+### Packable
+
+All type are packable except:

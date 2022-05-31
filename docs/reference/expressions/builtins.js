@@ -13,6 +13,8 @@ import FoldDesc from "../../../src/components/desc/fold_desc.md"
 import LeftDesc from "../../../src/components/desc/left_desc.md"
 import RightDesc from "../../../src/components/desc/right_desc.md"
 import MapDesc from "../../../src/components/desc/map_desc.md"
+import MutezNatDesc from "../../../src/components/desc/mutez_nat_desc.md"
+import UnpackDesc from "../../../src/components/desc/unpack_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -319,7 +321,7 @@ export const builtins = {
   },
   none: {
     sig: 'none<T>',
-    desc: <div>[NEW] Returns none value typed option of T, which may be optional when it can be inferred.</div>,
+    desc: <div>Optional <code>none</code> value for type <code>option&lt;T&gt;</code>.</div>,
     parameters: [],
     returns: {
       type: 'option<T>',
@@ -329,26 +331,30 @@ export const builtins = {
     michelson_ref_url: michelson_ref_base_url + '#instr-NONE',
     related: [
       { keyword: 'Option', link: '/docs/language-basics/composite#option' },
+      { keyword: 'some', link: '/docs/reference/expressions/builtins#some(v%20:%20T)' },
+      { keyword: 'math with', link: '/docs/reference/instructions/control#match-with' },
     ]
   },
   some: {
     sig: 'some(v : T)',
-    desc: <div>[NEW] Returns some value.</div>,
+    desc: <div>Optional <code>some</code> value for type <code>option&lt;T&gt;</code>.</div>,
     parameters: [
       {
         type: 'T',
         alias: 'v',
-        desc: <div>Value to convert</div>
+        desc: <div>Some value</div>
       }
     ],
     returns: {
       type: 'option<T>',
-      desc: <div>Value of some(v)</div>
+      desc: <div>Optional value of <code>v</code></div>
     },
     michelson: "SOME",
     michelson_ref_url: michelson_ref_base_url + '#instr-SOME',
     related: [
       { keyword: 'Option', link: '/docs/language-basics/composite#option' },
+      { keyword: 'none', link: '/docs/reference/expressions/builtins#none<T>' },
+      { keyword: 'math with', link: '/docs/reference/instructions/control#match-with' },
     ]
   },
 
@@ -409,31 +415,32 @@ export const builtins = {
   },
   nth: {
     sig: 'nth(l : list<T>, n : nat)',
-    desc: <div>[NEW] Returns the nth <code>n</code> of list <code>l</code>.</div>,
+    desc: <div>Returns the <code>n</code>th element of list <code>l</code>.</div>,
     parameters: [
       {
         type: 'list<T>',
         alias: 'l',
-        desc: <div>List</div>
+        desc: <div>List of elements typed <code>T</code></div>
       },
       {
         type: 'nat',
         alias: 'n',
-        desc: <div>Nth</div>
+        desc: <div>Position in range <code>0</code> to <code>length(l)-1</code></div>
       }
     ],
     returns: {
       type: 'T',
-      desc: <div>Item located at the nth</div>
+      desc: <div>Element at position <code>n</code></div>
     },
     fails: [
       {
         keyword: '"EmptyList"',
-        desc: <div>Out of Bound</div>
+        desc: <div>"Out of Bound" when <code>n</code> is greater than <code>length(l)-1</code></div>
       }
     ],
     related: [
       { keyword: 'List', link: '/docs/language-basics/container#list' },
+      { keyword: 'length', link: '/docs/reference/expressions/builtins#length(o%20:%20T)' },
     ]
   },
   reverse: {
@@ -939,32 +946,34 @@ export const builtins = {
     },
     related: [
       { keyword: 'Numbers', link: '/docs/language-basics/number' },
-      { keyword: 'String', link: '/docs/language-basics/string' },
+      { keyword: 'nat', link: '/docs/reference/types#nat' },
+      { keyword: 'string', link: '/docs/reference/types#string' },
     ]
   },
   pack: {
     sig: 'pack(o : T)',
-    desc: <div>[NEW] Packs data</div>,
+    desc: <div>Serializes any value of <Link to="/docs/language-basics/types#packable">packable</Link> type to a <Link to="/docs/reference/types#bytes"><code>bytes</code></Link> representation.</div>,
     parameters: [
       {
         type: 'T',
         alias: 'o',
-        desc: <div>Object to be packed, <code>T</code> must be packable</div>
+        desc: <div>Value of <Link to="/docs/language-basics/types#packable">packable</Link> type <code>T</code></div>
       }
     ],
     returns: {
       type: 'bytes',
-      desc: <div>Bytes packed</div>
+      desc: <div>Packed value</div>
     },
     michelson: "PACK",
     michelson_ref_url: michelson_ref_base_url + '#instr-PACK',
     related: [
-      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+      { keyword: 'bytes', link: '/docs/reference/types#bytes' },
+      { keyword: 'unpack', link: '/docs/reference/expressions/builtins#unpack<T>(b%20:%20bytes)' },
     ]
   },
   unpack: {
     sig: 'unpack<T>(b : bytes)',
-    desc: <div>[NEW] Unpack data from bytes value.</div>,
+    desc: <UnpackDesc />,
     parameters: [
       {
         type: 'bytes',
@@ -975,7 +984,6 @@ export const builtins = {
     returns: {
       type: 'option<T>',
       desc: <div>
-        <code>T</code> must be packable
         <ul>
           <li><code>none</code> when <code>b</code> is unpackable of type <code>T</code></li>
           <li><code>some(v)</code> <code>v</code> being the value returned by unpacking process </li>
@@ -985,7 +993,8 @@ export const builtins = {
     michelson: "UNPACK",
     michelson_ref_url: michelson_ref_base_url + '#instr-UNPACK',
     related: [
-      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+      { keyword: 'bytes', link: '/docs/reference/types#bytes' },
+      { keyword: 'pack', link: '/docs/reference/expressions/builtins#pack(o%20:%20T)' },
     ]
   },
   set_delegate: {
@@ -1504,7 +1513,7 @@ export const builtins = {
   },
   mutez_to_nat: {
     sig: 'mutez_to_nat(v : tez)',
-    desc: <div>Convert tez to nat in mutez</div>,
+    desc: <MutezNatDesc />,
     parameters: [
       {
         type: 'tez',
@@ -1517,7 +1526,8 @@ export const builtins = {
       desc: <div>The amount of mutez</div>
     },
     related: [
-      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+      { keyword: 'tez', link: '/docs/reference/types#tez' },
+      { keyword: 'nat', link: '/docs/reference/types#nat' },
     ]
   },
   get_entrypoint: {
