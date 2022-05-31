@@ -47,12 +47,13 @@ export const instructions = {
     assets: [
       { label : 'add', link : link_prefix + '/asset#aadda', desc : 'Adds a new asset in collection' },
       { label : 'put', link : link_prefix + '/asset#aputa', desc : 'Adds or replace an asset in collection' },
-      { label : 'update', link : link_prefix + '/asset#aupdatek--u-', desc : 'Updates one or several fields of an asset in collection ' },
+      { label : 'update', link : link_prefix + '/asset#aupdatek--u-', desc : 'Updates one or several fields of an asset in collection' },
+      { label : 'update_all', link : link_prefix + '/asset#aupdate_allk--u-', desc : 'Updates one or several fields of an asset collection or view' },
       { label : 'add_update', link : link_prefix + '/asset#aadd_updatek--u-', desc : 'Adds a new asset or updates an asset in collection' },
-      { label : 'remove', link : link_prefix + '/asset#aremovek', desc : 'Removes asset from collection' },
-      { label : 'remove_if', link : link_prefix + '/asset#aremove_ifp', desc : 'Removes assets that verify a predicate' },
-      { label : 'clear', link : link_prefix + '/asset#aclear', desc : 'Removes all assets from collection' },
-      { label : 'remove_clear', link : link_prefix + '/asset#aremove_clear', desc : 'Removes all references and referenced assets from aggregate field' },
+      { label : 'remove', link : link_prefix + '/asset#aremovek', desc : 'Removes element from collection, partition or aggregate' },
+      { label : 'remove_if', link : link_prefix + '/asset#aremove_ifp', desc : 'Removes referenced assets that verify a predicate' },
+      { label : 'remove_all', link : link_prefix + '/asset#aremove_all', desc : 'Removes all assets from collection' },
+      { label : 'clear', link : link_prefix + '/asset#aclear', desc : 'Removes all referenced assets from an asset view' },
     ],
     blockchain: [
       { label : 'transfer', link : link_prefix + '/operation#transfer' },

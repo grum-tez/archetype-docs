@@ -23,3 +23,13 @@ Bytes
 Tez
 
 Address
+
+List of all available types [here](/docs/reference/#types).
+
+### Conversion
+
+List of conversion functions
+
+### Comparable
+
+All types are comparable except:

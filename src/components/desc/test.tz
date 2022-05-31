@@ -1,192 +1,140 @@
-# (Pair 0 (Pair { } (Pair 0 (Pair { } (Pair { Elt "1G1AF1F57A7192174" (Pair "Renault" (Pair 1624838400 5)); Elt "JNKCV61E49M014581" (Pair "Peugeot" (Pair 1626048000 3)) } 0)))))
+# (Pair holder (Pair cost deadline))
 {
-  storage (pair (nat %bar) (pair (map %partitioned nat nat) (pair (int %_state) (pair (map %partitioning address (set nat)) (pair (map %vehicle string (pair (string %manufacturer) (pair (timestamp %release) (nat %nbdoors)))) (nat %r))))));
-  parameter (or (or (contract %getBar int) (bool %accept)) (or (or (unit %tr) (unit %exec)) (or (pair %exec2 (nat %x) (nat %y)) (unit %calling))));
+  storage (pair (address %holder) (pair (mutez %cost) (timestamp %deadline)));
+  parameter (unit %pay);
   code { NIL operation;
          DIG 1;
          UNPAIR;
-         DIP { UNPAIR 6 };
+         DIP { UNPAIR 3 };
+         DROP;
+         DUP 3;
+         NOW;
+         COMPARE;
+         GT;
+         IF
+           { PUSH nat 1;
+             PUSH int 86400;
+             PAIR;
+             PUSH nat 1;
+             DUP 5;
+             NOW;
+             SUB;
+             PUSH nat 100;
+             PUSH int 7;
+             PAIR;
+             PAIR;
+             UNPAIR;
+             UNPAIR;
+             DIG 2;
+             MUL;
+             EDIV;
+             IF_NONE
+               { PUSH string "DivByZero";
+                 FAILWITH }
+               {  };
+             CAR;
+             PAIR;
+             PAIR;
+             UNPAIR;
+             DIP { UNPAIR };
+             UNPAIR;
+             DIG 3;
+             DUP;
+             DIG 3;
+             DUP;
+             DUG 4;
+             MUL;
+             PUSH nat 0;
+             COMPARE;
+             EQ;
+             IF
+               { PUSH string "DivByZero";
+                 FAILWITH }
+               {  };
+             PUSH int 0;
+             DIG 4;
+             DUP;
+             DUG 5;
+             COMPARE;
+             GE;
+             IF
+               { INT }
+               { NEG };
+             MUL;
+             DIP { MUL; ABS };
+             PAIR }
+           { PUSH nat 1;
+             PUSH int 0;
+             PAIR };
+         NIL operation;
+         NIL operation;
+         DUP 7;
+         ITER { CONS };
+         DUP 4;
+         CONTRACT unit;
+         IF_NONE
+           { PUSH string "EntryNotFound";
+             FAILWITH }
+           {  };
+         DUP 6;
+         UNIT;
+         LEFT unit;
+         DUP 6;
+         PUSH nat 1;
+         PUSH nat 1;
+         INT;
+         PAIR;
+         PAIR;
+         PAIR;
+         UNPAIR;
+         UNPAIR;
+         DIP { UNPAIR; SWAP; DUP };
+         UNPAIR;
+         SWAP;
+         DUP;
+         DIG 3;
+         MUL;
+         DUP;
+         PUSH nat 0;
+         COMPARE;
+         EQ;
+         IF
+           { PUSH string "DivByZero";
+             FAILWITH }
+           {  };
+         DUG 4;
+         DIG 3;
+         MUL;
+         DIP { MUL };
+         DIG 3;
          IF_LEFT
-           { IF_LEFT
-               { NIL operation;
-                 NIL operation;
-                 DUP 10;
-                 ITER { CONS };
-                 DUP 3;
-                 AMOUNT;
-                 DUP 6;
-                 INT;
-                 TRANSFER_TOKENS;
-                 CONS;
-                 ITER { CONS };
-                 DIP { DIG 7; DROP };
-                 DUG 7;
-                 DROP;
-                 PAIR 6;
-                 DIG 1;
-                 PAIR }
-               { SELF_ADDRESS;
-                 SOURCE;
-                 COMPARE;
-                 EQ;
-                 NOT;
-                 IF
-                   { PUSH string "InvalidCaller";
-                     FAILWITH }
-                   {  };
-                 PUSH mutez 0;
-                 AMOUNT;
-                 COMPARE;
-                 EQ;
-                 NOT;
-                 IF
-                   { PUSH string "NoTransfer";
-                     FAILWITH }
-                   {  };
-                 DUP 4;
-                 DUP;
-                 PUSH int 1;
-                 COMPARE;
-                 EQ;
-                 IF
-                   { DUP 2;
-                     IF
-                       { NIL operation;
-                         NIL operation;
-                         DUP 11;
-                         ITER { CONS };
-                         SELF_ADDRESS;
-                         CONTRACT unit;
-                         IF_NONE
-                           { PUSH string "EntryNotFound";
-                             FAILWITH }
-                           {  };
-                         BALANCE;
-                         UNIT;
-                         TRANSFER_TOKENS;
-                         CONS;
-                         ITER { CONS };
-                         DIP { DIG 8; DROP };
-                         DUG 8;
-                         PUSH int 0;
-                         DIP { DIG 4; DROP };
-                         DUG 4 }
-                       { PUSH int 2;
-                         DIP { DIG 4; DROP };
-                         DUG 4 } }
-                   { PUSH string "InvalidState";
-                     FAILWITH };
-                 DROP 2;
-                 PAIR 6;
-                 DIG 1;
-                 PAIR } }
-           { IF_LEFT
-               { IF_LEFT
-                   { DROP;
-                     DUP 3;
-                     DUP;
-                     PUSH int 0;
-                     COMPARE;
-                     EQ;
-                     IF
-                       { PUSH int 1;
-                         DIP { DIG 3; DROP };
-                         DUG 3 }
-                       { PUSH string "InvalidState";
-                         FAILWITH };
-                     DROP;
-                     PAIR 6;
-                     DIG 1;
-                     PAIR }
-                   { DROP;
-                     PUSH mutez 2000000;
-                     AMOUNT;
-                     COMPARE;
-                     GT;
-                     NOT;
-                     IF
-                       { PUSH string "r1";
-                         PUSH string "InvalidCondition";
-                         PAIR;
-                         FAILWITH }
-                       {  };
-                     PUSH nat 234523;
-                     NONE address;
-                     PAIR;
-                     PUSH bool False;
-                     PAIR;
-                     PUSH nat 1;
-                     PAIR;
-                     DUP 3;
-                     PUSH nat 0;
-                     MEM;
-                     IF
-                       { PUSH string "partitioned";
-                         PUSH string "KeyExists";
-                         PAIR;
-                         FAILWITH }
-                       { DUP 3;
-                         PUSH nat 0;
-                         SOME;
-                         PUSH nat 0;
-                         UPDATE;
-                         DIP { DIG 2; DROP };
-                         DUG 2 };
-                     DROP;
-                     PAIR 6;
-                     DIG 1;
-                     PAIR } }
-               { IF_LEFT
-                   { UNPAIR;
-                     SWAP;
-                     DUP;
-                     DUP 3;
-                     DUP 10;
-                     MUL;
-                     ADD;
-                     DIP { DIG 7; DROP };
-                     DUG 7;
-                     DROP 2;
-                     PAIR 6;
-                     DIG 1;
-                     PAIR }
-                   { DROP;
-                     SELF_ADDRESS;
-                     CONTRACT %exec (pair nat nat);
-                     IF_NONE
-                       { PUSH string "ENTRY_NOT_FOUND";
-                         FAILWITH }
-                       {  };
-                     DUP;
-                     PUSH mutez 0;
-                     PUSH nat 3;
-                     PUSH nat 5;
-                     PAIR;
-                     TRANSFER_TOKENS;
-                     DUP 9;
-                     DUP 2;
-                     CONS;
-                     DIP { DIG 8; DROP };
-                     DUG 8;
-                     EMPTY_MAP nat string;
-                     PUSH string "def";
-                     SOME;
-                     PUSH nat 1;
-                     UPDATE;
-                     PUSH string "abc";
-                     SOME;
-                     PUSH nat 0;
-                     UPDATE;
-                     PUSH nat 5;
-                     SOME;
-                     MAP { PUSH nat 1;
-                           DUP 2;
-                           ADD;
-                           SWAP;
-                           DROP };
-                     DROP 4;
-                     PAIR 6;
-                     DIG 1;
-                     PAIR } } } };
+           { DROP;
+             ADD }
+           { DROP;
+             SWAP;
+             SUB };
+         PAIR;
+         PAIR;
+         UNPAIR;
+         UNPAIR;
+         ABS;
+         DIG 2;
+         MUL;
+         EDIV;
+         IF_NONE
+           { PUSH string "DivByZero";
+             FAILWITH }
+           {  };
+         CAR;
+         UNIT;
+         TRANSFER_TOKENS;
+         CONS;
+         ITER { CONS };
+         DIP { DIG 4; DROP };
+         DUG 4;
+         DROP;
+         PAIR 3;
+         DIG 1;
+         PAIR };
 }
 

@@ -35,7 +35,3 @@ See the [paritition](/docs/reference/instructions#partition) section above for m
 #### Aggregate
 
 An [aggregate](/docs/reference/types#aggregate<A>) field does *not* provide the `add_update` instruction.
-
-#### Asset view
-
-As a *read-only* set of asset references, an [asset_view](/docs/reference/types#asset_view<A>) does *not* provide the `add_update` instruction.

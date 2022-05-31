@@ -8,6 +8,7 @@ import AssetRemoveDesc from '../../src/components/desc/assetremove_desc.md'
 import AssetRemoveClearDesc from '../../src/components/desc/assetremoveclear_desc.md'
 import AssetRemoveIfDesc from '../../src/components/desc/assetremoveif_desc.md'
 import AssetUpdateDesc from '../../src/components/desc/assetupdate_desc.md'
+import AssetUpdateAllDesc from '../../src/components/desc/assetupdateall_desc.md'
 
 export const assetinstructions = {
   add : {
@@ -86,8 +87,32 @@ export const assetinstructions = {
     ],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
-      { keyword: 'Assignment', link: '/docs/reference/instructions#assignment' },
-      { keyword: 'add_update', link: '/docs/reference/instructions#aadd_updatek--u-' },
+      { keyword: 'Assignment', link: '/docs/reference/instructions/asset#assignment' },
+      { keyword: 'add_update', link: '/docs/reference/instructions/asset#aadd_updatek--u-' },
+    ]
+  },
+  update_all : {
+    desc: <AssetUpdateAllDesc />,
+    appliesto:['asset', 'asset to iterable_big_map', 'partition', 'aggregate', 'asset_view'],
+    parameters: [
+      {
+        type: 'update literal',
+        withLink : false,
+        alias: 'u',
+        desc: <div>Curly bracketed list of fields' assignment instructions (separated by <code>;</code>); these instructions are presented in the section above (
+          <code>:=</code>&nbsp;
+          <code>+=</code>&nbsp;
+          <code>-=</code>&nbsp;
+          <code>*=</code>&nbsp;
+          <code>/=</code>&nbsp;
+          <code>&=</code>&nbsp;
+          <code>|=</code>).</div>
+      },
+    ],
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
+      { keyword: 'Assignment', link: '/docs/reference/instructions/asset#assignment' },
+      { keyword: 'update', link: '/docs/reference/instructions/asset#aupdatek--u-' },
     ]
   },
   add_update : {
@@ -122,9 +147,9 @@ export const assetinstructions = {
     ],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
-      { keyword: 'Assignment', link: '/docs/reference/instructions#assignment' },
-      { keyword: 'add', link: '/docs/reference/instructions#aadda' },
-      { keyword: 'update', link: '/docs/reference/instructions#aupdatek--u-' },
+      { keyword: 'Assignment', link: '/docs/reference/instructions/asset#assignment' },
+      { keyword: 'add', link: '/docs/reference/instructions/asset#aadda' },
+      { keyword: 'update', link: '/docs/reference/instructions/asset#aupdatek--u-' },
     ]
   },
   remove : {
@@ -139,12 +164,12 @@ export const assetinstructions = {
     ],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
-      { keyword: 'add', link: '/docs/reference/instructions#aadda' },
+      { keyword: 'add', link: '/docs/reference/instructions/asset#aadda' },
     ]
   },
   remove_if : {
     desc: <AssetRemoveIfDesc/>,
-    appliesto: ['asset', 'aggregate', 'partition'],
+    appliesto: ['aggregate', 'partition'],
     parameters: [
       {
         type: 'predicate',
@@ -155,28 +180,29 @@ export const assetinstructions = {
     ],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
-      { keyword: 'remove', link: '/docs/reference/instructions#remove' },
+      { keyword: 'remove', link: '/docs/reference/instructions/asset#aremovek' },
+      { keyword: 'remove_all', link: '/docs/reference/instructions/asset#aremove_all' },
     ]
   },
-  clear: {
+  remove_all: {
     desc: <AssetClearDesc />,
-    appliesto: ['asset', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view'],
+    appliesto: ['asset', 'asset to iterable_big_map', 'aggregate', 'partition'],
     parameters: [],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
-      { keyword: 'remove', link: '/docs/reference/instructions#remove' },
-      { keyword: 'removeall', link: '/docs/reference/instructions#removeall' },
+      { keyword: 'remove', link: '/docs/reference/instructions/asset#aremovek' },
+      { keyword: 'remove_if', link: '/docs/reference/instructions/asset#aremove_ifp' },
       { keyword: 'select', link: '/docs/reference/expressions/asset#aselectp' },
     ]
   },
-  remove_clear: {
+  clear: {
     desc: <AssetRemoveClearDesc />,
-    appliesto: [ 'aggregate' ],
+    appliesto: [ 'asset_view' ],
     parameters: [],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
-      { keyword: 'remove', link: '/docs/reference/instructions#remove' },
-      { keyword: 'clear', link: '/docs/reference/instructions#clear' },
+      { keyword: 'remove', link: '/docs/reference/instructions/asset#remove' },
+      { keyword: 'remove_all', link: '/docs/reference/instructions/asset#remove_all' },
     ]
   }
 }

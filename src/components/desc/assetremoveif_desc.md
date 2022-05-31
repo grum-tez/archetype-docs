@@ -1,70 +1,26 @@
-Removes assets from collection `A` that verify predicate `p`.
+Removes assets *referenced by* an [aggregate](/docs/asset#aggregate) or [partition](/docs/asset#partition) field `A` and that verify predicate `p`.
 
-For example, consider the following declaration:
+For example, consider the following declarations:
 ```archetype
-asset loan {
-  id         : string;
-  subscriber : address;
-  principal  : tez;
-  interest   : rational = 2%;
-  creation   : date = now;
-  time       : duration = 10w; /* 10 weeks */
+asset vehicle identified by vin {
+  vin      : string;
+  nb_doors : nat
+}
+
+asset driver identified by id {
+  id     : address;
+  drives : aggregate<vehicle>
 }
 ```
 
-The following instruction removes any expired loan:
+For example the following instruction removes all vehicles driven by driver `caller` with `nb_doors` equal to `0`:
 ```archetype
-loan.remove_if(the.creation + the.time < now);
+driver[caller].drives.remove_if(the.nb_doors = 0)
 ```
 
 The `the` keyword refers to the asset being evaluated; all asset fields are available in predicates.
 
-This is equivalent to the following code:
-```archetype
-for k in loan do
- if loan[k].creation + loan[k].time < now then
-    loan.remove(l)
-done
-```
-
-:::info
-As iteration is not available on big maps, `remove_if` is not available for `asset to big_map` type.
+:::caution
+When used on a [partition](/docs/asset#partition) field, references in the parititon field *are also removed* for consistency reason, as the partition ensures that any reference points to an existing asset.
 :::
-
-#### Partition
-
-The `remove_if` instruction is available for [partition](/docs/reference/types#partition<A>) fields.
-
-For example, the following instruction removes expired miles for flyer `caller`:
-```archetype
-flyer[caller].miles.remove_if(the.expiration < now);
-```
-See the [paritition](/docs/reference/instructions#partition) section above for more information.
-
-The effect of the above instruction is to:
-* remove all expired miles belonging to `caller`
-* remove all references to these expired miles from `flyer[caller].miles`
-
-:::info
-`remove_if` is not available if the partitioned asset is declared as `big_map`.
-:::
-
-#### Aggregate
-
-The `remove_if` instruction is available for [aggregate](/docs/reference/types#aggregate<A>) fields.
-
-For example, the following instruction removes vehicles referenced by `caller` and whose number of doors is equal to `3`:
-```archetype
-driver[caller].drives.remove_if(the.nbdoors = 3);
-```
-
-See the [Aggregate](/docs/reference/instructions#aggregate) section above for more information.
-
-:::info
-`remove_if` is not available on aggregate fields if the aggregated asset is declared as `big_map`.
-:::
-
-#### Asset view
-
-An [asset_view](/docs/reference/types#asset_view<A>) does *not* provide the `remove_if` instruction.
 

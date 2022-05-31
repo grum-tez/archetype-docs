@@ -51,7 +51,7 @@
 		'decl': /\b(?:const|var|let some|let)\b/,
 		'boolean': /\b(?:false|true)\b/,
     	'logic': /\b(?:and|or|=|not|asr|land|lor|lsl|lsr|lxor)\b/,
-    	'asset': /\b(?:update_all|count|sum|asc|desc|remove_if|remove_clear|remove|update|contains|clear|select|sort|head|nth|add|put|add_update|get)\b/,
+    	'asset': /\b(?:update_all|clear|count|sum|asc|desc|remove_if|remove_aggregate|remove|update|contains|remove_all|select|sort|head|nth|add|put|add_update|get)\b/,
 		'access': /(?:\[|\]|\?|::)/,
     	'crypto': /\b(?:pack|unpack|open_chest)\b/,
     	'arith': /\b(?:mod|abs|min|max)\b/,

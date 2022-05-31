@@ -4,7 +4,7 @@ export const expressions = {
   controls: [
     { label : 'if then else', link : link_prefix + '/controls#if-then-else' },
     { label : 'match with'  , link : link_prefix + '/controls#match-with' },
-    { label : ': ?'  , link : link_prefix + '/controls#a--b--c' },
+    { label : '? :'  , link : link_prefix + '/controls#a--b--c' },
   ],
   declaration: [
     { label : 'let in', link : link_prefix + '/declaration' }
@@ -12,7 +12,7 @@ export const expressions = {
   asset: [
     { label : 'get'      , link : link_prefix + '/asset#agetk--asset_keya', desc : 'Gets an option of asset record value from key' },
     { label : '[]'      , link : link_prefix + '/asset#ak--asset_keya', desc : 'Gets asset record value from key' },
-    { label : '[].?'      , link : link_prefix + '/asset#ak--asset_keyaf', desc : 'Gets an option of asset field from key' },
+    { label : '[]?.'      , link : link_prefix + '/asset#ak--asset_keyaf', desc : 'Gets an option of asset field from key' },
     { label : '[]?:'      , link : link_prefix + '/asset#ak--asset_keya--e--d', desc : 'Evaluates an expression on asset' },
     { label : 'contains', link : link_prefix + '/asset#acontainsk--asset_keya', desc : 'Tests whether the collection contains an asset' },
     { label : 'count'   , link : link_prefix + '/asset#acount', desc : 'Returns the number of assets in collection' },

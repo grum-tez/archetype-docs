@@ -10,7 +10,7 @@ asset ledger {
 
 The following retrieves the value of `amount` field of `caller` address:
 ```archetype
-const a : option<nat> = ledger[caller].?amount;
+const a : option<nat> = ledger[caller]?.amount;
 ```
 
 It is equivalent to:

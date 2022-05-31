@@ -1,3 +1,4 @@
+Concatenates two values of type `string`, `bytes`, or `list<T>`, or a list of values of type `string` or `bytes`.
 ### String
 
 Concatenates two [`string`](/docs/reference/types#string) values.
@@ -21,7 +22,6 @@ const m = concat(0x48656c6c6f, 0x417263686574797065);
 ```
 
 ### List
-
 
 Concatenates two [`lists`](/docs/reference/types#list<T>) of any element of any type.
 

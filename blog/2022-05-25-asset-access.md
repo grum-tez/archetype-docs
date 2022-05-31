@@ -68,7 +68,7 @@ end
 
 ### Single field access
 
-Situations where a single asset field is accessed is very common though. In this case, version [`1.2.16`](https://github.com/edukera/archetype-lang/releases/tag/1.2.16) provides two new dedicated operators: [`[].?`](/docs/reference/expressions/asset#ak--asset_keyaf) and [`[]?:`](/docs/reference/expressions/asset#ak--asset_keya--e--d).
+Situations where a single asset field is accessed is very common though. In this case, version [`1.2.16`](https://github.com/edukera/archetype-lang/releases/tag/1.2.16) provides two new dedicated operators: [`[]?.`](/docs/reference/expressions/asset#ak--asset_keyaf) and [`[]?:`](/docs/reference/expressions/asset#ak--asset_keya--e--d).
 
 For example, `is_coupe` below is true if field `nbdoors` is equal to 3, and `false` if asset is not found:
 
@@ -79,7 +79,7 @@ const is_coupe = vehicle[k] ? the.nbdoors = 3 : false
 
 The following retrieves an [`option`](/docs/reference/types#option<T>) of [`nat`](/docs/reference/types#nat) to treat more specifically the case when the asset is not found:
 ```archetype
-const on = vehicle["1G1AF1F57A7192174"].?nbdoors
+const on = vehicle["1G1AF1F57A7192174"]?.nbdoors
 ```
 
 

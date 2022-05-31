@@ -19,6 +19,10 @@ import Builtin from '@site/src/components/Builtin.js';
 
 <Builtin data={assetinstructions['update']} />
 
+### `A.update_all({ u })`
+
+<Builtin data={assetinstructions['update_all']} />
+
 ### `A.add_update(k, { u })`
 
 <Builtin data={assetinstructions['add_update']} />
@@ -31,10 +35,10 @@ import Builtin from '@site/src/components/Builtin.js';
 
 <Builtin data={assetinstructions['remove_if']} />
 
+### `A.remove_all()`
+
+<Builtin data={assetinstructions['remove_all']} />
+
 ### `A.clear()`
 
 <Builtin data={assetinstructions['clear']} />
-
-### `A.remove_clear()`
-
-<Builtin data={assetinstructions['remove_clear']} />

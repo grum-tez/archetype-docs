@@ -12,6 +12,7 @@ import ConcatDesc from "../../../src/components/desc/concat_desc.md"
 import FoldDesc from "../../../src/components/desc/fold_desc.md"
 import LeftDesc from "../../../src/components/desc/left_desc.md"
 import RightDesc from "../../../src/components/desc/right_desc.md"
+import MapDesc from "../../../src/components/desc/map_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -84,7 +85,7 @@ export const builtins = {
     michelson_ref_url: michelson_ref_base_url + '#instr-TRANSFER_TOKENS',
     related: [
       { keyword: 'operations', link: '/docs/language-basics/operation' },
-      { keyword: 'get_description', link: '/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)' },
+      { keyword: 'get_entrypoint', link: '/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)' },
     ]
   },
 
@@ -118,44 +119,39 @@ export const builtins = {
       { keyword: 'right', link: '/docs/reference/expressions/builtins#right<T(,%20R)>(x%20:%20R)' },
     ]
   },
-  maplist: {
-    sig: 'map(l : list<T>, id -> (body(id : T) : R))',
-    desc: <div>[NEW] Returns a list with application of a function which take T typed argument and returns R typed value for each item of the original list.</div>,
+  map: {
+    sig: 'map',
+    desc: <MapDesc />,
     parameters: [
       {
-        type: 'list<T>',
-        alias: 'l',
-        desc: <div>List to map</div>
-      }
+        type: '-',
+        withLink: false,
+        alias: 's',
+        desc: <div>Input to map of type:<ul>
+          <li><Link to={'/docs/reference/types#list<T>'}><code>list&lt;T&gt;</code></Link></li>
+          <li><Link to={'/docs/reference/types#map<K,%20V>'}><code>map&lt;K, V&gt;</code></Link></li>
+          <li><Link to={'/docs/reference/types#option<T>'}><code>option&lt;T&gt;</code></Link></li>
+        </ul></div>
+      },
+      {
+        type: 'function',
+        withLink: false,
+        alias: 'f',
+        desc: <div><i>Inlined</i> mapping function.</div>
+      },
     ],
     returns: {
-      type: 'list<R>',
-      desc: <div>List mapped</div>
+      type: '-',
+      withLink: false,
+      desc: <div>Returns a mapped value of the same type as the input.</div>
     },
     michelson: "MAP",
     michelson_ref_url: michelson_ref_base_url + '#instr-MAP',
     related: [
-      { keyword: 'List', link: '/docs/language-basics/container#list' },
-    ]
-  },
-  mapoption: {
-    sig: 'map(l : option<T>, id -> (body(id : T) : R))',
-    desc: <div>[NEW] Returns an option with application of a function which take T typed argument and returns R typed value.</div>,
-    parameters: [
-      {
-        type: 'option<T>',
-        alias: 'l',
-        desc: <div>Option to map</div>
-      }
-    ],
-    returns: {
-      type: 'option<R>',
-      desc: <div>Option mapped</div>
-    },
-    michelson: "MAP",
-    michelson_ref_url: michelson_ref_base_url + '#instr-MAP',
-    related: [
-      { keyword: 'Option', link: '/docs/language-basics/composite#option' },
+      { keyword: 'list<T>', link: '/docs/reference/types#list<T>' },
+      { keyword: 'map<K, V>', link: '/docs/reference/types#map<K,%20V>' },
+      { keyword: 'option<T>', link: '/docs/reference/types#option<T>' },
+      { keyword: '? :', link: '/docs/reference/expressions/controls#a--b--c' },
     ]
   },
   exec_lambda: {
@@ -633,7 +629,7 @@ export const builtins = {
   // builtin functions
   min: {
     sig: 'min(a : T, b : T)',
-    desc: <div>[NEW] Returns minimum value between <code>a</code> and <code>b</code></div>,
+    desc: <div>Returns minimum value between <code>a</code> and <code>b</code></div>,
     parameters: [
       {
         type: 'T',
@@ -648,15 +644,15 @@ export const builtins = {
     ],
     returns: {
       type: 'T',
-      desc: <div>Minimum value, T must be a comparable type.</div>
+      desc: <div>Minimum value. <code>T</code> must be a <Link to="/docs/language-basics/types#comparable">comparable</Link> type.</div>
     },
     related: [
-      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+      { keyword: 'Basic types', link: '/docs/language-basics/types' },
     ]
   },
   max: {
     sig: 'max(a : T, b : T)',
-    desc: <div>[NEW] Returns maximum value between <code>a</code> and <code>b</code></div>,
+    desc: <div>Returns maximum value between <code>a</code> and <code>b</code></div>,
     parameters: [
       {
         type: 'T',
@@ -671,10 +667,10 @@ export const builtins = {
     ],
     returns: {
       type: 'T',
-      desc: <div>Maximum value, T must be a comparable type.</div>
+      desc: <div>Maximum value. <code>T</code> must be a <Link to="/docs/language-basics/types#comparable">comparable</Link> type.</div>
     },
     related: [
-      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+      { keyword: 'Basic types', link: '/docs/language-basics/types' },
     ]
   },
   abs: {

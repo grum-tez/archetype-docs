@@ -1,16 +1,14 @@
-Removes all references and referenced assets from an [aggregate](/docs/reference/types#aggregate<A>) field.
+Removes all assets referenced by [`asset_view`](/docs/reference/types#asset_view<A>) `A`.
 
-For example, the following instruction removes all `vehicle` assets referenced by driver `caller` :
+For example, the following instruction removes all [cars](/docs/reference/instructions/asset#aupdatek--u-) assets owned by `caller` :
 ```archetype
-driver[caller].drives.remove_clear()
+car.select(the.owner = caller).clear()
 ```
 
-The effect of the above instruction is to:
-* remove all `vehicle` assets referenced by driver `caller`
-* remove all reference so that `driver[caller].drives.count() = 0` stands true afterwards
-
-It is equivalent to the following instructions:
+This is equivalent to:
 ```archetype
-driver[caller].drives.select(true).clear();
-driver[caller].drives.clear();
-```
+const v = car.select(the.owner = caller);
+for k in v do
+  car.remove(k)
+done
+

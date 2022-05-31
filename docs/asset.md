@@ -53,7 +53,7 @@ asset vehicle {
 
 The following one line code removes the top 3 recently repaired vehicles with total number of 2 repairs:
 ```archetype
-vehicle.sort(dateofrepair).select(the.nbrepairs = 2).head(3).clear();
+vehicle.sort(dateofrepair).select(the.nbrepairs = 2).head(3).remove_all();
 ```
 
 ## Iteration

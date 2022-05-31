@@ -86,6 +86,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['get_entrypoint']} />
 
+<H3 page="builtins" value={builtins['get_some'].sig} />
+
+<Builtin data={builtins['get_some']} />
+
 <H3 page="builtins" value={builtins['key_to_hash_key'].sig} />
 
 <Builtin data={builtins['key_to_hash_key']} />
@@ -130,13 +134,9 @@ import H3 from "@site/src/components/H3.js";
 
 ## `M N O`
 
-<H3 page="builtins" value={builtins['maplist'].sig} />
+<H3 page="builtins" value={builtins['map'].sig} />
 
-<Builtin data={builtins['maplist']} />
-
-<H3 page="builtins" value={builtins['mapoption'].sig} />
-
-<Builtin data={builtins['mapoption']} />
+<Builtin data={builtins['map']} />
 
 <H3 page="builtins" value={builtins['max'].sig} />
 
@@ -169,10 +169,6 @@ import H3 from "@site/src/components/H3.js";
 <H3 page="builtins" value={builtins['open_chest'].sig} />
 
 <Builtin data={builtins['open_chest']} />
-
-<H3 page="builtins" value={builtins['get_some'].sig} />
-
-<Builtin data={builtins['get_some']} />
 
 ## `P Q R`
 

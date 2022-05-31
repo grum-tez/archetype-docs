@@ -1,61 +1,39 @@
-Removes all assets from collection.
+Removes elements from container `A`, `A` being an asset collection, an [aggregate](/docs/asset#aggregate) or a [partition](/docs/asset#partition) field.
 
-For example, to remove all *loan* assets:
+For example, to remove all [`loan`](/docs/reference/instructions/asset#aadda) assets:
 ```archetype
-loan.clear();
+loan.remove_all();
 ```
 
-See [add](/docs/reference/instructions#aadda) section above for more information.
-
 :::info
-As iteration is not available on big maps, `clear` is not available for `asset to big_map` type.
+As iteration is not available on big maps, `remove_all` is not available for `asset to big_map` type.
 :::
 
 #### Partition
 
-The `clear` instruction on a [partition](/docs/reference/types#partition<A>) field removes all references in the partition field and also removes assets from the partiotioned asset collection.
+The `remove_all` instruction on a [partition](/docs/reference/types#partition<A>) field removes all references in the partition field *and* also removes assets from the partiotioned asset collection.
 
-For example, the following instruction removes all miles owned by `caller` flyer:
+For example, the following instruction removes all miles owned by `caller` [flyer](/docs/reference/instructions/asset#partition):
 ```archetype
-flyer[caller].miles.clear();
+flyer[caller].miles.remove_all();
 ```
 
 The effect of above instruction is to:
 * remove all miles from `mile` collection owner by `caller`
 * remove all reference to these miles so that `flyer[caller].miles.count() = 0` stands true afterwards
 
-See [partition](/docs/reference/instructions#partition) section above for more information.
-
 :::info
-`clear` is not available on partition fields if partitioned asset is declared as `big_map`.
+Note that the above instruction is equivalent to [`remove_if(true)`](/docs/reference/instructions/asset#aremove_ifp) instruction because a partition *synchronizes* the existence of the reference towards the asset.
 :::
 
 #### Aggregate
 
-The `clear` instruction on an [aggregate](/docs/reference/types#aggregate<A>) field removes all references in the aggregate fields.
+The `remove_all` instruction on an [aggregate](/docs/reference/types#aggregate<A>) field removes all references in the aggregate fields.
 
-For example, the following instruction removes all references from driver `caller` to `vehicle` assets:
+For example, the following instruction removes all references from driver `caller` to [`vehicle`](/docs/reference/instructions/asset#aggregate) assets:
 ```archetype
-driver[caller].drives.clear()
+driver[caller].drives.remove_all()
 ```
 
 The only effect of above instruction is to empty the list of vehicles driven by driver `caller` so that `driver[caller].drives.count() = 0` stands true afterwards. The collection of vehicles is left unchanged.
 
-See [aggregate](/docs/reference/instructions#aggregate) section above for more information.
-
-#### Asset view
-
-The `clear` instruction on an [asset_view](/docs/reference/types#asset_view<A>) removes all assets referenced by the view.
-
-For example, the following instruction removes vehicles with number of doors equal to 3:
-```archetype
-vehicle.select(the.nbdoors = 3).clear()
-```
-
-The view itself is left unchanged as a view is a *read-only* list of references to assets.
-
-Note that the above instruction is equivalent to a [`remove_if`](/docs/reference/instructions#aremove_ifp) instruction.
-
-:::info
-`clear` is not available on view if referenced asset is declared as `big_map`.
-:::
