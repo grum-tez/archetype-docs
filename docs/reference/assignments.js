@@ -6,7 +6,7 @@ export const assignments = {
   plusequal: {
     label: 'b',
     link: '--a',
-    desc: <div>Increments <i>variable</i> <code>a</code> by value of <code>b</code>. It is equivalent to <code>a := a + b</code> (see <Link to="/docs/reference/expressions/operators#a--b"><code>+</code></Link> operator).</div>,
+    desc: <div>Increments <i>variable</i> <code>a</code> (local variable, tuple dimension or record field) by value of <code>b</code>. It is equivalent to <code>a := a + b</code> (see <Link to="/docs/reference/expressions/operators#a--b"><code>+</code></Link> operator).</div>,
     binary: false,
     types: [
       { typa: 'nat', typr: 'nat' },
@@ -30,7 +30,7 @@ export const assignments = {
   minusequal: {
     label: 'b',
     link: '--a',
-    desc: <div>Decrements <i>variable</i> <code>a</code> by value of <code>b</code>. It is similar to <code>a := a - b</code> (see <Link to="/docs/reference/expressions/operators#a---b"><code>-</code></Link> operator). It is not exaclty equivalent because if may fail on <code>nat</code> values (see fail conditions below).</div>,
+    desc: <div>Decrements <i>variable</i> <code>a</code> (local variable, tuple dimension or record field) by value of <code>b</code>. It is similar to <code>a := a - b</code> (see <Link to="/docs/reference/expressions/operators#a---b"><code>-</code></Link> operator). It is not exaclty equivalent because if may fail on <code>nat</code> values (see fail conditions below).</div>,
     binary: false,
     types: [
       { typa: 'nat', typr: 'nat' },
@@ -64,7 +64,7 @@ export const assignments = {
   timesequal: {
     label: 'b',
     link: '--a',
-    desc: <div>Multiplies <i>variable</i> <code>a</code> by value of <code>b</code>. It is equivalent to <code>a := a * b</code> (see <Link to="/docs/reference/expressions/operators#a--b-1"><code>*</code></Link> operator).</div>,
+    desc: <div>Multiplies <i>variable</i> <code>a</code> (local variable, tuple dimension or record field) by value of <code>b</code>. It is equivalent to <code>a := a * b</code> (see <Link to="/docs/reference/expressions/operators#a--b-1"><code>*</code></Link> operator).</div>,
     binary: false,
     types: [
       { typa: 'nat', typr: 'nat' },
@@ -87,7 +87,7 @@ export const assignments = {
   divequal: {
     label: 'b',
     link: '--a',
-    desc: <div>Divides <i>variable</i> <code>a</code> by value of <code>b</code>. It is equivalent to <code>a := a / b</code> (see <Link to="/docs/reference/expressions/operators#a--b-2"><code>*</code></Link> operator).</div>,
+    desc: <div>Divides <i>variable</i> <code>a</code> (local variable, tuple dimension or record field) by value of <code>b</code>. It is equivalent to <code>a := a / b</code> (see <Link to="/docs/reference/expressions/operators#a--b-2"><code>*</code></Link> operator).</div>,
     binary: false,
     types: [
       { typa: 'rational', typr: 'rational' },
@@ -100,7 +100,7 @@ export const assignments = {
   andequal: {
     label: 'b',
     link: '--a',
-    desc: <div>Assigns <code>a and b</code> to <i>variable</i> <code>a</code> (see <Link to="/docs/reference/expressions/operators#a-and-b"><code>and</code></Link> operator).</div>,
+    desc: <div>Assigns <code>a and b</code> to <i>variable</i> <code>a</code> (local variable, tuple dimension or record field) (see <Link to="/docs/reference/expressions/operators#a-and-b"><code>and</code></Link> operator).</div>,
     binary: false,
     types: [
       { typa: 'bool', typr : 'bool' },
@@ -109,7 +109,7 @@ export const assignments = {
   orequal: {
     label: 'b',
     link: '--a',
-    desc: <div>Assigns <code>a and b</code> to <i>variable</i> <code>a</code> (see <Link to="/docs/reference/expressions/operators#a-or-b"><code>or</code></Link> operator).</div>,
+    desc: <div>Assigns <code>a and b</code> to <i>variable</i> <code>a</code> (local variable, tuple dimension or record field) (see <Link to="/docs/reference/expressions/operators#a-or-b"><code>or</code></Link> operator).</div>,
     binary: false,
     types: [
       { typa: 'bool', typr : 'bool' },
