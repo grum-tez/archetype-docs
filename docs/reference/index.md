@@ -6,6 +6,7 @@ import { instructions } from "./instructions.js";
 import { types } from "./types.js";
 import { constants } from "./expressions/constants.js";
 import { operators } from "./expressions/operators/operators.js";
+import { access } from "./expressions/operators/access.js";
 import { builtins, to_link } from "./expressions/builtins.js";
 import { expressions } from "./expressions/expressions.js";
 import { Grid } from "@mui/material";
@@ -83,6 +84,11 @@ This is the Archetype language reference.
 
 <EagleEyeView title="Constants" data={Object.entries(constants).map(([k,v]) => {
     return { label: k, link: '/docs/reference/expressions/constants#' + k }
+  })
+} xs={4}/>
+
+<EagleEyeView title="Access operators" data={Object.entries(access).map(([k,v]) => {
+    return { label: access[k].label, link: '/docs/reference/expressions/operators/access#' + access[k].link }
   })
 } xs={4}/>
 
