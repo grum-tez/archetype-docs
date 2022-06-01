@@ -5,7 +5,7 @@ import { declarations } from "./declarations.js";
 import { instructions } from "./instructions.js";
 import { types } from "./types.js";
 import { constants } from "./expressions/constants.js";
-import { operators } from "./expressions/operators.js";
+import { operators } from "./expressions/operators/operators.js";
 import { builtins, to_link } from "./expressions/builtins.js";
 import { expressions } from "./expressions/expressions.js";
 import { Grid } from "@mui/material";
@@ -86,8 +86,8 @@ This is the Archetype language reference.
   })
 } xs={4}/>
 
-<EagleEyeView title="Operators" data={Object.entries(operators).map(([k,v]) => {
-    return { label: operators[k].label, link: '/docs/reference/expressions/operators#' + operators[k].link }
+<EagleEyeView title="Arithmetic operators" data={Object.entries(operators).map(([k,v]) => {
+    return { label: operators[k].label, link: '/docs/reference/expressions/operators/arithmetic#' + operators[k].link }
   })
 } xs={4}/>
 
