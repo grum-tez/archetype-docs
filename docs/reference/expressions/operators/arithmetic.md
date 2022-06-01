@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 ---
 
-# Operators
+# Arithmetic
 
 import Operator from '@site/src/components/Operator.js';
 import { operators } from './operators.js';

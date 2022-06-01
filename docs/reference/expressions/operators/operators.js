@@ -1,7 +1,7 @@
 import React from "react"
 
-import DivDesc from "../../../src/components/desc/div_desc.md"
-import ModDesc from "../../../src/components/desc/mod_desc.md"
+import DivDesc from "../../../../src/components/desc/div_desc.md"
+import ModDesc from "../../../../src/components/desc/mod_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
