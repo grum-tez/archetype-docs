@@ -12,13 +12,24 @@ Accesses dimension `b` of [tuple](/docs/language-basics/composite#tuple) `a`; `b
 For example:
 ```archetype
 const t = (1, "a string", 0xbc); /* t's dimensionality is 3 */
-const i = t[0];
-const s = t[1];
-const b = t[2];
+const i = t[0]; /* 1          */
+const s = t[1]; /* "a string" */
+const b = t[2]; /* 0xbc       */
 ```
 
 #### Map
 
+Accesses value associated with key `b` in [map](/docs/language-basics/container#map) `a` (also [`big_map`](/docs/reference/types#big_map<K,%20V>) and [`iterable_big_map`](/docs/reference/types#iterable_big_map<K,%20V>)).
+
+It fails with `"NotFound"` if `b` is not found in `a`.
+
+For example:
+```archetype
+const m : map<nat, string> = [ (1, "a string"); (2, "another"); (3, "yet another") ]
+const s1 = m[1]; /* "a string"    */
+const s2 = m[1]; /* "another"     */
+const s3 = m[1]; /* "yet another" */
+```
 ### `a.b`
 
 Accesses field `b` of [record](/docs/language-basics/composite#record) `a`.
