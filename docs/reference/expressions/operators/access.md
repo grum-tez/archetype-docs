@@ -25,10 +25,10 @@ It fails with `"NotFound"` if `b` is not found in `a`.
 
 For example:
 ```archetype
-const m : map<nat, string> = [ (1, "a string"); (2, "another"); (3, "yet another") ]
+const m : map<nat, string> = [ (1, "a string"); (3, "another"); (5, "yet another") ]
 const s1 = m[1]; /* "a string"    */
-const s2 = m[1]; /* "another"     */
-const s3 = m[1]; /* "yet another" */
+const s2 = m[3]; /* "another"     */
+const s3 = m[5]; /* "yet another" */
 ```
 ### `a.b`
 

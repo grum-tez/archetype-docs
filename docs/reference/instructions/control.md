@@ -91,7 +91,7 @@ match expr1 with
 end
 ```
 
-### `option`
+### Option
 
 An [`option`](/docs/reference/types#option<T>) value has two named values: `some` and `none`.
 
@@ -103,7 +103,7 @@ match opt with
 end
 ```
 
-### `or`
+### Or
 
 An [`or`](/docs/reference/types#or<T1,%20T2>) value has two named values: `left` and `right`.
 
@@ -115,7 +115,7 @@ match o with
 end
 ```
 
-### `list`
+### List
 
 A [`list`](/docs/reference/types#list<T>) value has two named values: `[]` for empty list and `::` for recursive composition.
 
@@ -131,7 +131,7 @@ In the example above, `h` is the first element of the list `l`, and `tl` is the 
 
 Note that Archetype does not support recursive calls, hence the `match` instruction cannot be used to fold a list as in Ocaml; it is rather used to retrieve the first element of a list and manage the case of an empty list. The [`for`](/docs/reference/instructions#for) instruction is used to iterate over list elements.
 
-### `states`
+### States
 
 Contract's [`states`](/docs/reference/declarations#states) may be interrogated with the `match` instruction.
 
@@ -154,7 +154,7 @@ match state with
 end;
 ```
 
-### `enum`
+### Enumeration
 
 An [`enum`](/docs/reference/types#enum) value has a user-defined list of values.
 
@@ -190,7 +190,7 @@ The type of element `e` above depends on the type of the container. See below fo
 
 Note that it is *not* possible to break an iteration. See the [`fold`](/docs/reference/expressions/builtins#fold%20(i%20:%20or<L,%20R>,%20id%20->%20(body(id%20:%20L)%20:%20or<L,%20R>))) builtin for an iteration process with a possiblity to break.
 
-### `set`
+### Set
 
 Elements of a [`set`](/docs/reference/types#set<T>) are iterated in the element's type natural order.
 
@@ -201,7 +201,7 @@ for e in s do
 done
 ```
 
-### `list`
+### List
 
 Elements of a [`list`](/docs/reference/types#list<T>) are iterated in the order of the list's construction process. See [`prepend`](/docs/reference/instructions#lprepende) and [`concat`](/docs/reference/instructions#lconcatl) instructions.
 
@@ -212,9 +212,9 @@ for e in l do
 done
 ```
 
-### `map`
+### Map
 
-Elements of a [`map`](/docs/reference/types#map<K,%20V>) are iterated in the natural order of the key.
+Elements of a [`map`](/docs/reference/types#map<K,%20V>) [`big_map`](/docs/reference/types#big_map<K,%20V>) or [`iterable_big_map`](/docs/reference/types#iterable_big_map<K,%20V>) are iterated in the natural order of the key.
 
 For example, suppose map `m` is typed `map<string, bytes>`:
 ```archetype
@@ -226,7 +226,7 @@ In the example above:
 * `k` is a key of the map typed `string`
 * `v` is the associated value typed `bytes`
 
-### `asset`
+### Asset
 
 Elements of a [`asset`](/docs/asset) are iterated in the natural order of the asset identifier.
 
