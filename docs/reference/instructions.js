@@ -27,6 +27,7 @@ export const instructions = {
     ],
     divergent: [
       { label : 'fail', link : link_prefix + '/divergent#faile' },
+      { label : 'fail_some', link : link_prefix + '/divergent#fail_somee--optiont' },
       { label : 'do_require', link : link_prefix + '/divergent#do_requiret-e' },
       { label : 'do_fail_if', link : link_prefix + '/divergent#do_fail_ift-e' },
     ],

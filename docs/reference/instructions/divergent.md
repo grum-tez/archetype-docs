@@ -3,7 +3,6 @@ sidebar_position: 4
 ---
 
 # Divergent
-
 import { divergent } from '../divergent.js';
 import Builtin from '@site/src/components/Builtin.js';
 
@@ -11,15 +10,19 @@ A divergent instruction is an instruction that *fails*. The effect of a failing 
 
 The only effect of a failing injected operation is that the operation fee is spent and not paid back. That's why the correct process is to *simulate* (dry run) the entrypoint before injection to make sure the entrypoint does not fail (as wallets do for example).
 
-### `fail(e)`
+### `fail(e : T)`
 
 <Builtin data={divergent['fail']} />
 
-### `do_require(t, e)`
+### `fail_some(e : option<T>)`
+
+<Builtin data={divergent['fail_some']} />
+
+### `do_require(t : bool, e : T)`
 
 <Builtin data={divergent['do_require']} />
 
-### `do_fail_if(t, e)`
+### `do_fail_if(t : bool, e : T)`
 
 <Builtin data={divergent['do_fail_if']} />
 

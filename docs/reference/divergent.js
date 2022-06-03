@@ -1,9 +1,12 @@
 import React from "react"
+import Link from '@docusaurus/Link';
+
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
 import DoRequireDesc from '../../src/components/desc/dorequire_desc.md'
 import DoFailifDesc from '../../src/components/desc/dofailif_desc.md'
+import FailsomeDesc from '../../src/components/desc/failsome_desc.md'
 
 export const divergent = {
   fail: {
@@ -14,7 +17,7 @@ export const divergent = {
         type: 'T',
         withLink : false,
         alias: 'e',
-        desc: <div>value to fail with (of <i>any</i> type).</div>
+        desc: <div>value to fail with (of any <Link to="/docs/language-basics/types#packable">packable</Link> type).</div>
       },
     ],
     michelson: "FAILWITH",
@@ -32,6 +35,25 @@ export const divergent = {
       { keyword: 'do_fail_if', link: '/docs/reference/instructions/divergent#do_fail_if' },
     ]
   },
+  fail_some: {
+    desc: <FailsomeDesc />,
+    sig:'fail_some(e : option<T>)',
+    parameters: [
+      {
+        type: 'option<T>',
+        alias: 'e',
+        desc: <div>Option of any <Link to="/docs/language-basics/types#packable">packable</Link> type</div>
+      },
+    ],
+    michelson: "FAILWITH",
+    michelson_ref_url: michelson_ref_base_url + '#instr-FAILWITH',
+    fails: [
+      {
+        keyword: 't',
+        desc: <div>Fails with value <code>t</code> when <code>e = some(t)</code></div>
+      }
+    ],
+  },
   do_require: {
     desc: <DoRequireDesc/>,
     sig: 'do_require(t, e)',
@@ -45,7 +67,7 @@ export const divergent = {
         type: 'T',
         withLink : false,
         alias: 'e',
-        desc: <div>value to fail with (of <i>any</i> type) when <code>t</code> is <code>false</code>.</div>
+        desc: <div>value to fail with (of any <Link to="/docs/language-basics/types#packable">packable</Link> type) when <code>t</code> is <code>false</code>.</div>
       },
     ],
     michelson: "FAILWITH",
