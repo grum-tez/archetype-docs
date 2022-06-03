@@ -216,7 +216,7 @@ export const builtins = {
   // arithmetic function
   sub_nat: {
     sig: 'sub_nat(a : nat, b : nat)',
-    desc: <div>[NEW] Subtracts <code>a</code> to <code>b</code> and returns a nat value.</div>,
+    desc: <div>Subtracts <code>a</code> to <code>b</code> and returns a nat value.</div>,
     parameters: [
       {
         type: 'nat',
@@ -235,8 +235,8 @@ export const builtins = {
     },
     fails: [
       {
-        keyword: '"NegResult"',
-        desc: <div>when result is negative</div>
+        keyword: '"NAT_NEG_ASSIGN"',
+        desc: <div>when <code>a - b</code> is negative</div>
       }
     ],
     related: [
@@ -246,7 +246,7 @@ export const builtins = {
 
   sub_mutez: {
     sig: 'sub_mutez(a : tez, b : tez)',
-    desc: <div>[NEW] Subtracts <code>a</code> to <code>b</code> and returns an option tez value.</div>,
+    desc: <div>Subtracts <code>a</code> to <code>b</code> and returns an option of tez value.</div>,
     parameters: [
       {
         type: 'tez',
@@ -263,8 +263,8 @@ export const builtins = {
       type: 'option<tez>',
       desc: <div>
         <ul>
-          <li><code>none</code> if result is negative</li>
-          <li><code>some(v)</code>, result <code>v</code> of subtraction</li>
+          <li><code>none</code> if <code>a - b</code> is negative</li>
+          <li><code>some(v)</code>, if <code>a - b</code> is positive, with <code>v = a - b</code></li>
         </ul>
       </div>
     },
@@ -1499,9 +1499,9 @@ export const builtins = {
   },
 
   // others
-  timestamp_to_date: {
-    sig: 'timestamp_to_date(i : int)',
-    desc: <div>Convert int to date</div>,
+  int_to_date: {
+    sig: 'int_to_date(i : int)',
+    desc: <div>Converts an integer value <code>i</code> to a date, where <code>i</code> is considered as a tiemstamp value, that is the number of seconds since <code>1970-01-01</code>.</div>,
     parameters: [
       {
         type: 'int',
@@ -1511,7 +1511,7 @@ export const builtins = {
     ],
     returns: {
       type: 'date',
-      desc: <div>The result</div>
+      desc: <div>Date corresponding to timestamp <code>i</code></div>
     },
     related: [
       { keyword: 'Conversion', link: '/docs/language-basics/types#conversion' },

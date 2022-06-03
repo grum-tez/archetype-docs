@@ -98,6 +98,10 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['key_hash_to_contract_unit']} />
 
+<H3 page="builtins" value={builtins['int_to_date'].sig} />
+
+<Builtin data={builtins['int_to_date']} />
+
 <H3 page="builtins" value={builtins['int_to_nat'].sig} />
 
 <Builtin data={builtins['int_to_nat']} />
@@ -249,10 +253,6 @@ import H3 from "@site/src/components/H3.js";
 <H3 page="builtins" value={builtins['sub_nat'].sig} />
 
 <Builtin data={builtins['sub_nat']} />
-
-<H3 page="builtins" value={builtins['timestamp_to_date'].sig} />
-
-<Builtin data={builtins['timestamp_to_date']} />
 
 <H3 page="builtins" value={builtins['unpack'].sig} />
 
