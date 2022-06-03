@@ -35,6 +35,6 @@ export const declarations = {
 
   ],
   views : [
-    { label: 'view', link: link_prefix + '/views' },
+    { label: 'view', link: link_prefix + '/view' },
   ]
 }

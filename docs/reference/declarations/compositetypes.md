@@ -97,7 +97,7 @@ or (pair %RGB nat (pair nat nat)) (or (bytes %Hex) (string %Css))
 
 ## States
 
-When designing the contract a [state machine](/docs/statemachine), the `states` keyword is used to declare the list of states.
+When designing the contract as a [state machine](/docs/statemachine), the `states` keyword is used to declare the list of states.
 
 For example:
 ```archetype
@@ -115,7 +115,7 @@ The Michelson representation of the contract state is a storage variable named `
 
 ## Event
 
-Archetype defines [events](/docs/language-basics/events) with the `event` keyword declaration. An event may possess several fields, like a record.
+Archetype defines [events](/blog/events) with the `event` keyword declaration. An event may possess several fields, like a record.
 
 For example the following declares the HighestBidIncreased event with two fields bidder and amount:
 

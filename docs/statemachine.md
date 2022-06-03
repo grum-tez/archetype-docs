@@ -22,7 +22,7 @@ states =
 | Canceled
 ```
 
-See the [states](/docs/reference/declarations#states) article for more information.
+See the [states](/docs/reference/declarations/compositetypes#states) article for more information.
 
 ## Transitions
 
@@ -40,12 +40,12 @@ transition accept() {
 }
 ```
 
-See the [transition](/docs/reference/declarations#transition) article for more information.
+See the [transition](/docs/reference/declarations/compositetypes#transition) article for more information.
 
 ## Check state
 
 ### Section
-The [`state is`](/docs/reference/declarations#state-is) section allows the execution of an entrypoint (ie does not fail) only when the contract is in the specified state.
+The [`state is`](/docs/reference/declarations/entrypoint#state-is) section allows the execution of an entrypoint (ie does not fail) only when the contract is in the specified state.
 
 For example, the following entrypoint fails if the current contract state is *not* `Accepted`:
 ```archetype
@@ -55,14 +55,14 @@ entry pay() {
 }
 ```
 
-See the [Sections](/docs/reference/declarations#sections) article for more information on sections.
+See the [Sections](/docs/reference/declarations/entrypoint#sections) article for more information on sections.
 
 
 ### `state` constant
 
-It is possible to interrogate the contract state anywhere in any entrypoint effect with the [`state`](/docs/reference/expressions/constants#state) constant. It is not possible to assign a value with an [assignment](/docs/reference/instructions#assignment) instruction. Use a [transition](/docs/statemachine#transitions) to change contract's state.
+It is possible to interrogate the contract state anywhere in any entrypoint effect with the [`state`](/docs/reference/expressions/constants#state) constant. It is not possible to assign a value with an [assignment](/docs/reference/instructions/assignment) instruction. Use a [transition](/docs/statemachine#transitions) to change contract's state.
 
-The constant may be interrogated with an [`if`](/docs/reference/instructions#if) or a [`match with`](/docs/reference/instructions#match-with) instruction.
+The constant may be interrogated with an [`if`](/docs/reference/instructions/control#if) or a [`match with`](/docs/reference/instructions/control#match-with) instruction.
 
 For example:
 ```archetype

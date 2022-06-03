@@ -8,10 +8,10 @@ export const PACKABLE = 3
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference'
 
-const declaration_prefix = '/docs/reference/declarations#'
-const instruction_prefix = '/docs/reference/instructions#'
-const constant_prefix = '/docs/reference/expressions/contants#'
-const operator_prefix = '/docs/reference/expressions/operators#'
+const declaration_prefix = '/docs/reference/declarations/entrypoint#'
+const instruction_prefix = '/docs/reference/instructions'
+const constant_prefix = '/docs/reference/expressions/constants#'
+const operator_prefix = '/docs/reference/expressions/operators/arithmetic#'
 const builtin_prefix = '/docs/reference/expressions/builtins#'
 const asset_prefix = '/docs/reference/expressions/asset#'
 
@@ -34,7 +34,7 @@ export const types = {
       { keyword: 'Basic types', link: '/docs/language-basics/types', code: false },
       { keyword: 'sourced by', link: declaration_prefix + 'sourced-by' },
       { keyword: 'called by', link: declaration_prefix + 'called-by' },
-      { keyword : 'transfer', link : instruction_prefix + 'transfer' },
+      { keyword : 'transfer', link : instruction_prefix + '/operation#transfer' },
       { keyword : 'caller', link : constant_prefix + 'caller' },
       { keyword : 'source', link : constant_prefix + 'source' },
       { keyword : '=', link : operator_prefix + 'a--b-7' },
@@ -54,11 +54,11 @@ export const types = {
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     related: [
       { keyword: "Asset", link:"/docs/asset", code : false },
-      { keyword: "add", link: instruction_prefix + 'aadda' },
-      { keyword: "remove", link: instruction_prefix + 'aremovek' },
-      { keyword: "remove_if", link: instruction_prefix + 'aremove_ifp' },
-      { keyword: "remove_all", link: instruction_prefix + 'aremove_all' },
-      { keyword: "remove_aggregate", link: instruction_prefix + 'aremove_aggregate' },
+      { keyword: "add", link: instruction_prefix + '/asset#aadda' },
+      { keyword: "remove", link: instruction_prefix + '/asset#aremovek' },
+      { keyword: "remove_if", link: instruction_prefix + '/asset#aremove_ifp' },
+      { keyword: "remove_all", link: instruction_prefix + '/asset#aremove_all' },
+      { keyword: "clear", link: instruction_prefix + '/asset#aclear' },
       { keyword: "[]", link: asset_prefix + 'ak--asset_keyaf' },
       { keyword: "contains", link: asset_prefix + 'acontainsk--asset_keya' },
       { keyword: "count", link: asset_prefix + 'acount' },
@@ -98,7 +98,7 @@ export const types = {
   },
   asset_view :
   {
-    desc: <div>Read-only view on asset collection returned by asset methods. It is possible to iterate on an <code>asset_view</code> with the <Link to="/docs/reference/instructions#for"><code>for</code></Link> instruction. They are internally represented as list of asset keys.</div>,
+    desc: <div>Read-only view on asset collection returned by asset methods. It is possible to iterate on an <code>asset_view</code> with the <Link to="/docs/reference/instructions/control#for"><code>for</code></Link> instruction. They are internally represented as list of asset keys.</div>,
     link: '#asset_view<A>',
     examples: [ '[]' ],
     tags: [ PASSABLE, PACKABLE ],
@@ -124,9 +124,9 @@ export const types = {
     michelson_ref_url: michelson_ref_base_url + '/#type-big_map',
     related: [
       { keyword: "Basic containers", link:"/docs/language-basics/container#map", code : false },
-      { keyword: "put", link: instruction_prefix + 'mputk-v' },
-      { keyword: "remove", link: instruction_prefix + 'mremovek' },
-      { keyword: "update", link: instruction_prefix + 'mupdatek--k-o--optiont' },
+      { keyword: "put", link: instruction_prefix + '/containers#mputk-v' },
+      { keyword: "remove", link: instruction_prefix + '/containers#mremovek' },
+      { keyword: "update", link: instruction_prefix + '/containers#mupdatek--k-o--optiont' },
       { keyword: "iterable_big_map", link : "/docs/reference/types#iterable_big_map" }
     ],
   },
@@ -175,7 +175,6 @@ export const types = {
     michelson: "bool",
     michelson_ref_url: michelson_ref_base_url + '/#type-bool',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/boolean" }
     ],
   },
   bytes :
@@ -187,7 +186,6 @@ export const types = {
     michelson: "bytes",
     michelson_ref_url: michelson_ref_base_url + '/#type-bytes',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/bytes" }
     ],
   },
   chain_id :
@@ -235,7 +233,7 @@ export const types = {
     michelson: "contract",
     michelson_ref_url: michelson_ref_base_url + '/#type-contract',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/operations" }
+      { keyword: "Operation", link:"/docs/reference/instructions/operation" }
     ],
   },
   date :
@@ -247,7 +245,6 @@ export const types = {
     michelson: "timestamp",
     michelson_ref_url: michelson_ref_base_url + '/#type-timestamp',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/date" }
     ],
   },
   duration :
@@ -258,7 +255,6 @@ export const types = {
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "int",
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/date" }
     ],
   },
   enum :
@@ -279,7 +275,6 @@ export const types = {
     examples: [],
     tags: [ ],
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/event" }
     ],
   },
   int :
@@ -291,7 +286,8 @@ export const types = {
     michelson: "int",
     michelson_ref_url: michelson_ref_base_url + '/#type-int',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/number#int" }
+      { keyword: "Types", link:"/docs/language-basics/types" },
+      { keyword: "nat", link:"/docs/reference/types#nat" }
     ],
   },
   iterable_big_map: {
@@ -301,9 +297,9 @@ export const types = {
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     related: [
       { keyword: "big_map", link:"/docs/reference/types#big_map<K,%20V>" },
-      { keyword: "put", link: instruction_prefix + 'mputk-v' },
-      { keyword: "remove", link: instruction_prefix + 'mremovek' },
-      { keyword: "update", link: instruction_prefix + 'mupdatek--k-o--optiont' },
+      { keyword: "put", link: instruction_prefix + '/containers#mputk-v' },
+      { keyword: "remove", link: instruction_prefix + '/containers#mremovek' },
+      { keyword: "update", link: instruction_prefix + '/containers#mupdatek--k-o--optiont' },
     ],
   },
   key :
@@ -355,7 +351,7 @@ export const types = {
     michelson_ref_url: michelson_ref_base_url + '/#type-list',
     related: [
       { keyword: "List", link:"/docs/language-basics/container#list" },
-      { keyword: "Iter", link:"/doc/language-basics/control/#iter"}
+      { keyword: "Iter", link:"/docs/reference/instructions/control#iter"}
     ],
   },
   map :
@@ -383,7 +379,7 @@ export const types = {
     michelson: "nat",
     michelson_ref_url: michelson_ref_base_url + '/#type-nat',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/number#nat" }
+      { keyword: "int", link:"/docs/reference/types#int" }
     ],
   },
   never :
@@ -395,7 +391,6 @@ export const types = {
     michelson: "never",
     michelson_ref_url: michelson_ref_base_url + '/#type-never',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/never" }
     ],
   },
   operation :
@@ -407,7 +402,7 @@ export const types = {
     michelson: "operation",
     michelson_ref_url: michelson_ref_base_url + '/#type-operation',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/operations" }
+      { keyword: "Operation", link:"/docs/reference/instructions/operation" }
     ],
   },
   option :
@@ -464,7 +459,6 @@ export const types = {
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "pair int nat",
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/address" }
     ],
   },
   record :
@@ -540,8 +534,6 @@ export const types = {
     michelson: "string",
     michelson_ref_url: michelson_ref_base_url + '/#type-string',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/string" },
-      { keyword: "Operators", link:"/docs/reference/operators" }
     ],
   },
   tez :
@@ -559,7 +551,7 @@ export const types = {
     michelson: "mutez",
     michelson_ref_url: michelson_ref_base_url + '/#type-mutez',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/tez" }
+      { keyword: "Operation", link:"/docs/reference/instructions/operation" }
     ],
   },
   ticket :
@@ -598,7 +590,6 @@ export const types = {
     michelson: "unit",
     michelson_ref_url: michelson_ref_base_url + '/#type-unit',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/unit" }
     ],
   }
 };

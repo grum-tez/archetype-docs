@@ -8,7 +8,7 @@ const lightCodeTheme = require('./src/theme/prism-light-theme');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Archetype Docs',
+  title: 'Archetype Documentation',
   tagline: 'Primary documentation for Archetype language',
   url: 'https://docs.archetype-lang.org/',
   baseUrl: '/',

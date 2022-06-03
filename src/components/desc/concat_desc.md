@@ -9,7 +9,7 @@ const m = concat("Hello ", "Archetype");
 /* m is "Hello Archetype" */
 ```
 
-It is equivalent to the [`+`](/docs/reference/expressions/operators#a--b) operator.
+It is equivalent to the [`+`](/docs/reference/expressions/operators/arithmetic#a--b) operator.
 
 ### Bytes
 

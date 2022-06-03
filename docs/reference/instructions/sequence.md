@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # Sequence
 
-The [effect](/docs/reference/declarations#effect) of an [entrypoint](/docs/reference/declarations#entrypoints) is composed of zero, one or several instructions presented below.
+The [effect](/docs/reference/declarations/entrypoint#effect) of an [entrypoint](/docs/reference/declarations/entrypoint) is composed of zero, one or several instructions presented below.
 
 The literal for zero instruction is `()`; several instructions are separated with `;`.
 

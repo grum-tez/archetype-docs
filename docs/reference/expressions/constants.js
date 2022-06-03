@@ -31,7 +31,7 @@ export const constants = {
     michelson_ref_base_url: michelson_ref_base_url + '/#SENDER',
     related: [
       { keyword: "source", link: "/docs/reference/expressions/constants#source" },
-      { keyword: "called by", link: "/docs/reference/declarations#called-by" },
+      { keyword: "called by", link: "/docs/reference/declarations/entrypoint#called-by" },
     ]
   },
   level:
@@ -66,7 +66,7 @@ export const constants = {
     michelson_ref_url: michelson_ref_base_url + '/#instr-SOURCE',
     related: [
       { keyword: "caller", link: "/docs/reference/expressions/constants#caller" },
-      { keyword: "sourced by", link: "/docs/reference/declarations#sourced-by" },
+      { keyword: "sourced by", link: "/docs/reference/declarations/entrypoint#sourced-by" },
     ],
   },
   state:
@@ -76,9 +76,9 @@ export const constants = {
     </div>,
     related: [
       { keyword: "State Machine", link: "/docs/statemachine" },
-      { keyword: "States declaration", link: "/docs/reference/declarations#states" },
-      { keyword: "Transition", link: "/docs/reference/declarations#transition" },
-      { keyword: "Assignment", link: "/docs/reference/instructions#assignment"}
+      { keyword: "States declaration", link: "/docs/reference/declarations/compositetypes#states" },
+      { keyword: "Transition", link: "/docs/reference/declarations/compositetypes#transition" },
+      { keyword: "Assignment", link: "/docs/reference/instructions/assignment"}
     ],
   },
   transferred:

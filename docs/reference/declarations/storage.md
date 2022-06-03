@@ -21,7 +21,7 @@ The `seller` and `buyer` [addresses](/docs/reference/types#address) then need to
 completium-cli deploy escrow.arl --parameters '{ "seller" : "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb", "buyer" : "tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6" }'
 ```
 
-The value of a contract parameter may be modified by [assignement](/docs/reference/instructions/assignment) instructions in [entrypoints](/docs/reference/declarations/entrypoint).
+The value of a contract parameter may be modified by [assignment](/docs/reference/instructions/assignment) instructions in [entrypoints](/docs/reference/declarations/entrypoint).
 
 ## Variable
 
@@ -36,7 +36,7 @@ variable counter : nat = 0
 variable admin_candidate : option<address> = none
 ```
 
-The value of a storage variable may be modified by [assignement](/docs/reference/instructions/assignment) instructions in [entrypoints](/docs/reference/declarations/entrypoint).
+The value of a storage variable may be modified by [assignment](/docs/reference/instructions/assignment) instructions in [entrypoints](/docs/reference/declarations/entrypoint).
 
 ## Asset
 

@@ -24,7 +24,7 @@ export const containerinstructions = {
     ],
     related: [
       { keyword: 'set', link: '/docs/reference/types#set<T>' },
-      { keyword: 'remove', link: '/docs/reference/instructions#sremovee' },
+      { keyword: 'remove', link: '/docs/reference/instructions/containers#sremovee' },
       { keyword: 'contains', link: '/docs/reference/expressions/builtins#contains(c%20:%20C,%20i%20:%20T)' },
     ]
   },
@@ -45,13 +45,13 @@ export const containerinstructions = {
     ],
     related: [
       { keyword: 'set', link: '/docs/reference/types#set<T>' },
-      { keyword: 'add', link: '/docs/reference/instructions#sadde' },
+      { keyword: 'add', link: '/docs/reference/instructions/containers#sadde' },
       { keyword: 'contains', link: '/docs/reference/expressions/builtins#contains(c%20:%20C,%20i%20:%20T)' },
     ]
   },
   prepend: {
     desc: <div>Prepends element <code>e</code> to (ie. puts <code>e</code> in first position of) list <code>L</code>.<p></p>
-    (see <Link to="/docs/reference/instructions#match-with"><code>match with</code></Link> instruction to <i>remove</i> the head element of the list).
+    (see <Link to="/docs/reference/instructions/control#match-with"><code>match with</code></Link> instruction to <i>remove</i> the head element of the list).
     </div>,
     sig: 'L.prepend(e)',
     parameters: [
@@ -69,7 +69,7 @@ export const containerinstructions = {
     related: [
       { keyword: 'list', link: '/docs/reference/types#list<T>' },
       { keyword: 'contains', link: '/docs/reference/expressions/builtins#contains(c%20:%20C,%20i%20:%20T)' },
-      { keyword: 'match with', link: '/docs/reference/instructions#match-with' }
+      { keyword: 'match with', link: '/docs/reference/instructions/control#match-with' }
     ]
   },
   reverse: {
@@ -79,7 +79,7 @@ export const containerinstructions = {
     ],
     related: [
       { keyword: 'list', link: '/docs/reference/types#list<T>' },
-      { keyword: 'prepend', link: '/docs/reference/instructions#lprepende' }
+      { keyword: 'prepend', link: '/docs/reference/instructions/containers#lprepende' }
     ]
   },
   concat: {
@@ -96,8 +96,8 @@ export const containerinstructions = {
     ],
     related: [
       { keyword: 'list', link: '/docs/reference/types#list<T>' },
-      { keyword: 'prepend', link: '/docs/reference/instructions#lprepende' },
-      { keyword: 'reverse', link: '/docs/reference/instructions#lreverse' }
+      { keyword: 'prepend', link: '/docs/reference/instructions/containers#lprepende' },
+      { keyword: 'reverse', link: '/docs/reference/instructions/containers#lreverse' }
     ]
   },
   put : {

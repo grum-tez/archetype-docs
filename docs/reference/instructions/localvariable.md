@@ -4,10 +4,10 @@ sidebar_position: 1
 
 # Local variable
 
-Instructions presented below declare a *local* variable in entrypoints' [effect](/docs/reference/declarations#effect) section.
+Instructions presented below declare a *local* variable in entrypoints' [effect](/docs/reference/declarations/entrypoint#effect) section.
 ## `var`
 
-A local variable is declared by the `var` keyword followed by the variable [identifier](docs/reference/declarations#identifier) and the initial value.
+A local variable is declared by the `var` keyword followed by the variable [identifier](docs/reference/declarations/identifier) and the initial value.
 
 For example, the following declares a variable `counter` with initial value `0`:
 ```archetype
@@ -23,7 +23,7 @@ Specifying the type is ususally optional as the typer may *infer* the type of th
 
 ## `const`
 
-Similar to `var` except that a `const` local variable *cannot* be modified by an [assignment](/docs/reference/instructions#assignment) instruction.
+Similar to `var` except that a `const` local variable *cannot* be modified by an [assignment](/docs/reference/instructions/assignment) instruction.
 
 For example, the following instructions generates a compilation error:
 ```archetype

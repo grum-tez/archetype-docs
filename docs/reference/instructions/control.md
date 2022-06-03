@@ -22,7 +22,7 @@ else
   instr2
 ```
 
-A [sequence](/docs/reference/instructions#sequence) of instructions is delimited by `begin ... end` and  instructions are separated by `;`:
+A [sequence](/docs/reference/instructions/sequence) of instructions is delimited by `begin ... end` and  instructions are separated by `;`:
 ```archetype
 if expr1 then begin
   instr1;
@@ -66,7 +66,7 @@ A conditional [`if`](/docs/reference/expressions/controls#if) *expression* is al
 
 ## `match with`
 
-The `match with` instruction, inspired by the [Ocaml](https://ocaml.org/) language, desconstructs a value of *enumerated* type to extract data from it. Enumerated types are [`option`](/docs/reference/types#option<T>), [`or`](/docs/reference/types#or<T1,%20T2>), [`list`](/docs/reference/types#list<T>), [`states`](/docs/reference/declarations#states) and composite type [`enum`](/docs/reference/types#enum).
+The `match with` instruction, inspired by the [Ocaml](https://ocaml.org/) language, desconstructs a value of *enumerated* type to extract data from it. Enumerated types are [`option`](/docs/reference/types#option<T>), [`or`](/docs/reference/types#or<T1,%20T2>), [`list`](/docs/reference/types#list<T>), [`states`](/docs/reference/declarations/compositetypes#states) and composite type [`enum`](/docs/reference/types#enum).
 
 Its generic syntactic structure is presented below, given that *E1* ... *En* are the named values of the enumerated type of *expr1*:
 ```archetype
@@ -129,11 +129,11 @@ end
 
 In the example above, `h` is the first element of the list `l`, and `tl` is the list `l` without the first element.
 
-Note that Archetype does not support recursive calls, hence the `match` instruction cannot be used to fold a list as in Ocaml; it is rather used to retrieve the first element of a list and manage the case of an empty list. The [`for`](/docs/reference/instructions#for) instruction is used to iterate over list elements.
+Note that Archetype does not support recursive calls, hence the `match` instruction cannot be used to fold a list as in Ocaml; it is rather used to retrieve the first element of a list and manage the case of an empty list. The [`for`](/docs/reference/instructions/control#for) instruction is used to iterate over list elements.
 
 ### States
 
-Contract's [`states`](/docs/reference/declarations#states) may be interrogated with the `match` instruction.
+Contract's [`states`](/docs/reference/declarations/compositetypes#states) may be interrogated with the `match` instruction.
 
 Consider the states declaration:
 ```archetype
@@ -203,7 +203,7 @@ done
 
 ### List
 
-Elements of a [`list`](/docs/reference/types#list<T>) are iterated in the order of the list's construction process. See [`prepend`](/docs/reference/instructions#lprepende) and [`concat`](/docs/reference/instructions#lconcatl) instructions.
+Elements of a [`list`](/docs/reference/types#list<T>) are iterated in the order of the list's construction process. See [`prepend`](/docs/reference/instructions/containers#lprepende) and [`concat`](/docs/reference/instructions/containers#lconcatl) instructions.
 
 For example, suppose list `l` is typed `list<nat>`:
 ```archetype

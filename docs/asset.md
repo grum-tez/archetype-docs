@@ -30,7 +30,7 @@ asset loan identified by id {
 
 The declaration above creates a collection of loans; each loan is defined by a string identifier `id` and five data fields (from `subscriber` to `delay`). Note that fields may have a default value.
 
-Refer to the [declaration](/docs/reference/declarations#asset) section for more information.
+Refer to the [declaration](/docs/reference/declarations/storage#asset) section for more information.
 
 ## API
 
@@ -99,7 +99,7 @@ The *partition* relation is ensured **statically** by the compiler as it is not 
 ```archetype
 B[kb].pofa.add({ ka });
 ```
-See *partition* section of [`add`](/docs/reference/instructions#aadda) and [`remove`](/docs/reference/instructions#aremovek) instructions for more information.
+See *partition* section of [`add`](/docs/reference/instructions/asset#aadda) and [`remove`](/docs/reference/instructions/asset#aremovek) instructions for more information.
 
 
 ### Aggregate
@@ -120,4 +120,4 @@ asset B {
 
 Adding a reference (ie. an identifier) in `aofa` field fails at runtime if the asset is not in collection *A*.
 
-See *aggregate* section of [`add`](/docs/reference/instructions#aadda) and [`remove`](/docs/reference/instructions#aremovek) instructions for more information.
+See *aggregate* section of [`add`](/docs/reference/instructions/asset#aadda) and [`remove`](/docs/reference/instructions/asset#aremovek) instructions for more information.

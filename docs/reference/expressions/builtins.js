@@ -1,19 +1,19 @@
 import Link from '@docusaurus/Link';
 import React from "react"
 
-import IsNoneDesc from "../../../src/components/desc/is_none_desc.md"
-import IsSomeDesc from "../../../src/components/desc/is_some_desc.md"
-import OptGetDesc from "../../../src/components/desc/opt_get_desc.md"
 import AbsDesc from "../../../src/components/desc/abs_desc.md"
 import ApplyLambdaDesc from "../../../src/components/desc/applylambda_desc.md"
-import ExecLambdaDesc from "../../../src/components/desc/execlambda_desc.md"
-import GetEntrypointDesc from "../../../src/components/desc/getentrypoint_desc.md"
 import ConcatDesc from "../../../src/components/desc/concat_desc.md"
+import ExecLambdaDesc from "../../../src/components/desc/execlambda_desc.md"
 import FoldDesc from "../../../src/components/desc/fold_desc.md"
+import GetEntrypointDesc from "../../../src/components/desc/getentrypoint_desc.md"
+import IsNoneDesc from "../../../src/components/desc/is_none_desc.md"
+import IsSomeDesc from "../../../src/components/desc/is_some_desc.md"
 import LeftDesc from "../../../src/components/desc/left_desc.md"
-import RightDesc from "../../../src/components/desc/right_desc.md"
 import MapDesc from "../../../src/components/desc/map_desc.md"
 import MutezNatDesc from "../../../src/components/desc/mutez_nat_desc.md"
+import OptGetDesc from "../../../src/components/desc/opt_get_desc.md"
+import RightDesc from "../../../src/components/desc/right_desc.md"
 import UnpackDesc from "../../../src/components/desc/unpack_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
@@ -53,7 +53,7 @@ export const builtins = {
     michelson: "VIEW",
     michelson_ref_url: michelson_ref_base_url + '#VIEW',
     related: [
-      { keyword: 'view', link: '/docs/language-basics/TODO' },
+      { keyword: 'View', link: '/docs/reference/declarations/view' },
     ]
   },
 
@@ -86,7 +86,7 @@ export const builtins = {
     michelson: "TRANSFER_TOKENS",
     michelson_ref_url: michelson_ref_base_url + '#instr-TRANSFER_TOKENS',
     related: [
-      { keyword: 'operations', link: '/docs/language-basics/operation' },
+      { keyword: 'Operations', link: '/docs/reference/instructions/operation' },
       { keyword: 'get_entrypoint', link: '/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)' },
     ]
   },
@@ -239,7 +239,7 @@ export const builtins = {
       }
     ],
     related: [
-      { keyword: 'Numbers', link: '/docs/language-basics/number#nat' },
+      { keyword: 'nat', link: '/docs/reference/types#nat' },
     ]
   },
 
@@ -270,7 +270,7 @@ export const builtins = {
     michelson: "SUB_MUTEZ",
     michelson_ref_url: michelson_ref_base_url + '#instr-SUB_MUTEZ',
     related: [
-      { keyword: 'Tez', link: '/docs/language-basics/tez' },
+      { keyword: 'tez', link: '/docs/reference/types#tez' },
     ]
   },
 
@@ -389,23 +389,23 @@ export const builtins = {
 
   // list api expression
   prepend: {
-    sig: 'prepend(l : list<T>, i : T)',
-    desc: <div>[NEW] Prepends an item <code>i</code> to list <code>l</code>.</div>,
+    sig: 'prepend(l : list<T>, e : T)',
+    desc: <div>Adds element <code>e</code> at the beginning of list <code>l</code>.</div>,
     parameters: [
       {
         type: 'list<T>',
         alias: 'l',
-        desc: <div>List to be prepended</div>
+        desc: <div>List</div>
       },
       {
         type: 'T',
-        alias: 'i',
-        desc: <div>Item to prepend</div>
+        alias: 'e',
+        desc: <div>Element to add</div>
       }
     ],
     returns: {
       type: 'list<T>',
-      desc: <div>List prepended</div>
+      desc: <div>List with element <code>e</code> followed by list <code>l</code> of elements.</div>
     },
     michelson: "CONS",
     michelson_ref_url: michelson_ref_base_url + '#instr-CONS',
@@ -463,13 +463,13 @@ export const builtins = {
   },
   // map api expression
   put: {
-    sig: 'put(m : (big_)?map<K, V>, k : K, v : V)',
-    desc: <div>[NEW] Puts a pair of key-value on the map <code>m</code>.</div>,
+    sig: 'put(m : map<K, V>, k : K, v : V)',
+    desc: <div>Associates value <code>v</code> with key <code>k</code> in map (<code>map</code>, <code>big_map</code> or <code>iterable_map</code>)<code>m</code>.</div>,
     parameters: [
       {
         type: 'map',
         alias: 'm',
-        desc: <div>Map to put</div>
+        desc: <div>Map (or <Link to="/docs/reference/types#big_map<K,%20V>"><code>big_map</code></Link> or <Link to="/docs/reference/types#iterable_big_map<K,%20V>"><code>iterable_big_map</code></Link>)</div>
       },
       {
         type: 'K',
@@ -483,17 +483,19 @@ export const builtins = {
       }
     ],
     returns: {
-      type: '(big_)?map<K, V>',
-      desc: <div>Copy of the map which contains the new pair key-value</div>
+      type: 'map<K, V>',
+      desc: <div>Copy of map <code>m</code> whith new key-value pair (returns same type as <code>m</code>)</div>
     },
     michelson: "UPDATE",
     michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
     related: [
-      { keyword: 'Map', link: '/docs/language-basics/container' },
+      { keyword: 'Map', link: '/docs/language-basics/container#map' },
+      { keyword: 'remove', link: '/docs/reference/expressions/builtins#remove(c%20:%20C,%20i%20:%20T)' },
+      { keyword: 'update', link: '/docs/reference/expressions/builtins#update(m%20:%20map<K,%20V>,%20k%20:%20K,%20v%20:%20option<V>)' },
     ]
   },
   update: {
-    sig: 'update(m : (big_)?map<K, V>, k : K, v : option<V>)',
+    sig: 'update(m : map<K, V>, k : K, v : option<V>)',
     desc: <div>[NEW] Adds or removes a pair of key-value on the map <code>m</code>.</div>,
     parameters: [
       {
@@ -525,6 +527,8 @@ export const builtins = {
     michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
     related: [
       { keyword: 'Map', link: '/docs/language-basics/container#map' },
+      { keyword: 'put', link: '/docs/language-basics/container#map' },
+      { keyword: 'remove', link: '/docs/reference/expressions/builtins#remove(c%20:%20C,%20i%20:%20T)' },
     ]
   },
   get: {
@@ -563,29 +567,32 @@ export const builtins = {
 
   remove: {
     sig: 'remove(c : C, i : T)',
-    desc: <div>[NEW] Remove item <code>i</code> in <code>c</code>.</div>,
+    desc: <div>Returns a copy of <code>c</code> without item <code>i</code>.</div>,
     parameters: [
       {
         type: 'C',
-        alias: 'o',
+        withLink: false,
+        alias: 'c',
         desc: <div>
-          C must be either:
+          Container to remove element from; <code>C</code> is either:
           <ul>
             <li><Link to={'/docs/reference/types#set<T>'}><code>set</code></Link></li>
             <li><Link to={'/docs/reference/types#map<K,%20V>'}><code>map</code></Link></li>
             <li><Link to={'/docs/reference/types#big_map<K,%20V>'}><code>big_map</code></Link></li>
+            <li><Link to={'/docs/reference/types#iterable_big_map<K,%20V>'}><code>iterable_big_map</code></Link></li>
           </ul>
         </div>
       },
       {
         type: 'T',
+        withLink: false,
         alias: 'i',
-        desc: <div>Item to remove</div>
+        desc: <div>Item to remove (key value for map containers).</div>
       }
     ],
     returns: {
       type: 'C',
-      desc: <div>Copy of container, with <code>i</code> removed</div>
+      desc: <div>Container that contains all elements from <code>c</code> except <code>i</code></div>
     },
     michelson: "UPDATE",
     michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
@@ -698,7 +705,6 @@ export const builtins = {
     michelson: "ABS",
     michelson_ref_url: michelson_ref_base_url + '#instr-ABS',
     related: [
-      { keyword: 'Numbers', link: '/docs/language-basics/number' },
       { keyword: 'int_to_nat', link: '/docs/reference/expressions/builtins#int_to_nat(i%20:%20int)' },
     ]
   },
@@ -720,7 +726,7 @@ export const builtins = {
     related: [
       { keyword: 'string', link: '/docs/reference/types#string' },
       { keyword: 'bytes', link: '/docs/reference/types#bytes' },
-      { keyword: '+', link: '/docs/reference/expressions/operators#a--b' },
+      { keyword: '+', link: '/docs/reference/expressions/operators/arithmetic#a--b' },
     ]
   },
   slice: {
@@ -860,7 +866,6 @@ export const builtins = {
     michelson: "ISNAT",
     michelson_ref_url: michelson_ref_base_url + '#instr-ISNAT',
     related: [
-      { keyword: 'Numbers', link: '/docs/language-basics/number' },
       { keyword: 'nat', link: '/docs/reference/types#nat' },
       { keyword: 'int', link: '/docs/reference/types#int' },
       { keyword: 'option', link: '/docs/reference/types#option<T>' },
@@ -907,7 +912,6 @@ export const builtins = {
       desc: <div>Floored integer</div>
     },
     related: [
-      { keyword: 'Numbers', link: '/docs/language-basics/number#rational' },
       { keyword: 'ceil', link: '/docs/reference/expressions/builtins#ceil(r%20:%20rational)' },
     ]
   },
@@ -926,7 +930,6 @@ export const builtins = {
       desc: <div>Ceiled integer</div>
     },
     related: [
-      { keyword: 'Numbers', link: '/docs/language-basics/number#rational' },
       { keyword: 'floor', link: '/docs/reference/expressions/builtins#floor(r%20:%20rational)' },
     ]
   },
@@ -945,7 +948,7 @@ export const builtins = {
       desc: <div>String converted to nat</div>
     },
     related: [
-      { keyword: 'Numbers', link: '/docs/language-basics/number' },
+      { keyword: 'Conversion', link: '/docs/language-basics/types#conversion' },
       { keyword: 'nat', link: '/docs/reference/types#nat' },
       { keyword: 'string', link: '/docs/reference/types#string' },
     ]
@@ -1508,7 +1511,9 @@ export const builtins = {
       desc: <div>The result</div>
     },
     related: [
-      { keyword: 'TODO', link: '/docs/language-basics/TODO' },
+      { keyword: 'Conversion', link: '/docs/language-basics/types#conversion' },
+      { keyword: 'int', link: '/docs/reference/types#int' },
+      { keyword: 'date', link: '/docs/reference/types#date' },
     ]
   },
   mutez_to_nat: {

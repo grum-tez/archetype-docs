@@ -18,7 +18,7 @@ ledger.add_update(%to, { tokens += value });
 * if `%to` is in `ledger` collection, this increments the `tokens` field by `value`
 
 :::info
-Note that it is possible to use the `+=` assignement instruction on field `tokens` because `tokens` has a *default value* specified (`0`) in asset declaration.
+Note that it is possible to use the `+=` assignment instruction on field `tokens` because `tokens` has a *default value* specified (`0`) in asset declaration.
 :::
 
 #### Partition
@@ -30,7 +30,7 @@ For example, the following instruction adds or updates the expiration date of mi
 flyer[caller].miles.add_update("#1", { expiration := (now + 40d) })
 ```
 
-See the [paritition](/docs/reference/instructions#partition) section above for more information.
+See the [paritition](/docs/reference/instructions/asset#partition) section above for more information.
 
 #### Aggregate
 

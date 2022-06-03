@@ -26,10 +26,10 @@ export const divergent = {
       }
     ],
     related: [
-      { keyword: 'require', link: '/docs/reference/declarations#require' },
-      { keyword: 'fail if', link: '/docs/reference/declarations#fail-if' },
-      { keyword: 'do_require', link: '/docs/reference/instructions#do_require' },
-      { keyword: 'do_fail_if', link: '/docs/reference/instructions#do_fail_if' },
+      { keyword: 'require', link: '/docs/reference/declarations/entrypoint#require' },
+      { keyword: 'fail if', link: '/docs/reference/declarations/entrypoint#fail-if' },
+      { keyword: 'do_require', link: '/docs/reference/instructions/divergent#do_require' },
+      { keyword: 'do_fail_if', link: '/docs/reference/instructions/divergent#do_fail_if' },
     ]
   },
   do_require: {
@@ -57,9 +57,9 @@ export const divergent = {
       }
     ],
     related: [
-      { keyword: 'require', link: '/docs/reference/declarations#require' },
-      { keyword: 'fail', link: '/docs/reference/instructions#faile' },
-      { keyword: 'if', link: '/docs/reference/instructions#if' },
+      { keyword: 'require', link: '/docs/reference/declarations/entrypoint#require' },
+      { keyword: 'fail', link: '/docs/reference/instructions/divergent#faile' },
+      { keyword: 'if', link: '/docs/reference/instructions/control#if' },
     ]
   },
   do_fail_if: {
@@ -87,9 +87,9 @@ export const divergent = {
       }
     ],
     related: [
-      { keyword: 'fail if', link: '/docs/reference/declarations#fail-if' },
-      { keyword: 'fail', link: '/docs/reference/instructions#faile' },
-      { keyword: 'if', link: '/docs/reference/instructions#if' },
+      { keyword: 'fail if', link: '/docs/reference/declarations/entrypoint#fail-if' },
+      { keyword: 'fail', link: '/docs/reference/instructions/divergent#faile' },
+      { keyword: 'if', link: '/docs/reference/instructions/control#if' },
     ]
   }
 }

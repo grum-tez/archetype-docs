@@ -24,5 +24,5 @@ The order in which keys are iterated is *not* the natural order.
 :::
 
 :::caution
-The possiblity to iterate comes with an increased cost of [`put`](/docs/reference/instructions#mputk-v) [`remove`](/docs/reference/instructions#mremovek) and [`update`](/docs/reference/instructions#mupdatek--k-o--optiont) operations.
+The possiblity to iterate comes with an increased cost of [`put`](/docs/reference/instructions/containers#mputk-v) [`remove`](/docs/reference/instructions/containers#mremovek) and [`update`](/docs/reference/instructions/containers#mupdatek--k-o--optiont) operations.
 :::

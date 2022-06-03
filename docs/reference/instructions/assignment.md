@@ -51,7 +51,7 @@ record color {
 Then the following assigns the `red` field:
 ```archetype
 var r = { red = 0xc6; green = 0x6d; blue = 0x32 };
-r.red = 0xc8;
+r.red := 0xc8;
 /* r is { red = 0xc8; green = 0x6d; blue = 0x32 } */
 ```
 

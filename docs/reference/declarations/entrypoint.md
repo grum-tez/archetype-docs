@@ -79,7 +79,7 @@ transition accept(success : bool) {
 }
 ```
 
-Any [section](/docs/reference/declarations/entrpoint#sections) (except `state is`) may also be added to the body of a transaction.
+Any [section](/docs/reference/declarations/entrypoint#sections) (except `state is`) may also be added to the body of a transaction.
 
 For example the following transition may only be called by the `transporter` [address](/docs/reference/types#address) and it sets the storage variable `message` value:
 ```archetype
@@ -330,7 +330,7 @@ entry pay() {
 </Grid>
 <Grid xs={12} sm={12} md={9.5}>
 
-This section contains the code (a list of [instructions](/docs/reference#instructions)) to modify the contract's storage and to generate [operations](/docs/language-basics/operations).
+This section contains the code (a list of [instructions](/docs/reference#instructions)) to modify the contract's storage and to generate [operations](/docs/reference/instructions/operation).
 
 For example, the entry point below sets the storage variable `owner_candidate`:
 ```archetype

@@ -9,7 +9,7 @@ export const instructions = {
       { label : 'var', link : link_prefix + '/localvariable#var' },
       { label : 'const', link : link_prefix + '/localvariable#const' },
     ],
-    assignements: [
+    assignments: [
       { label : ':=', link : link_prefix + '/assignment#a--b' },
       { label : '+=', link : link_prefix + '/assignment#a--b-1' },
       { label : '-=', link : link_prefix + '/assignment#a---b' },

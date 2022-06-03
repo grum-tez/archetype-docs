@@ -60,7 +60,7 @@ This is the Archetype language reference.
   </Grid>
 </Grid>
 
-<EagleEyeView title="Assignement" data={instructions.assignements} xs={1}/>
+<EagleEyeView title="Assignment" data={instructions.assignments} xs={1}/>
 
 <EagleEyeView title="Control" data={instructions.controls} xs={2}/>
 

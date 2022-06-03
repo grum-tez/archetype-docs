@@ -34,5 +34,5 @@ const c = { v with
 ```
 
 :::info
-This operator is useful to create a *new* record from an existing one. In order to update an existing record, the [field assignment](/docs/reference/instructions/assignement#record) operator is to be preferred.
+This operator is useful to create a *new* record from an existing one. In order to update an existing record, the [field assignment](/docs/reference/instructions/assignment#record) operator is to be preferred.
 :::

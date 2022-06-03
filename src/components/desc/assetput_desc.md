@@ -23,7 +23,7 @@ loan.put({
 })
 ```
 
-As for the [`add`](/docs/reference/instructions#aadda) instruction, fields label may be omitted when all fields are specified:
+As for the [`add`](/docs/reference/instructions/asset#aadda) instruction, fields label may be omitted when all fields are specified:
 
 ```archetype
 loan.put({ "1a3245"; tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg; 5%; 50w5d })
