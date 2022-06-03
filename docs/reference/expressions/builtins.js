@@ -498,13 +498,16 @@ export const builtins = {
     ]
   },
   update: {
-    sig: 'update(m : map<K, V>, k : K, v : option<V>)',
-    desc: <div>[NEW] Adds or removes a pair of key-value on the map <code>m</code>.</div>,
+    sig: 'update(m : map<K, V>, k : K, v : option<T>)',
+    desc: <div>Adds or removes value <code>v</code> from associated to key <code>k</code> in map <code>m</code>: <ul>
+    <li><code>none</code> removes key <code>k</code></li>
+    <li><code>some(v)</code>, adds key <code>k</code> with value <code>v</code></li>
+  </ul></div>,
     parameters: [
       {
         type: 'map',
         alias: 'm',
-        desc: <div>Map to add/remove</div>
+        desc: <div>Map (or <Link to="/docs/reference/types#big_map<K,%20V>"><code>big_map</code></Link> or <Link to="/docs/reference/types#iterable_big_map<K,%20V>"><code>iterable_big_map</code></Link>)</div>
       },
       {
         type: 'K',
@@ -512,19 +515,14 @@ export const builtins = {
         desc: <div>Key to add/remove</div>
       },
       {
-        type: 'V',
+        type: 'option<T>',
         alias: 'v',
-        desc: <div>
-          <ul>
-            <li><code>none</code> remove key <code>k</code></li>
-            <li><code>some(v)</code>, add key <code>k</code> with value <code>v</code></li>
-          </ul>
-        </div>
+        desc: <div>Optional value to associate to <code>k</code></div>
       }
     ],
     returns: {
-      type: '(big_)?map<K, V>',
-      desc: <div>Copy of the new map</div>
+      type: 'map<K, V>',
+      desc: <div>Copy of map <code>m</code> where <code>k</code> is associated to <code></code></div>
     },
     michelson: "UPDATE",
     michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
