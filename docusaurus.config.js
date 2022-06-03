@@ -11,12 +11,12 @@ const config = {
   title: 'Archetype Documentation',
   tagline: 'Primary documentation for Archetype language',
   url: 'https://docs.archetype-lang.org/',
-  baseUrl: '/',
+  baseUrl: '/archetype-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'completium', // Usually your GitHub org/user name.
+  projectName: 'archetype-docs', // Usually your repo name.
 
   presets: [
     [
