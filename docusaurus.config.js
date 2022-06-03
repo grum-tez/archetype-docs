@@ -30,7 +30,7 @@ const config = {
           lastVersion: 'current',
           versions: {
             current: {
-              label: '1.2.16',
+              label: '1.3.0',
               path: '/',
               badge: false
             },
