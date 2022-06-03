@@ -1,34 +1,22 @@
 ---
 sidebar_position: 1
 ---
+import { types } from './types.js';
+import Api from '../../src/components/Api.js';
 
 # Basic types
 
-Bool
-
-String
-
-Nat
-
-Int
-
-Rational
-
-Date
-
-Duration
-
-Bytes
-
-Tez
-
-Address
+<Api title="" data={types.basic} />
+<br/>
 
 List of all available types [here](/docs/reference/#types).
 
 ### Conversion
 
 List of conversion functions
+
+<Api title="" data={types.conversions} />
+<br/>
 
 ### Comparable
 

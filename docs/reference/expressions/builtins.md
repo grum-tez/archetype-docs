@@ -54,9 +54,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['contains']} />
 
-<H3 page="builtins" value={builtins['contract_address'].sig} />
+<H3 page="builtins" value={builtins['contract_to_address'].sig} />
 
-<Builtin data={builtins['contract_address']} />
+<Builtin data={builtins['contract_to_address']} />
 
 <H3 page="builtins" value={builtins['create_ticket'].sig} />
 

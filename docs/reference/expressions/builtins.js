@@ -1041,8 +1041,8 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  contract_address: {
-    sig: 'contract_address(c : contract<T>)',
+  contract_to_address: {
+    sig: 'contract_to_address(c : contract<T>)',
     desc: <div>Returns the address of a contract.</div>,
     parameters: [
       {
