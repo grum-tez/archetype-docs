@@ -40,7 +40,7 @@ export const types = {
       { keyword : '=', link : operator_prefix + 'a--b-7' },
       { keyword : 'call_view', link : builtin_prefix + 'call_view<T>(a%20:%20address,%20id%20:%20string,%20arg%20:%20X)' },
       { keyword : 'set_delegate', link : builtin_prefix + 'set_delegate(opkh%20:%20option<key_hash>)' },
-      { keyword : 'contract_address', link : builtin_prefix + 'contract_address(c%20:%20contract<T>)' },
+      { keyword : 'contract_to_address', link : builtin_prefix + 'contract_to_address(c%20:%20contract<T>)' },
       { keyword : 'address_to_contract', link : builtin_prefix + 'address_to_contract(a%20:%20address)' },
       { keyword : 'key_to_address', link : builtin_prefix + 'key_to_address(k%20:%20key)' },
       { keyword : 'read_ticket', link : builtin_prefix + 'read_ticket(t%20:%20ticket<T>)' },
