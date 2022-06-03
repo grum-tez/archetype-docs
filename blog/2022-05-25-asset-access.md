@@ -5,7 +5,7 @@ authors: [gd]
 tags: [asset, new feature]
 ---
 
-We present an improvement in the way [assets](/docs/asset) data are accessed since version [`1.2.16`](https://github.com/edukera/archetype-lang/releases/tag/1.2.16) of Archetype.
+We present an improvement in the way [assets](/docs/asset) data are accessed since version [`1.3.0`](https://github.com/edukera/archetype-lang/releases/tag/1.3.0) of Archetype.
 
 ### Problem
 
