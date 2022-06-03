@@ -15,6 +15,7 @@ import MutezNatDesc from "../../../src/components/desc/mutez_nat_desc.md"
 import OptGetDesc from "../../../src/components/desc/opt_get_desc.md"
 import RightDesc from "../../../src/components/desc/right_desc.md"
 import UnpackDesc from "../../../src/components/desc/unpack_desc.md"
+import SliceDesc from "../../../src/components/desc/slice_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -445,7 +446,7 @@ export const builtins = {
   },
   reverse: {
     sig: 'reverse(l : list<T>)',
-    desc: <div>[NEW] Returns a copy of list <code>l</code> in the reverse order.</div>,
+    desc: <div>Returns a copy of list <code>l</code> with elements in reverse order.</div>,
     parameters: [
       {
         type: 'list<T>',
@@ -455,10 +456,12 @@ export const builtins = {
     ],
     returns: {
       type: 'list<T>',
-      desc: <div>Reversed list</div>
+      desc: <div>List with reversed elements</div>
     },
     related: [
       { keyword: 'List', link: '/docs/language-basics/container#list' },
+      { keyword: 'reverse', link: '/docs/reference/instructions/containers#lreverse' },
+      { keyword: 'prepend', link: '/docs/reference/expressions/builtins#prepend(l%20:%20list<T>,%20e%20:%20T)' },
     ]
   },
   // map api expression
@@ -731,7 +734,7 @@ export const builtins = {
   },
   slice: {
     sig: 'slice(s : T, o : nat, l : nat)',
-    desc: <div>[NEW] Gets a sub sequence of argument <code>s</code></div>,
+    desc: <SliceDesc />,
     parameters: [
       {
         type: 'T',
