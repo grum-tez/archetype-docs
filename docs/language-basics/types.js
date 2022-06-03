@@ -18,7 +18,7 @@ export const types = {
     { label : 'address_to_contract', link : builtin_link_prefix + 'address_to_contract(a%20:%20address)', desc: 'Converts an address to contract' },
     { label : 'contract_to_address', link : builtin_link_prefix + 'contract_to_address(c%20:%20contract<T>)', desc: 'Converts a contract to an address' },
     { label : 'int_to_nat', link : builtin_link_prefix + 'contract_to_address(c%20:%20contract<T>)', desc: 'Converts an integer to natural' },
-    { label : 'key_hash_to_contract', link : builtin_link_prefix + 'key_hash_to_contract_unit(pkh%20:%20key_hash)', desc: 'Converts a key_hash to contract (without entrypoint)' },
+    { label : 'key_hash_to_contract', link : builtin_link_prefix + 'key_hash_to_contract_unit(pkh%20:%20key_hash)', desc: 'Converts a key hash to contract (without entrypoint)' },
     { label : 'key_to_address', link : builtin_link_prefix + 'key_to_address(k%20:%20key)', desc: 'Converts key to address' },
     { label : 'key_to_hash_key', link : builtin_link_prefix + 'key_to_hash_key(k%20:%20key)', desc: 'Converts key to hash key' },
     { label : 'mutez_to_nat', link : builtin_link_prefix + 'mutez_to_nat(v%20:%20tez)', desc: 'Converts a mutez amount to natural' },
