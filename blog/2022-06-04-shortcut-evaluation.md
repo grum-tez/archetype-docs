@@ -24,7 +24,7 @@ if a then b else false
 
 Equivalently, expression `a or b` is replaced by:
 ```archetype
-if a then true else b else false
+if a then true else b
 ```
 
 Such that expression `b` is evaluated only when necessary.
