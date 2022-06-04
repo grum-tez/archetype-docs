@@ -157,7 +157,16 @@ The body of an entrypoint ('entry', 'transition', 'getter') is made of the follo
 
 <Grid xs={12} sm={12} md={9.5}>
 
-Fails with `"NoTransfer"` if the value of [`transferred`](/docs/reference/expressions/constants#transferred) is different from `0tz`
+Fails with `"NO_TRANSFER"` if the value of [`transferred`](/docs/reference/expressions/constants#transferred) is different from `0tz`
+
+A specific error message can be specified with the `otherwise` keyword:
+
+```archetype
+entry exec() {
+  no transfer otherwise "EXPECTS_FUNDS"
+  /* ... */
+}
+```
 
 </Grid>
 </Grid>
@@ -172,7 +181,7 @@ Fails with `"NoTransfer"` if the value of [`transferred`](/docs/reference/expres
 </Grid>
 <Grid xs={12} sm={12} md={9.5}>
 
-Fails with `"InvalidCaller"` if the value of [`source`](/docs/reference/expressions/constants#source) is different from the argument address.
+Fails with `"INVALID_SOURCE"` if the value of [`source`](/docs/reference/expressions/constants#source) is different from the argument address.
 
 For example, the `set_owner_candidate` entry point fails if not called by `owner` address:
 ```archetype
@@ -183,6 +192,8 @@ entry set_owner_candidate(oc : address) {
 ```
 
 See `called by` section below for more information.
+
+A specific error message can be specified with the `otherwise` keyword.
 
 </Grid>
 </Grid>
@@ -197,7 +208,7 @@ See `called by` section below for more information.
 </Grid>
 <Grid xs={12} sm={12} md={9.5}>
 
-Fails with `"InvalidCaller"` if the value of [`caller`](/docs/reference/expressions/constants#caller) is different from the argument address.
+Fails with `"INVALID_CALLER"` if the value of [`caller`](/docs/reference/expressions/constants#caller) is different from the argument address.
 
 For example, the `set_owner_candidate` entry point fails if not called by `owner` address:
 ```archetype
@@ -217,7 +228,7 @@ The argument of the section may also be:
 For example:
 ```archetype
 entry set_owner_candidate(oc : address) {
-  called by owner or admin
+  called by owner or admin otherwise "EXPECTS_OWNER_OR_ADMIN"
   /* ... other sections ... */
 }
 ```
@@ -250,7 +261,7 @@ entry vote(proposal : nat) {
 </Grid>
 <Grid xs={12} sm={12} md={9.5}>
 
-Fails with `"InvalidState"` if the value of [`state`](/docs/reference/expressions/constants#state) is different from the argument state.
+Fails with `"INVALID_STATE"` if the value of [`state`](/docs/reference/expressions/constants#state) is different from the argument state.
 
 For example, the `redeem` entry point below fails if the contract's state is not `Canceled`:
 
@@ -260,6 +271,8 @@ entry redeem() {
   /* ... other sections ... */
 }
 ```
+
+A specific error message can be specified with the `otherwise` keyword.
 
 </Grid>
 </Grid>
@@ -277,7 +290,7 @@ entry redeem() {
 Fails if at least one of the requirements is **not** true. A requirement is defined by a unique identifier, a [`bool`](/docs/reference/types#bool) typed expression and an optional error value (introduced by the `otherwise` keyword).
 
 For example, the `pay` entry point fails with:
-* `(Pair "r1" "InvalidCondition")` when [`transferred`](/docs/reference/expressions/constants#transferred) is not high enough
+* `(Pair "r1" "INVALID_CONDITION")` when [`transferred`](/docs/reference/expressions/constants#transferred) is not high enough
 * `"PAYMENT_PERIOD_IS_OVER"` when [`now`](/docs/reference/expressions/constants#now) is beyond `deadline` date
 
 ```archetype

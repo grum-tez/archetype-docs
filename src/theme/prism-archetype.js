@@ -17,6 +17,7 @@
 			pattern: /\B~\w+/,
 			alias: 'function'
 		},
+		'section': /\b(?:no transfer|state is|called by|sourced by|require|fail if|effect|with effect|from|to|when|otherwise|shadow|postcondition|fails)\b/,
     	'transfer-rule': {
     	  pattern: /transfer\s+(((?!to(\s+entry)?).)*)\s+to/,
     	  inside: {
@@ -43,7 +44,6 @@
     	'builtin': /\b(?:slice|mutez_to_nat|fold|get_entrypoint|reverse|require_entrypoint|exec_lambda|apply_lambda|get_some|is_some|left|right|some|none|isempty|length|put|get|transfer|call|emit|prepend|make_operation)\b/,
     	'declaration': /\b(?:event|constant|archetype|enum|states|variable|asset|to big_map|to iterable_big_map|record|as|initial|identified by|initialized by)\b/,
     	'entry': /\b(?:entry|transition|function|getter|view)\b/,
-    	'section': /\b(?:state is|called by|sourced by|require|fail if|effect|with effect|from|to|when|otherwise|shadow|postcondition|fails)\b/,
     	'verif': /\b(?:invariant|specification)\b/,
     	'type': /\b(?:lambda|contract|big_map|map|set|option|list|int|nat|tez|string|rational|bytes|key|key_hash|address|sapling|signature|date|duration|bool|operation|aggregate|partition|asset_view|asset_key|asset_value|iterable_big_map)\b/,
     	'constant': /\b(?:now|balance|transferred|self|caller|source|self_address|state|operations)\b/,
