@@ -1563,5 +1563,57 @@ export const builtins = {
     ],
     michelson: "CONTRACT",
     michelson_ref_url: michelson_ref_base_url + '#instr-CONTRACT',
+  },
+  greedy_and: {
+    sig: 'greedy_and(a : bool, b : bool)',
+    desc: <div>Greedy evaluation of boolean conjonction of <code>a</code> and <code>b</code>, meaning that <code>b</code> is evaluated even if <code>a</code> is false.</div>,
+    parameters: [
+      {
+        type: 'bool',
+        alias: 'a',
+        desc: <div>Boolean input</div>
+      },
+      {
+        type: 'bool',
+        alias: 'b',
+        desc: <div>Boolean input</div>
+      },
+    ],
+    returns: {
+      type: 'bool',
+      desc: <div>true if <code>a</code> <i>and</i> <code>b</code> are true, false otherwise.</div>
+    },
+    related: [
+      { keyword: 'and', link: '/docs/reference/expressions/operators/arithmetic#a-and-b' },
+      { keyword: 'greedy_or', link: '/docs/reference/expressions/builtins#greedy_or(a%20:%20bool,%20b%20:%20bool)' },
+    ],
+    michelson: "AND",
+    michelson_ref_url: michelson_ref_base_url + '#instr-AND',
+  },
+  greedy_or: {
+    sig: 'greedy_or(a : bool, b : bool)',
+    desc: <div>Greedy evaluation of boolean disjonction of <code>a</code> and <code>b</code>, meaning that <code>b</code> is evaluated even if <code>a</code> is true.</div>,
+    parameters: [
+      {
+        type: 'bool',
+        alias: 'a',
+        desc: <div>Boolean input</div>
+      },
+      {
+        type: 'bool',
+        alias: 'b',
+        desc: <div>Boolean input</div>
+      },
+    ],
+    returns: {
+      type: 'bool',
+      desc: <div>true if <code>a</code> <i>or</i> <code>b</code> is true, false otherwise.</div>
+    },
+    related: [
+      { keyword: 'or', link: '/docs/reference/expressions/operators/arithmetic#a-or-b' },
+      { keyword: 'greedy_and', link: '/docs/reference/expressions/builtins#greedy_and(a%20:%20bool,%20b%20:%20bool)' },
+    ],
+    michelson: "OR",
+    michelson_ref_url: michelson_ref_base_url + '#instr-OR',
   }
 }

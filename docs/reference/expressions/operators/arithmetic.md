@@ -53,7 +53,7 @@ import { operators } from './operators.js';
 
 ### `a or b`
 
-<Operator data={operators['and']} />
+<Operator data={operators['or']} />
 
 ### `a xor b`
 

@@ -132,49 +132,84 @@ export const types = {
   },
   bls12_381_fr :
   {
-    desc: 'TODO',
+    desc: <div>Multplicative scalar for the BLS12_381 curves <Link to="/docs/reference/types#bls12_381_g1">g1</Link> and <Link to="/docs/reference/types#bls12_381_g2">g2</Link>.<br/>Literals can either be a raw bytes representation or a natural.</div>,
     link: '#bls12_381_fr',
     examples: [ '0x02', '2' ],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "bls12_381_fr",
     michelson_ref_url: michelson_ref_base_url + '/#type-bls12_381_fr',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/crypto" }
+      { keyword: "Elliptic curves", link:"/docs/language-basics/crypto#elliptic-curves" },
+      { keyword: "bls12_381_g1", link:"/docs/reference/types#bls12_381_g1" },
+      { keyword: "bls12_381_g2", link:"/docs/reference/types#bls12_381_g2" },
+      { keyword: "pairing_check", link:"/docs/reference/expressions/builtins#pairing_check(l%20:%20list<bls12_381_g1%20*%20bls12_381_g2>)" },
     ],
   },
   bls12_381_g1 :
   {
-    desc: 'TODO',
+    desc: <div>Point on the elliptic curve <Link to="/docs/reference/types#bls12_381_g1">g1</Link>.</div>,
     link: '#bls12_381_g1',
     examples: [ '0x063bd6e11e2fcaac1dd8cf68c6b1925a73c3c583e298ed37c41c3715115cf96358a42dbe85a0228cbfd8a6c8a8c54cd015b5ae2860d1cc47f84698d951f14d9448d03f04df2ca0ffe609a2067d6f1a892163a5e05e541279134cae52b1f23c6b' ],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "bls12_381_g1",
     michelson_ref_url: michelson_ref_base_url + '/#type-bls12_381_g1',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/crypto" }
+      { keyword: "Elliptic curves", link:"/docs/language-basics/crypto#elliptic-curves" },
+      { keyword: "bls12_381_fr", link:"/docs/reference/types#bls12_381_fr" },
+      { keyword: "bls12_381_g2", link:"/docs/reference/types#bls12_381_g2" },
+      { keyword: "pairing_check", link:"/docs/reference/expressions/builtins#pairing_check(l%20:%20list<bls12_381_g1%20*%20bls12_381_g2>)" },
     ],
   },
   bls12_381_g2 :
   {
-    desc: 'TODO',
+    desc: <div>Point on the elliptic curve <Link to="/docs/reference/types#bls12_381_g2">g2</Link>.</div>,
     link: '#bls12_381_g2',
     examples: [ '0x10c6d5cdca84fc3c7f33061add256f48e0ab03a697832b338901898b650419eb6f334b28153fb73ad2ecd1cd2ac67053161e9f46cfbdaf7b1132a4654a55162850249650f9b873ac3113fa8c02ef1cd1df481480a4457f351d28f4da89d19fa405c3d77f686dc9a24d2681c9184bf2b091f62e6b24df651a3da8bd7067e14e7908fb02f8955b84af5081614cb5bc49b416d9edf914fc608c441b3f2eb8b6043736ddb9d4e4d62334a23b5625c14ef3e1a7e99258386310221b22d83a5eac035c' ],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "bls12_381_g2",
     michelson_ref_url: michelson_ref_base_url + '/#type-bls12_381_g2',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/crypto" }
+      { keyword: "Elliptic curves", link:"/docs/language-basics/crypto#elliptic-curves" },
+      { keyword: "bls12_381_fr", link:"/docs/reference/types#bls12_381_fr" },
+      { keyword: "bls12_381_g1", link:"/docs/reference/types#bls12_381_g1" },
+      { keyword: "pairing_check", link:"/docs/reference/expressions/builtins#pairing_check(l%20:%20list<bls12_381_g1%20*%20bls12_381_g2>)" },
     ],
   },
   bool :
   {
-    desc: 'TODO',
+    desc: <div>Boolean value <code>true</code> or <code>false</code> for logical tests.</div>,
     link: '#bool',
     examples: [ 'true', 'false' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "bool",
     michelson_ref_url: michelson_ref_base_url + '/#type-bool',
     related: [
+      { keyword: 'if', link:'/docs/reference/instructions/control#if' },
+      { keyword: 'while', link:'/docs/reference/instructions/control#while'},
+      { keyword: 'do_require', link:'/docs/reference/instructions/divergent#do_requiret--bool-e--t'},
+      { keyword: 'do_fail_if', link:'/docs/reference/instructions/divergent#do_fail_ift--bool-e--t'},
+      { keyword: 'remove_if', link:'/docs/reference/instructions/asset#aremove_ifp'},
+      { keyword: '&=', link:'/docs/reference/instructions/assignment#a--b-4'},
+      { keyword: '|=', link:'/docs/reference/instructions/assignment#a--b-5'},
+      { keyword: 'and', link:'/docs/reference/expressions/operators/arithmetic#a-and-b'},
+      { keyword: 'or', link:'/docs/reference/expressions/operators/arithmetic#a-or-b'},
+      { keyword: 'xor', link:'/docs/reference/expressions/operators/arithmetic#a-xor-b'},
+      { keyword: 'not', link:'/docs/reference/expressions/operators/arithmetic#not-a'},
+      { keyword: '=', link:'/docs/reference/expressions/operators/arithmetic#a--b-7'},
+      { keyword: '<>', link:'/docs/reference/expressions/operators/arithmetic#a--b-8'},
+      { keyword: '<=>', link:'/docs/reference/expressions/operators/arithmetic#a--b-13'},
+      { keyword: 'if', link:'/docs/reference/expressions/controls#if-then-else'},
+      { keyword: '?:', link:'/docs/reference/expressions/controls#a--b--c'},
+      { keyword: 'check_signature', link:'/docs/reference/expressions/builtins#check_signature(k%20:%20key,%20s%20:%20signature,%20b%20:%20bytes)'},
+      { keyword: 'contains', link:'/docs/reference/expressions/builtins#contains(c%20:%20C,%20e%20:%20T)'},
+      { keyword: 'greedy_and', link: '/docs/reference/expressions/builtins#greedy_and(a%20:%20bool,%20b%20:%20bool)' },
+      { keyword: 'greedy_or', link:'/docs/reference/expressions/builtins#greedy_or(a%20:%20bool,%20b%20:%20bool)' },
+      { keyword: 'is_none', link:'/docs/reference/expressions/builtins#is_none(o%20:%20option<T>)'},
+      { keyword: 'is_some', link:'/docs/reference/expressions/builtins#is_some(o%20:%20option<T>)'},
+      { keyword: 'open_chest', link:'/docs/reference/expressions/builtins#open_chest(k%20:%20chest_key,%20c%20:%20chest,%20t%20:%20nat)'},
+      { keyword: 'pairing_check', link:'/docs/reference/expressions/builtins#pairing_check(l%20:%20list<bls12_381_g1%20*%20bls12_381_g2>)'},
+      { keyword: 'select', link:'/docs/reference/expressions/asset#aselectp'},
+
     ],
   },
   bytes :

@@ -90,6 +90,14 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['get_some']} />
 
+<H3 page="builtins" value={builtins['greedy_and'].sig} />
+
+<Builtin data={builtins['greedy_and']} />
+
+<H3 page="builtins" value={builtins['greedy_or'].sig} />
+
+<Builtin data={builtins['greedy_or']} />
+
 <H3 page="builtins" value={builtins['key_to_hash_key'].sig} />
 
 <Builtin data={builtins['key_to_hash_key']} />

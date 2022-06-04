@@ -1,4 +1,5 @@
 import React from "react"
+import Link from '@docusaurus/Link';
 
 import DivDesc from "../../../../src/components/desc/div_desc.md"
 import ModDesc from "../../../../src/components/desc/mod_desc.md"
@@ -270,7 +271,7 @@ export const operators = {
   and: {
     label: 'a and b',
     link: 'a-and-b',
-    desc: <div><ul>
+    desc: <div><Link to="/blog/shortcut-evaluation">Shortcut evaluation</Link> of logical conjonction:<ul>
       <li><code>true</code> if <code>a</code> and <code>b</code> are <code>true</code></li>
       <li><code>false</code> otherwise.</li>
       </ul></div>,
@@ -281,7 +282,7 @@ export const operators = {
   or: {
     label: 'a or b',
     link: 'a-or-b',
-    desc: <div><ul>
+    desc: <div><Link to="/blog/shortcut-evaluation">Shortcut evaluation</Link> of logical disjonction:<ul>
     <li><code>true</code> if <code>a</code> or <code>b</code> is <code>true</code></li>
     <li><code>false</code> otherwise</li>
     </ul></div>,
