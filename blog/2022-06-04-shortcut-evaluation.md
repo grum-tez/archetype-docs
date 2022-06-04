@@ -29,3 +29,6 @@ if a then true else b
 
 Such that expression `b` is evaluated only when necessary.
 
+### Greedy evaluation
+
+The previous *greedy evaluation*  mechanism is still  available with the [`greedy_and`](/docs/reference/expressions/builtins#greedy_and(a%20:%20bool,%20b%20:%20bool)) and [`greedy_or`](/docs/reference/expressions/builtins#greedy_or(a%20:%20bool,%20b%20:%20bool)) builtins.
