@@ -163,7 +163,7 @@ A specific error message can be specified with the `otherwise` keyword:
 
 ```archetype
 entry exec() {
-  no transfer otherwise "EXPECTS_FUNDS"
+  no transfer otherwise "NO_FUND_EXPECTED"
   /* ... */
 }
 ```
