@@ -1024,8 +1024,8 @@ export const builtins = {
       { keyword: 'Protocol', link: '/docs/language-basics/protocol' },
     ]
   },
-  key_hash_to_contract_unit: {
-    sig: 'key_hash_to_contract_unit(pkh : key_hash)',
+  key_hash_to_contract: {
+    sig: 'key_hash_to_contract(pkh : key_hash)',
     desc: <div>Converts key_hash to contract.</div>,
     parameters: [
       {

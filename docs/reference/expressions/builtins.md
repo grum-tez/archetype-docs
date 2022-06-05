@@ -102,9 +102,9 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['key_to_hash_key']} />
 
-<H3 page="builtins" value={builtins['key_hash_to_contract_unit'].sig} />
+<H3 page="builtins" value={builtins['key_hash_to_contract'].sig} />
 
-<Builtin data={builtins['key_hash_to_contract_unit']} />
+<Builtin data={builtins['key_hash_to_contract']} />
 
 <H3 page="builtins" value={builtins['int_to_date'].sig} />
 
