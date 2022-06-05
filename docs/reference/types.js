@@ -214,15 +214,13 @@ export const types = {
   },
   bytes :
   {
-    desc: <div>Array of byte values to represent any serialised data.</div>,
+    desc: <div>Array of byte values to represent any serialised data. It is used for signatures and hash values.</div>,
     link: '#bytes',
     examples: [ '0x00', '0x050002', '0x'],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "bytes",
     michelson_ref_url: michelson_ref_base_url + '/#type-bytes',
     related: [
-      { keyword: 'check_signature', link: '/docs/reference/expressions/builtins#check_signature(k%20:%20key,%20s%20:%20signature,%20b%20:%20bytes)' },
-      { keyword: 'open_chest', link: '/docs/reference/expressions/builtins#open_chest(k%20:%20chest_key,%20c%20:%20chest,%20t%20:%20nat)' },
       { keyword: 'concat', link: '/docs/reference/expressions/builtins#bytes' },
       { keyword: 'length', link: '/docs/reference/expressions/builtins#length(o%20:%20T)' },
       { keyword: 'slice', link: '/docs/reference/expressions/builtins#slice(s%20:%20T,%20o%20:%20nat,%20l%20:%20nat)' },
@@ -233,6 +231,8 @@ export const types = {
       { keyword: 'sha512', link: '/docs/reference/expressions/builtins#sha512(b%20:%20bytes)' },
       { keyword: 'blake2b', link: '/docs/reference/expressions/builtins#blake2b(b%20:%20bytes)' },
       { keyword: 'keccak', link: '/docs/reference/expressions/builtins#keccak(b%20:%20bytes)' },
+      { keyword: 'check_signature', link: '/docs/reference/expressions/builtins#check_signature(k%20:%20key,%20s%20:%20signature,%20b%20:%20bytes)' },
+      { keyword: 'open_chest', link: '/docs/reference/expressions/builtins#open_chest(k%20:%20chest_key,%20c%20:%20chest,%20t%20:%20nat)' },
     ],
   },
   chain_id :
