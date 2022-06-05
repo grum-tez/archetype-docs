@@ -417,26 +417,33 @@ export const types = {
   },
   key :
   {
-    desc: 'TODO',
+    desc: <div>Account's public key.</div>,
     link: '#key',
     examples: [ '"edpkurLzuFFL1XyP3fed4u7MsgeywQoQmHM45Bz91PBzDvUjQ9bvdn"' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "key",
     michelson_ref_url: michelson_ref_base_url + '/#type-key',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/crypto#key" }
+      { keyword: "check_signature", link:"/docs/reference/expressions/builtins#check_signature(k%20:%20key,%20s%20:%20signature,%20b%20:%20bytes)" },
+      { keyword: "key_to_key_hash", link:"/docs/reference/expressions/builtins#key_to_key_hash(k%20:%20key)" },
+      { keyword: "key_to_address", link:"s/docs/reference/expressions/builtins#key_to_address(k%20:%20key)" },
     ],
   },
   key_hash :
   {
-    desc: 'TODO',
+    desc: <div>Hash of a public key.</div>,
     link: '#key_hash',
     examples: [ '"tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg"' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "key_hash",
     michelson_ref_url: michelson_ref_base_url + '/#type-key_hash',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/crypto#key_hash" }
+      { keyword: "key_to_key_hash", link:"/docs/reference/expressions/builtins#key_to_key_hash(k%20:%20key)" },
+      { keyword: "key_hash_to_contract", link:"/docs/reference/expressions/builtins#key_hash_to_contract(pkh%20:%20key_hash)" },
+      { keyword: "sapling_empty_state", link:"/docs/reference/expressions/builtins#sapling_empty_state(k%20:%20key_hash)" },
+      { keyword: "set_delegate", link:"/docs/reference/expressions/builtins#set_delegate(opkh%20:%20option<key_hash>)" },
+      { keyword: "voting_power", link:"/docs/reference/expressions/builtins#voting_power(k%20:%20key_hash)" },
+
     ],
   },
   lambda :

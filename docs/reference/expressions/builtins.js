@@ -1210,8 +1210,8 @@ export const builtins = {
       { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
     ]
   },
-  key_to_hash_key: {
-    sig: 'key_to_hash_key(k : key)',
+  key_to_key_hash: {
+    sig: 'key_to_key_hash(k : key)',
     desc: <div>Converts a key to key_hash.</div>,
     parameters: [
       {
