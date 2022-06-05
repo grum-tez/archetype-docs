@@ -23,23 +23,25 @@ const TypeExample = (props) => {
 
 const TranslateProperty = (v) => {
   switch(v) {
-    case 0: return 'COMPARABLE'
-    case 1: return 'PASSABLE'
-    case 2: return 'STORABLE'
-    case 3: return 'PACKABLE'
+    case 0: return 'comparable'
+    case 1: return 'passable'
+    case 2: return 'storable'
+    case 3: return 'packable'
   }
 }
 
 const TypeProperty = (props) => {
   return (
     <Grid item>
+      <Link to={'/docs/language-basics/types#'+TranslateProperty(props.value)}>
       <code style={{
         color: 'grey',
         fontWeight: 'bold',
         fontSize: '11px',
         backgroundColor: 'rgba(0,0,0,0)',
         border: 0,
-      }}>{ TranslateProperty(props.value) }</code>
+      }}>{ TranslateProperty(props.value).toUpperCase() }</code>
+      </Link>
     </Grid>
   )
 }
