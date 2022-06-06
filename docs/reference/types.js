@@ -128,7 +128,12 @@ export const types = {
       { keyword: "put", link: instruction_prefix + '/containers#mputk-v' },
       { keyword: "remove", link: instruction_prefix + '/containers#mremovek' },
       { keyword: "update", link: instruction_prefix + '/containers#mupdatek--k-o--optiont' },
-      { keyword: "iterable_big_map", link : "/docs/reference/types#iterable_big_map" }
+      { keyword: "put", link: '/docs/reference/expressions/builtins#put(m%20:%20map<K,%20V>,%20k%20:%20K,%20v%20:%20V)' },
+      { keyword: "remove", link: '/docs/reference/expressions/builtins#remove(c%20:%20C,%20i%20:%20T)' },
+      { keyword: "update", link: '/docs/reference/expressions/builtins#update(m%20:%20map<K,%20V>,%20k%20:%20K,%20v%20:%20option<T>)' },
+      { keyword: "contains", link:"/docs/reference/expressions/builtins#contains(c%20:%20C,%20e%20:%20T)"},
+      { keyword: "map", link:"/docs/reference/expressions/builtins#map<K,%20V>"},
+      { keyword: "iterable_big_map", link : "/docs/reference/types#iterable_big_map<K,%20V>" },
     ],
   },
   bls12_381_fr :
@@ -407,10 +412,18 @@ export const types = {
     examples: [ `[]`, `[ ("#1G1AF1F57A7192174", 5); ("#2F4AH1J77O7132095", 10) ]` ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     related: [
-      { keyword: "big_map", link:"/docs/reference/types#big_map<K,%20V>" },
+      { keyword: "Map", link:"/docs/language-basics/container#map", code : false },
       { keyword: "put", link: instruction_prefix + '/containers#mputk-v' },
       { keyword: "remove", link: instruction_prefix + '/containers#mremovek' },
       { keyword: "update", link: instruction_prefix + '/containers#mupdatek--k-o--optiont' },
+      { keyword: "for", link: '/docs/reference/instructions/control#map' },
+      { keyword: "put", link: '/docs/reference/expressions/builtins#put(m%20:%20map<K,%20V>,%20k%20:%20K,%20v%20:%20V)' },
+      { keyword: "remove", link: '/docs/reference/expressions/builtins#remove(c%20:%20C,%20i%20:%20T)' },
+      { keyword: "update", link: '/docs/reference/expressions/builtins#update(m%20:%20map<K,%20V>,%20k%20:%20K,%20v%20:%20option<T>)' },
+      { keyword: "contains", link:"/docs/reference/expressions/builtins#contains(c%20:%20C,%20e%20:%20T)"},
+      { keyword: "length", link:"/docs/reference/expressions/builtins#length(o%20:%20T)"},
+      { keyword: "map", link:"/docs/reference/expressions/builtins#map<K,%20V>"},
+      { keyword: "big_map", link : "/docs/reference/types#big_map<K,%20V>" },
     ],
   },
   key :
@@ -486,7 +499,7 @@ export const types = {
   },
   map :
   {
-    desc: 'Imutable (read only) maps from key to value; keys are sorted.',
+    desc: <div>Imutable (read only) maps from key to value; keys are sorted in natural order (<code>K</code> is <Link to="/docs/language-basics/types#comparable">comparable</Link>).</div>,
     link: '#map<K,%20V>',
     parameters: [
       { keyword: 'K', type: 'any comparable type', desc: 'type of the key' },
@@ -508,8 +521,8 @@ export const types = {
       { keyword: "contains", link:"/docs/reference/expressions/builtins#contains(c%20:%20C,%20e%20:%20T)"},
       { keyword: "length", link:"/docs/reference/expressions/builtins#length(o%20:%20T)"},
       { keyword: "map", link:"/docs/reference/expressions/builtins#map"},
-      { keyword: "iterable_big_map", link : "/docs/reference/types#iterable_big_map" },
-      { keyword: "big_map", link : "/docs/reference/types#big_map" },
+      { keyword: "big_map", link : "/docs/reference/types#big_map<K,%20V>" },
+      { keyword: "iterable_big_map", link : "/docs/reference/types#iterable_big_map<K,%20V>" },
     ],
   },
   nat :
