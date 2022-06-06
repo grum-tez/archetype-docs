@@ -32,6 +32,7 @@
 
 pre {
   --ifm-global-radius: 0px;
+  border-radius: 0px;
 }
 
 code {
@@ -43,7 +44,6 @@ code {
 
 [data-theme='dark'] code {
   --ifm-code-background: #2fcac221;
-  /*border: 1px solid #21af90a1*/
 }
 
 
@@ -122,6 +122,7 @@ h3 {
   /* Search box */
   --docsearch-searchbox-background: var(--ifm-color-secondary);
   --docsearch-searchbox-focus-background: var(--ifm-color-white);
+  border-radius: 8px;
   /* Hit */
   --docsearch-hit-color: var(--ifm-font-color-base);
   --docsearch-hit-active-color: var(--ifm-color-white);
@@ -139,6 +140,7 @@ h3 {
   /* Search box */
   --docsearch-searchbox-background: var(--ifm-background-color);
   --docsearch-searchbox-focus-background: var(--ifm-color-black);
+  border-radius: 8px;
   /* Hit */
   --docsearch-hit-color: var(--ifm-font-color-base);
   --docsearch-hit-active-color: var(--ifm-color-white);
