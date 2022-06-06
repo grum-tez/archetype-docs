@@ -36,7 +36,7 @@ export const constants = {
   },
   level:
   {
-    desc: 'TODO',
+    desc: <div>Current block level.</div>,
     type: 'nat',
     michelson: "LEVEL",
     michelson_ref_url: michelson_ref_base_url + '/#instr-LEVEL',
@@ -44,7 +44,7 @@ export const constants = {
   },
   now:
   {
-    desc: 'TODO',
+    desc: <div>Block date. It is constant throughout endpoint execution.</div>,
     type: 'date',
     michelson: "NOW",
     michelson_ref_url: michelson_ref_base_url + '/#instr-NOW',
@@ -52,11 +52,14 @@ export const constants = {
   },
   self_address:
   {
-    desc: 'TODO',
+    desc: <div>Address of current contract.</div>,
     type: 'address',
     michelson: "SELF_ADDRESS",
     michelson_ref_url: michelson_ref_base_url + '/#instr-SELF_ADDRESS',
-    related: [],
+    related: [
+      { keyword: "caller", link: "/docs/reference/expressions/constants#caller" },
+      { keyword: "sourced by", link: "/docs/reference/declarations/entrypoint#sourced-by" },
+    ],
   },
   source:
   {
@@ -83,19 +86,22 @@ export const constants = {
   },
   transferred:
   {
-    desc: 'TODO',
+    desc: <div>Amount of tez sent to current entrypoint execution.</div>,
     type: 'tez',
     michelson: "AMOUNT",
     michelson_ref_url: michelson_ref_base_url + '/#instr-AMOUNT',
-    related: [],
+    related: [
+      { keyword: 'tez', link: '/docs/reference/types#tez' },
+      { keyword: 'balance', link: '/docs/reference/expressions/constants#balance' }
+    ],
   },
   total_voting_power: {
-    desc: 'TODO',
+    desc: 'Total voting power of all contracts.',
     type: 'nat',
     michelson: "TOTAL_VOTING_POWER",
     michelson_ref_url: michelson_ref_base_url + '/#instr-TOTAL_VOTING_POWER',
     related: [
-      { keyword: 'Protocol', link: '/docs/language-basics/protocol' }
+      { keyword: 'voting_power', link: '/docs/reference/expressions/builtins#voting_power(k%20:%20key_hash)' }
     ],
   },
 };
