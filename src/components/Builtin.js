@@ -13,9 +13,9 @@ const Parameter = (props) => {
     <Grid item xs={12}>
       <Grid container>
         <Grid item xs={12}><Divider className={ styles.divider } style={{ marginBottom: '12px' }}/></Grid>
-        <Grid item xs={props.xs}>
+        <Grid item md={props.xs} sm={6} xs={6}>
           <Grid container>
-            <Grid item xs={props.xs>4?1:4}>
+            <Grid item xs={props.xs>4?1:3}>
               <Typography>
                 <code>{props.alias}</code> :
               </Typography>
@@ -24,7 +24,7 @@ const Parameter = (props) => {
               <Typography>typed</Typography>
             </Grid>
              */ }
-            <Grid item xs={props.xs>4?11:8}>
+            <Grid item xs={props.xs>4?11:9}>
               <Typography> { (props.withLink !== undefined && !props.withLink) ? (
                 <code>{props.type}</code>
               ) : (
@@ -34,7 +34,7 @@ const Parameter = (props) => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12-props.xs}>
+        <Grid item md={12-props.xs} sm={6} xs={6}>
           <Typography style={{
             fontFamily: 'IBM Plex Sans'
           }}>

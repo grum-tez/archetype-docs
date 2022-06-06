@@ -1,7 +1,11 @@
 .divider {
-    border-color: var(--ifm-toc-border-color)
+    background-color: var(--ifm-toc-border-color);
+    border-width: 0px;
+    border-style: solid;
 }
 
 [data-theme='dark'] .divider {
-    border-color: rgb(25 71 71)
+    background-color: rgb(25 71 71);
+    border-width: 0px;
+    border-style: solid;
 }

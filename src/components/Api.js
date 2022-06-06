@@ -16,7 +16,7 @@ const ApiItem = (props) => {
       <Grid item xs={12} sm={3} md={3} style={{ paddingLeft: '8px' }}>
       <Link to={props.data.link}><code>{props.data.label}</code></Link>
       </Grid>
-      <Grid item xs={12} sm={9} md={9} style={{ marginBottom: '8px' }}>
+      <Grid item xs={12} sm={9} md={9} style={{  paddingLeft: '8px', marginBottom: '8px' }}>
         <Typography style={{
           fontFamily: 'IBM Plex Sans',
         }}>{props.data.desc}</Typography>
