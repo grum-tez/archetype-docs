@@ -9,7 +9,7 @@ export const types = {
     { label : 'int', link : type_link_prefix + 'int', desc : 'Integer type to represent long integers' },
     { label : 'rational', link : type_link_prefix + 'rational', desc : 'Rational type to represent floating point values' },
     { label : 'date', link : type_link_prefix + 'date', desc : 'Date type to represent ISO date values' },
-    { label : 'duration', link : type_link_prefix + 'duration', desc : 'Duration type to represent difference of dates in second, minutes, hours, days, weeks' },
+    { label : 'duration', link : type_link_prefix + 'duration', desc : 'Duration type to represent difference of dates' },
     { label : 'bytes', link : type_link_prefix + 'bytes', desc : 'Bytes type to represent any serialised value' },
     { label : 'tez', link : type_link_prefix + 'tez', desc : 'Tez type to represent an amount in tez currency' },
     { label : 'address', link : type_link_prefix + 'address', desc : 'Address type to represent an account or contract address' },
