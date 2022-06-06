@@ -95,14 +95,17 @@ const LeftPannel = () => {
           </Grid>
         </Grid>
         <Grid item>
-          <Grid spacing={3} style={{ paddingLeft: '20%', paddingRight : '10%' }} container>
-            <Grid item xs={12}>
+          <Grid spacing={3} style={{ paddingLeft: '0%', paddingRight : '10%' }} container>
+            <Grid xs={12} sm={12} md={2.4} />
+            <Grid item xs={12} sm={12} md={9.6}>
               <TagLine />
             </Grid>
-            <Grid item xs={12}>
+            <Grid xs={12} sm={12} md={2.4} />
+            <Grid item xs={12} sm={12} md={9.6}>
               <Introduction />
             </Grid>
-            <Grid item xs={12}>
+            <Grid xs={12} sm={12} md={2.4} />
+            <Grid item xs={12} sm={12} md={9.6}>
               <Grid spacing={1} container justifyContent="flex-start"
               sx={{
                 display: 'flex',
