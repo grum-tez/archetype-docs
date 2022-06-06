@@ -646,12 +646,33 @@ export const types = {
   },
   rational :
   {
-    desc: 'TODO',
+    desc: <div>Arbitrary-precision floating point number.<br></br><br></br>
+    It is implemented in Michelson as a pair of <Link to="/docs/reference/types#int"><code>int</code></Link> and <Link to="/docs/reference/types#nat"><code>nat</code>.</Link>
+    </div>,
     link: '#rational',
     examples: [ '1.1', '-1.1', '1 / 3', '-1 / 3', '80%', '4.2%'],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "pair int nat",
     related: [
+      { keyword: '+', link: '/docs/reference/expressions/operators/arithmetic#a--b' },
+      { keyword: '-', link: '/docs/reference/expressions/operators/arithmetic#a---b' },
+      { keyword: '-', link: '/docs/reference/expressions/operators/arithmetic#--a' },
+      { keyword: '*', link: '/docs/reference/expressions/operators/arithmetic#a--b-1' },
+      { keyword: '/', link: '/docs/reference/expressions/operators/arithmetic#a--b-2' },
+      { keyword: '=', link:'/docs/reference/expressions/operators/arithmetic#a--b-7'},
+      { keyword: '<>', link:'/docs/reference/expressions/operators/arithmetic#a--b-8'},
+      { keyword: '<', link:'/docs/reference/expressions/operators/arithmetic#a--b-9'},
+      { keyword: '<=', link:'/docs/reference/expressions/operators/arithmetic#a--b-10'},
+      { keyword: '>', link:'/docs/reference/expressions/operators/arithmetic#a--b-11'},
+      { keyword: '>=', link:'/docs/reference/expressions/operators/arithmetic#a--b-12'},
+      { keyword: '<=>', link:'/docs/reference/expressions/operators/arithmetic#a--b-13'},
+      { keyword: '+=', link:'/docs/reference/instructions/assignment#a--b-1'},
+      { keyword: '-=', link:'/docs/reference/instructions/assignment#a---b'},
+      { keyword: '*=', link:'/docs/reference/instructions/assignment#a--b-2'},
+      { keyword: '/=', link:'/docs/reference/instructions/assignment#a--b-3'},
+      { keyword: 'abs', link:'/docs/reference/expressions/builtins#abs(t%20:%20T)'},
+      { keyword: 'ceil', link: '/docs/reference/expressions/builtins#ceil(r%20:%20rational)' },
+      { keyword: 'floor', link: '/docs/reference/expressions/builtins#floor(r%20:%20rational)' },
     ],
   },
   record :
