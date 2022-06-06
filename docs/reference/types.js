@@ -677,13 +677,24 @@ export const types = {
   },
   record :
   {
-    desc: 'TODO',
+    desc: <div>List of named fields of different types.<br/><br/>A record has the common <Link to="/docs/language-basics/types#properties">properties</Link> of its fields.</div>,
     link: '#record',
-    examples: [],
+    examples: ['{ red = 0xa4; green = 0x6a; blue = 0xc0 }'],
     tags: [ ],
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/composite#record" }
+      { keyword: "Record", link:"/docs/language-basics/composite#record" },
+      { keyword: ':=', link : '/docs/reference/instructions/assignment#record' },
+      { keyword: '+=', link : '/docs/reference/instructions/assignment#a--b-1' },
+      { keyword: '-=', link : '/docs/reference/instructions/assignment#a---b' },
+      { keyword: '*=', link : '/docs/reference/instructions/assignment#a--b-2' },
+      { keyword: '/=', link : '/docs/reference/instructions/assignment#a--b-3' },
+      { keyword: '&=', link : '/docs/reference/instructions/assignment#a--b-4' },
+      { keyword: '|=', link : '/docs/reference/instructions/assignment#a--b-5' },
+      { keyword : '{ with }', link : '/docs/reference/expressions/operators/copy' },
+      { keyword : '.', link : '/docs/reference/expressions/operators/access#ab-1' },
     ],
+    michelson: "pair",
+    michelson_ref_url: michelson_ref_base_url + '/#type-pair',
   },
   sapling_state :
   {

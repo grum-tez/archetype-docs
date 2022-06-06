@@ -5,6 +5,18 @@ sidebar_position: 3
 # Composite types
 
 Archetype provides user-defined [composite types](/docs/language-basics/composite) on top of basic [types](/docs/reference/types).
+
+## Tuple
+
+A [tuple](/docs/language-basics/composite#tuple) is a list of anonymous values of different types. The type is a list of types separated by `*`. A tuple litteral is a list of values separated by `,` and surrounded by parentheis.
+
+For example:
+```archetype
+const t : string * nat = ("a string", 2)
+```
+
+It is represented in Michelson as a right-comb pair of values.
+
 ## Record
 
 A [record](/docs/language-basics/composite#record) is a list of named fields of different types. It is declared by the `record` keyword followed by a list of pairs of an [identifier](/docs/reference/declarations/identifier) and a basic [type](/docs/reference/types) or a [composite type](/docs/language-basics/composite). It *cannot* be recursive though.
