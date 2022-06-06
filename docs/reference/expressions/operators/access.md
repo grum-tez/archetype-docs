@@ -21,7 +21,7 @@ const b = t[2]; /* 0xbc       */
 
 Accesses value associated with key `b` in [map](/docs/language-basics/container#map) `a` (also [`big_map`](/docs/reference/types#big_map<K,%20V>) and [`iterable_big_map`](/docs/reference/types#iterable_big_map<K,%20V>)).
 
-It fails with `"NotFound"` if `b` is not found in `a`.
+It fails with `"NOT_FOUND"` if `b` is not found in `a`.
 
 For example:
 ```archetype

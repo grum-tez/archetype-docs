@@ -31,7 +31,7 @@ The body of the transaction is made of the following *sections*:
 
 ### `from`
 
-The `from` section, followed by a state value, specifies the required state of the contract to transition from. It fails with `"InvalidState"` if the transition is called while the contract is in another state.
+The `from` section, followed by a state value, specifies the required state of the contract to transition from. It fails with `"INVALID_STATE"` if the transition is called while the contract is in another state.
 
 For example:
 ```archetype
@@ -361,7 +361,7 @@ If the effect section is the only section in entry point body, the `effect` keyw
 
 ```archetype
 entry set_owner_candidate(oc : address) {
-  if caller = owner then fail("InvalidCaller");
+  if caller = owner then fail("INVALID_CALLER");
   owner_candidate := some(oc)
 }
 ```

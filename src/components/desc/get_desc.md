@@ -18,6 +18,6 @@ It is equivalent to:
 const h =
   match ledger.get(caller) with
   | some av -> av
-  | none    -> fail(("ledger","AssetNotFound"))
+  | none    -> fail(("ledger","ASSET_NOT_FOUND"))
   end
 ```

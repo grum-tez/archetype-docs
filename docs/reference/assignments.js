@@ -52,7 +52,7 @@ export const assignments = {
     ],
     fails: [
       {
-        keyword: '"NatAssign"',
+        keyword: '"NAT_NEG_ASSIGN"',
         desc: <div>when <code>a</code> (typed <code>nat</code>)is less than <code>b</code> (typed <code>nat</code>).</div>
       },
       {

@@ -169,6 +169,7 @@ export const operators = {
       { typa: 'int',          typb : 'int',          typr: 'rational' },
       { typa: 'duration',     typb : 'duration',     typr: 'rational' },
       { typa: 'rational',     typb : 'rational',     typr: 'rational' },
+      { typa: 'tez',          typb : 'tez',          typr: 'rational' },
     ],
     promotions: [
       { typa: 'nat',          typb : 'int',          typr: 'rational' },
