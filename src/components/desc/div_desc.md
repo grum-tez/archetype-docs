@@ -2,6 +2,6 @@ Returns the euclidean quotient of two `a` divided by `b`; `a div b` is equivalen
 ```archetype
 match a /% b with
 | some(q,r) -> q
-| none -> fail("DivByZero")
+| none -> fail("DIV_BY_ZERO")
 end
 ```

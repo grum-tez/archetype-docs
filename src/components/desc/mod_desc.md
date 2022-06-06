@@ -3,6 +3,6 @@ Returns the euclidean remainder of `a` divided by `b` (modulus); `a % b` is equi
 ```archetype
 match a /% b with
 | some(q,r) -> r
-| none -> fail("DivByZero")
+| none -> fail("DIV_BY_ZERO")
 end
 ```
