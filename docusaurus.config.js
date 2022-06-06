@@ -56,6 +56,19 @@ const config = {
         minHeadingLevel: 2,
         maxHeadingLevel: 5,
       },
+      algolia: {
+        appId: '<NEW_APP_ID>',
+        apiKey: '<NEW_SEARCH_API_KEY>',
+        indexName: 'archetype'
+        // The application ID provided by Algolia
+        //appId: 'YW41129NVN',
+        // Public API key: it is safe to commit it
+        //apiKey: '16bccd1e569227f209e9dc8330e84a98',
+        //indexName: 'opentezos',
+        // Optional: see doc section below
+        //contextualSearch: false,
+
+      },
       navbar: {
         hideOnScroll: true,
         logo: {
