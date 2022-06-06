@@ -71,7 +71,7 @@ All types are packable except: [`big_map`](/docs/reference/types#big_map<K,%20V>
 </Grid>
 <Grid xs={12} sm={12} md={9}>
 
-A passable value can be the parameter of an [entrypoint](/docs/reference/declarations/entrypoint), a [lambda](/docs/language-basics/lambda#anonymous-function) and (not inlined) [function](/docs/language-basics/lambda#function).
+A passable value can be the parameter of an [entrypoint](/docs/reference/declarations/entrypoint), a [lambda](/docs/reference/types#lambda<T,%20R>) and (not inlined) [function](/docs/reference/declarations/function).
 
 All types are passable except: [`operation`](/docs/reference/types#operation)
 

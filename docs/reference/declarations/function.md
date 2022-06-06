@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Function
 
-Entrypoints' effect may call [functions](/docs/language-basics/lambda). A function returns a value, may fail, but cannot change the contract storage.
+Entrypoints' effect may call functions. A function returns a value, may fail, but cannot change the contract storage.
 
 A function is declared with the `function` keyword followed by a unique [identifier](/docs/reference/declarations/identifier), the returned [type](/docs/reference/types) and the function body. The function body cannot include assignment [instructions](/docs/reference#instructions) on storage elements, nor it can invoke the [`transfer`](/docs/reference/instructions/operation#transfer) instruction; it uses the `return` keyword to return a value.
 

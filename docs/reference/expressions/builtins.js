@@ -1021,7 +1021,6 @@ export const builtins = {
     michelson: "SET_DELEGATE",
     michelson_ref_url: michelson_ref_base_url + '#instr-SET_DELEGATE',
     related: [
-      { keyword: 'Protocol', link: '/docs/language-basics/protocol' },
     ]
   },
   key_hash_to_contract: {
@@ -1279,7 +1278,6 @@ export const builtins = {
     michelson: "VOTING_POWER",
     michelson_ref_url: michelson_ref_base_url + '#instr-VOTING_POWER',
     related: [
-      { keyword: 'Protocol', link: '/docs/language-basics/protocol' },
     ]
   },
 

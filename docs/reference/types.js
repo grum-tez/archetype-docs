@@ -366,7 +366,7 @@ export const types = {
     examples: [],
     tags: [ ],
     related: [
-      { keyword: "Event", link: "/docs/language-basics/events" },
+      { keyword: "Event", link: "/blog/events" },
       { keyword: "emit", link: "/docs/reference/instructions/operation#emit" }
     ],
   },
