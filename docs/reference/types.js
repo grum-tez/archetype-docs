@@ -677,7 +677,7 @@ export const types = {
   },
   record :
   {
-    desc: <div>List of named fields of different types.<br/><br/>A record has the common <Link to="/docs/language-basics/types#properties">properties</Link> of its fields.</div>,
+    desc: <div>Fixed list of named fields of different types.<br/><br/>A record has the common <Link to="/docs/language-basics/types#properties">properties</Link> of its fields.</div>,
     link: '#record',
     examples: ['{ red = 0xa4; green = 0x6a; blue = 0xc0 }'],
     tags: [ ],
@@ -698,7 +698,7 @@ export const types = {
   },
   sapling_state :
   {
-    desc: 'TODO',
+    desc: 'Sapling state.',
     link: '#sapling_state(n)',
     examples: [],
     parameters: [
@@ -708,12 +708,15 @@ export const types = {
     michelson: "sapling_state",
     michelson_ref_url: michelson_ref_base_url + '/#type-sapling_state',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/crypto#sapling_state" }
+      { keyword: "Sapling", link:"/docs/language-basics/crypto#sapling" },
+      { keyword: "sapling_empty_state", link:"/docs/reference/expressions/builtins#sapling_empty_state(k%20:%20key_hash)" },
+      { keyword: "sapling_verify_update", link:"/docs/reference/expressions/builtins#sapling_verify_update(s,%20t)" },
+      { keyword: "sapling_verify_update", link:"/docs/reference/expressions/builtins#sapling_verify_update(s,%20t)" },
     ],
   },
   sapling_transaction :
   {
-    desc: 'TODO',
+    desc: 'Sapling transaction.',
     link: '#sapling_transaction(n)',
     examples: [ ],
     parameters: [
@@ -723,42 +726,60 @@ export const types = {
     michelson: "sapling_transaction",
     michelson_ref_url: michelson_ref_base_url + '/#type-sapling_transaction',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/crypto#sapling_transaction" }
+      { keyword: "Sapling", link:"/docs/language-basics/crypto#sapling" },
+      { keyword: "sapling_empty_state", link:"/docs/reference/expressions/builtins#sapling_empty_state(k%20:%20key_hash)" },
+      { keyword: "sapling_verify_update", link:"/docs/reference/expressions/builtins#sapling_verify_update(s,%20t)" },
+      { keyword: "sapling_verify_update", link:"/docs/reference/expressions/builtins#sapling_verify_update(s,%20t)" },
     ],
   },
   set :
   {
-    desc: 'TODO',
+    desc: <div>Immutable set of values of <Link to="/docs/language-basics/types#comparable">comparable</Link> type <code>T</code>. It can be iterated with <Link to="/docs/reference/instructions/control#set"><code>for</code></Link> in <code>T</code>'s natural order.</div>,
     link: '#set<T>',
-    examples: [],
+    examples: ['[ tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb; tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6]'],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "set",
     michelson_ref_url: michelson_ref_base_url + '/#type-set',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/container#set" }
+      { keyword: "Set", link:"/docs/language-basics/container#set" },
+      { keyword: "for", link:"/docs/reference/instructions/control#for" },
+      { keyword: "add", link:"/docs/reference/instructions/containers#sadde" },
+      { keyword: "remove", link:"/docs/reference/instructions/containers#sremovee" },
+      { keyword: "add", link:"/docs/reference/expressions/builtins#add(s%20:%20set<T>,%20e%20:%20T)" },
+      { keyword: "contains", link:"/docs/reference/expressions/builtins#contains(c%20:%20C,%20e%20:%20T)" },
+      { keyword: "length", link:"/docs/reference/expressions/builtins#length(o%20:%20T)" },
+      { keyword: "remove", link:"/docs/reference/expressions/builtins#remove(c%20:%20C,%20i%20:%20T)" },
     ],
   },
   signature :
   {
-    desc: 'TODO',
+    desc: 'Cryptographic signature.',
     link: '#signature',
     examples: [ '"edsigtvwtJaiM7phNNkZjazqKtthDxc3WswYNL961GKgz7VxvPJmWJ8WEkmEZd9oFM1RvwABYW3uYgwGRP7nuBns5WrqyfYsUaB"' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "signature",
     michelson_ref_url: michelson_ref_base_url + '/#type-signature',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/crypto#signature" }
+      { keyword: "Signature", link:"/docs/language-basics/crypto#signature" },
+      { keyword: "check_signature", link:"/docs/reference/expressions/builtins#check_signature(k%20:%20key,%20s%20:%20signature,%20b%20:%20bytes)" },
     ],
   },
   string :
   {
-    desc: 'Basic string type to store and manipulate array of non-extended ASCII characters.',
+    desc: 'Immutable array of non-extended ASCII characters.',
     link: '#string',
     examples: [ '"This is a string"', '"12345"' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "string",
     michelson_ref_url: michelson_ref_base_url + '/#type-string',
     related: [
+      { keyword: '+', link : '/docs/reference/expressions/operators/arithmetic#a--b' },
+      { keyword: 'concat', link : '/docs/reference/expressions/builtins#concat' },
+      { keyword: 'length', link : '/docs/reference/expressions/builtins#length(o%20:%20T)' },
+      { keyword: 'nat_to_string', link : '/docs/reference/expressions/builtins#nat_to_string(n%20:%20nat)' },
+      { keyword: 'slice', link : '/docs/reference/expressions/builtins#slice(s%20:%20T,%20o%20:%20nat,%20l%20:%20nat)' },
+      { keyword: 'call_view', link : '/docs/reference/expressions/builtins#call_view<T>(a%20:%20address,%20id%20:%20string,%20arg%20:%20X)' },
+      { keyword: 'get_entrypoint', link : '/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)' },
     ],
   },
   tez :
@@ -776,12 +797,29 @@ export const types = {
     michelson: "mutez",
     michelson_ref_url: michelson_ref_base_url + '/#type-mutez',
     related: [
-      { keyword: "Operation", link:"/docs/reference/instructions/operation" }
+      { keyword: '+', link: '/docs/reference/expressions/operators/arithmetic#a--b' },
+      { keyword: '-', link: '/docs/reference/expressions/operators/arithmetic#a---b' },
+      { keyword: '*', link: '/docs/reference/expressions/operators/arithmetic#a--b-1' },
+      { keyword: '/', link: '/docs/reference/expressions/operators/arithmetic#a--b-2' },
+      { keyword: 'div', link: '/docs/reference/expressions/operators/arithmetic#a-div-b' },
+      { keyword: '%', link: '/docs/reference/expressions/operators/arithmetic#a--b-3' },
+      { keyword: '=', link:'/docs/reference/expressions/operators/arithmetic#a--b-7'},
+      { keyword: '<>', link:'/docs/reference/expressions/operators/arithmetic#a--b-8'},
+      { keyword: '<', link:'/docs/reference/expressions/operators/arithmetic#a--b-9'},
+      { keyword: '<=', link:'/docs/reference/expressions/operators/arithmetic#a--b-10'},
+      { keyword: '>', link:'/docs/reference/expressions/operators/arithmetic#a--b-11'},
+      { keyword: '>=', link:'/docs/reference/expressions/operators/arithmetic#a--b-12'},
+      { keyword: '<=>', link:'/docs/reference/expressions/operators/arithmetic#a--b-13'},
+      { keyword: '+=', link:'/docs/reference/instructions/assignment#a--b-1'},
+      { keyword: '-=', link:'/docs/reference/instructions/assignment#a---b'},
+      { keyword: 'mutez_to_nat', link:'/docs/reference/expressions/builtins#mutez_to_nat(v%20:%20tez)'},
+      { keyword: 'sub_mutez', link:'/docs/reference/expressions/builtins#sub_mutez(a%20:%20tez,%20b%20:%20tez)'},
+      { keyword: 'make_operation', link:'/docs/reference/expressions/builtins#make_operation(a%20:%20tez,%20c%20:%20contract<T>,%20arg%20:%20T)'},
     ],
   },
   ticket :
   {
-    desc: 'TODO',
+    desc: 'Contract-authenticated data.',
     link: '#ticket<T>',
     examples: [],
     parameters: [
@@ -791,24 +829,36 @@ export const types = {
     michelson: "ticket",
     michelson_ref_url: michelson_ref_base_url + '/#type-ticket',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/ticket" }
+      { keyword: "Ticket", link:"/docs/language-basics/ticket" },
+      { keyword: "create_ticket", link:"/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
+      { keyword: "join_ticket", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
+      { keyword: "read_ticket", link:"/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },
+      { keyword: "split_ticket", link:"/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },
     ],
   },
   tuple :
   {
-    desc: 'TODO',
+    desc: 'Fixed list of anonymous values of different types.',
     link: '#tuple',
-    examples: [],
+    examples: ['("a string", 3)', '(0x22, none)'],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "pair",
     michelson_ref_url: michelson_ref_base_url + '/#type-pair',
     related: [
-      { keyword: "Presentation", link:"/docs/language-basics/composite#tuple" }
+      { keyword: "Tuple", link:"/docs/language-basics/composite#tuple" },
+      { keyword : ':=', link : '/docs/reference/instructions/assignment#record', desc : 'Assigns a value to a tuple dimension' },
+      { keyword : '+=', link : '/docs/reference/instructions/assignment#a--b-1', desc : 'Increments a tuple dimension' },
+      { keyword : '-=', link : '/docs/reference/instructions/assignment#a---b', desc : 'Decrement a tuple dimension' },
+      { keyword : '*=', link : '/docs/reference/instructions/assignment#a--b-2', desc : 'Multiplies a tuple dimension' },
+      { keyword : '/=', link : '/docs/reference/instructions/assignment#a--b-3', desc : 'Divides a tuple dimension' },
+      { keyword : '&=', link : '/docs/reference/instructions/assignment#a--b-4', desc : 'Applies logical conjonction to a tuple dimension' },
+      { keyword : '|=', link : '/docs/reference/instructions/assignment#a--b-5', desc : 'Applies logical disjunction to a tuple dimension' },
+      { keyword : '[]', link : '/docs/reference/expressions/operators/access#ab', desc : "Accesses a tuple dimension" },
     ],
   },
   unit :
   {
-    desc: 'TODO',
+    desc: <div>Type to express no value, only inhabited by the <code>Unit</code> value.</div>,
     link: '#unit',
     examples: [ 'Unit', '()' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
