@@ -199,7 +199,7 @@ export const operators = {
     ],
     fails: [
       {
-        keyword: '"DivByZero"',
+        keyword: '"DIV_BY_ZERO"',
         desc: <div>when <code>b</code> is equal to 0</div>
       }
     ],
@@ -217,7 +217,7 @@ export const operators = {
     ],
     fails: [
       {
-        keyword: '"DivByZero"',
+        keyword: '"DIV_BY_ZERO"',
         desc: <div>when <code>b</code> is equal to 0</div>
       }
     ],

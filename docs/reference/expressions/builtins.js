@@ -890,7 +890,7 @@ export const builtins = {
     },
     fails: [
       {
-        keyword: '"NotFound"',
+        keyword: '"NOT_FOUND"',
         desc: <div>when <code>o</code> is <code>none</code></div>
       }
     ],

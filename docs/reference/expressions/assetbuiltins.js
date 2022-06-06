@@ -48,7 +48,7 @@ export const assetbuiltins = {
     },
     fails : [
       {
-        keyword: 'Pair("A", "AssetNotFound")',
+        keyword: 'Pair("A", "ASSET_NOT_FOUND")',
         desc: <div>when asset with key <code>k</code> is not found in collection <code>A</code>.</div>
       }
     ],
@@ -164,7 +164,7 @@ export const assetbuiltins = {
     },
     fails : [
       {
-        keyword: '"NotFound"',
+        keyword: '"NOT_FOUND"',
         desc: <div>when <code>i</code> is greater or equal to <code>A.count()</code></div>
       }
     ],

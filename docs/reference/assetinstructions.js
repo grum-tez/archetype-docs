@@ -25,7 +25,7 @@ export const assetinstructions = {
     ],
     fails: [
       {
-        keyword: '(Pair "A" "KeyExists")',
+        keyword: '(Pair "A" "KEY_EXISTS")',
         desc: <div>when an asset with same key is already in the collection. (<code>"A"</code> being the name of the asset collection).</div>
       }
     ],
@@ -81,7 +81,7 @@ export const assetinstructions = {
     ],
     fails: [
       {
-        keyword: '(Pair "A" "AssetNotFound")',
+        keyword: '(Pair "A" "ASSET_NOT_FOUND")',
         desc: <div>when no asset with key <code>k</code> is in the collection (<code>"A"</code> being the name of the asset collection).</div>
       }
     ],
