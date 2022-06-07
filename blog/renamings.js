@@ -5,6 +5,9 @@ export const renamings = {
     { label: 'no transfer', link:'/docs/reference/declarations/entrypoint#no-transfer', desc: <div><code>refuse transfer</code></div>},
     { label: 'fail if', link: '/docs/reference/declarations/entrypoint#fail-if', desc: <div><code>failif</code></div>},
   ],
+  types: [
+    { label: 'asset_key', link:'/docs/reference/types#asset_key<A>', desc: <div><code>pkey</code></div>},
+  ],
   instructions: [
     { label: 'do_require', link:'/docs/reference/instructions/divergent#do_requiret--bool-e--t', desc: <div><code>dorequire</code></div>},
     { label: 'do_fail_if', link:'/docs/reference/instructions/divergent#do_fail_ift--bool-e--t', desc: <div><code>dofailif</code></div>},
@@ -26,7 +29,7 @@ export const renamings = {
     { label: 'make_operation', link:'/docs/reference/expressions/builtins#make_operation(a%20:%20tez,%20c%20:%20contract<T>,%20arg%20:%20T)', desc: <div><code>mkoperation</code></div>},
     { label: 'get_some', link:'/docs/reference/expressions/builtins#get_some(o%20:%20option<T>)', desc: <div><code>opt_get</code></div>},
     { label: 'nat_to_string', link:'/docs/reference/expressions/builtins#nat_to_string(n%20:%20nat)', desc: <div><code>to_string</code></div>},
-    { label: 'get_entrypoint', link:'/docs/reference/expressions/builtins#nat_to_string(n%20:%20nat)', desc: <div><code>entrypoint</code></div>},
+    { label: 'get_entrypoint', link:'/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)', desc: <div><code>entrypoint</code></div>},
   ],
   assets: [
     { label: 'get', link:'/docs/reference/expressions/asset#agetk--asset_keya', desc: <div><code>get_opt</code></div>},

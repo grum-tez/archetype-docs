@@ -52,7 +52,7 @@ const n = v.nbdoors
 
 The access operator still fails if the key is not `vehicle` collection.
 
-Version [`1.2.16`](https://github.com/edukera/archetype-lang/releases/tag/1.2.16) also introduces the [`get`](/docs/reference/expressions/asset#agetk--asset_keya) method for asset collection. As for [`map`](/docs/reference/types#map<K,%20V>), it returns an option of record:
+Version [`1.3.0`](https://github.com/edukera/archetype-lang/releases/tag/1.3.0) also introduces the [`get`](/docs/reference/expressions/asset#agetk--asset_keya) method for asset collection. As for [`map`](/docs/reference/types#map<K,%20V>), it returns an option of record:
 
 ```archetype
 const k = "1G1AF1F57A7192174";
