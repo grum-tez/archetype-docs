@@ -15,6 +15,7 @@ export const assignments = {
       { typa: 'duration', typr: 'duration' },
       { typa: 'date', typr: 'duration' },
       { typa: 'tez', typr: 'tez' },
+      { typa: 'string', typr: 'string' },
       { typa: 'bls12_381_fr', typr: 'bls12_381_fr' },
       { typa: 'bls12_381_g1', typr: 'bls12_381_g1' },
       { typa: 'bls12_381_g2', typr: 'bls12_381_g2' },

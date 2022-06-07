@@ -21,7 +21,7 @@ Install Archetype compiler:
 completium-cli install archetype
 ```
 
-This requires [docker](https://www.docker.com/) to be installed, and will download the [latest version](https://hub.docker.com/r/completium/archetype) (displayed in the right corner of the top bar) of Archetype compiler .
+This requires [docker](https://www.docker.com/products/docker-desktop/) to be installed, and will download the [latest version](https://hub.docker.com/r/completium/archetype) (displayed in the right corner of the top bar) of Archetype compiler .
 
 Print installed Archetype version:
 ```
