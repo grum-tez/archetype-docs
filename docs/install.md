@@ -53,8 +53,8 @@ It is possible to configure Completium CLI to use a binary version of the Archet
 
 Switch to binary compiler:
 ```
-compleitum set archetype path <PATH_TO_ARCHETYPE_BIN>
-completium set archetype binary
+completium-cli set archetype path <PATH_TO_ARCHETYPE_BIN>
+completium-cli set archetype binary
 ```
 
 There are 3 ways to get the binary compiler.
