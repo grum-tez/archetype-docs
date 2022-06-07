@@ -98,14 +98,6 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['greedy_or']} />
 
-<H3 page="builtins" value={builtins['key_to_key_hash'].sig} />
-
-<Builtin data={builtins['key_to_key_hash']} />
-
-<H3 page="builtins" value={builtins['key_hash_to_contract'].sig} />
-
-<Builtin data={builtins['key_hash_to_contract']} />
-
 <H3 page="builtins" value={builtins['int_to_date'].sig} />
 
 <Builtin data={builtins['int_to_date']} />
@@ -132,9 +124,17 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['keccak']} />
 
+<H3 page="builtins" value={builtins['key_hash_to_contract'].sig} />
+
+<Builtin data={builtins['key_hash_to_contract']} />
+
 <H3 page="builtins" value={builtins['key_to_address'].sig} />
 
 <Builtin data={builtins['key_to_address']} />
+
+<H3 page="builtins" value={builtins['key_to_key_hash'].sig} />
+
+<Builtin data={builtins['key_to_key_hash']} />
 
 <H3 page="builtins" value={builtins['left'].sig} />
 
@@ -145,6 +145,10 @@ import H3 from "@site/src/components/H3.js";
 <Builtin data={builtins['length']} />
 
 ## `M N O`
+
+<H3 page="builtins" value={builtins['make_operation'].sig} />
+
+<Builtin data={builtins['make_operation']} />
 
 <H3 page="builtins" value={builtins['map'].sig} />
 
@@ -157,10 +161,6 @@ import H3 from "@site/src/components/H3.js";
 <H3 page="builtins" value={builtins['min'].sig} />
 
 <Builtin data={builtins['min']} />
-
-<H3 page="builtins" value={builtins['make_operation'].sig} />
-
-<Builtin data={builtins['make_operation']} />
 
 <H3 page="builtins" value={builtins['mutez_to_nat'].sig} />
 

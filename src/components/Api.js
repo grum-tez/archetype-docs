@@ -13,10 +13,10 @@ const ApiItem = (props) => {
       <Grid item xs={12}>
         <Divider className={ styles.divider } style={{ marginBottom: '8px', marginTop: '4px' }}></Divider>
       </Grid>
-      <Grid item xs={12} sm={3} md={3} style={{ paddingLeft: '8px' }}>
-      <Link to={props.data.link}><code>{props.data.label}</code></Link>
+      <Grid item xs={12} sm={props.xs} md={props.xs} style={{ paddingLeft: '8px' }}>
+        { props.data.link == undefined ? (<code>{props.data.label}</code>) : (<Link to={props.data.link}><code>{props.data.label}</code></Link>) }
       </Grid>
-      <Grid item xs={12} sm={9} md={9} style={{  paddingLeft: '8px', marginBottom: '8px' }}>
+      <Grid item xs={12} sm={12-props.xs} md={12-props.xs} style={{  paddingLeft: '8px', marginBottom: '8px' }}>
         <Typography style={{
           fontFamily: 'IBM Plex Sans',
         }}>{props.data.desc}</Typography>
@@ -26,6 +26,7 @@ const ApiItem = (props) => {
 }
 
 export default function Api(props) {
+  const xs = (props.xs == undefined) ? 3 : props.xs;
   return (
     <StyledEngineProvider injectFirst>
     <Grid container>
@@ -35,7 +36,7 @@ export default function Api(props) {
         </Typography>
       </Grid>
       { props.data.map((e => {
-        return (<ApiItem data={e} />)
+        return (<ApiItem data={e} xs={xs}/>)
        })) }
     </Grid>
     </StyledEngineProvider>
