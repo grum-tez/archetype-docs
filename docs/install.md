@@ -74,10 +74,13 @@ opam install archetype
 
 ### From source
 
+Requires [opam](https://opam.ocaml.org/) to be installed:
+
 ```
 git clone git@github.com:edukera/archetype-lang.git
 cd archetype-lang
 make build-deps
+eval $(opam env)
 make all
 ```
 
