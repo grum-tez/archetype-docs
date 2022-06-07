@@ -214,6 +214,7 @@ export const operators = {
       { typa: 'duration',     typb : 'duration',     typr: 'int' },
       { typa: 'nat',          typb : 'int',          typr: 'nat' },
       { typa: 'int',          typb : 'nat',          typr: 'nat' },
+      { typa: 'tez',          typb : 'tez',          typr: 'tez' },
     ],
     fails: [
       {
