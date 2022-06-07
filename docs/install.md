@@ -67,7 +67,7 @@ Download the binary compiler from the github [release](https://github.com/eduker
 
 ### Opam
 
-Install with opam:
+Install with [opam](https://opam.ocaml.org/):
 ```
 opam install archetype
 ```
