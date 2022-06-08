@@ -36,7 +36,6 @@ export const renamings = {
     { label: 'add_update', link:'/docs/reference/expressions/asset#agetk--asset_keya', desc: <div><code>addupdate</code></div>},
     { label: 'remove_if', link:'/docs/reference/instructions/asset#aremove_ifp', desc: <div><code>removeif</code></div>},
     { label: 'remove_all', link:'/docs/reference/instructions/asset#aremove_all', desc: <div><code>clear</code></div>},
-    { label: 'remove_all', link:'/docs/reference/instructions/asset#aremove_all', desc: <div><code>clear</code></div>},
   ],
   errors: [
     { label: '"INVALID_CALLER"', desc: <div><code>"InvalidCaller"</code></div> },
