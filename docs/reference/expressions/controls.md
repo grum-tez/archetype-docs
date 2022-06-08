@@ -38,6 +38,8 @@ As for `if` expression above, expressions for each enumerated value must be of s
 
 ### `a ? b : c`
 
+#### Bool
+
 When `a` is of type [`bool`](/docs/reference/types#bool), expression `a ? b : c` is a synonym of `if a then b else c`.
 
 For example:
@@ -45,7 +47,9 @@ For example:
 const ratio = balance > threshold ? 5% : 10%
 ```
 
-When `a` is of type [`option`](/docs/reference/types#option<T>), expression `a ? b : c` is also a special syntax to fold the optional value `a`, where:
+#### Option
+
+When `a` is of type [`option`](/docs/reference/types#option<T>), expression `a ? b : c` is another syntax to fold the optional value `a`, where:
 * `b` is the expression to evaluate in case `a` is `some` value
 * `c` is the expression to evaluate in case `a` is `none`
 
