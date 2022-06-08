@@ -43,11 +43,7 @@ export const renamings = {
     { label: '"INVALID_CONDITION"', desc: <div><code>"InvalidCondition"</code></div> },
     { label: '"KEY_EXISTS"', desc: <div><code>"KeyExists"</code></div> },
     { label: '"KEY_EXISTS_OR_NOT_FOUND"', desc: <div><code>"KeyExistsOrNotFound"</code></div> },
-    { label: '"KEY_EXISTS_OR_NOT_FOUND"', desc: <div><code>"KeyExistsOrNotFound"</code></div> },
-    { label: '"KEY_EXISTS_OR_NOT_FOUND"', desc: <div><code>"KeyExistsOrNotFound"</code></div> },
-    { label: '"OUT_OF_BOUND"', desc: <div><code>"OutOfBound"</code></div> },
     { label: '"DIV_BY_ZERO"', desc: <div><code>"divbyzero"</code></div> },
-    { label: '"NAT_NEG_ASSIGN"', desc: <div><code>"divbyzero"</code></div> },
     { label: '"NO_TRANSFER"', desc: <div><code>"NoTransfer"</code></div> },
     { label: '"INVALID_STATE"', desc: <div><code>"InvalidState"</code></div> },
   ]

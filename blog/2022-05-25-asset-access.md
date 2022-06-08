@@ -33,7 +33,7 @@ const n = vehicle["1G1AF1F57A7192174"].nbdoors
 
 Here the test and fail instructions were repeated three times.
 
-The second problem was the *implicit* fail of the `[]` operator.
+The second problem was the *implicit* fail of the `[]` operator when the asset was not found.
 
 ### Solution
 

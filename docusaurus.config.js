@@ -14,7 +14,7 @@ const config = {
   baseUrl: '/archetype-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon@2x.png',
   organizationName: 'completium', // Usually your GitHub org/user name.
   projectName: 'archetype-docs', // Usually your repo name.
 
