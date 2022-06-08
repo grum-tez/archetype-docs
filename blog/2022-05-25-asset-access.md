@@ -7,13 +7,13 @@ tags: [asset, new feature]
 
 We present an improvement in the way [assets](/docs/asset) data are accessed since version [`1.3.0`](https://github.com/edukera/archetype-lang/releases/tag/1.3.0) of Archetype.
 
-### Problem
+### Problems
 
 Until this version, the only way to access an asset data was the field accessor operator of the form `A[k].f`, where `A` is the asset collection, `k` the asset key and `f` the asset field.
 
 <!--truncate-->
 
-For example, consider the following asset declaration:
+The first problem was the access to multiple fields; for example, consider the following asset declaration:
 ```archetype
 asset vehicle {
   vin          : string;
@@ -23,12 +23,7 @@ asset vehicle {
 }
 ```
 
-The manufacturer of vehicle `"1G1AF1F57A7192174"` is then accessed as follows:
-```archetype
-const m = vehicle["1G1AF1F57A7192174"].manufacturer
-```
-
-This expression fails when the key is not found in the asset collection. As a consequence, accessing several fields sucessively repeats the test and fail instruction as in:
+Accessing several fields would end up with accessing the underlying map several times:
 
 ```archetype
 const m = vehicle["1G1AF1F57A7192174"].manufacturer;
@@ -36,50 +31,33 @@ const y = vehicle["1G1AF1F57A7192174"].year;
 const n = vehicle["1G1AF1F57A7192174"].nbdoors
 ```
 
-Here the test and fail instructions are repeated three times.
+Here the test and fail instructions were repeated three times.
+
+The second problem was the *implicit* fail of the `[]` operator.
 
 ### Solution
 
-It is now possible to retrieve the asset data in the form of a record with the [`[]`](/docs/reference/expressions/asset#ak--asset_keya) operator.
+The [`[]`](/docs/reference/expressions/asset#ak--asset_keya) operator does *not* fail anymore and now returns an [`option`](/docs/reference/types#option<T>) of [asset value](/docs/reference/types#asset_value<A>).
 
-In the example above, the proper way to retrieve all asset data is now as follows:
+Combined with the new [`?= :`](/docs/reference/instructions/localvariable#-) declaration instruction, the proper way to retrieve all vehicle data presented above, is now as follows:
+
 ```archetype
-const v = vehicle["1G1AF1F57A7192174"];
+const v ?= vehicle["1G1AF1F57A7192174"] : "VEHICLE_NOT_FOUND";
 const m = v.manufacturer;
 const y = v.year;
 const n = v.nbdoors
 ```
 
-The access operator still fails if the key is not `vehicle` collection.
-
-Version [`1.3.0`](https://github.com/edukera/archetype-lang/releases/tag/1.3.0) also introduces the [`get`](/docs/reference/expressions/asset#agetk--asset_keya) method for asset collection. As for [`map`](/docs/reference/types#map<K,%20V>), it returns an option of record:
-
-```archetype
-const k = "1G1AF1F57A7192174";
-match vehicle.get(k) with
-| some v ->
-  const m = v.manufacturer;
-  const y = v.year;
-  const n = v.nbdoors;
-  /* ... */
-| none -> fail("Key " + k + " not found in collection")
-end
-```
-
 ### Single field access
 
-Situations where a single asset field is accessed is very common though. In this case, version [`1.2.16`](https://github.com/edukera/archetype-lang/releases/tag/1.2.16) provides two new dedicated operators: [`[]?.`](/docs/reference/expressions/asset#ak--asset_keyaf) and [`[]?:`](/docs/reference/expressions/asset#ak--asset_keya--e--d).
+Situations where a single asset field is accessed is very common though. In this case, version [`1.2.16`](https://github.com/edukera/archetype-lang/releases/tag/1.2.16) provides a new dedicated operator [`[]?.`](/docs/reference/expressions/asset#ak--asset_keyaf).
 
-For example, `is_coupe` below is true if field `nbdoors` is equal to 3, and `false` if asset is not found:
-
-```archetype
-const k = "1G1AF1F57A7192174";
-const is_coupe = vehicle[k] ? the.nbdoors = 3 : false
-```
-
-The following retrieves an [`option`](/docs/reference/types#option<T>) of [`nat`](/docs/reference/types#nat) to treat more specifically the case when the asset is not found:
+For example, the following retrieves an [`option`](/docs/reference/types#option<T>) of [`nat`](/docs/reference/types#nat) to treat more specifically the case when the asset is not found:
 ```archetype
 const on = vehicle["1G1AF1F57A7192174"]?.nbdoors
 ```
+
+`on` is typed `option<nat>` and is `none` if the vehicle is not found.
+
 
 

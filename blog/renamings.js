@@ -13,7 +13,7 @@ export const renamings = {
     { label: 'do_fail_if', link:'/docs/reference/instructions/divergent#do_fail_ift--bool-e--t', desc: <div><code>dofailif</code></div>},
   ],
   constants: [
-    { label: 'chain_id', link:'/docs/reference/expressions/constants#chain_id', desc: <div><code>chainid</code></div>},
+    { label: 'self_chain_id', link:'/docs/reference/expressions/constants#chain_id', desc: <div><code>chainid</code></div>},
     { label: 'self_address', link:'/docs/reference/expressions/constants#self_address', desc: <div><code>selfaddress</code></div>},
   ],
   builtins: [
@@ -41,8 +41,6 @@ export const renamings = {
     { label: '"INVALID_CALLER"', desc: <div><code>"InvalidCaller"</code></div> },
     { label: '"INVALID_SOURCE"', desc: <div><code>"InvalidSource"</code></div> },
     { label: '"INVALID_CONDITION"', desc: <div><code>"InvalidCondition"</code></div> },
-    { label: '"NOT_FOUND"', desc: <div><code>"NotFound"</code></div> },
-    { label: '"ASSET_NOT_FOUND"', desc: <div><code>"AssetNotFound"</code></div> },
     { label: '"KEY_EXISTS"', desc: <div><code>"KeyExists"</code></div> },
     { label: '"KEY_EXISTS_OR_NOT_FOUND"', desc: <div><code>"KeyExistsOrNotFound"</code></div> },
     { label: '"KEY_EXISTS_OR_NOT_FOUND"', desc: <div><code>"KeyExistsOrNotFound"</code></div> },

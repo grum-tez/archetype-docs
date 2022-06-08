@@ -12,10 +12,6 @@ import { constants } from './constants.js';
 
 <Constant data={constants['balance']} />
 
-### `chain_id`
-
-<Constant data={constants['chain_id']} />
-
 ### `caller`
 
 <Constant data={constants['caller']} />
@@ -31,6 +27,10 @@ import { constants } from './constants.js';
 ### `self_address`
 
 <Constant data={constants['self_address']} />
+
+### `self_chain_id`
+
+<Constant data={constants['self_chain_id']} />
 
 ### `source`
 

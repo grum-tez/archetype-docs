@@ -15,7 +15,7 @@ export const constants = {
     michelson_ref_url: michelson_ref_base_url + '/#instr-BALANCE',
     related: [],
   },
-  chain_id:
+  self_chain_id:
   {
     desc: <ChainidDesc />,
     type: 'chain_id',
