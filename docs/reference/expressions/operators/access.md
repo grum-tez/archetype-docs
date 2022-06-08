@@ -21,14 +21,13 @@ const b = t[2]; /* 0xbc       */
 
 Accesses value associated with key `b` in [map](/docs/language-basics/container#map) `a` (also [`big_map`](/docs/reference/types#big_map<K,%20V>) and [`iterable_big_map`](/docs/reference/types#iterable_big_map<K,%20V>)).
 
-It fails with `"NOT_FOUND"` if `b` is not found in `a`.
+It returns an [`option`](/docs/reference/types#option<T>) of the associated value, which is `none` if the key is not found.
 
 For example:
 ```archetype
-const m : map<nat, string> = [ (1, "a string"); (3, "another"); (5, "yet another") ]
-const s1 = m[1]; /* "a string"    */
-const s2 = m[3]; /* "another"     */
-const s3 = m[5]; /* "yet another" */
+const m : map<nat, string> = [ (1, "a string"); (3, "another") ];
+const s1 ?= m[1] : "1_NOT_FOUND"; /* "a string"    */
+const s2 ?= m[3] : "3_NOT_FOUND"; /* "another"     */
 ```
 ### `a.b`
 
