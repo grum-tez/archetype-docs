@@ -86,8 +86,8 @@ export const operators = {
     desc: 'Subtracts numbers.',
     types: [
       { typa: 'int',          typb : 'int',          typr: 'int' },
-      { typa: 'nat',          typb : 'nat',          typr: 'option<nat>' },
-      { typa: 'tez',          typb : 'tez',          typr: 'option<tez>' },
+      { typa: 'nat',          typb : 'nat',          typr: 'option<nat>', withLink: false },
+      { typa: 'tez',          typb : 'tez',          typr: 'option<tez>', withLink: false },
       { typa: 'rational',     typb : 'rational',     typr: 'rational' },
       { typa: 'duration',     typb : 'duration',     typr: 'duration' },
       { typa: 'date',         typb : 'duration',     typr: 'date' },
