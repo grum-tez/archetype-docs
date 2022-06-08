@@ -215,35 +215,6 @@ export const builtins = {
   },
 
   // arithmetic function
-  sub_nat: {
-    sig: 'sub_nat(a : nat, b : nat)',
-    desc: <div>Subtracts <code>a</code> to <code>b</code> and returns a nat value.</div>,
-    parameters: [
-      {
-        type: 'nat',
-        alias: 'a',
-        desc: <div>Left-hand side operand to subtract</div>
-      },
-      {
-        type: 'nat',
-        alias: 'b',
-        desc: <div>Right-hand side operand to subtract</div>
-      }
-    ],
-    returns: {
-      type: 'nat',
-      desc: <div>Result of operation</div>
-    },
-    fails: [
-      {
-        keyword: '"NAT_NEG_ASSIGN"',
-        desc: <div>when <code>a - b</code> is negative</div>
-      }
-    ],
-    related: [
-      { keyword: 'nat', link: '/docs/reference/types#nat' },
-    ]
-  },
 
   sub_mutez: {
     sig: 'sub_mutez(a : tez, b : tez)',
@@ -417,7 +388,7 @@ export const builtins = {
   },
   nth: {
     sig: 'nth(l : list<T>, n : nat)',
-    desc: <div>Returns the <code>n</code>th element of list <code>l</code>.</div>,
+    desc: <div>Returns an option of the <code>n</code>th element of list <code>l</code>.</div>,
     parameters: [
       {
         type: 'list<T>',
@@ -431,15 +402,9 @@ export const builtins = {
       }
     ],
     returns: {
-      type: 'T',
-      desc: <div>Element at position <code>n</code></div>
+      type: 'option<T>',
+      desc: <div><ul><li><code>some</code> of element at position <code>n</code></li><li><code>none</code> when <code>n</code> is out of bound</li></ul></div>
     },
-    fails: [
-      {
-        keyword: '"EmptyList"',
-        desc: <div>"Out of Bound" when <code>n</code> is greater than <code>length(l)-1</code></div>
-      }
-    ],
     related: [
       { keyword: 'List', link: '/docs/language-basics/container#list' },
       { keyword: 'length', link: '/docs/reference/expressions/builtins#length(o%20:%20T)' },
@@ -872,32 +837,6 @@ export const builtins = {
       { keyword: 'int', link: '/docs/reference/types#int' },
       { keyword: 'option', link: '/docs/reference/types#option<T>' },
       { keyword: 'abs', link: '/docs/reference/expressions/builtins#abs(t%20:%20T)' },
-    ]
-  },
-  get_some: {
-    sig: 'get_some(o : option<T>)',
-    desc: <OptGetDesc />,
-    parameters: [
-      {
-        type: 'option<T>',
-        alias: 'o',
-        desc: 'Optional value to extract some value from.'
-      },
-    ],
-    returns: {
-      type: 'T',
-      withLink: false,
-      desc: <div>Returns <code>v</code> of type <code>T</code> when <code>o</code> is <code>some(v)</code></div>
-    },
-    fails: [
-      {
-        keyword: '"NOT_FOUND"',
-        desc: <div>when <code>o</code> is <code>none</code></div>
-      }
-    ],
-    related: [
-      { keyword: 'Option', link: '/docs/language-basics/composite' },
-      { keyword: 'is_some', link: '#is_some' },
     ]
   },
   floor: {

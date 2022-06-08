@@ -31,31 +31,6 @@ export const assetbuiltins = {
       { keyword: 'get', link: '/docs/reference/expressions/builtins#get(m%20:%20(big_)?map<K,%20V>,%20k%20:%20K)' }
     ]
   },
-  get: {
-    sig: 'A[k]',
-    desc: <GetDesc />,
-    appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map' ],
-    parameters: [
-      {
-        type: 'asset_key<A>',
-        alias: 'k',
-        desc: <div>Asset key</div>
-      },
-    ],
-    returns: {
-      type: 'asset_value<A>',
-      desc: <div>Returns a record value of asset <code>k</code>.</div>
-    },
-    fails : [
-      {
-        keyword: 'Pair("A", "ASSET_NOT_FOUND")',
-        desc: <div>when asset with key <code>k</code> is not found in collection <code>A</code>.</div>
-      }
-    ],
-    related: [
-      { keyword: 'Asset', link: '/docs/asset' },
-    ]
-  },
   getof: {
     sig: 'A[k]?f',
     desc: <GetOptionFieldDesc />,
@@ -149,7 +124,7 @@ export const assetbuiltins = {
   },
   nth: {
     sig: 'A.nth(i)',
-    desc: <div>Returns the key of element number <code>i</code> (starting from 0) of collection <code>A</code>, according to its order (natural key order for <code>asset</code> collection).</div>,
+    desc: <div>Returns an option of the key of <code>i</code>th element (starting from 0) in collection <code>A</code>, according to its order (natural key order for <code>asset</code> collection).</div>,
     appliesto: [ 'asset', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
@@ -159,15 +134,10 @@ export const assetbuiltins = {
       }
     ],
     returns: {
-      type: 'asset_key<A>',
-      desc: 'Key of the ith element of the collection.'
+      type: 'option<asset_key<A>>',
+      withLink: false,
+      desc: <div>Option of key of ith element of the collection:<ul><li><code>some</code> of ith element</li><li><code>none</code> when <code>i</code> is out of bound</li></ul></div>
     },
-    fails : [
-      {
-        keyword: '"NOT_FOUND"',
-        desc: <div>when <code>i</code> is greater or equal to <code>A.count()</code></div>
-      }
-    ],
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
     ]

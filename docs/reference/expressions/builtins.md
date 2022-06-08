@@ -86,10 +86,6 @@ import H3 from "@site/src/components/H3.js";
 
 <Builtin data={builtins['get_entrypoint']} />
 
-<H3 page="builtins" value={builtins['get_some'].sig} />
-
-<Builtin data={builtins['get_some']} />
-
 <H3 page="builtins" value={builtins['greedy_and'].sig} />
 
 <Builtin data={builtins['greedy_and']} />
@@ -257,10 +253,6 @@ import H3 from "@site/src/components/H3.js";
 <H3 page="builtins" value={builtins['sub_mutez'].sig} />
 
 <Builtin data={builtins['sub_mutez']} />
-
-<H3 page="builtins" value={builtins['sub_nat'].sig} />
-
-<Builtin data={builtins['sub_nat']} />
 
 <H3 page="builtins" value={builtins['unpack'].sig} />
 

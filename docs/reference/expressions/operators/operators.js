@@ -85,9 +85,9 @@ export const operators = {
     link: 'a---b',
     desc: 'Subtracts numbers.',
     types: [
-      { typa: 'nat',          typb : 'nat',          typr: 'int' },
       { typa: 'int',          typb : 'int',          typr: 'int' },
-      { typa: 'tez',          typb : 'tez',          typr: 'tez' },
+      { typa: 'nat',          typb : 'nat',          typr: 'option<nat>' },
+      { typa: 'tez',          typb : 'tez',          typr: 'option<tez>' },
       { typa: 'rational',     typb : 'rational',     typr: 'rational' },
       { typa: 'duration',     typb : 'duration',     typr: 'duration' },
       { typa: 'date',         typb : 'duration',     typr: 'date' },
@@ -106,12 +106,6 @@ export const operators = {
       { typa: 'bls12_381_fr', typb : 'int', typr: 'bls12_381_fr' },
       { typa: 'nat', typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
       { typa: 'int', typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
-    ],
-    fails: [
-      {
-        keyword: '"INVALID_NEGATIVE_TEZ"',
-        desc: <div>when <code>a - b</code> value typed <code>tez</code> is negative.</div>
-      }
     ],
   },
   minus : {
