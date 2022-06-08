@@ -16,6 +16,7 @@ import OptGetDesc from "../../../src/components/desc/opt_get_desc.md"
 import RightDesc from "../../../src/components/desc/right_desc.md"
 import UnpackDesc from "../../../src/components/desc/unpack_desc.md"
 import SliceDesc from "../../../src/components/desc/slice_desc.md"
+import CallviewDesc from "../../../src/components/desc/callview_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -25,7 +26,7 @@ export const builtins = {
   // entrypoint
   call_view: {
     sig: 'call_view<T>(a : address, id : string, arg : X)',
-    desc: <div>Calls an on-chain view.</div>,
+    desc: <CallviewDesc />,
     parameters: [
       {
         type: 'address',
@@ -35,7 +36,7 @@ export const builtins = {
       {
         type: 'string',
         alias: 'id',
-        desc: <div>Name of the view; must be a literal string (e.g. <code>"my_view"</code>)</div>
+        desc: <div>Name of the view; must be a string literal (e.g. <code>"my_view"</code>)</div>
       },
       {
         type: 'X',
