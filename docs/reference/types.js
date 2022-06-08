@@ -600,7 +600,7 @@ export const types = {
   },
   option :
   {
-    desc: 'Optional value, that is either some value of some type, or none.',
+    desc: <div>Optional value, that is either <code>some</code> value of type <code>T</code>, or <code>none</code>.</div>,
     link: '#option<T>',
     parameters: [
       { keyword: 'T', type: 'any type', desc: 'type of the value when the option is some value' },
@@ -610,7 +610,31 @@ export const types = {
     michelson: "option",
     michelson_ref_url: michelson_ref_base_url + '/#type-option',
     related: [
-      { keyword: "Option", link:"/docs/language-basics/composite#option" }
+      { keyword: "match with", link:"/docs/reference/instructions/control#option" },
+      { keyword: "fail_some", link:"/docs/reference/instructions/divergent#fail_somee--optiont" },
+      { keyword: "update", link:"/docs/reference/instructions/containers#mupdatek--k-o--optiont" },
+      { keyword: "call_view", link:"/docs/reference/expressions/builtins#call_view<T>(a%20:%20address,%20id%20:%20string,%20arg%20:%20X)" },
+      { keyword: "get", link:"/docs/reference/expressions/builtins#get(m%20:%20map<K,%20T>,%20k%20:%20K)" },
+      { keyword: "get_entrypoint", link:"/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)" },
+      { keyword: "get_some", link:"/docs/reference/expressions/builtins#get_some(o%20:%20option<T>)" },
+      { keyword: "int_to_nat", link:"/docs/reference/expressions/builtins#int_to_nat(i%20:%20int)" },
+      { keyword: "is_none", link:"/docs/reference/expressions/builtins#is_none(o%20:%20option<T>)" },
+      { keyword: "is_some", link:"/docs/reference/expressions/builtins#is_some(o%20:%20option<T>)" },
+      { keyword: "join_tickets", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
+      { keyword: "map", link:"/docs/reference/expressions/builtins#map" },
+      { keyword: "none", link:"/docs/reference/expressions/builtins#none<T>" },
+      { keyword: "sapling_verify_update", link:"/docs/reference/expressions/builtins#sapling_verify_update(s,%20t)" },
+      { keyword: "set_delegate", link:"/docs/reference/expressions/builtins#set_delegate(opkh%20:%20option<key_hash>)" },
+      { keyword: "slice", link:"/docs/reference/expressions/builtins#slice(s%20:%20T,%20o%20:%20nat,%20l%20:%20nat)" },
+      { keyword: "some", link:"/docs/reference/expressions/builtins#some(v%20:%20T)" },
+      { keyword: "split_tockets", link:"/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },
+      { keyword: "sub_mutez", link:"/docs/reference/expressions/builtins#sub_mutez(a%20:%20tez,%20b%20:%20tez)" },
+      { keyword: "unpack", link:"/docs/reference/expressions/builtins#unpack<T>(b%20:%20bytes)" },
+      { keyword: "update", link:"/docs/reference/expressions/builtins#update(m%20:%20map<K,%20V>,%20k%20:%20K,%20v%20:%20option<T>)" },
+      { keyword: "match with", link:"/docs/reference/expressions/controls#match-with" },
+      { keyword: "? :", link:"/docs/reference/expressions/controls#a--b--c" },
+      { keyword: "[]", link:"/docs/reference/expressions/asset#ak--asset_keyaf" },
+
     ],
   },
   or :
@@ -621,15 +645,19 @@ export const types = {
       { keyword: 'T1', type: 'any type', desc: 'left type' },
       { keyword: 'T2', type: 'any type', desc: 'right type' },
     ],
-    examples: ['variable o : or<nat, string> = left<string>(2)',
-     'variable o : or<nat, string> = left<nat, string>(2)',
-     'variable o : or<nat, string> = right<nat>("#a56fG")',
-     'variable o : or<nat, string> = right<nat, string>("#a56fG")'],
+    examples: ['const o : or<nat, string> = left<string>(2)',
+     'const o : or<nat, string> = left<nat, string>(2)',
+     'const o : or<nat, string> = right<nat>("#a56fG")',
+     'const o : or<nat, string> = right<nat, string>("#a56fG")'],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "or T1 T2",
     michelson_ref_url: michelson_ref_base_url + '/#type-or',
     related: [
-      { keyword: "Or", link:"/docs/language-basics/composite#or" }
+      { keyword: "match with", link:"/docs/reference/instructions/control#or" },
+      { keyword: "fold", link:"/docs/reference/expressions/builtins#fold%20(i%20:%20or<L,%20R>,%20f%20:%20L%20->%20or<L,%20R>)" },
+      { keyword: "left", link:"/docs/reference/expressions/builtins#left<(L,)?%20T>(x%20:%20L)" },
+      { keyword: "open_chest", link:"/docs/reference/expressions/builtins#open_chest(k%20:%20chest_key,%20c%20:%20chest,%20t%20:%20nat)" },
+      { keyword: "right", link:"/docs/reference/expressions/builtins#right<T(,%20R)>(x%20:%20R)" },
     ],
   },
   partition :
