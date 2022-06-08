@@ -22,7 +22,6 @@ For example:
 var s = "a string";
 s := "another string"
 ```
-
 #### Tuple
 
 Assigns a dimension of a [`tuple`](/docs/language-basics/composite#tuple) *variable*.
@@ -58,6 +57,25 @@ r.red := 0xc8;
 :::info
 Other assignment operators below are also available for tuple dimension and record field.
 :::
+
+### `a ?:= b : e`
+
+Assigns the `some` value of [`option`](/docs/reference/types#option<T>) `b` argument to `a`, and fails with `e` otherwise.
+
+For example:
+```archetype
+var a : 0;
+a ?:= unpack<nat>(0x0505) : "ERROR"
+```
+
+This is equivalent to:
+```archetype
+var a = 0;
+match unpack<nat>(0x0505) with
+| some(v) -> a := v
+| none    -> fail("ERROR")
+end
+```
 
 ### `a += b`
 

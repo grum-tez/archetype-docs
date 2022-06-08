@@ -12,6 +12,7 @@ export const instructions = {
     ],
     assignments: [
       { label : ':=', link : link_prefix + '/assignment#a--b' },
+      { label : '?:=', link : link_prefix + '/assignment#a--b--e' },
       { label : '+=', link : link_prefix + '/assignment#a--b-1' },
       { label : '-=', link : link_prefix + '/assignment#a---b' },
       { label : '*=', link : link_prefix + '/assignment#a--b-2' },

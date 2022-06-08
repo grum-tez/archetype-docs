@@ -78,10 +78,6 @@ import H3 from "@site/src/components/H3.js";
 
 ## `G H I`
 
-<H3 page="builtins" value={builtins['get'].sig} />
-
-<Builtin data={builtins['get']} />
-
 <H3 page="builtins" value={builtins['get_entrypoint'].sig} />
 
 <Builtin data={builtins['get_entrypoint']} />

@@ -497,40 +497,6 @@ export const builtins = {
       { keyword: 'remove', link: '/docs/reference/expressions/builtins#remove(c%20:%20C,%20i%20:%20T)' },
     ]
   },
-  get: {
-    sig: 'get(m : map<K, T>, k : K)',
-    desc: <div>Returns an option of the value associated to key <code>k</code> in map <code>m</code>.<p></p>
-    It is also available for types <Link to="/docs/reference/types#big_map<K,%20V>"><code>big_map</code></Link> and
-    <Link to="/docs/reference/types#iterable_big_map<K,%20V>"><code>iterable_big_map</code></Link>.</div>,
-    parameters: [
-      {
-        type: 'map<K, V>',
-        alias: 'm',
-        desc: <div>Map to get</div>
-      },
-      {
-        type: 'K',
-        withLink: false,
-        alias: 'k',
-        desc: <div>Key to get</div>
-      }
-    ],
-    returns: {
-      type: 'option<T>',
-      desc: <div>
-        <ul>
-          <li><code>none</code> when <code>k</code> is not in the map <code>m</code></li>
-          <li><code>some(v)</code>, when <code>k</code> is in the map <code>m</code> associated with value <code>v</code></li>
-        </ul>
-      </div>
-    },
-    michelson: "GET",
-    michelson_ref_url: michelson_ref_base_url + '#instr-GET',
-    related: [
-      { keyword: 'Map', link: '/docs/language-basics/container#map' },
-    ]
-  },
-
   remove: {
     sig: 'remove(c : C, i : T)',
     desc: <div>Returns a copy of <code>c</code> without item <code>i</code>.</div>,
