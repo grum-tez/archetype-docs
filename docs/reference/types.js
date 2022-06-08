@@ -739,7 +739,6 @@ export const types = {
       { keyword: "Sapling", link:"/docs/language-basics/crypto#sapling" },
       { keyword: "sapling_empty_state", link:"/docs/reference/expressions/builtins#sapling_empty_state(k%20:%20key_hash)" },
       { keyword: "sapling_verify_update", link:"/docs/reference/expressions/builtins#sapling_verify_update(s,%20t)" },
-      { keyword: "sapling_verify_update", link:"/docs/reference/expressions/builtins#sapling_verify_update(s,%20t)" },
     ],
   },
   sapling_transaction :
@@ -756,7 +755,6 @@ export const types = {
     related: [
       { keyword: "Sapling", link:"/docs/language-basics/crypto#sapling" },
       { keyword: "sapling_empty_state", link:"/docs/reference/expressions/builtins#sapling_empty_state(k%20:%20key_hash)" },
-      { keyword: "sapling_verify_update", link:"/docs/reference/expressions/builtins#sapling_verify_update(s,%20t)" },
       { keyword: "sapling_verify_update", link:"/docs/reference/expressions/builtins#sapling_verify_update(s,%20t)" },
     ],
   },
@@ -859,7 +857,7 @@ export const types = {
     related: [
       { keyword: "Ticket", link:"/docs/language-basics/ticket" },
       { keyword: "create_ticket", link:"/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
-      { keyword: "join_ticket", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
+      { keyword: "join_tickets", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
       { keyword: "read_ticket", link:"/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },
       { keyword: "split_ticket", link:"/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },
     ],

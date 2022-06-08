@@ -1127,7 +1127,11 @@ export const builtins = {
     michelson: "BLAKE2B",
     michelson_ref_url: michelson_ref_base_url + '#instr-BLAKE2B',
     related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+      { keyword: 'Hash', link: '/docs/language-basics/crypto#hash' },
+      { keyword: 'keccak', link: '/docs/reference/expressions/builtins#keccak(b%20:%20bytes)' },
+      { keyword: 'sha256', link: '/docs/reference/expressions/builtins#sha256(b%20:%20bytes)' },
+      { keyword: 'sha3', link: '/docs/reference/expressions/builtins#sha3(b%20:%20bytes)' },
+      { keyword: 'sha512', link: '/docs/reference/expressions/builtins#sha512(b%20:%20bytes)' },
     ]
   },
   sha256: {
@@ -1147,7 +1151,12 @@ export const builtins = {
     michelson: "SHA256",
     michelson_ref_url: michelson_ref_base_url + '#instr-SHA256',
     related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+      { keyword: 'Hash', link: '/docs/language-basics/crypto#hash' },
+      { keyword: 'blake2b', link: '/docs/reference/expressions/builtins#blake2b(b%20:%20bytes)' },
+      { keyword: 'keccak', link: '/docs/reference/expressions/builtins#keccak(b%20:%20bytes)' },
+      { keyword: 'sha3', link: '/docs/reference/expressions/builtins#sha3(b%20:%20bytes)' },
+      { keyword: 'sha512', link: '/docs/reference/expressions/builtins#sha512(b%20:%20bytes)' },
+
     ]
   },
   sha512: {
@@ -1167,7 +1176,11 @@ export const builtins = {
     michelson: "SHA512",
     michelson_ref_url: michelson_ref_base_url + '#instr-SHA512',
     related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+      { keyword: 'Hash', link: '/docs/language-basics/crypto#hash' },
+      { keyword: 'blake2b', link: '/docs/reference/expressions/builtins#blake2b(b%20:%20bytes)' },
+      { keyword: 'keccak', link: '/docs/reference/expressions/builtins#keccak(b%20:%20bytes)' },
+      { keyword: 'sha256', link: '/docs/reference/expressions/builtins#sha256(b%20:%20bytes)' },
+      { keyword: 'sha3', link: '/docs/reference/expressions/builtins#sha3(b%20:%20bytes)' },
     ]
   },
   sha3: {
@@ -1187,7 +1200,11 @@ export const builtins = {
     michelson: "SHA3",
     michelson_ref_url: michelson_ref_base_url + '#instr-SHA3',
     related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+      { keyword: 'Hash', link: '/docs/language-basics/crypto#hash' },
+      { keyword: 'blake2b', link: '/docs/reference/expressions/builtins#blake2b(b%20:%20bytes)' },
+      { keyword: 'keccak', link: '/docs/reference/expressions/builtins#keccak(b%20:%20bytes)' },
+      { keyword: 'sha256', link: '/docs/reference/expressions/builtins#sha256(b%20:%20bytes)' },
+      { keyword: 'sha512', link: '/docs/reference/expressions/builtins#sha512(b%20:%20bytes)' },
     ]
   },
   keccak: {
@@ -1207,7 +1224,11 @@ export const builtins = {
     michelson: "KECCAK",
     michelson_ref_url: michelson_ref_base_url + '#instr-KECCAK',
     related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+      { keyword: 'Hash', link: '/docs/language-basics/crypto#hash' },
+      { keyword: 'blake2b', link: '/docs/reference/expressions/builtins#blake2b(b%20:%20bytes)' },
+      { keyword: 'sha256', link: '/docs/reference/expressions/builtins#sha256(b%20:%20bytes)' },
+      { keyword: 'sha3', link: '/docs/reference/expressions/builtins#sha3(b%20:%20bytes)' },
+      { keyword: 'sha512', link: '/docs/reference/expressions/builtins#sha512(b%20:%20bytes)' },
     ]
   },
   key_to_key_hash: {
@@ -1405,7 +1426,7 @@ export const builtins = {
     michelson: "SAPLING_EMPTY_STATE",
     michelson_ref_url: michelson_ref_base_url + '#instr-SAPLING_EMPTY_STATE',
     related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+      { keyword: 'Sapling', link: '/docs/language-basics/crypto#sapling' },
     ]
   },
   sapling_verify_update: {
@@ -1431,7 +1452,7 @@ export const builtins = {
     michelson: "SAPLING_VERIFY_UPDATE",
     michelson_ref_url: michelson_ref_base_url + '#instr-SAPLING_VERIFY_UPDATE',
     related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+      { keyword: 'Sapling', link: '/docs/language-basics/crypto#sapling' },
     ]
   },
 
@@ -1454,7 +1475,7 @@ export const builtins = {
     michelson: "PAIRING_CHECK",
     michelson_ref_url: michelson_ref_base_url + '#instr-PAIRING_CHECK',
     related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+      { keyword: 'Elliptic curves', link: '/docs/language-basics/crypto#elliptic-curves' },
     ]
   },
 

@@ -4,6 +4,7 @@ sidebar_position: 10
 
 import { record } from './record.js';
 import { tuple } from './tuple.js';
+import { enums } from './enum.js';
 import Api from '../../src/components/Api.js';
 
 # Composite types
@@ -23,4 +24,9 @@ import Api from '../../src/components/Api.js';
 <br/>
 
 ## Enum
+
+<Api title="Instructions" data={enums.instructions} />
+<br/>
+<Api title="Operators" data={enums.expressions} />
+<br/>
 

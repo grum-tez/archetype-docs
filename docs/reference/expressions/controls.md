@@ -19,7 +19,9 @@ const r = if now > deadline then 10% else 2%
 
 ### `match with`
 
-Expression `match with` deconstructs a value of *enumerated* type to extract data from it. Enumerated types are [`option`](/docs/reference/types#option<T>), [`or`](/docs/reference/types#or<T1,%20T2>), [`list`](/docs/reference/types#list<T>), [`states`](/docs/reference/declarations/compositetypes#states) and composite type [`enum`](/docs/reference/types#enum).
+Expression `match with` deconstructs a value of *enumerated* type to extract data from it.
+
+Like [`match with`](/docs/reference/instructions/control#match-with) instruction, enumerated types are [`option`](/docs/reference/types#option<T>), [`or`](/docs/reference/types#or<T1,%20T2>), [`list`](/docs/reference/types#list<T>), [`states`](/docs/reference/declarations/compositetypes#states) and composite type [`enum`](/docs/reference/types#enum).
 
 For example on a [`option`](/docs/reference/types#option<T>) value `prize` of type `option<tez>`:
 ```archetype
