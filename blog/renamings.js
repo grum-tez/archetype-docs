@@ -41,6 +41,7 @@ export const renamings = {
     { label: '"ASSET_NOT_FOUND"', desc: <div><code>"AssetNotFound"</code></div> },
     { label: '"DIV_BY_ZERO"', desc: <div><code>"divbyzero"</code></div> },
     { label: '"INVALID_CALLER"', desc: <div><code>"InvalidCaller"</code></div> },
+    { label: '"INVALID_NEGATIVE_TEZ"', desc: <div><code>"InvalidNegativeTez"</code></div> },
     { label: '"INVALID_SOURCE"', desc: <div><code>"InvalidSource"</code></div> },
     { label: '"INVALID_STATE"', desc: <div><code>"InvalidState"</code></div> },
     { label: '"INVALID_CONDITION"', desc: <div><code>"InvalidCondition"</code></div> },
