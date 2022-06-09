@@ -5,7 +5,7 @@ authors: [gd]
 tags: [asset, new feature]
 ---
 
-We present an improvement in the way [assets](/docs/asset) data are accessed since version [`1.3.0`](https://github.com/edukera/archetype-lang/releases/tag/1.3.0) of Archetype.
+We present an improvement in the way [assets](/docs/asset) data are accessed in version [`1.3.0`](/doc/install).
 
 ### Problems
 
@@ -49,7 +49,7 @@ The `[].` operator treats the case when asset is not found while it has already 
 
 ### Solution
 
-Version [`1.3.0`](/docs/install) provide new operator [`[]`](/docs/reference/expressions/asset#ak--asset_keya) that returns an [`option`](/docs/reference/types#option<T>) of [asset value](/docs/reference/types#asset_value<A>).
+Version [`1.3.0`](/docs/install) provides new operator [`[]`](/docs/reference/expressions/asset#ak--asset_keya) that returns an [`option`](/docs/reference/types#option<T>) of [asset value](/docs/reference/types#asset_value<A>).
 
 Combined with the new [`?= :`](/docs/reference/instructions/localvariable#-) declaration instruction, the proper way to retrieve all vehicle data presented above, is now as follows:
 
@@ -68,11 +68,11 @@ Version [`1.3.0`](/docs/install) provides a new operator [`[]?.`](/docs/referenc
 
 For example, the following retrieves an option of [`nat`](/docs/reference/types#nat) to treat more specifically the case when the asset is not found:
 ```archetype
-const on = vehicle["1G1AF1F57A7192174"]?.nbdoors;
+const opt_n = vehicle["1G1AF1F57A7192174"]?.nbdoors;
 /* treat case when on is none ... */
 ```
 
-`on` is typed `option<nat>` and is `none` if the vehicle is not found.
+`opt_n` is typed `option<nat>` and is `none` if the vehicle is not found.
 
 Operator [`[].`](/docs/reference/expressions/asset#ak--asset_keyaf) is still available: it fails when asset is not found, which is syntactically convenient when there is an *implicit* existence invariant on the asset:
 ```archetype
