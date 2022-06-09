@@ -40,10 +40,9 @@ It is typically the case when the asset field is accessed in the `true` branch o
 ```archetype
 const k = "1G1AF1F57A7192174";
 if vehicle.contains(k) then begin
-  const m = vehicle["1G1AF1F57A7192174"].manufacturer;
+  const m = vehicle[k].manufacturer;
   /* ... do something with m ... */
-end else
-  fail("VEHICLE_NOT_FOUND")
+end
 ```
 
 The `[].` operator treats the case when asset is not found while it has already been tested.
