@@ -50,14 +50,23 @@ const n = v.nbdoors
 
 ### Single field access
 
-Situations where a single asset field is accessed is very common though. In this case, version [`1.2.16`](https://github.com/edukera/archetype-lang/releases/tag/1.2.16) provides a new dedicated operator [`[]?.`](/docs/reference/expressions/asset#ak--asset_keyaf).
+Situations where a single asset field is accessed is very common though.
 
-For example, the following retrieves an [`option`](/docs/reference/types#option<T>) of [`nat`](/docs/reference/types#nat) to treat more specifically the case when the asset is not found:
+Version [`1.3.0`](/docs/install) provides a new operator [`[]?.`](/docs/reference/expressions/asset#ak--asset_keyaf) that returns an [`option`](/docs/reference/types#option<T>) of field value, so that the non existence case may be *explicitely* treated.
+
+For example, the following retrieves an option of [`nat`](/docs/reference/types#nat) to treat more specifically the case when the asset is not found:
 ```archetype
-const on = vehicle["1G1AF1F57A7192174"]?.nbdoors
+const on = vehicle["1G1AF1F57A7192174"]?.nbdoors;
+/* treat case when on is none ... */
 ```
 
 `on` is typed `option<nat>` and is `none` if the vehicle is not found.
 
+Operator [`[].`](/docs/reference/expressions/asset#ak--asset_keyaf) is still available: it fails when asset is not found, which is syntactically convenient when there is an *implicit* existence invariant on the asset:
+```archetype
+const n = vehicle["1G1AF1F57A7192174"].nbdoors;
+```
+
+It implictely fails with `("ASSET_NOT_FOUND", "vehicle")` if `"1G1AF1F57A7192174"` is not found.
 
 

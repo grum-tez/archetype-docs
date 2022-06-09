@@ -1,6 +1,32 @@
-archetype pay_with_penalty(holder : address, cost : tez, deadline : date)
+archetype auction(owner : address, deadline : date)
 
-entry pay () {
-  const penalty = if now > deadline then 7% * (now - deadline) / 1d else 0;
-  transfer ((1 + penalty) * cost) to holder
+variable topBidder : address = owner
+
+asset bidder {
+ id     : address;
+ amount : tez
+} initialized by { { owner; 0tz } }
+
+entry bid () {
+ require { r1 : now < deadline otherwise "Trop tard !"; }
+ effect {
+   bidder.add({ caller; transferred });
+   if transferred > bidder[topBidder].amount then
+     topBidder := caller
+ }
+}
+
+entry collectTopBid () {
+ called by owner
+ require { r2 : now > deadline otherwise "Trop tot !"; }
+ effect { transfer bidder[topBidder].amount to caller; }
+}
+
+entry claim () {
+ called by bidder
+ require {
+   r3 : now > deadline      otherwise "Trop tot !";
+   r4 : caller <> topBidder otherwise "Vous avez gagne !";
+ }
+ effect { transfer bidder[caller].amount to caller }
 }

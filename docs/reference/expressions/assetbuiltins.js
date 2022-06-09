@@ -1,6 +1,7 @@
 import React from "react"
 
 import GetDesc from "../../../src/components/desc/get_desc.md"
+import GetFieldDesc from "../../../src/components/desc/get_field_desc.md"
 import GetFieldDefaultDesc from "../../../src/components/desc/get_field_default_desc.md"
 import GetOptionFieldDesc from "../../../src/components/desc/get_option_field_desc.md"
 import GetoptDesc from "../../../src/components/desc/getopt_desc.md"
@@ -31,6 +32,33 @@ export const assetbuiltins = {
       { keyword: 'get', link: '/docs/reference/expressions/builtins#get(m%20:%20(big_)?map<K,%20V>,%20k%20:%20K)' }
     ]
   },
+  getf: {
+    sig: 'A[k].f',
+    desc: <GetFieldDesc />,
+    appliesto: [ 'asset', 'asset to big_map', 'asset to iterable_big_map' ],
+    parameters: [
+      {
+        type: 'asset_key<A>',
+        alias: 'k',
+        desc: <div>Key of asset to access</div>
+      },
+      {
+        type: 'literal',
+        withLink : false,
+        alias: 'f',
+        desc: <div>field name to access</div>
+      },
+    ],
+    fails : [ {
+      keyword: '("ASSET_NOT_FOUND", "A")',
+      desc: <div>Fails if <code>k</code> is not found in collection <code>A</code></div>
+    }],
+    returns: {
+      type: 'T',
+      withLink: false,
+      desc: <div>Returns field <code>f</code> value of asset <code>k</code>.</div>
+    },
+  },
   getof: {
     sig: 'A[k]?f',
     desc: <GetOptionFieldDesc />,
@@ -49,8 +77,7 @@ export const assetbuiltins = {
       },
     ],
     returns: {
-      type: 'T',
-      withLink: false,
+      type: 'option<T>',
       desc: <div>Returns an option of field <code>f</code> value of asset <code>k</code>.</div>
     },
     fails : [ ],

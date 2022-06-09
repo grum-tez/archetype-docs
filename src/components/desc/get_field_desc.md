@@ -1,6 +1,7 @@
-Accesses field `f` of asset with key `k` in collection `A`. It returns an option of field value, which is `none` when asset `k` is not found in collection `A`.
+Returns the value of field `f` of asset `k` in collection `A`, or fails if `k` is not found in `A`.
 
-For example, consider the `ledger` asset:
+For example, consider the ledger asset:
+
 ```archetype
 asset ledger {
   holder : address;
@@ -8,17 +9,19 @@ asset ledger {
 }
 ```
 
-The following returns an option of field `amount` for `caller` asset:
+The following retrieves the value of `amount` field for `caller` asset:
+
 ```archetype
-const a : option<nat> = ledger[caller]?.amount;
+const a : nat = ledger[caller].amount;
 ```
 
 It is equivalent to:
+
 ```archetype
 const a : option<nat> =
   match ledger[caller] with
-  | some av -> some(av.amount)
-  | none    -> none
+  | some av -> av.amount
+  | none    -> fail(("ASSET_NOT_FOUND", "ledger"))
   end
 ```
 

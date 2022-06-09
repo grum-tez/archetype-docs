@@ -38,14 +38,15 @@ export const renamings = {
     { label: 'remove_all', link:'/docs/reference/instructions/asset#aremove_all', desc: <div><code>clear</code></div>},
   ],
   errors: [
+    { label: '"ASSET_NOT_FOUND"', desc: <div><code>"AssetNotFound"</code></div> },
+    { label: '"DIV_BY_ZERO"', desc: <div><code>"divbyzero"</code></div> },
     { label: '"INVALID_CALLER"', desc: <div><code>"InvalidCaller"</code></div> },
     { label: '"INVALID_SOURCE"', desc: <div><code>"InvalidSource"</code></div> },
+    { label: '"INVALID_STATE"', desc: <div><code>"InvalidState"</code></div> },
     { label: '"INVALID_CONDITION"', desc: <div><code>"InvalidCondition"</code></div> },
     { label: '"KEY_EXISTS"', desc: <div><code>"KeyExists"</code></div> },
     { label: '"KEY_EXISTS_OR_NOT_FOUND"', desc: <div><code>"KeyExistsOrNotFound"</code></div> },
-    { label: '"DIV_BY_ZERO"', desc: <div><code>"divbyzero"</code></div> },
     { label: '"NO_TRANSFER"', desc: <div><code>"NoTransfer"</code></div> },
-    { label: '"INVALID_STATE"', desc: <div><code>"InvalidState"</code></div> },
   ]
 }
 

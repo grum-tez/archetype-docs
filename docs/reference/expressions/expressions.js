@@ -11,7 +11,8 @@ export const expressions = {
   ],
   asset: [
     { label : '[]'      , link : link_prefix + '/asset#ak--asset_keya', desc : 'Gets asset record value from key' },
-    { label : '[]?.'      , link : link_prefix + '/asset#ak--asset_keyaf', desc : 'Gets an option of asset field from key' },
+    { label : '[].'      , link : link_prefix + '/asset#ak--asset_keyaf', desc : 'Gets an asset field from key' },
+    { label : '[]?.'      , link : link_prefix + '/asset#ak--asset_keyaf-1', desc : 'Gets an option of asset field from key' },
     { label : 'contains', link : link_prefix + '/asset#acontainsk--asset_keya', desc : 'Tests whether the collection contains an asset' },
     { label : 'count'   , link : link_prefix + '/asset#acount', desc : 'Returns the number of assets in collection' },
     { label : 'nth'     , link : link_prefix + '/asset#anthi--nat', desc : 'Returns nth element in collection' },

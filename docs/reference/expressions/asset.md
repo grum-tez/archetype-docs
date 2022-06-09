@@ -10,6 +10,10 @@ import { assetbuiltins } from './assetbuiltins.js';
 
 <Builtin data={assetbuiltins["get"]} />
 
+### `A[k : asset_key<A>].f`
+
+<Builtin data={assetbuiltins["getf"]} />
+
 ### `A[k : asset_key<A>]?.f`
 
 <Builtin data={assetbuiltins["getof"]} />
