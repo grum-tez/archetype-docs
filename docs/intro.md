@@ -4,6 +4,14 @@ sidebar_position: 1
 
 # Introduction
 
+Archetype is an elegant generic-purpose language to develop Smart Contracts on the [Tezos](https://tezos.com/) blockchain.
+
+⚡️ It supports all [Michelson](https://tezos.gitlab.io/michelson-reference/) features, but also provides exclusive *high-level features* for a precise and concise source code, that make contracts easier to develop, read and maintain.
+
+## Documentation
+
+The core of this documentation is the language [Reference](/docs/reference/) organised in four parts (Declarations, [Types](/docs/reference/types), Instructions and Expressions), on top of which are thematic articles (Language Basics, [Asset](/docs/asset), [State Machine](/docs/statemachine)).
+
 ## Fast track
 
 Consider the following contract:
