@@ -5,7 +5,7 @@ authors: [gd]
 tags: [asset, new feature]
 ---
 
-We present an improvement in the way [assets](/docs/asset) data are accessed in version [`1.3.0`](/doc/install).
+We present an improvement in the way [assets](/docs/asset) data are accessed in version [`1.3.0`](/docs/install).
 
 ### Problems
 
@@ -26,9 +26,10 @@ asset vehicle {
 Accessing several fields would end up accessing the underlying map several times:
 
 ```archetype
-const m = vehicle["1G1AF1F57A7192174"].manufacturer;
-const y = vehicle["1G1AF1F57A7192174"].year;
-const n = vehicle["1G1AF1F57A7192174"].nbdoors
+const k = "1G1AF1F57A7192174";
+const m = vehicle[k].manufacturer;
+const y = vehicle[k].year;
+const n = vehicle[k].nbdoors
 ```
 
 Here the test and fail instructions are repeated three times.
