@@ -9,7 +9,7 @@ We present an improvement in the way [assets](/docs/asset) data are accessed sin
 
 ### Problems
 
-Until this version, the only way to access an asset data was the field accessor operator of the form `A[k].f`, where `A` is the asset collection, `k` the asset key and `f` the asset field.
+Until this version, the only way to access an asset data was the field accessor operator of the form [`A[k].f`](/docs/reference/expressions/asset#ak--asset_keyaf), where `A` is the asset collection, `k` the asset key and `f` the asset field.
 
 <!--truncate-->
 
@@ -23,7 +23,7 @@ asset vehicle {
 }
 ```
 
-Accessing several fields would end up with accessing the underlying map several times:
+Accessing several fields would end up accessing the underlying map several times:
 
 ```archetype
 const m = vehicle["1G1AF1F57A7192174"].manufacturer;
@@ -31,13 +31,24 @@ const y = vehicle["1G1AF1F57A7192174"].year;
 const n = vehicle["1G1AF1F57A7192174"].nbdoors
 ```
 
-Here the test and fail instructions were repeated three times.
+Here the test and fail instructions are repeated three times.
 
-The second problem was the *implicit* fail of the `[]` operator when the asset was not found.
+The second problem was the *implicit* fail of the `[]` operator when the asset was not found which is treated with a prior test with the [`contains`](/docs/reference/expressions/asset#acontainsk--asset_keya) builtin:
+
+```archetype
+const k = "1G1AF1F57A7192174";
+if vehicle.contains(k) then begin
+  const m = vehicle["1G1AF1F57A7192174"].manufacturer;
+  /* ... do something with m ... */
+end else
+  fail("VEHICLE_NOT_FOUND")
+```
+
+The `[].` operator treats the case when asset is not found while it has already been tests.
 
 ### Solution
 
-The [`[]`](/docs/reference/expressions/asset#ak--asset_keya) operator does *not* fail anymore and now returns an [`option`](/docs/reference/types#option<T>) of [asset value](/docs/reference/types#asset_value<A>).
+Version [`1.3.0`](/docs/install) provide new operator [`[]`](/docs/reference/expressions/asset#ak--asset_keya) that returns an [`option`](/docs/reference/types#option<T>) of [asset value](/docs/reference/types#asset_value<A>).
 
 Combined with the new [`?= :`](/docs/reference/instructions/localvariable#-) declaration instruction, the proper way to retrieve all vehicle data presented above, is now as follows:
 
