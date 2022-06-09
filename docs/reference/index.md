@@ -56,7 +56,7 @@ This is the Archetype language reference.
     <EagleEyeView title="Sequence" data={instructions.sequence} xs={6}/>
   </Grid>
   <Grid item md={8} xs={12} sm={12}>
-    <EagleEyeView title="Local variable" data={instructions.localvar} xs={6}/>
+    <EagleEyeView title="Local variable" data={instructions.localvar} xs={3}/>
   </Grid>
 </Grid>
 
