@@ -35,7 +35,7 @@ amount += 1tz        /* compilation error */
 
 It is possible to declare a local variable (`const` or `var`) as the `some` value of an [`option`](/docs/reference/types#option<T>) variable, and fail with an error message if this variable is `none`.
 
-For example, declare a `const` local variable as the some value of the execution of [`unpack`](/docs/reference/expressions/builtins#unpack<T>(b%20:%20bytes)) buitlin which returns an option value:
+For example, the following declares a `const` local variable as the some value of the execution of [`unpack`](/docs/reference/expressions/builtins#unpack<T>(b%20:%20bytes)) buitlin which returns an option value:
 
 ```archetype
 const v ?= unpack<nat>(0x0505)
@@ -63,7 +63,7 @@ var v ?= m[k] : ("KEY_NOT_FOUND", k)
 
 The above declaration fails with pair `("KEY_NOT_FOUND", k)`. It is equivalent to:
 ```archetype
-const v = 0;
+var v = 0;
 match m[k] with
 | some(u) -> v := u
 | none    -> fail(("KEY_NOT_FOUND", k))
