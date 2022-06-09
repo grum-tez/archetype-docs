@@ -475,7 +475,7 @@ export const types = {
   },
   list :
   {
-    desc: 'Immutable (read-only) list of elements.',
+    desc: 'Chained list of elements.',
     link: '#list<T>',
     parameters: [
       { keyword: 'T', type: 'any type', desc: 'type of the elements of the list' }
@@ -765,7 +765,7 @@ export const types = {
   },
   set :
   {
-    desc: <div>Immutable set of values of <Link to="/docs/language-basics/types#comparable">comparable</Link> type <code>T</code>. It can be iterated with <Link to="/docs/reference/instructions/control#set"><code>for</code></Link> in <code>T</code>'s natural order.</div>,
+    desc: <div>Set of values of <Link to="/docs/language-basics/types#comparable">comparable</Link> type <code>T</code>. It can be iterated with <Link to="/docs/reference/instructions/control#set"><code>for</code></Link> in <code>T</code>'s natural order.</div>,
     link: '#set<T>',
     examples: ['[ tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb; tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6]'],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
@@ -798,7 +798,7 @@ export const types = {
   },
   string :
   {
-    desc: 'Immutable array of non-extended ASCII characters.',
+    desc: 'Array of non-extended ASCII characters.',
     link: '#string',
     examples: [ '"This is a string"', '"12345"' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
@@ -860,7 +860,6 @@ export const types = {
     michelson: "ticket",
     michelson_ref_url: michelson_ref_base_url + '/#type-ticket',
     related: [
-      { keyword: "Ticket", link:"/docs/language-basics/ticket" },
       { keyword: "create_ticket", link:"/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
       { keyword: "join_tickets", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
       { keyword: "read_ticket", link:"/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },

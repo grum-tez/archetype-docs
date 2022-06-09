@@ -1332,7 +1332,9 @@ export const builtins = {
     michelson: "TICKET",
     michelson_ref_url: michelson_ref_base_url + '#instr-TICKET',
     related: [
-      { keyword: 'Tickets', link: '/docs/language-basics/ticket' },
+      { keyword: "join_tickets", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
+      { keyword: "read_ticket", link:"/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },
+      { keyword: "split_ticket", link:"/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },
     ]
   },
   read_ticket: {
@@ -1353,8 +1355,9 @@ export const builtins = {
     michelson: "READ_TICKET",
     michelson_ref_url: michelson_ref_base_url + '#instr-READ_TICKET',
     related: [
-      { keyword: 'Tickets', link: '/docs/language-basics/ticket' },
-    ]
+      { keyword: "create_ticket", link:"/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
+      { keyword: "join_tickets", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
+      { keyword: "split_ticket", link:"/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },    ]
   },
   split_ticket: {
     sig: 'split_ticket(t : ticket<T>, n1 : nat, n2 : nat)',
@@ -1384,7 +1387,9 @@ export const builtins = {
     michelson: "SPLIT_TICKET",
     michelson_ref_url: michelson_ref_base_url + '#instr-SPLIT_TICKET',
     related: [
-      { keyword: 'Tickets', link: '/docs/language-basics/ticket' },
+      { keyword: "create_ticket", link:"/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
+      { keyword: "join_tickets", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
+      { keyword: "read_ticket", link:"/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },
     ]
   },
   join_tickets: {
@@ -1410,8 +1415,9 @@ export const builtins = {
     michelson: "JOIN_TICKETS",
     michelson_ref_url: michelson_ref_base_url + '#instr-JOIN_TICKETS',
     related: [
-      { keyword: 'Tickets', link: '/docs/language-basics/ticket' },
-    ]
+      { keyword: "create_ticket", link:"/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
+      { keyword: "read_ticket", link:"/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },
+      { keyword: "split_ticket", link:"/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },    ]
   },
 
   // sapling
