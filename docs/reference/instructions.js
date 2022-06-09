@@ -8,7 +8,7 @@ export const instructions = {
     localvar: [
       { label : 'var', link : link_prefix + '/localvariable#var' },
       { label : 'const', link : link_prefix + '/localvariable#const' },
-      { label : '?= :', link : link_prefix + '/localvariable#-' },
+      { label : '?=', link : link_prefix + '/localvariable#-' },
     ],
     assignments: [
       { label : ':=', link : link_prefix + '/assignment#a--b' },

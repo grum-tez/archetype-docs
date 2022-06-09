@@ -125,6 +125,7 @@ export const types = {
     michelson_ref_url: michelson_ref_base_url + '/#type-big_map',
     related: [
       { keyword: "Map", link:"/docs/language-basics/container#map", code : false },
+      { keyword: "[]", link: "/docs/reference/expressions/operators/access#map" },
       { keyword: "put", link: instruction_prefix + '/containers#mputk-v' },
       { keyword: "remove", link: instruction_prefix + '/containers#mremovek' },
       { keyword: "update", link: instruction_prefix + '/containers#mupdatek--k-o--optiont' },
@@ -413,6 +414,7 @@ export const types = {
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     related: [
       { keyword: "Map", link:"/docs/language-basics/container#map", code : false },
+      { keyword: "[]", link: "/docs/reference/expressions/operators/access#map" },
       { keyword: "put", link: instruction_prefix + '/containers#mputk-v' },
       { keyword: "remove", link: instruction_prefix + '/containers#mremovek' },
       { keyword: "update", link: instruction_prefix + '/containers#mupdatek--k-o--optiont' },
@@ -511,6 +513,7 @@ export const types = {
     michelson_ref_url: michelson_ref_base_url + '/#type-map',
     related: [
       { keyword: "Map", link:"/docs/language-basics/container#map", code : false },
+      { keyword: "[]", link: "/docs/reference/expressions/operators/access#map" },
       { keyword: "put", link: instruction_prefix + '/containers#mputk-v' },
       { keyword: "remove", link: instruction_prefix + '/containers#mremovek' },
       { keyword: "update", link: instruction_prefix + '/containers#mupdatek--k-o--optiont' },
