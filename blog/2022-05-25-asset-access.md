@@ -33,7 +33,9 @@ const n = vehicle["1G1AF1F57A7192174"].nbdoors
 
 Here the test and fail instructions are repeated three times.
 
-The second problem was the *implicit* fail of the `[]` operator when the asset was not found which is treated with a prior test with the [`contains`](/docs/reference/expressions/asset#acontainsk--asset_keya) builtin:
+The second problem is the *implicit* fail of the `[]` operator in situations where it is implicit that the asset exists.
+
+It is typically the case when the asset field is accessed in the `true` branch of a [`contains`](/docs/reference/expressions/asset#acontainsk--asset_keya) test:
 
 ```archetype
 const k = "1G1AF1F57A7192174";
@@ -44,7 +46,7 @@ end else
   fail("VEHICLE_NOT_FOUND")
 ```
 
-The `[].` operator treats the case when asset is not found while it has already been tests.
+The `[].` operator treats the case when asset is not found while it has already been tested.
 
 ### Solution
 
