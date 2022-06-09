@@ -52,13 +52,18 @@ The `[].` operator treats the case when asset is not found while it has already 
 
 Version [`1.3.0`](/docs/install) provides new operator [`[]`](/docs/reference/expressions/asset#ak--asset_keya) that returns an [`option`](/docs/reference/types#option<T>) of [asset value](/docs/reference/types#asset_value<A>).
 
-Combined with the new [`?= :`](/docs/reference/instructions/localvariable#-) declaration instruction, the proper way to retrieve all vehicle data presented above, is now as follows:
+Combined with the new [`?=`](/docs/reference/instructions/localvariable#-) declaration instruction, the proper way to retrieve all vehicle data presented above, is now as follows:
 
 ```archetype
-const v ?= vehicle["1G1AF1F57A7192174"] : "VEHICLE_NOT_FOUND";
+const v ?= vehicle["1G1AF1F57A7192174"];
 const m = v.manufacturer;
 const y = v.year;
 const n = v.nbdoors
+```
+
+The declaration of `v` fails with `"OPTION_IS_NONE"` if vehicle is not found. It is possible to specify an error message with:
+```archetype
+const v ?= vehicle["1G1AF1F57A7192174"] : "VEHICLE_NOT_FOUND"
 ```
 
 ### Single field access

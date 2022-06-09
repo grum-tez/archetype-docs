@@ -85,9 +85,9 @@ export const operators = {
     link: 'a---b',
     desc: 'Subtracts numbers.',
     types: [
+      { typa: 'nat',          typb : 'nat',          typr: 'int' },
       { typa: 'int',          typb : 'int',          typr: 'int' },
-      { typa: 'nat',          typb : 'nat',          typr: 'option<nat>', withLink: false },
-      { typa: 'tez',          typb : 'tez',          typr: 'option<tez>', withLink: false },
+      { typa: 'tez',          typb : 'tez',          typr: 'tez' },
       { typa: 'rational',     typb : 'rational',     typr: 'rational' },
       { typa: 'duration',     typb : 'duration',     typr: 'duration' },
       { typa: 'date',         typb : 'duration',     typr: 'date' },
@@ -106,6 +106,12 @@ export const operators = {
       { typa: 'bls12_381_fr', typb : 'int', typr: 'bls12_381_fr' },
       { typa: 'nat', typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
       { typa: 'int', typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
+    ],
+    fails: [
+      {
+        keyword: '"INVALID_NEGATIVE_TEZ"',
+        desc: <div>when <code>a - b</code> value typed <code>tez</code> is negative.</div>
+      }
     ],
   },
   minus : {
@@ -361,5 +367,15 @@ export const operators = {
       </ul></div>,
     types: cmp_types('int'),
     promotions: cmp_types_promotions('int')
+  },
+  doubleinequality: {
+    label: 'a < b < c',
+    link: 'a--b--c',
+    equivalence: [
+      { label: 'a < b < c', desc: <div><code>a &lt; b and b &lt; c</code></div>,  },
+      { label: 'a <= b < c', desc: <div><code>a &le; b and b &lt; c</code></div> },
+      { label: 'a < b <= c', desc: <div><code>a &lt; b and b &le; c</code></div> },
+      { label: 'a <= b <= c', desc: <div><code>a &le; b and b &le; c</code></div> },
+    ]
   }
 }

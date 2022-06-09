@@ -138,9 +138,25 @@ import H3 from "@site/src/components/H3.js";
 
 ## `M N O`
 
+<H3 page="builtins" value={builtins['make_big_map'].sig} />
+
+<Builtin data={builtins['make_big_map']} />
+
+<H3 page="builtins" value={builtins['make_map'].sig} />
+
+<Builtin data={builtins['make_map']} />
+
+<H3 page="builtins" value={builtins['make_list'].sig} />
+
+<Builtin data={builtins['make_list']} />
+
 <H3 page="builtins" value={builtins['make_operation'].sig} />
 
 <Builtin data={builtins['make_operation']} />
+
+<H3 page="builtins" value={builtins['make_set'].sig} />
+
+<Builtin data={builtins['make_set']} />
 
 <H3 page="builtins" value={builtins['map'].sig} />
 
@@ -249,6 +265,10 @@ import H3 from "@site/src/components/H3.js";
 <H3 page="builtins" value={builtins['sub_mutez'].sig} />
 
 <Builtin data={builtins['sub_mutez']} />
+
+<H3 page="builtins" value={builtins['sub_nat'].sig} />
+
+<Builtin data={builtins['sub_nat']} />
 
 <H3 page="builtins" value={builtins['unpack'].sig} />
 

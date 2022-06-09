@@ -134,6 +134,7 @@ export const types = {
       { keyword: "update", link: '/docs/reference/expressions/builtins#update(m%20:%20map<K,%20V>,%20k%20:%20K,%20v%20:%20option<T>)' },
       { keyword: "contains", link:"/docs/reference/expressions/builtins#contains(c%20:%20C,%20e%20:%20T)"},
       { keyword: "map", link:"/docs/reference/expressions/builtins#map<K,%20V>"},
+      { keyword: "make_big_map", link: "/docs/reference/expressions/builtins#make_big_map<K,%20V>(m)"},
       { keyword: "iterable_big_map", link : "/docs/reference/types#iterable_big_map<K,%20V>" },
     ],
   },
@@ -497,6 +498,7 @@ export const types = {
       { keyword: "pairing_check", link:"/docs/reference/expressions/builtins#pairing_check(l%20:%20list<bls12_381_g1%20*%20bls12_381_g2>)"},
       { keyword: "prepend", link:"/docs/reference/expressions/builtins#prepend(l%20:%20list<T>,%20e%20:%20T)"},
       { keyword: "reverse", link:"/docs/reference/expressions/builtins#reverse(l%20:%20list<T>)"},
+      { keyword: "make_list", link:"/docs/reference/expressions/builtins#make_list<T>(l)" },
     ],
   },
   map :
@@ -524,6 +526,7 @@ export const types = {
       { keyword: "contains", link:"/docs/reference/expressions/builtins#contains(c%20:%20C,%20e%20:%20T)"},
       { keyword: "length", link:"/docs/reference/expressions/builtins#length(o%20:%20T)"},
       { keyword: "map", link:"/docs/reference/expressions/builtins#map"},
+      { keyword: "make_map", link: "/docs/reference/expressions/builtins#make_map<K,%20V>(m)" },
       { keyword: "big_map", link : "/docs/reference/types#big_map<K,%20V>" },
       { keyword: "iterable_big_map", link : "/docs/reference/types#iterable_big_map<K,%20V>" },
     ],
@@ -777,6 +780,7 @@ export const types = {
       { keyword: "contains", link:"/docs/reference/expressions/builtins#contains(c%20:%20C,%20e%20:%20T)" },
       { keyword: "length", link:"/docs/reference/expressions/builtins#length(o%20:%20T)" },
       { keyword: "remove", link:"/docs/reference/expressions/builtins#remove(c%20:%20C,%20i%20:%20T)" },
+      { keyword: "make_set", link:"/docs/reference/expressions/builtins#make_set<T>(s)" },
     ],
   },
   signature :

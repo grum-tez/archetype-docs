@@ -3,7 +3,8 @@ sidebar_position: 1
 ---
 
 # Arithmetic
-
+import ThemedDivider from '@site/src/components/Divider.js'
+import Api from '@site/src/components/Api.js';
 import Operator from '@site/src/components/Operator.js';
 import { operators } from './operators.js';
 
@@ -90,3 +91,10 @@ import { operators } from './operators.js';
 ### `a <=> b`
 
 <Operator data={operators['cmp']} />
+
+### `a < b < c`
+
+Double inequality operators are syntactic shortcuts for logical conjonction of two comparisons:
+
+<Api title="Equivalence" data={operators.doubleinequality.equivalence} xs={4}/>
+<br/>

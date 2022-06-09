@@ -12,6 +12,7 @@ export const map = {
     { label: 'update', link: '/docs/reference/expressions/builtins#update(m%20:%20map<K,%20V>,%20k%20:%20K,%20v%20:%20option<T>)', desc: 'Adds key or removes key from map'},
     { label: 'contains', link: '/docs/reference/expressions/builtins#contains(c%20:%20C,%20e%20:%20T)', desc: 'Tests if a key is in map'},
     { label: 'length', link: '/docs/reference/expressions/builtins#length(o%20:%20T)', desc: 'Number of keys in map'},
+    { label: 'make_map', link: '/docs/reference/expressions/builtins#make_map<K,%20V>(m)', desc: 'Makes map from literal'},
     { label: 'map', link: '/docs/reference/expressions/builtins#map', desc: 'Maps key value pairs in map'},
   ]
 }

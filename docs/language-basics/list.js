@@ -14,6 +14,7 @@ export const list = {
     { label: 'concat', link: '/docs/reference/expressions/builtins#list', desc: "Concatenates two lists"},
     { label: 'nth', link: '/docs/reference/expressions/builtins#nth(l%20:%20list<T>,%20n%20:%20nat)', desc: 'Nth element of list' },
     { label: 'map', link: '/docs/reference/expressions/builtins#list', desc: 'Maps list elements'},
+    { label: 'make_list', link: '/docs/reference/expressions/builtins#make_list<T>(l)', desc: 'Makes list from literal'},
     { label: 'match with', link: '/docs/reference/expressions/controls#match-with', desc: "Controls expression value based on list structure"},
   ]
 }

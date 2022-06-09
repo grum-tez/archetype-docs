@@ -57,6 +57,81 @@ export const builtins = {
       { keyword: 'View', link: '/docs/reference/declarations/view' },
     ]
   },
+  make_big_map: {
+    sig: 'make_big_map<K, T>(m)',
+    desc: <div>Create a big_map from literal.<br/>This is used for example to create an empty big map with <code>make_big_map&lt;K, V&gt;([])</code>.</div>,
+    parameters: [
+      {
+        type: 'big_map',
+        alias: 'm',
+        desc: <div>Literal of big_map</div>
+      },
+    ],
+    returns: {
+      type: 'big_map<K, T>',
+      desc: <div>Returns big_map</div>
+    },
+  },
+  make_big_map: {
+    sig: 'make_big_map<K, V>(m)',
+    desc: <div>Makes a big_map from <i>literal</i> or variable.<br/>This is useful to solve the type amiguity of literals, like for example the empty big_map <code>[]</code>.</div>,
+    parameters: [
+      {
+        type: 'big_map<K, V>',
+        alias: 'm',
+        desc: <div>Big_map</div>
+      },
+    ],
+    returns: {
+      type: 'big_map<K, V>',
+      desc: <div>Returns big_map</div>
+    },
+  },
+  make_map: {
+    sig: 'make_map<K, V>(m)',
+    desc: <div>Makes a map from <i>literal</i> or variable.<br/>This is useful to solve the type amiguity of literals, like for example the empty map <code>[]</code>.</div>,
+    parameters: [
+      {
+        type: 'map<K, V>',
+        alias: 'm',
+        desc: <div>Map</div>
+      },
+    ],
+    returns: {
+      type: 'map<K, V>',
+      desc: <div>Returns map</div>
+    },
+  },
+  make_list: {
+    sig: 'make_list<T>(l)',
+    desc: <div>Makes a list from <i>literal</i> or variable.<br/>This is useful to solve the type amiguity of literals, like for example the empty list <code>[]</code>.</div>,
+    parameters: [
+      {
+        type: 'list<T>',
+        alias: 'l',
+        desc: <div>List</div>
+      },
+    ],
+    returns: {
+      type: 'list<T>',
+      desc: <div>Returns list</div>
+    },
+  },
+  make_set: {
+    sig: 'make_set<T>(s)',
+    desc: <div>Makes a set from <i>literal</i> or variable.<br/>This is useful to solve the type amiguity of literals, like for example the empty set <code>[]</code>.</div>,
+    parameters: [
+      {
+        type: 'set<T>',
+        alias: 's',
+        desc: <div>Set</div>
+      },
+    ],
+    returns: {
+      type: 'set<T>',
+      desc: <div>Returns set</div>
+    },
+  },
 
   // operation
   make_operation: {
@@ -214,6 +289,33 @@ export const builtins = {
   },
 
   // arithmetic function
+  sub_nat: {
+    sig: 'sub_nat(a : nat, b : nat)',
+    desc: <div>Subtracts <code>a</code> to <code>b</code> and returns an option of nat value.</div>,
+    parameters: [
+      {
+        type: 'nat',
+        alias: 'a',
+        desc: <div>Left-hand side operand to subtract</div>
+      },
+      {
+        type: 'nat',
+        alias: 'b',
+        desc: <div>Right-hand side operand to subtract</div>
+      }
+    ],
+    returns: {
+      type: 'option<nat>',
+      withLink: false,
+      desc: <div>Option of nat value:<ul>
+        <li><code>some</code> of <code>a - b</code> when <code>a &gt;= b</code></li>
+        <li><code>none</code> otherwise</li>
+      </ul></div>
+    },
+    related: [
+      { keyword: 'nat', link: '/docs/reference/types#nat' },
+    ]
+  },
 
   sub_mutez: {
     sig: 'sub_mutez(a : tez, b : tez)',
