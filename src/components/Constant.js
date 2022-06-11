@@ -27,10 +27,10 @@ export default function Type(props) {
       ) : (<div />)}
       {(props.data.type !== undefined) ? (
         <Grid item xs={9} sm={10} md={10}>
-          <Link to={'/docs/reference/types#' + props.data.type}><code>{props.data.type}</code></Link>
+          <Link to={'/docs/reference/types#' + ((props.data.typeUrl !== undefined)? props.data.typeUrl : props.data.type) }><code>{props.data.type}</code></Link>
         </Grid>
       ) : (<div />)}
-      {(props.data.type !== undefined) ? (
+      {(props.data.michelson !== undefined) ? (
         <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
       ) : (<div />)}
 

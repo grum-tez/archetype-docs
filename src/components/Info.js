@@ -13,14 +13,17 @@ const Fails = (props) => {
         { (props.fails.map((f,i) => {
           return (
             <Grid container style={{ marginBottom: (props.fails.length > 1 ? '22px' : '0px') }}>
-            <Grid key={"fk"+i} item xs={(f.keyword.length > 15)? 12: 2} style={{ marginBottom: (f.keyword.length > 15)? '12px': '0px' }}>
+            <Grid key={"fk"+i} item xs={(f.keyword.length > 12)? 12: 2} style={{ marginBottom: (f.keyword.length > 12)? '12px': '0px' }}>
               <Typography><code>{f.keyword}</code></Typography>
             </Grid>
-            <Grid key={"fd"+i} item xs={10}>
+            <Grid key={"fd"+i} item xs={(f.keyword.length > 12)? 12: 10}>
               <Typography style={{
                 fontFamily: 'IBM Plex Sans'
                 }}>{f.desc}</Typography>
             </Grid>
+            {
+              (i < props.fails.length - 1) ? <Grid item xs={12}><Divider className={ styles.divider } style={{ marginTop: '12px' }}/></Grid> : <div></div>
+            }
             </Grid>
           )
         }))}

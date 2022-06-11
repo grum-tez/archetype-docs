@@ -15,7 +15,7 @@ const Parameter = (props) => {
         <Grid item xs={12}><Divider className={ styles.divider } style={{ marginBottom: '12px' }}/></Grid>
         <Grid item md={props.xs} sm={6} xs={6}>
           <Grid container>
-            <Grid item xs={props.xs>4?1:3}>
+            <Grid item xs={props.xs>4?1:5}>
               <Typography>
                 <code>{props.alias}</code> :
               </Typography>
@@ -24,7 +24,7 @@ const Parameter = (props) => {
               <Typography>typed</Typography>
             </Grid>
              */ }
-            <Grid item xs={props.xs>4?11:9}>
+            <Grid item xs={props.xs>4?11:7}>
               <Typography> { (props.withLink !== undefined && !props.withLink) ? (
                 <code>{props.type}</code>
               ) : (
@@ -83,7 +83,7 @@ const fold = (reducer, init, xs) => {
 const maximum = xs => fold((acc, x) => (acc >= x) ? acc : x, -Infinity, xs);
 
 const getParameterXS = (params) => {
-  const max = maximum(params.map(p => p.type.length));
+  const max = maximum(params.map(p => p.alias.length + p.type.length));
   if (max > 30) {
     return 6
   } else if (max > 20) {
