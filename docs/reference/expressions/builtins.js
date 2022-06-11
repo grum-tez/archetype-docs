@@ -1070,11 +1070,10 @@ export const builtins = {
     ]
   },
   address_to_contract: {
-    sig: 'address_to_contract(a : address)',
-    desc: <div>Converts an address <code>a</code> that is either:<ul>
-      <li>a <code>tz ...</code> address (account)</li>
-      <li>a <code>KT1 ...</code> contract address without a unique entrypoint typed <code>unit</code></li>
-    </ul>to a <code>contract&lt;unit&gt;</code> value.</div>,
+    sig: 'address_to_contract<T>(a : address)',
+    desc: <div><p>Converts address <code>a</code> to a <code>contract&lt;T&gt;</code> value to be used as parameter of <Link to="/docs/reference/expressions/builtins#make_operation(a%20:%20tez,%20c%20:%20contract<T>,%20arg%20:%20T)"><code>make_operation</code></Link>.</p>
+        <p>An account address (<code>tz1...</code>) is a <code>contract&lt;unit&gt;</code>.</p>
+        <p>A contract entrypoint has a path expressed with <code>T</code>; when entrypoint is annotated it is easier to use <Link to="/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)"><code>get_entrypoint</code></Link> builtin.</p></div>,
     parameters: [
       {
         type: 'address',
@@ -1083,17 +1082,18 @@ export const builtins = {
       }
     ],
     returns: {
-      type: 'contract<unit>',
-      desc: <div>Contract with address <code>a</code></div>
+      type: 'option<contract<T>>',
+      withLink: false,
+      desc: <div><ul>
+          <li><code>none</code> when the address or the path to entrypoint is invalid</li>
+          <li><code>some</code> of a <code>contract&lt;T&gt;</code> value</li>
+        </ul>
+      </div>
     },
-    fails: [
-      {
-        keyword: '*',
-        desc: <div>if the address behind is not a <code>tz</code> or a contract with a unique entrypoint of type <code>unit</code></div>
-      }
-    ],
     related: [
-      { keyword: 'Cryptography', link: '/docs/language-basics/crypto' },
+      { keyword: 'Operation', link: '/docs/reference/instructions/operation' },
+      { keyword: 'get_entrypoint', link: '/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)' },
+      { keyword: 'make_operation', link: '/docs/reference/expressions/builtins#make_operation(a%20:%20tez,%20c%20:%20contract<T>,%20arg%20:%20T)' },
     ]
   },
   key_to_address: {
