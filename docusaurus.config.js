@@ -80,10 +80,17 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            type: 'docSidebar',
+            docId: 'introduction',
             position: 'left',
+            sidebarId: 'docs',
             label: 'Docs',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'templates',
+            label: 'Templates',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -117,7 +124,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/docs/introdution',
               },
             ],
           },

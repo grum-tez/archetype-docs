@@ -16,7 +16,7 @@ import styles from './index.module.css'
 
 const GetStarted = () => {
   return (
-    <Link to="/docs/install" style={{ textDecoration: 'none' }}>
+    <Link to="/docs/installation" style={{ textDecoration: 'none' }}>
     <Button variant="contained" disableElevation className={styles.getstarted} style={{
       textTransform: 'none',
       fontFamily: 'IBM Plex Sans',

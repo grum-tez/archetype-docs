@@ -1,7 +1,3 @@
----
-sidebar_position: 5
----
-
 # State Machine
 
 A [state machine](https://en.wikipedia.org/wiki/Finite-state_machine) defines a global *state* and *transitions* from one state to another.

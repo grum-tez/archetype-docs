@@ -1,7 +1,3 @@
----
-sidebar_position: 4
----
-
 # Asset
 
 import { instructions } from './reference/instructions.js';
