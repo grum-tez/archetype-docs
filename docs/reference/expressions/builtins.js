@@ -1072,8 +1072,10 @@ export const builtins = {
   address_to_contract: {
     sig: 'address_to_contract<T>(a : address)',
     desc: <div><p>Converts address <code>a</code> to a <code>contract&lt;T&gt;</code> value to be used as parameter of <Link to="/docs/reference/expressions/builtins#make_operation(a%20:%20tez,%20c%20:%20contract<T>,%20arg%20:%20T)"><code>make_operation</code></Link>.</p>
-        <p>An account address (<code>tz1...</code>) is a <code>contract&lt;unit&gt;</code>.</p>
-        <p>A contract entrypoint has a path expressed with <code>T</code>; when entrypoint is annotated it is easier to use <Link to="/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)"><code>get_entrypoint</code></Link> builtin.</p></div>,
+        <p><code>T</code> is:<ul>
+          <li><code>unit</code> for an account address (<code>tz1...</code>)</li>
+          <li>the type of the <i>parameter</i> section for a contract address</li>
+        </ul>When the contract's parameter is annotated it is easier to use <Link to="/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)"><code>get_entrypoint</code></Link> builtin.</p></div>,
     parameters: [
       {
         type: 'address',
