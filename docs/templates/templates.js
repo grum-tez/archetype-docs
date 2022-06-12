@@ -4,11 +4,13 @@ import Link from '@docusaurus/Link';
 export const templates = {
   fa12: {
     info: {
-      repo: 'https://completium.com/docs/templates/fa12',
+      repo: 'https://github.com/completium/archetype-fa1',
       author: 'Completium',
       authorurl: 'https://completium.com/',
-      tzip: 'TZIP7',
-      tzipurl:'https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-7/tzip-7.md'
+      norms: [
+        { label : 'TZIP4', url: 'https://tzip.tezosagora.org/proposal/tzip-4/' },
+        { label : 'TZIP7', url: 'https://tzip.tezosagora.org/proposal/tzip-7/' },
+      ]
     },
     transfer: {
       desc: <div><p>Transfers <code>value</code> tokens from <code>from</code> to <code>to</code>. If the caller is not equal to <code>from</code>, then <code>caller</code> must have been allowed by from to transfer this amount to <code>to</code></p><p>
@@ -154,6 +156,38 @@ export const templates = {
       related: [
         { keyword: 'transfer', link: '/docs/templates/fa12#transferfrom-to-value' },
         { keyword: 'approve', link: '/docs/templates/fa12#approvespender-value' },
+      ],
+    }
+  },
+  fa2: {
+    info: {
+      repo: 'https://github.com/completium/archetype-fa2',
+      author: 'Completium',
+      authorurl: 'https://completium.com/',
+      norms: [
+        { label : 'TZIP12', url: 'https://tzip.tezosagora.org/proposal/tzip-12/' },
+        { label : 'TZIP17', url: 'https://tzip.tezosagora.org/proposal/tzip-17/' },
+      ],
+    },
+  },
+  a2: {
+    info: {
+      repo: 'https://github.com/completium/archetype-a2',
+      author: 'Completium',
+      authorurl: 'https://completium.com/',
+      norms: [
+        { label : 'TZIP15', url: 'https://tzip.tezosagora.org/proposal/tzip-15/' },
+        { label : 'TZIP16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
+      ],
+    }
+  },
+  multisig: {
+    info: {
+      repo: 'https://github.com/completium/archetype-multisig',
+      author: 'Completium',
+      authorurl: 'https://completium.com/',
+      norms: [
+        { label : 'TZIP16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
       ],
     }
   }

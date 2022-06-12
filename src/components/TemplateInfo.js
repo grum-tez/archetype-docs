@@ -33,26 +33,30 @@ export default function TemplateInfo(props) {
             </Typography>
           </Link>
         </Grid>
-        { (props.data.tzip !== undefined) ? (
+        { (props.data.norms !== undefined) ? (
             <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
         ) : (<div></div>) }
-        { (props.data.tzip !== undefined) ? (
+        { (props.data.norms !== undefined) ? (
             <Grid item xs={3} sm={2} md={2}>
             <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
-              Norm
+              {(props.data.norms.length > 1)? 'Norms': 'Norm'}
             </Typography>
             </Grid>
           ) : ( <div></div> )
         }
         {
-          (props.data.tzip !== undefined) ? (
-            <Grid item xs={9} sm={10} md={10}>
-            <Link to={props.data.tzipurl}>
-              <Typography style={{ fontFamily: 'IBM Plex Sans' }}>
-              {props.data.tzip}
-              </Typography>
-            </Link>
-            </Grid>
+          (props.data.norms !== undefined) ? (
+            props.data.norms.map((norm) => {
+              return (
+                <Grid item xs={1}>
+                  <Link to={norm.url}>
+                    <Typography style={{ fontFamily: 'IBM Plex Sans' }}>
+                    {norm.label}
+                    </Typography>
+                  </Link>
+              </Grid>)
+            })
+
           ) : ( <div></div> )
         }
       </Grid>

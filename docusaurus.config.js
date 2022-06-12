@@ -54,6 +54,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
+      },
       tableOfContents: {
         minHeadingLevel: 2,
         maxHeadingLevel: 5,
@@ -89,6 +94,7 @@ const config = {
           {
             type: 'docSidebar',
             position: 'left',
+            docId: 'templates/contracts',
             sidebarId: 'templates',
             label: 'Templates',
           },
