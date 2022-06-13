@@ -27,7 +27,7 @@ It defines transfer authorisation from users to other users. A user belongs to a
 
 <TemplateInfo data={templates.a2.info} />
 
-## Multi sig
+## Multisig
 
 This generic-purpose multi-signature contract is used to execute operations (transfer, contract entrypoints) that have been approved by a required number of managers.
 
