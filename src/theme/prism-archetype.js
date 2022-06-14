@@ -12,6 +12,7 @@
 				greedy: true
 			}
 		],
+		'identifier': /%[a-z]+/,
 		'number': /\b(?:0x[\da-f][\da-f_]+|(?:0[bo])?\d[\d_]*%\.?[\d_]*(?:e[+-]?[\d_]+)?)/i,
 		'label': {
 			pattern: /\B~\w+/,

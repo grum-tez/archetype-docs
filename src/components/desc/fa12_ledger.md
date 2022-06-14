@@ -10,6 +10,8 @@ asset ledger identified by holder to big_map {
   tokens     : nat = 0;
   allowance  : map<address, nat> = [];
 } initialized by {
-  { holder = caller; tokens = totalsupply }
+  { holder = caller; tokens = total_supply }
 }
 ```
+
+[`asset`](/docs/reference/declarations/storage#asset) [`address`](/docs/reference/types#address) [`nat`](/docs/reference/types#nat) [`map`](/docs/reference/types#map<K,%20V>) [`caller`](/docs/reference/expressions/constants#caller)

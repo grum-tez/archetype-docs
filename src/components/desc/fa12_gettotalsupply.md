@@ -1,8 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
-[`getter`](/docs/reference/declarations/entrypoint#getter) of [`total_supply`](/docs/templates/fa12#total_supply).
+Getter of [`total_supply`](/docs/templates/fa12#total_supply).
 
 <Tabs defaultValue="code">
 
@@ -10,9 +9,12 @@ import TabItem from '@theme/TabItem';
 
 ```archetype
 getter getTotalSupply () : nat {
-  return totalsupply
+  return total_supply
 }
 ```
+
+[`getter`](/docs/reference/declarations/entrypoint#getter) [`nat`](/docs/reference/types#nat)
+
 
 </TabItem>
 

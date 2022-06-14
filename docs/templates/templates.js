@@ -151,7 +151,6 @@ export const templates = {
       desc: <div>Total number of tokens. Note that this value is a constant since there is no <i>mint</i> or <i>burn</i> mechanism in this version.</div>,
       type: 'nat',
       related: [
-        { keyword: 'initial_holder', link: '/docs/templates/fa12#initial_holder' },
         { keyword: 'getTotalSupply', link: '/docs/templates/fa12#gettotalsupply' },
       ],
     },
