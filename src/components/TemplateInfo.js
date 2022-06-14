@@ -48,7 +48,7 @@ export default function TemplateInfo(props) {
           (props.data.norms !== undefined) ? (
             props.data.norms.map((norm) => {
               return (
-                <Grid item xs={1}>
+                <Grid item xs={2}>
                   <Link to={norm.url}>
                     <Typography style={{ fontFamily: 'IBM Plex Sans' }}>
                     {norm.label}

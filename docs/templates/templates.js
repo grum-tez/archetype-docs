@@ -185,8 +185,8 @@ export const templates = {
       author: 'Completium',
       authorurl: 'https://completium.com/',
       norms: [
-        { label : 'TZIP12', url: 'https://tzip.tezosagora.org/proposal/tzip-12/' },
-        { label : 'TZIP17', url: 'https://tzip.tezosagora.org/proposal/tzip-17/' },
+        { label : 'TZIP-12', url: 'https://tzip.tezosagora.org/proposal/tzip-12/' },
+        { label : 'TZIP-17', url: 'https://tzip.tezosagora.org/proposal/tzip-17/' },
       ],
       templates: [
         { label : 'Ownership', url: '/docs/templates/ownership' },
@@ -200,8 +200,8 @@ export const templates = {
       author: 'Completium',
       authorurl: 'https://completium.com/',
       norms: [
-        { label : 'TZIP15', url: 'https://tzip.tezosagora.org/proposal/tzip-15/' },
-        { label : 'TZIP16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
+        { label : 'TZIP-15', url: 'https://tzip.tezosagora.org/proposal/tzip-15/' },
+        { label : 'TZIP-16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
       ],
     }
   },
@@ -211,7 +211,7 @@ export const templates = {
       author: 'Completium',
       authorurl: 'https://completium.com/',
       norms: [
-        { label : 'TZIP16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
+        { label : 'TZIP-16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
       ],
     }
   },
