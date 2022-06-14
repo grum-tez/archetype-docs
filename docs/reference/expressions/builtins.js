@@ -640,7 +640,7 @@ export const builtins = {
     parameters: [
       {
         type: 'C',
-        alias: 'o',
+        alias: 'c',
         desc: <div>
           C must be either:
           <ul>

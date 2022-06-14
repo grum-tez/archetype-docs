@@ -1,7 +1,23 @@
 import React from "react"
 import Link from '@docusaurus/Link';
 
+import Fa12Transfer from '@site/src/components/desc/fa12_transfer.md'
+import Fa12Approve from '@site/src/components/desc/fa12_approve.md'
+import Fa12Gettotalsupply from '@site/src/components/desc/fa12_gettotalsupply.md'
+import Fa12Getbalance from '@site/src/components/desc/fa12_getbalance.md'
+import Fa12Getallowance from '@site/src/components/desc/fa12_getallowance.md'
+import Fa12Ledger from '@site/src/components/desc/fa12_ledger.md'
+import Fa12Allowance from '@site/src/components/desc/fa12_allowance.md'
+
+const link_prefix = '/docs/templates/'
+
 export const templates = {
+  list: [
+    { label : 'FA 1.2', link : link_prefix + 'fa12', desc : 'Fungible Token' },
+    { label : 'FA 2', link : link_prefix + 'fa2', desc : 'Versatile Token (Non Fungible, Fongible, Multi)' },
+    { label : 'A 2', link : link_prefix + 'a2', desc : 'Whitelisting process to defined transfer permissions per group of users' },
+    { label : 'MultiSig', link : link_prefix + 'multisig', desc : 'Execute operations signed by a required number of managers' },
+  ],
   fa12: {
     info: {
       repo: 'https://github.com/completium/archetype-fa1',
@@ -13,9 +29,7 @@ export const templates = {
       ]
     },
     transfer: {
-      desc: <div><p>Transfers <code>value</code> tokens from <code>from</code> to <code>to</code>. If the caller is not equal to <code>from</code>, then <code>caller</code> must have been allowed by from to transfer this amount to <code>to</code></p><p>
-          Approved amount is decreased by <code>value</code> if applicable.
-        </p></div>,
+      desc: <Fa12Transfer />,
       sig: 'transfer(from, to, value)',
       parameters: [
         {
@@ -59,7 +73,7 @@ export const templates = {
       ]
     },
     approve: {
-      desc: <div>Approves <code>spender</code> to transfer <code>value</code> tokens owned by <Link to="/docs/reference/expressions/constants#caller"><code>caller</code></Link>.</div>,
+      desc: <Fa12Approve />,
       sig: 'approve',
       parameters: [
         {
@@ -84,7 +98,7 @@ export const templates = {
       ]
     },
     getallowance: {
-      desc:<div><Link to="/docs/reference/declarations/entrypoint#getter">Getter</Link> of the allowed value <code>spender</code> can transfer on behalf of <code>owner</code>.</div>,
+      desc: <Fa12Getallowance />,
       sig: 'getallowance',
       parameters: [
         {
@@ -104,7 +118,7 @@ export const templates = {
       }
     },
     getbalance: {
-      desc: <div><Link to="/docs/reference/declarations/entrypoint#getter">Getter</Link> of the number of tokens owned by <code>owner</code>.</div>,
+      desc: <Fa12Getbalance />,
       sig: 'getbalance',
       parameters: [
         {
@@ -119,7 +133,7 @@ export const templates = {
       }
     },
     gettotalsupply: {
-      desc: <div><Link to="/docs/reference/declarations/entrypoint#getter">Getter</Link> of <Link to="/docs/templates/fa12#total_supply"><code>total_supply</code></Link></div>,
+      desc: <Fa12Gettotalsupply />,
       sig: 'gettotalsupply',
       returns: {
         type: 'nat',
@@ -142,7 +156,7 @@ export const templates = {
       ],
     },
     ledger: {
-      desc: <div>Associates an address to the number of tokens it owns.</div>,
+      desc: <Fa12Ledger />,
       type: 'big_map<address, nat>',
       typeUrl : 'big_map<K,%20V>',
       related: [
@@ -150,7 +164,7 @@ export const templates = {
       ],
     },
     allowance: {
-      desc: <div>Associates an <i>owner</i> address and a <i>spender</i> address to an amount of tokens.</div>,
+      desc: <Fa12Allowance />,
       type: 'big_map<address * address, nat>',
       typeUrl : 'big_map<K,%20V>',
       related: [
