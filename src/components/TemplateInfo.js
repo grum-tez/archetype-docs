@@ -59,6 +59,32 @@ export default function TemplateInfo(props) {
 
           ) : ( <div></div> )
         }
+        { (props.data.templates !== undefined) ? (
+            <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
+        ) : (<div></div>) }
+        { (props.data.templates !== undefined) ? (
+            <Grid item xs={3} sm={2} md={2}>
+            <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
+              {(props.data.templates.length > 1)? 'Templates': 'Template'}
+            </Typography>
+            </Grid>
+          ) : ( <div></div> )
+        }
+        {
+          (props.data.templates !== undefined) ? (
+            props.data.templates.map((template) => {
+              return (
+                <Grid item xs={2}>
+                  <Link to={template.url}>
+                    <Typography style={{ fontFamily: 'IBM Plex Sans' }}>
+                    {template.label}
+                    </Typography>
+                  </Link>
+              </Grid>)
+            })
+
+          ) : ( <div></div> )
+        }
       </Grid>
     )
   }

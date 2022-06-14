@@ -8,6 +8,11 @@ import Fa12Getbalance from '@site/src/components/desc/fa12_getbalance.md'
 import Fa12Getallowance from '@site/src/components/desc/fa12_getallowance.md'
 import Fa12Ledger from '@site/src/components/desc/fa12_ledger.md'
 import Fa12Allowance from '@site/src/components/desc/fa12_allowance.md'
+import OwnershipOwner from '@site/src/components/desc/ownership_owner.md'
+import OwnershipCandidate from '@site/src/components/desc/ownership_candidate.md'
+import OwnershipDeclare from '@site/src/components/desc/ownership_declare.md'
+import OwnershipClaim from '@site/src/components/desc/ownership_claim.md'
+import PausablePaused from '@site/src/components/desc/pausable_paused.md'
 
 const link_prefix = '/docs/templates/'
 
@@ -17,6 +22,8 @@ export const templates = {
     { label : 'FA 2', link : link_prefix + 'fa2', desc : 'Versatile Token (Non Fungible, Fongible, Multi)' },
     { label : 'A 2', link : link_prefix + 'a2', desc : 'Whitelisting process to defined transfer permissions per group of users' },
     { label : 'MultiSig', link : link_prefix + 'multisig', desc : 'Execute operations signed by a required number of managers' },
+    { label : 'Pausable', link : link_prefix + 'pausable', desc : "Contract's entrypoints may be paused" },
+    { label : 'Ownership', link : link_prefix + 'ownership', desc : 'Contract owner may be transferred' },
   ],
   fa12: {
     info: {
@@ -181,6 +188,10 @@ export const templates = {
         { label : 'TZIP12', url: 'https://tzip.tezosagora.org/proposal/tzip-12/' },
         { label : 'TZIP17', url: 'https://tzip.tezosagora.org/proposal/tzip-17/' },
       ],
+      templates: [
+        { label : 'Ownership', url: '/docs/templates/ownership' },
+        { label : 'Pausable', url: '/docs/templates/pausable' },
+      ]
     },
   },
   a2: {
@@ -201,6 +212,79 @@ export const templates = {
       authorurl: 'https://completium.com/',
       norms: [
         { label : 'TZIP16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
+      ],
+    }
+  },
+  ownership: {
+    info: {
+      repo: 'https://github.com/completium/archetype-ownership',
+      author: 'Completium',
+      authorurl: 'https://completium.com/',
+    },
+    owner: {
+      desc: <OwnershipOwner />,
+      type: 'address',
+      related: [
+        { keyword: 'owner_candidate', link: '/docs/templates/ownership#owner_candidate' },
+      ],
+    },
+    candidate: {
+      desc: <OwnershipCandidate />,
+      type: 'option<address>',
+      typeUrl: 'option<T>',
+      related: [
+        { keyword: 'owner', link: '/docs/templates/ownership#owner' },
+      ],
+    },
+    declare : {
+      desc: <OwnershipDeclare />,
+      sig: 'declare_ownership(candidate)',
+      parameters: [
+        {
+          type: 'address',
+          alias: 'candidate',
+          desc: <div>Candidate address for next contract's owner</div>
+        },
+      ],
+      fails: [
+        {
+          keyword: '"INVALID_CALLER"',
+          desc: <div>When <code>caller</code> is not <code>owner</code></div>
+        },
+      ],
+      related: [
+        { keyword: 'owner_candidate', link: '/docs/templates/ownership#owner_candidate' },
+      ]
+    },
+    claim : {
+      desc: <OwnershipClaim />,
+      sig: 'claim_ownership()',
+      parameters: [
+      ],
+      fails: [
+        {
+          keyword: '"INVALID_CALLER"',
+          desc: <div>When <code>caller</code> is not <code>owner_candidate</code></div>
+        },
+      ],
+      related: [
+        { keyword: 'owner_candidate', link: '/docs/templates/ownership#owner_candidate' },
+      ]
+    }
+  },
+  pausable: {
+    info: {
+      repo: 'https://github.com/completium/archetype-pausable',
+      author: 'Completium',
+      authorurl: 'https://completium.com/',
+      templates: [
+        { label : 'Ownership', url: '/docs/templates/ownership' },
+      ]
+    },
+    paused: {
+      desc: <PausablePaused />,
+      type: 'bool',
+      related: [
       ],
     }
   }
