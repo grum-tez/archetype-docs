@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ```archetype
 getter getAllowance (owner : address, spender : address) : nat {
-  return (allowance[(owner, spender)].amount)
+  return (ledger[owner] ? (the.allowance[spender] ? the : 0) : 0)
 }
 ```
 

@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 ```archetype
 getter getBalance (owner : address) : nat {
-  return (if (ledger.contains(owner)) then ledger[owner].tokens else 0)
+  return (ledger[owner] ? the.tokens : 0)
 }
 ```
 
