@@ -6,7 +6,7 @@ import Builtin from '@site/src/components/Builtin.js';
 import Constant from '@site/src/components/Constant.js';
 import TemplateInfo from '@site/src/components/TemplateInfo.js';
 
-# Multi Sig
+# MultiSig
 
 This generic-purpose multi-signature contract is used to execute operations (transfer, contract entrypoints) that have been approved by a required number of managers.
 

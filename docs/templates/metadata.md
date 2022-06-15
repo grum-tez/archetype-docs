@@ -6,12 +6,12 @@ import { templates } from './templates.js'
 import Builtin from '@site/src/components/Builtin.js';
 import TemplateInfo from '@site/src/components/TemplateInfo.js';
 
-# Contract Metadata
+# Metadata
 
 Implements [TZIP-16](https://tzip.tezosagora.org/proposal/tzip-16/) norm for contract's metadata.
 
 :::info
-It is required to copy this template in the created contract to benefit from the ownership pattern.
+It is required to copy this template in the created contract to benefit from the metadata pattern.
 :::
 <TemplateInfo data={templates.metadata.info} />
 
