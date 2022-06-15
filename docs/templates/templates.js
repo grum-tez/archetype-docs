@@ -28,7 +28,7 @@ export const templates = {
     { label : 'MultiSig', link : link_prefix + 'multisig', desc : 'Execute operations signed by a required number of managers' },
     { label : 'Pausable', link : link_prefix + 'pausable', desc : "Contract's entrypoints may be paused" },
     { label : 'Metadata', link : link_prefix + 'metadata', desc : "Implements TZIP-16 norm for contract's metadata" },
-    { label : 'Ownership', link : link_prefix + 'ownership', desc : 'Contract owner may be transferred' },
+    { label : 'Ownership', link : link_prefix + 'ownership', desc : 'Transferrable contract owner' },
   ],
   fa12: {
     info: {

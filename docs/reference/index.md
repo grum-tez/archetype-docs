@@ -5,6 +5,7 @@ import { declarations } from "./declarations.js";
 import { instructions } from "./instructions.js";
 import { types } from "./types.js";
 import { constants } from "./expressions/constants.js";
+import { variables } from "./expressions/variables.js";
 import { operators } from "./expressions/operators/operators.js";
 import { access } from "./expressions/operators/access.js";
 import { copy } from "./expressions/operators/copy.js";
@@ -85,6 +86,11 @@ This is the Archetype language reference.
 
 <EagleEyeView title="Constants" data={Object.entries(constants).map(([k,v]) => {
     return { label: k, link: '/docs/reference/expressions/constants#' + k }
+  })
+} xs={4}/>
+
+<EagleEyeView title="Variables" data={Object.entries(variables).map(([k,v]) => {
+    return { label: k, link: '/docs/reference/expressions/variables#' + k }
   })
 } xs={4}/>
 
