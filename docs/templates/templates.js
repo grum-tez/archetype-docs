@@ -19,6 +19,7 @@ import PausableIsnotpaused from '@site/src/components/desc/pausable_isnotpaused.
 import SetMetadata from '@site/src/components/desc/metadata_set.md'
 import Permits from '@site/src/components/desc/permits.md'
 import DefaultExpiry from '@site/src/components/desc/permits_default_expiry.md'
+import TokenMetadata from '@site/src/components/desc/token_metadata.md'
 
 const link_prefix = '/docs/templates/'
 
@@ -420,7 +421,7 @@ export const templates = {
     permits: {
       desc: <Permits />,
       type: 'big_map<asset_key<permits>, asset_value<permits>',
-      typeUrl: 'map<K,%20V>',
+      typeUrl: 'big_map<K,%20V>',
       related: [
         { keyword: 'asset_key', link: '/docs/reference/types#asset_key<A>' },
         { keyword: 'asset_value', link: '/docs/reference/types#asset_value<A>' },
@@ -431,6 +432,26 @@ export const templates = {
       type: 'duration',
       related: [
         { keyword: 'Variable', link: '/docs/reference/declarations/storage#variable' },
+      ],
+    }
+  },
+  token_metadata: {
+    info: {
+      repo: 'https://github.com/completium/archetype-token-metadata',
+      author: 'Completium',
+      authorurl: 'https://completium.com/',
+      templates: [
+        { label : 'Pausable', url: '/docs/templates/pausable' },
+        { label : 'Ownership', url: '/docs/templates/ownership' },
+      ]
+    },
+    token_metadata: {
+      desc: <TokenMetadata />,
+      type: 'big_map<asset_key<token_metadata>, asset_value<token_metadata>',
+      typeUrl: 'big_map<K,%20V>',
+      related: [
+        { keyword: 'asset_key', link: '/docs/reference/types#asset_key<A>' },
+        { keyword: 'asset_value', link: '/docs/reference/types#asset_value<A>' },
       ],
     }
   }
