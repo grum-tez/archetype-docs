@@ -16,16 +16,18 @@ import PausablePaused from '@site/src/components/desc/pausable_paused.md'
 import PausablePause from '@site/src/components/desc/pausable_pause.md'
 import PausableUnpause from '@site/src/components/desc/pausable_unpause.md'
 import PausableIsnotpaused from '@site/src/components/desc/pausable_isnotpaused.md'
+import SetMetadata from '@site/src/components/desc/metadata_set.md'
 
 const link_prefix = '/docs/templates/'
 
 export const templates = {
   list: [
-    { label : 'FA 1.2', link : link_prefix + 'fa12', desc : 'Fungible Token' },
-    { label : 'FA 2', link : link_prefix + 'fa2', desc : 'Versatile Token (Non Fungible, Fongible, Multi)' },
-    { label : 'A 2', link : link_prefix + 'a2', desc : 'Whitelisting process to defined transfer permissions per group of users' },
+    { label : 'FA 1.2', link : link_prefix + 'fa12', desc : 'Implements TZIP-7 norm for fungible Token' },
+    { label : 'FA 2', link : link_prefix + 'fa2', desc : 'Implements TZIP-12 norm for tokens (Non Fungible, Fongible, Multi)' },
+    { label : 'A 2', link : link_prefix + 'a2', desc : 'Implements TZIP-15 norm for whitelisting process ' },
     { label : 'MultiSig', link : link_prefix + 'multisig', desc : 'Execute operations signed by a required number of managers' },
     { label : 'Pausable', link : link_prefix + 'pausable', desc : "Contract's entrypoints may be paused" },
+    { label : 'Metadata', link : link_prefix + 'metadata', desc : "Implements TZIP-16 norm for contract's metadata" },
     { label : 'Ownership', link : link_prefix + 'ownership', desc : 'Contract owner may be transferred' },
   ],
   fa12: {
@@ -189,10 +191,12 @@ export const templates = {
       authorurl: 'https://completium.com/',
       norms: [
         { label : 'TZIP-12', url: 'https://tzip.tezosagora.org/proposal/tzip-12/' },
+        { label : 'TZIP-16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
         { label : 'TZIP-17', url: 'https://tzip.tezosagora.org/proposal/tzip-17/' },
       ],
       templates: [
         { label : 'Ownership', url: '/docs/templates/ownership' },
+        { label : 'Metadata', url: '/docs/templates/metadata' },
         { label : 'Pausable', url: '/docs/templates/pausable' },
       ]
     },
@@ -347,5 +351,52 @@ export const templates = {
         { keyword: 'paused', link: '/docs/templates/pausable#paused' },
       ]
     }
-  }
+  },
+  metadata: {
+    info: {
+      repo: 'https://github.com/completium/archetype-metadata',
+      author: 'Completium',
+      authorurl: 'https://completium.com/',
+      norms: [
+        { label: 'TZIP-16', link: 'https://tzip.tezosagora.org/proposal/tzip-16/' }
+      ],
+      templates: [
+        { label : 'Ownership', url: '/docs/templates/ownership' },
+        { label : 'Pausable', url: '/docs/templates/pausable' },
+      ]
+    },
+    set_metadata: {
+      desc: <SetMetadata />,
+      sig: 'set_metadata(k, v)',
+      parameters: [
+        {
+          type: 'string',
+          alias: 'k',
+          desc: <div>Medata entry name</div>
+        },
+        {
+          type: 'option<bytes>',
+          withLink: false,
+          alias: 'v',
+          desc: <div>Medata value option:<ul>
+            <li><code>some(v)</code> associates <code>v</code> to <code>k</code></li>
+            <li><code>none</code> removes entry <code>k</code></li>
+          </ul></div>
+        },
+      ],
+      fails: [
+        {
+          keyword: '"INVALID_CALLER"',
+          desc: <div>When <code>caller</code> is not <code>owner</code></div>
+        },
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is already paused.</div>
+        },
+      ],
+      related: [
+        { keyword: 'Archetype contract', link: '/docs/reference/declarations/contract#metadata' }
+      ]
+    },
+  },
 }

@@ -30,3 +30,13 @@ completium-cli deploy escrow.arl --parameters '{ "seller" : "tz1VSUr8wwNhLAzempo
 ```
 
 The value of a contract parameter may be modified by [assignment](/docs/reference/instructions/assignment) instructions in [entrypoints](/docs/reference/declarations/entrypoint).
+
+## Metadata
+
+The [TZIP-16](`https://tzip.tezosagora.org/proposal/tzip-16/`) specifies the standard contract's metadata as a storage [map](/docs/language-basics/container#map). It is declared with `with metadata` in contract declaration followed by intitial URL to metadata file:
+
+```archetype
+archetype my_token with metadata ""
+```
+
+This adds the [`metadata`](/docs/reference/expressions/variables#metadata) map to the storage.
