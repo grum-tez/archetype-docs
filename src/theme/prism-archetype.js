@@ -47,7 +47,7 @@
     	'entry': /\b(?:entry|transition|function|getter|view)\b/,
     	'verif': /\b(?:invariant|specification)\b/,
     	'type': /\b(?:lambda|contract|big_map|map|set|option|list|int|nat|tez|string|rational|bytes|key|key_hash|address|sapling|signature|date|duration|bool|operation|aggregate|partition|asset_view|asset_key|asset_value|iterable_big_map)\b/,
-    	'constant': /\b(?:now|balance|transferred|self|caller|source|self_address|state|operations)\b/,
+    	'constant': /\b(?:now|balance|transferred|self|caller|source|self_address|state|operations|metadata)\b/,
 		'control': /\b(?:assert|iter|begin|end|do|done|else|return|before|for|if|in|match|in|forall|added|removed|exists|then|the|from|to|while|with)\b/,
 		'decl': /\b(?:const|var|let some|let)\b/,
 		'boolean': /\b(?:false|true)\b/,

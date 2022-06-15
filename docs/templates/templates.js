@@ -13,6 +13,9 @@ import OwnershipCandidate from '@site/src/components/desc/ownership_candidate.md
 import OwnershipDeclare from '@site/src/components/desc/ownership_declare.md'
 import OwnershipClaim from '@site/src/components/desc/ownership_claim.md'
 import PausablePaused from '@site/src/components/desc/pausable_paused.md'
+import PausablePause from '@site/src/components/desc/pausable_pause.md'
+import PausableUnpause from '@site/src/components/desc/pausable_unpause.md'
+import PausableIsnotpaused from '@site/src/components/desc/pausable_isnotpaused.md'
 
 const link_prefix = '/docs/templates/'
 
@@ -286,6 +289,63 @@ export const templates = {
       type: 'bool',
       related: [
       ],
+    },
+    pause: {
+      desc: <PausablePause />,
+      sig: 'pause()',
+      parameters: [
+      ],
+      fails: [
+        {
+          keyword: '"INVALID_CALLER"',
+          desc: <div>When <code>caller</code> is not <code>owner</code></div>
+        },
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is already paused.</div>
+        },
+      ],
+      related: [
+        { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' },
+      ]
+    },
+    unpause: {
+      desc: <PausableUnpause />,
+      sig: 'unpause()',
+      parameters: [
+      ],
+      fails: [
+        {
+          keyword: '"INVALID_CALLER"',
+          desc: <div>When <code>caller</code> is not <code>owner</code></div>
+        },
+        {
+          keyword: '"CONTRACT_NOT_PAUSED"',
+          desc: <div>When contract is not paused.</div>
+        },
+      ],
+      related: [
+        { keyword: 'paused', link: '/docs/templates/pausable#paused' },
+      ]
+    },
+    is_not_paused: {
+      desc: <PausableIsnotpaused />,
+      sig: 'is_not_paused()',
+      parameters: [
+      ],
+      fails: [
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is already paused.</div>
+        },
+      ],
+      returns: {
+        type: 'bool',
+        desc: <div><code>true</code> if contract is not paused</div>
+      },
+      related: [
+        { keyword: 'paused', link: '/docs/templates/pausable#paused' },
+      ]
     }
   }
 }

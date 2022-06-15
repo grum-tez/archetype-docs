@@ -1,17 +1,11 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import NamedDivider from '@site/src/components/NamedDivider.js';
 
 Contract's pausable state.
 
-<Tabs defaultValue="code">
-
-<TabItem value="code" label="Code">
+<NamedDivider title="Code" width="1.5"/>
 
 ```archetype
 variable paused : bool = false
 ```
 
 [`variable`](/docs/reference/declarations/storage#variable) [`bool`](/docs/reference/types#bool)
-</TabItem>
-
-</Tabs>

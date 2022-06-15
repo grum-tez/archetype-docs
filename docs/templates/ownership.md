@@ -11,7 +11,7 @@ import TemplateInfo from '@site/src/components/TemplateInfo.js';
 This template is used in many contracts whenever there needs a special address to administrate the contract. The ownership of the contract may be transferred.
 
 :::info
-It is required to *insert* this template in the created contract to benefit from the ownership pattern.
+It is required to *copy* this template in the created contract to benefit from the ownership pattern.
 :::
 
 <TemplateInfo data={templates.ownership.info} />

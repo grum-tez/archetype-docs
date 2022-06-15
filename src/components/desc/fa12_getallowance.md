@@ -1,12 +1,9 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import NamedDivider from '@site/src/components/NamedDivider.js';
 
 Getter of the allowed value `spender` can transfer on behalf of `owner`.
 
 
-<Tabs defaultValue="code">
-
-<TabItem value="code" label="Code">
+<NamedDivider title="Code" width="1.5"/>
 
 ```archetype
 getter getAllowance (owner : address, spender : address) : nat {
@@ -15,7 +12,3 @@ getter getAllowance (owner : address, spender : address) : nat {
 ```
 
 [`getter`](/docs/reference/declarations/entrypoint#getter) [`address`](/docs/reference/types#address) [`nat`](/docs/reference/types#nat) [`[]`](/docs/reference/expressions/asset#ak--asset_keya) [`?:`](/docs/reference/expressions/controls#a--b--c)
-
-</TabItem>
-
-</Tabs>

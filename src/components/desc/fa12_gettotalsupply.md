@@ -1,11 +1,9 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import NamedDivider from '@site/src/components/NamedDivider.js';
 
 Getter of [`total_supply`](/docs/templates/fa12#total_supply).
 
-<Tabs defaultValue="code">
 
-<TabItem value="code" label="Code">
+<NamedDivider title="Code" width="1.5"/>
 
 ```archetype
 getter getTotalSupply () : nat {
@@ -15,7 +13,3 @@ getter getTotalSupply () : nat {
 
 [`getter`](/docs/reference/declarations/entrypoint#getter) [`nat`](/docs/reference/types#nat)
 
-
-</TabItem>
-
-</Tabs>

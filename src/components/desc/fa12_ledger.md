@@ -1,8 +1,10 @@
+import NamedDivider from '@site/src/components/NamedDivider.js';
+
 Associates an address to:
 * `tokens` the number of tokens it owns
 * `allowance` that associates a <i>spender</i> address to the quantity it is allowed to spend
 
-<p></p>
+<NamedDivider title="Code" width="1.5"/>
 
 ```archetype
 asset ledger identified by holder to big_map {
