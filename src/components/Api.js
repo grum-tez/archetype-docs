@@ -10,9 +10,12 @@ import styles from './component.module.css';
 const ApiItem = (props) => {
   return (
     <Grid item container xs={12}>
-      <Grid item xs={12}>
-        <Divider className={ styles.divider } style={{ marginBottom: '8px', marginTop: '4px' }}></Divider>
-      </Grid>
+      {
+        (props.divider == true ?
+        <Grid item xs={12}>
+          <Divider className={ styles.divider } style={{ marginBottom: '8px', marginTop: '4px' }}></Divider>
+        </Grid> : <div></div>)
+      }
       <Grid item xs={12} sm={props.xs} md={props.xs} style={{ paddingLeft: '8px' }}>
         { props.data.link == undefined ? (<code>{props.data.label}</code>) : (<Link to={props.data.link}><code>{props.data.label}</code></Link>) }
       </Grid>
@@ -35,8 +38,8 @@ export default function Api(props) {
           {props.title}
         </Typography>
       </Grid>
-      { props.data.map((e => {
-        return (<ApiItem data={e} xs={xs}/>)
+      { props.data.map(((e,i) => {
+        return (<ApiItem divider={i > 0 || (i == 0 && props.title.length > 0)} data={e} xs={xs}/>)
        })) }
     </Grid>
     </StyledEngineProvider>
