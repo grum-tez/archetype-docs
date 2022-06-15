@@ -37,7 +37,7 @@ export default function TemplateInfo(props) {
             <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
         ) : (<div></div>) }
         { (props.data.norms !== undefined) ? (
-            <Grid item xs={3} sm={2} md={2}>
+            <Grid item xs={12} sm={2} md={2}>
             <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
               {(props.data.norms.length > 1)? 'Norms': 'Norm'}
             </Typography>
@@ -48,7 +48,7 @@ export default function TemplateInfo(props) {
           (props.data.norms !== undefined) ? (
             props.data.norms.map((norm) => {
               return (
-                <Grid item xs={2}>
+                <Grid item xs={4} sm={2} md={2}>
                   <Link to={norm.url}>
                     <Typography style={{ fontFamily: 'IBM Plex Sans' }}>
                     {norm.label}
@@ -63,7 +63,7 @@ export default function TemplateInfo(props) {
             <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
         ) : (<div></div>) }
         { (props.data.templates !== undefined) ? (
-            <Grid item xs={3} sm={2} md={2}>
+            <Grid item xs={12} sm={2} md={2}>
             <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
               {(props.data.templates.length > 1)? 'Templates': 'Template'}
             </Typography>
@@ -74,7 +74,7 @@ export default function TemplateInfo(props) {
           (props.data.templates !== undefined) ? (
             props.data.templates.map((template) => {
               return (
-                <Grid item xs={2}>
+                <Grid item xs={4} sm={2} md={2}>
                   <Link to={template.url}>
                     <Typography style={{ fontFamily: 'IBM Plex Sans' }}>
                     {template.label}

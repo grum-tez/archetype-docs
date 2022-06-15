@@ -194,14 +194,18 @@ export const templates = {
       author: 'Completium',
       authorurl: 'https://completium.com/',
       norms: [
+        { label : 'TZIP-4', url: 'https://tzip.tezosagora.org/proposal/tzip-4/' },
         { label : 'TZIP-12', url: 'https://tzip.tezosagora.org/proposal/tzip-12/' },
         { label : 'TZIP-16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
         { label : 'TZIP-17', url: 'https://tzip.tezosagora.org/proposal/tzip-17/' },
+        { label : 'TZIP-21', url: 'https://tzip.tezosagora.org/proposal/tzip-21/' },
       ],
       templates: [
+        { label : 'Pausable', url: '/docs/templates/pausable' },
         { label : 'Ownership', url: '/docs/templates/ownership' },
         { label : 'Metadata', url: '/docs/templates/metadata' },
-        { label : 'Pausable', url: '/docs/templates/pausable' },
+        { label : 'Permits', url: '/docs/templates/permits' },
+        { label : 'Token metadata', url: '/docs/templates/tokenmetadata' },
       ]
     },
   },
