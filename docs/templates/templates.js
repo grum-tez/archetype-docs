@@ -20,6 +20,7 @@ import SetMetadata from '@site/src/components/desc/metadata_set.md'
 import Permits from '@site/src/components/desc/permits.md'
 import DefaultExpiry from '@site/src/components/desc/permits_default_expiry.md'
 import TokenMetadata from '@site/src/components/desc/token_metadata.md'
+import SetTokenMetadata from '@site/src/components/desc/token_set_metadata.md'
 
 const link_prefix = '/docs/templates/'
 
@@ -453,6 +454,35 @@ export const templates = {
         { keyword: 'asset_key', link: '/docs/reference/types#asset_key<A>' },
         { keyword: 'asset_value', link: '/docs/reference/types#asset_value<A>' },
       ],
+    },
+    set_token_metadata: {
+      desc: <SetTokenMetadata />,
+      sig: 'set_token_metadata',
+      parameters: [
+        {
+          type: 'nat',
+          alias: 'tid',
+          desc: <div>Token id</div>
+        },
+        {
+          type: 'map<string, bytes>',
+          alias: 'tdata',
+          desc: <div>Token data</div>
+        },
+      ],
+      fails: [
+        {
+          keyword: '"INVALID_CALLER"',
+          desc: <div>When <code>caller</code> is not <code>owner</code></div>
+        },
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is paused.</div>
+        },
+      ],
+      related: [
+        { keyword: 'Asset', link: '/docs/asset' },
+      ]
     }
   }
 }

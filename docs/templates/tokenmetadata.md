@@ -27,3 +27,5 @@ It is required to copy this template in the created contract to benefit from the
 
 ### `set_token_metadata(tid, tdata)`
 
+<Builtin data={templates.token_metadata.set_token_metadata} />
+
