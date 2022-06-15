@@ -22,12 +22,12 @@ const link_prefix = '/docs/templates/'
 
 export const templates = {
   list: [
-    { label : 'FA 1.2', link : link_prefix + 'fa12', desc : 'Implements TZIP-7 norm for fungible Token' },
-    { label : 'FA 2', link : link_prefix + 'fa2', desc : 'Implements TZIP-12 norm for tokens (Non Fungible, Fongible, Multi)' },
-    { label : 'A 2', link : link_prefix + 'a2', desc : 'Implements TZIP-15 norm for whitelisting process ' },
+    { label : 'FA 1.2', link : link_prefix + 'fa12', desc : <div>Implements <Link to="https://tzip.tezosagora.org/proposal/tzip-7/">TZIP-7</Link> norm for fungible Token</div> },
+    { label : 'FA 2', link : link_prefix + 'fa2', desc : <div>Implements <Link to="https://tzip.tezosagora.org/proposal/tzip-12/">TZIP-12</Link> norm for tokens (Non Fungible, Fongible, Multi)</div> },
+    { label : 'A 2', link : link_prefix + 'a2', desc : <div>Implements <Link to="https://tzip.tezosagora.org/proposal/tzip-15/">TZIP-15</Link> norm for whitelisting process</div> },
+    { label : 'Metadata', link : link_prefix + 'metadata', desc : <div>Implements <Link to="https://tzip.tezosagora.org/proposal/tzip-16/">TZIP-16</Link> norm for contract's metadata</div> },
     { label : 'MultiSig', link : link_prefix + 'multisig', desc : 'Execute operations signed by a required number of managers' },
-    { label : 'Pausable', link : link_prefix + 'pausable', desc : "Contract's entrypoints may be paused" },
-    { label : 'Metadata', link : link_prefix + 'metadata', desc : "Implements TZIP-16 norm for contract's metadata" },
+    { label : 'Pausable', link : link_prefix + 'pausable', desc : "Pausable entrypoints" },
     { label : 'Ownership', link : link_prefix + 'ownership', desc : 'Transferrable contract owner' },
   ],
   fa12: {
