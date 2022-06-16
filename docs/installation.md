@@ -2,7 +2,7 @@
 
 ## Completium CLI
 
-[Completium CLI](https://www.npmjs.com/package/@completium/completium-cli) is the command line utility to install Archetype compiler and manage contracts (deploy, call).
+[Completium CLI](https://completium.com/docs/cli) is the command line utility to install Archetype compiler and manage contracts (deploy, call).
 
 Install it and init its configuration:
 ```
@@ -30,7 +30,7 @@ Completium-CLI comes with a JS version of the compiler.
 
 Switch to JS compiler:
 ```
-completium-cli set archetype js
+completium-cli set mode archetype js
 ```
 (`docker` is the argument to switch to docker mode)
 
@@ -40,7 +40,7 @@ The current JS version of Archetype compiler comes with a limit in the size of t
 
 Print Archetype's install 'mode':
 ```bash
-completium-cli show archetype mode
+completium-cli show mode archetype
 ```
 
 ## Binary
@@ -49,8 +49,8 @@ It is possible to configure Completium CLI to use a binary version of the Archet
 
 Switch to binary compiler:
 ```
-completium-cli set archetype path <PATH_TO_ARCHETYPE_BIN>
-completium-cli set archetype binary
+completium-cli set binary path archetype <PATH_TO_ARCHETYPE_BIN>
+completium-cli set mode archetype binary
 ```
 
 There are 3 ways to get the binary compiler.
@@ -79,4 +79,13 @@ make build-deps
 eval $(opam env)
 make all
 ```
+
+## VS code extension
+
+It is recommended to develop Archetype contracts with [VS Code](https://code.visualstudio.com) and the [Archetype extension](https://marketplace.visualstudio.com/items?itemName=edukera.archetype).
+
+The extension provides:
+* syntax highlighting
+* inlined compilations errors
+* compilation command (`Archetype: Generate Michelson`)
 
