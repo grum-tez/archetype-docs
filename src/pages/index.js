@@ -50,7 +50,7 @@ const TagLine = () => {
 
 const Introduction = () => {
   return (
-    <Typography style={{ fontFamily: 'IBM Plex Sans' }}>Archetype is a general purpose language to develop Smart Contracts on the Tezos blockchain, with exclusive features to ease development, tests and formal verification.</Typography>
+    <Typography style={{ fontFamily: 'IBM Plex Sans' }}>Archetype is a general purpose language to develop Smart Contracts on the <Link to="https://tezos.com/">Tezos</Link> blockchain, with exclusive features to ease development, tests and formal verification.</Typography>
   )
 }
 
