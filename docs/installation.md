@@ -9,31 +9,29 @@ Install it and initialize its configuration:
 npm i -g @completium/completium-cli
 completium-cli init
 ```
+### JS
+
+By default, Completium-CLI uses the [JS version](https://www.npmjs.com/package/@completium/archetype) of Archetype compiler.
+
+:::caution
+The JS version of Archetype compiler fails when the contract reaches a certain size. It is recommended to use the docker image or the binary version of the compiler.
+:::
+
+Switch back to JS compiler from other compiler modes (docker, binary) with:
+```
+completium-cli set mode archetype js
+```
 ### Docker
 
-Install Archetype compiler:
+Install Docker version of Archetype compiler with:
 ```
 completium-cli install archetype
 ```
 
-This requires [docker](https://www.docker.com/products/docker-desktop/) to be installed, and will download the [latest version](https://hub.docker.com/r/completium/archetype) (displayed in the right corner of the top bar) of Archetype compiler .
+This requires [docker](https://www.docker.com/products/docker-desktop/) to be installed, and will download the [latest version](https://hub.docker.com/r/completium/archetype) of Archetype compiler .
 
-Print installed Archetype version:
-```
-completium-cli archetype version
-```
-
-### JS
-
-Completium-CLI comes with a JS version of the compiler.
-
-Switch to JS compiler:
-```
-completium-cli set mode archetype js
-```
-
-:::caution
-The current JS version of Archetype compiler comes with a limit in the size of the contract. It is well adapted for smaller contracts in node.js only environment.
+:::info
+This command runs docker command `docker pull completium/archetype:latest`, hence it also *updates* to the latest version of Archetype compiler.
 :::
 
 ### Binary
@@ -46,7 +44,7 @@ completium-cli set binary path archetype <PATH_TO_ARCHETYPE_BIN>
 completium-cli set mode archetype binary
 ```
 
-### Switch install mode
+### Utility commands
 
 It is possible to open a menu to switch archetype install 'mode':
 ```bash
@@ -64,6 +62,42 @@ Print Archetype's install 'mode' with:
 ```bash
 completium-cli show mode archetype
 ```
+
+Print current version of Archetype compiler with:
+```
+completium-cli archetype version
+```
+
+## VS code extension
+
+It is recommended to develop Archetype contracts with [VS Code](https://code.visualstudio.com) and the [Archetype extension](https://marketplace.visualstudio.com/items?itemName=edukera.archetype).
+
+The extension provides:
+* syntax highlighting
+* inlined errors (syntax, types, ...)
+* compiler command (`Archetype: Generate Michelson`)
+
+### JS
+
+Like Completium CLI, the Archetype extension uses by default the JS version of Archetype compiler.
+
+:::caution
+The JS version of Archetype compiler fails when the contract reaches a certain size. It is recommended to switch to the docker image or to the binary version of the compiler.
+:::
+
+### Docker
+
+This requires [docker](https://www.docker.com/products/docker-desktop/) to be installed:
+1. install the [latest image](https://hub.docker.com/r/completium/archetype) of Archetype compiler with `docker pull completium/archetype:latest`
+2. go to VS Code Settings, search for `Archetype: Archetype Mode` and *select* `docker`
+
+### Binary
+
+The process is as follows:
+1. [install the binary](/docs/installation#install-binary) version of archetype compiler
+2. go to VS Code Settings:
+    1. search for `Archetype: Archetype Bin` and *fill* the path of Archetype compiler
+    2. search for `Archetype: Archetype Mode` and *select* `binary`
 
 ## Install Binary
 
@@ -93,24 +127,3 @@ make build-deps
 eval $(opam env)
 make all
 ```
-
-## VS code extension
-
-It is recommended to develop Archetype contracts with [VS Code](https://code.visualstudio.com) and the [Archetype extension](https://marketplace.visualstudio.com/items?itemName=edukera.archetype).
-
-The extension provides:
-* syntax highlighting
-* inlined errors (syntax, types, ...)
-* compiler command (`Archetype: Generate Michelson`)
-
-:::caution
-The default extension's compiler mode is `js`. It fails when the contract reaches a certain size; it is then necessary to switch to binary mode as presented below.
-:::
-
-### Switch to binary
-
-The process is as follows:
-1. [install the binary](/docs/installation#install-binary) version of archetype compiler
-2. go to VS Code Settings:
-    1. search for `Archetype: Archetype Bin` and *fill* the path of Archetype compiler
-    2. search for `Archetype: Use Archetype JS Lib` and *uncheck* the check box
