@@ -33,7 +33,7 @@ The value of a contract parameter may be modified by [assignment](/docs/referenc
 
 ## Metadata
 
-The [TZIP-16](`https://tzip.tezosagora.org/proposal/tzip-16/`) specifies the standard contract's metadata as a storage [map](/docs/language-basics/container#map). It is declared with `with metadata` in contract declaration followed by intitial URL to metadata file:
+The [TZIP-16](https://tzip.tezosagora.org/proposal/tzip-16/) specifies the standard contract's metadata as a storage [map](/docs/language-basics/container#map). It is declared with `with metadata` in contract declaration followed by intitial URL to metadata file:
 
 ```archetype
 archetype my_token with metadata ""

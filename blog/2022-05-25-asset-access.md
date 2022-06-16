@@ -5,7 +5,7 @@ authors: [gd]
 tags: [asset, new feature]
 ---
 
-We present an improvement in the way [assets](/docs/asset) data are accessed in version [`1.3.0`](/docs/install).
+We present an improvement in the way [assets](/docs/asset) data are accessed in version [`1.3.0`](/docs/installation).
 
 ### Problems
 
@@ -50,7 +50,7 @@ The `[].` operator treats the case when asset is not found while it has already 
 
 ### Solution
 
-Version [`1.3.0`](/docs/install) provides new operator [`[]`](/docs/reference/expressions/asset#ak--asset_keya) that returns an [`option`](/docs/reference/types#option<T>) of [asset value](/docs/reference/types#asset_value<A>).
+Version [`1.3.0`](/docs/installation) provides new operator [`[]`](/docs/reference/expressions/asset#ak--asset_keya) that returns an [`option`](/docs/reference/types#option<T>) of [asset value](/docs/reference/types#asset_value<A>).
 
 Combined with the new [`?=`](/docs/reference/instructions/localvariable#-) declaration instruction, the proper way to retrieve all vehicle data presented above, is now as follows:
 
@@ -70,7 +70,7 @@ const v ?= vehicle["1G1AF1F57A7192174"] : "VEHICLE_NOT_FOUND"
 
 Situations where a single asset field is accessed is very common though.
 
-Version [`1.3.0`](/docs/install) provides a new operator [`[]?.`](/docs/reference/expressions/asset#ak--asset_keyaf) that returns an [`option`](/docs/reference/types#option<T>) of field value, so that the non existence case may be *explicitely* treated.
+Version [`1.3.0`](/docs/installation) provides a new operator [`[]?.`](/docs/reference/expressions/asset#ak--asset_keyaf) that returns an [`option`](/docs/reference/types#option<T>) of field value, so that the non existence case may be *explicitely* treated.
 
 For example, the following retrieves an option of [`nat`](/docs/reference/types#nat) to treat more specifically the case when the asset is not found:
 ```archetype

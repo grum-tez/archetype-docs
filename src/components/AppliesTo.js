@@ -18,7 +18,6 @@ const appliestotypes = [
 ]
 
 export default function AppliesTo(props) {
-  console.log(props.data.includes('asset to big_map'));
   return (<Grid item xs={12} style={{ marginTop: '12px' }}><Grid container>
     <Grid item>
       <h4 style={{ marginBottom: '0px', color: 'grey', fontWeight: 'normal', marginBottom: '12px' }}>Type of collection <code>A</code></h4>
