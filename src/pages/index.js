@@ -1,4 +1,3 @@
-import Comment0 from './comment0.mdx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -10,8 +9,10 @@ import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 
-import Comment1 from './comment1.mdx';
-import Comment4 from './comment4.mdx';
+import Comment0 from './comment0.md';
+import Comment1 from './comment1.md';
+import Comment2 from './comment2.md';
+import Comment3 from './comment3.md';
 import styles from './index.module.css'
 
 const GetStarted = () => {
@@ -163,18 +164,12 @@ entry set_value (v : nat) {
 states =
 | Created initial
 | Initialized
-| Terminated
 
 transition initialize () {
   from Created to Initialized
   when { transferred > value }
-}
-
-transition terminate () {
-  from Initialized to Terminated
-  effect { transfer balance to holder }
 }`,
-    comment: ''
+    comment: <Comment2 />
   },
   {
     code: `archetype asset_demo
@@ -191,7 +186,7 @@ entry repair_oldest () {
     last_repair = now
   })
 }`,
-    comment: <Comment4 />
+    comment: <Comment3 />
   }
 ]
 

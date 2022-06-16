@@ -1,0 +1,4 @@
+[`archetype`](/docs/reference/declarations/contract) [`address`](/docs/reference/types#address) [`tez`](/docs/reference/types#tez) [`nat`](/docs/reference/types#nat) [`entry`](/docs/reference/declarations/entrypoint#entry) [`const`](/docs/reference/instructions/localvariable#const) [`now`](/docs/reference/expressions/constants#now) [`>`](/docs/reference/expressions/operators/arithmetic#a--b-11) [`?:`](/docs/reference/expressions/controls#a--b--c) [`transfer`](/docs/reference/instructions/operation#transfer)
+
+The `pay` entrypoint applies a penalty fee of 7% per day beyond deadline.
+Archetype language provides types, like rational (see `7%`) or duration (see `1d`), to easily implement readable business rules.
