@@ -11,7 +11,7 @@ const config = {
   title: 'Archetype Documentation',
   tagline: 'Primary documentation for Archetype language',
   url: 'https://completium.github.io',
-  baseUrl: '/archetype-docs/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon@2x.png',
@@ -143,7 +143,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/archetype',
+                href: 'https://twitter.com/archetype_lang',
               },
             ],
           },

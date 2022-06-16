@@ -177,14 +177,10 @@ transition initialize () {
 asset vehicle {
   vin         : string;
   nb_repairs  : nat  = 0;
-  last_repair : date = now;
 }
 
-entry repair_oldest () {
-  vehicle.select(the.nb_repairs = 0).sort(last_repair).head(3).update_all({
-    nbrepairs   = 1;
-    last_repair = now
-  })
+entry incr(n : nat) {
+  vehicle.select(the.nb_repairs = n).update_all({ nbrepairs += 1  })
 }`,
     comment: <Comment3 />
   }
