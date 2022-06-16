@@ -10,7 +10,7 @@ const lightCodeTheme = require('./src/theme/prism-light-theme');
 const config = {
   title: 'Archetype Documentation',
   tagline: 'Primary documentation for Archetype language',
-  url: 'https://completium.github.io',
+  url: 'https://archetype-lang.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
