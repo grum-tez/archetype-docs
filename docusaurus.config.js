@@ -77,7 +77,7 @@ const config = {
 
       },
       navbar: {
-        hideOnScroll: true,
+        hideOnScroll: false,
         logo: {
           alt: 'Archetype Logo',
           src: 'img/logo-light.svg',
