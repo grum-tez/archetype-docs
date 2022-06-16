@@ -23,7 +23,7 @@ completium-cli set mode archetype js
 ```
 ### Docker
 
-Install Docker version of Archetype compiler with:
+Install Docker container of Archetype compiler with:
 ```
 completium-cli install archetype
 ```
