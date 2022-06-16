@@ -14,7 +14,7 @@ completium-cli init
 By default, Completium-CLI uses the [JS version](https://www.npmjs.com/package/@completium/archetype) of Archetype compiler.
 
 :::caution
-The JS version of Archetype compiler fails when the contract reaches a certain size. It is recommended to use the docker image or the binary version of the compiler.
+The JS version of Archetype compiler fails when the contract reaches a certain size. It is recommended to use the docker container or the binary version of the compiler.
 :::
 
 Switch back to JS compiler from other compiler modes (docker, binary) with:
@@ -82,13 +82,13 @@ The extension provides:
 Like Completium CLI, the Archetype extension uses by default the JS version of Archetype compiler.
 
 :::caution
-The JS version of Archetype compiler fails when the contract reaches a certain size. It is recommended to switch to the docker image or to the binary version of the compiler.
+The JS version of Archetype compiler fails when the contract reaches a certain size. It is recommended to switch to the docker container or to the binary version of the compiler.
 :::
 
 ### Docker
 
 This requires [docker](https://www.docker.com/products/docker-desktop/) to be installed:
-1. install the [latest image](https://hub.docker.com/r/completium/archetype) of Archetype compiler with `docker pull completium/archetype:latest`
+1. install the [latest container](https://hub.docker.com/r/completium/archetype) of Archetype compiler with `docker pull completium/archetype:latest`
 2. go to VS Code Settings, search for `Archetype: Archetype Mode` and *select* `docker`
 
 ### Binary
