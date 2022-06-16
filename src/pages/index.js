@@ -180,7 +180,7 @@ asset vehicle {
 }
 
 entry incr(n : nat) {
-  vehicle.select(the.nb_repairs = n).update_all({ nbrepairs += 1 })
+  vehicle.select(the.nb_repairs = n).update_all({ nb_repairs += 1 })
 }`,
     comment: <Comment3 />
   }
