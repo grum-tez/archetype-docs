@@ -91,13 +91,13 @@ const config = {
             sidebarId: 'docs',
             label: 'Docs',
           },
-          {
+          /*{
             type: 'docSidebar',
             position: 'left',
             docId: 'templates/contracts',
             sidebarId: 'templates',
             label: 'Templates',
-          },
+          },*/
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             type: 'docsVersionDropdown',

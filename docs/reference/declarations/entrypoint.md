@@ -108,7 +108,7 @@ For example, the following declares a storage [variable](/docs/reference/declara
 variable bar : nat = 0
 
 getter getBar() : nat {
-  return bar;
+  return bar
 }
 ```
 Note that the returned value's [type](/docs/reference/types) (here [`nat`](/docs/reference/types#nat))is specified after the list of arguments (after a semicolon).

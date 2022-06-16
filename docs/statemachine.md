@@ -36,7 +36,7 @@ transition accept() {
 }
 ```
 
-See the [transition](/docs/reference/declarations/compositetypes#transition) article for more information.
+See the [transition](/docs/reference/declarations/entrypoint#transition) article for more information.
 
 ## Check state
 

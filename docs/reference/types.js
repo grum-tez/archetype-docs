@@ -328,7 +328,7 @@ export const types = {
   {
     desc: <div>Number of seconds expressed in seconds, minutes, hours or weeks, for operations on dates.</div>,
     link: '#duration',
-    examples: [ '10s', '5m', '18h', '3d', '1w', '3w8d4h34m18s' ],
+    examples: [ '10s', '5m', '18h', '3d', '1w', '5m10s', '5d12h', '3w8d4h34m18s' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "int",
     michelson_ref_url: michelson_ref_base_url + '/#type-timestamp',
