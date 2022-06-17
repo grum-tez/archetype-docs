@@ -33,13 +33,42 @@ A Non-Fungible Token is a unit of data. NFTs can represent digital files such as
 <Constant data={templates.fa2.operator_for_all} />
 
 ## Functions
+
+### `get_from_address(txs)`
+
+<Builtin data={templates.fa2.get_from_address} />
+
+### `check_owner_and_operator(txs)`
+
+<Builtin data={templates.fa2.check_owner_and_operator} />
+
 ## Entrypoints
 
-### `update_operators`
+### `update_operators(upl)`
 
 <Builtin data={templates.fa2.update_operators} />
 
-### `update_operator_for_all`
+### `update_operator_for_all(upl)`
 
 <Builtin data={templates.fa2.update_operator_forall} />
+
+### `do_transfer(txs)`
+
+<Builtin data={templates.fa2.do_transfer} />
+
+### `transfer_gasless(batch)`
+
+<Builtin data={templates.fa2.transfer_gasless} />
+
+### `transfer(txs)`
+
+<Builtin data={templates.fa2.transfer} />
+
+### `mint(tow, tid, tmd, roy)`
+
+<Builtin data={templates.fa2.mint} />
+
+### `burn(tid)`
+
+<Builtin data={templates.fa2.burn} />
 

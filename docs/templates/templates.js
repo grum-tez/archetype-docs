@@ -32,6 +32,13 @@ import Fa2Operators from '@site/src/components/desc/fa2_operators.md'
 import Fa2OperatorForAll from '@site/src/components/desc/fa2_operator_forall.md'
 import Fa2UpdateOperators from '@site/src/components/desc/fa2_update_operators.md'
 import Fa2UpdateOperatorForall from '@site/src/components/desc/fa2_update_operator_forall.md'
+import Fa2TransferGasless from '@site/src/components/desc/fa2_transfer_gasless.md'
+import Fa2Transfer from '@site/src/components/desc/fa2_transfer.md'
+import Fa2GetFromAddress from '@site/src/components/desc/fa2_get_from_address.md'
+import Fa2Mint from '@site/src/components/desc/fa2_mint.md'
+import Fa2Burn from '@site/src/components/desc/fa2_burn.md'
+import Fa2DoTransfer from '@site/src/components/desc/fa2_do_transfer.md'
+import Fa2CheckOwner from '@site/src/components/desc/fa2_check_owner.md'
 
 const link_prefix = '/docs/templates/'
 
@@ -291,6 +298,156 @@ export const templates = {
 
       ]
     },
+    do_transfer: {
+      desc: <Fa2DoTransfer />,
+      sig: '',
+      parameters: [
+        {
+          type: 'list<transfer_arg>',
+          typeUrl: 'list<T>',
+          alias: 'txs',
+          desc: <div>List of pairs of sender address and transfer destination.</div>
+        },
+      ],
+      fails: [
+
+      ],
+      related: [
+
+      ]
+    },
+    transfer_gasless: {
+      desc: <Fa2TransferGasless />,
+      sig: '',
+      parameters: [
+        {
+          type: 'list<list<transfer_arg> * (key * signature)>',
+          typeUrl: 'list<T>',
+          alias: 'batch',
+          desc: <div>List of pairs of permits (key and signature) and transfer specification.</div>
+        },
+      ],
+      fails: [
+
+      ],
+      related: [
+
+      ]
+    },
+    transfer: {
+      desc: <Fa2Transfer />,
+      sig: '',
+      parameters: [
+        {
+          type: 'list<transfer_arg>',
+          typeUrl: 'list<T>',
+          alias: 'txs',
+          desc: <div>List of pairs of sender address and transfer destination.</div>
+        },
+      ],
+      fails: [
+
+      ],
+      related: [
+
+      ]
+    },
+    get_from_address: {
+      desc: <Fa2GetFromAddress />,
+      sig: '',
+      parameters: [
+        {
+          type: 'list<transfer_arg>',
+          typeUrl: 'list<T>',
+          alias: 'txs',
+          desc: <div>List of pairs of sender address and transfer destination.</div>
+        },
+      ],
+      fails: [
+
+      ],
+      returns: {
+        type: 'option<address>',
+        desc: ''
+      },
+      related: [
+
+      ]
+    },
+    check_owner_and_operator: {
+      desc: <Fa2CheckOwner />,
+      sig: '',
+      parameters: [
+        {
+          type: 'list<transfer_arg>',
+          typeUrl: 'list<T>',
+          alias: 'txs',
+          desc: <div>List of pairs of sender address and transfer destination.</div>
+        },
+      ],
+      fails: [
+
+      ],
+      returns: {
+        type: 'bool',
+        desc: ''
+      },
+      related: [
+
+      ]
+    },
+    mint: {
+      desc: <Fa2Mint />,
+      sig: '',
+      parameters: [
+        {
+          type: 'address',
+          alias: 'tow',
+          desc: <div>Owner.</div>
+        },
+        {
+          type: 'nat',
+          alias: 'tid',
+          desc: <div>Token identifier.</div>
+        },
+        {
+          type: 'map<string, bytes>',
+          typeUrl: 'map<K,%20V>',
+          alias: 'tmd',
+          desc: <div>Token metadata.</div>
+        },
+        {
+          type: 'list<part>',
+          typeUrl: 'list<T>',
+          alias: 'roy',
+          desc: <div>Royalties.</div>
+        },
+      ],
+      fails: [
+
+      ],
+      related: [
+
+      ]
+    },
+    burn: {
+      desc: <Fa2Burn />,
+      sig: '',
+      parameters: [
+        {
+          type: 'nat',
+          alias: 'itokenid',
+          desc: <div>Token identifier.</div>
+        },
+      ],
+      fails: [
+
+      ],
+      related: [
+
+      ]
+    },
+
 
   },
   a2: {
