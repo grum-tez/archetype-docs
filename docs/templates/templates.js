@@ -482,7 +482,8 @@ export const templates = {
         desc: <div><code>addr</code>'s permit <code>permit_key</code> expiry or default expiry if not found </div>
       },
       related: [
-        { keyword: 'paused', link: '/docs/templates/pausable#paused' },
+        { keyword: 'default_expiry', link: '/docs/templates/permits#default_expiry' },
+        { keyword: 'permits', link: '/docs/templates/permits#permits-1' },
       ]
     },
     has_expired: {
@@ -507,7 +508,7 @@ export const templates = {
         desc: <div></div>
       },
       related: [
-        { keyword: 'paused', link: '/docs/templates/pausable#paused' },
+        { keyword: 'permits', link: '/docs/templates/permits#permits-1' },
       ]
     },
     set_expiry: {
@@ -525,10 +526,27 @@ export const templates = {
         },
       ],
       fails: [
-
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is paused.</div>
+        },
+        {
+          keyword: '"EXPIRY_TOO_BIG"',
+          desc: <div>When <code>iv</code> is some value greater the <code>default_expiry</code>.</div>
+        },
+        {
+          keyword: '("PERMIT_USER_NOT_FOUND", caller)',
+          desc: <div>When <code>caller</code> is not found in <code>permits</code>.</div>
+        },
+        {
+          keyword: '("PERMIT_NOT_FOUND", (caller, p))',
+          desc: <div>When <code>ip</code> is some value of a permit key not found in <code>caller</code>'s permits.</div>
+        }
       ],
       related: [
-        { keyword: 'paused', link: '/docs/templates/pausable#paused' },
+        { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' },
+        { keyword: 'permits', link: '/docs/templates/permits#permits-1' },
+        { keyword: 'default_expiry', link: '/docs/templates/permits#default_expiry' },
       ]
     },
     set_default_expiry: {
@@ -541,10 +559,18 @@ export const templates = {
         },
       ],
       fails: [
-
+        {
+          keyword: '"INVALID_CALLER"',
+          desc: <div>When <code>caller</code> is not <code>owner</code></div>
+        },
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is paused.</div>
+        },
       ],
       related: [
-        { keyword: 'paused', link: '/docs/templates/pausable#paused' },
+        { keyword: 'default_expiry', link: '/docs/templates/permits#default_expiry' },
+        { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' },
       ]
     },
   },

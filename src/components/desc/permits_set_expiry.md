@@ -25,3 +25,5 @@ entry set_expiry(iv : option<nat>, ip : option<bytes>) {
   }
 }
 ```
+
+[`entry`](/docs/reference/declarations/entrypoint#entry) [`require`](/docs/reference/declarations/entrypoint#require) [`effect`](/docs/reference/declarations/entrypoint#effect) [`const`](/docs/reference/instructions/localvariable#const) [`?=`](/docs/reference/instructions/localvariable#) [`[]`](/docs/reference/expressions/asset#ak--asset_keya) [`match`](/docs/reference/instructions/control#match-with) [`begin`](/docs/reference/instructions/sequence) [`if`](/docs/reference/instructions/control#if) [`?:`](/docs/reference/expressions/controls#a--b--c) [`[]`](/docs/reference/expressions/operators/access#map) [`update`](/docs/reference/instructions/asset#aupdatek--u-) [`remove`](/docs/reference/instructions/asset#aremovek)
