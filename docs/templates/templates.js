@@ -26,6 +26,12 @@ import PermitsGetExpiry from '@site/src/components/desc/permits_get_expiry.md'
 import PermitsHasExpired from '@site/src/components/desc/permits_has_expired.md'
 import PermitsSetDefaultExpiry from '@site/src/components/desc/permits_set_default_expiry.md'
 import PermitsSetExpiry from '@site/src/components/desc/permits_set_expiry.md'
+import Fa2Ledger from '@site/src/components/desc/fa2_ledger.md'
+import Fa2Royalties from '@site/src/components/desc/fa2_royalties.md'
+import Fa2Operators from '@site/src/components/desc/fa2_operators.md'
+import Fa2OperatorForAll from '@site/src/components/desc/fa2_operator_forall.md'
+import Fa2UpdateOperators from '@site/src/components/desc/fa2_update_operators.md'
+import Fa2UpdateOperatorForall from '@site/src/components/desc/fa2_update_operator_forall.md'
 
 const link_prefix = '/docs/templates/'
 
@@ -217,6 +223,75 @@ export const templates = {
         { label : 'Token metadata', url: '/docs/templates/tokenmetadata' },
       ]
     },
+    ledger: {
+      desc: <Fa2Ledger />,
+      type: 'big_map<nat, address>',
+      typeUrl : 'big_map<K,%20V>',
+      related: [
+        { keyword: 'transfer', link: '/docs/templates/fa12#transferfrom-to-value' },
+      ],
+    },
+    royalties: {
+      desc: <Fa2Royalties />,
+      type: 'big_map<nat, list<part>>',
+      typeUrl : 'big_map<K,%20V>',
+      related: [
+        { keyword: 'transfer', link: '/docs/templates/fa12#transferfrom-to-value' },
+      ],
+    },
+    operators: {
+      desc: <Fa2Operators />,
+      type: 'big_map<address * nat * address, unit>',
+      typeUrl : 'big_map<K,%20V>',
+      related: [
+        { keyword: 'transfer', link: '/docs/templates/fa12#transferfrom-to-value' },
+      ],
+    },
+    operator_for_all: {
+      desc: <Fa2OperatorForAll />,
+      type: 'big_map<address * address, unit>',
+      typeUrl : 'big_map<K,%20V>',
+      related: [
+        { keyword: 'transfer', link: '/docs/templates/fa12#transferfrom-to-value' },
+      ],
+    },
+    update_operators: {
+      desc: <Fa2UpdateOperators />,
+      sig: 'update_operators',
+      parameters: [
+        {
+          type: 'list<or<operator_param, operator_param>>',
+          typeUrl: 'list<T>',
+          alias: 'upl',
+          desc: <div>List of operators to add or remove.</div>
+        },
+      ],
+      fails: [
+
+      ],
+      related: [
+
+      ]
+    },
+    update_operator_forall: {
+      desc: <Fa2UpdateOperatorForall />,
+      sig: 'update_operator_for_all',
+      parameters: [
+        {
+          type: 'list<or<address, address>>',
+          typeUrl: 'list<T>',
+          alias: 'upl',
+          desc: <div>List of operators to add or remove.</div>
+        },
+      ],
+      fails: [
+
+      ],
+      related: [
+
+      ]
+    },
+
   },
   a2: {
     info: {
@@ -227,7 +302,8 @@ export const templates = {
         { label : 'TZIP-15', url: 'https://tzip.tezosagora.org/proposal/tzip-15/' },
         { label : 'TZIP-16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
       ],
-    }
+    },
+
   },
   multisig: {
     info: {

@@ -13,3 +13,33 @@ Implements [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-7/) norm for toke
 A Non-Fungible Token is a unit of data. NFTs can represent digital files such as art, audio, videos, items in video games and other forms of creative work.
 
 <TemplateInfo data={templates.fa2.info} />
+
+## Storage
+
+### `ledger`
+
+<Constant data={templates.fa2.ledger} />
+
+### `royalties`
+
+<Constant data={templates.fa2.royalties} />
+
+### `operators`
+
+<Constant data={templates.fa2.operators} />
+
+### `operator_for_all`
+
+<Constant data={templates.fa2.operator_for_all} />
+
+## Functions
+## Entrypoints
+
+### `update_operators`
+
+<Builtin data={templates.fa2.update_operators} />
+
+### `update_operator_for_all`
+
+<Builtin data={templates.fa2.update_operator_forall} />
+
