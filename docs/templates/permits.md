@@ -31,12 +31,22 @@ It is required to copy this template in the created contract to benefit from the
 
 ### `get_default_expiry(addr)`
 
+<Builtin data={templates.permits.get_default_expiry} />
+
 ### `get_expiry(addr, permitkey)`
 
+<Builtin data={templates.permits.get_expiry} />
+
 ### `has_expired(userp, expiry)`
+
+<Builtin data={templates.permits.has_expired} />
 
 ## Entrypoints
 
 ### `set_expiry(v, p)`
 
+<Builtin data={templates.permits.set_expiry} />
+
 ### `set_default_expiry(v)`
+
+<Builtin data={templates.permits.set_default_expiry} />

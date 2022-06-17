@@ -21,6 +21,11 @@ import Permits from '@site/src/components/desc/permits.md'
 import DefaultExpiry from '@site/src/components/desc/permits_default_expiry.md'
 import TokenMetadata from '@site/src/components/desc/token_metadata.md'
 import SetTokenMetadata from '@site/src/components/desc/token_set_metadata.md'
+import PermitsGetDefaultExpiry from '@site/src/components/desc/permits_get_default_expiry.md'
+import PermitsGetExpiry from '@site/src/components/desc/permits_get_expiry.md'
+import PermitsHasExpired from '@site/src/components/desc/permits_has_expired.md'
+import PermitsSetDefaultExpiry from '@site/src/components/desc/permits_set_default_expiry.md'
+import PermitsSetExpiry from '@site/src/components/desc/permits_set_expiry.md'
 
 const link_prefix = '/docs/templates/'
 
@@ -434,7 +439,114 @@ export const templates = {
       related: [
         { keyword: 'Variable', link: '/docs/reference/declarations/storage#variable' },
       ],
-    }
+    },
+    get_default_expiry: {
+      desc: <PermitsGetDefaultExpiry />,
+      parameters: [
+        {
+          type: 'address',
+          alias: 'addr',
+          desc: <div>Address to get expiry of</div>
+        },
+      ],
+      fails: [
+
+      ],
+      returns: {
+        type: 'nat',
+        desc: <div><code>addr</code>'s expiry or default expiry if not found </div>
+      },
+      related: [
+        { keyword: 'paused', link: '/docs/templates/pausable#paused' },
+      ]
+    },
+    get_expiry: {
+      desc: <PermitsGetExpiry />,
+      parameters: [
+        {
+          type: 'address',
+          alias: 'addr',
+          desc: <div>Address to get expiry of</div>
+        },
+        {
+          type: 'bytes',
+          alias: 'permit_key',
+          desc: <div>Permit key</div>
+        },
+      ],
+      fails: [
+
+      ],
+      returns: {
+        type: 'nat',
+        desc: <div><code>addr</code>'s permit <code>permit_key</code> expiry or default expiry if not found </div>
+      },
+      related: [
+        { keyword: 'paused', link: '/docs/templates/pausable#paused' },
+      ]
+    },
+    has_expired: {
+      desc: <PermitsHasExpired />,
+      parameters: [
+        {
+          type: 'user_permit',
+          alias: 'up',
+          desc: <div>User permit</div>
+        },
+        {
+          type: 'nat',
+          alias: 'e',
+          desc: <div>Expiry</div>
+        },
+      ],
+      fails: [
+
+      ],
+      returns: {
+        type: 'bool',
+        desc: <div></div>
+      },
+      related: [
+        { keyword: 'paused', link: '/docs/templates/pausable#paused' },
+      ]
+    },
+    set_expiry: {
+      desc: <PermitsSetExpiry />,
+      parameters: [
+        {
+          type: 'option<nat>',
+          alias: 'v',
+          desc: <div>User permit</div>
+        },
+        {
+          type: 'option<bytes>',
+          alias: 'p',
+          desc: <div>Expiry</div>
+        },
+      ],
+      fails: [
+
+      ],
+      related: [
+        { keyword: 'paused', link: '/docs/templates/pausable#paused' },
+      ]
+    },
+    set_default_expiry: {
+      desc: <PermitsSetDefaultExpiry />,
+      parameters: [
+        {
+          type: 'nat',
+          alias: 'v',
+          desc: <div>New default expiry value</div>
+        },
+      ],
+      fails: [
+
+      ],
+      related: [
+        { keyword: 'paused', link: '/docs/templates/pausable#paused' },
+      ]
+    },
   },
   token_metadata: {
     info: {
