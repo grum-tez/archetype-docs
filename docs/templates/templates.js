@@ -30,13 +30,15 @@ import PermitsSetExpiry from '@site/src/components/desc/permits_set_expiry.md'
 const link_prefix = '/docs/templates/'
 
 export const templates = {
-  list: [
+  tzips: [
     { label : 'FA 1.2', link : link_prefix + 'fa12', desc : <div>Implements <Link to="https://tzip.tezosagora.org/proposal/tzip-7/">TZIP-7</Link> norm for fungible Token</div> },
     { label : 'FA 2', link : link_prefix + 'fa2', desc : <div>Implements <Link to="https://tzip.tezosagora.org/proposal/tzip-12/">TZIP-12</Link> norm for tokens (Non Fungible, Fongible, Multi)</div> },
     { label : 'A 2', link : link_prefix + 'a2', desc : <div>Implements <Link to="https://tzip.tezosagora.org/proposal/tzip-15/">TZIP-15</Link> norm for whitelisting process</div> },
     { label : 'Metadata', link : link_prefix + 'metadata', desc : <div>Implements <Link to="https://tzip.tezosagora.org/proposal/tzip-16/">TZIP-16</Link> norm for contract's metadata</div> },
     { label : 'Permits', link : link_prefix + 'permits', desc : <div>Implements <Link to="https://tzip.tezosagora.org/proposal/tzip-17/">TZIP-17</Link> norm for feeless operations</div> },
     { label : 'Token metadata', link : link_prefix + 'tokenmetadata', desc : <div>Implements <Link to="https://tzip.tezosagora.org/proposal/tzip-17/">TZIP-21</Link> norm for token metadata</div> },
+  ],
+  others: [
     { label : 'MultiSig', link : link_prefix + 'multisig', desc : 'Execute operations signed by a required number of managers' },
     { label : 'Pausable', link : link_prefix + 'pausable', desc : "Pausable entrypoints" },
     { label : 'Ownership', link : link_prefix + 'ownership', desc : 'Transferrable contract owner' },
@@ -47,8 +49,8 @@ export const templates = {
       author: 'Completium',
       authorurl: 'https://completium.com/',
       norms: [
-        { label : 'TZIP4', url: 'https://tzip.tezosagora.org/proposal/tzip-4/' },
-        { label : 'TZIP7', url: 'https://tzip.tezosagora.org/proposal/tzip-7/' },
+        { label : 'TZIP-4', url: 'https://tzip.tezosagora.org/proposal/tzip-4/' },
+        { label : 'TZIP-7', url: 'https://tzip.tezosagora.org/proposal/tzip-7/' },
       ]
     },
     transfer: {
