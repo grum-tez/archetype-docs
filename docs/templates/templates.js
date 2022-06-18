@@ -26,6 +26,9 @@ import PermitsGetExpiry from '@site/src/components/desc/permits_get_expiry.md'
 import PermitsHasExpired from '@site/src/components/desc/permits_has_expired.md'
 import PermitsSetDefaultExpiry from '@site/src/components/desc/permits_set_default_expiry.md'
 import PermitsSetExpiry from '@site/src/components/desc/permits_set_expiry.md'
+import PermitsPermit from '@site/src/components/desc/permits_permit.md'
+import PermitsConsumePermit from '@site/src/components/desc/permits_consume_permit.md'
+import PermitsCheckPermit from '@site/src/components/desc/permits_check_permit.md'
 import Fa2Ledger from '@site/src/components/desc/fa2_ledger.md'
 import Fa2Royalties from '@site/src/components/desc/fa2_royalties.md'
 import Fa2Operators from '@site/src/components/desc/fa2_operators.md'
@@ -806,6 +809,105 @@ export const templates = {
       related: [
         { keyword: 'default_expiry', link: '/docs/templates/permits#default_expiry' },
         { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' },
+      ]
+    },
+    permit: {
+      desc: <PermitsPermit />,
+      parameters: [
+        {
+          type: 'key',
+          alias: 'pk',
+          desc: <div>Public key that signed <code>data</code></div>
+        },
+        {
+          type: 'signature',
+          alias: 'sig',
+          desc: <div>Signed <code>data</code> by <code>pk</code>.</div>
+        },
+        {
+          type: 'bytes',
+          alias: 'data',
+          desc: <div>Permit data.</div>
+        },
+      ],
+      fails: [
+        {
+          keyword: '"INVALID_CALLER"',
+          desc: <div>When <code>caller</code> is not <code>owner</code></div>
+        },
+        {
+          keyword: '("MISSIGNED", to_sign)',
+          desc: <div>When <code>sign</code> is not obtained from <code>data</code>.</div>
+        },
+      ],
+      related: [
+        { keyword: 'permits', link: '/docs/templates/permits#permits-1' },
+      ]
+    },
+    consume_permit: {
+      desc: <PermitsConsumePermit />,
+      parameters: [
+        {
+          type: 'address',
+          alias: '%from',
+          desc: <div>Public key that signed <code>data</code></div>
+        },
+        {
+          type: 'signature',
+          alias: 'sig',
+          desc: <div>Signed <code>data</code> by <code>pk</code>.</div>
+        },
+        {
+          type: 'bytes',
+          alias: 'data',
+          desc: <div>Permit data.</div>
+        },
+      ],
+      fails: [
+        {
+          keyword: '"INVALID_CALLER"',
+          desc: <div>When <code>caller</code> is not <code>owner</code></div>
+        },
+        {
+          keyword: '("MISSIGNED", to_sign)',
+          desc: <div>When <code>sign</code> is not obtained from <code>data</code>.</div>
+        },
+      ],
+      related: [
+        { keyword: 'permits', link: '/docs/templates/permits#permits-1' },
+      ]
+    },
+    check_permit: {
+      desc: <PermitsCheckPermit />,
+      parameters: [
+        {
+          type: 'address',
+          alias: '%from',
+          desc: <div>Public key that signed <code>data</code></div>
+        },
+        {
+          type: 'signature',
+          alias: 'sig',
+          desc: <div>Signed <code>data</code> by <code>pk</code>.</div>
+        },
+        {
+          type: 'bytes',
+          alias: 'data',
+          desc: <div>Permit data.</div>
+        },
+      ],
+      fails: [
+        {
+          keyword: '"INVALID_CALLER"',
+          desc: <div>When <code>caller</code> is not <code>owner</code></div>
+        },
+        {
+          keyword: '("MISSIGNED", to_sign)',
+          desc: <div>When <code>sign</code> is not obtained from <code>data</code>.</div>
+        },
+      ],
+      related: [
+        { keyword: 'permits', link: '/docs/templates/permits#permits-1' },
       ]
     },
   },

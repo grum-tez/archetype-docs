@@ -6,9 +6,9 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 function get_from_address(txs : list<transfer_arg>) : option<address> {
   match txs with
   | hd::tl -> begin
-    var %from = hd.ta_from;
+    const %from = hd.ta_from;
     for tx in tl do
-      dorequire(%from = tx.ta_from, FA2_NOT_OPERATOR)
+      do_require(%from = tx.ta_from, FA2_NOT_OPERATOR)
     done;
     return some(%from)
   end

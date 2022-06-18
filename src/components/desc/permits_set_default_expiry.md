@@ -5,7 +5,7 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 ```archetype
 entry set_default_expiry(v : nat) {
   called by owner
-  require { r6: is_not_paused() }
+  require { r3: is_not_paused() }
   effect {
     default_expiry := v
   }

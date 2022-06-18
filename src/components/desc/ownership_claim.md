@@ -7,7 +7,7 @@ Declared candidate calls this method to confirm it is the new contract owner.
 ```archetype
 entry claim_ownership() {
   require {
-    r1: (claim_ownership ? the = caller : false) otherwise "INVALID_CALLER"
+    ownership_r1: (owner_candidate ? the = caller : false) otherwise "INVALID_CALLER"
   }
   effect {
     owner := caller;

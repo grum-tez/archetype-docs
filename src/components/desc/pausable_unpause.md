@@ -8,7 +8,7 @@ Unpauses contract when paused.
 entry unpause() {
   called by owner
   require {
-    r2: paused otherwise "CONTRACT_NOT_PAUSED"
+    pausable_r2: paused otherwise "CONTRACT_NOT_PAUSED"
   }
   effect {
     paused := false

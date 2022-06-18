@@ -17,6 +17,16 @@ It is required to copy this template in the created contract to benefit from the
 
 <TemplateInfo data={templates.permits.info} />
 
+## Errors
+
+```archetype
+constant EXPIRY_TOO_BIG        : string = "EXPIRY_TOO_BIG"
+constant PERMIT_USER_NOT_FOUND : string = "PERMIT_USER_NOT_FOUND"
+constant PERMIT_NOT_FOUND      : string = "PERMIT_NOT_FOUND"
+constant MISSIGNED             : string = "MISSIGNED"
+constant PERMIT_EXPIRED        : string = "PERMIT_EXPIRED"
+```
+
 ## Storage
 
 ### `permits`
@@ -50,3 +60,15 @@ It is required to copy this template in the created contract to benefit from the
 ### `set_default_expiry(v)`
 
 <Builtin data={templates.permits.set_default_expiry} />
+
+### `permit(pk, sig, data)`
+
+<Builtin data={templates.permits.permit} />
+
+### `consume_permit(from, data, err)`
+
+<Builtin data={templates.permits.consume_permit} />
+
+### `check_permit(signer, sig, data)`
+
+<Builtin data={templates.permits.check_permit} />

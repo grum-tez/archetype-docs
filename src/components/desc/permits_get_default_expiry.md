@@ -4,7 +4,7 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 
 ```archetype
 function get_default_expiry(addr : address) : nat {
-  return (permits[addr] ? the.user_expiry : default_expiry)
+  return (permits[addr] ? (the.user_expiry ? the : default_expiry) : default_expiry)
 }
 ```
 
