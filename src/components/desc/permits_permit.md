@@ -4,19 +4,27 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 
 ```archetype
 entry permit(pk : key, sig : signature, data : bytes) {
-  require { r4: is_not_paused() }
+  constant {
+    user          is key_to_address(pk);
+    user_permit   is permits[user] ?
+                      (the.counter, the.user_permits) :
+                      (0, make_map<bytes, user_permit>([]));
+    pcounter      is user_permit[0];
+    puser_permits is user_permit[1];
+    to_sign       is pack(((self_address, self_chain_id), (pcounter, data)));
+    user_expiry   is get_default_expiry(user);
+  }
+  require {
+    r4: is_not_paused();
+    r5: check_signature(pk, sig, to_sign) otherwise (MISSIGNED, to_sign)
+  }
   effect {
-    const user = key_to_address(pk);
-    const empty : map<bytes, user_permit> = [];
-    const up = permits[user] ? (the.counter, the.user_permits) : (0, empty);
-    const pcounter      = up[0];
-    const puser_permits = up[1];
-    const to_sign = pack(((self_address, self_chain_id), (pcounter, data)));
-    do_require(check_signature(pk, sig, to_sign), (MISSIGNED, to_sign));
-    const e = get_default_expiry(user);
     permits.add_update(user, {
       counter += 1;
-      user_permits = put(puser_permits, data, { expiry = some(e); created_at = now })
+      user_permits = put(puser_permits, data, {
+        expiry = some(user_expiry);
+        created_at = now
+      })
     });
     for (k, v) in permits[user].user_permits do
       if has_expired(v, e)

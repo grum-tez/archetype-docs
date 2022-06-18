@@ -4,10 +4,14 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 
 ```archetype
 entry burn(tid : nat) {
-  require { r2 : is_not_paused() }
+  constant {
+    token_owner ?: ledger[tid]?.lowner otherwise FA2_TOKEN_UNDEFINED;
+  }
+  require {
+    r2 : is_not_paused();
+    r3 : token_owner = caller otherwise FA2_INSUFFICIENT_BALANCE
+  }
   effect {
-    const token_owner ?= ledger[tid]?.lowner : FA2_TOKEN_UNDEFINED;
-    do_require(token_owner = caller, FA2_INSUFFICIENT_BALANCE);
     ledger.remove(tid);
     token_metadata.remove(tid);
     royalties.remove(tid)

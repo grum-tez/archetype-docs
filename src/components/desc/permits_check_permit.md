@@ -5,11 +5,15 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 ```archetype
 entry check_permit(signer : key, sig : signature, data : bytes) {
   called by consumer
+  constant {
+    pkh      is key_to_address(signer);
+    lcounter is permits[pkh] ? the.counter : 0;
+    to_sign  is pack((self_address, lcounter, blake2b(pack(data))));
+  }
+  require {
+    r2: check_signature(signer, sig, to_sign) otherwise (MISSIGNED, data)
+  }
   effect {
-    const pkh = key_to_address(signer);
-    const lcounter = permits[pkh] ? the.counter : 0;
-    const to_sign : bytes = pack((self_address, lcounter, blake2b(pack(data))));
-    do_require(check_signature(signer, sig, to_sign), (MISSIGNED, data));
     permits.add_update(pkh, { counter = (lcounter + 1)});
   }
 }

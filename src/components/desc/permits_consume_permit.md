@@ -5,12 +5,16 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 ```archetype
 entry consume_permit(signer : address, data: bytes, err: string) {
   called by consumer
+  constant {
+    permit_key     is blake2b(data);
+    signer_expiry  is get_expiry(signer, permit_key);
+    lpermit       ?is permits[signer]                  otherwise PERMIT_USER_NOT_FOUND;
+    luser_permits ?is lpermit.user_permits[permit_key] otherwise err;
+  }
+  fail if {
+    f1 : has_expired(luser_permits, signer_expiry) with PERMIT_EXPIRED
+  }
   effect {
-    const permit_key = blake2b(data);
-    const e = get_expiry(signer, permit_key);
-    const lpermit ?= permits[signer] : PERMIT_USER_NOT_FOUND;
-    const luser_permits ?= lpermit.user_permits[permit_key] : err;
-    do_fail_if(has_expired(luser_permits, e), PERMIT_EXPIRED);
     permits[signer].user_permits.remove(permit_key)
   }
 }
