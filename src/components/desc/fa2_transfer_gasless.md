@@ -13,13 +13,8 @@ entry transfer_gasless (batch : list<list<transfer_arg> * (key * signature)>) {
     const txs = b[0];
     const pk  = b[1][0];
     const sig = b[1][1];
-    const pkh = key_to_address(pk);
-
-    const lcounter = permits[pkh] ? the.counter : 0;
-    const data : bytes = pack((selfaddress, lcounter, blake2b(pack(txs))));
-    do_require(check_signature(pk, sig, data), (MISSIGNED, data));
-    permits.add_update(pkh, { counter = (lcounter + 1)});
-
+    transfer 0tz to permits
+      call check_permits<key * signature * bytes>((pk, sig, pack(txs)));
     transfer 0tz to entry self.do_transfer(txs);
   done
 }

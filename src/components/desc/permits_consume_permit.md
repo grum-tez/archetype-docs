@@ -6,7 +6,7 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 entry consume_permit(signer : address, data: bytes, err: string) {
   called by consumer
   effect {
-    const permit_key = blake2b(pack(data));
+    const permit_key = blake2b(data);
     const e = get_expiry(signer, permit_key);
     const lpermit ?= permits[signer] : PERMIT_USER_NOT_FOUND;
     const luser_permits ?= lpermit.user_permits[permit_key] : err;

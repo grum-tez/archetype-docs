@@ -3,7 +3,7 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 <NamedDivider title="Code" width="1.5"/>
 
 ```archetype
-function check_owner_and_operator(txs : list<transfer_arg>) : bool {
+function check_operator(txs : list<transfer_arg>) : bool {
   var res = true;
   for tx in txs do
     const %from = tx.ta_from;

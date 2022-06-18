@@ -46,7 +46,7 @@
     	'declaration': /\b(?:event|constant|archetype|enum|states|variable|asset|to big_map|to iterable_big_map|record|as|initial|identified by|initialized by)\b/,
     	'entry': /\b(?:entry|transition|function|getter|view)\b/,
     	'verif': /\b(?:invariant|specification)\b/,
-    	'type': /\b(?:lambda|contract|big_map|map|set|option|list|int|nat|tez|string|rational|bytes|key|key_hash|address|sapling|signature|date|duration|bool|operation|aggregate|partition|asset_view|asset_key|asset_value|iterable_big_map)\b/,
+    	'type': /\b(?:unit|lambda|contract|big_map|map|set|option|list|int|nat|tez|string|rational|bytes|key|key_hash|address|sapling|signature|date|duration|bool|operation|aggregate|partition|asset_view|asset_key|asset_value|iterable_big_map)\b/,
     	'constant': /\b(?:self_chain_id|now|balance|transferred|self|caller|source|self_address|state|operations|metadata)\b/,
 		'control': /\b(?:assert|iter|begin|end|do|done|else|return|before|for|if|in|match|in|forall|added|removed|exists|then|the|from|to|while|with)\b/,
 		'decl': /\b(?:const|var|let some|let)\b/,
@@ -57,7 +57,7 @@
     	'crypto': /\b(?:pack|unpack|open_chest)\b/,
     	'arith': /\b(?:mod|abs|min|max)\b/,
     	'fail': /\b(?:fail|do_require|do_fail_if)\b/,
-		'error': /\b([A-Z][A-Z|_]+)\b/,
+		'error': /\b([A-Z|0-9][A-Z|0-9|_]+)\b/,
 		// Custom operators are allowed
 		'function': /:=|\+=|\-=|[=<>@^|&+\-*\/$%!~][!$%&*+\-.\/:<=>?@^|~]*\b/,
 		'punctuation': /[(){}|.,:;]|\b_\b/,
