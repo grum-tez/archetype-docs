@@ -10,7 +10,7 @@ entry consume_permit(signer : address, data: bytes, err: string) {
     const e = get_expiry(signer, permit_key);
     const lpermit ?= permits[signer] : PERMIT_USER_NOT_FOUND;
     const luser_permits ?= lpermit.user_permits[permit_key] : err;
-    do_require(not has_expired(luser_permits, e), PERMIT_EXPIRED);
+    do_fail_if(has_expired(luser_permits, e), PERMIT_EXPIRED);
     permits[signer].user_permits.remove(permit_key)
   }
 }
