@@ -55,7 +55,8 @@ entry unpause() {
 
 ### `paused`
 
-Contract's pausable state.
+<Constant data={templates.pausable.paused} />
+
 ## Functions
 
 ### `is_not_paused()`

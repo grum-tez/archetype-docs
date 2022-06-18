@@ -1,47 +1,46 @@
-import React from "react"
 import Link from '@docusaurus/Link';
-
-import Fa12Transfer from '@site/src/components/desc/fa12_transfer.md'
-import Fa12Approve from '@site/src/components/desc/fa12_approve.md'
-import Fa12Gettotalsupply from '@site/src/components/desc/fa12_gettotalsupply.md'
-import Fa12Getbalance from '@site/src/components/desc/fa12_getbalance.md'
-import Fa12Getallowance from '@site/src/components/desc/fa12_getallowance.md'
-import Fa12Ledger from '@site/src/components/desc/fa12_ledger.md'
 import Fa12Allowance from '@site/src/components/desc/fa12_allowance.md'
-import OwnershipOwner from '@site/src/components/desc/ownership_owner.md'
-import OwnershipCandidate from '@site/src/components/desc/ownership_candidate.md'
-import OwnershipDeclare from '@site/src/components/desc/ownership_declare.md'
-import OwnershipClaim from '@site/src/components/desc/ownership_claim.md'
-import PausablePaused from '@site/src/components/desc/pausable_paused.md'
-import PausablePause from '@site/src/components/desc/pausable_pause.md'
-import PausableUnpause from '@site/src/components/desc/pausable_unpause.md'
-import PausableIsnotpaused from '@site/src/components/desc/pausable_isnotpaused.md'
+import Fa12Approve from '@site/src/components/desc/fa12_approve.md'
+import Fa12Getallowance from '@site/src/components/desc/fa12_getallowance.md'
+import Fa12Getbalance from '@site/src/components/desc/fa12_getbalance.md'
+import Fa12Gettotalsupply from '@site/src/components/desc/fa12_gettotalsupply.md'
+import Fa12Ledger from '@site/src/components/desc/fa12_ledger.md'
+import Fa12Transfer from '@site/src/components/desc/fa12_transfer.md'
+import Fa2Burn from '@site/src/components/desc/fa2_burn.md'
+import Fa2CheckOwner from '@site/src/components/desc/fa2_check_owner.md'
+import Fa2DoTransfer from '@site/src/components/desc/fa2_do_transfer.md'
+import Fa2GetFromAddress from '@site/src/components/desc/fa2_get_from_address.md'
+import Fa2Ledger from '@site/src/components/desc/fa2_ledger.md'
+import Fa2Mint from '@site/src/components/desc/fa2_mint.md'
+import Fa2OperatorForAll from '@site/src/components/desc/fa2_operator_forall.md'
+import Fa2Operators from '@site/src/components/desc/fa2_operators.md'
+import Fa2Royalties from '@site/src/components/desc/fa2_royalties.md'
+import Fa2TransferGasless from '@site/src/components/desc/fa2_transfer_gasless.md'
+import Fa2Transfer from '@site/src/components/desc/fa2_transfer.md'
+import Fa2UpdateOperatorForall from '@site/src/components/desc/fa2_update_operator_forall.md'
+import Fa2UpdateOperators from '@site/src/components/desc/fa2_update_operators.md'
 import SetMetadata from '@site/src/components/desc/metadata_set.md'
-import Permits from '@site/src/components/desc/permits.md'
+import OwnershipCandidate from '@site/src/components/desc/ownership_candidate.md'
+import OwnershipClaim from '@site/src/components/desc/ownership_claim.md'
+import OwnershipDeclare from '@site/src/components/desc/ownership_declare.md'
+import OwnershipOwner from '@site/src/components/desc/ownership_owner.md'
+import PausableIsnotpaused from '@site/src/components/desc/pausable_isnotpaused.md'
+import PausablePause from '@site/src/components/desc/pausable_pause.md'
+import PausablePaused from '@site/src/components/desc/pausable_paused.md'
+import PausableUnpause from '@site/src/components/desc/pausable_unpause.md'
+import PermitsCheckPermit from '@site/src/components/desc/permits_check_permit.md'
+import PermitsConsumePermit from '@site/src/components/desc/permits_consume_permit.md'
 import DefaultExpiry from '@site/src/components/desc/permits_default_expiry.md'
-import TokenMetadata from '@site/src/components/desc/token_metadata.md'
-import SetTokenMetadata from '@site/src/components/desc/token_set_metadata.md'
 import PermitsGetDefaultExpiry from '@site/src/components/desc/permits_get_default_expiry.md'
 import PermitsGetExpiry from '@site/src/components/desc/permits_get_expiry.md'
 import PermitsHasExpired from '@site/src/components/desc/permits_has_expired.md'
+import PermitsPermit from '@site/src/components/desc/permits_permit.md'
 import PermitsSetDefaultExpiry from '@site/src/components/desc/permits_set_default_expiry.md'
 import PermitsSetExpiry from '@site/src/components/desc/permits_set_expiry.md'
-import PermitsPermit from '@site/src/components/desc/permits_permit.md'
-import PermitsConsumePermit from '@site/src/components/desc/permits_consume_permit.md'
-import PermitsCheckPermit from '@site/src/components/desc/permits_check_permit.md'
-import Fa2Ledger from '@site/src/components/desc/fa2_ledger.md'
-import Fa2Royalties from '@site/src/components/desc/fa2_royalties.md'
-import Fa2Operators from '@site/src/components/desc/fa2_operators.md'
-import Fa2OperatorForAll from '@site/src/components/desc/fa2_operator_forall.md'
-import Fa2UpdateOperators from '@site/src/components/desc/fa2_update_operators.md'
-import Fa2UpdateOperatorForall from '@site/src/components/desc/fa2_update_operator_forall.md'
-import Fa2TransferGasless from '@site/src/components/desc/fa2_transfer_gasless.md'
-import Fa2Transfer from '@site/src/components/desc/fa2_transfer.md'
-import Fa2GetFromAddress from '@site/src/components/desc/fa2_get_from_address.md'
-import Fa2Mint from '@site/src/components/desc/fa2_mint.md'
-import Fa2Burn from '@site/src/components/desc/fa2_burn.md'
-import Fa2DoTransfer from '@site/src/components/desc/fa2_do_transfer.md'
-import Fa2CheckOwner from '@site/src/components/desc/fa2_check_owner.md'
+import Permits from '@site/src/components/desc/permits.md'
+import TokenMetadata from '@site/src/components/desc/token_metadata.md'
+import SetTokenMetadata from '@site/src/components/desc/token_set_metadata.md'
+import React from "react"
 
 const link_prefix = '/docs/templates/'
 
@@ -545,7 +544,9 @@ export const templates = {
       desc: <PausablePaused />,
       type: 'bool',
       related: [
-      ],
+        { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' },
+        { keyword: 'pause', link: '/docs/templates/pausable#pause' },
+        { keyword: 'unpause', link: '/docs/templates/pausable#unpause' },      ],
     },
     pause: {
       desc: <PausablePause />,
@@ -563,7 +564,7 @@ export const templates = {
         },
       ],
       related: [
-        { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' },
+        { keyword: 'unpause', link: '/docs/templates/pausable#unpause' },
       ]
     },
     unpause: {

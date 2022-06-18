@@ -10,9 +10,6 @@ import TemplateInfo from '@site/src/components/TemplateInfo.js';
 
 Implements [TZIP-16](https://tzip.tezosagora.org/proposal/tzip-16/) norm for contract's metadata.
 
-:::info
-It is required to copy this template in the created contract to benefit from the metadata pattern.
-:::
 <TemplateInfo data={templates.metadata.info} />
 
 ## Storage
@@ -27,4 +24,17 @@ The [TZIP-16](https://tzip.tezosagora.org/proposal/tzip-16/) metadata map is dec
 
 <Builtin data={templates.metadata.set_metadata} />
 
+## Example
+
+```json
+{
+  "name": "My Coin",
+  "description": "An example of My Coin",
+  "version": "1.0",
+  "license": { "name": "MIT" },
+  "authors": ["Mysterious team <contact@my_company.com>"],
+  "homepage": "https://my_company.com",
+  "interfaces": ["TZIP-012", "TZIP-016", "TZIP-017", "TZIP-021"]
+}
+```
 
