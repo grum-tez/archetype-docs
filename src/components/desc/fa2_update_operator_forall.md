@@ -9,7 +9,7 @@ entry update_operators_for_all (upl : list<or<address, address>>) {
     for up in upl do
       match up with
       | left(op)  -> /* add */
-        operator_for_all.add({fa_oaddr = op; fa_oowner = caller})
+        operator_for_all.put({fa_oaddr = op; fa_oowner = caller})
       | right(op) -> /* remove */
         operator_for_all.remove((op, caller))
       end;

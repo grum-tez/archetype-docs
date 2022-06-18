@@ -14,6 +14,16 @@ A Non-Fungible Token is a unit of data. NFTs can represent digital files such as
 
 <TemplateInfo data={templates.fa2.info} />
 
+## Errors
+
+```archetype
+constant CALLER_NOT_OWNER         : string = "CALLER_NOT_OWNER"
+constant FA2_INSUFFICIENT_BALANCE : string = "FA2_INSUFFICIENT_BALANCE"
+constant FA2_INVALID_AMOUNT       : string = "FA2_INVALID_AMOUNT"
+constant FA2_NOT_OPERATOR         : string = "FA2_NOT_OPERATOR"
+constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
+```
+
 ## Storage
 
 ### `ledger`
