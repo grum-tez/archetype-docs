@@ -6,8 +6,8 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 entry burn(tid : nat) {
   require { r2 : is_not_paused() }
   effect {
-    do_require(ledger.contains(tid), FA2_TOKEN_UNDEFINED);
-    do_require(ledger[tid].lowner = caller, FA2_INSUFFICIENT_BALANCE);
+    const token_owner ?= ledger[tid]?.lowner : FA2_TOKEN_UNDEFINED;
+    do_require(token_owner = caller, FA2_INSUFFICIENT_BALANCE);
     ledger.remove(tid);
     token_metadata.remove(tid);
     royalties.remove(tid)
