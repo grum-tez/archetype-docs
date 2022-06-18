@@ -20,7 +20,7 @@ var theme = {
       color: "rgb(80, 250, 123)"
     }
   }, {
-    types: ["deleted"],
+    types: ["deleted", "error"],
     style: {
       color: "rgb(255, 85, 85)"
     }

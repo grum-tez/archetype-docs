@@ -57,6 +57,7 @@
     	'crypto': /\b(?:pack|unpack|open_chest)\b/,
     	'arith': /\b(?:mod|abs|min|max)\b/,
     	'fail': /\b(?:fail|do_require|do_fail_if)\b/,
+		'error': /\b([A-Z][A-Z|_]+)\b/,
 		// Custom operators are allowed
 		'function': /:=|\+=|\-=|[=<>@^|&+\-*\/$%!~][!$%&*+\-.\/:<=>?@^|~]*\b/,
 		'punctuation': /[(){}|.,:;]|\b_\b/,

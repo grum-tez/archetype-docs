@@ -11,10 +11,6 @@ import TemplateInfo from '@site/src/components/TemplateInfo.js';
 
 Implements [TZIP-17](https://tzip.tezosagora.org/proposal/tzip-17/) norm for fee-less operations.
 
-:::info
-It is required to copy this template in the created contract to benefit from the permits pattern.
-:::
-
 <TemplateInfo data={templates.permits.info} />
 
 ## Errors
