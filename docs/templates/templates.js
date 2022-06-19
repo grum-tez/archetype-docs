@@ -6,14 +6,17 @@ import Fa12Getbalance from '@site/src/components/desc/fa12_getbalance.md'
 import Fa12Gettotalsupply from '@site/src/components/desc/fa12_gettotalsupply.md'
 import Fa12Ledger from '@site/src/components/desc/fa12_ledger.md'
 import Fa12Transfer from '@site/src/components/desc/fa12_transfer.md'
+import Fa2BalanceOf from '@site/src/components/desc/fa2_balanceof.md'
 import Fa2Burn from '@site/src/components/desc/fa2_burn.md'
 import Fa2CheckOwner from '@site/src/components/desc/fa2_check_owner.md'
 import Fa2DoTransfer from '@site/src/components/desc/fa2_do_transfer.md'
 import Fa2GetFromAddress from '@site/src/components/desc/fa2_get_from_address.md'
+import Fa2GetRoyalties from '@site/src/components/desc/fa2_get_royalties.md'
 import Fa2Ledger from '@site/src/components/desc/fa2_ledger.md'
 import Fa2Mint from '@site/src/components/desc/fa2_mint.md'
 import Fa2OperatorForAll from '@site/src/components/desc/fa2_operator_forall.md'
 import Fa2Operators from '@site/src/components/desc/fa2_operators.md'
+import Fa2TransferArg from '@site/src/components/desc/fa2_transfer_arg.md'
 import Fa2Royalties from '@site/src/components/desc/fa2_royalties.md'
 import Fa2TransferGasless from '@site/src/components/desc/fa2_transfer_gasless.md'
 import Fa2Transfer from '@site/src/components/desc/fa2_transfer.md'
@@ -45,6 +48,7 @@ import SetTokenMetadata from '@site/src/components/desc/token_set_metadata.md'
 import React from "react"
 
 const link_prefix = '/docs/templates/'
+const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference'
 
 export const templates = {
   tzips: [
@@ -234,6 +238,18 @@ export const templates = {
         { label : 'Token metadata', url: '/docs/templates/tokenmetadata' },
       ]
     },
+    transfer_arg: {
+      desc: <Fa2TransferArg />,
+      type: 'record',
+      michelson: "pair",
+      michelson_ref_url: michelson_ref_base_url + '/#instr-PAIR',
+      related: [
+        { keyword: 'check_operator', link:'/docs/templates/fa2#check_operatortxs' },
+        { keyword: 'get_from', link:'/docs/templates/fa2#get_fromtxs' },
+        { keyword: 'do_transfer', link:'/docs/templates/fa2#do_transfertxs' },
+        { keyword: 'transfer_gasless', link:'/docs/templates/fa2#transfer_gaslessbatch' },
+      ]
+    },
     ledger: {
       desc: <Fa2Ledger />,
       type: 'big_map<nat, address>',
@@ -307,7 +323,7 @@ export const templates = {
       sig: '',
       parameters: [
         {
-          type: 'list<transfer_arg>',
+          type: 'list<transfer_param>',
           typeUrl: 'list<T>',
           alias: 'txs',
           desc: <div>List of pairs of sender address and transfer destination.</div>
@@ -325,7 +341,7 @@ export const templates = {
       sig: '',
       parameters: [
         {
-          type: 'list<list<transfer_arg> * (key * signature)>',
+          type: 'list<list<transfer_param> * (key * signature)>',
           typeUrl: 'list<T>',
           alias: 'batch',
           desc: <div>List of pairs of permits (key and signature) and transfer specification.</div>
@@ -343,7 +359,7 @@ export const templates = {
       sig: '',
       parameters: [
         {
-          type: 'list<transfer_arg>',
+          type: 'list<transfer_param>',
           typeUrl: 'list<T>',
           alias: 'txs',
           desc: <div>List of pairs of sender address and transfer destination.</div>
@@ -361,7 +377,7 @@ export const templates = {
       sig: '',
       parameters: [
         {
-          type: 'list<transfer_arg>',
+          type: 'list<transfer_param>',
           typeUrl: 'list<T>',
           alias: 'txs',
           desc: <div>List of pairs of sender address and transfer destination.</div>
@@ -383,7 +399,7 @@ export const templates = {
       sig: '',
       parameters: [
         {
-          type: 'list<transfer_arg>',
+          type: 'list<transfer_param>',
           typeUrl: 'list<T>',
           alias: 'txs',
           desc: <div>List of pairs of sender address and transfer destination.</div>
@@ -440,7 +456,7 @@ export const templates = {
       parameters: [
         {
           type: 'nat',
-          alias: 'itokenid',
+          alias: 'tid',
           desc: <div>Token identifier.</div>
         },
       ],
@@ -451,6 +467,39 @@ export const templates = {
 
       ]
     },
+    balance_of: {
+      desc: <Fa2BalanceOf />,
+      parameters: [
+        {
+          type: 'list<balance_of_param>',
+          alias: 'requests',
+          desc: <div>List of pairs of owner and token id to get balance of.</div>
+        },
+      ],
+      fails: [
+
+      ],
+      related: [
+        { keyword: 'getter', link: '/docs/reference/declarations/entrypoint#getter' }
+      ]
+    },
+    get_royalties: {
+      desc: <Fa2GetRoyalties />,
+      parameters: [
+        {
+          type: 'nat',
+          alias: 'tokenid',
+          desc: <div>Token identifier.</div>
+        }
+      ],
+      returns: {
+        type: 'list<part>',
+        desc: <div>List of pairs of address and percentage</div>
+      },
+      related: [
+        { keyword: 'royalties', link: '/docs/templates/fa2#royalties' }
+      ]
+    }
 
 
   },

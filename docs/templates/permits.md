@@ -70,10 +70,10 @@ constant PERMIT_EXPIRED        : string = "PERMIT_EXPIRED"
 
 <Builtin data={templates.permits.permit} />
 
-### `consume_permit(from, data, err)`
+### `consume(from, data, err)`
 
 <Builtin data={templates.permits.consume_permit} />
 
-### `check_permit(signer, sig, data)`
+### `check(signer, sig, data)`
 
 <Builtin data={templates.permits.check_permit} />

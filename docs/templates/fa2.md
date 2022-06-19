@@ -8,7 +8,7 @@ import TemplateInfo from '@site/src/components/TemplateInfo.js';
 
 # FA 2
 
-Implements [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-7/) norm for token, including non fungible.
+Implements [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-7/) norm for token, including non fungible. Required elements are marked with ⭐.
 
 A Non-Fungible Token is a unit of data. NFTs can represent digital files such as art, audio, videos, items in video games and other forms of creative work.
 
@@ -25,9 +25,15 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 ```
 [`constant`](/docs/reference/declarations/inlined) [`string`](/docs/reference/types#string)
 
+## Records
+
+### `transfer_param` ⭐
+
+<Constant data={templates.fa2.transfer_arg} />
+
 ## Storage
 
-### `ledger`
+### `ledger` ⭐
 
 <Constant data={templates.fa2.ledger} />
 
@@ -35,7 +41,7 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 
 <Constant data={templates.fa2.royalties} />
 
-### `operators`
+### `operators` ⭐
 
 <Constant data={templates.fa2.operators} />
 
@@ -45,7 +51,7 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 
 ## Functions
 
-### `get_from_address(txs)`
+### `get_from(txs)`
 
 <Builtin data={templates.fa2.get_from_address} />
 
@@ -55,7 +61,7 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 
 ## Entrypoints
 
-### `update_operators(upl)`
+### `update_operators(upl)` ⭐
 
 <Builtin data={templates.fa2.update_operators} />
 
@@ -71,7 +77,7 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 
 <Builtin data={templates.fa2.transfer_gasless} />
 
-### `transfer(txs)`
+### `transfer(txs)` ⭐
 
 <Builtin data={templates.fa2.transfer} />
 
@@ -82,6 +88,17 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 ### `burn(tid)`
 
 <Builtin data={templates.fa2.burn} />
+
+### `balance_of(requests)` ⭐
+
+<Builtin data={templates.fa2.balance_of} />
+
+## Views
+
+### `get_royalties(tokenid)`
+
+<Builtin data={templates.fa2.get_royalties} />
+
 
 
 

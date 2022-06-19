@@ -3,7 +3,7 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 <NamedDivider title="Code" width="1.5"/>
 
 ```archetype
-entry consume_permit(signer : address, data: bytes, err: string) {
+entry consume(signer : address, data: bytes, err: string) {
   called by consumer
   constant {
    permit_key     is blake2b(data);

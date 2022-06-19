@@ -49,7 +49,7 @@
     	'expr' : /\b(?:expr[0-9]|E([0-9]|n))\b/,
 		'unkeyworded' : /%(?:.*)/,
     	'archetype': /\b(?:archetype|with metadata)\b/,
-    	'builtin': /\b(?:blake2b|key_to_address|check_signature|int_to_nat|call_view|slice|mutez_to_nat|fold|get_entrypoint|reverse|require_entrypoint|exec_lambda|apply_lambda|get_some|is_some|left|right|some|none|isempty|length|put|get|transfer|call|emit|prepend|make_operation)\b/,
+    	'builtin': /\b(?:make_list|blake2b|key_to_address|check_signature|int_to_nat|call_view|slice|mutez_to_nat|fold|get_entrypoint|reverse|require_entrypoint|exec_lambda|apply_lambda|get_some|is_some|left|right|some|none|isempty|length|put|get|transfer|call|emit|prepend|make_operation)\b/,
 		'section': /\b(?:is|no transfer|state is|called by|sourced by|require|fail if|effect|with effect|from|to|when|otherwise|shadow|postcondition|fails)\b/,
     	'declaration': /\b(?:event|constant|archetype|enum|states|variable|asset|to big_map|to iterable_big_map|record|as|initial|identified by|initialized by)\b/,
     	'entry': /\b(?:entry|transition|function|getter|view)\b/,

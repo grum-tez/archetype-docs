@@ -3,7 +3,7 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 <NamedDivider title="Code" width="1.5"/>
 
 ```archetype
-entry check_permit(signer : key, sig : signature, data : bytes) {
+entry check(signer : key, sig : signature, data : bytes) {
   called by consumer
   constant {
     pkh      is key_to_address(signer);
