@@ -18,3 +18,4 @@ entry burn(tid : nat) {
   }
 }
 ```
+[`entry`](/docs/reference/declarations/entrypoint#entry) [`nat`](/docs/reference/types#nat) [`constant`](/docs/reference/declarations/entrypoint#constant) [`?.`](/docs/reference/expressions/asset#ak--asset_keyaf-1) [`require`](/docs/reference/declarations/entrypoint#require) [`=`](/docs/reference/expressions/operators/arithmetic#a--b-7) [`caller`](/docs/reference/expressions/constants#caller) [`effect`](/docs/reference/declarations/entrypoint#effect) [`remove`](/docs/reference/instructions/asset#aremovek)

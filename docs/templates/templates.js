@@ -458,7 +458,7 @@ export const templates = {
         {
           type: 'address',
           alias: 'tow',
-          desc: <div>Owner.</div>
+          desc: <div>Token owner.</div>
         },
         {
           type: 'nat',
@@ -475,14 +475,22 @@ export const templates = {
           type: 'list<part>',
           typeUrl: 'list<T>',
           alias: 'roy',
-          desc: <div>Royalties.</div>
+          desc: <div>Token royalties.</div>
         },
       ],
       fails: [
-
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is already paused.</div>
+        },
+        {
+          keyword: '("ledger", "KEY_EXISTS")',
+          desc: <div>When token already exists in <code>ledger</code>.</div>
+        }
       ],
       related: [
-
+        { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' },
+        { keyword: 'token_metadata', link: '/docs/templates/tokenmetadata#token_metadata' },
       ]
     },
     burn: {
@@ -496,7 +504,14 @@ export const templates = {
         },
       ],
       fails: [
-
+        {
+          keyword: '"FA2_TOKEN_UNDEFINED"',
+          desc: <div>When <code>tid</code> is not found in <code>ledger</code>.</div>
+        },
+        {
+          keyword: '"FA2_INSUFFICIENT_BALANCE"',
+          desc: <div>When <code>tid</code>'s owner is not <code>caller</code>.</div>
+        }
       ],
       related: [
 
