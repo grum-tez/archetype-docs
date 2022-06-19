@@ -69,5 +69,13 @@
 		// Custom operators are allowed
 		'function': /:=|\+=|\-=|[=<>@^|&+\-*\/$%!~][!$%&*+\-.\/:<=>?@^|~]*\b/,
 		'punctuation': /[(){}|.,:;]|\b_\b/,
+		'archetype-function': {
+			pattern: /([a-z][a-z|_]+)\(/,
+			inside: {
+				'archetype': {
+					pattern : /\b([a-z][a-z|_]+)\b/
+				}
+			}
+		},
 	};
 }(Prism));

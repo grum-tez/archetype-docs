@@ -5,7 +5,7 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 ```archetype
 entry burn(tid : nat) {
   constant {
-    token_owner ?: ledger[tid]?.lowner otherwise FA2_TOKEN_UNDEFINED;
+    token_owner ?is ledger[tid]?.lowner otherwise FA2_TOKEN_UNDEFINED;
   }
   require {
     r2 : is_not_paused();

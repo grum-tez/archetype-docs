@@ -22,8 +22,13 @@ constant PERMIT_NOT_FOUND      : string = "PERMIT_NOT_FOUND"
 constant MISSIGNED             : string = "MISSIGNED"
 constant PERMIT_EXPIRED        : string = "PERMIT_EXPIRED"
 ```
+[`constant`](/docs/reference/declarations/inlined) [`string`](/docs/reference/types#string)
 
 ## Storage
+
+### `consumer`
+
+<Constant data={templates.permits.consumer} />
 
 ### `permits`
 
@@ -48,6 +53,10 @@ constant PERMIT_EXPIRED        : string = "PERMIT_EXPIRED"
 <Builtin data={templates.permits.has_expired} />
 
 ## Entrypoints
+
+### `manage_consumer(op)`
+
+<Builtin data={templates.permits.manage_consumer} />
 
 ### `set_expiry(v, p)`
 

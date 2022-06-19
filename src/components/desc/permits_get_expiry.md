@@ -5,7 +5,9 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 ```archetype
 function get_expiry(addr : address, permit_key : bytes) : nat {
   return (permits[addr] ? let d = (the.user_expiry ? the : default_expiry) in
-    (the.user_permits[permit_key] ? (the.expiry ? the : default_expiry) : d) : default_expiry
+    (the.user_permits[permit_key] ?
+      (the.expiry ? the : default_expiry) : d) :
+      default_expiry
   )
 }
 ```

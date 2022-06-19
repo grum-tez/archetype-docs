@@ -51,7 +51,7 @@ var theme = {
       color: "rgb(98, 114, 164)"
     }
   }, {
-    types: ["archetype"],
+    types: ["archetype", "function"],
     style: {
       color: "#2FCAC3"
     }

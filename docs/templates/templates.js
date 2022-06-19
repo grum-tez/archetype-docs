@@ -30,10 +30,12 @@ import PausablePaused from '@site/src/components/desc/pausable_paused.md'
 import PausableUnpause from '@site/src/components/desc/pausable_unpause.md'
 import PermitsCheckPermit from '@site/src/components/desc/permits_check_permit.md'
 import PermitsConsumePermit from '@site/src/components/desc/permits_consume_permit.md'
+import PermitsConsumer from '@site/src/components/desc/permits_consumer.md'
 import DefaultExpiry from '@site/src/components/desc/permits_default_expiry.md'
 import PermitsGetDefaultExpiry from '@site/src/components/desc/permits_get_default_expiry.md'
 import PermitsGetExpiry from '@site/src/components/desc/permits_get_expiry.md'
 import PermitsHasExpired from '@site/src/components/desc/permits_has_expired.md'
+import PermitsManageConsumer from '@site/src/components/desc/permits_manage_consumer.md'
 import PermitsPermit from '@site/src/components/desc/permits_permit.md'
 import PermitsSetDefaultExpiry from '@site/src/components/desc/permits_set_default_expiry.md'
 import PermitsSetExpiry from '@site/src/components/desc/permits_set_expiry.md'
@@ -663,6 +665,14 @@ export const templates = {
         { label : 'Ownership', url: '/docs/templates/ownership' },
       ]
     },
+    consumer: {
+      desc: <PermitsConsumer />,
+      type: 'set<address>',
+      typeUrl: 'set<T>',
+      related: [
+        { keyword: 'manage_consumer', link: '/docs/templates/permits#manage_consumer(op)' }
+      ]
+    },
     permits: {
       desc: <Permits />,
       type: 'big_map<asset_key<permits>, asset_value<permits>',
@@ -911,6 +921,22 @@ export const templates = {
         { keyword: 'permits', link: '/docs/templates/permits#permits-1' },
       ]
     },
+    manage_consumer: {
+      desc: <PermitsManageConsumer />,
+      parameters: [
+        {
+          type: 'consumer_op',
+          alias: 'op',
+          desc: <div>Consumer operation specification:<ul>
+            <li><code>add(a)</code> to add consumer <code>a</code></li>
+            <li><code>remove(a)</code> to remove consumer <code>a</code></li>
+            </ul></div>
+        },
+      ],
+      related: [
+        { keyword: 'consumer', link: '/docs/templates/permits#consumer' },
+      ]
+    }
   },
   token_metadata: {
     info: {
