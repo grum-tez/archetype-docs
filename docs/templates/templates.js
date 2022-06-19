@@ -942,16 +942,14 @@ export const templates = {
       ],
       fails: [
         {
-          keyword: '"INVALID_CALLER"',
-          desc: <div>When <code>caller</code> is not <code>owner</code></div>
-        },
-        {
           keyword: '("MISSIGNED", to_sign)',
           desc: <div>When <code>sign</code> is not obtained from <code>data</code>.</div>
         },
       ],
       related: [
         { keyword: 'permits', link: '/docs/templates/permits#permits-1' },
+        { keyword: 'get_default_expiry', link: '/docs/templates/permits#get_default_expiryaddr' },
+        { keyword: 'has_expired', link: '/docs/templates/permits#has_expireduserp-expiry' },
       ]
     },
     consume_permit: {
