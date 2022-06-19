@@ -19,3 +19,4 @@ entry do_transfer(txs : list<transfer_param>) {
   }
 }
 ```
+[`entry`](/docs/reference/declarations/entrypoint#entry) [`list`](/docs/reference/types#list<T>) [`called by`](/docs/reference/declarations/entrypoint#called-by) [`self_address`](/docs/reference/expressions/constants#self_address) [`for`](/docs/reference/instructions/control#for) [`const`](/docs/reference/instructions/localvariable#const) [`.`](/docs/reference/expressions/operators/access#ab-1) [`?=`](/docs/reference/instructions/localvariable#) [`?.`](/docs/reference/expressions/asset#ak--asset_keyaf-1) [`do_require`](/docs/reference/instructions/divergent#do_requiret--bool-e--t) [`=`](/docs/reference/expressions/operators/arithmetic#a--b-7) [`update`](/docs/reference/instructions/asset#aupdatek--u-)

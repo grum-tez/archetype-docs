@@ -7,7 +7,7 @@ enum update_for_all_op =
 | add_for_all<address>
 | remove_for_all<address>
 
-entry update_operators_for_all (upl : list<update_for_all>) {
+entry update_operators_for_all (upl : list<update_for_all_op>) {
   require { r1 : is_not_paused() }
   effect {
     for up in upl do
@@ -21,3 +21,4 @@ entry update_operators_for_all (upl : list<update_for_all>) {
   }
 }
 ```
+[`enum`](/docs/language-basics/composite#enum) [`address`](/docs/reference/types#address) [`entry`](/docs/reference/declarations/entrypoint#entry) [`list`](/docs/reference/types#list<T>) [`require`](/docs/reference/declarations/entrypoint#require) [`for`](/docs/reference/instructions/control#for) [`match`](/docs/reference/instructions/control#match-with) [`do_require`](/docs/reference/instructions/divergent#do_requiret--bool-e--t) [`put`](/docs/reference/instructions/asset#aputa) [`remove`](/docs/reference/instructions/asset#aremovek) [`caller`](/docs/reference/expressions/constants#caller)

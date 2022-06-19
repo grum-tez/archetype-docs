@@ -14,3 +14,4 @@ record transfer_param {
   tp_txs  : list<transfer_destination>;
 } as ((%from_, %txs))
 ```
+[`record`](/docs/language-basics/composite#record) [`address`](/docs/reference/types#address) [`nat`](/docs/reference/types#nat) [`list`](/docs/reference/types#list<T>)

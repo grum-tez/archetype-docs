@@ -33,3 +33,4 @@ entry update_operators (upl : list<update_op>) {
   }
 }
 ```
+[`record`](/docs/language-basics/composite#record) [`address`](/docs/reference/types#address) [`nat`](/docs/reference/types#nat) [`enum`](/docs/language-basics/composite#enum) [`entry`](/docs/reference/declarations/entrypoint#entry) [`list`](/docs/reference/types#list<T>) [`require`](/docs/reference/declarations/entrypoint#require) [`for`](/docs/reference/instructions/control#for) [`match`](/docs/reference/instructions/control#match-with) [`do_require`](/docs/reference/instructions/divergent#do_requiret--bool-e--t) [`put`](/docs/reference/instructions/asset#aputa) [`remove`](/docs/reference/instructions/asset#aremovek) [`caller`](/docs/reference/expressions/constants#caller)

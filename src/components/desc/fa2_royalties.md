@@ -13,3 +13,4 @@ asset royalties identified by rtokenid to big_map {
   rvalue : list<part>;
 }
 ```
+[`record`](/docs/language-basics/composite#record) [`address`](/docs/reference/types#address) [`nat`](/docs/reference/types#nat) [`asset`](/docs/asset) [`list`](/docs/reference/types#list<T>)

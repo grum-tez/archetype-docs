@@ -19,10 +19,10 @@
 			alias: 'function'
 		},
     	'transfer-rule': {
-			pattern: /transfer\s+(((?!to(\s+entry)?).)*)\s+to/,
+			pattern: /transfer\s+(.*)\s+to\s+(entry)?/,
 			inside: {
 				'builtin': {
-					pattern: /\b(?:transfer|to|entry)\b/,
+					pattern: /transfer|to\s+entry?|to/,
 				},
 				'constant': {
 					pattern: /\b(?:now|balance|transferred|self|caller|sender|self_address|state|operations)\b/,

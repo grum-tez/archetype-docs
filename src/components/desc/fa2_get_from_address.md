@@ -16,3 +16,4 @@ function get_from(txs : list<transfer_param>) : option<address> {
   end
 }
 ```
+[`function`](/docs/reference/declarations/function) [`list`](/docs/reference/types#list<T>) [`option`](/docs/reference/types#option<T>) [`match`](/docs/reference/instructions/control#match-with) [`begin`](/docs/reference/instructions/sequence) [`const`](/docs/reference/instructions/localvariable#const) [`.`](/docs/reference/expressions/operators/access#ab-1) [`for`](/docs/reference/instructions/control#for) [`do_require`](/docs/reference/instructions/divergent#do_requiret--bool-e--t) [`=`](/docs/reference/expressions/operators/arithmetic#a--b-7)

@@ -287,17 +287,24 @@ export const templates = {
       sig: 'update_operators',
       parameters: [
         {
-          type: 'list<or<operator_param, operator_param>>',
+          type: 'list<update_op>',
           typeUrl: 'list<T>',
           alias: 'upl',
           desc: <div>List of operators to add or remove.</div>
         },
       ],
       fails: [
-
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is already paused.</div>
+        },
+        {
+          keyword: '"CALLER_NOT_OWNER"',
+          desc: <div>When specified token owner is not <code>caller</code>.</div>
+        }
       ],
       related: [
-
+        { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' }
       ]
     },
     update_operator_forall: {
@@ -305,17 +312,20 @@ export const templates = {
       sig: 'update_operator_for_all',
       parameters: [
         {
-          type: 'list<or<address, address>>',
+          type: 'list<update_for_all_op>',
           typeUrl: 'list<T>',
           alias: 'upl',
           desc: <div>List of operators to add or remove.</div>
         },
       ],
       fails: [
-
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is already paused.</div>
+        },
       ],
       related: [
-
+        { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' }
       ]
     },
     do_transfer: {
@@ -330,10 +340,22 @@ export const templates = {
         },
       ],
       fails: [
-
+        {
+          keyword: '"INVALID_CALLER"',
+          desc: <div>When caller is not current contract.</div>
+        },
+        {
+          keyword: '"FA2_TOKEN_UNDEFINED"',
+          desc: <div>When specified token id is not found in <code>ledger</code>.</div>
+        },
+        {
+          keyword: '"FA2_INSUFFICIENT_BALANCE"',
+          desc: <div>When specified token owner is not the one found in <code>ledger</code>.</div>
+        },
       ],
       related: [
-
+        { keyword: 'transfer', link: '/docs/templates/fa2#transfertxs-' },
+        { keyword: 'transfer_gasless', link: '/docs/templates/fa2#transfer_gaslessbatch' },
       ]
     },
     transfer_gasless: {
@@ -341,17 +363,22 @@ export const templates = {
       sig: '',
       parameters: [
         {
-          type: 'list<list<transfer_param> * (key * signature)>',
+          type: 'list<gasless_param>',
           typeUrl: 'list<T>',
           alias: 'batch',
           desc: <div>List of pairs of permits (key and signature) and transfer specification.</div>
         },
       ],
       fails: [
-
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is already paused.</div>
+        },
       ],
       related: [
-
+        { keyword: 'do_transfer', link: '/docs/templates/fa2#do_transfertxs' },
+        { keyword: 'check', link: '/docs/templates/permits#checksigner-sig-data' },
+        { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' }
       ]
     },
     transfer: {
@@ -366,10 +393,18 @@ export const templates = {
         },
       ],
       fails: [
-
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is already paused.</div>
+        },
+        {
+          keyword: '"FA2_NOT_OPERATOR"',
+          desc: <div>When caller is not the owner, nor a declared operator, or when specified from has no permit</div>
+        }
       ],
       related: [
-
+        { keyword: 'consume', link: '/docs/templates/permits#consumefrom-data-err' },
+        { keyword: 'do_transfer', link: '/docs/templates/fa2#do_transfertxs' },
       ]
     },
     get_from_address: {

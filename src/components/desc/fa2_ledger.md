@@ -8,3 +8,4 @@ asset ledger identified by ltokenid to big_map {
   lowner     : address;
 }
 ```
+[`asset`](/docs/asset) [`address`](/docs/reference/types#address) [`nat`](/docs/reference/types#nat)

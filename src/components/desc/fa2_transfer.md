@@ -19,3 +19,4 @@ entry %transfer (txs : list<transfer_param>) {
   }
 }
 ```
+[`entry`](/docs/reference/declarations/entrypoint#entry) [`list`](/docs/reference/types#list<T>) [`require`](/docs/reference/declarations/entrypoint#require) [`effect`](/docs/reference/declarations/entrypoint#effect) [`if`](/docs/reference/instructions/control#if) [`match`](/docs/reference/instructions/control#match-with) [`transfer`](/docs/reference/instructions/operation#transfer) [`address`](/docs/reference/types#address) [`bytes`](/docs/reference/types#bytes)  [`string`](/docs/reference/types#string) [`pack`](/docs/reference/expressions/builtins#pack(o%20:%20T))

@@ -8,7 +8,7 @@ entry mint (tow : address, tid : nat, tmd: map<string, bytes>, roy : list<part>)
   require { r11: is_not_paused() }
   effect {
     ledger.add({ ltokenid = itokenid; lowner = iowner });
-    token_metadata.addupdate(itokenid, {
+    token_metadata.add_update(itokenid, {
       token_id = itokenid;
       token_info = itokenMetadata
     });

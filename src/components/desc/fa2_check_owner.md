@@ -21,3 +21,4 @@ function check_operator(txs : list<transfer_param>) : bool {
   return res
 }
 ```
+[`function`](/docs/reference/declarations/function) [`list`](/docs/reference/types#list<T>) [`bool`](/docs/reference/types#bool) [`var`](/docs/reference/instructions/localvariable#var) [`for`](/docs/reference/instructions/control#for) [`const`](/docs/reference/instructions/localvariable#const) [`if`](/docs/reference/instructions/control#if) [`begin`](/docs/reference/instructions/sequence)  [`.`](/docs/reference/expressions/operators/access#ab-1) [`&=`](/docs/reference/instructions/assignment#a--b-4) [`or`](/docs/reference/expressions/operators/arithmetic#a-or-b) [`<>`](/docs/reference/expressions/operators/arithmetic#a--b-8) [`contains`](/docs/reference/expressions/asset#acontainsk--asset_keya) [`caller`](/docs/reference/expressions/constants#caller)
