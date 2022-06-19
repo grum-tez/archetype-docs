@@ -9,19 +9,23 @@ record operator_param {
   opp_token_id : nat
 } as ((owner, (operator, token_id)))
 
-entry update_operators (upl : list<or<operator_param, operator_param>>) {
+enum update_op =
+| add_operator<operator_param>
+| remove_operator<operator_param>
+
+entry update_operators (upl : list<update_op>) {
   require { r0 : is_not_paused() }
   effect {
     for up in upl do
       match up with
-      | left(param) -> /* add */
+      | add_operator(param) ->
         do_require(param.opp_owner = caller , CALLER_NOT_OWNER);
         operator.put({
           oaddr  = param.opp_operator;
           otoken = param.opp_token_id;
           oowner = param.opp_owner
         })
-      | right(param) -> /* remove */
+      | remove_operator(param) ->
         do_require(param.opp_owner = caller , CALLER_NOT_OWNER);
         operator.remove((param.opp_operator, param.opp_token_id, param.opp_owner))
       end;

@@ -8,7 +8,7 @@ import TemplateInfo from '@site/src/components/TemplateInfo.js';
 
 # FA 2
 
-Implements [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-7/) norm for token, including non fungible. Required elements are marked with ⭐.
+Implements [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-12/) norm for token, including non fungible. Required elements are marked with ⭐.
 
 A Non-Fungible Token is a unit of data. NFTs can represent digital files such as art, audio, videos, items in video games and other forms of creative work.
 
