@@ -15,8 +15,8 @@ entry permit(pk : key, sig : signature, data : bytes) {
     user_expiry   is get_default_expiry(user);
   }
   require {
-    r4: is_not_paused();
-    r5: check_signature(pk, sig, to_sign) otherwise (MISSIGNED, to_sign)
+    p4: is_not_paused();
+    p5: check_signature(pk, sig, to_sign) otherwise (MISSIGNED, to_sign)
   }
   effect {
     permits.add_update(user, {

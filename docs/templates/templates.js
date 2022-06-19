@@ -942,6 +942,10 @@ export const templates = {
       ],
       fails: [
         {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is paused.</div>
+        },
+        {
           keyword: '("MISSIGNED", to_sign)',
           desc: <div>When <code>sign</code> is not obtained from <code>data</code>.</div>
         },
@@ -974,15 +978,25 @@ export const templates = {
       fails: [
         {
           keyword: '"INVALID_CALLER"',
-          desc: <div>When <code>caller</code> is not <code>owner</code></div>
+          desc: <div>When <code>caller</code> is not a <code>consumer</code>.</div>
         },
         {
-          keyword: '("MISSIGNED", to_sign)',
-          desc: <div>When <code>sign</code> is not obtained from <code>data</code>.</div>
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is paused.</div>
+        },
+        {
+          keyword: '"PERMIT_USER_NOT_FOUND"',
+          desc: <div>When <code>signer</code> is not found in <code>permits</code>.</div>
+        },
+        {
+          keyword: '"PERMIT_EXPIRED"',
+          desc: <div>When <code>signer</code>'s permit has expired.</div>
         },
       ],
       related: [
         { keyword: 'permits', link: '/docs/templates/permits#permits-1' },
+        { keyword: 'get_expiry', link: '/docs/templates/permits#get_expiryaddr-permitkey' },
+        { keyword: 'has_expired', link: '/docs/templates/permits#has_expireduserp-expiry' },
       ]
     },
     check_permit: {
@@ -1007,7 +1021,11 @@ export const templates = {
       fails: [
         {
           keyword: '"INVALID_CALLER"',
-          desc: <div>When <code>caller</code> is not <code>owner</code></div>
+          desc: <div>When <code>caller</code> is not a <code>consumer</code></div>
+        },
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is paused.</div>
         },
         {
           keyword: '("MISSIGNED", to_sign)',
@@ -1015,6 +1033,7 @@ export const templates = {
         },
       ],
       related: [
+        { keyword: 'consumer', link: '/docs/templates/permits#consumer' },
         { keyword: 'permits', link: '/docs/templates/permits#permits-1' },
       ]
     },

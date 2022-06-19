@@ -5,8 +5,8 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 ```archetype
 entry set_expiry(iv : option<nat>, ip : option<bytes>) {
   require {
-    r1: is_not_paused();
-    r2: iv ? the < default_expiry : true otherwise EXPIRY_TOO_BIG;
+    p1: is_not_paused();
+    p2: iv ? the < default_expiry : true otherwise EXPIRY_TOO_BIG;
   }
   effect {
     const caller_permit ?= permits[caller] : (PERMIT_USER_NOT_FOUND, caller);

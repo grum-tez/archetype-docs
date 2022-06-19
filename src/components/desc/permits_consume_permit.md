@@ -11,11 +11,15 @@ entry consume(signer : address, data: bytes, err: string) {
    lpermit       ?is permits[signer]                  otherwise PERMIT_USER_NOT_FOUND;
    luser_permits ?is lpermit.user_permits[permit_key] otherwise err;
   }
+  require {
+    p6: is_not_paused()
+  }
   fail if {
-    f1 : has_expired(luser_permits, signer_expiry) with PERMIT_EXPIRED
+    p7 : has_expired(luser_permits, signer_expiry) with PERMIT_EXPIRED
   }
   effect {
     permits[signer].user_permits.remove(permit_key)
   }
 }
 ```
+[`entry`](/docs/reference/declarations/entrypoint#entry) [`address`](/docs/reference/types#address) [`bytes`](/docs/reference/types#bytes) [`string`](/docs/reference/types#string) [`called by`](/docs/reference/declarations/entrypoint#called-by) [`constant`](/docs/reference/declarations/entrypoint#constant) [`blake2b`](/docs/reference/expressions/builtins#blake2b(b%20:%20bytes)) [`[]`](/docs/reference/expressions/asset#ak--asset_keya) [`fail if`](/docs/reference/declarations/entrypoint#fail-if) [`remove`](/docs/reference/instructions/containers#mremovek)
