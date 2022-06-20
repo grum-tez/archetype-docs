@@ -20,7 +20,8 @@ It is required to *copy* this code in the created contract to benefit from the t
 :::
 
 ```archetype
-/* Token Metadata ------------------------------------------------------------ */
+/* Token METADATA ------------------------------------------------------------ */
+
 asset token_metadata to big_map {
   ftoken_metadata : nat;
   token_id        : nat;
@@ -65,6 +66,37 @@ entry set_token_metadata (tid : nat, tdata: map<string, bytes>) {
   "isTransferable": true,
   "isBooleanAmount": false,
   "shouldPreferSymbol": false
+}
+```
+
+### NFT
+
+```json
+{
+  "symbol": "ARC",
+  "name": "MyNFT #1",
+  "decimals": 0,
+  "description": "a description of NFT",
+  "artifactUri": "ipfs://Qmb7sj8KYoUCJ29DT2qbKxHV5ubaDBRRoDwAPPZakpvn4Y",
+  "displayUri": "ipfs://Qmb7sj8KYoUCJ29DT2qbKxHV5ubaDBRRoDwAPPZakpvn4Y",
+  "thumbnailUri": "ipfs://Qmb7sj8KYoUCJ29DT2qbKxHV5ubaDBRRoDwAPPZakpvn4Y",
+  "isTransferable": true,
+  "isBooleanAmount": true,
+  "shouldPreferSymbol": false,
+  "tags": ["NFT"],
+  "creators": ["tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg"],
+  "attributes": [
+    {
+      "name": "color",
+      "value": "grey"
+    }
+  ],
+	"royalties": {
+		"decimals": 3,
+		"shares": {
+			"tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg": 75
+		}
+	}
 }
 ```
 
