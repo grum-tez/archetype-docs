@@ -58,5 +58,7 @@ completium-cli deploy my_dapp.arl --metadata-storage "./my_dapp_metadata.json"
 
 This can also be done once the contract is deployed with the [`set_metadata`](/docs/templates/metadata#set_metadatak-d) entrypoint:
 ```bash
-completium-cli call my_dapp --entry set_metadata --arg '{ "k": "", "v": "ipfs://..." }'
+completium-cli call my_dapp --entry set_metadata --arg '{ "k": "", "v": "0x697066733a2f2f ..." }'
 ```
+
+Note that the URI is sent in bytes format.
