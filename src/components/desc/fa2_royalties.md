@@ -4,8 +4,8 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 
 ```archetype
 record part {
-  partAccount : address;
-  partValue   : nat;
+  part_account : address;
+  part_value   : nat;
 }
 
 asset royalties identified by rtokenid to big_map {
