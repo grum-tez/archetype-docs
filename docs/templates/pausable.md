@@ -20,6 +20,7 @@ It is required to *copy* this code in the created contract to benefit from the p
 
 ```archetype
 /*  PAUSABLE ----------------------------------------------------------------- */
+
 variable paused : bool = false
 
 function is_not_paused() : bool {

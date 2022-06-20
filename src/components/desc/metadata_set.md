@@ -9,7 +9,7 @@ entry set_metadata(k: string, d : option<bytes>) {
   called by owner
   require { r3 : is_not_paused() }
   effect {
-    metadata.update(k, d)
+    metadata := update(metadata, k, d)
   }
 }
 ```

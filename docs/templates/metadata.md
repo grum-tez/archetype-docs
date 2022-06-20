@@ -42,7 +42,7 @@ Below is a typical metadata file:
 
 There are 2 ways to associate this metadata to a contract:
 1. upload the file to a public URI (typically `ipfs`) and store the URI in the contract's [`metadata`](/docs/reference/expressions/variables#metadata) map (as the value of key `""`)
-2. store it in the contract's [`metadata`](/docs/reference/expressions/variables#metadata) map
+2. store metadata fields in the contract's [`metadata`](/docs/reference/expressions/variables#metadata) map
 
 The association may be done *at deployment* time with [Completium CLI](https://completium.com/docs/cli):
 
