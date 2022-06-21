@@ -1,6 +1,14 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 import NamedDivider from '@site/src/components/NamedDivider.js';
 
 <NamedDivider title="Code" width="1.5"/>
+
+
+<Tabs defaultValue="NFT" >
+
+<TabItem value="NFT">
 
 ```archetype
 entry mint (tow : address, tid : nat, tmd: map<string, bytes>, roy : list<part>) {
@@ -17,3 +25,22 @@ entry mint (tow : address, tid : nat, tmd: map<string, bytes>, roy : list<part>)
 }
 ```
 [`entry`](/docs/reference/declarations/entrypoint#entry) [`address`](/docs/reference/types#address) [`nat`](/docs/reference/types#nat) [`map`](/docs/reference/types#map<K,%20V>) [`string`](/docs/reference/types#string) [`bytes`](/docs/reference/types#bytes) [`list`](/docs/reference/types#list<T>) [`require`](/docs/reference/declarations/entrypoint#require) [`effect`](/docs/reference/declarations/entrypoint#effect) [`add`](/docs/reference/instructions/asset#aadda) [`add_update`](/docs/reference/instructions/asset#aadd_updatek--u-) [`put`](/docs/reference/instructions/asset#aputa)
+
+</TabItem>
+
+<TabItem value="Fungible">
+
+```archetype
+entry mint (tow : address, iamount : nat) {
+  called by owner
+  require { fa2_r5: is_not_paused() }
+  effect {
+    ledger.add_update(tow, { lamount += iamount });
+  }
+}
+```
+[`entry`](/docs/reference/declarations/entrypoint#entry) [`address`](/docs/reference/types#address) [`nat`](/docs/reference/types#nat) [`require`](/docs/reference/declarations/entrypoint#require) [`effect`](/docs/reference/declarations/entrypoint#effect) [`add_update`](/docs/reference/instructions/asset#aadd_updatek--u-)
+
+</TabItem>
+
+</Tabs>
