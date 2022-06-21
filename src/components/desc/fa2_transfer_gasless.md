@@ -3,7 +3,7 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 <NamedDivider title="Code" width="1.5"/>
 
 ```archetype
-record gasless_param = {
+record gasless_param {
   transfer_params : list<transfer_param>;
   user_pk         : key;
   user_sig        : signature
