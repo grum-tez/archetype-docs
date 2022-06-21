@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 # FA 2
 
-Implements [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-12/) norm for token, including non fungible. Required elements are marked with ⭐.
+Implements [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-12/) norm for token, including non fungible. Required elements are marked with 🔸.
 
 A Non-Fungible Token is a unit of data. NFTs can represent digital files such as art, audio, videos, items in video games and other forms of creative work.
 
@@ -30,13 +30,13 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 
 ## Records
 
-### `transfer_param` ⭐
+### `transfer_param` 🔸
 
 <Constant data={templates.fa2.transfer_arg} />
 
 ## Storage
 
-### `ledger` ⭐
+### `ledger` 🔸
 
 <NamedDivider title="Code" width="1.5"/>
 
@@ -57,7 +57,7 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 
 <Constant data={templates.fa2.royalties} />
 
-### `operators` ⭐
+### `operators` 🔸
 
 <Constant data={templates.fa2.operators} />
 
@@ -77,7 +77,7 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 
 ## Entrypoints
 
-### `update_operators(upl)` ⭐
+### `update_operators(upl)` 🔸
 
 <Builtin data={templates.fa2.update_operators} />
 
@@ -93,19 +93,43 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 
 <Builtin data={templates.fa2.transfer_gasless} />
 
-### `transfer(txs)` ⭐
+### `transfer(txs)` 🔸
 
 <Builtin data={templates.fa2.transfer} />
 
-### `mint(tow, tid, tmd, roy)`
+### `mint`
 
+<NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="NFT" >
+<TabItem value="NFT" >
 <Builtin data={templates.fa2.mint} />
+</TabItem>
+<TabItem value="Fungible" >
+<Builtin data={templates.fa2.mint_fungible} />
+</TabItem>
+<TabItem value="Multi Asset" >
+<Builtin data={templates.fa2.mint_multi} />
+</TabItem>
+</Tabs>
 
-### `burn(tid)`
+### `burn`
 
+<NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="NFT" >
+<TabItem value="NFT" >
 <Builtin data={templates.fa2.burn} />
+</TabItem>
+<TabItem value="Fungible" >
+<Builtin data={templates.fa2.burn_fungible} />
+</TabItem>
+<TabItem value="Multi Asset" >
+<Builtin data={templates.fa2.burn_multi} />
+</TabItem>
+</Tabs>
 
-### `balance_of(requests)` ⭐
+### `balance_of(requests)` 🔸
 
 <Builtin data={templates.fa2.balance_of} />
 

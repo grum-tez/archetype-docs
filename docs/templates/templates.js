@@ -8,6 +8,8 @@ import Fa12Ledger from '@site/src/components/desc/fa12_ledger.md'
 import Fa12Transfer from '@site/src/components/desc/fa12_transfer.md'
 import Fa2BalanceOf from '@site/src/components/desc/fa2_balanceof.md'
 import Fa2Burn from '@site/src/components/desc/fa2_burn.md'
+import Fa2BurnFungible from '@site/src/components/desc/fa2_burn_fungible.md'
+import Fa2BurnMulti from '@site/src/components/desc/fa2_burn_multi.md'
 import Fa2CheckOwner from '@site/src/components/desc/fa2_check_owner.md'
 import Fa2DoTransfer from '@site/src/components/desc/fa2_do_transfer.md'
 import Fa2GetFromAddress from '@site/src/components/desc/fa2_get_from_address.md'
@@ -16,6 +18,8 @@ import Fa2Ledger from '@site/src/components/desc/fa2_ledger.md'
 import Fa2LedgerFungible from '@site/src/components/desc/fa2_ledger_fungible.md'
 import Fa2LedgerMulti from '@site/src/components/desc/fa2_ledger_multi.md'
 import Fa2Mint from '@site/src/components/desc/fa2_mint.md'
+import Fa2MintFungible from '@site/src/components/desc/fa2_mint_fungible.md'
+import Fa2MintMulti from '@site/src/components/desc/fa2_mint_multi.md'
 import Fa2OperatorForAll from '@site/src/components/desc/fa2_operator_forall.md'
 import Fa2Operators from '@site/src/components/desc/fa2_operators.md'
 import Fa2TransferArg from '@site/src/components/desc/fa2_transfer_arg.md'
@@ -511,6 +515,69 @@ export const templates = {
         { keyword: 'token_metadata', link: '/docs/templates/tokenmetadata#token_metadata' },
       ]
     },
+    mint_fungible: {
+      desc: <Fa2MintFungible />,
+      sig: '',
+      parameters: [
+        {
+          type: 'address',
+          alias: 'tow',
+          desc: <div>Token owner to receive minted tokens</div>
+        },
+        {
+          type: 'nat',
+          alias: 'nbt',
+          desc: <div>Number of tokens to mint</div>
+        }
+      ],
+      fails: [
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is already paused.</div>
+        },
+        {
+          keyword: '("ledger", "KEY_EXISTS")',
+          desc: <div>When token already exists in <code>ledger</code>.</div>
+        }
+      ],
+      related: [
+        { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' },
+      ]
+    },
+    mint_multi: {
+      desc: <Fa2MintMulti />,
+      sig: '',
+      parameters: [
+        {
+          type: 'address',
+          alias: 'tow',
+          desc: <div>Token owner to receive minted tokens</div>
+        },
+        {
+          type: 'nat',
+          alias: 'tid',
+          desc: <div>Token identifier to mint</div>
+        },
+        {
+          type: 'nat',
+          alias: 'nbt',
+          desc: <div>Number of tokens to mint</div>
+        }
+      ],
+      fails: [
+        {
+          keyword: '"CONTRACT_PAUSED"',
+          desc: <div>When contract is already paused.</div>
+        },
+        {
+          keyword: '("ledger", "KEY_EXISTS")',
+          desc: <div>When token already exists in <code>ledger</code>.</div>
+        }
+      ],
+      related: [
+        { keyword: 'is_not_paused', link: '/docs/templates/pausable#is_not_paused' },
+      ]
+    },
     burn: {
       desc: <Fa2Burn />,
       sig: '',
@@ -529,6 +596,51 @@ export const templates = {
         {
           keyword: '"FA2_INSUFFICIENT_BALANCE"',
           desc: <div>When <code>tid</code>'s owner is not <code>caller</code>.</div>
+        }
+      ],
+      related: [
+
+      ]
+    },
+    burn_fungible: {
+      desc: <Fa2BurnFungible />,
+      sig: '',
+      parameters: [
+        {
+          type: 'nat',
+          alias: 'nbt',
+          desc: <div>Number of tokens to burn</div>
+        },
+      ],
+      fails: [
+        {
+          keyword: '"FA2_INSUFFICIENT_BALANCE"',
+          desc: <div>When <code>nbt</code> is greater than the number of tokens owned by <code>caller</code>.</div>
+        }
+      ],
+      related: [
+
+      ]
+    },
+    burn_multi: {
+      desc: <Fa2BurnMulti />,
+      sig: '',
+      parameters: [
+        {
+          type: 'nat',
+          alias: 'tid',
+          desc: <div>Token identifier</div>
+        },
+        {
+          type: 'nat',
+          alias: 'nbt',
+          desc: <div>Number of tokens to burn</div>
+        },
+      ],
+      fails: [
+        {
+          keyword: '"FA2_INSUFFICIENT_BALANCE"',
+          desc: <div>When <code>nbt</code> is greater than the number of tokens owned by <code>caller</code>.</div>
         }
       ],
       related: [
