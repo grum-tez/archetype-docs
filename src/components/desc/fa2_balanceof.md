@@ -51,4 +51,22 @@ getter balance_of (requests : list<balance_of_request>) : list<balance_of_respon
 
 </TabItem>
 
+<TabItem value="Multi asset">
+
+```archetype
+getter balance_of (requests : list<balance_of_request>) : list<balance_of_response> {
+  return map(requests, br ->
+    let b =
+      if br.btoken_id <> TOKEN_ID then 0
+      else (ledger[(br.bo_owner, br.btoken_id)] ? the.lamount : 0) in
+    {
+      request = br;
+      balance_ = b
+    })
+}
+```
+[`record`](/docs/language-basics/composite#record) [`address`](/docs/reference/types#address) [`nat`](/docs/reference/types#nat) [`getter`](/docs/reference/declarations/entrypoint#getter) [`list`](/docs/reference/types#list<T>) [`map`](/docs/reference/expressions/builtins#map) [`[]`](/docs/reference/expressions/asset#ak--asset_keya) [`?:`](/docs/reference/expressions/controls#a--b--c)
+
+</TabItem>
+
 </Tabs>
