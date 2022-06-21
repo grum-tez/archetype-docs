@@ -30,7 +30,7 @@ asset token_metadata to big_map {
 
 entry set_token_metadata (tid : nat, tdata: map<string, bytes>) {
   called by owner
-  require { r12: is_not_paused() }
+  require { tmd_r1: is_not_paused() }
   effect {
     token_metadata.add_update(tid, { token_id = tid; token_info = tdata });
   }
