@@ -8,11 +8,11 @@ entry check(signer : key, sig : signature, data : bytes) {
   constant {
     pkh      is key_to_address(signer);
     lcounter is permits[pkh] ? the.counter : 0;
-    to_sign  is pack((self_address, lcounter, blake2b(pack(data))));
+    to_sign  is pack((self_address, lcounter, blake2b(data)));
   }
   require {
     p8: is_not_paused();
-    p9: check_signature(signer, sig, to_sign) otherwise (MISSIGNED, data)
+    p9: check_signature(signer, sig, to_sign) otherwise (MISSIGNED, to_sign)
   }
   effect {
     permits.add_update(pkh, { counter = (lcounter + 1)});
