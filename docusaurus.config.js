@@ -26,11 +26,11 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/completium/archetype-docs/blob/main',
           lastVersion: 'current',
           versions: {
             current: {
-              label: '1.3.0',
+              label: '1.3.1',
               path: '/',
               badge: false
             },

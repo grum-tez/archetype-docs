@@ -9,7 +9,7 @@ entry set_expiry(iv : option<nat>, ip : option<bytes>) {
     p2: iv ? the < default_expiry : true otherwise EXPIRY_TOO_BIG;
   }
   effect {
-    const caller_permit ?= permits[caller] : (PERMIT_USER_NOT_FOUND, caller);
+    const caller_permit ?= permits[caller] : (USER_PERMIT_NOT_FOUND, caller);
     match ip with
     | some(p) -> begin
         if (iv ? the > 0 : true) then begin

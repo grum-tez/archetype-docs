@@ -883,7 +883,7 @@ export const templates = {
           desc: <div>When <code>iv</code> is some value greater the <code>default_expiry</code>.</div>
         },
         {
-          keyword: '("PERMIT_USER_NOT_FOUND", caller)',
+          keyword: '("USER_PERMIT_NOT_FOUND", caller)',
           desc: <div>When <code>caller</code> is not found in <code>permits</code>.</div>
         },
         {
@@ -985,7 +985,7 @@ export const templates = {
           desc: <div>When contract is paused.</div>
         },
         {
-          keyword: '"PERMIT_USER_NOT_FOUND"',
+          keyword: '"USER_PERMIT_NOT_FOUND"',
           desc: <div>When <code>signer</code> is not found in <code>permits</code>.</div>
         },
         {

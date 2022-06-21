@@ -8,7 +8,7 @@ entry consume(signer : address, data: bytes, err: string) {
   constant {
    permit_key     is blake2b(data);
    signer_expiry  is get_expiry(signer, permit_key);
-   lpermit       ?is permits[signer]                  otherwise PERMIT_USER_NOT_FOUND;
+   lpermit       ?is permits[signer]                  otherwise USER_PERMIT_NOT_FOUND;
    luser_permits ?is lpermit.user_permits[permit_key] otherwise err;
   }
   require {

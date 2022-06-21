@@ -1,4 +1,5 @@
 import React from "react"
+import Link from '@docusaurus/Link';
 
 import AssetAddDesc from '../../src/components/desc/assetadd_desc.md'
 import AssetPutDesc from '../../src/components/desc/assetput_desc.md'
@@ -69,7 +70,7 @@ export const assetinstructions = {
         type: 'update literal',
         withLink : false,
         alias: 'u',
-        desc: <div>Curly bracketed list of fields' assignment instructions (separated by <code>;</code>); these instructions are presented in the section above (
+        desc: <div>Curly bracketed list of fields' assignment instructions (separated by <code>;</code>); these instructions are presented in the <Link to="/docs/reference/instructions/assignment">assignment</Link> section (
           <code>:=</code>&nbsp;
           <code>+=</code>&nbsp;
           <code>-=</code>&nbsp;
@@ -99,7 +100,7 @@ export const assetinstructions = {
         type: 'update literal',
         withLink : false,
         alias: 'u',
-        desc: <div>Curly bracketed list of fields' assignment instructions (separated by <code>;</code>); these instructions are presented in the section above (
+        desc: <div>Curly bracketed list of fields' assignment instructions (separated by <code>;</code>); these instructions are presented in the <Link to="/docs/reference/instructions/assignment">assignment</Link> section (
           <code>:=</code>&nbsp;
           <code>+=</code>&nbsp;
           <code>-=</code>&nbsp;
@@ -128,7 +129,7 @@ export const assetinstructions = {
         type: 'update literal',
         withLink : false,
         alias: 'u',
-        desc: <div>Curly bracketed list of fields' assignment instructions (separated by <code>;</code>); these instructions are presented in the section above (
+        desc: <div>Curly bracketed list of fields' assignment instructions (separated by <code>;</code>); these instructions are presented in the <Link to="/docs/reference/instructions/assignment">assignment</Link> section (
           <code>:=</code>&nbsp;
           <code>+=</code>&nbsp;
           <code>-=</code>&nbsp;
@@ -136,12 +137,7 @@ export const assetinstructions = {
           <code>/=</code>&nbsp;
           <code>&=</code>&nbsp;
           <code>|=</code>).<br/><br/>
-          <code>+=</code>&nbsp;
-          <code>-=</code>&nbsp;
-          <code>*=</code>&nbsp;
-          <code>/=</code>&nbsp;
-          <code>&=</code>&nbsp;
-          <code>|=</code> instructions are only available for fields with a specified default value.
+          Note that these update instructions are only available for fields with a specified default value.
           </div>
       },
     ],

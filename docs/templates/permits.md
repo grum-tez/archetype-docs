@@ -17,7 +17,7 @@ Implements [TZIP-17](https://tzip.tezosagora.org/proposal/tzip-17/) norm for fee
 
 ```archetype
 constant EXPIRY_TOO_BIG        : string = "EXPIRY_TOO_BIG"
-constant PERMIT_USER_NOT_FOUND : string = "PERMIT_USER_NOT_FOUND"
+constant USER_PERMIT_NOT_FOUND : string = "USER_PERMIT_NOT_FOUND"
 constant PERMIT_NOT_FOUND      : string = "PERMIT_NOT_FOUND"
 constant MISSIGNED             : string = "MISSIGNED"
 constant PERMIT_EXPIRED        : string = "PERMIT_EXPIRED"
