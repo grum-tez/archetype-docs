@@ -5,6 +5,8 @@ Adds or removes an entry to the [`metadata`](/docs/reference/expressions/variabl
 <NamedDivider title="Code" width="1.5"/>
 
 ```archetype
+/* METADATA ---------------------------------------------------------------- */
+
 entry set_metadata(k: string, d : option<bytes>) {
   called by owner
   require { r3 : is_not_paused() }

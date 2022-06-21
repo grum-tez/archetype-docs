@@ -19,7 +19,7 @@ It is required to *copy* this code in the created contract to benefit from the p
 :::
 
 ```archetype
-/*  PAUSABLE ----------------------------------------------------------------- */
+/* PAUSABLE ---------------------------------------------------------------- */
 
 variable paused : bool = false
 

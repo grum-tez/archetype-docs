@@ -759,6 +759,9 @@ export const templates = {
       repo: 'https://github.com/completium/archetype-permits',
       author: 'Completium',
       authorurl: 'https://completium.com/',
+      norms: [
+        { label : 'TZIP-16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
+      ],
       templates: [
         { label : 'Pausable', url: '/docs/templates/pausable' },
         { label : 'Ownership', url: '/docs/templates/ownership' },
