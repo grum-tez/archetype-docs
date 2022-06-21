@@ -763,6 +763,7 @@ export const templates = {
         { label : 'TZIP-16', url: 'https://tzip.tezosagora.org/proposal/tzip-16/' },
       ],
       templates: [
+        { label : 'Metadata', url: '/docs/templates/metadata' },
         { label : 'Pausable', url: '/docs/templates/pausable' },
         { label : 'Ownership', url: '/docs/templates/ownership' },
       ]

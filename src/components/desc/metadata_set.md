@@ -9,7 +9,7 @@ Adds or removes an entry to the [`metadata`](/docs/reference/expressions/variabl
 
 entry set_metadata(k: string, d : option<bytes>) {
   called by owner
-  require { r3 : is_not_paused() }
+  require { md_r1 : is_not_paused() }
   effect {
     metadata := update(metadata, k, d)
   }
