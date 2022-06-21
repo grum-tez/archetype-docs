@@ -64,9 +64,9 @@ const config = {
         maxHeadingLevel: 5,
       },
       algolia: {
-        appId: '<NEW_APP_ID>',
-        apiKey: '<NEW_SEARCH_API_KEY>',
-        indexName: 'archetype'
+        appId: 'CGUX2ID3ID',
+        apiKey: '3c1ad8ee0b1c6ed187f4626eea33fea9',
+        indexName: 'archetype-lang'
         // The application ID provided by Algolia
         //appId: 'YW41129NVN',
         // Public API key: it is safe to commit it
