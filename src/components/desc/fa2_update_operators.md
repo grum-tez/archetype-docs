@@ -14,7 +14,7 @@ enum update_op =
 | remove_operator<operator_param>
 
 entry update_operators (upl : list<update_op>) {
-  require { r0 : is_not_paused() }
+  require { fa2_r1 : is_not_paused() }
   effect {
     for up in upl do
       match up with

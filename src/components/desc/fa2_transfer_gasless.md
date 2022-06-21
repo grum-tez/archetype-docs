@@ -10,7 +10,7 @@ record gasless_param {
 }
 
 entry transfer_gasless (batch : list<gasless_param>) {
-  require { fa2_r2 : is_not_paused() }
+  require { fa2_r3 : is_not_paused() }
   effect {
     for b in batch do
       const txs = b.transfer_params;

@@ -8,7 +8,7 @@ enum update_for_all_op =
 | remove_for_all<address>
 
 entry update_operators_for_all (upl : list<update_for_all_op>) {
-  require { r1 : is_not_paused() }
+  require { fa2_r2 : is_not_paused() }
   effect {
     for up in upl do
       match up with

@@ -4,7 +4,7 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 
 ```archetype
 entry %transfer (txs : list<transfer_param>) {
-  require { r8 : is_not_paused() }
+  require { fa2_r4 : is_not_paused() }
   effect {
     if not check_operator(txs) then begin
       match get_from(txs) with
