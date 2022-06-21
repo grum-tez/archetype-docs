@@ -39,7 +39,7 @@ entry burn(iamount : nat) {
   }
   require {
     fa2_r6: is_not_paused();
-    fa2_r7: amount >= iamount other FA2_INSUFFICIENT_BALANCE
+    fa2_r7: amount >= iamount otherwise FA2_INSUFFICIENT_BALANCE
   }
   effect {
     if (amount > iamount) then
