@@ -13,6 +13,8 @@ import Fa2DoTransfer from '@site/src/components/desc/fa2_do_transfer.md'
 import Fa2GetFromAddress from '@site/src/components/desc/fa2_get_from_address.md'
 import Fa2GetRoyalties from '@site/src/components/desc/fa2_get_royalties.md'
 import Fa2Ledger from '@site/src/components/desc/fa2_ledger.md'
+import Fa2LedgerFungible from '@site/src/components/desc/fa2_ledger_fungible.md'
+import Fa2LedgerMulti from '@site/src/components/desc/fa2_ledger_multi.md'
 import Fa2Mint from '@site/src/components/desc/fa2_mint.md'
 import Fa2OperatorForAll from '@site/src/components/desc/fa2_operator_forall.md'
 import Fa2Operators from '@site/src/components/desc/fa2_operators.md'
@@ -253,6 +255,22 @@ export const templates = {
     ledger: {
       desc: <Fa2Ledger />,
       type: 'big_map<nat, address>',
+      typeUrl : 'big_map<K,%20V>',
+      related: [
+        { keyword: 'transfer', link: '/docs/templates/fa12#transferfrom-to-value' },
+      ],
+    },
+    ledger_fungible: {
+      desc: <Fa2LedgerFungible />,
+      type: 'big_map<address, nat>',
+      typeUrl : 'big_map<K,%20V>',
+      related: [
+        { keyword: 'transfer', link: '/docs/templates/fa12#transferfrom-to-value' },
+      ],
+    },
+    ledger_multi: {
+      desc: <Fa2LedgerMulti />,
+      type: 'big_map<address * nat, nat>',
       typeUrl : 'big_map<K,%20V>',
       related: [
         { keyword: 'transfer', link: '/docs/templates/fa12#transferfrom-to-value' },

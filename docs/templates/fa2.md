@@ -5,6 +5,9 @@ import { templates } from './templates.js'
 import Builtin from '@site/src/components/Builtin.js';
 import Constant from '@site/src/components/Constant.js';
 import TemplateInfo from '@site/src/components/TemplateInfo.js';
+import NamedDivider from '@site/src/components/NamedDivider.js';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # FA 2
 
@@ -35,7 +38,20 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 
 ### `ledger` ⭐
 
+<NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="NFT" >
+
+<TabItem value="NFT">
 <Constant data={templates.fa2.ledger} />
+</TabItem>
+<TabItem value="Fungible">
+<Constant data={templates.fa2.ledger_fungible} />
+</TabItem>
+<TabItem value="Multi asset">
+<Constant data={templates.fa2.ledger_multi} />
+</TabItem>
+</Tabs>
 
 ### `royalties`
 
