@@ -5,7 +5,7 @@ entry burn(tid : nat) {
   }
   require {
     fa2_r6: is_not_paused();
-    fa2_r7: token_owner = caller otherwise FA2_INSUFFICIENT_BALANCE
+    fa2_r7: token_owner = caller otherwise CALLER_NOT_OWNER
   }
   effect {
     ledger.remove(tid);

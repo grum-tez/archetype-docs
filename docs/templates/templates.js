@@ -594,7 +594,7 @@ export const templates = {
           desc: <div>When <code>tid</code> is not found in <code>ledger</code>.</div>
         },
         {
-          keyword: '"FA2_INSUFFICIENT_BALANCE"',
+          keyword: '"CALLER_NOT_OWNER"',
           desc: <div>When <code>tid</code>'s owner is not <code>caller</code>.</div>
         }
       ],

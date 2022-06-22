@@ -19,7 +19,8 @@ entry do_transfer(txs : list<transfer_param>) {
       for td in tds do begin
         const tokenid = td.token_id_dest;
         const towner ?= ledger[tokenid]?.lowner : FA2_TOKEN_UNDEFINED;
-        do_require(towner = %from, FA2_INSUFFICIENT_BALANCE);
+        do_require(towner = %from and td.token_amount_dest = 1,
+          FA2_INSUFFICIENT_BALANCE);
         ledger.update(tokenid, { lowner = td.to_dest });
       end done
     done
