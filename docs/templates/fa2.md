@@ -78,7 +78,7 @@ Associates accounts to token information (identifier for NFT, balance of funcgib
 
 <Constant data={templates.fa2.royalties} />
 
-### `operators` 🔸
+### `operator` 🔸
 
 <Constant data={templates.fa2.operators} />
 
