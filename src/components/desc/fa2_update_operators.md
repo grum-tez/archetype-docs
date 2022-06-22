@@ -20,11 +20,7 @@ entry update_operators (upl : list<update_op>) {
       match up with
       | add_operator(param) ->
         do_require(param.opp_owner = caller , CALLER_NOT_OWNER);
-        operator.put({
-          oaddr  = param.opp_operator;
-          otoken = param.opp_token_id;
-          oowner = param.opp_owner
-        })
+        operator.put({ param.opp_operator; param.opp_token_id; param.opp_owner })
       | remove_operator(param) ->
         do_require(param.opp_owner = caller , CALLER_NOT_OWNER);
         operator.remove((param.opp_operator, param.opp_token_id, param.opp_owner))

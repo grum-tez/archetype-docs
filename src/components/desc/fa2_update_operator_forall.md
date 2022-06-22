@@ -13,7 +13,7 @@ entry update_operators_for_all (upl : list<update_for_all_op>) {
     for up in upl do
       match up with
       | add_for_all(op)  ->
-        operator_for_all.put({fa_oaddr = op; fa_oowner = caller})
+        operator_for_all.put({ op; caller})
       | remove_for_all(op) ->
         operator_for_all.remove((op, caller))
       end;
