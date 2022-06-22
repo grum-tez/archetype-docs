@@ -3,6 +3,10 @@ import TabItem from '@theme/TabItem';
 
 import NamedDivider from '@site/src/components/NamedDivider.js';
 
+Called by [`transfer`](/docs/templates/fa2#transfertxs-) and [`transfer_gasless`](/docs/templates/fa2#transfer_gaslessbatch) to actually execute the transfer of tokens (that is to update [`ledger`](/docs/templates/fa2#ledger-) collection). It is assumed here that operator or permits' authorization rules have been applied.
+
+Note that it may only be called by the contract itself.
+
 <NamedDivider title="Code" width="1.5"/>
 
 <Tabs defaultValue="NFT" >
