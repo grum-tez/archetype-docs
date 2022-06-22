@@ -29,7 +29,7 @@ Below are presented implementations for 3 kinds of tokens:
 2. Fungible token
 3. Multi asset (or semi-fungible) token
 
-Besides basic [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-12/) features, these implementations provide:
+Besides [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-12/) features, these implementations provide:
 * the use of [TZIP-17](https://tzip.tezosagora.org/proposal/tzip-12/) [`permit`](/docs/templates/permits) mechanism for two-steps *fee-less* transfer
 * one-step *fee-less* transfer mechanism ([`transfer_gasless`](/docs/templates/fa2#transfer_gaslessbatch))
 * [`royalties`](/docs/templates/fa2#royalties) information for NFT tokens, compliant with [Rarible](https://rarible.com/) market place
