@@ -1,9 +1,9 @@
 ```archetype
-entry mint (tow : address, tid : nat, iamount : nat) {
+entry mint (tow : address, tid : nat, nbt : nat) {
   called by owner
   require { fa2_r5: is_not_paused() }
   effect {
-    ledger.add_update((tow, tid), { lamount += iamount });
+    ledger.add_update((tow, tid), { lamount += nbt });
   }
 }
 ```
