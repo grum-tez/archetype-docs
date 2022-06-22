@@ -5,8 +5,12 @@ sidebar_label: Overview
 import { templates } from './templates.js'
 import API from '@site/src/components/Api.js';
 
-# Templates overview
+# Templates
 
-<br></br>
+## TZIPs
 
-<API title="" data={templates.list} />
+<API title="" data={templates.tzips} />
+
+## Others
+
+<API title="" data={templates.others} />

@@ -8,7 +8,7 @@ Pauses contract when unpaused.
 entry pause() {
   called by owner
   require {
-    r1: is_not_paused()
+    pausable_r1: is_not_paused()
   }
   effect {
     paused := true

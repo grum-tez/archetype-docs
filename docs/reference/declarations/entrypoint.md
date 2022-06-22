@@ -282,6 +282,53 @@ A specific error message can be specified with the `otherwise` keyword.
 <Grid container style={{ marginTop: '18px' }}>
 <Grid xs={12} sm={12} md={2.5}>
 
+### `constant`
+
+</Grid>
+<Grid xs={12} sm={12} md={9.5}>
+
+Declaration section of local [constants](/docs/reference/instructions/localvariable#const) to be used in following sections.
+
+A constant is declared by an identifier followed by keyword `is` and value. Declarations are separated by `;`.
+
+For example:
+```archetype
+entry consume(data: bytes) {
+  called by consumer
+  constant {
+    hashed_data is blake2b(data);
+    value       is get_value(hashed_data);
+  }
+  /* ... */
+}
+```
+
+`hashed_data` and `value` are now declared and available in following sections (`require`, `effect`, ...). As constants, their value cannot be modified.
+
+It is possible to extract the `some` value of an [`option`](/docs/reference/types#option<T>), and fail if it is `none`.
+
+For example, say the `get_value` function returns an option of [`int`](/docs/reference/types#int); the following declares a constant named `value` and typed `int`, and fails with `"NOT_FOUND"` if `get_value` returns `none`:
+
+```archetype
+entry consume(data: bytes) {
+  called by consumer
+  constant {
+    hashed_data  is blake2b(data);
+    value       ?is get_value(hashed_data) : "NOT_FOUND";
+  }
+  /* ... */
+}
+```
+
+</Grid>
+</Grid>
+
+<ThemedDivider />
+
+<Grid container style={{ marginTop: '18px' }}>
+<Grid xs={12} sm={12} md={2.5}>
+
+
 ### `require`
 
 </Grid>
@@ -361,7 +408,7 @@ If the effect section is the only section in entry point body, the `effect` keyw
 
 ```archetype
 entry set_owner_candidate(oc : address) {
-  if caller = owner then fail("INVALID_CALLER");
+  if caller <> owner then fail("INVALID_CALLER");
   owner_candidate := some(oc)
 }
 ```

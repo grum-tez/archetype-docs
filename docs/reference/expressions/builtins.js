@@ -1459,7 +1459,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type: 'option<int * sapling_state(n)>',
+      type: 'option<bytes * int * sapling_state(n)>',
       withLink: false,
       desc: <div>The result</div>
     },

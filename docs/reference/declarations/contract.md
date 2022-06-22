@@ -15,7 +15,11 @@ archetype escrow
 
 ## Parameters
 
-A contract may have parameters. A contract parameter is a storage element whose value is set at deployment (origination) time. It is defined by an [identifier](/docs/reference/declarations/identifier) and a [type](/docs/reference/types). The list of parameters follows the contract's identifier between parenthesis and separated by comma.
+A contract may have parameters. A parameter value is not in the source code and is provided at deployment (origination) time. For example, the address of the contract owner is typically a contract parameter.
+
+### Variable
+
+By default, a contract parameter is an element of the contract storage. It is defined by an [identifier](/docs/reference/declarations/identifier) and a [type](/docs/reference/types). The list of parameters follows the contract's identifier between parenthesis and separated by comma.
 
 For example:
 ```archetype
@@ -30,6 +34,18 @@ completium-cli deploy escrow.arl --parameters '{ "seller" : "tz1VSUr8wwNhLAzempo
 ```
 
 The value of a contract parameter may be modified by [assignment](/docs/reference/instructions/assignment) instructions in [entrypoints](/docs/reference/declarations/entrypoint).
+
+### Constant
+
+If a contract parameter is not meant to be modified, nor to appear in the storage, it may be declared `const`. Its value, provided at deployment time as for [variable](/docs/reference/declarations/contract#variable) parameter, is then *inlined*, that it replaces each occurence of the parmeter.
+
+For example, the declaration of the [`FA 1.2`](/docs/reference/declarations/contract#variable) token contract:
+```archetype
+archetype fa1_2(const initial_holder : address, const total_supply : nat)
+with metadata ""
+
+/* ... */
+```
 
 ## Metadata
 
