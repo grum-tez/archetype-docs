@@ -60,3 +60,11 @@ For example, if `prize` is of type `option<tez>`:
 const reward = prize ? 20% * the : 5tz
 ```
 
+It is equivalent to:
+```archetype
+const reward =
+  match prize with
+  | some(v) -> 20% * v
+  | none    -> 5tz
+  end
+```

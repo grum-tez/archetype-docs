@@ -189,7 +189,7 @@ entry incr(n : nat) {
 const SmartDesign = (props) => {
   return (
     <Grid item xs={12} sm={12} md={6}>
-      <div onClick={() => props.setSelected(props.id)}><Grid className={styles.smartdesign + ' ' + (props.selected? styles.selectedsd:'')} container direction="column" style={{
+      <div onClick={() => { props.setSelected(props.id); props.setActive(false) }}><Grid className={styles.smartdesign + ' ' + (props.selected? styles.selectedsd:'')} container direction="column" style={{
       padding: '12px',
       borderRadius: '8px',
     }}>
@@ -220,7 +220,7 @@ const SmartDesigns = (props) => {
   return (
     <Grid container spacing={2} style={{ paddingLeft: '3%', paddingRight: '5%', marginTop: '10px' }}>
       { designs.map((d, i) => {
-          return <SmartDesign key={'sd'+i} id={i} title={d.title} tagline={d.tagline} link={d.link} selected={props.selected == i} setSelected={props.setSelected}/>
+          return <SmartDesign key={'sd'+i} id={i} title={d.title} tagline={d.tagline} link={d.link} selected={props.selected == i} setSelected={props.setSelected} setActive={props.setActive}/>
         })
       }
     </Grid>
@@ -229,6 +229,21 @@ const SmartDesigns = (props) => {
 
 const RightPannel = () => {
   const [selected, setSelected] = useState(0);
+  const [active, setActive] = useState(true);
+  useEffect(() => {
+    let interval = null;
+    if (active) {
+      interval = setInterval(() => {
+        setSelected(s => (s+1)%4);
+      }, 15000);
+    } else {
+      clearInterval(interval);
+      setTimeout(() => {
+        setActive(true);
+      }, 30000);
+    }
+    return () => clearInterval(interval);
+  }, [active, selected]);
   return (
     <Container maxWidth={false} className={styles.rightpannel} sx={{ minHeight: 'calc(100vh - 60px)' }}>
       <Grid container style={{ height: '100%' }} direction="column" justifyContent="flex-start" alignItems="center">
@@ -239,7 +254,7 @@ const RightPannel = () => {
           }}>Control with Smart Designs</Typography>
         </Grid>
         <Grid item>
-          <SmartDesigns selected={selected} setSelected={setSelected}/>
+          <SmartDesigns selected={selected} setSelected={setSelected} setActive={setActive}/>
         </Grid>
         <Grid item style={{ width: '100%' }}>
           <Grid container direction="row" justifyContent="flex-start" style={{ paddingLeft: 'calc(3% + 12px)', paddingRight: '5%', marginTop: '10px' }}>

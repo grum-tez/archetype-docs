@@ -97,10 +97,12 @@
 .selectedsd {
   background-color: white;
   /*border: 1px solid var(--ifm-color-primary)*/
-  border: 1px solid #57575759
+  border: 1px solid #57575759;
+  transition: border 0.2s
 }
 
 [data-theme='dark'] .selectedsd {
   background-color: var(--ifm-color-primary-darkest);
-  border: 1px solid var(--ifm-color-primary)
+  border: 1px solid var(--ifm-color-primary);
+  transition: border 0.2s
 }
