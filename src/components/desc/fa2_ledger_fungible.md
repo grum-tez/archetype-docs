@@ -1,4 +1,5 @@
 
+`ledger` associates an account to the number of tokens it owns.
 ```archetype
 asset ledger to big_map {
   lowner     : address;

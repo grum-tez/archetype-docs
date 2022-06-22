@@ -11,11 +11,30 @@ import TabItem from '@theme/TabItem';
 
 # FA 2
 
-Implements [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-12/) norm for token, including non fungible. Required elements are marked with 🔸.
+Implements [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-12/) norm for token, including non fungible.
 
-A Non-Fungible Token is a unit of data. NFTs can represent digital files such as art, audio, videos, items in video games and other forms of creative work.
+FA 2 is a norm for any kind of tokens. It provides the following elements (marked 🔸):
+* [`ledger`](/docs/templates/fa2#ledger-) that associates tokens and owners
+* [`operator`](/docs/templates/fa2#operators-) that defines which addresses can transfer tokens on the behalf of their owners
+* [`transfer`](/docs/templates/fa2#transfertxs-) entrypoint to transfer tokens while respecting allowance rules
+* [`update_operators`](/docs/templates/fa2#update_operatorsupl-) to add or remove operators on tokens for transfer operations
+* [`balance_of`](/docs/templates/fa2#balance_ofrequests-) [TZIP-4](https://tzip.tezosagora.org/proposal/tzip-4/) view to normalise the access to balance information
 
 <TemplateInfo data={templates.fa2.info} />
+
+## Overview
+
+Below are presented implementations for 3 kinds of tokens:
+1. Non fungible token (NFT): an NFT is a unit of data that can represent digital files such as art, audio, videos, items in video games and other forms of creative work
+2. Fungible token
+3. Multi asset (or semi-fungible) token
+
+Besides basic [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-12/) features, these implementations provide:
+* the use of [TZIP-17](https://tzip.tezosagora.org/proposal/tzip-12/) [`permit`](/docs/templates/permits) mechanism for two-steps *fee-less* transfer
+* one-step *fee-less* transfer mechanism ([`transfer_gasless`](/docs/templates/fa2#transfer_gaslessbatch))
+* [`royalties`](/docs/templates/fa2#royalties) information for NFT tokens, compliant with [Rarible](https://rarible.com/) market place
+* a global operator mechanism to allow one operator to manage *all* tokens of an owner ([`operator_for_all`](/docs/templates/fa2#operator_for_all), [`update_operator_for_all`](/docs/templates/fa2#update_operator_for_allupl))
+* [`mint`](/docs/templates/fa2#mint) and [`burn`](/docs/templates/fa2#burn) entrypoints callable by contract owner only
 
 ## Errors
 
@@ -37,6 +56,8 @@ constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
 ## Storage
 
 ### `ledger` 🔸
+
+Associates accounts to token information (identifier for NFT, balance of funcgible tokens).
 
 <NamedDivider title="Code" width="1.5"/>
 
