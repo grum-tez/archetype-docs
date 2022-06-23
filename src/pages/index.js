@@ -2,6 +2,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import CheckIcon from '@mui/icons-material/Check';
 import { Button, Container, Grid, Typography } from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
 import CodeBlock from '@theme/CodeBlock';
@@ -17,7 +18,7 @@ import styles from './index.module.css'
 
 const GetStarted = () => {
   return (
-    <Link to="/docs/installation" style={{ textDecoration: 'none' }}>
+    <Link to="/docs/introduction" style={{ textDecoration: 'none' }}>
     <Button variant="contained" disableElevation className={styles.getstarted} style={{
       textTransform: 'none',
       fontFamily: 'IBM Plex Sans',
@@ -55,6 +56,7 @@ const Introduction = () => {
 }
 
 const NpmInstall = () => {
+  const [copied, setCopied] = useState(false);
   return (
     <Button className={styles.npminstall} style={{
       textTransform: 'none',
@@ -78,7 +80,16 @@ const NpmInstall = () => {
     }}
     disableRipple
     variant="outlined"
-    endIcon={<ContentCopyIcon />}>
+    endIcon={ !copied ? (
+      <ContentCopyIcon style={{verticalAlign: "text-top"}}/>) : (
+      <CheckIcon color="secondary" sx={{ color: `#2fcac3` }} style={{verticalAlign: "text-top"}}/>)
+    }
+    onClick={() => {
+      setCopied(true);
+      navigator.clipboard.writeText("npm i -g @completium/completium-cli");
+      setTimeout(() => setCopied(false), 2000)
+    }}
+    >
       npm i -g @completium/completium-cli
     </Button>
   )
