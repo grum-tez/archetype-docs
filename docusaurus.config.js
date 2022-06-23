@@ -99,11 +99,7 @@ const config = {
             label: 'Templates',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: false,
-          },
+          {to: '/docs/installation', label: 'latest: 1.3.1', position: 'right'},
           {
             href: 'https://tezos.com',
             label: 'Tezos',
