@@ -1,300 +1,289 @@
 ---
 sidebar_position: 5
+toc_max_heading_level: 2
 ---
 
 # Builtins
 
 import Builtin from '@site/src/components/Builtin.js';
 import { builtins } from './builtins.js';
-import { MDXProvider } from "@mdx-js/react";
-import NoH2 from "@site/src/components/NoH2.js";
-import H3 from "@site/src/components/H3.js";
 
-<MDXProvider components={{ h2: NoH2 }}>
+## `A B`
 
-## `A B C`
-
-<H3 page="builtins" value={builtins['abs'].sig} />
+<h3 {...{"id":builtins['abs'].sig}}> <code> {builtins['abs'].sig} </code> </h3>
 
 <Builtin data={builtins['abs']} />
 
-<H3 page="builtins" value={builtins['add'].sig} />
+<h3 {...{"id":builtins['add'].sig}}> <code> {builtins['add'].sig} </code> </h3>
 
 <Builtin data={builtins['add']} />
 
-<H3 page="builtins" value={builtins['address_to_contract'].sig} />
+<h3 {...{"id":builtins['address_to_contract'].sig}}> <code> {builtins['address_to_contract'].sig} </code> </h3>
 
 <Builtin data={builtins['address_to_contract']} />
 
-<H3 page="builtins" value={builtins['apply_lambda'].sig} />
+<h3 {...{"id":builtins['apply_lambda'].sig}}> <code> {builtins['apply_lambda'].sig} </code> </h3>
 
 <Builtin data={builtins['apply_lambda']} />
 
-<H3 page="builtins" value={builtins['blake2b'].sig} />
+<h3 {...{"id":builtins['blake2b'].sig}}> <code> {builtins['blake2b'].sig} </code> </h3>
 
 <Builtin data={builtins['blake2b']} />
 
-<H3 page="builtins" value={builtins['call_view'].sig}/>
+## `C D`
+
+<h3 {...{"id":builtins['call_view'].sig}}> <code> {builtins['call_view'].sig} </code> </h3>
 
 <Builtin data={builtins['call_view']} />
 
-<H3 page="builtins" value={builtins['ceil'].sig} />
+<h3 {...{"id":builtins['ceil'].sig}}> <code> {builtins['ceil'].sig} </code> </h3>
 
 <Builtin data={builtins['ceil']} />
 
-<H3 page="builtins" value={builtins['check_signature'].sig} />
+<h3 {...{"id":builtins['check_signature'].sig}}> <code> {builtins['check_signature'].sig} </code> </h3>
 
 <Builtin data={builtins['check_signature']} />
 
-<H3 page="builtins" value={builtins['concat'].sig} />
+<h3 {...{"id":builtins['concat'].sig}}> <code> {builtins['concat'].sig} </code> </h3>
 
 <Builtin data={builtins['concat']} />
 
-<H3 page="builtins" value={builtins['contains'].sig} />
+<h3 {...{"id":builtins['contains'].sig}}> <code> {builtins['contains'].sig} </code> </h3>
 
 <Builtin data={builtins['contains']} />
 
-<H3 page="builtins" value={builtins['contract_to_address'].sig} />
+<h3 {...{"id":builtins['contract_to_address'].sig}}> <code> {builtins['contract_to_address'].sig} </code> </h3>
 
 <Builtin data={builtins['contract_to_address']} />
 
-<H3 page="builtins" value={builtins['create_ticket'].sig} />
+<h3 {...{"id":builtins['create_ticket'].sig}}> <code> {builtins['create_ticket'].sig} </code> </h3>
 
 <Builtin data={builtins['create_ticket']} />
 
-## `D E F`
+## `E F`
 
-<H3 page="builtins" value={builtins['exec_lambda'].sig} />
+<h3 {...{"id":builtins['exec_lambda'].sig}}> <code> {builtins['exec_lambda'].sig} </code> </h3>
 
 <Builtin data={builtins['exec_lambda']} />
 
-<H3 page="builtins" value={builtins['floor'].sig} />
+<h3 {...{"id":builtins['floor'].sig}}> <code> {builtins['floor'].sig} </code> </h3>
 
 <Builtin data={builtins['floor']} />
 
-<H3 page="builtins" value={builtins['fold'].sig} />
+<h3 {...{"id":builtins['fold'].sig}}> <code> {builtins['fold'].sig} </code> </h3>
 
 <Builtin data={builtins['fold']} />
 
-## `G H I`
+## `G H`
 
-<H3 page="builtins" value={builtins['get_entrypoint'].sig} />
+<h3 {...{"id":builtins['get_entrypoint'].sig}}> <code> {builtins['get_entrypoint'].sig} </code> </h3>
 
 <Builtin data={builtins['get_entrypoint']} />
 
-<H3 page="builtins" value={builtins['greedy_and'].sig} />
+<h3 {...{"id":builtins['greedy_and'].sig}}> <code> {builtins['greedy_and'].sig} </code> </h3>
 
 <Builtin data={builtins['greedy_and']} />
 
-<H3 page="builtins" value={builtins['greedy_or'].sig} />
+<h3 {...{"id":builtins['greedy_or'].sig}}> <code> {builtins['greedy_or'].sig} </code> </h3>
 
 <Builtin data={builtins['greedy_or']} />
 
-<H3 page="builtins" value={builtins['int_to_date'].sig} />
+## `I J`
+
+<h3 {...{"id":builtins['int_to_date'].sig}}> <code> {builtins['int_to_date'].sig} </code> </h3>
 
 <Builtin data={builtins['int_to_date']} />
 
-<H3 page="builtins" value={builtins['int_to_nat'].sig} />
+<h3 {...{"id":builtins['int_to_nat'].sig}}> <code> {builtins['int_to_nat'].sig} </code> </h3>
 
 <Builtin data={builtins['int_to_nat']} />
 
-<H3 page="builtins" value={builtins['is_none'].sig} />
+<h3 {...{"id":builtins['is_none'].sig}}> <code> {builtins['is_none'].sig} </code> </h3>
 
 <Builtin data={builtins['is_none']} />
 
-<H3 page="builtins" value={builtins['is_some'].sig} />
+<h3 {...{"id":builtins['is_some'].sig}}> <code> {builtins['is_some'].sig} </code> </h3>
 
 <Builtin data={builtins['is_some']} />
 
-## `J K L`
-
-<H3 page="builtins" value={builtins['join_tickets'].sig} />
+<h3 {...{"id":builtins['join_tickets'].sig}}> <code> {builtins['join_tickets'].sig} </code> </h3>
 
 <Builtin data={builtins['join_tickets']} />
 
-<H3 page="builtins" value={builtins['keccak'].sig} />
+<h3 {...{"id":builtins['keccak'].sig}}> <code> {builtins['keccak'].sig} </code> </h3>
+
+## `K L`
 
 <Builtin data={builtins['keccak']} />
 
-<H3 page="builtins" value={builtins['key_hash_to_contract'].sig} />
+<h3 {...{"id":builtins['key_hash_to_contract'].sig}}> <code> {builtins['key_hash_to_contract'].sig} </code> </h3>
 
 <Builtin data={builtins['key_hash_to_contract']} />
 
-<H3 page="builtins" value={builtins['key_to_address'].sig} />
+<h3 {...{"id":builtins['key_to_address'].sig}}> <code> {builtins['key_to_address'].sig} </code> </h3>
 
 <Builtin data={builtins['key_to_address']} />
 
-<H3 page="builtins" value={builtins['key_to_key_hash'].sig} />
+<h3 {...{"id":builtins['key_to_key_hash'].sig}}> <code> {builtins['key_to_key_hash'].sig} </code> </h3>
 
 <Builtin data={builtins['key_to_key_hash']} />
 
-<H3 page="builtins" value={builtins['left'].sig} />
+<h3 {...{"id":builtins['left'].sig}}> <code> {builtins['left'].sig} </code> </h3>
 
 <Builtin data={builtins['left']} />
 
-<H3 page="builtins" value={builtins['length'].sig} />
+<h3 {...{"id":builtins['length'].sig}}> <code> {builtins['length'].sig} </code> </h3>
 
 <Builtin data={builtins['length']} />
 
-## `M N O`
+## `M N`
 
-<H3 page="builtins" value={builtins['make_big_map'].sig} />
+<h3 {...{"id":builtins['make_big_map'].sig}}> <code> {builtins['make_big_map'].sig} </code> </h3>
 
 <Builtin data={builtins['make_big_map']} />
 
-<H3 page="builtins" value={builtins['make_map'].sig} />
+<h3 {...{"id":builtins['make_map'].sig}}> <code> {builtins['make_map'].sig} </code> </h3>
 
 <Builtin data={builtins['make_map']} />
 
-<H3 page="builtins" value={builtins['make_list'].sig} />
+<h3 {...{"id":builtins['make_list'].sig}}> <code> {builtins['make_list'].sig} </code> </h3>
 
 <Builtin data={builtins['make_list']} />
 
-<H3 page="builtins" value={builtins['make_operation'].sig} />
+<h3 {...{"id":builtins['make_operation'].sig}}> <code> {builtins['make_operation'].sig} </code> </h3>
 
 <Builtin data={builtins['make_operation']} />
 
-<H3 page="builtins" value={builtins['make_set'].sig} />
+<h3 {...{"id":builtins['make_set'].sig}}> <code> {builtins['make_set'].sig} </code> </h3>
 
 <Builtin data={builtins['make_set']} />
 
-<H3 page="builtins" value={builtins['map'].sig} />
+<h3 {...{"id":builtins['map'].sig}}> <code> {builtins['map'].sig} </code> </h3>
 
 <Builtin data={builtins['map']} />
 
-<H3 page="builtins" value={builtins['max'].sig} />
+<h3 {...{"id":builtins['max'].sig}}> <code> {builtins['max'].sig} </code> </h3>
 
 <Builtin data={builtins['max']} />
 
-<H3 page="builtins" value={builtins['min'].sig} />
+<h3 {...{"id":builtins['min'].sig}}> <code> {builtins['min'].sig} </code> </h3>
 
 <Builtin data={builtins['min']} />
 
-<H3 page="builtins" value={builtins['mutez_to_nat'].sig} />
+<h3 {...{"id":builtins['mutez_to_nat'].sig}}> <code> {builtins['mutez_to_nat'].sig} </code> </h3>
 
 <Builtin data={builtins['mutez_to_nat']} />
 
-<H3 page="builtins" value={builtins['nat_to_string'].sig} />
+<h3 {...{"id":builtins['nat_to_string'].sig}}> <code> {builtins['nat_to_string'].sig} </code> </h3>
 
 <Builtin data={builtins['nat_to_string']} />
 
-<H3 page="builtins" value={builtins['none'].sig} />
+<h3 {...{"id":builtins['none'].sig}}> <code> {builtins['none'].sig} </code> </h3>
 
 <Builtin data={builtins['none']} />
 
-<H3 page="builtins" value={builtins['nth'].sig} />
+<h3 {...{"id":builtins['nth'].sig}}> <code> {builtins['nth'].sig} </code> </h3>
 
 <Builtin data={builtins['nth']} />
 
-<H3 page="builtins" value={builtins['open_chest'].sig} />
+## `O P`
+
+<h3 {...{"id":builtins['open_chest'].sig}}> <code> {builtins['open_chest'].sig} </code> </h3>
 
 <Builtin data={builtins['open_chest']} />
 
-## `P Q R`
-
-<H3 page="builtins" value={builtins['pack'].sig} />
+<h3 {...{"id":builtins['pack'].sig}}> <code> {builtins['pack'].sig} </code> </h3>
 
 <Builtin data={builtins['pack']} />
 
-<H3 page="builtins" value={builtins['pairing_check'].sig} />
+<h3 {...{"id":builtins['pairing_check'].sig}}> <code> {builtins['pairing_check'].sig} </code> </h3>
 
 <Builtin data={builtins['pairing_check']} />
 
-<H3 page="builtins" value={builtins['prepend'].sig} />
+<h3 {...{"id":builtins['prepend'].sig}}> <code> {builtins['prepend'].sig} </code> </h3>
 
 <Builtin data={builtins['prepend']} />
 
-<H3 page="builtins" value={builtins['put'].sig} />
+<h3 {...{"id":builtins['put'].sig}}> <code> {builtins['put'].sig} </code> </h3>
 
 <Builtin data={builtins['put']} />
 
-<H3 page="builtins" value={builtins['read_ticket'].sig} />
+## `Q R`
+
+<h3 {...{"id":builtins['read_ticket'].sig}}> <code> {builtins['read_ticket'].sig} </code> </h3>
 
 <Builtin data={builtins['read_ticket']} />
 
-<H3 page="builtins" value={builtins['remove'].sig} />
+<h3 {...{"id":builtins['remove'].sig}}> <code> {builtins['remove'].sig} </code> </h3>
 
 <Builtin data={builtins['remove']} />
 
-<H3 page="builtins" value={builtins['reverse'].sig} />
+<h3 {...{"id":builtins['reverse'].sig}}> <code> {builtins['reverse'].sig} </code> </h3>
 
 <Builtin data={builtins['reverse']} />
 
-<H3 page="builtins" value={builtins['right'].sig} />
+<h3 {...{"id":builtins['right'].sig}}> <code> {builtins['right'].sig} </code> </h3>
 
 <Builtin data={builtins['right']} />
 
-## `S T U`
+## `S T`
 
-<H3 page="builtins" value={builtins['sapling_empty_state'].sig} />
+<h3 {...{"id":builtins['sapling_empty_state'].sig}}> <code> {builtins['sapling_empty_state'].sig} </code> </h3>
 
 <Builtin data={builtins['sapling_empty_state']} />
 
-<H3 page="builtins" value={builtins['sapling_verify_update'].sig} />
+<h3 {...{"id":builtins['sapling_verify_update'].sig}}> <code> {builtins['sapling_verify_update'].sig} </code> </h3>
 
 <Builtin data={builtins['sapling_verify_update']} />
 
-<H3 page="builtins" value={builtins['set_delegate'].sig} />
+<h3 {...{"id":builtins['set_delegate'].sig}}> <code> {builtins['set_delegate'].sig} </code> </h3>
 
 <Builtin data={builtins['set_delegate']} />
 
-<H3 page="builtins" value={builtins['sha256'].sig} />
+<h3 {...{"id":builtins['sha256'].sig}}> <code> {builtins['sha256'].sig} </code> </h3>
 
 <Builtin data={builtins['sha256']} />
 
-<H3 page="builtins" value={builtins['sha3'].sig} />
+<h3 {...{"id":builtins['sha3'].sig}}> <code> {builtins['sha3'].sig} </code> </h3>
 
 <Builtin data={builtins['sha3']} />
 
-<H3 page="builtins" value={builtins['sha512'].sig} />
+<h3 {...{"id":builtins['sha512'].sig}}> <code> {builtins['sha512'].sig} </code> </h3>
 
 <Builtin data={builtins['sha512']} />
 
-<H3 page="builtins" value={builtins['slice'].sig} />
+<h3 {...{"id":builtins['slice'].sig}}> <code> {builtins['slice'].sig} </code> </h3>
 
 <Builtin data={builtins['slice']} />
 
-<H3 page="builtins" value={builtins['some'].sig} />
+<h3 {...{"id":builtins['some'].sig}}> <code> {builtins['some'].sig} </code> </h3>
 
 <Builtin data={builtins['some']} />
 
-<H3 page="builtins" value={builtins['split_ticket'].sig} />
+<h3 {...{"id":builtins['split_ticket'].sig}}> <code> {builtins['split_ticket'].sig} </code> </h3>
 
 <Builtin data={builtins['split_ticket']} />
 
-<H3 page="builtins" value={builtins['sub_mutez'].sig} />
+<h3 {...{"id":builtins['sub_mutez'].sig}}> <code> {builtins['sub_mutez'].sig} </code> </h3>
 
 <Builtin data={builtins['sub_mutez']} />
 
-<H3 page="builtins" value={builtins['sub_nat'].sig} />
+<h3 {...{"id":builtins['sub_nat'].sig}}> <code> {builtins['sub_nat'].sig} </code> </h3>
 
 <Builtin data={builtins['sub_nat']} />
 
-<H3 page="builtins" value={builtins['unpack'].sig} />
+## `T U`
+
+<h3 {...{"id":builtins['unpack'].sig}}> <code> {builtins['unpack'].sig} </code> </h3>
 
 <Builtin data={builtins['unpack']} />
 
-<H3 page="builtins" value={builtins['update'].sig} />
+<h3 {...{"id":builtins['update'].sig}}> <code> {builtins['update'].sig} </code> </h3>
 
 <Builtin data={builtins['update']} />
 
-## `V W X`
+## `V W`
 
-<H3 page="builtins" value={builtins['voting_power'].sig} />
+<h3 {...{"id":builtins['voting_power'].sig}}> <code> {builtins['voting_power'].sig} </code> </h3>
 
 <Builtin data={builtins['voting_power']} />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</MDXProvider>

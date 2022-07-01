@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 hide_table_of_contents: false
+toc_max_heading_level: 2
 ---
 
 # Types
@@ -9,196 +10,195 @@ hide_table_of_contents: false
 
 import Type from "@site/src/components/Type.js";
 import { types } from "./types.js";
-import { MDXProvider } from "@mdx-js/react";
-import NoH2 from "@site/src/components/NoH2.js";
-import H3 from "@site/src/components/H3.js";
 
-<MDXProvider components={{ h2: NoH2 }}>
+## `A B`
 
-## `A B C`
-
-<H3 page="types" value="address" />
+<h3 {...{"id":"address"}}> <code>address</code> </h3>
 
 <Type data={types["address"]} />
 
-<H3 page="types" value="aggregate<A>" />
+<h3 {...{"id":"aggregate<A>"}}> <code>aggregate&lt;A&gt;</code> </h3>
 
 <Type data={types["aggregate"]} />
 
-<H3 page="types" value="asset_key<A>" />
+<h3 {...{"id":"asset_key<A>"}}> <code>asset_key&lt;A&gt;</code> </h3>
 
 <Type data={types["asset_key"]} />
 
-<H3 page="types" value="asset_value<A>" />
+<h3 {...{"id":"asset_value<A>"}}> <code>asset_value&lt;A&gt;</code> </h3>
 
 <Type data={types["asset_value"]} />
 
-<H3 page="types" value="asset_view<A>" />
+<h3 {...{"id":"asset_view<A>"}}> <code>asset_view&lt;A&gt;</code> </h3>
 
 <Type data={types["asset_view"]} />
 
-<H3 page="types" value="big_map<K, V>" />
+<h3 {...{"id":"big_map<K, V>"}}> <code>big_map&lt;K, V&gt;</code> </h3>
 
 <Type data={types["big_map"]} />
 
-<H3 page="types" value="bls12_381_fr" />
+<h3 {...{"id":"bls12_381_fr"}}> <code>bls12_381_fr</code> </h3>
 
 <Type data={types["bls12_381_fr"]} />
 
-<H3 page="types" value="bls12_381_g1" />
+<h3 {...{"id":"bls12_381_g1"}}> <code>bls12_381_g1</code> </h3>
 
 <Type data={types["bls12_381_g1"]} />
 
-<H3 page="types" value="bls12_381_g2" />
+<h3 {...{"id":"bls12_381_g2"}}> <code>bls12_381_g2</code> </h3>
 
 <Type data={types["bls12_381_g2"]} />
 
-<H3 page="types" value="bool" />
+<h3 {...{"id":"bool"}}> <code>bool</code> </h3>
 
 <Type data={types["bool"]} />
 
-<H3 page="types" value="bytes" />
+<h3 {...{"id":"bytes"}}> <code>bytes</code> </h3>
 
 <Type data={types["bytes"]} />
 
-<H3 page="types" value="chain_id" />
+<h3 {...{"id":"chain_id"}}> <code>chain_id</code> </h3>
+
+## `C D`
 
 <Type data={types["chain_id"]} />
 
-<H3 page="types" value="chest" />
+<h3 {...{"id":"chest"}}> <code>chest</code> </h3>
 
 <Type data={types["chest"]} />
 
-<H3 page="types" value="chest_key" />
+<h3 {...{"id":"chest_key"}}> <code>chest_key</code> </h3>
 
 <Type data={types["chest_key"]} />
 
-<H3 page="types" value="contract<T>" />
+<h3 {...{"id":"contract<T>"}}> <code>contract&lt;T&gt;</code> </h3>
 
 <Type data={types["contract"]} />
 
-## `D E F`
-
-<H3 page="types" value="date" />
+<h3 {...{"id":"date"}}> <code>date</code> </h3>
 
 <Type data={types["date"]} />
 
-<H3 page="types" value="duration" />
+<h3 {...{"id":"duration"}}> <code>duration</code> </h3>
 
 <Type data={types["duration"]} />
 
-<H3 page="types" value="enum" />
+<h3 {...{"id":"enum"}}> <code>enum</code> </h3>
+
+## `E F`
 
 <Type data={types["enum"]} />
 
-<H3 page="types" value="event" />
+<h3 {...{"id":"event"}}> <code>event</code> </h3>
 
 <Type data={types["event"]} />
 
-## `G H I`
+## `I J`
 
-<H3 page="types" value="int" />
+<h3 {...{"id":"int"}}> <code>int</code> </h3>
 
 <Type data={types["int"]} />
 
-<H3 page="types" value="iterable_big_map<K, V>" />
+<h3 {...{"id":"iterable_big_map<K, V>"}}> <code>iterable_big_map&lt;K, V&gt;</code> </h3>
 
 <Type data={types["iterable_big_map"]} />
 
-## `J K L`
+## `K L`
 
-<H3 page="types" value="key" />
+<h3 {...{"id":"key"}}> <code>key</code> </h3>
 
 <Type data={types["key"]} />
 
-<H3 page="types" value="key_hash" />
+<h3 {...{"id":"key_hash"}}> <code>key_hash</code> </h3>
 
 <Type data={types["key_hash"]} />
 
-<H3 page="types" value="lambda<T, R>" />
+<h3 {...{"id":"lambda<T, R>"}}> <code>lambda&lt;T, R&gt;</code> </h3>
 
 <Type data={types["lambda"]} />
 
-<H3 page="types" value="list<T>" />
+<h3 {...{"id":"list<T>"}}> <code>list&lt;T&gt;</code> </h3>
 
 <Type data={types["list"]} />
 
-## `M N O`
+## `M N`
 
-<H3 page="types" value="map<K, V>" />
+<h3 {...{"id":"map<K, V>"}}> <code>map&lt;K, V&gt;</code> </h3>
 
 <Type data={types["map"]} />
 
-<H3 page="types" value="nat" />
+<h3 {...{"id":"nat"}}> <code>nat</code> </h3>
 
 <Type data={types["nat"]} />
 
-<H3 page="types" value="never" />
+<h3 {...{"id":"never"}}> <code>never</code> </h3>
 
 <Type data={types["never"]} />
 
-<H3 page="types" value="operation" />
+## `O P`
+
+<h3 {...{"id":"operation"}}> <code>operation</code> </h3>
 
 <Type data={types["operation"]} />
 
-<H3 page="types" value="option<T>" />
+<h3 {...{"id":"option<T>"}}> <code>option&lt;T&gt;</code> </h3>
 
 <Type data={types["option"]} />
 
-<H3 page="types" value="or<T1, T2>" />
+<h3 {...{"id":"or<T1, T2>"}}> <code>or&lt;T1, T2&gt;</code> </h3>
 
 <Type data={types["or"]} />
 
-## `P Q R`
-
-<H3 page="types" value="partition<A>" />
+<h3 {...{"id":"partition<A>"}}> <code>partition&lt;A&gt;</code> </h3>
 
 <Type data={types["partition"]} />
 
-<H3 page="types" value="rational" />
+<h3 {...{"id":"rational"}}> <code>rational</code> </h3>
+
+## `Q R`
 
 <Type data={types["rational"]} />
 
-<H3 page="types" value="record" />
+<h3 {...{"id":"record"}}> <code>record</code> </h3>
 
 <Type data={types["record"]} />
 
-## `S T U`
+## `S T`
 
-<H3 page="types" value="sapling_state(n)" />
+<h3 {...{"id":"sapling_state(n)"}}> <code>sapling_state(n)</code> </h3>
 
 <Type data={types["sapling_state"]} />
 
-<H3 page="types" value="sapling_transaction(n)" />
+<h3 {...{"id":"sapling_transaction(n)"}}> <code>sapling_transaction(n)</code> </h3>
 
 <Type data={types["sapling_transaction"]} />
 
-<H3 page="types" value="set<T>" />
+<h3 {...{"id":"set<T>"}}> <code>set&lt;T&gt;</code> </h3>
 
 <Type data={types["set"]} />
 
-<H3 page="types" value="signature" />
+<h3 {...{"id":"signature"}}> <code>signature</code> </h3>
 
 <Type data={types["signature"]} />
 
-<H3 page="types" value="string" />
+<h3 {...{"id":"string"}}> <code>string</code> </h3>
 
 <Type data={types["string"]} />
 
-<H3 page="types" value="tez" />
+<h3 {...{"id":"tez"}}> <code>tez</code> </h3>
 
 <Type data={types["tez"]} />
 
-<H3 page="types" value="ticket<T>" />
+<h3 {...{"id":"ticket<T>"}}> <code>ticket&lt;T&gt;</code> </h3>
 
 <Type data={types["ticket"]} />
 
-<H3 page="types" value="tuple" />
+<h3 {...{"id":"tuple"}}> <code>tuple</code> </h3>
 
 <Type data={types["tuple"]} />
 
-<H3 page="types" value="unit" />
+## `U V`
+
+<h3 {...{"id":"unit"}}> <code>unit</code> </h3>
 
 <Type data={types["unit"]} />
-
-</MDXProvider>
