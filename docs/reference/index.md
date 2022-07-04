@@ -110,7 +110,7 @@ This is the Archetype language reference.
 } xs={4}/>
 
 <EagleEyeView title="Builtins" data={Object.entries(builtins).sort().map(([k,v]) => {
-    return { label: k, link: '/docs/reference/expressions/builtins#' + to_link(v.sig) }
+    return { label: v.index ? v.index : k, link: '/docs/reference/expressions/builtins#' + to_link(v.sig) }
   })
 } xs={4}/>
 

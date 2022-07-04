@@ -282,9 +282,13 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['unpack']} />
 
-<h3 {...{"id":builtins['update'].sig}}> <code> {builtins['update'].sig} </code> </h3>
+<h3 {...{"id":builtins['update_map'].sig}}> <code> {builtins['update_map'].sig} </code> </h3>
 
-<Builtin data={builtins['update']} />
+<Builtin data={builtins['update_map']} />
+
+<h3 {...{"id":builtins['update_set'].sig}}> <code> {builtins['update_set'].sig} </code> </h3>
+
+<Builtin data={builtins['update_set']} />
 
 ## `V W`
 

@@ -589,20 +589,57 @@ export const builtins = {
       { keyword: 'update', link: '/docs/reference/expressions/builtins#update(m%20:%20map<K,%20V>,%20k%20:%20K,%20v%20:%20option<V>)' },
     ]
   },
-  update: {
+  update_set: {
+    sig: 'update(s : set<T>, e : T, b : bool)',
+    index: 'update',
+    desc: <div>Adds or removes element <code>e</code> in set <code>s</code>: <ul>
+    <li>removes <code>e</code> when <code>b</code> is <code>false</code></li>
+    <li>adds <code>e</code> when <code>b</code> is <code>true</code></li>
+  </ul></div>,
+    parameters: [
+      {
+        type: 'set<T>',
+        alias: 's',
+        desc: <div>Set to add or remove element from</div>
+      },
+      {
+        type: 'T',
+        withLink: false,
+        alias: 'e',
+        desc: <div>element to add/remove</div>
+      },
+      {
+        type: 'bool',
+        alias: 'b',
+        desc: <div>Optional value to decide to add or remove</div>
+      }
+    ],
+    returns: {
+      type: 'setT>',
+      desc: <div>Copy of set <code>s</code> with element <code>e</code> added or removed.</div>
+    },
+    related: [
+      { keyword: 'Set', link: '/docs/language-basics/container#set' },
+      { keyword: 'add', link: '/docs/reference/instructions/containers#sadde' },
+      { keyword: 'remove', link: '/docs/reference/instructions/containers#sremovee' },
+    ]
+  },
+  update_map: {
     sig: 'update(m : map<K, V>, k : K, v : option<T>)',
+    index: 'update',
     desc: <div>Adds or removes value <code>v</code> from associated to key <code>k</code> in map <code>m</code>: <ul>
     <li><code>none</code> removes key <code>k</code></li>
     <li><code>some(v)</code>, adds key <code>k</code> with value <code>v</code></li>
   </ul></div>,
     parameters: [
       {
-        type: 'map',
+        type: 'map<K, V>',
         alias: 'm',
         desc: <div>Map (or <Link to="/docs/reference/types#big_map<K,%20V>"><code>big_map</code></Link> or <Link to="/docs/reference/types#iterable_big_map<K,%20V>"><code>iterable_big_map</code></Link>)</div>
       },
       {
         type: 'K',
+        withLink: false,
         alias: 'k',
         desc: <div>Key to add/remove</div>
       },
@@ -620,7 +657,7 @@ export const builtins = {
     michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
     related: [
       { keyword: 'Map', link: '/docs/language-basics/container#map' },
-      { keyword: 'put', link: '/docs/language-basics/container#map' },
+      { keyword: 'put', link: '/docs/reference/instructions/containers#mputk-v' },
       { keyword: 'remove', link: '/docs/reference/expressions/builtins#remove(c%20:%20C,%20i%20:%20T)' },
     ]
   },
