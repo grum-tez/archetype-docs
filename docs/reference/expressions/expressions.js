@@ -21,5 +21,16 @@ export const expressions = {
     { label : 'select'  , link : link_prefix + '/asset#aselectp', desc : 'Selects assets that verify a predicate' },
     { label : 'head'    , link : link_prefix + '/asset#aheadi--nat', desc : 'Returns first assets' },
     { label : 'tail'    , link : link_prefix + '/asset#ataili--nat', desc : 'Returns last assets' },
+    { label : 'to_container'    , link : link_prefix + '/asset#ato_container', desc : 'Returns collection as basic container' },
+
+  ],
+  assettypes: [
+    { label : 'asset_key<A>', link: '/docs/reference/types#asset_key<A>', desc: 'Type of the asset identifier' },
+    { label : 'asset_value<A>', link: '/docs/reference/types#asset_value<A>', desc: 'Type of the asset data' },
+    { label : 'asset_container<A>', link: '/docs/reference/types#asset_container<A>', desc: 'Type of the asset collection' },
+    { label : 'asset_view<A>', link: '/docs/reference/types#asset_view<A>', desc: 'Read-only collection of assets' },
+  ],
+  assetbuiltins: [
+    { label : 'make_asset', link: '/docs/reference/expressions/builtins#make_asset(k%20:%20asset_key<A>,%20v%20:%20asset_value<A>)', desc: 'Creates an asset object from key and value' }
   ]
 }

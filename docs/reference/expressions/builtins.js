@@ -16,6 +16,7 @@ import RightDesc from "../../../src/components/desc/right_desc.md"
 import UnpackDesc from "../../../src/components/desc/unpack_desc.md"
 import SliceDesc from "../../../src/components/desc/slice_desc.md"
 import CallviewDesc from "../../../src/components/desc/callview_desc.md"
+import MakeAsset from "../../../src/components/desc/make_asset.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -55,6 +56,30 @@ export const builtins = {
     michelson_ref_url: michelson_ref_base_url + '#VIEW',
     related: [
       { keyword: 'View', link: '/docs/reference/declarations/view' },
+    ]
+  },
+  make_asset: {
+    sig: 'make_asset(k : asset_key<A>, v : asset_value<A>)',
+    desc: <MakeAsset />,
+    parameters: [
+      {
+        type: 'asset_key<A>',
+        alias: 'k',
+        desc: <div>Asset identifier</div>
+      },
+      {
+        type: 'asset_value<A>',
+        alias: 'v',
+        desc: <div>Asset value</div>
+      },
+    ],
+    returns: {
+      type: 'A',
+      withLink: false,
+      desc: <div>Asset literal with identifier <code>k</code> and data <code>v</code>.</div>
+    },
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
     ]
   },
   make_big_map: {

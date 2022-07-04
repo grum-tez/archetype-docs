@@ -138,6 +138,10 @@ import { builtins } from './builtins.js';
 
 ## `M N`
 
+<h3 {...{"id":builtins['make_asset'].sig}}> <code> {builtins['make_asset'].sig} </code> </h3>
+
+<Builtin data={builtins['make_asset']} />
+
 <h3 {...{"id":builtins['make_big_map'].sig}}> <code> {builtins['make_big_map'].sig} </code> </h3>
 
 <Builtin data={builtins['make_big_map']} />

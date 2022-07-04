@@ -10,6 +10,7 @@ import AssetRemoveClearDesc from '../../src/components/desc/assetremoveclear_des
 import AssetRemoveIfDesc from '../../src/components/desc/assetremoveif_desc.md'
 import AssetUpdateDesc from '../../src/components/desc/assetupdate_desc.md'
 import AssetUpdateAllDesc from '../../src/components/desc/assetupdateall_desc.md'
+import PutRemove from '../../src/components/desc/put_remove.md'
 
 export const assetinstructions = {
   add : {
@@ -161,6 +162,29 @@ export const assetinstructions = {
     related: [
       { keyword: 'Asset', link: '/docs/asset' },
       { keyword: 'add', link: '/docs/reference/instructions/asset#aadda' },
+    ]
+  },
+  put_remove : {
+    desc: <PutRemove />,
+    appliesto: ['asset', 'asset to big_map', 'asset to iterable_big_map'],
+    parameters: [
+      {
+        type: 'asset_key<A>',
+        alias: 'k',
+        desc: <div>Key of the asset to add or remove.</div>
+      },
+      {
+        type: 'option<asset_value<A>>',
+        alias: 'o',
+        withLink: false,
+        desc: <div>Option of asset value to add or remove.</div>
+      },
+    ],
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
+      { keyword: 'put', link: '/docs/reference/instructions/asset#aputa' },
+      { keyword: 'remove', link: '/docs/reference/instructions/asset#aremovek' },
+      { keyword: 'make_asset', link: '/docs/reference/expressions/builtins#make_asset(k%20:%20asset_key<A>,%20v%20:%20asset_value<A>)' },
     ]
   },
   remove_if : {

@@ -49,6 +49,35 @@ export const containerinstructions = {
       { keyword: 'contains', link: '/docs/reference/expressions/builtins#contains(c%20:%20C,%20i%20:%20T)' },
     ]
   },
+  setupdate: {
+    desc: <div>Adds or removes <code>e</code> from set <code>S</code>:<ul>
+      <li>adds <code>e</code> if <code>b</code> is <code>true</code></li>
+      <li>removes <code>e</code> if <code>b</code> is <code>false</code></li>
+      </ul></div>,
+    sig: 'S.update(e, b)',
+    parameters: [
+      {
+        type: 'T',
+        withLink : false,
+        alias: 'e',
+        desc: <div>Element to add or remove from the set. Type of <code>e</code> is defined at <Link to="/docs/reference/types#set<T>"><code>set</code></Link> declaration.</div>
+      },
+      {
+        type: 'bool',
+        alias: 'b',
+        desc: <div>Boolean to decide whether to add or remove element <code>e</code>.</div>
+      }
+    ],
+    michelson: "UPDATE",
+    michelson_ref_url: michelson_ref_base_url + '#instr-UPDATE',
+    fails: [
+    ],
+    related: [
+      { keyword: 'set', link: '/docs/reference/types#set<T>' },
+      { keyword: 'add', link: '/docs/reference/instructions/containers#sadde' },
+      { keyword: 'remove', link: '/docs/reference/instructions/containers#sremovee' },
+    ]
+  },
   prepend: {
     desc: <div>Prepends element <code>e</code> to (ie. puts <code>e</code> in first position of) list <code>L</code>.<p></p>
     (see <Link to="/docs/reference/instructions/control#match-with"><code>match with</code></Link> instruction to <i>remove</i> the head element of the list).

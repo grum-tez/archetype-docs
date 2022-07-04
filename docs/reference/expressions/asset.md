@@ -49,3 +49,7 @@ import { assetbuiltins } from './assetbuiltins.js';
 ### `A.tail(i : nat)`
 
 <Builtin data={assetbuiltins["tail"]} />
+
+### `A.to_container()`
+
+<Builtin data={assetbuiltins["to_container"]} />

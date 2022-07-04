@@ -21,6 +21,10 @@ import { types } from "./types.js";
 
 <Type data={types["aggregate"]} />
 
+<h3 {...{"id":"asset_container<A>"}}> <code>asset_container&lt;A&gt;</code> </h3>
+
+<Type data={types["asset_container"]} />
+
 <h3 {...{"id":"asset_key<A>"}}> <code>asset_key&lt;A&gt;</code> </h3>
 
 <Type data={types["asset_key"]} />

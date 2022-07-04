@@ -2,6 +2,7 @@ export const set = {
   instructions: [
     { label: 'add', link: '/docs/reference/instructions/containers#sadde', desc: 'Adds an element to a set' },
     { label: 'remove', link: '/docs/reference/instructions/containers#sremovee', desc: 'Removes an element from a set' },
+    { label: 'update', link: '/docs/reference/instructions/containers#supdatee-b', desc: 'Adds or removes an element from a set' },
     { label: 'for', link: '/docs/reference/instructions/control#set', desc: 'Iterates over set elements'}
   ],
   builtins: [

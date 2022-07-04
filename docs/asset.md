@@ -36,6 +36,10 @@ This section presents the application programming interface of an asset collecti
 <br/>
 <Api title="Expressions" data={expressions.asset} />
 <br/>
+<Api title="Utility types" data={expressions.assettypes} />
+<br/>
+<Api title="Utility builtins" data={expressions.assetbuiltins} />
+<br/>
 
 A convenient aspect of this API is the possibility to **combine** expressions and instructions. For example, consider the following `vehicle` asset definition:
 

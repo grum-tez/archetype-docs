@@ -31,6 +31,10 @@ import Builtin from '@site/src/components/Builtin.js';
 
 <Builtin data={assetinstructions['remove']} />
 
+### `A.put_remove(k, o)`
+
+<Builtin data={assetinstructions['put_remove']} />
+
 ### `A.remove_if(p)`
 
 <Builtin data={assetinstructions['remove_if']} />

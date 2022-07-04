@@ -8,6 +8,7 @@ import GetoptDesc from "../../../src/components/desc/getopt_desc.md"
 import SelectDesc from "../../../src/components/desc/select_desc.md"
 import SortDesc from "../../../src/components/desc/sort_desc.md"
 import SumDesc from "../../../src/components/desc/sum_desc.md"
+import AsContainer from "../../../src/components/desc/to_container.md"
 
 export const assetbuiltins = {
   get: {
@@ -267,6 +268,19 @@ export const assetbuiltins = {
     returns: {
       type: 'asset_view<A>',
       desc: <div>A asset_view of the last <code>i</code> elements of <code>A</code> (or all elements if <code>A.count() &lt;= i</code>).</div>
+    },
+    related: [
+      { keyword: 'Asset', link: '/docs/asset' },
+    ]
+  },
+  to_container: {
+    sig: 'A.to_container()',
+    desc: <AsContainer />,
+    appliesto: [ 'asset', 'asset to big_map' ],
+    parameters: [],
+    returns: {
+      type: 'asset_container<A>',
+      desc: <div>Collection <code>A</code> as basic container.</div>
     },
     related: [
       { keyword: 'Asset', link: '/docs/asset' },

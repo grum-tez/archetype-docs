@@ -54,6 +54,7 @@ export const instructions = {
       { label : 'update_all', link : link_prefix + '/asset#aupdate_allk--u-', desc : 'Updates one or several fields of an asset collection or view' },
       { label : 'add_update', link : link_prefix + '/asset#aadd_updatek--u-', desc : 'Adds a new asset or updates an asset in collection' },
       { label : 'remove', link : link_prefix + '/asset#aremovek', desc : 'Removes element from collection, partition or aggregate' },
+      { label : 'put_remove', link : link_prefix + '/asset#aput_removek-o', desc : 'Puts or removes an element in collection' },
       { label : 'remove_if', link : link_prefix + '/asset#aremove_ifp', desc : 'Removes referenced assets that verify a predicate' },
       { label : 'remove_all', link : link_prefix + '/asset#aremove_all', desc : 'Removes all assets from collection' },
       { label : 'clear', link : link_prefix + '/asset#aclear', desc : 'Removes all referenced assets from an asset view' },

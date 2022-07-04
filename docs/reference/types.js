@@ -20,6 +20,9 @@ import PartitionDesc from '../../src/components/desc/partition_desc.md'
 import BigmapDesc from '../../src/components/desc/bigmap_desc.md'
 import AssetRecordDesc from '../../src/components/desc/asset_value_desc.md'
 import IterableBigMapDesc from '../../src/components/desc/iterable_big_map_desc.md'
+import AssetContainer from '../../src/components/desc/asset_container.md'
+import AssetKey from '../../src/components/desc/asset_key.md'
+import AssetView from '../../src/components/desc/asset_view.md'
 
 export const types = {
   address :
@@ -71,8 +74,22 @@ export const types = {
       { keyword: "tail", link: asset_prefix + 'ataili--nat'},
     ],
   },
+  asset_container : {
+    desc: <AssetContainer />,
+    link: '#asset_container<A>',
+    examples: [],
+    parameters: [
+      { keyword: 'A', type: 'asset', desc: 'Any declared asset.' },
+    ],
+    tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
+    related: [
+      { keyword: "Asset", link:"/docs/asset" },
+      { keyword: "asset_key", link:"/docs/reference/types#asset_key<A>" },
+      { keyword: "asset_value", link:"/docs/reference/types#asset_value<A>" },
+    ]
+  },
   asset_key : {
-    desc: <div>Type of the key of asset <code>A</code>.</div>,
+    desc: <AssetKey />,
     link: '#asset_key<A>',
     examples: [   ],
     parameters: [
@@ -80,7 +97,9 @@ export const types = {
     ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     related: [
-      { keyword: "Asset", link:"/docs/asset" }
+      { keyword: "Asset", link:"/docs/asset" },
+      { keyword: "asset_container", link:"/docs/reference/types#asset_container<A>" },
+      { keyword: "asset_value", link:"/docs/reference/types#asset_value<A>" },
     ],
   },
   asset_value : {
@@ -93,13 +112,15 @@ export const types = {
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     related: [
       { keyword: "Asset", link:"/docs/asset" },
+      { keyword: "asset_container", link:"/docs/reference/types#asset_container<A>" },
+      { keyword: "asset_key", link:"/docs/reference/types#asset_key<A>" },
       { keyword: "[]", link: asset_prefix + 'ak--asset_keya' },
       { keyword: "get", link: asset_prefix + 'agetk--asset_keya' },
     ],
   },
   asset_view :
   {
-    desc: <div>Read-only view on asset collection returned by asset methods. It is possible to iterate on an <code>asset_view</code> with the <Link to="/docs/reference/instructions/control#for"><code>for</code></Link> instruction. They are internally represented as list of asset keys.</div>,
+    desc: <AssetView />,
     link: '#asset_view<A>',
     examples: [ '[]' ],
     tags: [ PASSABLE, PACKABLE ],

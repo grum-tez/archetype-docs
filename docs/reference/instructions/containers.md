@@ -16,6 +16,10 @@ import Builtin from '@site/src/components/Builtin.js';
 
 <Builtin data={containerinstructions['setremove']} />
 
+### `S.update(e, b)`
+
+<Builtin data={containerinstructions['setupdate']} />
+
 ## List
 
 ### `L.prepend(e)`
