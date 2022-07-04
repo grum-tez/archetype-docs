@@ -36,6 +36,7 @@ export const instructions = {
     sets: [
       { label : 'add', link : link_prefix + '/containers#sadde' },
       { label : 'remove', link : link_prefix + '/containers#sremovee' },
+      { label : 'update', link : link_prefix + '/containers#supdatee-k' },
     ],
     lists: [
       { label : 'prepend', link : link_prefix + '/containers#lprepende' },

@@ -68,11 +68,11 @@ This is the Archetype language reference.
 <EagleEyeView title="Divergent" data={instructions.divergent} xs={2}/>
 
 <Grid container>
-  <Grid item md={4} xs={12} sm={12}>
-    <EagleEyeView title="Set" data={instructions.sets} xs={6}/>
+  <Grid item md={6} xs={12} sm={12}>
+    <EagleEyeView title="Set" data={instructions.sets} xs={4}/>
   </Grid>
-  <Grid item md={8} xs={12} sm={12}>
-    <EagleEyeView title="List" data={instructions.lists} xs={3}/>
+  <Grid item md={6} xs={12} sm={12}>
+    <EagleEyeView title="List" data={instructions.lists} xs={4}/>
   </Grid>
 </Grid>
 
