@@ -3,20 +3,21 @@ import React from "react"
 
 import AbsDesc from "../../../src/components/desc/abs_desc.md"
 import ApplyLambdaDesc from "../../../src/components/desc/applylambda_desc.md"
+import CallviewDesc from "../../../src/components/desc/callview_desc.md"
 import ConcatDesc from "../../../src/components/desc/concat_desc.md"
+import CreateContract from "../../../src/components/desc/create_contract.md"
 import ExecLambdaDesc from "../../../src/components/desc/execlambda_desc.md"
 import FoldDesc from "../../../src/components/desc/fold_desc.md"
 import GetEntrypointDesc from "../../../src/components/desc/getentrypoint_desc.md"
 import IsNoneDesc from "../../../src/components/desc/is_none_desc.md"
 import IsSomeDesc from "../../../src/components/desc/is_some_desc.md"
 import LeftDesc from "../../../src/components/desc/left_desc.md"
+import MakeAsset from "../../../src/components/desc/make_asset.md"
 import MapDesc from "../../../src/components/desc/map_desc.md"
 import MutezNatDesc from "../../../src/components/desc/mutez_nat_desc.md"
 import RightDesc from "../../../src/components/desc/right_desc.md"
-import UnpackDesc from "../../../src/components/desc/unpack_desc.md"
 import SliceDesc from "../../../src/components/desc/slice_desc.md"
-import CallviewDesc from "../../../src/components/desc/callview_desc.md"
-import MakeAsset from "../../../src/components/desc/make_asset.md"
+import UnpackDesc from "../../../src/components/desc/unpack_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -1072,7 +1073,7 @@ export const builtins = {
   },
   set_delegate: {
     sig: 'set_delegate(opkh : option<key_hash>)',
-    desc: <div>[NEW] Sets delegate account for current contract.</div>,
+    desc: <div>Sets delegate account for current contract.</div>,
     parameters: [
       {
         type: 'option<key_hash>',
@@ -1711,5 +1712,48 @@ export const builtins = {
     ],
     michelson: "OR",
     michelson_ref_url: michelson_ref_base_url + '#instr-OR',
+  },
+  create_contract : {
+    sig: 'create_contract(path, del, amount, storage)',
+    desc: <CreateContract />,
+    parameters: [
+      {
+        type: 'string literal',
+        withLink: false,
+        alias: 'path',
+        desc: <div>Path to Michelson code file to create (*.tz)</div>
+      },
+      {
+        type: 'option<address>',
+        alias: 'del',
+        withLink: false,
+        desc: <div>Option of delegate address</div>
+      },
+      {
+        type: 'amount',
+        alias: 'tez',
+        desc: <div>Amount of balance to transfer to new contract</div>
+      },
+      {
+        type: 'any',
+        withLink: false,
+        alias: 'storage',
+        desc: <div>Initial storage value</div>
+      },
+    ],
+    returns: {
+      type: 'operation * address',
+      withLink: false,
+      desc: <div>Returns a pair of:<ul>
+        <li>Operation for contract creation</li>
+        <li>Address of created contract</li>
+        </ul></div>
+    },
+    related: [
+      { keyword: 'operation', link: '/docs/reference/types#operation' },
+      { keyword: 'set_delegate', link: '/docs/reference/expressions/builtins#set_delegate(opkh%20:%20option<key_hash>)' },
+    ],
+    michelson: "CREATE_CONTRACT",
+    michelson_ref_url: michelson_ref_base_url + '#instr-CREATE_CONTRACT',
   }
 }

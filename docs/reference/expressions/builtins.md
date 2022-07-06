@@ -56,6 +56,10 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['contract_to_address']} />
 
+<h3 {...{"id":builtins['create_contract'].sig}}> <code> {builtins['create_contract'].sig} </code> </h3>
+
+<Builtin data={builtins['create_contract']} />
+
 <h3 {...{"id":builtins['create_ticket'].sig}}> <code> {builtins['create_ticket'].sig} </code> </h3>
 
 <Builtin data={builtins['create_ticket']} />
