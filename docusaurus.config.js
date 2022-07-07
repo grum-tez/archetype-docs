@@ -99,7 +99,7 @@ const config = {
             label: 'Templates',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/docs/installation', label: 'latest: 1.3.1', position: 'right'},
+          {to: '/docs/installation', label: 'latest: 1.3.2', position: 'right'},
           {
             href: 'https://tezos.com',
             label: 'Tezos',
