@@ -157,9 +157,9 @@ import { types } from "./types.js";
 
 <Type data={types["partition"]} />
 
-<h3 {...{"id":"rational"}}> <code>rational</code> </h3>
-
 ## `Q R`
+
+<h3 {...{"id":"rational"}}> <code>rational</code> </h3>
 
 <Type data={types["rational"]} />
 
