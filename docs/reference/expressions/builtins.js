@@ -18,6 +18,7 @@ import MutezNatDesc from "../../../src/components/desc/mutez_nat_desc.md"
 import RightDesc from "../../../src/components/desc/right_desc.md"
 import SliceDesc from "../../../src/components/desc/slice_desc.md"
 import UnpackDesc from "../../../src/components/desc/unpack_desc.md"
+import NthDesc from "../../../src/components/desc/nth_builtin_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -515,7 +516,7 @@ export const builtins = {
   },
   nth: {
     sig: 'nth(l : list<T>, n : nat)',
-    desc: <div>Returns an option of the <code>n</code>th element of list <code>l</code>.</div>,
+    desc: <NthDesc/>,
     parameters: [
       {
         type: 'list<T>',

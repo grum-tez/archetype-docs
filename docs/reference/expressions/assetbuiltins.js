@@ -1,10 +1,11 @@
 import React from "react"
 
 import GetDesc from "../../../src/components/desc/get_desc.md"
-import GetFieldDesc from "../../../src/components/desc/get_field_desc.md"
 import GetFieldDefaultDesc from "../../../src/components/desc/get_field_default_desc.md"
+import GetFieldDesc from "../../../src/components/desc/get_field_desc.md"
 import GetOptionFieldDesc from "../../../src/components/desc/get_option_field_desc.md"
 import GetoptDesc from "../../../src/components/desc/getopt_desc.md"
+import NthDesc from "../../../src/components/desc/nth_desc.md"
 import SelectDesc from "../../../src/components/desc/select_desc.md"
 import SortDesc from "../../../src/components/desc/sort_desc.md"
 import SumDesc from "../../../src/components/desc/sum_desc.md"
@@ -152,7 +153,7 @@ export const assetbuiltins = {
   },
   nth: {
     sig: 'A.nth(i)',
-    desc: <div>Returns an option of the key of <code>i</code>th element (starting from 0) in collection <code>A</code>, according to its order (natural key order for <code>asset</code> collection).</div>,
+    desc: <NthDesc />,
     appliesto: [ 'asset', 'asset to iterable_big_map', 'aggregate', 'partition', 'asset_view' ],
     parameters: [
       {
