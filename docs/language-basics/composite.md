@@ -33,7 +33,7 @@ Below is the list of tuple-related instructions and operators.
 
 A [record](/docs/reference/types#record) is fixed-length list of *named* values of different types.
 
-For example, a `person` record is decalred as follows:
+For example, a `person` record is declared as follows:
 ```archetype
 record person {
   first : string;
