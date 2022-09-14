@@ -110,7 +110,7 @@ export const assignments = {
   orequal: {
     label: 'b',
     link: '--a',
-    desc: <div>Assigns <code>a and b</code> to <i>variable</i> <code>a</code> (local variable, tuple dimension or record field) (see <Link to="/docs/reference/expressions/operators/arithmetic#a-or-b"><code>or</code></Link> operator).</div>,
+    desc: <div>Assigns <code>a or b</code> to <i>variable</i> <code>a</code> (local variable, tuple dimension or record field) (see <Link to="/docs/reference/expressions/operators/arithmetic#a-or-b"><code>or</code></Link> operator).</div>,
     binary: false,
     types: [
       { typa: 'bool', typr : 'bool' },
