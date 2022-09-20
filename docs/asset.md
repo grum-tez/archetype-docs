@@ -19,7 +19,7 @@ asset loan identified by id {
   subscriber : address;
   principal  : tez;
   interest   : rational = 2%;
-  creation   : date     = now
+  creation   : date     = now;
   delay      : duration = 10w; /* 10 weeks */
 }
 ```

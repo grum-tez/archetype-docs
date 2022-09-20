@@ -106,9 +106,11 @@ The *getter* syntax hides the callback argument and uses the `return` keyword to
 For example, the following declares a storage [variable](/docs/reference/declarations/storage#variable) `bar` and the `getBar` getter that returns this value:
 ```archetype
 variable bar : nat = 0
+variable msg : string = ""
 
-getter getBar() : nat {
-  return bar
+getter getBar(s : string) : nat {
+  msg := s;
+  return (bar + length(s))
 }
 ```
 Note that the returned value's [type](/docs/reference/types) (here [`nat`](/docs/reference/types#nat))is specified after the list of arguments (after a semicolon).
@@ -117,23 +119,25 @@ Note that the returned value's [type](/docs/reference/types) (here [`nat`](/docs
 This is syntactic sugar for the following equivalent code:
 ```archetype
 variable bar : nat = 0
+variable msg : string = ""
 
-entry getBar(callback : contract<int>) {
-  transfer transferred to entry callback(bar)
+entry getBar(s : string, callback : contract<nat>) {
+  msg := s;
+  transfer transferred to entry callback(bar + length(s))
 }
 ```
 (see [`transfer`](/docs/reference/instructions/operation#transfer) instruction for more information)
 
 The following illustrates how the `getBar` getter would be called:
 ```archetype
-variable foo : int = 0
+variable foo : nat = 0
 
-entry setFoo(v : int) {
+entry setFoo(v : nat) {
   foo := v
 }
 
 entry getFoo(getter_addr : address) {
-  transfer 0tz to getter_addr call getBar<contract<int>>(self.setFoo)
+  transfer 0tz to getter_addr call getBar<contract<nat>>(self.setFoo)
 }
 ```
 The `getFoo` entrypoint calls the `getBar` entry of contract at address `ca`.

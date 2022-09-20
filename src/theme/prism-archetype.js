@@ -22,7 +22,7 @@
 			pattern: /transfer\s+(.*)\s+to\s+(entry)?/,
 			inside: {
 				'builtin': {
-					pattern: /transfer|to\s+entry?|to/,
+					pattern: /transfer\s+|to\s+entry?|to/,
 				},
 				'constant': {
 					pattern: /\b(?:now|balance|transferred|self|caller|sender|self_address|state|operations)\b/,
