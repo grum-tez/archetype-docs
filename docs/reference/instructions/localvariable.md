@@ -31,7 +31,7 @@ const amount = 10tz;
 amount += 1tz        /* compilation error */
 ```
 
-## `?=`
+## `?=` (get option, assign or fail)
 
 It is possible to declare a local variable (`const` or `var`) as the `some` value of an [`option`](/docs/reference/types#option<T>) variable, and fail with an error message if this variable is `none`.
 
