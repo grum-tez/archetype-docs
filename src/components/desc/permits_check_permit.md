@@ -6,16 +6,16 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 entry check(signer : key, sig : signature, data : bytes) {
   called by consumer
   constant {
-    pkh      is key_to_address(signer);
-    lcounter is permits[pkh] ? the.counter : 0;
-    to_sign  is pack((self_address, lcounter, blake2b(data)));
+    user     is key_to_address(signer);
+    lcounter is permits[user] ? the.counter : 0;
+    to_sign  is pack(((self_address, self_chain_id), (lcounter, data)));
   }
   require {
     p8: is_not_paused();
     p9: check_signature(signer, sig, to_sign) otherwise (MISSIGNED, to_sign)
   }
   effect {
-    permits.add_update(pkh, { counter = (lcounter + 1)});
+    permits.add_update(user, { counter = (lcounter + 1)});
   }
 }
 ```

@@ -3,25 +3,26 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 <NamedDivider title="Code" width="1.5"/>
 
 ```archetype
-entry permit(pk : key, sig : signature, data : bytes) {
+entry permit(signer : key, sig : signature, data : bytes) {
   constant {
-    user          is key_to_address(pk);
+    permit_key    is blake2b(data);
+    user          is key_to_address(signer);
     usr_permit    is permits[user] ?
                       (the.counter, the.user_permits) :
                       (0, make_map<bytes, user_permit>([]));
-    pcounter      is usr_permit[0];
-    puser_permits is usr_permit[1];
-    to_sign       is pack(((self_address, self_chain_id), (pcounter, data)));
+    lcounter      is usr_permit[0];
+    luser_permits is usr_permit[1];
+    to_sign       is pack(((self_address, self_chain_id), (lcounter, data)));
     usr_expiry    is get_default_expiry(user);
   }
   require {
     p4: is_not_paused();
-    p5: check_signature(pk, sig, to_sign) otherwise (MISSIGNED, to_sign)
+    p5: check_signature(signer, sig, to_sign) otherwise (MISSIGNED, to_sign)
   }
   effect {
     permits.add_update(user, {
       counter += 1;
-      user_permits = put(puser_permits, data, {
+      user_permits = put(luser_permits, permit_key, {
         expiry = some(usr_expiry);
         created_at = now
       })

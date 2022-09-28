@@ -1,7 +1,6 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import NamedDivider from '@site/src/components/NamedDivider.js';
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 
 <NamedDivider title="Code" width="1.5"/>
 
@@ -21,8 +20,9 @@ function check_operator(txs : list<transfer_param>) : bool {
           (operator.contains((caller, td.token_id_dest, %from)) or
            operator_for_all.contains((caller, %from)))
         else
-          ledger.contains(td.token_id_dest);
-    end done
+          true;
+    end
+    done
   done;
   return res
 }

@@ -3,22 +3,22 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 <NamedDivider title="Code" width="1.5"/>
 
 ```archetype
-entry consume(signer : address, data: bytes, err: string) {
+entry consume(user : address, data: bytes, err: string) {
   called by consumer
   constant {
    permit_key     is blake2b(data);
-   signer_expiry  is get_expiry(signer, permit_key);
-   lpermit       ?is permits[signer]                  otherwise USER_PERMIT_NOT_FOUND;
+   signer_expiry  is get_expiry(user, permit_key);
+   lpermit       ?is permits[user]                    otherwise err;
    luser_permits ?is lpermit.user_permits[permit_key] otherwise err;
   }
   require {
     p6: is_not_paused()
   }
   fail if {
-    p7 : has_expired(luser_permits, signer_expiry) with PERMIT_EXPIRED
+    p7 : has_expired(luser_permits, signer_expiry) with (PERMIT_EXPIRED, ((luser_permits.created_at + (luser_permits.expiry ? the : signer_expiry) * 1s)))
   }
   effect {
-    permits[signer].user_permits.remove(permit_key)
+    permits[user].user_permits.remove(permit_key)
   }
 }
 ```

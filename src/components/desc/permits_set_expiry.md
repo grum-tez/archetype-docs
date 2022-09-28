@@ -4,20 +4,23 @@ import NamedDivider from '@site/src/components/NamedDivider.js';
 
 ```archetype
 entry set_expiry(iv : option<nat>, ip : option<bytes>) {
+  constant {
+    caller_permit ?is permits[caller] otherwise (USER_PERMIT_NOT_FOUND, caller);
+  }
   require {
-    p1: is_not_paused();
-    p2: iv ? the < default_expiry : true otherwise EXPIRY_TOO_BIG;
+    r1: is_not_paused();
+    r2: iv ? the < default_expiry : true otherwise EXPIRY_TOO_BIG;
   }
   effect {
-    const caller_permit ?= permits[caller] : (USER_PERMIT_NOT_FOUND, caller);
     match ip with
     | some(p) -> begin
+        const permit_key = blake2b(p);
         if (iv ? the > 0 : true) then begin
           const up : user_permit ?=
-            caller_permit.user_permits[p] : (PERMIT_NOT_FOUND, (caller, p));
-          permits[caller].user_permits.update(p, some({ up with expiry = iv }))
+            caller_permit.user_permits[permit_key] : (PERMIT_NOT_FOUND, (caller, p));
+          permits[caller].user_permits.update(permit_key, some({ up with expiry = iv }))
         end else begin
-          permits[caller].user_permits.remove(p)
+          permits[caller].user_permits.remove(permit_key)
         end
       end
     | none    -> permits.update(caller, { user_expiry = iv })
