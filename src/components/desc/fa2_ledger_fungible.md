@@ -4,7 +4,7 @@
 asset ledger to big_map {
   lowner     : address;
   lamount    : nat = 0;
-} initialized by {
+} initialized with {
   {owner; INITIAL_TOTAL_SUPPLY}
 }
 ```

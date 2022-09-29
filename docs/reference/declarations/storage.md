@@ -108,7 +108,7 @@ asset vehicle to iterable_big_map {
 
 ### Initial collection
 
-It is possible to specify the initial value of the asset collection at origination with the `initialized by` modifier followed by the collection literal: a set of asset definitions.
+It is possible to specify the initial value of the asset collection at origination with the `initialized with` modifier followed by the collection literal: a set of asset definitions.
 
 For example, the following declaration initializes the vehicle asset with 2 assets:
 ```archetype
@@ -117,7 +117,7 @@ asset vehicle {
   manufacturer : string;
   release      : date;
   nbdoors      : nat;
-} initialized by {
+} initialized with {
   { "1G1AF1F57A7192174"; "Renault"; 2021-06-28; 5 };
   { "JNKCV61E49M014581"; "Peugeot"; 2021-07-12; 3 }
 }

@@ -7,23 +7,23 @@ import Fa12Gettotalsupply from '@site/src/components/desc/fa12_gettotalsupply.md
 import Fa12Ledger from '@site/src/components/desc/fa12_ledger.md'
 import Fa12Transfer from '@site/src/components/desc/fa12_transfer.md'
 import Fa2BalanceOf from '@site/src/components/desc/fa2_balanceof.md'
-import Fa2Burn from '@site/src/components/desc/fa2_burn.md'
 import Fa2BurnFungible from '@site/src/components/desc/fa2_burn_fungible.md'
 import Fa2BurnMulti from '@site/src/components/desc/fa2_burn_multi.md'
+import Fa2Burn from '@site/src/components/desc/fa2_burn.md'
 import Fa2CheckOwner from '@site/src/components/desc/fa2_check_owner.md'
 import Fa2DoTransfer from '@site/src/components/desc/fa2_do_transfer.md'
 import Fa2GetFromAddress from '@site/src/components/desc/fa2_get_from_address.md'
 import Fa2GetRoyalties from '@site/src/components/desc/fa2_get_royalties.md'
-import Fa2Ledger from '@site/src/components/desc/fa2_ledger.md'
 import Fa2LedgerFungible from '@site/src/components/desc/fa2_ledger_fungible.md'
 import Fa2LedgerMulti from '@site/src/components/desc/fa2_ledger_multi.md'
-import Fa2Mint from '@site/src/components/desc/fa2_mint.md'
+import Fa2Ledger from '@site/src/components/desc/fa2_ledger.md'
 import Fa2MintFungible from '@site/src/components/desc/fa2_mint_fungible.md'
 import Fa2MintMulti from '@site/src/components/desc/fa2_mint_multi.md'
+import Fa2Mint from '@site/src/components/desc/fa2_mint.md'
 import Fa2OperatorForAll from '@site/src/components/desc/fa2_operator_forall.md'
 import Fa2Operators from '@site/src/components/desc/fa2_operators.md'
-import Fa2TransferArg from '@site/src/components/desc/fa2_transfer_arg.md'
 import Fa2Royalties from '@site/src/components/desc/fa2_royalties.md'
+import Fa2TransferArg from '@site/src/components/desc/fa2_transfer_arg.md'
 import Fa2TransferGasless from '@site/src/components/desc/fa2_transfer_gasless.md'
 import Fa2Transfer from '@site/src/components/desc/fa2_transfer.md'
 import Fa2UpdateOperatorForall from '@site/src/components/desc/fa2_update_operator_forall.md'
@@ -78,6 +78,7 @@ export const templates = {
       norms: [
         { label : 'TZIP-4', url: 'https://tzip.tezosagora.org/proposal/tzip-4/' },
         { label : 'TZIP-7', url: 'https://tzip.tezosagora.org/proposal/tzip-7/' },
+        { label : 'TZIP-21', url: 'https://tzip.tezosagora.org/proposal/tzip-21/' },
       ]
     },
     transfer: {

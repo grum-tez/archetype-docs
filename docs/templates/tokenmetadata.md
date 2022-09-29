@@ -22,10 +22,14 @@ It is required to *copy* this code in the created contract to benefit from the t
 ```archetype
 /* TOKEN METADATA ------------------------------------------------------------ */
 
+constant TOKEN_ID : nat = 0
+
 asset token_metadata to big_map {
   ftoken_metadata : nat;
   token_id        : nat;
   token_info      : map<string, bytes>;
+} initialized with {
+  {TOKEN_ID; TOKEN_ID; [("", metadata_coin)]}
 }
 
 entry set_token_metadata (tid : nat, tdata: map<string, bytes>) {

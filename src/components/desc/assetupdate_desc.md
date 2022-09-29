@@ -34,7 +34,7 @@ For example, consider the following asset declaration:
 asset my_asset {
   id : nat;
   m  : map<string, bytes>;
-} initialized by {
+} initialized with {
   {0; []}
 }
 ```
