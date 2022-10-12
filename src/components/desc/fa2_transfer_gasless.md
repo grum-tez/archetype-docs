@@ -9,6 +9,14 @@ record gasless_param {
   user_sig        : signature
 }
 
+function check_owner(addr : address, txs : list<transfer_param>) : bool {
+  var res = true;
+  for tx in txs do
+    res &= addr = tx.tp_from
+  done;
+  return res
+}
+
 entry transfer_gasless (batch : list<gasless_param>) {
   require { fa2_r3 : is_not_paused() }
   effect {
@@ -16,6 +24,8 @@ entry transfer_gasless (batch : list<gasless_param>) {
       const txs = b.transfer_params;
       const pk  = b.user_pk;
       const sig = b.user_sig;
+      const pkh_signer = key_to_address(pk);
+      do_require(check_owner(pkh_signer, txs), SIGNER_NOT_FROM);
       transfer 0tz to permits
         call check<key * signature * bytes>((pk, sig, pack(txs)));
       transfer 0tz to entry self.do_transfer(txs);

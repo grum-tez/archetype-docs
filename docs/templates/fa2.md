@@ -44,6 +44,7 @@ constant FA2_INSUFFICIENT_BALANCE : string = "FA2_INSUFFICIENT_BALANCE"
 constant FA2_INVALID_AMOUNT       : string = "FA2_INVALID_AMOUNT"
 constant FA2_NOT_OPERATOR         : string = "FA2_NOT_OPERATOR"
 constant FA2_TOKEN_UNDEFINED      : string = "FA2_TOKEN_UNDEFINED"
+constant SIGNER_NOT_FROM          : string = "SIGNER_NOT_FROM"
 ```
 [`constant`](/docs/reference/declarations/inlined) [`string`](/docs/reference/types#string)
 
