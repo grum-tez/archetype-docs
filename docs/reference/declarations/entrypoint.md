@@ -221,11 +221,14 @@ entry set_owner_candidate(oc : address) {
   /* ... other sections ... */
 }
 ```
-
+<!--
 The argument of the section may also be:
 * a list of addresses separated by the `or` keyword
 * an [asset](/docs/asset) identified by an [`address`](/docs/reference/types#address) typed field
 * a [set](/docs/language-basics/container) or [list](/docs/language-basics/container) of addresses
+-->
+
+The argument of the section may also be an [asset](/docs/asset) identified by an [`address`](/docs/reference/types#address) typed field.
 
 (this also applies to `source by` section above)
 
