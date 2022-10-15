@@ -3,22 +3,22 @@ sidebar_position: 0
 sidebar_label: Introduction
 ---
 
-# First Dapp
+# Introduction
 
 This section presents how to build a *Dapp* (Decentralized application) with Archetype and Completium CLI.
 
 ## Definition
 
 Compared to a standard application, a Dapp uses *decentralized* (peer to peer) backends (that is not owned by any private or public entity):
-* a blockchain for its business logic (provided by a smart contract)
+* a blockchain for its business logic (provided by a smart contract running on it)
 * [IPFS](https://en.wikipedia.org/wiki/InterPlanetary_File_System) (Interplanetary File System) for storage
 * ...
 
-The user is authenticated on the blockchain with a *wallet*, whose role is to *sign* (and ususally send) transactions to the smart contract. The signature principle is the one of [asymmetric cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography): the wallet uses the user's private key to sign, while the public key (or its hash in Tezos case) is used as public address (identity) on the blockchain.
+The user is authenticated on the blockchain with a *wallet*, whose main role is to *sign* transactions to the smart contract. The signature principle is the one of [asymmetric cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography): the wallet uses the user's private key to sign, while the public key (or its hash in Tezos case) is used as public address (identity) on the blockchain.
 
-### Partial centralisation?
+### Limits
 
-Many elements of a Dapp are still centralized.
+Many elements of a Dapp are centralized.
 
 #### User interface
 The user interface is usually a web page (or a native app) served by a centralized server (owned by an ISP, Github, Gitlab, ...).
@@ -39,4 +39,8 @@ The user could potentially use its own endpoints.
 
 #### Indexers
 
-The blockchain ecosystem tends to massively rely on indexers.
+Indexers provide key informations to the ecosystem; however, as a centralised point of information access, it is recommended to use them *only* when necessary, that is when the required information is not available in any contract's storage or in any current block.
+
+:::info
+For example, when the Dapp is required to react to contracts' events, it is recommended to use an embedded block explorer, such as [`@completium/event-listener`](https://www.npmjs.com/package/@completium/event-listener)
+:::

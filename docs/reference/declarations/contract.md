@@ -56,3 +56,5 @@ archetype my_token with metadata ""
 ```
 
 This adds the [`metadata`](/docs/reference/expressions/variables#metadata) map to the storage.
+
+A metadata template is provided [here](/docs/templates/metadata#example).

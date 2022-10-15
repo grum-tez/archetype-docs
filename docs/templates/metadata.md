@@ -41,20 +41,31 @@ Below is a typical metadata file:
 ```
 
 There are 2 ways to associate this metadata to a contract:
-1. upload the file to a public URI (typically `ipfs`) and store the URI in the contract's [`metadata`](/docs/reference/expressions/variables#metadata) map (as the value of key `""`)
+1. upload the file to a public storage (typically `IPFS`) and store the URI in the contract's [`metadata`](/docs/reference/expressions/variables#metadata) map (as the value of key `""`)
 2. store metadata fields in the contract's [`metadata`](/docs/reference/expressions/variables#metadata) map
 
 The association may be done *at deployment* time with [Completium CLI](https://completium.com/docs/cli):
 
-With public URI:
+### Public URI
+
+Thre following command deploys a contract and specifies the IPFS URI:
+
 ```bash
 completium-cli deploy my_dapp.arl --metadata-uri "ipfs://..."
 ```
 
-With stored metadata:
+where `...` is replaced by the IPFS hash obtained when uploading to IPFS.
+
+:::info
+This is the preferred way since indexers will automatically retrieve the metadata from IPFS.
+:::
+
+### Stored metadata
 ```bash
 completium-cli deploy my_dapp.arl --metadata-storage "./my_dapp_metadata.json"
 ```
+
+### Entrypoint
 
 This can also be done once the contract is deployed with the [`set_metadata`](/docs/templates/metadata#set_metadatak-d) entrypoint:
 ```bash
