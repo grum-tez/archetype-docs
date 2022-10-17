@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0
+sidebar_position: 1
 sidebar_label: Smart Contract
 ---
 import Builtin from '@site/src/components/Builtin.js';
