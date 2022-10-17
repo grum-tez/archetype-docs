@@ -1,6 +1,6 @@
 # Dapp UI
 
-This section presents how to create and setup a Dapp web UI project using React and Beacon's Dapp/wallet interaction.
+This section presents how to create and setup a Dapp's User Interface (UI) project using React and Beacon's Dapp/wallet interaction.
 
 ## Technical stack
 
@@ -87,36 +87,38 @@ npm install constate
 
 The typical file structure of the react project is presented below:
 
-```
-├── README.md
-├── config-overrides.js
-├── package.json
-├── tsconfig.json
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── manifest.json
-│   └── robots.txt
-└── src
-    ├── App.css
-    ├── App.test.tsx
-    ├── App.tsx
-    ├── index.css
-    ├── index.tsx
-    ├── react-app-env.d.ts
-    ├── reportWebVitals.ts
-    ├── setupTests.ts
-    ├── bindings
-    │   └── ...
-    ├── components
-    │   └── ...
-    └── store
-        ├── Beacon.tsx
-        ├── Taquito.tsx
-        ├── Contract.tsx
-        ├── Settings.tsx
-        └── ...
-```
+<div style={{ lineHeight : '20px', fontFamily: 'Roboto Mono' }}>
+
+├── README.md<br/>
+├── config-overrides.js<br/>
+├── package.json<br/>
+├── tsconfig.json<br/>
+├── `public`<br/>
+│   &ensp;&ensp;├── favicon.ico<br/>
+│   &ensp;&ensp;├── index.html<br/>
+│   &ensp;&ensp;├── manifest.json<br/>
+│   &ensp;&ensp;└── robots.txt<br/>
+└── `src`<br/>
+    &ensp;&ensp;&ensp;&ensp;├── App.css<br/>
+    &ensp;&ensp;&ensp;&ensp;├── App.test.tsx<br/>
+    &ensp;&ensp;&ensp;&ensp;├── [App.tsx](/docs/dapps/dappuiproject/app)<br/>
+    &ensp;&ensp;&ensp;&ensp;├── index.css<br/>
+    &ensp;&ensp;&ensp;&ensp;├── index.tsx<br/>
+    &ensp;&ensp;&ensp;&ensp;├── react-app-env.d.ts<br/>
+    &ensp;&ensp;&ensp;&ensp;├── reportWebVitals.ts<br/>
+    &ensp;&ensp;&ensp;&ensp;├── setupTests.ts<br/>
+    &ensp;&ensp;&ensp;&ensp;├── `bindings`<br/>
+    &ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;└── ...<br/>
+    &ensp;&ensp;&ensp;&ensp;├── `components`<br/>
+    &ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;└── ...<br/>
+    &ensp;&ensp;&ensp;&ensp;└── `store`<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Beacon.tsx](/docs/dapps/dappuiproject/beacon)<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Taquito.tsx](/docs/dapps/dappuiproject/taquito)<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── Contract.tsx<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Settings.tsx](/docs/dapps/dappuiproject/settings)<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;└── ...<br/>
+
+</div>
 
 Note that 3 directories are created under `src`:
 1. `bindings` for generated contracts bindings

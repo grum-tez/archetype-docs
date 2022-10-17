@@ -58,6 +58,24 @@ export default function Info(props) {
           <MichelsonType michelson={props.michelson} michelson_ref_url={props.michelson_ref_url} />
         </Grid>
       ) : (<div />)}
+      {(props.emits !== undefined) ? (
+        <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
+      ) : (<div />)}
+      { (props.emits !== undefined) ? (
+        <Grid item xs={3} sm={2} md={2}>
+          <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
+            Emits
+          </Typography>
+        </Grid>
+      ) : (<div />) }
+      { (props.emits !== undefined) ? (
+        <Grid item xs={9} sm={10} md={10}>
+          <Grid container direction="row" spacing={3}>
+            {props.emits.map((r,i) => <Related key={'rel'+i} value={r.keyword} link={r.link} code={r.code}></Related>)}
+          </Grid>
+        </Grid>
+      ) : (<div />)
+      }
       {(props.related !== undefined) ? (
         <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
       ) : (<div />)}
