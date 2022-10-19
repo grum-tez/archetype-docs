@@ -56,7 +56,7 @@ A constate hook for Beacon services `connect` and `disconnect` is available `her
 
 ### Contracts bindings
 
-When interacting with a contract (read and write), it is *strongly* recommended to use its generated typescript bindings, that is a typed high-level typescript interface. It greatly reduces the effort to call a contract, read its storage, as reduces the number of runtime errors as the compilier and LSP guides you through the contract interface.
+When interacting with a contract (read and write), it is *strongly* recommended to use its generated typescript bindings, that is a typed high-level typescript interface. It greatly reduces the effort to call a contract, read its storage and the number of runtime errors, as the compilier and LSP guides you through the contract interface.
 
 Typescript bindings may be obtained with [Completium CLI](https://completium.com/docs/cli) with the `generate binding-ts` command. In the poll Dapp example, the bindings of the `poll` contract is obtained with the following command:
 

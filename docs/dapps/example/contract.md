@@ -58,22 +58,53 @@ Contract owner's address, passed as contract parameter. Only the owner can:
 
 <NamedDivider title="Code" width="1.5"/>
 
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
+
 ```archetype
 archetype poll(owner : address)
 with metadata ""
 ```
 [`archetype`](/docs/reference/declarations/contract) [`address`](/docs/reference/types#address) [`with metadata`](/docs/reference/declarations/contract#metadata)
 
+
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+(method) Poll.get_owner() : Promise<Address>
+```
+
+</TabItem>
+</Tabs>
+
+
 ### `poll_counter`
 
-Number of polls added, used as poll key in [`poll`](/docs/dapps/pollexample/pollcontract#poll) asset collection (see [`approve`] entry point).
+Number of polls added, used as poll key in [`poll`](/docs/dapps/pollexample/pollcontract#poll) asset collection (see [`approve`](/docs/dapps/example/contract#approve) entry point).
 
 <NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
 
 ```archetype
 variable polls_counter : nat = 0
 ```
 [`variable`](/docs/reference/declarations/storage#variable) [`nat`](/docs/reference/types#nat)
+
+
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+(method) Poll.get_polls_counter() : Promise<Nat>
+```
+
+</TabItem>
+</Tabs>
 
 ### `poll`
 
@@ -85,6 +116,10 @@ The `responses` field stores the numbers of responses to poll's possible answers
 
 <NamedDivider title="Code" width="1.5"/>
 
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
+
 ```archetype
 asset poll {
   poll_pk   : nat;
@@ -95,6 +130,27 @@ asset poll {
 ```
 [`asset`](/docs/asset) [`nat`](/docs/reference/types#nat) [`bytes`](/docs/reference/types#bytes) [`date`](/docs/reference/types#date) [`now`](/docs/reference/expressions/constants#now) [`map`](/docs/reference/types#map<K,%20V>)
 
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+export type poll_key = Nat
+
+export class poll_value {
+  constructor(
+    ipfs_hash: Bytes,
+    responses: Array<[ Nat, Nat ]>,
+    creation: Date)
+}
+
+export type poll_container = Array<[ poll_key, poll_value ]>;
+
+(method) Poll.get_poll(): Promise<poll_container>
+```
+
+</TabItem>
+</Tabs>
+
 ### `poll_to_approve`
 
 Collection of polls' IPFS hashes proposed by users. When approved by [`owner`](/docs/dapps/pollexample/pollcontract#owner), a poll asset is created.
@@ -102,6 +158,10 @@ Collection of polls' IPFS hashes proposed by users. When approved by [`owner`](/
 Note that the asset collection is created as a [`big_map`](/docs/reference/types#big_map%3CK,%20V%3E), to be able to handle an arbitrary large amount of poll proposition.
 
 <NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
 
 ```archetype
 asset poll_to_approve to big_map {
@@ -111,13 +171,35 @@ asset poll_to_approve to big_map {
 ```
 [`asset`](/docs/asset) [`bytes`](/docs/reference/types#bytes) [`address`](/docs/reference/types#address) [`caller`](/docs/reference/expressions/constants#caller)
 
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+export type poll_to_approve_value = Address;
+
+export type poll_to_approve_key = Bytes;
+
+(method) Poll.get_poll_to_approve_value(key: poll_to_approve_key): Promise<poll_to_approve_value | undefined>
+
+(method) Poll.has_poll_to_approve_value(key: poll_to_approve_key): Promise<boolean>
+```
+
+</TabItem>
+</Tabs>
+
+
 ### `responder`
 
-Collection of responders' lists (set) of answered polls. This is to decide whether a responder has already answered a poll or not (see `respond` entrypoint).
+Collection of responders' lists (set) of answered polls. This is to decide whether a responder has already answered a poll or not (see [`respond`](/docs/dapps/example/contract#respond) entrypoint).
 
 It is specified as a [`big_map`]((/docs/reference/types#big_map%3CK,%20V%3E)) to be able to handle an arbitrary large number of responders.
 
 <NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
+
 
 ```archetype
 asset responder to big_map {
@@ -127,6 +209,23 @@ asset responder to big_map {
 ```
 [`asset`](/docs/asset) [`address`](/docs/reference/types#address) [`set`](/docs/language-basics/container#set) [`nat`](/docs/reference/types#nat)
 
+
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+export type responder_key = Address
+
+export type responder_value = Array<Nat>
+
+(method) Poll.get_responder_value(key: responder_key): Promise<responder_value | undefined>
+
+(method) Poll.has_responder_value(key: responder_key): Promise<boolean>
+```
+
+</TabItem>
+</Tabs>
+
 ## Entry
 
 ### `add_poll`
@@ -134,6 +233,10 @@ asset responder to big_map {
 Entry to call to propose a new poll. The poll's IPFS hash is added to the collection of hashes to approve.
 
 <NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
 
 ```archetype
 entry add_poll(h : bytes) {
@@ -147,6 +250,17 @@ entry add_poll(h : bytes) {
 }
 ```
 [`entry`](/docs/reference/declarations/entrypoint#entry) [`bytes`](/docs/reference/types#bytes) [`require`](/docs/reference/declarations/entrypoint#require) [`is_not_paused`](/docs/templates/pausable#is_not_paused) [`effect`](/docs/reference/declarations/entrypoint#effect) [`add`](/docs/reference/instructions/asset#aadda) [`caller`](/docs/reference/expressions/constants#caller) [`emit`](/docs/reference/instructions/operation#emit)
+
+
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+(method) Poll.add_poll(h: Bytes, params: Partial<Parameters>): Promise<any>
+```
+
+</TabItem>
+</Tabs>
 
 <Builtin data={{
   sig: 'add_poll(h)',
@@ -185,6 +299,11 @@ The number of times someone has responded to the poll's answer (`choice_id`) is 
 
 <NamedDivider title="Code" width="1.5"/>
 
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
+
+
 ```archetype
 entry respond(pk : nat, choice_id : nat) {
   constant {
@@ -207,6 +326,16 @@ entry respond(pk : nat, choice_id : nat) {
 }
 ```
 [`entry`](/docs/reference/declarations/entrypoint#entry) [`nat`](/docs/reference/types#nat) [`constant`](/docs/reference/declarations/entrypoint#constant) [`require`](/docs/reference/declarations/entrypoint#require) [`is_not_paused`](/docs/templates/pausable#is_not_paused) [`contains`](/docs/reference/expressions/asset#acontainsk--asset_keya) [`fail if`](/docs/reference/declarations/entrypoint#fail-if) [`effect`](/docs/reference/declarations/entrypoint#effect) [`add_update`](/docs/reference/instructions/asset#aadd_updatek--u-) [`+=`](/docs/reference/instructions/assignment#a--b-1) [`update`](/docs/reference/instructions/asset#aupdatek--u-) [`emit`](/docs/reference/instructions/operation#emit) [`caller`](/docs/reference/expressions/constants#caller)
+
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+(method) Poll.respond(pk: Nat, choice_id: Nat, params: Partial<Parameters>): Promise<any>
+```
+
+</TabItem>
+</Tabs>
 
 <Builtin data={{
   sig: 'respond(pk, choice_id)',
@@ -255,6 +384,10 @@ Entry called by [`owner`](/docs/dapps/pollexample/pollcontract#owner) to approve
 
 <NamedDivider title="Code" width="1.5"/>
 
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
+
 ```archetype
 entry approve(h : bytes) {
   called by owner
@@ -270,6 +403,17 @@ entry approve(h : bytes) {
 }
 ```
 [`entry`](/docs/reference/declarations/entrypoint#entry) [`bytes`](/docs/reference/types#bytes) [`called by`](/docs/reference/declarations/entrypoint#called-by) [`constant`](/docs/reference/declarations/entrypoint#constant) [`?is`](/docs/reference/declarations/entrypoint#constant) [`?.`](/docs/reference/expressions/controls#option) [`effect`](/docs/reference/declarations/entrypoint#effect) [`add`](/docs/reference/instructions/asset#aadda) [`+=`](/docs/reference/instructions/assignment#a--b-1) [`remove`](/docs/reference/instructions/asset#aremovek) [`emit`](/docs/reference/instructions/operation#emit)
+
+
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+(method) Poll.approve(h: Bytes, params: Partial<Parameters>): Promise<any>
+```
+
+</TabItem>
+</Tabs>
 
 <Builtin data={{
   sig: 'approve(h)',
@@ -302,6 +446,10 @@ Entry called by [`owner`](/docs/dapps/pollexample/pollcontract#owner) to disappr
 
 <NamedDivider title="Code" width="1.5"/>
 
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
+
 ```archetype
 entry disapprove(h : bytes) {
   called by owner
@@ -311,6 +459,16 @@ entry disapprove(h : bytes) {
 }
 ```
 [`entry`](/docs/reference/declarations/entrypoint#entry) [`bytes`](/docs/reference/types#bytes) [`called by`](/docs/reference/declarations/entrypoint#called-by) [`effect`](/docs/reference/declarations/entrypoint#effect) [`remove`](/docs/reference/instructions/asset#aremovek)
+
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+(method) Poll.disapprove(h: Bytes, params: Partial<Parameters>): Promise<any>
+```
+
+</TabItem>
+</Tabs>
 
 <Builtin data={{
   sig: 'disapprove(h)',
@@ -331,6 +489,10 @@ entry disapprove(h : bytes) {
 Entry called by [`owner`](/docs/dapps/pollexample/pollcontract#owner) to remove a poll.
 
 <NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
 
 ```archetype
 entry remove(pk : nat) {
@@ -356,6 +518,68 @@ entry remove(pk : nat) {
   ]
 }} />
 
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+(method) Poll.remove(pk: Nat, params: Partial<Parameters>): Promise<any>
+```
+
+</TabItem>
+</Tabs>
+
+## View
+
+### `get_responses`
+
+Returns poll `pk` response statistics.
+
+<NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
+
+```archetype
+view get_responses(pk : nat) : map<nat, nat> {
+  return poll[pk].responses
+}
+```
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+(method) Poll.view_get_responses(pk: Nat, params: Partial<Parameters>): Promise<Array<[ Nat, Nat ]>>
+```
+
+</TabItem>
+</Tabs>
+
+### `already_responded`
+
+Returns `true` if [`source`](/docs/reference/expressions/constants#source) has already answered poll `pk`.
+
+<NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
+
+```archetype
+view already_responded(pk : nat) : bool {
+  return (responder[source] ? the.polls.contains(pk) : false)
+}
+```
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+(method) Poll.view_already_responded(pk: Nat, params: Partial<Parameters>): Promise<boolean>
+```
+
+</TabItem>
+</Tabs>
+
 ## Events
 
 ### `NewPoll`
@@ -363,6 +587,12 @@ entry remove(pk : nat) {
 Emitted by [`add_poll`](/docs/dapps/pollexample/pollcontract#add_poll) with:
 * poll creator's address
 * poll's IPFS hash
+
+<NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
 
 ```archetype
 event NewPoll {
@@ -372,12 +602,35 @@ event NewPoll {
 ```
 [`event`](/docs/reference/declarations/compositetypes#event) [`address`](/docs/reference/types#address) [`bytes`](/docs/reference/types#bytes)
 
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+export class NewPoll {
+  constructor(
+    public creator: Address,
+    public poll_id: Bytes
+  )
+}
+
+(method) Poll.register_NewPoll(ep: EventProcessor<NewPoll>): void
+```
+
+</TabItem>
+</Tabs>
+
 ### `Response`
 
 Emitted by [`respond`](/docs/dapps/pollexample/pollcontract#respond) with:
 * responder's address
 * poll's id
 * response's id
+
+<NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
 
 ```archetype
 event Response {
@@ -388,11 +641,35 @@ event Response {
 ```
 [`event`](/docs/reference/declarations/compositetypes#event) [`address`](/docs/reference/types#address) [`nat`](/docs/reference/types#nat)
 
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+export class Response {
+  constructor(
+    public responder_addr: Address,
+    public poll_id: Nat,
+    public response: Nat
+  )
+}
+
+(method) Poll.register_Response(ep: EventProcessor<NewPoll>): void
+```
+
+</TabItem>
+</Tabs>
+
 ### `Approval`
 
 Emitted by [`approve`](/docs/dapps/pollexample/pollcontract#approve) with:
 * proposal issuer's address
 * poll's IPFS hash
+
+<NamedDivider title="Code" width="1.5"/>
+
+<Tabs defaultValue="Archetype" >
+
+<TabItem value="Archetype">
 
 ```archetype
 event Approval {
@@ -401,3 +678,20 @@ event Approval {
 }
 ```
 [`event`](/docs/reference/declarations/compositetypes#event) [`address`](/docs/reference/types#address) [`bytes`](/docs/reference/types#bytes)
+
+</TabItem>
+<TabItem value="TS Binding API">
+
+```ts
+export class Approval {
+  constructor(
+    public creator: Address,
+    public poll_id: Bytes
+  )
+}
+
+(method) Poll.register_Response(ep: EventProcessor<NewPoll>): void
+```
+
+</TabItem>
+</Tabs>
