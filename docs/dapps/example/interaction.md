@@ -66,7 +66,7 @@ const loadData = async () => {
 }
 ```
 Comments:
-* `contrat` object has been locally obtained with hook `useContract` from [`PollContract.tsx`](/docs/dapps/example/architecture#store-api)
+* `contrat` object has been locally obtained with hook `useContract` from [`PollContract.tsx`](/docs/dapps/example/apis#store)
 * async method `get_poll` is used to retrieve poll container
 * `Nat`'s `to_number` method is used to downcast to native type `number`
 * `Bytes`'s `hex_decode` method is used to decode the IPFS hash
