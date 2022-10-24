@@ -2,6 +2,7 @@
 sidebar_position: 3
 sidebar_label: Beacon.tsx
 ---
+import Api from '../../../src/components/Api.js';
 
 # Beacon.tsx
 
@@ -11,13 +12,15 @@ sidebar_label: Beacon.tsx
         ├── Beacon.tsx
 ```
 
-The `Beacon` constate hook provides:
-* the wallet address (if connected, `undefined` otherwise)
-* the wallet name (for example `Temple - Tezos Wallet` if connected, `undefined` otherwise)
-* Beacon's connection utils:
-  * `connect` to connect to a wallet
-  * `disconnet` to disconnect
-  * `is_connected` returns `true` if connected, `false` otherwise
+The `Beacon` context provider provides the following hooks:
+
+<Api title="Beacon.tsx" data={[
+  { label: 'useWalletAddress', desc: <div>Wallet address (or <code>undefined</code> if not logged in)</div> },
+  { label: 'useWalletName', desc: <div>Wallet name (or <code>undefined</code> if not logged in)</div> },
+  { label: 'useIsConnected', desc: <div>Function that returns <code>true</code> if user is logged in, <code>false</code> otherwise</div> },
+  { label: 'useConnect', desc: <div>Beacon's connect service</div> },
+  { label: 'useDisconnect', desc: <div>Beacon's disconnect service</div> },
+]} />
 
 ## Code
 
