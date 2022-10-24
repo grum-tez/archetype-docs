@@ -10,13 +10,13 @@ import { Grid } from '@mui/material';
 
 # Architecture
 
-Schema below illustrates the module and package architecture of the Dapp and their interactions:
+Schema below illustrates the module and package architecture of the DApp and their interactions:
 
 <Grid container>
 <Grid md={1} xs={0} />
 <Grid item md={7} xs={12}>
 <ThemedImage
-  alt="Buld Dapp"
+  alt="Buld DApp"
   width="100%"
   sources={{
     light: useBaseUrl('img/tutorial/dapp/dapp-light.svg'),
@@ -27,7 +27,7 @@ Schema below illustrates the module and package architecture of the Dapp and the
 </Grid>
 
 * Changes in `Store` redraw `UI` components (React + constate hook mecanism)
-* `UI` stores DApp states in `Store`
+* `UI` stores DApp (states in `Store`
 * `Store` and `UI` interacts with contract via `Binding`
 * `Store` uses `Beacon`'s services to connect to a wallet
 * `Binding` uses `@completium/dapp-ts` package services to interact with blockchain

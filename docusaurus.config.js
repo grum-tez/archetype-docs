@@ -103,7 +103,7 @@ const config = {
             position: 'left',
             docId: 'templates/dapps',
             sidebarId: 'dapps',
-            label: 'Dapps',
+            label: 'DApps',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {to: '/docs/installation', label: 'latest: 1.3.2', position: 'right'},

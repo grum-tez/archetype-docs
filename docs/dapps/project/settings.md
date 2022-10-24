@@ -30,7 +30,7 @@ export const [
 ] = constate(
   () => {
     const [settingState] = useState({
-      app_name        : 'My Dapp',
+      app_name        : 'My DApp',
       endpoint        : 'https://ghostnet.ecadinfra.com',
       network         :  NetworkType.GHOSTNET,
     });

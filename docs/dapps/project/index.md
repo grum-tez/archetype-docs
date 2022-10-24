@@ -1,6 +1,6 @@
-# Dapp UI
+# DApp UI
 
-This section presents how to create and setup a Dapp's User Interface (UI) project using React and Beacon's Dapp/wallet interaction.
+This section presents how to create and setup a DApp's User Interface (UI) project using React and Beacon's DApp/wallet interaction.
 
 ## Technical stack
 
@@ -10,7 +10,7 @@ The use of [Nodejs](https://nodejs.org/en/) as the javascript execution environm
 
 ### UI Framework
 
-Any UI framework is suitable to create a web Dapp interface (Angular, Vue, Svelte, ...). We present here how to create a Dapp UI project with [React](https://reactjs.org/).
+Any UI framework is suitable to create a web DApp interface (Angular, Vue, Svelte, ...). We present here how to create a DApp UI project with [React](https://reactjs.org/).
 
 ### Language
 
@@ -28,7 +28,7 @@ This creates the `my-dapp` project. More information may be found [here](https:/
 
 While it is always possible to interact directly with the [Tezos endpoint's RPC API](https://tezos.gitlab.io/active/rpc.html), it is more than recommended to use a dedicated library that will wrap all services in high-level development services and take care of all the low-level implementation details.
 
-In the context of web Dapps for Tezos, the main library is [Taquito](https://tezostaquito.io/):
+In the context of web DApps for Tezos, the main library is [Taquito](https://tezostaquito.io/):
 
 ```
 npm install @taquito/taquito
@@ -44,13 +44,13 @@ As a side note, `create-react-app` uses [webpack](https://webpack.js.org/) (vers
 
 ### Wallets
 
-A Dapp needs to interact with a wallet to *sign* operations (transfers, calls to a smart contract, ...). Many wallets are available on Tezos ([Temple](https://templewallet.com/download/), [Kukai](https://wallet.kukai.app), [Umami](https://umamiwallet.com/), ...). It is common practice to interact with them all via [Beacon](https://docs.walletbeacon.io/) that implements the interaction standard [TZIP-10](https://tzip.tezosagora.org/proposal/tzip-10/) between a wallet and a dApp, as it greatly reduces the integration effort with wallets.
+A DApp needs to interact with a wallet to *sign* operations (transfers, calls to a smart contract, ...). Many wallets are available on Tezos ([Temple](https://templewallet.com/download/), [Kukai](https://wallet.kukai.app), [Umami](https://umamiwallet.com/), ...). It is common practice to interact with them all via [Beacon](https://docs.walletbeacon.io/) that implements the interaction standard [TZIP-10](https://tzip.tezosagora.org/proposal/tzip-10/) between a wallet and a dApp, as it greatly reduces the integration effort with wallets.
 
 ```
 npm install @taquito/beacon-wallet @airgap/beacon-sdk
 ```
 
-The main drawback of Beacon is the lack of control over the UI elements (typically the wallet selection popup), which can be a no-go if you want a tight control of the Dapp L&F. In that case, each wallet needs to be integrated separately.
+The main drawback of Beacon is the lack of control over the UI elements (typically the wallet selection popup), which can be a no-go if you want a tight control of the DApp L&F. In that case, each wallet needs to be integrated separately.
 
 A constate hook for Beacon services `connect` and `disconnect` is available `here`.
 
@@ -58,7 +58,7 @@ A constate hook for Beacon services `connect` and `disconnect` is available `her
 
 When interacting with a contract (read and write), it is *strongly* recommended to use its generated typescript bindings, that is a typed high-level typescript interface. It greatly reduces the effort to call a contract, read its storage and the number of runtime errors, as the compilier and LSP guides you through the contract interface.
 
-Typescript bindings may be obtained with [Completium CLI](https://completium.com/docs/cli) with the `generate binding-ts` command. In the poll Dapp example, the bindings of the `poll` contract is obtained with the following command:
+Typescript bindings may be obtained with [Completium CLI](https://completium.com/docs/cli) with the `generate binding-ts` command. In the poll DApp example, the bindings of the `poll` contract is obtained with the following command:
 
 ```
 completium-cli generate binding-ts ./contract/poll.arl > ./bindings/poll.ts
@@ -77,7 +77,7 @@ npm install @completium/dapp-ts @completium/archetype-ts-types
 
 With React applications, it is *strongly* recommended to setup a centralised store of application data (settings, UI states, ...) in read/write modes with a dedicated package like [constate](https://www.npmjs.com/package/constate) or [redux](https://react-redux.js.org/). This is preventing from awkward spaghetti code of passing components states and data through large hierarchy of components.
 
-The Dapp example presented here is using *constate* for its lightweight aspect. Note that *Taquito* and *Beacon* must be *singletons*, hence there are wrapped as constate hooks to make them available to UI components.
+The DApp example presented here is using *constate* for its lightweight aspect. Note that *Taquito* and *Beacon* must be *singletons*, hence there are wrapped as constate hooks to make them available to UI components.
 
 ```
 npm install constate

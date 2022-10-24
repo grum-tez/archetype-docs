@@ -9,7 +9,7 @@ export default function DappInfo(props) {
     <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginTop: '0px' }}>
       <Grid item xs={3} sm={2} md={2}>
         <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
-          Dapp URL
+          DApp URL
         </Typography>
       </Grid>
       <Grid item xs={9} sm={10} md={10}>

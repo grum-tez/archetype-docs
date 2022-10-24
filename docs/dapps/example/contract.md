@@ -15,7 +15,7 @@ The poll contract stores polls' IPFS hash and users' answers. It guarantees that
 When a user adds a poll (IPFS hash), it needs to be approved by a special account, called contract's *owner*. The owner can also remove any existing poll.
 
 <TemplateInfo data={{
-  repo: 'https://github.com/completium/poll-dapp/tree/main/contracts',
+  repo: 'https://github.com/completium/poll-dapp/tree/main/poll-contract',
   author: 'Completium',
   authorurl: 'https://completium.com/',
   norms: [
@@ -24,6 +24,21 @@ When a user adds a poll (IPFS hash), it needs to be approved by a special accoun
     { label : 'Ownership', url: '/docs/templates/ownership' },
   ]
 }}/>
+
+## Project
+
+Poll contract project was created with the following [Completium CLI](https://completium.com/docs/cli) command:
+```
+completium-cli create project poll-contract
+```
+Command `npm i` installs required packages:
+* typescript util packages
+* `mocha` for test suite
+* archetype's packages for binding
+
+`package.json` file is created with utility commands, including:
+* `npm run "gen-binding"` to generate contract(s)' binding
+* `npm test` to launch tests in `tests` directory
 
 ## Deployment
 
@@ -260,6 +275,40 @@ entry add_poll(h : bytes) {
 ```
 
 </TabItem>
+
+<TabItem value="Ts Test">
+
+```ts
+describe("[POLL] 'add_poll' entry", async () => {
+  it("add 'Food' poll", async () => {
+    const b = Bytes.hex_encode(food_hash)
+    await poll.add_poll(Bytes.hex_encode(food_hash), { as: bob });
+    const has_poll = await poll.has_poll_to_approve_value(b)
+    assert(has_poll)
+  })
+  it("'add' cannot be called with same hash", async () => {
+    const b = Bytes.hex_encode(food_hash)
+    expect_to_fail(async () => {
+      await poll.add_poll(Bytes.hex_encode(food_hash), { as: alice });
+    }, error_key_exists("poll_to_approve"))
+  })
+  it("add 'Dancer' poll", async () => {
+    const b = Bytes.hex_encode(dancer_hash)
+    await poll.add_poll(b, { as: bob });
+    const has_poll = await poll.has_poll_to_approve_value(b)
+    assert(has_poll)
+  })
+  it("add 'Squares' poll", async () => {
+    const b = Bytes.hex_encode(squares_hash)
+    await poll.add_poll(b, { as: bob });
+    const has_poll = await poll.has_poll_to_approve_value(b)
+    assert(has_poll)
+  })
+})
+```
+
+</TabItem>
+
 </Tabs>
 
 <Builtin data={{
@@ -335,6 +384,46 @@ entry respond(pk : nat, choice_id : nat) {
 ```
 
 </TabItem>
+<TabItem value="TS Test">
+
+```ts
+describe("[POLL] 'respond' entry", async () => {
+  it("respond to food poll", async () => {
+    const poll_id = new Nat(0)
+    const choice_id = new Nat(0)
+    const polls = await poll.get_poll()
+    const nb_responses_before = get_nb_responses(polls, poll_id, choice_id)
+    assert(nb_responses_before.equals(new Nat(0)))
+    const has_responder_before = await poll.has_responder_value(bob.get_address())
+    assert(!has_responder_before)
+    await poll.respond(poll_id, choice_id, { as : bob })
+    const polls_after = await poll.get_poll()
+    const nb_responses_after = get_nb_responses(polls_after, poll_id, choice_id)
+    assert(nb_responses_after.equals(new Nat(1)))
+    const has_responder_after = await poll.has_responder_value(bob.get_address())
+    assert(has_responder_after)
+  })
+  it("responder cannot respond twice", async () => {
+    const poll_id = new Nat(0)
+    const choice_id = new Nat(1)
+    expect_to_fail(async () => {
+      await poll.respond(poll_id, choice_id, { as : bob })
+    }, poll.errors.f1)
+  })
+  it("'respond' increment number of responses", async () => {
+    const poll_id = new Nat(0)
+    const choice_id = new Nat(0)
+    const polls = await poll.get_poll()
+    const nb_responses_before = get_nb_responses(polls, poll_id, choice_id)
+    await poll.respond(poll_id, choice_id, { as : carl })
+    const polls_after = await poll.get_poll()
+    const nb_responses_after = get_nb_responses(polls_after, poll_id, choice_id)
+    assert(nb_responses_after.equals(nb_responses_before.plus(new Nat(1))))
+  })
+})
+```
+</TabItem>
+
 </Tabs>
 
 <Builtin data={{
@@ -413,6 +502,45 @@ entry approve(h : bytes) {
 ```
 
 </TabItem>
+<TabItem value="TS Test">
+
+```ts
+describe("[POLL] 'approve' entry", async () => {
+  it("'approve' can only be called by owner", async () => {
+    expect_to_fail(async () => {
+      await poll.approve(Bytes.hex_encode(food_hash), { as: bob });
+    }, poll.errors.INVALID_CALLER)
+  })
+  it("approve 'Food' poll", async () => {
+    const b = Bytes.hex_encode(food_hash)
+    const polls_before = await poll.get_poll()
+    assert(!exists_poll(polls_before, b))
+    await poll.approve(b, { as: alice });
+    const polls_after = await poll.get_poll()
+    assert(exists_poll(polls_after, b))
+    const has_poll = await poll.has_poll_to_approve_value(b)
+    assert(!has_poll)
+  })
+  it("'approve' cannot be called twice with same hash", async () => {
+    const b = Bytes.hex_encode(food_hash)
+    expect_to_fail(async () => {
+      await poll.approve(b, { as: alice });
+    }, poll.errors.POLL_NOT_FOUND)
+  })
+  it("approve 'Dancer' poll", async () => {
+    const b = Bytes.hex_encode(dancer_hash)
+    const polls_before = await poll.get_poll()
+    assert(!exists_poll(polls_before, b))
+    await poll.approve(b, { as: alice });
+    const polls_after = await poll.get_poll()
+    assert(exists_poll(polls_after, b))
+    const has_poll = await poll.has_poll_to_approve_value(b)
+    assert(!has_poll)
+  })
+})
+```
+
+</TabItem>
 </Tabs>
 
 <Builtin data={{
@@ -468,6 +596,29 @@ entry disapprove(h : bytes) {
 ```
 
 </TabItem>
+<TabItem value="TS Test">
+
+```ts
+describe("[POLL] 'disapprove' entry", async () => {
+  it("'disapprove' can only be called by owner", async () => {
+    expect_to_fail(async () => {
+      await poll.disapprove(Bytes.hex_encode(squares_hash), { as: bob });
+    }, poll.errors.INVALID_CALLER)
+  })
+  it("disapprove 'Squares' poll", async () => {
+    const b = Bytes.hex_encode(squares_hash)
+    const polls_before = await poll.get_poll()
+    assert(!exists_poll(polls_before, b))
+    await poll.disapprove(b, { as: alice });
+    const polls_after = await poll.get_poll()
+    assert(!exists_poll(polls_after, b))
+    const has_poll = await poll.has_poll_to_approve_value(b)
+    assert(!has_poll)
+  })
+})
+```
+</TabItem>
+
 </Tabs>
 
 <Builtin data={{
@@ -526,6 +677,27 @@ entry remove(pk : nat) {
 ```
 
 </TabItem>
+<TabItem value="TS Test">
+
+```ts
+describe("[POLL] 'remove' entry", async () => {
+  it("'remove' can only be called by owner", async () => {
+    expect_to_fail(async () => {
+      await poll.remove(new Nat(0), { as : bob })
+    }, poll.errors.INVALID_CALLER)
+  })
+  it("remove food poll", async () => {
+    const polls_before = await poll.get_poll()
+    assert(exists_poll(polls_before, Bytes.hex_encode(food_hash)))
+    await poll.remove(new Nat(0), { as : alice })
+    const polls = await poll.get_poll()
+    assert(!exists_poll(polls, Bytes.hex_encode(food_hash)))
+  })
+})
+```
+
+</TabItem>
+
 </Tabs>
 
 ## View
