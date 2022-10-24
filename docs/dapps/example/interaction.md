@@ -42,7 +42,7 @@ export interface Poll {
 }
 ```
 
-The `load_data` function from [`Polls.tsx`](/docs/dapps/example/architecture#store-api):
+The `load_data` function from [`Polls.tsx`](/docs/dapps/example/apis#store):
 1. loads data from contract
 2. maps each poll data to the `Poll` Typescript
 

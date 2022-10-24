@@ -131,7 +131,7 @@ The typical file structure of the react project is presented below:
 └── `src`<br/>
     &ensp;&ensp;&ensp;&ensp;├── App.css<br/>
     &ensp;&ensp;&ensp;&ensp;├── App.test.tsx<br/>
-    &ensp;&ensp;&ensp;&ensp;├── [App.tsx](/docs/dapps/dappuiproject/app)<br/>
+    &ensp;&ensp;&ensp;&ensp;├── [App.tsx](/docs/dapps/project/app)<br/>
     &ensp;&ensp;&ensp;&ensp;├── index.css<br/>
     &ensp;&ensp;&ensp;&ensp;├── index.tsx<br/>
     &ensp;&ensp;&ensp;&ensp;├── react-app-env.d.ts<br/>
@@ -142,10 +142,10 @@ The typical file structure of the react project is presented below:
     &ensp;&ensp;&ensp;&ensp;├── `components`<br/>
     &ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;└── ...<br/>
     &ensp;&ensp;&ensp;&ensp;└── `store`<br/>
-    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Beacon.tsx](/docs/dapps/dappuiproject/beacon)<br/>
-    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Taquito.tsx](/docs/dapps/dappuiproject/taquito)<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Beacon.tsx](/docs/dapps/project/beacon)<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Taquito.tsx](/docs/dapps/project/taquito)<br/>
     &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── Contract.tsx<br/>
-    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Settings.tsx](/docs/dapps/dappuiproject/settings)<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Settings.tsx](/docs/dapps/project/settings)<br/>
     &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;└── ...<br/>
 
 </div>

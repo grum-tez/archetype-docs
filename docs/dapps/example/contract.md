@@ -97,7 +97,7 @@ with metadata ""
 
 ### `poll_counter`
 
-Number of polls added, used as poll key in [`poll`](/docs/dapps/pollexample/pollcontract#poll) asset collection (see [`approve`](/docs/dapps/example/contract#approve) entry point).
+Number of polls added, used as poll key in [`poll`](/docs/dapps/example/contract#poll) asset collection (see [`approve`](/docs/dapps/example/contract#approve) entry point).
 
 <NamedDivider title="Code" width="1.5"/>
 
@@ -125,7 +125,7 @@ variable polls_counter : nat = 0
 
 Collection of polls.
 
-A poll is identified by a natural integer rather than by its IPFS hash. This is to minimize the required storage of the [`responder`](/docs/dapps/pollexample/pollcontract#responder) information, that stores which polls an user has answered.
+A poll is identified by a natural integer rather than by its IPFS hash. This is to minimize the required storage of the [`responder`](/docs/dapps/example/contract#responder) information, that stores which polls an user has answered.
 
 The `responses` field stores the numbers of responses to poll's possible answers.
 
@@ -168,7 +168,7 @@ export type poll_container = Array<[ poll_key, poll_value ]>;
 
 ### `poll_to_approve`
 
-Collection of polls' IPFS hashes proposed by users. When approved by [`owner`](/docs/dapps/pollexample/pollcontract#owner), a poll asset is created.
+Collection of polls' IPFS hashes proposed by users. When approved by [`owner`](/docs/dapps/example/contract#owner), a poll asset is created.
 
 Note that the asset collection is created as a [`big_map`](/docs/reference/types#big_map%3CK,%20V%3E), to be able to handle an arbitrary large amount of poll proposition.
 
@@ -331,10 +331,10 @@ describe("[POLL] 'add_poll' entry", async () => {
     },
   ],
   emits: [
-    { keyword: 'NewPoll', link : '/docs/dapps/pollexample/pollcontract#newpoll' },
+    { keyword: 'NewPoll', link : '/docs/dapps/example/contract#newpoll' },
   ],
   related: [
-    { keyword: 'poll_to_approve', link: '/docs/dapps/pollexample/pollcontract#poll_to_approve' },
+    { keyword: 'poll_to_approve', link: '/docs/dapps/example/contract#poll_to_approve' },
   ]
 }} />
 
@@ -455,11 +455,11 @@ describe("[POLL] 'respond' entry", async () => {
     },
   ],
   emits: [
-    { keyword: 'Response', link : '/docs/dapps/pollexample/pollcontract#response' },
+    { keyword: 'Response', link : '/docs/dapps/example/contract#response' },
   ],
   related: [
-    { keyword: 'poll', link: '/docs/dapps/pollexample/pollcontract#poll' },
-    { keyword: 'responder', link: '/docs/dapps/pollexample/pollcontract#responder' },
+    { keyword: 'poll', link: '/docs/dapps/example/contract#poll' },
+    { keyword: 'responder', link: '/docs/dapps/example/contract#responder' },
   ]
 }} />
 
@@ -467,9 +467,9 @@ describe("[POLL] 'respond' entry", async () => {
 
 #### `approve`
 
-Entry called by [`owner`](/docs/dapps/pollexample/pollcontract#owner) to approve a proposed poll:
-* a new poll is added to the [`poll`](/docs/dapps/pollexample/pollcontract#poll) asset collection
-* the proposed IPFS hash is removed from [`poll_to_approve`](/docs/dapps/pollexample/pollcontract#poll_to_approve)
+Entry called by [`owner`](/docs/dapps/example/contract#owner) to approve a proposed poll:
+* a new poll is added to the [`poll`](/docs/dapps/example/contract#poll) asset collection
+* the proposed IPFS hash is removed from [`poll_to_approve`](/docs/dapps/example/contract#poll_to_approve)
 
 <NamedDivider title="Code" width="1.5"/>
 
@@ -559,18 +559,18 @@ describe("[POLL] 'approve' entry", async () => {
     },
   ],
   emits: [
-    { keyword: 'Approve', link : '/docs/dapps/pollexample/pollcontract#approval' },
+    { keyword: 'Approve', link : '/docs/dapps/example/contract#approval' },
   ],
   related: [
-    { keyword: 'poll_to_approve', link: '/docs/dapps/pollexample/pollcontract#poll_to_approve' },
-    { keyword: 'poll', link: '/docs/dapps/pollexample/pollcontract#poll' },
+    { keyword: 'poll_to_approve', link: '/docs/dapps/example/contract#poll_to_approve' },
+    { keyword: 'poll', link: '/docs/dapps/example/contract#poll' },
   ]
 }} />
 
 #### `disapprove`
 
-Entry called by [`owner`](/docs/dapps/pollexample/pollcontract#owner) to disapprove a proposed poll:
-* the proposed IPFS hash is removed from [`poll_to_approve`](/docs/dapps/pollexample/pollcontract#poll_to_approve)
+Entry called by [`owner`](/docs/dapps/example/contract#owner) to disapprove a proposed poll:
+* the proposed IPFS hash is removed from [`poll_to_approve`](/docs/dapps/example/contract#poll_to_approve)
 
 <NamedDivider title="Code" width="1.5"/>
 
@@ -631,13 +631,13 @@ describe("[POLL] 'disapprove' entry", async () => {
     }
   ],
   related: [
-    { keyword: 'poll_to_approve', link: '/docs/dapps/pollexample/pollcontract#poll_to_approve' },
+    { keyword: 'poll_to_approve', link: '/docs/dapps/example/contract#poll_to_approve' },
   ]
 }} />
 
 #### `remove`
 
-Entry called by [`owner`](/docs/dapps/pollexample/pollcontract#owner) to remove a poll.
+Entry called by [`owner`](/docs/dapps/example/contract#owner) to remove a poll.
 
 <NamedDivider title="Code" width="1.5"/>
 
@@ -665,7 +665,7 @@ entry remove(pk : nat) {
     },
   ],
   related: [
-    { keyword: 'poll', link: '/docs/dapps/pollexample/pollcontract#poll' },
+    { keyword: 'poll', link: '/docs/dapps/example/contract#poll' },
   ]
 }} />
 
@@ -756,7 +756,7 @@ view already_responded(pk : nat) : bool {
 
 ### `NewPoll`
 
-Emitted by [`add_poll`](/docs/dapps/pollexample/pollcontract#add_poll) with:
+Emitted by [`add_poll`](/docs/dapps/example/contract#add_poll) with:
 * poll creator's address
 * poll's IPFS hash
 
@@ -793,7 +793,7 @@ export class NewPoll {
 
 ### `Response`
 
-Emitted by [`respond`](/docs/dapps/pollexample/pollcontract#respond) with:
+Emitted by [`respond`](/docs/dapps/example/contract#respond) with:
 * responder's address
 * poll's id
 * response's id
@@ -833,7 +833,7 @@ export class Response {
 
 ### `Approval`
 
-Emitted by [`approve`](/docs/dapps/pollexample/pollcontract#approve) with:
+Emitted by [`approve`](/docs/dapps/example/contract#approve) with:
 * proposal issuer's address
 * poll's IPFS hash
 

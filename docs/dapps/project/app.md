@@ -12,7 +12,7 @@ sidebar_label: App.tsx
 
 The `App.tsx` file contains the root component of the application `App` (it comes with the default react template project).
 
-The role of this component is to wrap the main panel component `<MainPanel />` with [constate](/docs/dapps/dappuiproject/#store) hook providers. It should at least be wrapped with the settings, Taquito and Beacon hooks, as illustrated below:
+The role of this component is to wrap the main panel component `<MainPanel />` with [constate](/docs/dapps/project/#store) hook providers. It should at least be wrapped with the settings, Taquito and Beacon hooks, as illustrated below:
 
 ```tsx
 function App() {

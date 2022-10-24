@@ -54,4 +54,4 @@ const endpoint = useEndpoint()
 const name = useAppName()
 ```
 
-See the [Beacon.tsx](/docs/dapps/dappuiproject/beacon) constate hook for an example.
+See the [Beacon.tsx](/docs/dapps/project/beacon) constate hook for an example.

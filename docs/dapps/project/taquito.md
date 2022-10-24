@@ -11,7 +11,7 @@ sidebar_label: Taquito.tsx
         ├── Taquito.tsx
 ```
 
-The `Taquito` [constate](/docs/dapps/dappuiproject/#store) hooks provides the Taquito's Tezos Toolkit to all components. It is created once at hook creation and stored in the hook's state.
+The `Taquito` [constate](/docs/dapps/project/#store) hooks provides the Taquito's Tezos Toolkit to all components. It is created once at hook creation and stored in the hook's state.
 
 ## Code
 
