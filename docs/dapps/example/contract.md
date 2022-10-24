@@ -170,7 +170,7 @@ export type poll_container = Array<[ poll_key, poll_value ]>;
 
 Collection of polls' IPFS hashes proposed by users. When approved by [`owner`](/docs/dapps/example/contract#owner), a poll asset is created.
 
-Note that the asset collection is created as a [`big_map`](/docs/reference/types#big_map<K,%20V>), to be able to handle an arbitrary large amount of poll proposition.
+Note that the asset collection is created as a `big_map`, to be able to handle an arbitrary large amount of poll proposition.
 
 <NamedDivider title="Code" width="1.5"/>
 

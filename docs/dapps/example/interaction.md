@@ -94,7 +94,7 @@ const respond = async () => {
 ```
 
 Comments:
-* `contract` object has been locally obtained with hook `useContract` from [`PollContract.tsx`](/docs/dapps/example/architecture#store-api)
+* `contract` object has been locally obtained with hook `useContract` from [`PollContract.tsx`](/docs/dapps/example/apis#store)
 * poll identifier `selected` and answer identifier `choice` are upcasted to `Nat` type as specified by contract's entry [`respond`](/docs/dapps/example/contract#respond)
 * last argument `{}` of `respond` method is the call's optional parameters (typically the amount of tez to send the contract)
 
@@ -117,7 +117,7 @@ const add_poll = async () => {
 <Button onClick={add_poll}>submit</Button>
 ```
 
-* `contract` object has been locally obtained with hook `useContract` from [`PollContract.tsx`](/docs/dapps/example/architecture#store-api)
+* `contract` object has been locally obtained with hook `useContract` from [`PollContract.tsx`](/docs/dapps/example/apis#store)
 * poll's definition IPFS hash is converted to bytes with `Bytes` utility method `hex_encode`, as specified by the contract's entry [`add_poll`](/docs/dapps/example/contract#add_poll)
 * last argument `{}` of `respond` method is the call's optional parameters (typically the amount of tez to send the contract)
 
@@ -140,7 +140,7 @@ const RespondPoll = () => {
 ```
 Comments:
 * [`useEffect`](https://reactjs.org/docs/hooks-effect.html) React hook is invoked after UI component is loaded
-* `contract` object has been locally obtained with hook `useContract` from [`PollContract.tsx`](/docs/dapps/example/architecture#store-api)
+* `contract` object has been locally obtained with hook `useContract` from [`PollContract.tsx`](/docs/dapps/example/apis#store)
 * call parameter provides the `as` field to set the [`source`](/docs/reference/expressions/constants#source) value used by the view
 
 ## Listening to events
