@@ -1,3 +1,7 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+import { Grid } from '@mui/material';
+
 # DApp UI
 
 This section presents how to create and setup a DApp's User Interface (UI) project using React and Beacon's DApp/wallet interaction.
@@ -82,6 +86,32 @@ The DApp example presented here is using *constate* for its lightweight aspect. 
 ```
 npm install constate
 ```
+
+## Architecture
+
+Schema below illustrates the module and package architecture of the DApp and their interactions:
+
+<Grid container>
+<Grid md={1} xs={0} />
+<Grid item md={7} xs={12}>
+<ThemedImage
+  alt="Buld DApp"
+  width="100%"
+  sources={{
+    light: useBaseUrl('img/tutorial/dapp/dapp-light.svg'),
+    dark: useBaseUrl('img/tutorial/dapp/dapp-dark.svg'),
+  }}
+/>
+</Grid>
+</Grid>
+
+* Changes in `Store` redraw `UI` components (React + constate hook mecanism)
+* `UI` stores DApp's states in `Store`
+* `Store` and `UI` interacts with contract via `Binding`
+* `Store` uses `Beacon`'s services to connect to a wallet
+* `Taquito`'s Tezos toolkit uses `Beacon` as transaction signer
+* `Binding` uses `@completium/dapp-ts` package services to interact with blockchain
+* `@completium/dapp-ts` uses `@completium/event-listener` to listen to emitted events
 
 ## Project structure
 

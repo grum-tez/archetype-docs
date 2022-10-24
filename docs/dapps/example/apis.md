@@ -1,40 +1,12 @@
 ---
 sidebar_position: 3
-sidebar_label: Architecture
+sidebar_label: APIs
 ---
 import Api from '../../../src/components/Api.js';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import ThemedImage from '@theme/ThemedImage';
-import { Grid } from '@mui/material';
 
+# APIs
 
-# Architecture
-
-Schema below illustrates the module and package architecture of the DApp and their interactions:
-
-<Grid container>
-<Grid md={1} xs={0} />
-<Grid item md={7} xs={12}>
-<ThemedImage
-  alt="Buld DApp"
-  width="100%"
-  sources={{
-    light: useBaseUrl('img/tutorial/dapp/dapp-light.svg'),
-    dark: useBaseUrl('img/tutorial/dapp/dapp-dark.svg'),
-  }}
-/>
-</Grid>
-</Grid>
-
-* Changes in `Store` redraw `UI` components (React + constate hook mecanism)
-* `UI` stores DApp (states in `Store`
-* `Store` and `UI` interacts with contract via `Binding`
-* `Store` uses `Beacon`'s services to connect to a wallet
-* `Binding` uses `@completium/dapp-ts` package services to interact with blockchain
-* `@completium/dapp-ts` uses `Taquito`'s Tezos toolkit to interact with blockchain
-* `Taquito`'s Tezos toolkit registers `Beacon` as transaction signer
-
-## Store API
+## Store
 
 <Api title="Settings.tsx" data={[
   { label: 'useTheme', desc: <div>Theme mode (<code>Light</code> or <code>Dark</code>)</div> },
@@ -118,8 +90,7 @@ Schema below illustrates the module and package architecture of the DApp and the
         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;└── ThemeSwitch<br/>
 </div>
 
-
-## Contract's binding API
+## Contract's binding
 
 Interacting with the [poll contract](/docs/dapps/example/contract) is done via the generated bindings.
 
