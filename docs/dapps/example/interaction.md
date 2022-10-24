@@ -142,3 +142,48 @@ Comments:
 * [`useEffect`](https://reactjs.org/docs/hooks-effect.html) React hook is invoked after UI component is loaded
 * `contract` object has been locally obtained with hook `useContract` from [`PollContract.tsx`](/docs/dapps/example/architecture#store-api)
 * call parameter provides the `as` field to set the [`source`](/docs/reference/expressions/constants#source) value used by the view
+
+## Listening to events
+
+The poll contracts emits [events](/docs/dapps/example/contract#events) on poll addition/approval and when a response is submitted. When an event is emitted, the DApp notifies the user with a snack message and a notification appears in the events' panel.
+
+Contract's binding offers methods to register event's handlers. An event handler is a function called when an event is emitted, and that takes this new event as argument. It takes a second optional argument that provides blockchain-related information:
+* emitter contract address
+* block hash
+* operation hash
+* operation timestamp
+* event name
+
+Event handlers are registered in the `useEffect` hook of constate `Events` component:
+```tsx
+useEffect(() => {
+  const startListener = async () => {
+    contract.register_Response(async (e : Response, d ?: EventData) => {
+      setAlertMsg(make_response_msg(e))
+      setAlerOpen(true)
+      await loadResponses(e.poll_id.to_big_number().toNumber())
+      if (d) addEvent(d)
+    })
+    contract.register_NewPoll((np : NewPoll, d ?: EventData) => {
+      setAlertMsg(make_new_poll_msg(np))
+      setAlerOpen(true)
+      if (d) addEvent(d)
+    })
+    contract.register_ApprovePoll((ap : ApprovePoll, d ?: EventData) => {
+      setAlertMsg(make_poll_confirmed_msg(ap))
+      setAlerOpen(true)
+      if (d) addEvent(d)
+    })
+    await run_listener({
+      endpoint: endpoint,
+      verbose: false,
+      horizon: 0
+    })
+  };
+  startListener()
+}, [])
+```
+Comments:
+* `register_Response`, `register_NewPoll` and `register_Approve` are binder's event handler registration methods
+* `run_listener` is the function to start the event listener process (provided by [`@completium/event-listener`](https://www.npmjs.com/package/@completium/event-listener) package)
+
