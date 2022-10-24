@@ -21,24 +21,32 @@ The `Beacon` constate hook provides:
 
 ## Code
 
+:::info
+The code below can be copied/pasted in your project as is (*constate* can coexist with *redux*)
+:::
+
 ```tsx
 import { BeaconWallet } from '@taquito/beacon-wallet';
-import React from 'react';
-import { useTezosToolkit } from "./Taquito";
-import { useAppName, useEndpoint, useNetwork } from "./Settings";
-
 import constate from 'constate';
+import React from 'react';
+
+import { useAppName, useEndpoint, useNetwork } from "./Settings";
+import { useTezosToolkit } from "./Taquito";
 
 export const [
   BeaconProvider,
   useWalletAddress,
   useWalletName,
-  useBeaconUtils,
+  useConnect,
+  useDisconnect,
+  useIsConnected
 ] = constate(
   MakeBeacon,
-  (v) => v.state.user_address,
-  (v) => v.state.wallet,
-  (v) => v.utils
+  (v) => v.beaconState.user_address,
+  (v) => v.beaconState.wallet,
+  (v) => v.utils.connect,
+  (v) => v.utils.disconnect,
+  (v) => v.utils.is_connected
 );
 
 function MakeBeacon() {
@@ -47,7 +55,7 @@ function MakeBeacon() {
   const name = useAppName()
   const ttk = useTezosToolkit()
 
-  const [state, setState] = React.useState(() : {
+  const [beaconState, setState] = React.useState(() : {
     beacon       : undefined | BeaconWallet,
     user_address : undefined | string,
     wallet       : undefined | string,
@@ -59,11 +67,11 @@ function MakeBeacon() {
 
   React.useEffect(() => {
     // to be executed on mount
-    ttk.setWalletProvider(state.beacon)
+    ttk.setWalletProvider(beaconState.beacon)
     const on_mount = async () => {
-      const account = await state.beacon?.client.getActiveAccount();
+      const account = await beaconState.beacon?.client.getActiveAccount();
       const address = account?.address;
-      const peers = await state.beacon?.client?.getPeers();
+      const peers = await beaconState.beacon?.client?.getPeers();
       const wallet_name = peers !== undefined ? peers[0].name : undefined;
       setState(s => { return { ...s, user_address : address, wallet : wallet_name }})
     }
@@ -73,8 +81,8 @@ function MakeBeacon() {
   const connect = async () => {
     try {
       let beacon : BeaconWallet | undefined = undefined
-      if (state.beacon) {
-        beacon = state.beacon
+      if (beaconState.beacon) {
+        beacon = beaconState.beacon
         ttk.setWalletProvider(beacon);
         await beacon.requestPermissions({
           network : {
@@ -95,17 +103,17 @@ function MakeBeacon() {
   }
 
   const disconnect = async () => {
-    state.beacon?.client.disconnect()
+    beaconState.beacon?.client.disconnect()
     setState(s => { return { ...s,
       user_address : undefined
     }})
   }
 
   const is_connected = () => {
-    return state.user_address !== undefined
+    return beaconState.user_address !== undefined
   }
 
-  return { state, utils : { connect, disconnect, is_connected } };
+  return { beaconState, utils : { connect, disconnect, is_connected } };
 }
 ```
 

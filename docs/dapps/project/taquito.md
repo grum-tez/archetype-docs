@@ -15,6 +15,10 @@ The `Taquito` [constate](/docs/dapps/project/#store) hooks provides the Taquito'
 
 ## Code
 
+:::info
+The code below can be copied/pasted in your project as is (*constate* can coexist with *redux*)
+:::
+
 ```tsx
 import { TezosToolkit } from '@taquito/taquito';
 import { useState } from 'react';
