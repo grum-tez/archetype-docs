@@ -81,7 +81,7 @@ npm install @completium/dapp-ts @completium/archetype-ts-types
 
 With React applications, it is *strongly* recommended to setup a centralised store of application data (settings, UI states, ...) in read/write modes with a dedicated package like [constate](https://www.npmjs.com/package/constate) or [redux](https://react-redux.js.org/). This is preventing from awkward spaghetti code of passing components states and data through large hierarchy of components.
 
-The DApp example presented here is using *constate* for its lightweight aspect. Note that *Taquito* and *Beacon* must be *singletons*, hence there are wrapped as constate hooks to make them available to UI components.
+The DApp example presented here is using *constate* for its lightweight aspect. Note that *Taquito* and *Beacon* must be *singletons*, hence there are wrapped with *constate* as React [Contexts](https://reactjs.org/docs/context.html) to make them available to UI components.
 
 ```
 npm install constate
@@ -113,7 +113,7 @@ Schema below illustrates the module and package architecture of the DApp and the
 * `Binding` uses `@completium/dapp-ts` package services to interact with blockchain
 * `@completium/dapp-ts` uses `@completium/event-listener` to listen to emitted events
 
-## Project structure
+## File structure
 
 The typical file structure of the react project is presented below:
 

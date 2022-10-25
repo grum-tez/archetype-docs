@@ -15,6 +15,32 @@ The DApp uses the [MUI](https://mui.com/) UI widget library.
   repo : "https://github.com/completium/poll-dapp",
 }} />
 
+## Login
+
+Click the topbar `LOGIN` button to connect to a wallet; select a wallet you want to connect to (Temple, Kukai, Umami, ...).
+
+Once logged in, the login button is replaced by a panel with basic information:
+* User address (`tz1...` or `tz2...`)
+* Name of the wallet connected to
+* Network (*Ghostnet* in this example)
+* Balance
+* Endpoint (the Tezos endpoint the DApp using)
+* a `LOGOUT` button to disconnet from wallet
+
+## Answer a poll
+
+Steps to answer a poll:
+1. click on a poll in the DApp's [main panel](https://completium.github.io/poll-dapp)
+2. click on one of the possible answers
+3. click the `SUBMIT` button; it is then required to connect to a wallet (if not already logged in) and validate the transaction to the contract
+
+Once the transaction is validated on the blockchain, the statistic of the poll (number of answers per possible answer) is displayed.
+
+## Event notifications
+
+User is notified when another user either creates a new poll or answers a poll:
+* a message is displayed at the bottom of the screen for a few seconds
+* the detailed event information is added to the *notification center*
 
 ## Create a poll
 
@@ -42,14 +68,3 @@ Steps to add a poll:
 3. click the `SUBMIT` button; it is then required to connect to a wallet (if not already logged in) and validate the transaction to the contract.
 
 Once submitted, the contract's owner (`tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P`) needs to validate the poll for it to appear in the main panel.
-
-## Answer a poll
-
-Steps to answer a poll:
-1. click on a poll in the DApp's [main panel](https://completium.github.io/poll-dapp)
-2. click on one of the possible answers
-3. click the `SUBMIT` button; it is then required to connect to a wallet (if not already logged in) and validate the transaction to the contract
-
-Once the transaction is validated on the blockchain, the statistic of the poll (number of answers per possible answer) is displayed.
-
-

@@ -11,7 +11,7 @@ sidebar_label: Taquito.tsx
         ├── Taquito.tsx
 ```
 
-The `Taquito` [constate](/docs/dapps/project/#store) hooks provides the Taquito's Tezos Toolkit to all components. It is created once at hook creation and stored in the hook's state.
+The `Taquito` [constate](/docs/dapps/project/#store) context provides Taquito's Tezos Toolkit to all components. It is created once at context creation.
 
 ## Code
 
@@ -48,5 +48,6 @@ When a component needs to use Taquito's Tezos Toolkit, it retrieves it with the 
 ```tsx
 import { useTezosToolkit } from '../store/Taquito'
 
-const tkk = useTezosToolkit()
+const ttk = useTezosToolkit()
+const balance = await ttk.tz.getBalance('tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P');
 ```

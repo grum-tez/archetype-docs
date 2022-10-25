@@ -125,10 +125,10 @@ function MakeBeacon() {
 For example, the `Login` component providing the button to login to a wallet would code:
 
 ```tsx
-import { useBeaconUtils } from '../store/Beacon'
+import { useConnect } from '../store/Beacon'
 
 const LoginButton = () => {
-  const connect = useBeaconUtils().connect
+  const connect = useConnect()
   return <Button onClick={connect} />
 }
 ```
