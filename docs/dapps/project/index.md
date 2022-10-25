@@ -30,7 +30,7 @@ This creates the `my-dapp` project. More information may be found [here](https:/
 
 ### Tezos library
 
-While it is always possible to interact directly with the [Tezos endpoint's RPC API](https://tezos.gitlab.io/active/rpc.html), it is more than recommended to use a dedicated library that will wrap all services in high-level development services and take care of all the low-level implementation details.
+While it is always possible to interact directly with the [Tezos endpoint's RPC API](https://tezos.gitlab.io/active/rpc.html), it is more than recommended to use a dedicated library that will wrap all services in high-level development services and take care of all the low-level Tezos protocol details.
 
 In the context of web DApps for Tezos, the main library is [Taquito](https://tezostaquito.io/):
 
@@ -38,7 +38,7 @@ In the context of web DApps for Tezos, the main library is [Taquito](https://tez
 npm install @taquito/taquito
 ```
 
-Taquito uses official cryptographic packages (aka libraries). Some of these packages relies on nodejs packages designed to run on the back-end side (server side, not in a browser). These packages are `crypto`, `stream`, `assert`, `http`, `https`, `os`. As a result, the deafault build process fails; it is then necessary to map these packages to their front-end counterparts in the build process:
+Taquito uses official cryptographic packages (aka libraries). Some of these packages relies on nodejs packages designed to run on the back-end side (server side, not in a browser). These packages are `crypto`, `stream`, `assert`, `http`, `https`, `os`. As a result, the default build process fails; it is then necessary to map these packages to their front-end counterparts in the build process:
 
 :::info
 Follow instructions available [here](https://web3auth.io/docs/troubleshooting/webpack-issues) to solve build issues.
