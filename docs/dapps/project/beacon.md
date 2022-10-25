@@ -12,7 +12,7 @@ import Api from '../../../src/components/Api.js';
         ├── Beacon.tsx
 ```
 
-The `Beacon` context provider provides the following hooks:
+The `Beacon` context provides the following services:
 
 <Api title="Beacon.tsx" data={[
   { label: 'useWalletAddress', desc: <div>Wallet address (or <code>undefined</code> if not logged in)</div> },
