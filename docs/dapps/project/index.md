@@ -44,7 +44,7 @@ Taquito uses official cryptographic packages (aka libraries). Some of these pack
 Follow instructions available [here](https://web3auth.io/docs/troubleshooting/webpack-issues) to solve build issues.
 :::
 
-As a side note, `create-react-app` uses [webpack](https://webpack.js.org/) (version 5) to bundle all resources as static web assets. It is then necessary to use the `react-app-rewired` package as described in [instructions](https://web3auth.io/docs/troubleshooting/webpack-issues) above, to be able to provide a customized webpack configuration without ejecting the react app.
+As a comment, `create-react-app` uses [webpack](https://webpack.js.org/) (version 5) to bundle all resources as static web assets. It is then necessary to use the `react-app-rewired` package as described in instructions above, to be able to provide a customized webpack configuration without ejecting the react app.
 
 ### Wallets
 
@@ -56,7 +56,7 @@ npm install @taquito/beacon-wallet @airgap/beacon-sdk
 
 The main drawback of Beacon is the lack of control over the UI elements (typically the wallet selection popup), which can be a no-go if you want a tight control of the DApp L&F. In that case, each wallet needs to be integrated separately.
 
-A constate hook for Beacon services `connect` and `disconnect` is available `here`.
+A plug-and-play constate context for Beacon services `connect` and `disconnect` is available [`here`](/docs/dapps/project/beacon).
 
 ### Contracts bindings
 
