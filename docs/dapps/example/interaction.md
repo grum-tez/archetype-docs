@@ -9,6 +9,14 @@ This section presents in detail the interaction between the DApp's UI and the [p
 * how polls data are retrieved from contract?
 * how entries and views are invoked?
 
+
+## Generate bindings
+
+The following [Completium CLI](https://completium.com/docs/cli/) command generates the contract(s) bindings for a DApp:
+```
+completium-cli generate binding-dapp-ts ./poll-contract/contracts/poll.arl > ./src/bindings/poll.ts
+```
+
 ## Retrieving poll data
 
 The Typescript binding provides the method `get_poll` that returns the [poll](/docs/dapps/example/contract#poll) *container* as a list of pair of poll key and `poll_value`, whose type finally reduces to:

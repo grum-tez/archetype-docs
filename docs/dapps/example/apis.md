@@ -11,7 +11,7 @@ import Api from '../../../src/components/Api.js';
 <Api title="Settings.tsx" data={[
   { label: 'useTheme', desc: <div>Theme mode (<code>Light</code> or <code>Dark</code>)</div> },
   { label: 'useEndpoint', desc: 'Tezos endpoint URL' },
-  { label: 'usePollAddress', desc: <div>Poll contract address (<code>KT1...</code>)</div> },
+  { label: 'useContractAddress', desc: <div>Poll contract address (<code>KT1...</code>)</div> },
   { label: 'useNetwork', desc: <div>Network (for ex. <code>Ghostnet</code>) for Beacon to use</div> },
   { label: 'useIPFSBrowser', desc: 'IPFS endpoint URL'},
   { label: 'useGitRepo', desc: 'Code repository URL'},
@@ -30,21 +30,14 @@ import Api from '../../../src/components/Api.js';
   { label: 'useDisconnect', desc: <div>Beacon's disconnect service</div> },
 ]} />
 <br />
-<Api title="PollContract.tsx" data={[
-  { label: 'usePollContract', desc: <div>Returns contract binder</div> },
+<Api title="Contract.tsx" data={[
+  { label: 'useContract', desc: <div>Returns contract binder</div> },
 ]} />
 <br />
 <Api title="Polls.tsx" data={[
   { label: 'usePolls', desc: <div>List of polls</div> },
   { label: 'useLoadData', desc: <div>Function to fetch polls' data from contract</div> },
   { label: 'useLoadResponses', desc: <div>Function to fetch polls' responses from contract via the <code>get_responses</code> view</div> },
-]} />
-<br />
-<Api title="AppState.tsx" data={[
-  { label: 'useAppPanel', desc: <div>Panel currently displayed (<code>PICK</code>, <code>RESPOND</code> or <code>ADD</code>)</div> },
-  { label: 'useAppPoll', desc: <div>Poll id currently displayed (when panel is <code>RESPOND</code>), or <code>undefined</code></div> },
-  { label: 'useSetAppPanel', desc: <div>Function to set panel to display</div> },
-  { label: 'useSetAppPoll', desc: <div>Function to set poll to display</div> },
 ]} />
 <br />
 <Api title="Alerts.tsx" data={[
@@ -69,14 +62,14 @@ import Api from '../../../src/components/Api.js';
 .<br/>
 └── App<br/>
     &ensp;&ensp;&ensp;&ensp;└── DApp<br/>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── MainPanel<br/>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;├── AddPoll<br/>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── *Router*<br/>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;├── AddPage<br/>
         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;│   &ensp;&ensp;├── AddForm<br/>
         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;│   &ensp;&ensp;└── PollPreview<br/>
         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;│   &ensp;&ensp;    &ensp;&ensp;&ensp;└── PollPanel<br/>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;├── PickPoll<br/>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;├── PickPage<br/>
         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;│   &ensp;&ensp;└── [PollCard]<br/>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;└── RespondPoll<br/>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;└── PollPage<br/>
         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;    &ensp;&ensp;&ensp;└── PollPanel<br/>
         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;    └── [ChoicePanel]<br/>
         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;└── TopBar<br/>

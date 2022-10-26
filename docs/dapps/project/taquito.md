@@ -11,7 +11,7 @@ sidebar_label: Taquito.tsx
         ├── Taquito.tsx
 ```
 
-The `Taquito` [constate](/docs/dapps/project/#store) context provides Taquito's Tezos Toolkit to all components. It is created once at context creation.
+The `Taquito` context provides Taquito's Tezos Toolkit to all components. It is created once at context creation.
 
 ## Code
 

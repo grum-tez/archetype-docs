@@ -1,6 +1,8 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import ThemedImage from '@theme/ThemedImage';
 import { Grid } from '@mui/material';
+import ThemedImage from '@theme/ThemedImage';
+
+import Api from '../../../src/components/Api.js';
 
 # DApp UI
 
@@ -62,10 +64,10 @@ A plug-and-play constate context for Beacon services `connect` and `disconnect` 
 
 When interacting with a contract (read and write), it is *strongly* recommended to use its generated typescript bindings, that is a typed high-level typescript interface. It greatly reduces the effort to call a contract, read its storage and the number of runtime errors, as the compilier and LSP guides you through the contract interface.
 
-Typescript bindings may be obtained with [Completium CLI](https://completium.com/docs/cli) with the `generate binding-ts` command. In the poll DApp example, the bindings of the `poll` contract is obtained with the following command:
+Typescript bindings may be obtained with the following [Completium CLI](https://completium.com/docs/cli) command:
 
 ```
-completium-cli generate binding-ts ./contract/poll.arl > ./bindings/poll.ts
+completium-cli generate binding-dapp-ts mycontract.arl > mycontract.ts
 ```
 
 :::info
@@ -77,15 +79,26 @@ The generated binding interface relies on two packages:
 npm install @completium/dapp-ts @completium/archetype-ts-types
 ```
 
-### Store
+### Contexts
 
-With React applications, it is *strongly* recommended to setup a centralised store of application data (settings, UI states, ...) in read/write modes with a dedicated package like [constate](https://www.npmjs.com/package/constate) or [redux](https://react-redux.js.org/). This is preventing from awkward spaghetti code of passing components states and data through large hierarchy of components.
+With React applications, it is *strongly* recommended to setup [*contexts*](https://reactjs.org/docs/context.html) for application data (settings, UI states, ...) in read/write modes with a dedicated package like [constate](https://www.npmjs.com/package/constate) or [redux](https://react-redux.js.org/). This is preventing from awkward spaghetti code of passing components states and data through large hierarchy of components.
 
-The DApp example presented here is using *constate* for its lightweight aspect. Note that *Taquito* and *Beacon* must be *singletons*, hence there are wrapped with *constate* as React [Contexts](https://reactjs.org/docs/context.html) to make them available to UI components.
+The DApp example presented here is using *constate* for its lightweight aspect.
 
 ```
 npm install constate
 ```
+
+*Taquito* and *Beacon* must be *singletons*, hence there are wrapped as contexts (with *constate*) to make them available to UI components. The same stands for the contract bindings.
+
+The main 4 blockchain-related contexts are provided as plug-and-play code:
+
+<Api title="Contexts" data={[
+  { label: 'Settings.tsx', link : '/docs/dapps/project/settings', desc: 'Blockchain-related DApp settings' },
+  { label: 'Taquito.tsx', link : '/docs/dapps/project/taquito', desc: "Provides Taquito's Tezos Toolkit hook" },
+  { label: 'Beacon.tsx', link : '/docs/dapps/project/beacon', desc: <div>Beacon's <code>connect</code> <code>connect</code> and wallet address services</div> },
+  { label: 'Contract.tsx', link : '/docs/dapps/project/contract', desc: 'Provides contract binder'}
+]} />
 
 ## Architecture
 
@@ -105,11 +118,10 @@ Schema below illustrates the module and package architecture of the DApp and the
 </Grid>
 </Grid>
 
-* Changes in `Store` redraw `UI` components (React + constate hook mecanism)
-* `UI` stores DApp's states in `Store`
-* `Store` and `UI` interacts with contract via `Binding`
-* `Store` uses `Beacon`'s services to connect to a wallet
-* `Taquito`'s Tezos toolkit uses `Beacon` as transaction signer
+* Changes in `Contexts` data automatically redraw `UI` components that use them (React + constate hook mecanism)
+* `Contexts` and `UI` interact with contract via `Binding`
+* `Contexts` uses Beacon's services to connect to a wallet
+* Taquito's Tezos toolkit uses Beacon as transaction signer
 * `Binding` uses `@completium/dapp-ts` package services to interact with blockchain
 * `@completium/dapp-ts` uses `@completium/event-listener` to listen to emitted events
 
@@ -141,19 +153,20 @@ The typical file structure of the react project is presented below:
     &ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;└── ...<br/>
     &ensp;&ensp;&ensp;&ensp;├── `components`<br/>
     &ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;└── ...<br/>
-    &ensp;&ensp;&ensp;&ensp;└── `store`<br/>
+    &ensp;&ensp;&ensp;&ensp;├── `routes`<br/>
+    &ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;└── ...<br/>
+    &ensp;&ensp;&ensp;&ensp;└── `contexts`<br/>
     &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Beacon.tsx](/docs/dapps/project/beacon)<br/>
     &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Taquito.tsx](/docs/dapps/project/taquito)<br/>
-    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── Contract.tsx<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Contract.tsx](/docs/dapps/project/contract)<br/>
     &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Settings.tsx](/docs/dapps/project/settings)<br/>
     &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;└── ...<br/>
 
 </div>
 
-Note that 3 directories are created under `src`:
-1. `bindings` for generated contracts bindings
-2. `components` for UI components
-3. `store` for *constate* hooks
-
-*Taquito* and *Beacon* hooks are presented in details.
+Note that 4 directories are created under `src`:
+1. `bindings`: generated contracts bindings
+2. `routes`: page UI components managed by a *route* manager (for example [`react-router-dom`](https://reactrouter.com/en/main))
+3. `components`: other UI components
+4. `contexts`: hooks providers
 

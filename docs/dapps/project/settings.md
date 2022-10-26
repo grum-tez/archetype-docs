@@ -11,7 +11,7 @@ sidebar_label: Settings.tsx
         ├── Settings.tsx
 ```
 
-The `Settings` constate hook provides components (and other hooks) with access to the main blockchain settings required by Taquito and Beacon:
+The `Settings` context provides components (and other contexts) with access to the main blockchain settings required by Taquito and Beacon:
 * `endpoint` URL used by Taquito's constructor
 * `network` type used by beacon constructor
 
@@ -27,18 +27,21 @@ export const [
   useAppName,
   useEndpoint,
   useNetwork,
+  useContractAddress
 ] = constate(
   () => {
     const [settingState] = useState({
       app_name        : 'My DApp',
       endpoint        : 'https://ghostnet.ecadinfra.com',
       network         :  NetworkType.GHOSTNET,
+      contract        : 'KT1...',
     });
     return settings;
   },
   v => v.app_name,
   v => v.endpoint,
-  v => v.network
+  v => v.network,
+  v => v.contract
 );
 ```
 
