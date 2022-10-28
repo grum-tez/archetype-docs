@@ -106,7 +106,7 @@ const config = {
             label: 'DApps',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/docs/installation', label: 'latest: 1.3.2', position: 'right'},
+          {to: '/docs/installation', label: 'latest: 1.3.5', position: 'right'},
           {
             href: 'https://tezos.com',
             label: 'Tezos',
