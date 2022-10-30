@@ -15,7 +15,7 @@ end
 ```
 <!--truncate-->
 
-Before version `1.3.0`, both expressions `a` and `b` were evaluated, meaning that if `b` is a [failing](/docs/reference/instructions/divergent#faile) expression, the evaluation fails even if `a` is true.
+Before version `1.3.0`, both expressions `a` and `b` were evaluated, meaning that if `b` is a [failing](/docs/reference/instructions/divergent#faile) expression, the evaluation fails even if `a` is false.
 
 Since version `1.3.0`, `a and b` is replaced by [conditional](/docs/reference/expressions/controls#if) expression:
 ```archetype
