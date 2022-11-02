@@ -34,7 +34,8 @@ Besides [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-12/) features, these
 * one-step *fee-less* transfer mechanism ([`transfer_gasless`](/docs/templates/fa2#transfer_gaslessbatch))
 * [`royalties`](/docs/templates/fa2#royalties) information for NFT tokens, compliant with [Rarible](https://rarible.com/) market place
 * a global operator mechanism to allow one operator to manage *all* tokens of an owner ([`operator_for_all`](/docs/templates/fa2#operator_for_all), [`update_operator_for_all`](/docs/templates/fa2#update_operator_for_allupl))
-* [`mint`](/docs/templates/fa2#mint) and [`burn`](/docs/templates/fa2#burn) entrypoints callable by contract owner only
+* [`mint`](/docs/templates/fa2#mint) entrypoint callable by contract owner only
+* [`burn`](/docs/templates/fa2#burn) entrypoint callable by token owner only
 
 ## Errors
 
