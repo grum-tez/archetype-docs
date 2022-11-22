@@ -64,7 +64,7 @@ const res : nat ?= simple(addr).getN(Unit) : "VIEW_ERROR";
 
 ## Deploy a new instance
 
-It is possible to deploy a new instance of the contract with the [create_contract](/docs/reference/expressions/builtins#create_contract(path,%20delegator,%20amount,%20storage)) builtin:
+It is possible to deploy a new instance of the contract with the [`create_contract`](/docs/reference/expressions/builtins#create_contract(path,%20delegator,%20amount,%20storage)) builtin:
 
 ```archetype
 const storage_init : nat = 0;
