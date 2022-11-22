@@ -38,7 +38,7 @@ It is then possible to call simple's *default* entrypoint with:
 
 ```archetype
 const addr = KT1...;
-transfer 0tz to addr call simple.default(4)
+transfer 0tz to entry simple(addr).exec(4)
 ```
 
 ## Call view
