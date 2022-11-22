@@ -4,7 +4,17 @@ sidebar_position: 8
 
 # External contract
 
-It is possible to import external contract compiled in Michelson, to call it or deploy it from a contract.
+It is possible to import external contract compiled in Michelson. For example:
+
+```archetype
+import simple from "simple.tz"
+```
+
+:::warning
+The path is relative to the directory where archetype compiler is executed (ie. called, not installed).
+:::
+
+Importing a contract makes it easy to *call* or *deploy*, since the contract's signature is then known from archetype compiler.
 
 ## Call entrypoint
 
@@ -24,17 +34,7 @@ Consider the following Michelson contract that provides one entrypoint that take
 
 Say this contract is deployed at address `KT1...`.
 
-In order to call it, it is possible to import it with the *import* declaration:
-
-```archetype
-import simple from "simple.tz"
-```
-
-:::info
-The path is relative to the directory where archetype compiler is executed (ie. called, not installed).
-:::
-
-It is then possible to call the *simple* default entrypoint with:
+It is then possible to call simple's *default* entrypoint with:
 
 ```archetype
 const addr = KT1...;
@@ -43,10 +43,23 @@ transfer 0tz to addr call simple.default(4)
 
 ## Call view
 
-Equivalently a contract view can be called.
+Say *simple* has a view called `getN`:
+
+```archetype title="simple.tz"
+{
+  storage unit;
+  parameter unit;
+  code { CDR;
+         NIL operation;
+         PAIR };
+  view "getN" unit nat { DROP; PUSH nat 2 }
+}
+```
+
+The view is then called with:
 
 ```archetype
-transfer 0tz to addr call simple.aview(5)
+const res : nat ?= simple(addr).getN(Unit) : "VIEW_ERROR";
 ```
 
 ## Deploy a new instance
