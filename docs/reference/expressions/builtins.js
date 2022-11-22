@@ -1715,7 +1715,7 @@ export const builtins = {
     michelson_ref_url: michelson_ref_base_url + '#instr-OR',
   },
   create_contract : {
-    sig: 'create_contract(path, del, amount, storage)',
+    sig: 'create_contract(path, delegator, amount, storage)',
     desc: <CreateContract />,
     parameters: [
       {
