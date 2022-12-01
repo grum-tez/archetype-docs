@@ -15,10 +15,10 @@ import LeftDesc from "../../../src/components/desc/left_desc.md"
 import MakeAsset from "../../../src/components/desc/make_asset.md"
 import MapDesc from "../../../src/components/desc/map_desc.md"
 import MutezNatDesc from "../../../src/components/desc/mutez_nat_desc.md"
+import NthDesc from "../../../src/components/desc/nth_builtin_desc.md"
 import RightDesc from "../../../src/components/desc/right_desc.md"
 import SliceDesc from "../../../src/components/desc/slice_desc.md"
 import UnpackDesc from "../../../src/components/desc/unpack_desc.md"
-import NthDesc from "../../../src/components/desc/nth_builtin_desc.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -1378,7 +1378,7 @@ export const builtins = {
   // ticket
   create_ticket: {
     sig: 'create_ticket(s : T, n : nat)',
-    desc: <div>Creates a ticket from a value typed T and an amount.</div>,
+    desc: <div>Creates a <Link to={'/docs/reference/types#s-t'}>ticket</Link> from a value typed T and an amount.</div>,
     parameters: [
       {
         type: 'T',
@@ -1392,8 +1392,9 @@ export const builtins = {
       }
     ],
     returns: {
-      type: 'ticket<T>',
-      desc: <div>Created ticket</div>
+      type: 'option<ticket<T>>',
+      withLink : false,
+      desc: <div>Returns an <Link to={'/docs/reference/types#option<T>'}>option</Link> of ticket. It is <Link to={'/docs/reference/expressions/builtins#none<T>'}><code>none</code></Link> if <code>n</code> is equal to <code>0</code> (ie. it is not possible to create 0-valued ticket).</div>
     },
     michelson: "TICKET",
     michelson_ref_url: michelson_ref_base_url + '#instr-TICKET',

@@ -1,6 +1,6 @@
 export const ticket = {
   types: [
-    { label: 'ticket', link: '/docs/reference/types#ticket<T>', desc: 'Contract authenticaed data' },
+    { label: 'ticket', link: '/docs/reference/types#ticket<T>', desc: 'Contract authenticated data' },
   ],
   builtins: [
     { label: 'create_ticket', link: '/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)', desc: 'Create tickets' },

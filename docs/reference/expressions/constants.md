@@ -24,6 +24,10 @@ import { constants } from './constants.js';
 
 <Constant data={constants['now']} />
 
+### `min_block_time`
+
+<Constant data={constants['minblocktime']} />
+
 ### `self_address`
 
 <Constant data={constants['self_address']} />

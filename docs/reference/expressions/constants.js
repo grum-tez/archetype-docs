@@ -1,4 +1,3 @@
-
 import React from "react"
 
 import BalanceDesc from '../../../src/components/desc/balance_desc.md'
@@ -7,6 +6,13 @@ import ChainidDesc from '../../../src/components/desc/chainid_desc.md'
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference'
 
 export const constants = {
+  minblocktime: {
+    desc: <div>Current minimal block time (between two blocks) in seconds.</div>,
+    type: 'nat',
+    michelson: "MIN_BLOCK_TIME",
+    michelson_ref_url: michelson_ref_base_url + '/#instr-MIN_BLOCK_TIME',
+    related: []
+  },
   balance:
   {
     desc: <BalanceDesc />,
