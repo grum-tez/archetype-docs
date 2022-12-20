@@ -101,6 +101,13 @@ const config = {
           {
             type: 'docSidebar',
             position: 'left',
+            docId: 'templates/contracts',
+            sidebarId: 'tests',
+            label: 'Tests',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
             docId: 'templates/dapps',
             sidebarId: 'dapps',
             label: 'DApps',

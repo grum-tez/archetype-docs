@@ -10,13 +10,11 @@ This section presents how to create and setup a DApp's User Interface (UI) proje
 
 ## Technical stack
 
-### JS Runtime
+### App Framework
 
-The use of [Nodejs](https://nodejs.org/en/) as the javascript execution environment is a no brainer. It is best installed with [`nvm`](https://github.com/nvm-sh/nvm).
+Any framework is suitable to create a DApp application as long as a Tezos library is available for it. We present here how to create a *web* DApp with [React](https://reactjs.org/).
 
-### UI Framework
-
-Any UI framework is suitable to create a web DApp interface (Angular, Vue, Svelte, ...). We present here how to create a DApp UI project with [React](https://reactjs.org/).
+The choice of the React framework depends on the objective and the size of the application; typically a framework like [Next.js](https://nextjs.org/) is suited for large applications with needs for server side rendering. We are choosing [create-react-app](https://create-react-app.dev/) for its simplicity to create simple client-side & single-page applications: it installs and configures the whole pack of required bricks ([webpack](https://webpack.js.org/), [babel](https://babeljs.io/), ...)
 
 ### Language
 
