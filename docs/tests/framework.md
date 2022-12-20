@@ -16,7 +16,7 @@ The benefits of [Node.js](https://nodejs.org/en/) and the [npm](https://www.npmj
 
 The choice of [Typescript](https://www.typescriptlang.org/) (TS) language is motivated by its *strongly-typed* aspect. A typed language helps validating the code at compilation time and reduce the effort and time to production.
 
-Moreover it is one of the best-equipped languages in IDEs (like [VSCode](https://code.visualstudio.com/), [IntelliJ](https://www.jetbrains.com/help/idea/typescript-support.html), ...) as they provide with inlined code information (function docs and signatures, code navigation and refactoring, ...) and powerful [linters](https://www.testim.io/blog/what-is-a-linter-heres-a-definition-and-quick-start-guide/) to help detect issues at the time of coding, rather than at test execution, or even worse, after the contract is deployed.
+Moreover it is fully-equipped in IDEs (like [VSCode](https://code.visualstudio.com/), [IntelliJ](https://www.jetbrains.com/help/idea/typescript-support.html), ...) with inlined code information (function docs and signatures, code navigation and refactoring, ...) and [linters](https://www.testim.io/blog/what-is-a-linter-heres-a-definition-and-quick-start-guide/) to detect issues at the time of coding, rather than at test execution, or even worse, after the contract is deployed.
 
 ## Contract Binding
 
@@ -61,7 +61,7 @@ assert(total.equals(new Nat(2)))
 
 The main benefit of the binding interface is that the contract interface is known at *coding* time.
 
-For example, if the wrong type of argument is passed to the `increase` method, an error is thrown instantly in the IDE:
+For example, if the wrong type of argument is passed to the `increase` method, an error is thrown instantly in the IDE (like VSCode below):
 
 <Grid container>
 <Grid item md={10} xs={12}>
@@ -122,4 +122,6 @@ The framework relies on several packages:
 
 There is no need to install these packages manually when the `create project` command is used. See here for more info.
 
+:::info
 Note that it is also possible to use the binding generation in a *DApp*. See [here](http://localhost:3000/docs/dapps/example/) for a full DApp example.
+:::
