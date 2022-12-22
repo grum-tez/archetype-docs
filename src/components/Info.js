@@ -6,6 +6,7 @@ import { MichelsonType } from './MichelsonType';
 import { Related } from './Related';
 
 const Fails = (props) => {
+  console.log(props.fails)
     return ((props.fails === undefined || props.fails.length === 0) ? (
       <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', fontStyle: 'italic'}}>does not fail</Typography>
     ) : (

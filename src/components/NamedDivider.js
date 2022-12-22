@@ -14,7 +14,9 @@ export default function NamedDivider(props) {
       </Grid>
       <Grid item xs={9} sm={10} md={10}>
       </Grid>
-      <Grid item xs={12} sm={w} md={w}><Divider className={ styles.divider }/></Grid>
+      <Grid item xs={12} sm={w} md={w}>
+        <Divider className={ styles.divider }/>
+      </Grid>
     </Grid>
   )
 }
