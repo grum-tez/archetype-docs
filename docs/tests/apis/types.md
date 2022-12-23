@@ -12,6 +12,8 @@ This section presents types exported by the [`@completium/archetype-ts-types`](h
 
 ## `A B`
 
+### `Account`
+
 ## `C D`
 
 ## `E F`
@@ -33,6 +35,8 @@ This section presents types exported by the [`@completium/archetype-ts-types`](h
 <TsType data={types.nat} />
 
 ## `O P`
+
+### `Parameters`
 
 ## `Q R`
 

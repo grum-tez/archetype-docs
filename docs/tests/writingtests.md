@@ -56,6 +56,19 @@ npm run gen-binding
 
 In the default setup, this generates the file `hello.ts` in `tests/binding/` directory from `hello.arl` in `contracts` directory.
 
+These values are defined in the `"completium"` section of the `package.json` file:
+
+```json title="package.json"
+"completium": {
+  "binding_path": "./tests/binding/",
+  "build_path": "./build/",
+  "contracts_path": "./contracts/",
+  "tests_path": "./tests/"
+}
+```
+
+Modify these values to adapt to your setup.
+
 :::warning
 Bindings need to be generated with the above command everytime the contract interface is modified (storage, entries, views, error messages)
 :::

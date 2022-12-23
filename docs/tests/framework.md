@@ -91,7 +91,7 @@ It is then possible to display the expected type of argument by hovering the met
 </Grid>
 </Grid>
 
-See the binding section for a detailed presentation.
+See the [binding](/docs/tests/binding) document for a detailed presentation of the generated API.
 
 ## Michelson execution
 
