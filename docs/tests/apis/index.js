@@ -1,4 +1,4 @@
-import { types as T, types_functions as F, experiment as E } from './types'
+import { types as T, types_functions as F, experiment as E, dapp as D } from './types'
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -38,3 +38,4 @@ export const toMich = getTypes(F, "typeutils", isToMich)
 export const toMichType = getTypes(F, "typeutils", isToMichType)
 
 export const experiment = getTypes(E, "experiment", _ => true)
+export const dapp = getTypes(D, "dapp", _ => true)
