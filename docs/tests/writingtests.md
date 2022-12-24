@@ -2,6 +2,8 @@
 sidebar_position: 2
 sidebar_label: Writing Tests
 ---
+import Api from '@site/src/components/Api.js';
+import { experiment, types } from './bind.js'
 
 # Writing Tests
 
@@ -244,4 +246,8 @@ Note that the `errors` field of contract's binding interface is the list of poss
 
 ## Batch execution
 
-## Experiment utils
+## Utils
+
+<Api title="Experiment" data={experiment} xs={4}/>
+<br/>
+<Api title="Type Utils" data={types} />

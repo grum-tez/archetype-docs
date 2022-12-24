@@ -6,8 +6,6 @@ import { dapp } from './types.js';
 
 # TS Dapp
 
-## `C D`
-
 ### `call(c, e, a, p)`
 
 <Builtin data={dapp['call']} />
@@ -15,8 +13,6 @@ import { dapp } from './types.js';
 ### `deploy(path, params, p)`
 
 <Builtin data={dapp['deploy']} />
-
-## `E F`
 
 ### `exec_batch(cps, p)`
 
@@ -29,8 +25,6 @@ import { dapp } from './types.js';
 ### `exec_view(c, e, a, p)`
 
 <Builtin data={dapp['exec_view']} />
-
-## `G H`
 
 ### `get_balance()`
 
