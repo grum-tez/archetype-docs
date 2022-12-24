@@ -24,6 +24,94 @@ const getLinkTo = (v) => {
 }
 
 export const types = {
+  address: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Address"))
+    ]
+  },
+  bls12_381_fr: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Bls12_381_fr"))
+    ]
+  },
+  bls12_381_g1: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Bls12_381_g1"))
+    ]
+  },
+  bls12_381_g2: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Bls12_381_g2"))
+    ]
+  },
+  bytes: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Bytes"))
+    ]
+  },
+  chain_id: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Chain_id"))
+    ]
+  },
+  chest: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Chest"))
+    ]
+  },
+  chest_key: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("chest_key"))
+    ]
+  },
+  duration: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Duration"))
+    ]
+  },
+  entrypoint: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Entrypoint"))
+    ]
+  },
+  enum: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Enum"))
+    ]
+  },
   int : {
     desc : <Int />,
     ref : "",
@@ -58,6 +146,22 @@ export const types = {
         label : "div",
         desc : <div>Takes a parameter of type { getLinkTo("Int") }, and returns the <i>division</i> of <code>this</code> by the parameter as a { getLinkTo("Rational") } value</div>
       }
+    ]
+  },
+  key: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Key"))
+    ]
+  },
+  key_hash: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Key_hash"))
     ]
   },
   nat : {
@@ -95,14 +199,384 @@ export const types = {
         desc : <div>Takes a parameter of type { getLinkTo("Nat") }, and returns the <i>division</i> of <code>this</code> by the parameter as a { getLinkTo("Rational") } value</div>
       }
     ]
-  }
+  },
+  option: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Option"))
+    ]
+  },
+  or: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Or"))
+    ]
+  },
+  rational: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Rational"))
+    ]
+  },
+  sapling_state: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Sapling_state"))
+    ]
+  },
+  sapling_transaction: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Sapling_transaction"))
+    ]
+  },
+  signature: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Signature"))
+    ]
+  },
+  tez: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Tez"))
+    ]
+  },
+  ticket: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Ticket"))
+    ]
+  },
+  tx_rollup_l2_address: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Tx_rollup_l2_address"))
+    ]
+  },
+  unit: {
+      desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Unit"))
+    ]
+  },
 }
 
 const prims = [ "address", "bls12_381_fr", "bls12_381_g1", "bls12_381_g2", "bool", "bytes",
     "chain_id", "chest", "chest_key", "int", "key", "key_hash", "mutez", "nat",
     "never", "operation", "signature", "string", "timestamp", "tx_rollup_l2_address", "unit" ]
 
-export const functions = {
+const prefix = "/docs/tests/apis/types#"
+
+export const types_functions = {
+  bool_to_mich: {
+    sig: 'todo',
+    ref: 'bool_to_michv',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  date_to_mich: {
+    sig: 'todo',
+    ref: 'date_to_michv',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  elt_to_mich: {
+    sig: 'todo',
+    ref: 'elt_to_micha-b',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  left_to_mich: {
+    sig: 'todo',
+    ref: 'left_to_michv',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  list_to_mich: {
+    sig: 'todo',
+    ref: 'list_to_michl-tomich',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  list_annots_to_mich_type: {
+    sig: 'todo',
+    ref: 'list_annots_to_mich_typemt-annots',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  list_to_mich_type: {
+    sig: 'todo',
+    ref: 'list_to_mich_typemt',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_array_to_mich: {
+    sig: 'todo',
+    ref: 'mich_array_to_michl',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  option_annots_to_mich_type: {
+    sig: 'todo',
+    ref: 'option_annots_to_mich_typea-annots',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  option_to_mich_type: {
+    sig: 'todo',
+    ref: 'option_to_mich_typea',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  or_to_mich_type: {
+    sig: 'todo',
+    ref: 'or_to_mich_typel-r-a',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  pair_to_mich: {
+    sig: 'todo',
+    ref: 'pair_to_michl',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  pair_annot_to_mich_type: {
+    sig: 'todo',
+    ref: 'pair_annot_to_mich_typep-a-b-annots',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  pair_array_to_mich_type: {
+    sig: 'todo',
+    ref: 'pair_array_to_mich_typel-annots',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  pair_to_mich_type: {
+    sig: 'todo',
+    ref: 'pair_to_mich_typep-a-b',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  prim_annot_to_mich_type: {
+    sig: 'todo',
+    ref: 'prim_annot_to_mich_typep-a',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
   prim_to_mich_type : {
     sig: 'prim_to_mich_type(p : "int" | "nat" | ...)',
     ref : "prim_to_mich_typep",
@@ -113,15 +587,774 @@ export const functions = {
         alias: 'p',
         desc: <div style={{ lineHeight : '28px' }}>"prim" value (one of { prims.map(p => {
           return <span><code>"{p}"</code>  </span>
-        }) } )</div>
+        }) } )</div>,
+        withLink: false
       }
     ],
     returns: {
       type: 'MichelineType',
-      desc: <div>Michelson type with "prim" <code>p</code></div>
+      desc: <div>Michelson type with "prim" <code>p</code></div>,
+      prefix: prefix
     },
     related: [
-      { keyword: 'Micheline', link: '/docs/tests/apis/types#MichelineType' },
+      { keyword: 'Micheline', link: '/docs/tests/apis/types#micheline' },
     ]
+  },
+  right_to_mich: {
+    sig: 'todo',
+    ref: 'right_to_michv',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  set_annots_to_mich_type: {
+    sig: 'todo',
+    ref: 'set_annots_to_mich_typemt-annots',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  set_to_mich: {
+    sig: 'todo',
+    ref: 'set_to_michv-tomich',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  set_to_mich_type: {
+    sig: 'todo',
+    ref: 'set_to_mich_typemt',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  string_to_mich: {
+    sig: 'todo',
+    ref: 'string_to_michv',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  ticket_annots_to_mich_type: {
+    sig: 'todo',
+    ref: 'ticket_annots_to_mich_typea-annots',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  ticket_to_mich_type: {
+    sig: 'todo',
+    ref: 'ticket_to_mich_typea',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  unit_to_mich: {
+    sig: 'todo',
+    ref: 'unit_to_mich',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+}
+
+export const experiment = {
+  blake2b: {
+    sig: 'todo',
+    ref: 'blake2bb',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  call: {
+    sig: 'todo',
+    ref: 'callc-e-a-p',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  delay_mockup_now_by_day: {
+    sig: 'todo',
+    ref: 'delay_mockup_now_by_dayv',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  delay_mockup_now_by_minute: {
+    sig: 'todo',
+    ref: 'delay_mockup_now_by_minutev',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  delay_mockup_now_by_hour: {
+    sig: 'todo',
+    ref: 'delay_mockup_now_by_hourv',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  delay_mockup_now_by_second: {
+    sig: 'todo',
+    ref: 'delay_mockup_now_by_secondv',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  delay_mockup_now_by_week: {
+    sig: 'todo',
+    ref: 'delay_mockup_now_by_weekv',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  deploy: {
+    sig: 'todo',
+    ref: 'deploypath-params-p',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  deploy_from_json: {
+    sig: 'todo',
+    ref: 'deploynamecode-storage-p',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  deploy_callback: {
+    sig: 'todo',
+    ref: 'deploy_callbackcode-mt-p',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  exec_batch: {
+    sig: 'todo',
+    ref: 'exec_batchcps-p',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  exec_getter: {
+    sig: 'todo',
+    ref: 'exec_getterc-e-a-p',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  exec_view: {
+    sig: 'todo',
+    ref: 'exec_viewc-e-a-p',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  expect_to_fail: {
+    sig: 'todo',
+    ref: 'expect_to_failf-e',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  get_account: {
+    sig: 'todo',
+    ref: 'get_accountn',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  get_balance: {
+    sig: 'todo',
+    ref: 'get_balancea',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  get_big_map_value : {
+    sig: 'get_big_map_value(id, key, kt, vt)',
+    ref : "get_big_map_valueid-key-kv-kt",
+    desc: <div>Returns the value associated to <code>key</code> in <Link to="/docs/reference/types#big_map<K,%20V>"><code>big_map</code></Link> with id <code>id</code>. It is used by the generated big map <Link to="/docs/tests/binding#storage-getters">getter</Link> of the contract's binding.</div>,
+    parameters: [
+      {
+        type: 'number',
+        alias: 'id',
+        desc: <div>Big map identifier</div>,
+        withLink: false
+      },
+      {
+        type: 'Micheline',
+        alias: 'key',
+        desc: <div>Key value</div>,
+        prefix: prefix
+      },
+      {
+        type: 'MichelineType',
+        alias: 'kt',
+        desc: <div>Key type</div>,
+        prefix: prefix
+      },
+      {
+        type: 'MichelineType',
+        alias: 'vt',
+        desc: <div>Value type</div>,
+        prefix: prefix
+      }
+    ],
+    returns: {
+      type: 'Promise<any>',
+      desc: <div>Micheline value associated to <code>key</code>, <code>null</code> if not found.</div>,
+      withLink: false
+    },
+    related: [
+      { keyword: 'Micheline', link: '/docs/tests/apis/types#micheline' },
+      { keyword: 'MichelineType', link: '/docs/tests/apis/types#michelinetype' },
+      { keyword: 'big_map', link: '/docs/reference/types#big_map<K,%20V>' },
+    ]
+  },
+  get_call_param: {
+    sig: 'todo',
+    ref: 'get_call_paramc-e-a-p',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  get_callback_view: {
+    sig: 'todo',
+    ref: 'get_callback_viewca-mt',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  get_endpoint: {
+    sig: 'todo',
+    ref: 'get_endpoint',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  get_mockup_now: {
+    sig: 'todo',
+    ref: 'get_mockup_now',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  get_raw_storage: {
+    sig: 'todo',
+    ref: 'get_raw_storagea',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  get_storage: {
+    sig: 'todo',
+    ref: 'get_storagea',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  is_mockup: {
+    sig: 'todo',
+    ref: 'is_mockup',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  originate: {
+    sig: 'todo',
+    ref: 'originatepath-storage-p',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  pack: {
+    sig: 'todo',
+    ref: 'packo-t',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  set_endpoint: {
+    sig: 'todo',
+    ref: 'set_endpointe',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  set_mockup: {
+    sig: 'todo',
+    ref: 'set_mockup',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  set_mockup_now: {
+    sig: 'todo',
+    ref: 'set_mockup_nowd',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  set_quiet: {
+    sig: 'todo',
+    ref: 'set_quietb',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  sign : {
+    sig: 'sign(b, a)',
+    ref : "signa-b",
+    desc: <div>Signs bytes <code>b</code> with account <code>a</code></div>,
+    parameters: [
+      {
+        type: 'Bytes',
+        alias: 'b',
+        desc: <div>Bytes to sign</div>,
+        withLink: prefix
+      },
+      {
+        type: 'Account',
+        alias: 'a',
+        desc: <div>Account to sign</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'Promise<Signature>',
+      desc: <div>Signed bytes.</div>,
+      withLink: false
+    },
+    related: [
+      { keyword: 'Micheline', link: '/docs/tests/apis/types#micheline' },
+      { keyword: 'MichelineType', link: '/docs/tests/apis/types#michelinetype' },
+      { keyword: 'big_map', link: '/docs/reference/types#big_map<K,%20V>' },
+    ]
+  },
+  transfer: {
+    sig: 'todo',
+    ref: 'transferf-t-a',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
   },
 }

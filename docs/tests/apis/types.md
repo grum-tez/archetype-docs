@@ -12,13 +12,53 @@ This section presents types exported by the [`@completium/archetype-ts-types`](h
 
 ## `A B`
 
-### `Account`
+### `Address`
+
+<TsType data={types.address} />
+
+### `Bls12_381_fr`
+
+<TsType data={types.bls12_381_fr} />
+
+### `Bls12_381_g1`
+
+<TsType data={types.bls12_381_g1} />
+
+### `Bls12_381_g2`
+
+<TsType data={types.bls12_381_g2} />
+
+### `Bytes`
+
+<TsType data={types.bytes} />
 
 ## `C D`
 
+### `Chain_id`
+
+<TsType data={types.chain_id} />
+
+### `Chest`
+
+<TsType data={types.chest} />
+
+### `Chest_key`
+
+<TsType data={types.chest_key} />
+
+### `Duration`
+
+<TsType data={types.duration} />
+
 ## `E F`
 
-## `G H`
+### `Entrypoint`
+
+<TsType data={types.entrypoint} />
+
+### `Enum`
+
+<TsType data={types.enum} />
 
 ## `I J`
 
@@ -28,6 +68,14 @@ This section presents types exported by the [`@completium/archetype-ts-types`](h
 
 ## `K L`
 
+### `Key`
+
+<TsType data={types.key} />
+
+### `Key_hash`
+
+<TsType data={types.key_hash} />
+
 ## `M N`
 
 ### `Nat`
@@ -36,16 +84,49 @@ This section presents types exported by the [`@completium/archetype-ts-types`](h
 
 ## `O P`
 
-### `Parameters`
+### `Option`
+
+<TsType data={types.option} />
+
+### `Or`
+
+<TsType data={types.or} />
 
 ## `Q R`
 
+### `Rational`
+
+<TsType data={types.rational} />
+
 ## `S T`
+
+### `Sapling_state`
+
+<TsType data={types.sapling_state} />
+
+### `Sapling_transaction`
+
+<TsType data={types.sapling_transaction} />
+
+### `Signature`
+
+<TsType data={types.signature} />
+
+### `Tez`
+
+<TsType data={types.tez} />
+
+### `Ticket`
+
+<TsType data={types.ticket} />
+
+### `Tx_rollup_l2_address`
+
+<TsType data={types.tx_rollup_l2_address} />
 
 ## `U V`
 
-## `W X`
+### `Unit`
 
-## `Y Z`
-
+<TsType data={types.unit} />
 

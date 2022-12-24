@@ -4,7 +4,7 @@ sidebar_label: Types Utils
 toc_max_heading_level: 2
 ---
 import Builtin from '@site/src/components/Builtin.js';
-import { functions } from './types.js';
+import { types_functions as F } from './types.js';
 
 # Type utils
 
@@ -28,7 +28,7 @@ This section presents functions exported by the [`@completium/archetype-ts-types
 
 ### `prim_to_mich_type(p)`
 
-<Builtin data={functions['prim_to_mich_type']} />
+<Builtin data={F['prim_to_mich_type']} />
 
 ## `Q R`
 

@@ -241,3 +241,7 @@ it('Mint tokens on FA2 as non owner should fail', async () => {
 ```
 
 Note that the `errors` field of contract's binding interface is the list of possible errors (here `fa2_nft.errors`).
+
+## Batch execution
+
+## Experiment utils
