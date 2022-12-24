@@ -289,9 +289,45 @@ const prims = [ "address", "bls12_381_fr", "bls12_381_g1", "bls12_381_g2", "bool
 const prefix = "/docs/tests/apis/types#"
 
 export const types_functions = {
+  annotated_mich_to_array: {
+    sig: 'todo',
+    ref: 'annotated_mich_to_arrayx-t',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
   bool_to_mich: {
     sig: 'todo',
     ref: 'bool_to_michv',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  cmp_date: {
+    sig: 'todo',
+    ref: 'cmp_datea-b',
     desc: <div>TODO</div>,
     parameters: [
       {
@@ -328,6 +364,42 @@ export const types_functions = {
   elt_to_mich: {
     sig: 'todo',
     ref: 'elt_to_micha-b',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  is_left: {
+    sig: 'todo',
+    ref: 'is_leftv',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  is_right: {
+    sig: 'todo',
+    ref: 'is_rightv',
     desc: <div>TODO</div>,
     parameters: [
       {
@@ -433,9 +505,495 @@ export const types_functions = {
       withLink: false
     }
   },
-  option_annots_to_mich_type: {
+  mich_to_address: {
     sig: 'todo',
-    ref: 'option_annots_to_mich_typea-annots',
+    ref: 'mich_to_addressx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_bls12_381_fr: {
+    sig: 'todo',
+    ref: 'mich_to_bls12_381_frx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_bls12_381_g1: {
+    sig: 'todo',
+    ref: 'mich_to_bls12_381_g1x',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_bls12_381_g2: {
+    sig: 'todo',
+    ref: 'mich_to_bls12_381_g2x',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_bool: {
+    sig: 'todo',
+    ref: 'mich_to_boolx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_bytes: {
+    sig: 'todo',
+    ref: 'mich_to_bytesx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_chain_id: {
+    sig: 'todo',
+    ref: 'mich_to_chain_idx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_chest: {
+    sig: 'todo',
+    ref: 'mich_to_chestx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_chest_key: {
+    sig: 'todo',
+    ref: 'mich_to_chest_keyx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_date: {
+    sig: 'todo',
+    ref: 'mich_to_datex',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_duration: {
+    sig: 'todo',
+    ref: 'mich_to_durationx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_int: {
+    sig: 'todo',
+    ref: 'mich_to_intx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_key: {
+    sig: 'todo',
+    ref: 'mich_to_keyx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_key_hash: {
+    sig: 'todo',
+    ref: 'mich_to_key_hashx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_map: {
+    sig: 'todo',
+    ref: 'mich_to_mapx-f',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_nat: {
+    sig: 'todo',
+    ref: 'mich_to_natx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_option: {
+    sig: 'todo',
+    ref: 'mich_to_optionx-michto',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_or: {
+    sig: 'todo',
+    ref: 'mich_to_orx-mtl-mtr',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_rational: {
+    sig: 'todo',
+    ref: 'mich_to_rationalx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_signature: {
+    sig: 'todo',
+    ref: 'mich_to_signaturex',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_string: {
+    sig: 'todo',
+    ref: 'mich_to_stringx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_sapling_state: {
+    sig: 'todo',
+    ref: 'mich_to_sapling_statex',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_sapling_transaction: {
+    sig: 'todo',
+    ref: 'mich_to_sapling_transactionx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_tez: {
+    sig: 'todo',
+    ref: 'mich_to_tezx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_ticket: {
+    sig: 'todo',
+    ref: 'mich_to_ticketx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_tx_rollup_l2_address: {
+    sig: 'todo',
+    ref: 'mich_to_tx_rollup_l2_addressx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  mich_to_unit: {
+    sig: 'todo',
+    ref: 'mich_to_unitx',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  option_annot_to_mich_type: {
+    sig: 'todo',
+    ref: 'option_annot_to_mich_typea-annots',
     desc: <div>TODO</div>,
     parameters: [
       {
@@ -618,9 +1176,9 @@ export const types_functions = {
       withLink: false
     }
   },
-  set_annots_to_mich_type: {
+  set_annot_to_mich_type: {
     sig: 'todo',
-    ref: 'set_annots_to_mich_typemt-annots',
+    ref: 'set_annot_to_mich_typemt-annots',
     desc: <div>TODO</div>,
     parameters: [
       {
@@ -657,6 +1215,24 @@ export const types_functions = {
   set_to_mich_type: {
     sig: 'todo',
     ref: 'set_to_mich_typemt',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  string_cmp: {
+    sig: 'todo',
+    ref: 'string_cmpa-b',
     desc: <div>TODO</div>,
     parameters: [
       {
