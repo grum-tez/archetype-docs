@@ -36,7 +36,7 @@ entry increase(values : list<bool * nat>) {
 }
 ```
 
-The generated binding object provides, among other utilities, provides the following Typescript methods:
+The generated binding object provides, among other utilities, the following Typescript methods:
 * `deploy(params: Partial<ex.Parameters>): Promise<void>`
 * `increase(values: Array<[ boolean, Nat]>, params: Partial<Parameters>): Promise<any>`
 * `get_total(): Promise<Nat>`
