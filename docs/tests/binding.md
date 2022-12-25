@@ -103,13 +103,102 @@ The code below illustrates how to call the `set` entry point:
 ```ts
 import { example } from `./binding/example.ts`
 
-// deploy
+// ... deploy ...
 
 await example.set("Hello Documentation!", { as : alice })
 ```
 
+## Entry points' parameters
+
+An asynchronous method is generated for each entry point to get the transaction parameter corresponding to the call to the entry point. Its name is made of the prefix `get_`, followed by the entry point name and suffixed by `_param`. It takes the same arguments as the contract's entry point.
+
+The transaction parameter is then used as an argument to [`exec_batch`](/docs/tests/apis/experiment#exec_batchcps-p) for batch execution of several entry points.
+
+With the same example as above, consider the following contract:
+
+```archetype
+archetype example(owner : address)
+
+variable s : string = "Hello!"
+
+entry set(v : string) { s := v }
+```
+
+The code below illustrates how to call the `set` entry point:
+
+```ts {5,6}
+import { example } from `./binding/example.ts`
+
+await example.deploy({ as : alice })
+
+const set_param1 = await example.get_set_param("Hello Documentation!", { as : alice })
+const set_param2 = await example.get_set_param("Hello Binding!", { as : alice })
+// exec batch
+await exec_batch([set_param1, set_param2], { as : alice })
+
+const s = await example.get_s()
+assert(s == "Hello Binding!")
+```
+
 ## Views
 
+An asynchronous method is generated for each contract's view. Its name is prefixed with `view_`, followed by the name of the view. It takes the same arguments as the contract's view, plus a [`Parameters`](/docs/tests/apis/types#parameters) object to set the caller account and optionally the amount of tez sent.
+
+It returns a promise of the view's returned value.
+
+For example, consider the following contract:
+```archetype
+archetype example(owner : address)
+
+variable s : string = "Hello!"
+
+view get_s() { return s }
+```
+
+The code below illustrates how to call the `get_s` view:
+```ts
+import { example } from `./binding/example.ts`
+
+await example.deploy({ as : alice })
+
+const s = await example.view_get_s()
+
+assert(s == "Hello!")
+```
+
+## Errors
+
+The [`expect_to_fail`](/docs/tests/apis/experiment#expect_to_failf-e) function is used to check that a call to a contract entry point fails as expected. Its second parameter is an error of [`Micheline`](/docs/tests/apis/types#micheline) type.
+
+Contract errors from [sections](/docs/reference/declarations/entrypoint#sections) or issued by [divergent instructions](/docs/reference/instructions/divergent), are generated in the binding object as the `errors` field.
+
+For example, consider the following contract:
+```archetype
+archetype example
+
+variable s : string = "Hello!"
+
+entry set(v : string) {
+  require {
+    r0 : length(v) < 10
+  }
+  effect { s := v }
+}
+```
+
+The code below illustrates how to setup a test that is expected to fail with `r0` requirement:
+```ts
+import { example } from `./binding/example.ts`
+import { expect_to_fail, get_account } from '@completium/experiment-ts'
+
+const alice = get_account('alice')
+
+await example.deploy({ as : alice })
+
+async expect_to_fail(async () => {
+  await example.set("This is a too long message", { as : alice })
+}, example.errors.r0)
+```
 
 ## Type bindings
 

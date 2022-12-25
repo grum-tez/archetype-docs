@@ -48,25 +48,27 @@ export const bindings = [
 
 const exp_prefix = "/docs/tests/apis/experiment#"
 
+export const now = [
+  { label: 'delay_mockup_now_by_day', link: exp_prefix+'delay_mockup_now_by_dayv', desc: <div>Delays mockup now value by a number of days.</div> },
+  { label: 'delay_mockup_now_by_minute', link: exp_prefix+'delay_mockup_now_by_minutev', desc: <div>Delays mockup now by a number of minutes.</div> },
+  { label: 'delay_mockup_now_by_hour', link: exp_prefix+'delay_mockup_now_by_hourv', desc: <div>Delays mockup now by a number of hours.</div> },
+  { label: 'delay_mockup_now_by_second', link: exp_prefix+'delay_mockup_now_by_secondv', desc: <div>Delays mockup now by a number of seconds.</div> },
+  { label: 'delay_mockup_now_by_week', link: exp_prefix+'delay_mockup_now_by_weekv', desc: <div>Delays mockup now by a number of weeks.</div> },
+  { label: 'set_mockup_now', link: exp_prefix+'set_mockup_nowd', desc: <div>Sets mockup now value.</div> },
+  { label: 'get_mockup_now', link: exp_prefix+'get_mockup_now', desc: <div>Gets mockup now value.</div> },
+]
+
 export const experiment = [
-  { label: 'blake2b', link: exp_prefix+'blake2bb', desc: <div>TODO</div> },
-  { label: 'sign', link: exp_prefix+'signb-a', desc: <div>TODO</div> },
-  { label: 'pack', link: exp_prefix+'packo-t', desc: <div>TODO</div> },
-  { label: 'transfer', link: exp_prefix+'transferf-t-a', desc: <div>TODO</div> },
-  { label: 'delay_mockup_now_by_day', link: exp_prefix+'delay_mockup_now_by_dayv', desc: <div>TODO</div> },
-  { label: 'delay_mockup_now_by_minute', link: exp_prefix+'delay_mockup_now_by_minutev', desc: <div>TODO</div> },
-  { label: 'delay_mockup_now_by_hour', link: exp_prefix+'delay_mockup_now_by_hourv', desc: <div>TODO</div> },
-  { label: 'delay_mockup_now_by_second', link: exp_prefix+'delay_mockup_now_by_secondv', desc: <div>TODO</div> },
-  { label: 'delay_mockup_now_by_week', link: exp_prefix+'delay_mockup_now_by_weekv', desc: <div>TODO</div> },
-  { label: 'set_mockup_now', link: exp_prefix+'set_mockup_nowd', desc: <div>TODO</div> },
-  { label: 'get_mockup_now', link: exp_prefix+'get_mockup_now', desc: <div>TODO</div> },
+  { label: 'blake2b', link: exp_prefix+'blake2bb', desc: <div>Hashes bytes data accourding to blake2b algorithm.</div> },
+  { label: 'sign', link: exp_prefix+'signb-a', desc: <div>Signs packed data.</div> },
+  { label: 'pack', link: exp_prefix+'packo-t', desc: <div>Packs bytes data.</div> },
+  { label: 'transfer', link: exp_prefix+'transferf-t-a', desc: <div>Transfers tez from one account to another.</div> },
 ]
 
 const utils_prefix = "/docs/tests/apis/typeutils#"
 
 export const types = [
-  { label: 'date_cmp', link: utils_prefix+'cmp_datea-b', desc: <div>TODO</div> },
-  { label: 'is_left', link: utils_prefix+'is_leftv', desc: <div>TODO</div> },
-  { label: 'is_right', link: utils_prefix+'is_rightv', desc: <div>TODO</div> },
-  { label: 'string_cmp', link: utils_prefix+'string_cmpa-b', desc: <div>TODO</div> }
+  { label: 'date_cmp', link: utils_prefix+'cmp_datea-b', desc: <div>Compares javascript dates at second precision (as Tezos dates are).</div> },
+  { label: 'is_left', link: utils_prefix+'is_leftv', desc: <div>Tests whether a Micheline <code>or</code> value is <code>left</code>.</div> },
+  { label: 'is_right', link: utils_prefix+'is_rightv', desc: <div>Tests whether a Micheline <code>or</code> value is <code>right</code>.</div> },
 ]

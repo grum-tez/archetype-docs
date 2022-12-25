@@ -3,7 +3,7 @@ sidebar_position: 2
 sidebar_label: Writing Tests
 ---
 import Api from '@site/src/components/Api.js';
-import { experiment, types } from './bind.js'
+import { experiment, types, now } from './bind.js'
 
 # Writing Tests
 
@@ -144,6 +144,17 @@ The mockup mode comes with a set of 8 predefined accounts ready to use for test 
 `alice` `bob` `carl` `bootstrap1` `bootstrap2` `bootstrap3` `bootstrap4` `bootstrap5`
 :::
 
+### Now
+
+When contract logic relies on the [`now`](/docs/reference/expressions/constants#now) value, test scenarios require to change its value. The [`@completium/experiment-ts`](https://www.npmjs.com/package/@completium/experiment-ts) package provides with the following utility functions:
+
+<Api title="Now utilities" data={now} xs={4}/>
+<br/>
+
+:::info
+These utility functions are *only* available in mockup mode.
+:::
+
 ### Quiet mode
 
 The `set_quiet` function switchs on or off the quiet mode. When set to `false`, the output of the tezos-client (in mockup mode) is displayed with detailed information, like gas consumption and storage diffs.
@@ -242,11 +253,15 @@ it('Mint tokens on FA2 as non owner should fail', async () => {
 });
 ```
 
-Note that the `errors` field of contract's binding interface is the list of possible errors (here `fa2_nft.errors`).
+Note that the [`errors`](/docs/tests/binding#errors) field of contract's binding interface is the list of possible errors (here `fa2_nft.errors`).
 
-## Batch execution
+## Batch
+
+It is possible to batch call contract entry points with the [`exec_batch`](/docs/tests/apis/experiment#exec_batchcps-p) function. It takes transaction parameters returned by dedicated binding methods as presented [here](/docs/tests/binding#entry-points-parameters).
 
 ## Utils
+
+[`@completium/experiment-ts`](https://www.npmjs.com/package/@completium/experiment-ts) and [`@completium/archetype-ts-types`](https://www.npmjs.com/package/@completium/archetype-ts-types) packages the binding generation relies on, also provide some utility functions presented below. See the full packages API [here](/docs/tests/apis/).
 
 <Api title="Experiment" data={experiment} xs={4}/>
 <br/>
