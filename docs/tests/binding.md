@@ -204,6 +204,74 @@ async expect_to_fail(async () => {
 
 This section presents how Archetype/Michelson types ar bound to Typescript types.
 
+### Simple types
+
 <TypeMap data={bindings} />
 
+### Tuple
 
+An Archetype [tuple](/docs/language-basics/composite#tuple) (or a Michelson pair) is mapped to a Typescript tuple.
+
+For example, consider the following tuple value in Archetype:
+```archetype
+const t : (nat * string) = (0, "a string");
+```
+
+The `t` value is then mapped to the following TS value:
+```ts
+const t : [ Nat, string ] = [ 0, new Nat("a string") ]
+```
+
+### Map
+
+### Record
+
+A class is generated for each [`record`](/docs/language-basics/composite#record) declaration found in the Archetype contract. Its name is the same as the declaration's. A public class member is created for each record field, with the same name and a type mapped from the table above. The class constructor has one argument per record field, in the order of record declaration.
+
+For example, consider the following record declaration:
+```archetype
+record person {
+  first : string;
+  last  : string;
+  age : nat;
+}
+```
+
+Then a new person class is constructed with the code below:
+```ts
+const albert = new person("Albert", "Michelson", new Nat(170))
+```
+
+Fields may then be accessed like:
+```ts
+console.log(`Hello ${albert.first} ${albert.last}`) // "Hello Albert Michelson"
+```
+
+### Asset
+
+### Enum
+
+A class is generated for each [`enum`](/docs/language-basics/composite#enum) declaration. Its name is the same as the declaration's. This class inherits from the abstract [`Enum`](/docs/tests/apis/types#enum) class. A class extend the enum class is generated for each enum's named label. The named label class's constructor has the same arguments as the declaration's.
+
+For example, consider the following enum declaration:
+```archetype
+enum sign =
+| Pos
+| Neg
+| Zero
+```
+
+Then the following classes are generated:
+* `sign` class that extends [`Enum`](/docs/tests/apis/types#enum)
+* `Pos` class that *extends* `sign`
+* `Neg` class that *extends* `sign`
+* `Zero` class that *extends* `sign`
+
+It may be used as:
+```ts
+const p : sign = new Pos()
+const n : sign = new Neg()
+const z : sign = new Zero()
+```
+
+### Lambda
