@@ -36,12 +36,12 @@ export const bindings = [
 const exp_prefix = "/docs/tests/apis/experiment#"
 
 export const now = [
+  { label: 'set_mockup_now', link: exp_prefix+'set_mockup_nowd', desc: <div>Sets mockup now value.</div> },
   { label: 'delay_mockup_now_by_day', link: exp_prefix+'delay_mockup_now_by_dayv', desc: <div>Delays mockup now value by a number of days.</div> },
   { label: 'delay_mockup_now_by_minute', link: exp_prefix+'delay_mockup_now_by_minutev', desc: <div>Delays mockup now by a number of minutes.</div> },
   { label: 'delay_mockup_now_by_hour', link: exp_prefix+'delay_mockup_now_by_hourv', desc: <div>Delays mockup now by a number of hours.</div> },
   { label: 'delay_mockup_now_by_second', link: exp_prefix+'delay_mockup_now_by_secondv', desc: <div>Delays mockup now by a number of seconds.</div> },
   { label: 'delay_mockup_now_by_week', link: exp_prefix+'delay_mockup_now_by_weekv', desc: <div>Delays mockup now by a number of weeks.</div> },
-  { label: 'set_mockup_now', link: exp_prefix+'set_mockup_nowd', desc: <div>Sets mockup now value.</div> },
   { label: 'get_mockup_now', link: exp_prefix+'get_mockup_now', desc: <div>Gets mockup now value.</div> },
 ]
 

@@ -7,7 +7,7 @@ sidebar_label: Introduction
 
 This section presents the test framework for [Archetype](/docs/introduction) contracts.
 
-⚡️ It supports all Archetype features, and the testing of <u>contracts written in [Michelson](https://tezos.gitlab.io/michelson-reference/)</u>.
+⚡️ It supports all Archetype features, and also <u>contracts written in Michelson</u>.
 
 ## Definition
 
