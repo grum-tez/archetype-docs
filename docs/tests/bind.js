@@ -1,6 +1,7 @@
 import React from "react"
 export const bindings = [
   { link: 'address', archetype : 'address', michelson : 'address', ts : 'Address' },
+  { link: 'big_map<K,%20V>', archetype: 'big_map', michelson: 'big_map', ts: 'Array', native: true},
   { link: 'bls12_381_fr', archetype: 'bls12_381_fr', michelson: 'bls12_381_fr', ts: 'Bls12_381_fr' },
   { link: 'bls12_381_g1', archetype: 'bls12_381_g1', michelson: 'bls12_381_g1', ts: 'Bls12_381_g1' },
   { link: 'bls12_381_g2', archetype: 'bls12_381_g2', michelson: 'bls12_381_g2', ts: 'Bls12_381_g2' },
@@ -15,10 +16,10 @@ export const bindings = [
   { link: 'event', archetype: 'event', ts: 'Event' },
   { link: 'int', archetype : 'int', michelson : 'int', ts : 'Int' },
   { link: 'key', archetype: 'key', michelson: 'key', ts: 'Key' },
-  { link: 'key_hash', archetype: 'key_hash', michelson: 'Key_hash', ts: 'Key_hash' },
+  { link: 'key_hash', archetype: 'key_hash', michelson: 'key_hash', ts: 'Key_hash' },
   { link: 'list<T>', archetype: 'list', michelson: 'list', ts: 'Array', native: true },
+  { link: 'map<K,%20V>', archetype: 'map', michelson: 'map', ts: 'Array', native: true},
   { link: 'nat', archetype : 'nat', michelson : 'nat', ts : 'Nat' },
-  { link: 'operation', archetype: 'operation', michelson: 'operation' },
   { link: 'option<T>', archetype: 'option', michelson: 'option', ts: 'Option' },
   { link: 'or<T1,%20T2>', archetype: 'or', michelson: 'or', ts: 'Or' },
   { link: 'rational', archetype: 'rational', ts: 'Rational' },
@@ -27,8 +28,10 @@ export const bindings = [
   { link: 'set<T>', archetype: 'set', michelson: 'set', ts: 'Array', native: true },
   { link: 'signature', archetype: 'signature', michelson: 'signature', ts: 'Signature' },
   { link: 'string', archetype: 'string', michelson: 'string', ts: 'string', native: true },
-  { link: 'tez', archetype: 'tez', michelson: 'tez', ts: 'Tez' },
+  { link: 'tez', archetype: 'tez', michelson: 'mutez', ts: 'Tez' },
   { link: 'ticket<T>', archetype: 'ticket', michelson: 'ticket', ts: 'Ticket' },
+  { link: 'tuple', archetype: 'tuple', michelson: 'pair', ts: 'Array', native: true },
+  { link: 'tx_rollup_l2_address', archetype: 'tx_rollup_l2_address', michelson: 'tx_rollup_l2_address', ts: 'Tx_rollup_l2_address' },
   { link: 'unit', archetype: 'unit', michelson: 'unit', ts: 'Unit' }
 ]
 
