@@ -7,7 +7,7 @@ sidebar_label: Settings.tsx
 
 ```
 └── src
-    └── store
+    └── contexts
         ├── Settings.tsx
 ```
 

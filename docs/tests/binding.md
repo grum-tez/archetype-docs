@@ -86,7 +86,7 @@ const n = await example.get_n() // n is typed Nat
 
 ### Big Map
 
-Big map storage elements (either [`big_map`](/docs/reference/types#big_map<K,%20V>) or [`asset to big_map`](/docs/reference/declarations/storage#big-map)) are an exception to the rule above. For each big map storage element, two functions are generated:
+Big map storage elements (either [`big_map`](/docs/reference/types#big_map<K,%20V>), [`iterable_big_map`](/docs/reference/types#iterable_big_map<K,%20V>) or [`asset to big_map`](/docs/reference/declarations/storage#big-map)) are an exception to the rule above. For each big map storage element, two functions are generated:
 * a function that checks whether a big map has a given key value. It name is `has_` followed by the storage element name and `_value`. Its argument is the key value. It returns a boolean value.
 * a function that retrieves the value associated to a key. It name is `get_` followed by the storage element name and `_value`. Its argument is the key value. It returns the value associated to the key, or `undefined` if not found.
 

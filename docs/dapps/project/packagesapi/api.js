@@ -191,7 +191,7 @@ export const dapp = {
   },
   set_binder_tezos_toolkit: {
     sig: 'todo',
-    ref: 'set_binder_tezos_toolkitttk',
+    ref: 'set_binder_tezos_toolkittk',
     desc: <div>TODO</div>,
     parameters: [
       {

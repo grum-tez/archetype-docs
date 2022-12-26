@@ -7,7 +7,7 @@ sidebar_label: Contract.tsx
 
 ```
 └── src
-    └── store
+    └── contexts
         ├── Contract.tsx
 ```
 

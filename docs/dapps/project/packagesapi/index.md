@@ -51,7 +51,7 @@ The `@completium/archetype-ts-types` package is presented [here](/docs/tests/api
 
 <Builtin data={dapp['get_storage']} />
 
-### `set_binder_tezos_toolkit(ttk)`
+### `set_binder_tezos_toolkit(tk)`
 
 <Builtin data={dapp['set_binder_tezos_toolkit']} />
 

@@ -7,7 +7,7 @@ sidebar_label: Taquito.tsx
 
 ```
 └── src
-    └── store
+    └── contexts
         ├── Taquito.tsx
 ```
 
