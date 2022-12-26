@@ -1575,6 +1575,24 @@ export const experiment = {
       withLink: false
     }
   },
+  expr_micheline_to_json: {
+    sig: 'todo',
+    ref: 'expr_micheline_to_jsoni',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
   get_account: {
     sig: 'todo',
     ref: 'get_accountn',
@@ -1688,6 +1706,24 @@ export const experiment = {
       withLink: false
     }
   },
+  get_chain_id: {
+    sig: 'todo',
+    ref: 'get_chain_id',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
   get_endpoint: {
     sig: 'todo',
     ref: 'get_endpoint',
@@ -1778,6 +1814,24 @@ export const experiment = {
       withLink: false
     }
   },
+  json_micheline_to_expr: {
+    sig: 'todo',
+    ref: 'json_micheline_to_expri',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
   originate: {
     sig: 'todo',
     ref: 'originatepath-storage-p',
@@ -1835,6 +1889,24 @@ export const experiment = {
   set_mockup: {
     sig: 'todo',
     ref: 'set_mockup',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
+  set_mockup_chain_id:{
+    sig: 'todo',
+    ref: 'set_mockup_chain_idc',
     desc: <div>TODO</div>,
     parameters: [
       {

@@ -70,6 +70,10 @@ import { experiment } from './types.js';
 
 <Builtin data={experiment['expect_to_fail']} />
 
+### `expr_micheline_to_json(i)`
+
+<Builtin data={experiment['expr_micheline_to_json']} />
+
 ## `G H`
 
 ### `get_account(a)`
@@ -91,6 +95,10 @@ import { experiment } from './types.js';
 ### `get_callback_view(ca, mt)`
 
 <Builtin data={experiment['get_callback_view']} />
+
+### `get_chain_id()`
+
+<Builtin data={experiment['get_chain_id']} />
 
 ### `get_endpoint()`
 
@@ -114,6 +122,10 @@ import { experiment } from './types.js';
 
 <Builtin data={experiment['is_mockup']} />
 
+### `json_micheline_to_expr(i)`
+
+<Builtin data={experiment['json_micheline_to_expr']} />
+
 ## `O P`
 
 ### `originate(path, storage, p)`
@@ -133,6 +145,10 @@ import { experiment } from './types.js';
 ### `set_mockup()`
 
 <Builtin data={experiment['set_mockup']} />
+
+### `set_mockup_chain_id(c)`
+
+<Builtin data={experiment['set_mockup_chain_id']} />
 
 ### `set_mockup_now(d)`
 

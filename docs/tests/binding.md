@@ -224,6 +224,27 @@ const t : [ Nat, string ] = [ 0, new Nat("a string") ]
 
 ### Map
 
+An Archetype (Michleson) map is translated in Typescript as an *array of pairs*. It cannot be straightforwaldy associated to a Typescript `Map` as the `Map`'s key type is limited to native type with natural order (such as `string` or `number`).
+
+For example, consider the following Archetype map:
+```archetype
+variable ledger : map<address, int> = []
+```
+
+It is translated to Typescript as:
+```ts
+const ledger : Array<[ Address, Int ]> = []
+```
+
+The following code is to retrieve the value in third position:
+```ts
+const v = ledger[2][1]
+```
+
+:::info
+The lookup function to retrieve a value from a key is not provided.
+:::
+
 ### Record
 
 A class is generated for each [`record`](/docs/language-basics/composite#record) declaration found in the Archetype contract. Its name is the same as the declaration's. A public class member is created for each record field, with the same name and a type mapped from the table above. The class constructor has one argument per record field, in the order of record declaration.
@@ -248,6 +269,39 @@ console.log(`Hello ${albert.first} ${albert.last}`) // "Hello Albert Michelson"
 ```
 
 ### Asset
+
+An [asset](/docs/asset) collection is translated to an *array of pairs* of the asset key and the asset value. The asset value is translated to a class, in the same way as a [record](/docs/tests/binding#record) presented above. It name is the name of the asset suffixed by `_value`.
+
+For example, consider the following asset:
+```archetype
+asset loan identified by id {
+  id         : string;
+  subscriber : address;
+  principal  : tez;
+  interest   : rational = 2%;
+  creation   : date     = now;
+}
+```
+
+The typescript type for the asset collection is:
+```ts
+Array<[ string, loan_value ]>
+```
+
+The constructor of `loan_value` takes the same fields as the `loan` asset value. The code below illustrates how to create an instance of `loan_value`:
+
+```ts
+const lv = new loan_value(
+  alice.get_address(),
+  new Tez(10),
+  new Rational("3.14"),
+  new Date()
+)
+```
+
+:::info
+The lookup function to retrieve an asset value from a key is not provided.
+:::
 
 ### Enum
 
@@ -275,3 +329,32 @@ const z : sign = new Zero()
 ```
 
 ### Lambda
+
+There is no dedicated type to lambda values. The default lower-level type [`Micheline`](/docs/tests/apis/types#micheline) is then used.
+
+The code below, extracted from the [Multisig](https://github.com/completium/archetype-multisig) contract, illustrates the creation of a lambda as a JSON Micheline value:
+```ts
+const getCode = (
+  dest: Address,
+  entrypoint: string,
+  typ: string,
+  value: string): Micheline => {
+  const input = `{
+      DROP;
+      NIL operation;
+      PUSH address "${dest.toString()}";
+      CONTRACT %${entrypoint} ${typ};
+      IF_NONE
+        { PUSH string "EntryNotFound";
+          FAILWITH }
+        {  };
+      PUSH mutez 0;
+      PUSH ${typ} ${value};
+      TRANSFER_TOKENS;
+      CONS;
+    }`;
+  return expr_micheline_to_json(input)
+}
+```
+
+The [`expr_micheline_to_json`](/docs/tests/apis/experiment#expr_micheline_to_jsoni) function is used to convert a string to a Micheline value.
