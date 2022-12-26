@@ -18,15 +18,15 @@ The choice of the React framework depends on the objective and the size of the a
 
 ### Language
 
-It is *strongly* recommended to use [Typescript](https://www.typescriptlang.org/) language as it will greatly shorten and ease up the development cycle. Its typed aspect makes that many errors are detected at compilation time (ie. at the time of writing code) rather than later at execution. It just doesn't make sense to developp with untyped languages when you think of it ...
+It is *strongly* recommended to use [TypeScript](https://www.TypeScriptlang.org/) language as it will greatly shorten and ease up the development cycle. Its typed aspect makes that many errors are detected at compilation time (ie. at the time of writing code) rather than later at execution. It just doesn't make sense to developp with untyped languages when you think of it ...
 
-Project templates configured with typescript are available with most UI frameworks. The following command uses `create-react-app` template with typescript:
+Project templates configured with TypeScript are available with most UI frameworks. The following command uses `create-react-app` template with TypeScript:
 
 ```
-npx create-react-app my-dapp --template typescript
+npx create-react-app my-dapp --template TypeScript
 ```
 
-This creates the `my-dapp` project. More information may be found [here](https://create-react-app.dev/docs/adding-typescript/)
+This creates the `my-dapp` project. More information may be found [here](https://create-react-app.dev/docs/adding-TypeScript/)
 
 ### Tezos library
 
@@ -58,11 +58,11 @@ The main drawback of Beacon is the lack of control over the UI elements (typical
 
 A plug-and-play constate context for Beacon services `connect` and `disconnect` is available [`here`](/docs/dapps/project/beacon).
 
-### Contracts bindings
+### Contract binding
 
-When interacting with a contract (read and write), it is *strongly* recommended to use its generated typescript bindings, that is a typed high-level typescript interface. It greatly reduces the effort to call a contract, read its storage and the number of runtime errors, as the compilier and LSP guides you through the contract interface.
+When interacting with a contract (read and write), it is *strongly* recommended to use its generated [TypeScript binding](/docs/tests/binding), that is a typed high-level TypeScript interface. It greatly reduces the effort to call a contract, read its storage and the number of runtime errors, as the compilier and LSP guides you through the contract interface.
 
-Typescript bindings may be obtained with the following [Completium CLI](https://completium.com/docs/cli) command:
+TypeScript bindings may be obtained with the following [Completium CLI](https://completium.com/docs/cli) command:
 
 ```
 completium-cli generate binding-dapp-ts mycontract.arl > mycontract.ts

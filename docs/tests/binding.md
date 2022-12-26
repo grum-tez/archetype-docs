@@ -84,6 +84,30 @@ const s = await example.get_s() // s is typed string
 const n = await example.get_n() // n is typed Nat
 ```
 
+### Big Map
+
+Big map storage elements (either [`big_map`](/docs/reference/types#big_map<K,%20V>) or [`asset to big_map`](/docs/reference/declarations/storage#big-map)) are an exception to the rule above. For each big map storage element, two functions are generated:
+* a function that checks whether a big map has a given key value. It name is `has_` followed by the storage element name and `_value`. Its argument is the key value. It returns a boolean value.
+* a function that retrieves the value associated to a key. It name is `get_` followed by the storage element name and `_value`. Its argument is the key value. It returns the value associated to the key, or `undefined` if not found.
+
+For example, consider the following `loan` asset declaration:
+```archetype
+asset loan identified by id to big_map {
+  id         : string;
+  subscriber : address;
+  principal  : tez;
+  interest   : rational = 2%;
+  creation   : date     = now;
+}
+```
+
+The following two functions are generated:
+* `async has_loan_value(key: string): Promise<boolean>`
+* `async get_loan_value(key: string): Promise<loan_value | undefined>`
+
+The `loan_value` corresponds to the `asset_value<loan>` archetype type. See [below](/docs/tests/binding#asset) for more information.
+
+
 ## Entry points
 
 An asynchronous call method is generated for each entry point. Its name is the same as the contract's. It takes the same arguments as the contract's, plus a [`Parameters`](/docs/tests/apis/types#parameters) object to set the caller account and optionally the amount of tez sent.
@@ -270,7 +294,7 @@ console.log(`Hello ${albert.first} ${albert.last}`) // "Hello Albert Michelson"
 
 ### Asset
 
-An [asset](/docs/asset) collection is translated to an *array of pairs* of the asset key and the asset value. The asset value is translated to a class, in the same way as a [record](/docs/tests/binding#record) presented above. It name is the name of the asset suffixed by `_value`.
+An [asset](/docs/asset) collection is translated to an *array of pairs* of the [asset key](/docs/reference/types#asset_key<A>) and the [asset value](/docs/reference/types#asset_value<A>). The asset value is translated to a class, in the same way as a [record](/docs/tests/binding#record). Its name is the name of the asset suffixed by `_value`.
 
 For example, consider the following asset:
 ```archetype

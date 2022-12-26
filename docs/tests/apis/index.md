@@ -32,12 +32,3 @@ import { types, utils, fromMich, toMich, toMichType, experiment, dapp } from "./
   </Grid>
 </Grid>
 
-### `@completium/dapp-ts`
-
-<Grid container>
-  <Grid item md={12} xs={12} sm={12}>
-    <EagleEyeView title="Functions" data={dapp} xs={4}/>
-  </Grid>
-</Grid>
-
-
