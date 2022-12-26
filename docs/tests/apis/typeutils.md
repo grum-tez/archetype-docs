@@ -66,109 +66,17 @@ This section presents functions exported by the [`@completium/archetype-ts-types
 
 <Builtin data={F['mich_array_to_mich']} />
 
-### `mich_to_address(x)`
-
-<Builtin data={F['mich_to_address']} />
-
-### `mich_to_bls12_381_fr(x)`
-
-<Builtin data={F['mich_to_bls12_381_fr']} />
-
-### `mich_to_bls12_381_g1(x)`
-
-<Builtin data={F['mich_to_bls12_381_g1']} />
-
-### `mich_to_bls12_381_g2(x)`
-
-<Builtin data={F['mich_to_bls12_381_g2']} />
-
 ### `mich_to_bool(x)`
 
 <Builtin data={F['mich_to_bool']} />
-
-### `mich_to_bytes(x)`
-
-<Builtin data={F['mich_to_bytes']} />
-
-### `mich_to_chain_id(x)`
-
-<Builtin data={F['mich_to_chain_id']} />
-
-### `mich_to_chest(x)`
-
-<Builtin data={F['mich_to_chest']} />
-
-### `mich_to_chest_key(x)`
-
-<Builtin data={F['mich_to_chest_key']} />
 
 ### `mich_to_date(x)`
 
 <Builtin data={F['mich_to_date']} />
 
-### `mich_to_duration(x)`
-
-<Builtin data={F['mich_to_duration']} />
-
-### `mich_to_int(x)`
-
-<Builtin data={F['mich_to_int']} />
-
-### `mich_to_key(x)`
-
-<Builtin data={F['mich_to_key']} />
-
-### `mich_to_key_hash(x)`
-
-<Builtin data={F['mich_to_key_hash']} />
-
 ### `mich_to_map(l, f)`
 
 <Builtin data={F['mich_to_map']} />
-
-### `mich_to_nat(x)`
-
-<Builtin data={F['mich_to_nat']} />
-
-### `mich_to_option(x, michTo)`
-
-<Builtin data={F['mich_to_option']} />
-
-### `mich_to_or(x, mtl, mtr)`
-
-<Builtin data={F['mich_to_or']} />
-
-### `mich_to_rational(x)`
-
-<Builtin data={F['mich_to_rational']} />
-
-### `mich_to_signature(x)`
-
-<Builtin data={F['mich_to_signature']} />
-
-### `mich_to_sapling_state(x)`
-
-<Builtin data={F['mich_to_sapling_state']} />
-
-### `mich_to_sapling_tansaction(x)`
-
-<Builtin data={F['mich_to_sapling_transaction']} />
-
-### `mich_to_tez(x)`
-
-<Builtin data={F['mich_to_tez']} />
-
-### `mich_to_ticket(x)`
-
-<Builtin data={F['mich_to_ticket']} />
-
-### `mich_to_tx_rollup_l2_address(x)`
-
-<Builtin data={F['mich_to_tx_rollup_l2_address']} />
-
-### `mich_to_unit(x)`
-
-<Builtin data={F['mich_to_unit']} />
 
 ## `O P`
 

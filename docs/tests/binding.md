@@ -110,7 +110,7 @@ The `loan_value` corresponds to the `asset_value<loan>` archetype type. See [bel
 
 ## Entry points
 
-An asynchronous call method is generated for each entry point. Its name is the same as the contract's. It takes the same arguments as the contract's, plus a [`Parameters`](/docs/tests/apis/types#parameters) object to set the caller account and optionally the amount of tez sent.
+An asynchronous call method is generated for each entry point. Its name is the same as the contract's. It takes the same arguments as the contract's, plus a [`Parameters`](/docs/tests/apis/types#parameters) object to set the caller account and optionally the amount of tez sent. It returns a [`CallResult`](/docs/tests/apis/types#callresult) value.
 
 For example, consider the following contract:
 
