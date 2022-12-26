@@ -20,7 +20,7 @@ import { types, utils, fromMich, toMich, toMichType, experiment, dapp } from "./
     <EagleEyeView title="To Michelson Type" data={toMichType} xs={4}/>
   </Grid>
   <Grid item md={12} xs={12} sm={12}>
-    <EagleEyeView title="From Michelson" data={toMichType} xs={4}/>
+    <EagleEyeView title="From Michelson" data={fromMich} xs={4}/>
   </Grid>
 </Grid>
 
