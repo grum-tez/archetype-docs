@@ -18,7 +18,6 @@ export const bindings = [
   { link: 'key_hash', archetype: 'key_hash', michelson: 'Key_hash', ts: 'Key_hash' },
   { link: 'list<T>', archetype: 'list', michelson: 'list', ts: 'Array', native: true },
   { link: 'nat', archetype : 'nat', michelson : 'nat', ts : 'Nat' },
-  { link: 'never', archetype: 'never', michelson: 'never', ts: 'never', native: true },
   { link: 'operation', archetype: 'operation', michelson: 'operation' },
   { link: 'option<T>', archetype: 'option', michelson: 'option', ts: 'Option' },
   { link: 'or<T1,%20T2>', archetype: 'or', michelson: 'or', ts: 'Or' },
