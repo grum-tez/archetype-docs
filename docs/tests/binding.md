@@ -136,7 +136,7 @@ await example.set("Hello Documentation!", { as : alice })
 
 An asynchronous method is generated for each entry point to get the transaction parameter corresponding to the call to the entry point. Its name is made of the prefix `get_`, followed by the entry point name and suffixed by `_param`. It takes the same arguments as the contract's entry point.
 
-The transaction parameter is then used as an argument to [`exec_batch`](/docs/tests/apis/experiment#exec_batchcps-p) for batch execution of several entry points.
+The transaction parameter is then used as an argument of [`exec_batch`](/docs/tests/apis/experiment#exec_batchcps-p) for batch execution of several entry points.
 
 With the same example as above, consider the following contract:
 
