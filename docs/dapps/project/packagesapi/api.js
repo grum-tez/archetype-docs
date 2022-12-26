@@ -189,6 +189,24 @@ export const dapp = {
       withLink: false
     }
   },
+  set_binder_tezos_toolkit: {
+    sig: 'todo',
+    ref: 'set_binder_tezos_toolkitttk',
+    desc: <div>TODO</div>,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'a',
+        desc: <div>Contract address</div>,
+        withLink: false
+      }
+    ],
+    returns: {
+      type: 'any',
+      desc: <div>TODO</div>,
+      withLink: false
+    }
+  },
 }
 
 export const event = {
