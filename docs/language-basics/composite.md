@@ -64,11 +64,11 @@ Below is the list of record-related instructions and operators.
 
 An enumeration is an *union* of named label types.
 
-For example, `sign` is either `Pos`, `Neg` or `Zero`:
+For example, `float` is either `Pos`, `Neg` or `Zero`:
 ```archetype
-enum sign =
-| Pos
-| Neg
+enum float =
+| Pos<nat * nat>
+| Neg<nat * nat>
 | Zero
 ```
 
@@ -76,8 +76,8 @@ Find more information in the [Declaration](/docs/reference/declarations/composit
 
 Literals for the `sign` enumeration are:
 ```archetype
-const p = Pos;
-const n = Neg;
+const p = Pos((6, 5));
+const n = Neg((3,2));
 const z = Zero;
 ```
 

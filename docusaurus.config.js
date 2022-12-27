@@ -89,7 +89,7 @@ const config = {
             docId: 'introduction',
             position: 'left',
             sidebarId: 'docs',
-            label: 'Docs',
+            label: 'Language',
           },
           {
             type: 'docSidebar',
@@ -136,7 +136,7 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Language',
             items: [
               {
                 label: 'Tutorial',

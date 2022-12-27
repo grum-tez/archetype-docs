@@ -228,8 +228,6 @@ async expect_to_fail(async () => {
 
 This section presents how Archetype/Michelson types ar bound to Typescript types.
 
-### Simple types
-
 <TypeMap data={bindings} />
 
 ### Tuple
@@ -333,22 +331,22 @@ A class is generated for each [`enum`](/docs/language-basics/composite#enum) dec
 
 For example, consider the following enum declaration:
 ```archetype
-enum sign =
-| Pos
-| Neg
+enum float =
+| Pos<nat * nat>
+| Neg<nat * nat>
 | Zero
 ```
 
 Then the following classes are generated:
-* `sign` class that extends [`Enum`](/docs/tests/apis/types#enum)
-* `Pos` class that *extends* `sign`
-* `Neg` class that *extends* `sign`
-* `Zero` class that *extends* `sign`
+* `float` class that extends [`Enum`](/docs/tests/apis/types#enum)
+* `Pos` class that *extends* `float`
+* `Neg` class that *extends* `float`
+* `Zero` class that *extends* `float`
 
 It may be used as:
 ```ts
-const p : sign = new Pos()
-const n : sign = new Neg()
+const p : sign = new Pos(new Nat(3), new Nat(5))
+const n : sign = new Neg(new Nat(6), new Nat(3))
 const z : sign = new Zero()
 ```
 
