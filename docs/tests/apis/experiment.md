@@ -6,9 +6,13 @@ toc_max_heading_level: 2
 import Builtin from '@site/src/components/Builtin.js';
 import { experiment } from './types.js';
 
-# TS Experiment
+# Experiment
+
+This section presents types and functions exported by the [`@completium/experiment-ts`](https://www.npmjs.com/package/@completium/experiment-ts) package and used by contracts' bindings interface (storage, entry points, views).
 
 ## `A B`
+
+### `Account`
 
 ### `blake2b(b)`
 
@@ -19,6 +23,8 @@ import { experiment } from './types.js';
 ### `call(c, e, a, p)`
 
 <Builtin data={experiment['call']} />
+
+### `CallResult`
 
 ### `delay_mockup_now_by_day(v)`
 

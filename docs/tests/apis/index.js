@@ -1,4 +1,4 @@
-import { types as T, types_functions as F, experiment as E } from './types'
+import { types as T, types_functions as F, experiment as E, exp_types as ET } from './types'
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -9,7 +9,7 @@ const getTypes = (C, p, filter, cap = false) => {
   return Object.keys(C).filter(x => filter(x)).map(t => {
     return {
       label: cap ? capitalizeFirstLetter(t) : t,
-      link: prefix + '#' + (C[t].ref ? C[t].ref : t)
+      link: prefix + '#' + (C[t].ref ? C[t].ref : t).toLowerCase()
     }
   })
 }
@@ -32,9 +32,11 @@ function isUtils(x) {
 
 export const types = getTypes(T, "types", _ => true, true)
 
-export const utils = getTypes(F, "typeutils", isUtils)
-export const fromMich = getTypes(F, "typeutils", isFromMich)
-export const toMich = getTypes(F, "typeutils", isToMich)
-export const toMichType = getTypes(F, "typeutils", isToMichType)
+export const utils = getTypes(F, "types", isUtils)
+export const fromMich = getTypes(F, "types", isFromMich)
+export const toMich = getTypes(F, "types", isToMich)
+export const toMichType = getTypes(F, "types", isToMichType)
 
 export const experiment = getTypes(E, "experiment", _ => true)
+
+export const exp_types = getTypes(ET, "experiment", _ => true, true)

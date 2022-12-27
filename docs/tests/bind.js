@@ -1,7 +1,7 @@
 import React from "react"
 export const bindings = [
   { link: 'address', archetype : 'address', michelson : 'address', ts : 'Address' },
-  { link: 'asset_container<A>', archetype : 'asset', ts: 'Array', ts : 'Address' },
+  { link: 'asset_container<A>', archetype : 'asset', ts: 'Array', ts : 'Array', native: true },
   { link: 'big_map<K,%20V>', archetype: 'big_map', michelson: 'big_map', ts: 'Array', native: true},
   { link: 'bls12_381_fr', archetype: 'bls12_381_fr', michelson: 'bls12_381_fr', ts: 'Bls12_381_fr' },
   { link: 'bls12_381_g1', archetype: 'bls12_381_g1', michelson: 'bls12_381_g1', ts: 'Bls12_381_g1' },
@@ -59,7 +59,7 @@ export const experiment = [
   { label: 'transfer', link: exp_prefix+'transferf-t-a', desc: <div>Transfers tez from one account to another.</div> },
 ]
 
-const utils_prefix = "/docs/tests/apis/typeutils#"
+const utils_prefix = "/docs/tests/apis/types#"
 
 export const types = [
   { label: 'date_cmp', link: utils_prefix+'cmp_datea-b', desc: <div>Compares javascript dates at second precision (as Tezos dates are).</div> },

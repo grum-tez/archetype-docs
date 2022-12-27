@@ -354,7 +354,7 @@ const z : sign = new Zero()
 
 There is no dedicated type to lambda values. The default lower-level type [`Micheline`](/docs/tests/apis/types#micheline) is then used.
 
-The code below, extracted from the [Multisig](https://github.com/completium/archetype-multisig) contract, illustrates the creation of a lambda as a JSON Micheline value:
+The code below, extracted from the [Multisig](/docs/templates/multisig) contract, illustrates the creation of a lambda as a JSON Micheline value:
 ```ts
 const getCode = (
   dest: Address,

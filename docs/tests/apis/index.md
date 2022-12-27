@@ -2,7 +2,7 @@
 
 import EagleEyeView from "@site/src/components/EagleEyeView.js";
 import { Grid } from "@mui/material";
-import { types, utils, fromMich, toMich, toMichType, experiment, dapp } from "./index.js"
+import { types, utils, fromMich, toMich, toMichType, experiment, exp_types, dapp } from "./index.js"
 
 ### `@completium/archetype-ts-types`
 
@@ -27,6 +27,9 @@ import { types, utils, fromMich, toMich, toMichType, experiment, dapp } from "./
 ### `@completium/experiment-ts`
 
 <Grid container>
+  <Grid item md={12} xs={12} sm={12}>
+    <EagleEyeView title="Types" data={exp_types} xs={4}/>
+  </Grid>
   <Grid item md={12} xs={12} sm={12}>
     <EagleEyeView title="Functions" data={experiment} xs={4}/>
   </Grid>

@@ -76,9 +76,7 @@ export const types = {
       ...getCommons(getLinkTo("Chain_id"))
     ]
   },
-  callResult : {
-
-  },
+  callParameter: {},
   chest: {
       desc : <div>TODO</div>,
     ref : "",
@@ -296,6 +294,7 @@ const prims = [ "address", "bls12_381_fr", "bls12_381_g1", "bls12_381_g2", "bool
     "never", "operation", "signature", "string", "timestamp", "tx_rollup_l2_address", "unit" ]
 
 const prefix = "/docs/tests/apis/types#"
+const exp_prefix = "/docs/tests/apis/experiment#"
 
 export const types_functions = {
   annotated_mich_to_array: {
@@ -921,151 +920,207 @@ export const experiment = {
   blake2b: {
     sig: 'todo',
     ref: 'blake2bb',
-    desc: <div>TODO</div>,
+    desc: <div>Hashes bytes value with <Link to="https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29">blake2b</Link> algorithm.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
+        type: 'Bytes',
+        alias: 'b',
+        desc: <div>Bytes to hash</div>,
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+      type: 'Bytes',
+      desc: <div>Hashed bytes</div>,
+    },
+    related: [
+      { keyword: 'blake2b', link: '/docs/reference/expressions/builtins#blake2b(b%20:%20bytes)' },
+    ]
   },
   call: {
     sig: 'todo',
     ref: 'callc-e-a-p',
-    desc: <div>TODO</div>,
+    desc: <div>Low-level <Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> call to contract's entry points used by <Link to="/docs/tests/binding#entry-points">contract binding</Link>.</div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
+        alias: 'c',
         desc: <div>Contract address</div>,
         withLink: false
-      }
+      },
+      {
+        type: 'string',
+        alias: 'e',
+        desc: <div>entry point name</div>,
+        withLink: false
+      },
+      {
+        type: 'Micheline',
+        alias: 'a',
+        desc: <div>entry point argument</div>,
+        prefix : prefix
+      },
+      {
+        type: 'Parameters',
+        alias: 'p',
+        desc: <div>Call parameter (<Link to="/docs/reference/expressions/constants#caller"><code>caller</code></Link> and <Link to="/docs/reference/expressions/constants#transferred"><code>transferred</code></Link>)</div>,
+        withLink: false
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+      type: 'CallResult',
+      desc: <div>Various data about transaction.</div>,
+      prefix : exp_prefix
+    },
+    related: [
+      { keyword: 'exec_batch', link:'/docs/tests/apis/experiment#exec_batchcps-p' }
+    ],
+    fails: [
+      {
+        keyword: 'Error',
+        desc: <div>An error is thrown if the transaction fails.</div>
+      }
+    ]
   },
   delay_mockup_now_by_day: {
     sig: 'todo',
     ref: 'delay_mockup_now_by_dayv',
-    desc: <div>TODO</div>,
+    desc: <div>Adds <code>v</code> days to mockup <Link to="/docs/reference/expressions/constants#now"><code>now</code></Link> value.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'number',
+        alias: 'v',
+        desc: <div>Number of days</div>,
         withLink: false
       }
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    related: [
+      { keyword: 'delay_mockup_now_by_minute', link: '/docs/tests/apis/experiment#delay_mockup_now_by_minutev' },
+      { keyword: 'delay_mockup_now_by_hour', link: '/docs/tests/apis/experiment#delay_mockup_now_by_hourv' },
+      { keyword: 'delay_mockup_now_by_second', link: '/docs/tests/apis/experiment#delay_mockup_now_by_secondv' },
+      { keyword: 'delay_mockup_now_by_week', link: '/docs/tests/apis/experiment#delay_mockup_now_by_weekv' },
+      { keyword: 'get_mockup_now', link: '/docs/tests/apis/experiment#get_mockup_now' },
+      { keyword: 'set_mockup_now', link: '/docs/tests/apis/experiment#set_mockup_nowd' },
+    ]
   },
   delay_mockup_now_by_minute: {
     sig: 'todo',
     ref: 'delay_mockup_now_by_minutev',
-    desc: <div>TODO</div>,
+    desc: <div>Adds <code>v</code> minutes to mockup <Link to="/docs/reference/expressions/constants#now"><code>now</code></Link> value.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'number',
+        alias: 'v',
+        desc: <div>Number of minutes</div>,
         withLink: false
       }
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    related: [
+      { keyword: 'delay_mockup_now_by_day', link: '/docs/tests/apis/experiment#delay_mockup_now_by_dayv' },
+      { keyword: 'delay_mockup_now_by_hour', link: '/docs/tests/apis/experiment#delay_mockup_now_by_hourv' },
+      { keyword: 'delay_mockup_now_by_second', link: '/docs/tests/apis/experiment#delay_mockup_now_by_secondv' },
+      { keyword: 'delay_mockup_now_by_week', link: '/docs/tests/apis/experiment#delay_mockup_now_by_weekv' },
+      { keyword: 'get_mockup_now', link: '/docs/tests/apis/experiment#get_mockup_now' },
+      { keyword: 'set_mockup_now', link: '/docs/tests/apis/experiment#set_mockup_nowd' },
+    ]
   },
   delay_mockup_now_by_hour: {
     sig: 'todo',
     ref: 'delay_mockup_now_by_hourv',
-    desc: <div>TODO</div>,
+    desc: <div>Adds <code>v</code> hours to mockup <Link to="/docs/reference/expressions/constants#now"><code>now</code></Link> value.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'number',
+        alias: 'v',
+        desc: <div>Number of hours</div>,
         withLink: false
       }
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    related: [
+      { keyword: 'delay_mockup_now_by_day', link: '/docs/tests/apis/experiment#delay_mockup_now_by_dayv' },
+      { keyword: 'delay_mockup_now_by_minute', link: '/docs/tests/apis/experiment#delay_mockup_now_by_minutev' },
+      { keyword: 'delay_mockup_now_by_second', link: '/docs/tests/apis/experiment#delay_mockup_now_by_secondv' },
+      { keyword: 'delay_mockup_now_by_week', link: '/docs/tests/apis/experiment#delay_mockup_now_by_weekv' },
+      { keyword: 'get_mockup_now', link: '/docs/tests/apis/experiment#get_mockup_now' },
+      { keyword: 'set_mockup_now', link: '/docs/tests/apis/experiment#set_mockup_nowd' },
+    ]
   },
   delay_mockup_now_by_second: {
     sig: 'todo',
     ref: 'delay_mockup_now_by_secondv',
-    desc: <div>TODO</div>,
+    desc: <div>Adds <code>v</code> seconds to mockup <Link to="/docs/reference/expressions/constants#now"><code>now</code></Link> value.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'number',
+        alias: 'v',
+        desc: <div>Number of seconds</div>,
         withLink: false
       }
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    related: [
+      { keyword: 'delay_mockup_now_by_day', link: '/docs/tests/apis/experiment#delay_mockup_now_by_dayv' },
+      { keyword: 'delay_mockup_now_by_minute', link: '/docs/tests/apis/experiment#delay_mockup_now_by_minutev' },
+      { keyword: 'delay_mockup_now_by_hour', link: '/docs/tests/apis/experiment#delay_mockup_now_by_hourv' },
+      { keyword: 'delay_mockup_now_by_week', link: '/docs/tests/apis/experiment#delay_mockup_now_by_weekv' },
+      { keyword: 'get_mockup_now', link: '/docs/tests/apis/experiment#get_mockup_now' },
+      { keyword: 'set_mockup_now', link: '/docs/tests/apis/experiment#set_mockup_nowd' },
+    ]
+
   },
   delay_mockup_now_by_week: {
     sig: 'todo',
     ref: 'delay_mockup_now_by_weekv',
-    desc: <div>TODO</div>,
+    desc: <div>Adds <code>v</code> weeks to mockup <Link to="/docs/reference/expressions/constants#now"><code>now</code></Link> value.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'number',
+        alias: 'v',
+        desc: <div>Number of weeks</div>,
         withLink: false
       }
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    related: [
+      { keyword: 'delay_mockup_now_by_day', link: '/docs/tests/apis/experiment#delay_mockup_now_by_dayv' },
+      { keyword: 'delay_mockup_now_by_minute', link: '/docs/tests/apis/experiment#delay_mockup_now_by_minutev' },
+      { keyword: 'delay_mockup_now_by_hour', link: '/docs/tests/apis/experiment#delay_mockup_now_by_hourv' },
+      { keyword: 'delay_mockup_now_by_second', link: '/docs/tests/apis/experiment#delay_mockup_now_by_secondv' },
+      { keyword: 'get_mockup_now', link: '/docs/tests/apis/experiment#get_mockup_now' },
+      { keyword: 'set_mockup_now', link: '/docs/tests/apis/experiment#set_mockup_nowd' },
+    ]
   },
   deploy: {
     sig: 'todo',
     ref: 'deploypath-params-p',
-    desc: <div>TODO</div>,
+    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> function to deploy an Archetype contract.</div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'path',
+        desc: <div>Path to contract (relative to command's execution folder)</div>,
         withLink: false
-      }
+      },
+      {
+        type: 'any',
+        alias: 'params',
+        desc: <div>Contract intital storage values</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Parameters',
+        alias: 'p',
+        desc: <div>Call parameter (<Link to="/docs/reference/expressions/constants#caller"><code>caller</code></Link> and <Link to="/docs/reference/expressions/constants#transferred"><code>transferred</code></Link>)</div>,
+        withLink: false
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'DeployResult',
+      desc: <div>Various data about deployment transaction.</div>,
       withLink: false
     }
   },
   deploy_from_json: {
     sig: 'todo',
     ref: 'deploynamecode-storage-p',
-    desc: <div>TODO</div>,
+    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> function</div>,
     parameters: [
       {
         type: 'string',
@@ -1101,20 +1156,35 @@ export const experiment = {
   exec_batch: {
     sig: 'todo',
     ref: 'exec_batchcps-p',
-    desc: <div>TODO</div>,
+    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>Asynchronous</i></Link> function to execute calls to entry points in <i>batch</i> mode. See <Link to="/docs/tests/binding#entry-points-parameters">here</Link> for more information.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'Array<CallParameter>',
+        alias: 'cps',
+        desc: <div>Array of <Link to="/docs/tests/apis/types#callparameter"><code>CallParameter</code></Link> values</div>,
         withLink: false
-      }
+      },
+      {
+        type: 'Parameters',
+        alias: 'p',
+        desc: <div>Call parameter (<Link to="/docs/reference/expressions/constants#caller"><code>caller</code></Link> and <Link to="/docs/reference/expressions/constants#transferred"><code>transferred</code></Link>)</div>,
+        withLink: false
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+      type: 'CallResult',
+      desc: <div>Transaction information.</div>,
+      prefix: exp_prefix
+    },
+    related: [
+      { keyword: 'call', link:'/docs/tests/apis/experiment#callc-e-a-p' }
+    ],
+    fails: [
+      {
+        keyword: 'Error',
+        desc: <div>An error is thrown if one the transactions fails.</div>
+      }
+    ]
   },
   exec_getter: {
     sig: 'todo',
@@ -1155,37 +1225,41 @@ export const experiment = {
   expect_to_fail: {
     sig: 'todo',
     ref: 'expect_to_failf-e',
-    desc: <div>TODO</div>,
+    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>Asynchronous</i></Link> function that succeeds (ie. does not fail) if contract's error <code>e</code> is thrown by <code>f</code>.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'async () => void',
+        alias: 'f',
+        desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>Asynchronous</i></Link> function that executes calls to contract.</div>,
         withLink: false
-      }
+      },
+      {
+        type: 'Micheline',
+        alias: 'e',
+        desc: <div>Contract error (may be found in binding's <code>errors</code> field)</div>,
+        prefix: prefix
+      },
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    related: [
+      { keyword: 'errors',  link:'/docs/tests/binding#errors' }
+    ]
   },
   expr_micheline_to_json: {
     sig: 'todo',
     ref: 'expr_micheline_to_jsoni',
-    desc: <div>TODO</div>,
+    desc: <div>Function that parses and converts the input string <code>i</code> to a Micheline value.</div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'i',
+        desc: <div>String value to parse and convert</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>Micheline value</div>,
+      prefix: prefix
     }
   },
   get_account: {
@@ -1599,5 +1673,24 @@ export const experiment = {
       desc: <div>TODO</div>,
       withLink: false
     }
+  },
+}
+
+export const exp_types = {
+  account: {
+    desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Chest"))
+    ]
+  },
+  callResult: {
+    desc : <div>TODO</div>,
+    ref : "",
+    fails : [],
+    methods : [
+      ...getCommons(getLinkTo("Chest"))
+    ]
   },
 }
