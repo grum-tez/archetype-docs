@@ -1121,37 +1121,67 @@ export const experiment = {
   },
   deploy_from_json: {
     sig: 'todo',
-    ref: 'deploynamecode-storage-p',
-    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> function</div>,
+    ref: 'deploy_from_jsonnamecode-storage-p',
+    desc: <div>Low-level <Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> function to deploy a contract from its code in <Link to={prefix+'micheline'}><code>Micheline</code></Link> code. It is used by <Link to={exp_prefix+'deploy_callbackcode-mt-p'}><code>deploy_callback</code></Link> function.</div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'name',
+        desc: <div>Contract name (aka alias)</div>,
         withLink: false
-      }
+      },
+      {
+        type: 'Micheline',
+        alias: 'code',
+        desc: <div>Contract code</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Micheline',
+        alias: 'storage',
+        desc: <div>Contract storage</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Parameters',
+        alias: 'p',
+        desc: <div>Parameters</div>,
+        prefix: prefix
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'DeployResult',
+      desc: <div>Deployment transaction data, including contract address</div>,
       withLink: false
     }
   },
   deploy_callback: {
     sig: 'todo',
-    ref: 'deploy_callbackcode-mt-p',
-    desc: <div>TODO</div>,
+    ref: 'deploy_callbackname-mt-p',
+    desc: <div>Low-level <Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> function to deploy a contract that calls the <Link to="/docs/reference/declarations/entrypoint#getter"><code>getter</code></Link> entry point of another contract. It is used by the contract binding when <Link to="/docs/tests/binding#getters">calling a getter</Link> entry point to deploy a caller contract.</div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'name',
+        desc: <div>Getter contract name</div>,
         withLink: false
+      },
+      {
+        type: 'MichelineType',
+        alias: 'mt',
+        desc: <div>Micheline type of the getter's return value</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Parameters',
+        alias: 'p',
+        desc: <div>Parameters</div>,
+        prefix: prefix
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'DeployResult',
+      desc: <div>Deployment transaction data, including contract address</div>,
       withLink: false
     }
   },

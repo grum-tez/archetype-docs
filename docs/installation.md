@@ -6,8 +6,8 @@
 
 Install it and initialize its configuration:
 ```completium
-npm i -g @completium/completium-cli
-completium-cli init
+$ npm install -g @completium/completium-cli
+$ completium-cli init
 ```
 ### JS
 

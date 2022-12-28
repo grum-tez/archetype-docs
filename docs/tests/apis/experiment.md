@@ -55,11 +55,11 @@ This section presents types and functions exported by the [`@completium/experime
 
 <Builtin data={experiment['deploy']} />
 
-### `deploy_from_json(code, storage, p)`
+### `deploy_from_json(name, code, storage, p)`
 
 <Builtin data={experiment['deploy_from_json']} />
 
-### `deploy_callback(code, mt, p)`
+### `deploy_callback(name, code, mt, p)`
 
 <Builtin data={experiment['deploy_callback']} />
 

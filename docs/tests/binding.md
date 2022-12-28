@@ -132,6 +132,25 @@ import { example } from `./binding/example.ts`
 await example.set("Hello Documentation!", { as : alice })
 ```
 
+### Getters
+
+A special treatment is operated for [getter](/docs/reference/declarations/entrypoint#getter) entry points. The difference with the call to entry point described above is the return value: it returns the callback value returned by the getter.
+
+For example, consider the following getter entry point:
+```archetype
+archetype example
+
+getter getBar(s : string) : nat {
+  return length(s)
+}
+```
+
+The following code calls the `getBar` entry point:
+```ts
+const l = await example.getBar("Hello getter", { as : alice })
+assert(l.equals(new Nat(12)))
+```
+
 ## Entry points' parameters
 
 An asynchronous method is generated for each entry point to get the transaction parameter corresponding to the call to the entry point. Its name is made of the prefix `get_`, followed by the entry point name and suffixed by `_param`. It takes the same arguments as the contract's entry point.
