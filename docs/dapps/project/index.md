@@ -22,7 +22,7 @@ It is *strongly* recommended to use [TypeScript](https://www.TypeScriptlang.org/
 
 Project templates configured with TypeScript are available with most UI frameworks. The following command uses `create-react-app` template with TypeScript:
 
-```
+```completium
 npx create-react-app my-dapp --template TypeScript
 ```
 
@@ -34,7 +34,7 @@ While it is always possible to interact directly with the [Tezos endpoint's RPC 
 
 In the context of web DApps for Tezos, the main library is [Taquito](https://tezostaquito.io/):
 
-```
+```completium
 npm install @taquito/taquito
 ```
 
@@ -50,7 +50,7 @@ As a comment, `create-react-app` uses [webpack](https://webpack.js.org/) (versio
 
 A DApp needs to interact with a wallet to *sign* operations (transfers, calls to a smart contract, ...). Many wallets are available on Tezos ([Temple](https://templewallet.com/download/), [Kukai](https://wallet.kukai.app), [Umami](https://umamiwallet.com/), ...). It is common practice to interact with them all via [Beacon](https://docs.walletbeacon.io/) that implements the interaction standard [TZIP-10](https://tzip.tezosagora.org/proposal/tzip-10/) between a wallet and a dApp, as it greatly reduces the integration effort with wallets.
 
-```
+```completium
 npm install @taquito/beacon-wallet @airgap/beacon-sdk
 ```
 
@@ -64,7 +64,7 @@ When interacting with a contract (read and write), it is *strongly* recommended 
 
 TypeScript bindings may be obtained with the following [Completium CLI](https://completium.com/docs/cli) command:
 
-```
+```completium
 completium-cli generate binding-dapp-ts mycontract.arl > mycontract.ts
 ```
 
@@ -73,7 +73,7 @@ Bindings generation is also available for Michelson (.tz) files.
 :::
 
 The generated binding interface relies on two packages:
-```
+```completium
 npm install @completium/dapp-ts @completium/archetype-ts-types
 ```
 
@@ -83,7 +83,7 @@ With React applications, it is *strongly* recommended to setup [*contexts*](http
 
 The DApp example presented here is using *constate* for its lightweight aspect.
 
-```
+```completium
 npm install constate
 ```
 

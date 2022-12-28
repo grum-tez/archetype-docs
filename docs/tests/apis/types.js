@@ -1092,7 +1092,7 @@ export const experiment = {
   deploy: {
     sig: 'todo',
     ref: 'deploypath-params-p',
-    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> function to deploy an Archetype contract.</div>,
+    desc: <div>Low-level <Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> function to deploy an Archetype contract, called by the <Link to="/docs/tests/binding#deploy"><code>deploy</code></Link> method of the contract's binding.</div>,
     parameters: [
       {
         type: 'string',

@@ -13,7 +13,7 @@ This section presents in detail the interaction between the DApp's UI and the [p
 ## Generate bindings
 
 The following [Completium CLI](https://completium.com/docs/cli/) command generates the contract(s) bindings for a DApp:
-```
+```completium
 completium-cli generate binding-dapp-ts ./poll-contract/contracts/poll.arl > ./src/bindings/poll.ts
 ```
 

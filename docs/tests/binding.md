@@ -11,13 +11,13 @@ This section presents the API of the automatically generated [contract binding](
 
 The Completium CLI command to generate a contract binding from the contract `contract.tz` is:
 
-```sh
+```completium
 completium-cli generate binding-ts contract.tz
 ```
 
 When using the [`create project`](/docs/tests/writingtests#create-project) command, binding generation is done with the following command (see [here](/docs/tests/writingtests#generate-binding) for more information):
 
-```sh
+```completium
 npm run gen-binding
 ```
 

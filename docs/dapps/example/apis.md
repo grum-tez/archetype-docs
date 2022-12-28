@@ -88,8 +88,8 @@ import Api from '../../../src/components/Api.js';
 Interacting with the [poll contract](/docs/dapps/example/contract) is done via the generated bindings.
 
 The following [Completium CLI](https://completium.com/docs/cli/) command generates the contract bindings:
-```
-completium-cli generate ./poll_contract/contracts/poll.arl > ./src/binding/poll.ts
+```completium
+completium-cli generate binding-dapp-ts ./poll_contract/contracts/poll.arl > ./src/binding/poll.ts
 ```
 
 The following mockup code presents the generated `Poll` TypeScript API:

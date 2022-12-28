@@ -17,7 +17,7 @@ This section presents the main technical elements to setup, write and run tests.
 
 The command below creates a project named `myproject`:
 
-```sh
+```completium
 completium-cli create project myproject
 ```
 
@@ -37,7 +37,7 @@ The project comes with a default contract `hello.arl` and its test `00-test-hell
 
 The `package.json` contains the declaration of required packages. They are installed with:
 
-```sh
+```completium
 $ cd myproject
 $ npm i
 ```
@@ -52,7 +52,7 @@ A contract's [binding](/docs/tests/framework#contract-binding) is generated auto
 
 The following command generates one binding file per contract (Archetype or Michelson) found in `contracts` directory:
 
-```sh
+```completium
 npm run gen-binding
 ```
 
@@ -79,13 +79,13 @@ Bindings need to be generated with the above command everytime the contract inte
 
 The following command executes tests found in `tests` directory:
 
-```
+```completium
 npm run test
 ```
 
 This executes tests in `00-test-hello.ts` file and generates the following output:
 
-```
+```completium
 > ts-mocha --timeout 0 --slow 99999999 ./tests/*.ts
 
   [HELLO] Contract deployment
@@ -212,7 +212,7 @@ describe('[HELLO] Call entries', async () => {
 
 Then the output looks like:
 
-```
+```completium
 [HELLO] Call entry
     ✔ Call 'exec'
     ✔ Call 'exec2'
