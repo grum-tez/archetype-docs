@@ -4,7 +4,8 @@ sidebar_label: Experiment
 toc_max_heading_level: 2
 ---
 import Builtin from '@site/src/components/Builtin.js';
-import { experiment } from './types.js';
+import TsType from "@site/src/components/TsType.js"
+import { experiment, exp_types } from './types.js';
 
 # Experiment
 
@@ -13,6 +14,8 @@ This section presents types and functions exported by the [`@completium/experime
 ## `A B`
 
 ### `Account`
+
+<TsType data={exp_types.account} />
 
 ### `blake2b(b)`
 
@@ -25,6 +28,8 @@ This section presents types and functions exported by the [`@completium/experime
 <Builtin data={experiment['call']} />
 
 ### `CallResult`
+
+<TsType data={exp_types.callresult} />
 
 ### `delay_mockup_now_by_day(v)`
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import Int from '../../../src/components/desc/tstypes/int.md'
 import Nat from '../../../src/components/desc/tstypes/nat.md'
+import Account from '../../../src/components/desc/tstypes/account.md'
+import CallResult from '../../../src/components/desc/tstypes/callresult.md'
 import Link from '@docusaurus/Link';
 
 
@@ -1678,19 +1680,38 @@ export const experiment = {
 
 export const exp_types = {
   account: {
-    desc : <div>TODO</div>,
+    desc : <Account />,
     ref : "",
-    fails : [],
+    showfail : false,
     methods : [
-      ...getCommons(getLinkTo("Chest"))
+      { label: 'get_address',
+        desc: <div>Returns the account's <Link to={prefix+'address'}><code>Address</code></Link></div>
+      },
+      {
+        label: 'get_public_key',
+        desc: <div>Returns account's public <Link to={prefix+'key'}><code>Key</code></Link></div>
+      },
+      {
+        label: 'get_secret_key',
+        desc: <div>Returns account's secret key as a <code>string</code></div>
+      },
+      {
+        label: 'get_name',
+        desc: <div>Returns account's name (aka alias)</div>
+      },
+      {
+        label: 'get_balance',
+        desc: <div>Returns account's balance as a <Link to={prefix+'tez'}><code>Tez</code></Link> value</div>
+      },
+      {
+        label: 'sign',
+        desc: <div>Signs a <Link to={prefix+'bytes'}><code>Bytes</code></Link> value and returns a <Link to={prefix+'signature'}><code>Signature</code></Link></div>
+      }
     ]
   },
-  callResult: {
-    desc : <div>TODO</div>,
+  callresult: {
+    desc : <CallResult />,
     ref : "",
-    fails : [],
-    methods : [
-      ...getCommons(getLinkTo("Chest"))
-    ]
+    showfail: false
   },
 }

@@ -23,24 +23,33 @@ const Method = (props) => {
 export default function Type(props) {
   return <StyledEngineProvider injectFirst>
     <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginBottom: '60px' }}>
-      <Grid item xs={12} style={{ marginBottom: '18px' }}>
+      <Grid item xs={12}>
         <Typography style={{
           fontFamily: 'IBM Plex Sans'
         }}>
           {props.data.desc}
         </Typography>
       </Grid>
-      <Grid item xs={12} style={{ marginBottom: '30px' }}>
-        <Info fails={props.data.fails} />
-      </Grid>
-      <Grid item xs={12}>
-        <NamedDivider title="Methods"/>
-      </Grid>
-      <Grid item container direction="row" justifyContent="flex-start">
-        { props.data.methods.map((m, i) => {
-          return <Method key={"m" + i} data={m} last={i >= props.data.methods.length - 1 }></Method>
-        }) }
-      </Grid>
+      {
+        (props.data.showfail !== undefined ? props.data.showfail : true) ?
+        <Grid item xs={12} style={{ marginTop: '18px', marginBottom: '30px' }}>
+          <Info fails={props.data.fails} showfail={props.data.showfail}/>
+        </Grid> : <div></div>
+      }
+      { props.data.methods !== undefined ?
+          <>
+            <Grid item xs={12}>
+              <NamedDivider title="Methods"/>
+            </Grid>
+            <Grid item container direction="row" justifyContent="flex-start">
+              { props.data.methods.map((m, i) => {
+                return <Method key={"m" + i} data={m} last={i >= props.data.methods.length - 1 }></Method>
+              }) }
+            </Grid>
+          </>
+        : <div></div>
+      }
+
     </Grid>
   </StyledEngineProvider>
 }

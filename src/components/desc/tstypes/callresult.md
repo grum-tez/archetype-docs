@@ -1,0 +1,3 @@
+Object returned by calls to entry points via the contract [binding](/docs/tests/binding#entry-points) object. These calls use the low-level [`call`](/docs/tests/apis/experiment#callc-e-a-p) function. It is also returned by the [`exec_batch`](/docs/tests/apis/experiment#exec_batchcps-p) function.
+
+It contains various information about entry point transaction, including the `events` field that is the array of events emitted during transaction execution.
