@@ -1218,46 +1218,46 @@ export const experiment = {
       }
     ]
   },
-  exec_getter: {
-    sig: 'todo',
-    ref: 'exec_getterc-e-a-p',
-    desc: <div>TODO</div>,
-    parameters: [
-      {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
-    ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
-  },
   exec_view: {
     sig: 'todo',
-    ref: 'exec_viewc-e-a-p',
-    desc: <div>TODO</div>,
+    ref: 'exec_viewc-n-a-p',
+    desc: <div>Low-level <Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> function to call on on-chain contract's <Link to="/docs/reference/declarations/view"><code>view</code></Link>. It is used by the contract binding to <Link to="/docs/tests/binding#views">call a view</Link>.</div>,
     parameters: [
       {
-        type: 'string',
+        type: 'Address',
         alias: 'a',
         desc: <div>Contract address</div>,
-        withLink: false
-      }
+        prefix: prefix
+      },
+      {
+        type: 'string',
+        alias: 'n',
+        desc: <div>View's name</div>,
+        withLink : false
+      },
+      {
+        type: 'Micheline',
+        alias: 'a',
+        desc: <div>View argument</div>,
+        prefix : prefix
+      },
+      {
+        type: 'Parameters',
+        alias: 'p',
+        desc: <div>Parameters</div>,
+        prefix: prefix
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'ViewResult',
+      desc: <div>View's returned value</div>,
       withLink: false
     }
   },
   expect_to_fail: {
     sig: 'todo',
     ref: 'expect_to_failf-e',
-    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>Asynchronous</i></Link> function that succeeds (ie. does not fail) if contract's error <code>e</code> is thrown by <code>f</code>.</div>,
+    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>Asynchronous</i></Link> function that succeeds (ie. does not fail) if <Link to="/docs/tests/binding#errors">contract's error</Link> <code>e</code> is thrown by <code>f</code>.</div>,
     parameters: [
       {
         type: 'async () => void',
@@ -1292,42 +1292,45 @@ export const experiment = {
       type: 'Micheline',
       desc: <div>Micheline value</div>,
       prefix: prefix
-    }
+    },
+    related: [
+      { keywork: 'json_micheline_to_expr', link: '/docs/tests/apis/experiment#json_micheline_to_expri' }
+    ]
   },
   get_account: {
     sig: 'todo',
     ref: 'get_accountn',
-    desc: <div>TODO</div>,
+    desc: <div>Returns account from alias.</div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'n',
+        desc: <div>Account name</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Account',
+      desc: <div>Account associated to name <code>n</code>, or <code>undefined</code> if not found</div>,
+      prefix: exp_prefix
     }
   },
   get_balance: {
     sig: 'todo',
     ref: 'get_balancea',
-    desc: <div>TODO</div>,
+    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>Asynchronous</i></Link> function to retrieve contract's balance</div>,
     parameters: [
       {
-        type: 'string',
+        type: 'Address',
         alias: 'a',
         desc: <div>Contract address</div>,
-        withLink: false
+        prefix: prefix
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Tez',
+      desc: <div>Contract balance</div>,
+      prefix: prefix
     }
   },
   get_big_map_value : {
@@ -1374,97 +1377,80 @@ export const experiment = {
   get_call_param: {
     sig: 'todo',
     ref: 'get_call_paramc-e-a-p',
-    desc: <div>TODO</div>,
+    desc: <div>Low-level <Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> function to get the transaction parameters to call an entry point. It is used by the contract's binding to get entry point transaction parameters for <Link to="/docs/tests/binding#entry-points-parameters">batch</Link> execution of entry points.</div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
+        alias: 'c',
         desc: <div>Contract address</div>,
         withLink: false
-      }
-    ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
-  },
-  get_callback_view: {
-    sig: 'todo',
-    ref: 'get_callback_viewca-mt',
-    desc: <div>TODO</div>,
-    parameters: [
+      },
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'e',
+        desc: <div>Entry point name</div>,
         withLink: false
-      }
+      },
+      {
+        type: 'Micheline',
+        alias: 'a',
+        desc: <div>Entry point argument</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Parameters',
+        alias: 'p',
+        desc: <div>Parameters</div>,
+        prefix: prefix
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'CallParameter',
+      desc: <div>Transaction parameter</div>,
       withLink: false
     }
   },
   get_chain_id: {
     sig: 'todo',
     ref: 'get_chain_id',
-    desc: <div>TODO</div>,
+    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>Asynchronous</i></Link> function that returns the <Link to="/docs/reference/expressions/constants#self_chain_id">chain id</Link></div>,
     parameters: [
-      {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Chain_id',
+      desc: <div>Chain id</div>,
+      prefix: prefix
     }
   },
   get_endpoint: {
     sig: 'todo',
     ref: 'get_endpoint',
-    desc: <div>TODO</div>,
+    desc: <div>Function that returns current <Link to="https://completium.com/docs/cli/network">endpoint</Link> setting.</div>,
     parameters: [
-      {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
+
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'string',
+      desc: <div>Currently used endpoint</div>,
       withLink: false
     }
   },
   get_mockup_now: {
     sig: 'todo',
     ref: 'get_mockup_now',
-    desc: <div>TODO</div>,
+    desc: <div>Function that returns <Link to="/docs/reference/expressions/constants#now"><code>now</code></Link> value in <i>mockup</i> mode only.</div>,
     parameters: [
-      {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'Date',
+      desc: <div>Now value used by mockup mode.</div>,
       withLink: false
     }
   },
   get_raw_storage: {
     sig: 'todo',
     ref: 'get_raw_storagea',
-    desc: <div>TODO</div>,
+    desc: <div>Low-level <Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> function that returns a contract storage in JSON <Link to="/docs/tests/apis/types#micheline"><code>Micheline</code></Link> format. It is used by the contract binding.</div>,
     parameters: [
       {
         type: 'string',
@@ -1474,15 +1460,15 @@ export const experiment = {
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>Contract storage</div>,
+      prefix: prefix
     }
   },
   get_storage: {
     sig: 'todo',
     ref: 'get_storagea',
-    desc: <div>TODO</div>,
+    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>Asynchronous</i></Link> function that returns the <Link to="https://tezostaquito.io/">Taquito</Link> storage of a contract.</div>,
     parameters: [
       {
         type: 'string',
@@ -1493,171 +1479,180 @@ export const experiment = {
     ],
     returns: {
       type: 'any',
-      desc: <div>TODO</div>,
+      desc: <div>Taquito's formatted contract storage.</div>,
       withLink: false
     }
   },
   is_mockup: {
     sig: 'todo',
     ref: 'is_mockup',
-    desc: <div>TODO</div>,
+    desc: <div>Checks whether current endpoint is <i>mockup</i>.</div>,
     parameters: [
-      {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'boolean',
+      desc: <div><code>true</code> if and only if current endpoint is <i>mockup</i></div>,
       withLink: false
     }
   },
   json_micheline_to_expr: {
     sig: 'todo',
     ref: 'json_micheline_to_expri',
-    desc: <div>TODO</div>,
+    desc: <div>Serializes a <Link to="/docs/tests/apis/types#micheline"><code>Micheline</code></Link> value to a string representation.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
+        type: 'Micheline',
+        alias: 'i',
+        desc: <div>Micheline input</div>,
+        prefix: prefix
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'string',
+      desc: <div>Serialized Micheline</div>,
       withLink: false
-    }
+    },
+    related: [
+      { keyword: 'expr_micheline_to_json', link: '/docs/tests/apis/experiment#expr_micheline_to_jsoni' }
+    ]
   },
   originate: {
     sig: 'todo',
     ref: 'originatepath-storage-p',
-    desc: <div>TODO</div>,
+    desc: <div>Low-level <Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>asynchronous</i></Link> function to deploy an Michelson contract, called by the <Link to="/docs/tests/binding#deploy"><code>deploy</code></Link> method of the contract's binding.</div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'path',
+        desc: <div>Path to contract (relative to command's execution folder)</div>,
         withLink: false
-      }
+      },
+      {
+        type: 'any',
+        alias: 'params',
+        desc: <div>Contract intital storage values</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Parameters',
+        alias: 'p',
+        desc: <div>Call parameter (<Link to="/docs/reference/expressions/constants#caller"><code>caller</code></Link> and <Link to="/docs/reference/expressions/constants#transferred"><code>transferred</code></Link>)</div>,
+        withLink: false
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'DeployResult',
+      desc: <div>Various data about deployment transaction.</div>,
       withLink: false
     }
   },
   pack: {
     sig: 'todo',
     ref: 'packo-t',
-    desc: <div>TODO</div>,
+    desc: <div>Serializes any packable <Link to="/docs/tests/apis/types#micheline"><code>Micheline</code></Link> value to a <Link to="/docs/tests/apis/types#bytes"><code>Bytes</code></Link> representation.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
+        type: 'Micheline',
+        alias: 'o',
+        desc: <div>Micheline value to pack</div>,
+        prefix: prefix
+      },
+      {
+        type: 'MichelineType',
+        alias: 't',
+        desc: <div><i>Optional</i> <code>o</code>'s MichelineType value</div>,
+        prefix: prefix
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Bytes',
+      desc: <div>Serialized value</div>,
+      prefix: prefix
     }
   },
   set_endpoint: {
     sig: 'todo',
     ref: 'set_endpointe',
-    desc: <div>TODO</div>,
+    desc: <div>Sets Completium's <Link to="https://completium.com/docs/cli/network">endpoint</Link> value.</div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'e',
+        desc: <div>Endpoint value</div>,
         withLink: false
-      }
+      },
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    related : [
+      { keyword: 'set_mockup', link: '/docs/tests/apis/experiment#set_mockup' },
+      { keyword: 'get_mockup', link: '/docs/tests/apis/experiment#get_mockup' },
+      { keyword: 'get_endpoint', link: '/docs/tests/apis/experiment#get_endpoint' },
+    ]
   },
   set_mockup: {
     sig: 'todo',
     ref: 'set_mockup',
-    desc: <div>TODO</div>,
+    desc: <div>Set Completium's <Link to="https://completium.com/docs/cli/network">endpoint</Link> to <i>mockup</i>.</div>,
     parameters: [
-      {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
+
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    related : [
+      { keyword: 'set_endpoint', link: '/docs/tests/apis/experiment#set_endpoint' },
+      { keyword: 'get_mockup', link: '/docs/tests/apis/experiment#get_mockup' },
+      { keyword: 'get_endpoint', link: '/docs/tests/apis/experiment#get_endpoint' },
+    ]
+
   },
   set_mockup_chain_id:{
     sig: 'todo',
     ref: 'set_mockup_chain_idc',
-    desc: <div>TODO</div>,
+    desc: <div>Set mockup mode's <Link to="/docs/reference/expressions/constants#self_chain_id">chain id</Link> value.</div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'c',
+        desc: <div>Chain id value</div>,
         withLink: false
-      }
+      },
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    related : [
+      { keyword: 'get_chain_id', link: '/docs/tests/apis/experiment#get_chain_id' },
+
+    ]
   },
   set_mockup_now: {
     sig: 'todo',
     ref: 'set_mockup_nowd',
-    desc: <div>TODO</div>,
+    desc: <div>Set mockup mode's <Link to="/docs/reference/expressions/constants#now"><code>now</code></Link> value.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'Date',
+        alias: 'd',
+        desc: <div>Now date. Note that blockchain timestamp precision is second-wise; hence Date's milliseconds are ignored.</div>,
         withLink: false
       }
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    related: [
+      { keyword: 'delay_mockup_now_by_minute', link: '/docs/tests/apis/experiment#delay_mockup_now_by_minutev' },
+      { keyword: 'delay_mockup_now_by_day', link: '/docs/tests/apis/experiment#delay_mockup_now_by_dayv' },
+      { keyword: 'delay_mockup_now_by_hour', link: '/docs/tests/apis/experiment#delay_mockup_now_by_hourv' },
+      { keyword: 'delay_mockup_now_by_second', link: '/docs/tests/apis/experiment#delay_mockup_now_by_secondv' },
+      { keyword: 'delay_mockup_now_by_week', link: '/docs/tests/apis/experiment#delay_mockup_now_by_weekv' },
+      { keyword: 'get_mockup_now', link: '/docs/tests/apis/experiment#get_mockup_now' },
+      { keyword: 'date_cmp', link: '/docs/tests/apis/types#cmp_datea-b' },
+    ]
   },
   set_quiet: {
     sig: 'todo',
     ref: 'set_quietb',
-    desc: <div>TODO</div>,
+    desc: <div>Set quiet mode on or off. When off, tezos client's output are displayed (mockup mode).</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'boolean',
+        alias: 'b',
+        desc: <div>Quiet setting.</div>,
         withLink: false
       }
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
   },
   sign : {
     sig: 'sign(b, a)',
@@ -1691,18 +1686,30 @@ export const experiment = {
   transfer: {
     sig: 'todo',
     ref: 'transferf-t-a',
-    desc: <div>TODO</div>,
+    desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>Asynchronous</i></Link> function to transfer Tez from one account to another.</div>,
     parameters: [
       {
-        type: 'string',
+        type: 'Account',
+        alias: 'f',
+        desc: <div>From account</div>,
+        prefix: exp_prefix
+      },
+      {
+        type: 'Account | string',
+        alias: 'to',
+        desc: <div>To account</div>,
+        withLink: false
+      },
+      {
+        type: 'bigint',
         alias: 'a',
-        desc: <div>Contract address</div>,
+        desc: <div>Transferred amount in <i>mutez</i></div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'TransferResult',
+      desc: <div>Transaction information.</div>,
       withLink: false
     }
   },

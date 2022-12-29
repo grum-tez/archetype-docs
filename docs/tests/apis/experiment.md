@@ -69,10 +69,6 @@ This section presents types and functions exported by the [`@completium/experime
 
 <Builtin data={experiment['exec_batch']} />
 
-### `exec_getter(c, e, a, p)`
-
-<Builtin data={experiment['exec_getter']} />
-
 ### `exec_view(c, e, a, p)`
 
 <Builtin data={experiment['exec_view']} />
@@ -102,10 +98,6 @@ This section presents types and functions exported by the [`@completium/experime
 ### `get_call_param(c, e, a, p)`
 
 <Builtin data={experiment['get_call_param']} />
-
-### `get_callback_view(ca, mt)`
-
-<Builtin data={experiment['get_callback_view']} />
 
 ### `get_chain_id()`
 
