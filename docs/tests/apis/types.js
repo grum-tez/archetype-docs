@@ -2,9 +2,32 @@ import Link from '@docusaurus/Link';
 import React from 'react';
 
 import Account from '../../../src/components/desc/tstypes/account.md'
+import Address from '../../../src/components/desc/tstypes/address.md'
+import Bls12_381_fr from '../../../src/components/desc/tstypes/bls12_381_fr.md'
+import Bls12_381_g1 from '../../../src/components/desc/tstypes/bls12_381_g1.md'
+import Bls12_381_g2 from '../../../src/components/desc/tstypes/bls12_381_g2.md'
+import Bytes from '../../../src/components/desc/tstypes/bytes.md'
 import CallResult from '../../../src/components/desc/tstypes/callresult.md'
+import Chain_id from '../../../src/components/desc/tstypes/chain_id.md'
+import Chest_key from '../../../src/components/desc/tstypes/chest_key.md'
+import Chest from '../../../src/components/desc/tstypes/chest.md'
+import Duration from '../../../src/components/desc/tstypes/duration.md'
+import Entrypoint from '../../../src/components/desc/tstypes/entrypoint.md'
+import Enum from '../../../src/components/desc/tstypes/enum.md'
 import Int from '../../../src/components/desc/tstypes/int.md'
+import Key_hash from '../../../src/components/desc/tstypes/key_hash.md'
+import Key from '../../../src/components/desc/tstypes/key.md'
 import Nat from '../../../src/components/desc/tstypes/nat.md'
+import Option from '../../../src/components/desc/tstypes/option.md'
+import Or from '../../../src/components/desc/tstypes/or.md'
+import Rational from '../../../src/components/desc/tstypes/rational.md'
+import Sapling_state from '../../../src/components/desc/tstypes/sapling_state.md'
+import Sapling_transaction from '../../../src/components/desc/tstypes/sapling_transaction.md'
+import Signature from '../../../src/components/desc/tstypes/signature.md'
+import Tez from '../../../src/components/desc/tstypes/tez.md'
+import Ticket from '../../../src/components/desc/tstypes/ticket.md'
+import Tx_rollup_l2_address from '../../../src/components/desc/tstypes/tx_rollup_l2_address.md'
+import Unit from '../../../src/components/desc/tstypes/unit.md'
 
 const getCommons = (t) => [
   {
@@ -31,7 +54,7 @@ const getLinkTo = (v) => {
 
 export const types = {
   address: {
-      desc : <div>TODO</div>,
+      desc : <Address />,
     ref : "",
     fails : [],
     methods : [
@@ -39,7 +62,7 @@ export const types = {
     ]
   },
   bls12_381_fr: {
-      desc : <div>TODO</div>,
+      desc : <Bls12_381_fr />,
     ref : "",
     fails : [],
     methods : [
@@ -47,7 +70,7 @@ export const types = {
     ]
   },
   bls12_381_g1: {
-      desc : <div>TODO</div>,
+      desc : <Bls12_381_g1 />,
     ref : "",
     fails : [],
     methods : [
@@ -55,7 +78,7 @@ export const types = {
     ]
   },
   bls12_381_g2: {
-      desc : <div>TODO</div>,
+      desc : <Bls12_381_g2 />,
     ref : "",
     fails : [],
     methods : [
@@ -63,7 +86,7 @@ export const types = {
     ]
   },
   bytes: {
-      desc : <div>TODO</div>,
+      desc : <Bytes />,
     ref : "",
     fails : [],
     methods : [
@@ -71,7 +94,7 @@ export const types = {
     ]
   },
   chain_id: {
-    desc : <div>TODO</div>,
+    desc : <Chain_id />,
     ref : "",
     fails : [],
     methods : [
@@ -80,7 +103,7 @@ export const types = {
   },
   callParameter: {},
   chest: {
-      desc : <div>TODO</div>,
+      desc : <Chest />,
     ref : "",
     fails : [],
     methods : [
@@ -88,7 +111,7 @@ export const types = {
     ]
   },
   chest_key: {
-      desc : <div>TODO</div>,
+      desc : <Chest_key />,
     ref : "",
     fails : [],
     methods : [
@@ -96,7 +119,7 @@ export const types = {
     ]
   },
   duration: {
-      desc : <div>TODO</div>,
+      desc : <Duration />,
     ref : "",
     fails : [],
     methods : [
@@ -104,7 +127,7 @@ export const types = {
     ]
   },
   entrypoint: {
-      desc : <div>TODO</div>,
+      desc : <Entrypoint />,
     ref : "",
     fails : [],
     methods : [
@@ -112,7 +135,7 @@ export const types = {
     ]
   },
   enum: {
-      desc : <div>TODO</div>,
+      desc : <Enum />,
     ref : "",
     fails : [],
     methods : [
@@ -156,7 +179,7 @@ export const types = {
     ]
   },
   key: {
-      desc : <div>TODO</div>,
+      desc : <Key />,
     ref : "",
     fails : [],
     methods : [
@@ -164,7 +187,7 @@ export const types = {
     ]
   },
   key_hash: {
-      desc : <div>TODO</div>,
+      desc : <Key_hash />,
     ref : "",
     fails : [],
     methods : [
@@ -210,7 +233,7 @@ export const types = {
     ]
   },
   option: {
-      desc : <div>TODO</div>,
+      desc : <Option />,
     ref : "",
     fails : [],
     methods : [
@@ -218,7 +241,7 @@ export const types = {
     ]
   },
   or: {
-      desc : <div>TODO</div>,
+      desc : <Or />,
     ref : "",
     fails : [],
     methods : [
@@ -226,7 +249,7 @@ export const types = {
     ]
   },
   rational: {
-      desc : <div>TODO</div>,
+      desc : <Rational />,
     ref : "",
     fails : [],
     methods : [
@@ -234,7 +257,7 @@ export const types = {
     ]
   },
   sapling_state: {
-      desc : <div>TODO</div>,
+      desc : <Sapling_state />,
     ref : "",
     fails : [],
     methods : [
@@ -242,7 +265,7 @@ export const types = {
     ]
   },
   sapling_transaction: {
-      desc : <div>TODO</div>,
+      desc : <Sapling_transaction />,
     ref : "",
     fails : [],
     methods : [
@@ -250,7 +273,7 @@ export const types = {
     ]
   },
   signature: {
-      desc : <div>TODO</div>,
+      desc : <Signature />,
     ref : "",
     fails : [],
     methods : [
@@ -258,7 +281,7 @@ export const types = {
     ]
   },
   tez: {
-      desc : <div>TODO</div>,
+      desc : <Tez />,
     ref : "",
     fails : [],
     methods : [
@@ -266,7 +289,7 @@ export const types = {
     ]
   },
   ticket: {
-      desc : <div>TODO</div>,
+      desc : <Ticket />,
     ref : "",
     fails : [],
     methods : [
@@ -274,7 +297,7 @@ export const types = {
     ]
   },
   tx_rollup_l2_address: {
-      desc : <div>TODO</div>,
+      desc : <Tx_rollup_l2_address />,
     ref : "",
     fails : [],
     methods : [
@@ -282,7 +305,7 @@ export const types = {
     ]
   },
   unit: {
-      desc : <div>TODO</div>,
+      desc : <Unit />,
     ref : "",
     fails : [],
     methods : [
@@ -1010,7 +1033,6 @@ export const types_functions = {
     }
   },
 }
-
 
 export const experiment = {
   blake2b: {
