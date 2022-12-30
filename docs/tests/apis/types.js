@@ -1,10 +1,10 @@
+import Link from '@docusaurus/Link';
 import React from 'react';
-import Int from '../../../src/components/desc/tstypes/int.md'
-import Nat from '../../../src/components/desc/tstypes/nat.md'
+
 import Account from '../../../src/components/desc/tstypes/account.md'
 import CallResult from '../../../src/components/desc/tstypes/callresult.md'
-import Link from '@docusaurus/Link';
-
+import Int from '../../../src/components/desc/tstypes/int.md'
+import Nat from '../../../src/components/desc/tstypes/nat.md'
 
 const getCommons = (t) => [
   {
@@ -1010,6 +1010,7 @@ export const types_functions = {
     }
   },
 }
+
 
 export const experiment = {
   blake2b: {
