@@ -302,288 +302,336 @@ export const types_functions = {
   annotated_mich_to_array: {
     sig: 'todo',
     ref: 'annotated_mich_to_arrayx-t',
-    desc: <div>TODO</div>,
+    desc: <div>Returns the annotated leafs of imbricated <code>Pair</code> nodes.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
+        type: 'Micheline',
+        alias: 'x',
+        desc: <div>Micheline input (likeky a <code>Pair</code>)</div>,
+        prefix: prefix
+      },
+      {
+        type: 'MichelineType',
+        alias: 't',
+        desc: <div><code>x</code>'s Micheline Type</div>,
+        prefix: prefix
+      },
+
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'Array<Micheline>',
+      desc: <div>Array of annotated <code>Pair</code>'s leafs</div>,
       withLink: false
-    }
+    },
+    fails: [
+      { keyword: 'Found an unannotated node that is not a pair', desc: <div>When a <code>Pair</code>'s leaf is not annotated</div> }
+    ]
   },
   bool_to_mich: {
     sig: 'todo',
     ref: 'bool_to_michv',
-    desc: <div>TODO</div>,
+    desc: <div>Converts <code>boolean</code> value to Micheline.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'boolean',
+        alias: 'v',
+        desc: <div>Boolean value to convert.</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>Micheline encoding of <code>v</code></div>,
+      prefix: prefix
     }
   },
   cmp_date: {
     sig: 'todo',
     ref: 'cmp_datea-b',
-    desc: <div>TODO</div>,
+    desc: <div>Compares two dates at second precision, ie milliseconds are ignored. It is typically used to compare a TypesScript date with a date retrieved from the blockchain.</div>,
     parameters: [
       {
-        type: 'string',
+        type: 'Date',
         alias: 'a',
-        desc: <div>Contract address</div>,
+        desc: <div>Date to compare</div>,
+        withLink: false
+      },
+      {
+        type: 'Date',
+        alias: 'b',
+        desc: <div>Date to compare</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'boolean',
+      desc: <div><code>true</code> if <code>a</code> equals <code>b</code> (without milliseconds).</div>,
       withLink: false
     }
   },
   date_to_mich: {
     sig: 'todo',
     ref: 'date_to_michv',
-    desc: <div>TODO</div>,
+    desc: <div>Converts a date to Micheline.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'Date',
+        alias: 'v',
+        desc: <div>Date to convert</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>Micheline encoding of <code>v</code></div>,
+      prefix: prefix
     }
   },
   elt_to_mich: {
     sig: 'todo',
     ref: 'elt_to_micha-b',
-    desc: <div>TODO</div>,
+    desc: <div>Makes a Micheline <code>Elt</code> node.</div>,
     parameters: [
       {
-        type: 'string',
+        type: 'Micheline',
         alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
+        desc: <div>Micheline element</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Micheline',
+        alias: 'b',
+        desc: <div>Micheline element</div>,
+        prefix: prefix
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>Micheline <code>Elt</code> node of <code>a</code> and <code>b</code></div>,
+      prefix: prefix
     }
   },
   is_left: {
     sig: 'todo',
     ref: 'is_leftv',
-    desc: <div>TODO</div>,
+    desc: <div>Checks if <code>v</code> is a <code>Left</code> node.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'Micheline',
+        alias: 'v',
+        desc: <div>Micheline value</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'boolean',
+      desc: <div><code>true</code> if and only if <code>v</code> is <code>Left</code></div>,
       withLink: false
     }
   },
   is_right: {
     sig: 'todo',
     ref: 'is_rightv',
-    desc: <div>TODO</div>,
+    desc: <div>Checks if <code>v</code> is a <code>Right</code> node.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
+        type: 'Micheline',
+        alias: 'v',
+        desc: <div>Micheline value</div>,
+        prefix: prefix
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'boolean',
+      desc: <div><code>true</code> if and only if <code>v</code> is <code>Right</code></div>,
       withLink: false
     }
   },
   left_to_mich: {
     sig: 'todo',
     ref: 'left_to_michv',
-    desc: <div>TODO</div>,
+    desc: <div>Makes a Micheline <code>Left</code> value.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'Micheline',
+        alias: 'v',
+        desc: <div>Micheline argument to <code>Left</code> value</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>Micheline <code>Left</code> value</div>,
+      prefix : prefix
     }
   },
   list_to_mich: {
     sig: 'todo',
     ref: 'list_to_michl-tomich',
-    desc: <div>TODO</div>,
+    desc: <div>Applies function <code>toMich</code> to elements in <code>l</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'Array<T>',
+        alias: 'l',
+        desc: <div>Array of elements</div>,
         withLink: false
-      }
+      },
+      {
+        type: '{ (a: T): Micheline }',
+        alias: 'toMich',
+        desc: <div>Function to apply to elements of <code>l</code></div>,
+        withLink: false
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'Array<Micheline>',
+      desc: <div>Array of Micheline values</div>,
       withLink: false
     }
   },
   list_annots_to_mich_type: {
     sig: 'todo',
     ref: 'list_annots_to_mich_typemt-annots',
-    desc: <div>TODO</div>,
+    desc: <div>Make an annotated Micheline type <code>list</code> of elements of type <code>mt</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'MichelineType',
+        alias: 'mt',
+        desc: <div>elements' Micheline type</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Array<string>',
+        alias: 'annots',
+        desc: <div>List type annotations</div>,
         withLink: false
-      }
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'MichelineType',
+      desc: <div><code>list</code> Micheline type</div>,
+      prefix: prefix
     }
   },
   list_to_mich_type: {
     sig: 'todo',
     ref: 'list_to_mich_typemt',
-    desc: <div>TODO</div>,
+    desc: <div>Make a Micheline type <code>list</code> of elements of type <code>mt</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
+        type: 'MichelineType',
+        alias: 'mt',
+        desc: <div>elements' Micheline type</div>,
+        prefix: prefix
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'MichelineType',
+      desc: <div><code>list</code> Micheline type</div>,
+      prefix: prefix
     }
   },
   mich_array_to_mich: {
     sig: 'todo',
     ref: 'mich_array_to_michl',
-    desc: <div>TODO</div>,
+    desc: <div>Makes a right comb of Micheline elements <code>l</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'Micheline[]',
+        alias: 'l',
+        desc: <div>Micheline elements</div>,
         withLink: false
-      }
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>right comb of <code>l</code></div>,
+      prefix: prefix
     }
   },
   mich_to_bool: {
     sig: 'todo',
     ref: 'mich_to_boolx',
-    desc: <div>TODO</div>,
+    desc: <div>Converts Micheline to <code>boolean</code> value</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
+        type: 'Micheline',
+        alias: 'x',
+        desc: <div>Value to convert</div>,
+        prefix: prefix
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'boolean',
+      desc: <div><code>true</code> if <code>x</code>'s prim is <code>True</code>, <code>false</code> if <code>False</code></div>,
       withLink: false
-    }
+    },
+    fails: [
+      { keyword: '"Invalid prim"', desc: <div>if <code>x</code>'s prim is not <code>True</code> nor <code>false</code></div> }
+    ]
   },
   mich_to_date: {
     sig: 'todo',
     ref: 'mich_to_datex',
-    desc: <div>TODO</div>,
+    desc: <div>Converts Micheline to <code>Date</code> value</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
+        type: 'Micheline',
+        alias: 'x',
+        desc: <div>Value to convert</div>,
+        prefix: prefix
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'Date',
+      desc: <div>Converted <code>Date</code> value</div>,
       withLink: false
-    }
+    },
+    fails: [
+      { keyword: 'Error', desc: <div>An error is thrown if <code>x</code>'s prim does not represent a date</div> }
+    ]
   },
   mich_to_map: {
     sig: 'todo',
     ref: 'mich_to_mapx-f',
-    desc: <div>TODO</div>,
+    desc: <div>Applies <code>f</code> to Micheline <code>Melt</code> values of <code>Marray</code> <code>x</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'Micheline',
+        alias: 'x',
+        desc: <div><code>Marray</code> Micheline values of elements</div>,
+        prefix: prefix
+      },
+      {
+        type: '(k: Micheline, v: Micheline): [K, V]',
+        alias: 'f',
+        desc: <div>Function that returns a pair of values from a pair of Micheline values</div>,
         withLink: false
-      }
+      },
     ],
+    showfail: false,
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'Array<[K, V]>',
+      desc: <div>Array of pairs</div>,
       withLink: false
     }
   },
   mich_to_string: {
     sig: 'todo',
     ref: 'mich_to_stringx',
-    desc: <div>TODO</div>,
+    desc: <div>Converts Micheline to <code>string</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
+        type: 'Micheline',
+        alias: 'x',
+        desc: <div>Value to convert</div>,
+        prefix: prefix
       }
     ],
+    showfail: false,
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'string',
+      desc: <div>String value from <code>x</code></div>,
       withLink: false
     }
   },
@@ -608,109 +656,151 @@ export const types_functions = {
   option_to_mich_type: {
     sig: 'todo',
     ref: 'option_to_mich_typea',
-    desc: <div>TODO</div>,
+    desc: <div>Makes an <code>option</code> Micheline type of <code>a</code></div>,
     parameters: [
       {
-        type: 'string',
+        type: 'MichelineType',
         alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
+        desc: <div>Micheline type</div>,
+        prefix: prefix
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'MichelineType',
+      desc: <div><code>option</code> Micheline type</div>,
+      prefix: prefix
     }
   },
   or_to_mich_type: {
     sig: 'todo',
     ref: 'or_to_mich_typel-r-a',
-    desc: <div>TODO</div>,
+    desc: <div>Makes an <code>or</code> Micheline type of <code>l</code> and <code>r</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
+        type: 'MichelineType',
+        alias: 'l',
+        desc: <div>Left Micheline type</div>,
+        prefix: prefix
+      },
+      {
+        type: 'MichelineType',
+        alias: 'r',
+        desc: <div>Right Micheline type</div>,
+        prefix: prefix
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'MichelineType',
+      desc: <div><code>or</code> Micheline type</div>,
+      prefix: prefix
     }
   },
   pair_to_mich: {
     sig: 'todo',
     ref: 'pair_to_michl',
-    desc: <div>TODO</div>,
+    desc: <div>Makes a <code>Pair</code> Micheline value with <code>l</code> element as argument</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'Array<Micheline>',
+        alias: 'l',
+        desc: <div>Argument of <code>Pair</code> Micheline value</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div><code>Pair</code> Micheline value</div>,
+      prefix: prefix
     }
   },
   pair_annot_to_mich_type: {
     sig: 'todo',
     ref: 'pair_annot_to_mich_typep-a-b-annots',
-    desc: <div>TODO</div>,
+    desc: <div>Makes a Micheline node with prim <code>p</code> and arguments <code>a</code> and <code>b</code></div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'p',
+        desc: <div>Prim value: one of <code>"big_map"</code> <code>"lambda"</code> <code>"or"</code></div>,
         withLink: false
-      }
+      },
+      {
+        type: 'Micheline',
+        alias: 'a',
+        desc: <div>First argument</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Micheline',
+        alias: 'b',
+        desc: <div>Second argument</div>,
+        prefix: prefix
+      },
+      {
+        type: 'string[]',
+        alias: 'annots',
+        desc: <div>Annotations</div>,
+        withLink: false
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>Micheline value of prim <code>p</code></div>,
+      prefix: prefix
     }
   },
   pair_array_to_mich_type: {
     sig: 'todo',
     ref: 'pair_array_to_mich_typel-annots',
-    desc: <div>TODO</div>,
+    desc: <div>Makes a <code>pair</code> Micheline type of types <code>l</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'MichelineType[]',
+        alias: 'l',
+        desc: <div>Array of Micheline Type values</div>,
         withLink: false
-      }
+      },
+      {
+        type: 'string[]',
+        alias: 'annots',
+        desc: <div>Annotations</div>,
+        withLink: false
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'MichelineType',
+      desc: <div><code>pair</code> Micheline type</div>,
+      prefix: prefix
     }
   },
   pair_to_mich_type: {
     sig: 'todo',
     ref: 'pair_to_mich_typep-a-b',
-    desc: <div>TODO</div>,
+    desc: <div>Makes a Micheline node with prim <code>p</code> and arguments <code>a</code> and <code>b</code></div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'p',
+        desc: <div>Prim value: one of <code>"big_map"</code> <code>"lambda"</code> <code>"or"</code></div>,
         withLink: false
-      }
+      },
+      {
+        type: 'Micheline',
+        alias: 'a',
+        desc: <div>First argument</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Micheline',
+        alias: 'b',
+        desc: <div>Second argument</div>,
+        prefix: prefix
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>Micheline value of prim <code>p</code></div>,
+      prefix: prefix
     }
   },
   prim_annot_to_mich_type: {
@@ -720,21 +810,29 @@ export const types_functions = {
     parameters: [
       {
         type: 'string',
+        alias: 'p',
+        desc: <div style={{ lineHeight : '28px' }}>"prim" value (one of { prims.map(p => {
+          return <span><code>"{p}"</code>  </span>
+        }) } )</div>,
+        withLink: false
+      },
+      {
+        type: 'string[]',
         alias: 'a',
-        desc: <div>Contract address</div>,
+        desc: <div>Annotations</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'MichelineType',
+      desc: <div>Micheline Type with "prim" <code>p</code></div>,
+      prefix: prefix
     }
   },
   prim_to_mich_type : {
     sig: 'prim_to_mich_type(p : "int" | "nat" | ...)',
     ref : "prim_to_mich_typep",
-    desc: <div>Utility function to build a Michelson type.</div>,
+    desc: <div>Makes a Michelson type.</div>,
     parameters: [
       {
         type: 'string',
@@ -756,164 +854,159 @@ export const types_functions = {
   },
   right_to_mich: {
     sig: 'todo',
-    ref: 'right_to_michv',
-    desc: <div>TODO</div>,
+    ref: 'left_to_michv',
+    desc: <div>Makes a Micheline <code>Right</code> value.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'Micheline',
+        alias: 'v',
+        desc: <div>Micheline argument to <code>Right</code> value</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>Micheline <code>Right</code> value</div>,
+      prefix : prefix
     }
   },
   set_annot_to_mich_type: {
     sig: 'todo',
     ref: 'set_annot_to_mich_typemt-annots',
-    desc: <div>TODO</div>,
+    desc: <div>Makes a Micheline type <code>set</code> of elements of type <code>mt</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
-    ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
-  },
-  set_to_mich: {
-    sig: 'todo',
-    ref: 'set_to_michv-tomich',
-    desc: <div>TODO</div>,
-    parameters: [
+        type: 'MichelineType',
+        alias: 'mt',
+        desc: <div>Set element type</div>,
+        prefix: prefix
+      },
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'string[]',
+        alias: 'annots',
+        desc: <div>Annotations</div>,
         withLink: false
-      }
+      },
+
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'MichelineType',
+      desc: <div><code>set</code> Micheline type</div>,
+      prefix: prefix
     }
   },
   set_to_mich_type: {
     sig: 'todo',
     ref: 'set_to_mich_typemt',
-    desc: <div>TODO</div>,
+    desc: <div>Makes a Micheline type <code>set</code> of elements of type <code>mt</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
+        type: 'MichelineType',
+        alias: 'mt',
+        desc: <div>Set element type</div>,
+        prefix: prefix
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'MichelineType',
+      desc: <div><code>set</code> Micheline type</div>,
+      prefix: prefix
     }
   },
   string_cmp: {
     sig: 'todo',
     ref: 'string_cmpa-b',
-    desc: <div>TODO</div>,
+    desc: <div>Compares two string values.</div>,
     parameters: [
       {
         type: 'string',
         alias: 'a',
-        desc: <div>Contract address</div>,
+        desc: <div>String to compare</div>,
+        withLink: false
+      },
+      {
+        type: 'string',
+        alias: 'b',
+        desc: <div>String to compare</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'boolean',
+      desc: <div><code>true</code> if <code>a</code> equals <code>b</code></div>,
       withLink: false
     }
   },
   string_to_mich: {
     sig: 'todo',
     ref: 'string_to_michv',
-    desc: <div>TODO</div>,
+    desc: <div>Converts a string value to its Micheline representation.</div>,
     parameters: [
       {
         type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        alias: 'v',
+        desc: <div>String value to convert</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>Micheline value</div>,
+      prefix: prefix
     }
   },
   ticket_annots_to_mich_type: {
     sig: 'todo',
-    ref: 'ticket_annots_to_mich_typea-annots',
-    desc: <div>TODO</div>,
+    ref: 'ticket_annots_to_mich_typemt-annots',
+    desc: <div>Makes a <code>ticket</code> Micheline type of element of type <code>mt</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'MichelineType',
+        alias: 'mt',
+        desc: <div>Micheline type</div>,
+        prefix: prefix
+      },
+      {
+        type: 'string[]',
+        alias: 'annots',
+        desc: <div>Annotations</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'MichelineType',
+      desc: <div><code>ticket</code> Micheline type</div>,
       withLink: false
     }
   },
   ticket_to_mich_type: {
     sig: 'todo',
-    ref: 'ticket_to_mich_typea',
-    desc: <div>TODO</div>,
+    ref: 'ticket_to_mich_typemt',
+    desc: <div>Makes a <code>ticket</code> Micheline type of element of type <code>mt</code></div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
+        type: 'MichelineType',
+        alias: 'mt',
+        desc: <div>Micheline type</div>,
+        prefix: prefix
+      },
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
+      type: 'MichelineType',
+      desc: <div><code>ticket</code> Micheline type</div>,
       withLink: false
     }
   },
   unit_to_mich: {
     sig: 'todo',
     ref: 'unit_to_mich',
-    desc: <div>TODO</div>,
+    desc: <div>Converts <code>Unit</code> value to Micheline.</div>,
     parameters: [
-      {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'Micheline',
+      desc: <div>Micheline <code>Unit</code> value</div>,
+      prefix: prefix
     }
   },
 }
@@ -934,6 +1027,7 @@ export const experiment = {
       type: 'Bytes',
       desc: <div>Hashed bytes</div>,
     },
+    showfail : false,
     related: [
       { keyword: 'blake2b', link: '/docs/reference/expressions/builtins#blake2b(b%20:%20bytes)' },
     ]
@@ -995,6 +1089,7 @@ export const experiment = {
         withLink: false
       }
     ],
+    showfail : false,
     related: [
       { keyword: 'delay_mockup_now_by_minute', link: '/docs/tests/apis/experiment#delay_mockup_now_by_minutev' },
       { keyword: 'delay_mockup_now_by_hour', link: '/docs/tests/apis/experiment#delay_mockup_now_by_hourv' },
@@ -1016,6 +1111,7 @@ export const experiment = {
         withLink: false
       }
     ],
+    showfail : false,
     related: [
       { keyword: 'delay_mockup_now_by_day', link: '/docs/tests/apis/experiment#delay_mockup_now_by_dayv' },
       { keyword: 'delay_mockup_now_by_hour', link: '/docs/tests/apis/experiment#delay_mockup_now_by_hourv' },
@@ -1037,6 +1133,7 @@ export const experiment = {
         withLink: false
       }
     ],
+    showfail : false,
     related: [
       { keyword: 'delay_mockup_now_by_day', link: '/docs/tests/apis/experiment#delay_mockup_now_by_dayv' },
       { keyword: 'delay_mockup_now_by_minute', link: '/docs/tests/apis/experiment#delay_mockup_now_by_minutev' },
@@ -1058,6 +1155,7 @@ export const experiment = {
         withLink: false
       }
     ],
+    showfail : false,
     related: [
       { keyword: 'delay_mockup_now_by_day', link: '/docs/tests/apis/experiment#delay_mockup_now_by_dayv' },
       { keyword: 'delay_mockup_now_by_minute', link: '/docs/tests/apis/experiment#delay_mockup_now_by_minutev' },
@@ -1080,6 +1178,7 @@ export const experiment = {
         withLink: false
       }
     ],
+    showfail : false,
     related: [
       { keyword: 'delay_mockup_now_by_day', link: '/docs/tests/apis/experiment#delay_mockup_now_by_dayv' },
       { keyword: 'delay_mockup_now_by_minute', link: '/docs/tests/apis/experiment#delay_mockup_now_by_minutev' },
@@ -1113,6 +1212,7 @@ export const experiment = {
         withLink: false
       },
     ],
+    showfail : false,
     returns: {
       type: 'DeployResult',
       desc: <div>Various data about deployment transaction.</div>,
@@ -1149,6 +1249,7 @@ export const experiment = {
         prefix: prefix
       },
     ],
+    showfail : false,
     returns: {
       type: 'DeployResult',
       desc: <div>Deployment transaction data, including contract address</div>,
@@ -1179,6 +1280,7 @@ export const experiment = {
         prefix: prefix
       }
     ],
+    showfail : false,
     returns: {
       type: 'DeployResult',
       desc: <div>Deployment transaction data, including contract address</div>,
@@ -1248,6 +1350,7 @@ export const experiment = {
         prefix: prefix
       },
     ],
+    showfail : false,
     returns: {
       type: 'ViewResult',
       desc: <div>View's returned value</div>,
@@ -1272,6 +1375,7 @@ export const experiment = {
         prefix: prefix
       },
     ],
+    showfail : false,
     related: [
       { keyword: 'errors',  link:'/docs/tests/binding#errors' }
     ]
@@ -1293,8 +1397,9 @@ export const experiment = {
       desc: <div>Micheline value</div>,
       prefix: prefix
     },
+    showfail : false,
     related: [
-      { keywork: 'json_micheline_to_expr', link: '/docs/tests/apis/experiment#json_micheline_to_expri' }
+      { keyword: 'json_micheline_to_expr', link: '/docs/tests/apis/experiment#json_micheline_to_expri' }
     ]
   },
   get_account: {
@@ -1309,6 +1414,7 @@ export const experiment = {
         withLink: false
       }
     ],
+    showfail : false,
     returns: {
       type: 'Account',
       desc: <div>Account associated to name <code>n</code>, or <code>undefined</code> if not found</div>,
@@ -1327,6 +1433,7 @@ export const experiment = {
         prefix: prefix
       }
     ],
+    showfail : false,
     returns: {
       type: 'Tez',
       desc: <div>Contract balance</div>,
@@ -1363,6 +1470,7 @@ export const experiment = {
         prefix: prefix
       }
     ],
+    showfail : false,
     returns: {
       type: 'Promise<any>',
       desc: <div>Micheline value associated to <code>key</code>, <code>null</code> if not found.</div>,
@@ -1404,6 +1512,7 @@ export const experiment = {
         prefix: prefix
       },
     ],
+    showfail : false,
     returns: {
       type: 'CallParameter',
       desc: <div>Transaction parameter</div>,
@@ -1416,6 +1525,7 @@ export const experiment = {
     desc: <div><Link to="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html"><i>Asynchronous</i></Link> function that returns the <Link to="/docs/reference/expressions/constants#self_chain_id">chain id</Link></div>,
     parameters: [
     ],
+    showfail : false,
     returns: {
       type: 'Chain_id',
       desc: <div>Chain id</div>,
@@ -1429,6 +1539,7 @@ export const experiment = {
     parameters: [
 
     ],
+    showfail : false,
     returns: {
       type: 'string',
       desc: <div>Currently used endpoint</div>,
@@ -1441,6 +1552,7 @@ export const experiment = {
     desc: <div>Function that returns <Link to="/docs/reference/expressions/constants#now"><code>now</code></Link> value in <i>mockup</i> mode only.</div>,
     parameters: [
     ],
+    showfail : false,
     returns: {
       type: 'Date',
       desc: <div>Now value used by mockup mode.</div>,
@@ -1459,6 +1571,7 @@ export const experiment = {
         withLink: false
       }
     ],
+    showfail : false,
     returns: {
       type: 'Micheline',
       desc: <div>Contract storage</div>,
@@ -1477,6 +1590,7 @@ export const experiment = {
         withLink: false
       }
     ],
+    showfail : false,
     returns: {
       type: 'any',
       desc: <div>Taquito's formatted contract storage.</div>,
@@ -1489,6 +1603,7 @@ export const experiment = {
     desc: <div>Checks whether current endpoint is <i>mockup</i>.</div>,
     parameters: [
     ],
+    showfail : false,
     returns: {
       type: 'boolean',
       desc: <div><code>true</code> if and only if current endpoint is <i>mockup</i></div>,
@@ -1507,6 +1622,7 @@ export const experiment = {
         prefix: prefix
       }
     ],
+    showfail : false,
     returns: {
       type: 'string',
       desc: <div>Serialized Micheline</div>,
@@ -1540,6 +1656,7 @@ export const experiment = {
         withLink: false
       },
     ],
+    showfail : false,
     returns: {
       type: 'DeployResult',
       desc: <div>Various data about deployment transaction.</div>,
@@ -1564,6 +1681,7 @@ export const experiment = {
         prefix: prefix
       }
     ],
+    showfail : false,
     returns: {
       type: 'Bytes',
       desc: <div>Serialized value</div>,
@@ -1582,6 +1700,7 @@ export const experiment = {
         withLink: false
       },
     ],
+    showfail : false,
     related : [
       { keyword: 'set_mockup', link: '/docs/tests/apis/experiment#set_mockup' },
       { keyword: 'get_mockup', link: '/docs/tests/apis/experiment#get_mockup' },
@@ -1595,6 +1714,7 @@ export const experiment = {
     parameters: [
 
     ],
+    showfail : false,
     related : [
       { keyword: 'set_endpoint', link: '/docs/tests/apis/experiment#set_endpoint' },
       { keyword: 'get_mockup', link: '/docs/tests/apis/experiment#get_mockup' },
@@ -1614,6 +1734,7 @@ export const experiment = {
         withLink: false
       },
     ],
+    showfail : false,
     related : [
       { keyword: 'get_chain_id', link: '/docs/tests/apis/experiment#get_chain_id' },
 
@@ -1631,6 +1752,7 @@ export const experiment = {
         withLink: false
       }
     ],
+    showfail : false,
     related: [
       { keyword: 'delay_mockup_now_by_minute', link: '/docs/tests/apis/experiment#delay_mockup_now_by_minutev' },
       { keyword: 'delay_mockup_now_by_day', link: '/docs/tests/apis/experiment#delay_mockup_now_by_dayv' },
@@ -1653,6 +1775,7 @@ export const experiment = {
         withLink: false
       }
     ],
+    showfail : false,
   },
   sign : {
     sig: 'sign(b, a)',
@@ -1677,6 +1800,7 @@ export const experiment = {
       desc: <div>Signed bytes.</div>,
       withLink: false
     },
+    showfail : false,
     related: [
       { keyword: 'Micheline', link: '/docs/tests/apis/types#micheline' },
       { keyword: 'MichelineType', link: '/docs/tests/apis/types#michelinetype' },
@@ -1707,8 +1831,9 @@ export const experiment = {
         withLink: false
       }
     ],
+    showfail : false,
     returns: {
-      type: 'TransferResult',
+      type: 'Transfer Result',
       desc: <div>Transaction information.</div>,
       withLink: false
     }

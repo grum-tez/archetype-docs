@@ -136,7 +136,7 @@ export default function Builtin(props) {
         ) : (<div />)
       }
       <Grid item xs={12}>
-        <Info fails={props.data.fails} michelson={props.data.michelson} michelson_ref_url={props.data.michelson_ref_url} emits={props.data.emits} related={props.data.related} />
+        <Info fails={props.data.fails} michelson={props.data.michelson} michelson_ref_url={props.data.michelson_ref_url} emits={props.data.emits} related={props.data.related} showfail={props.data.showfail}/>
       </Grid>
     </Grid>
     </StyledEngineProvider>

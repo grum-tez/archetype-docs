@@ -35,15 +35,19 @@ const Fails = (props) => {
 export default function Info(props) {
     return (
       <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} style={{ marginTop: '0px' }}>
-
-      <Grid item xs={3} sm={2} md={2}>
-        <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
-          Fails with
-        </Typography>
-      </Grid>
-      <Grid item xs={9} sm={10} md={10}>
-        <Fails fails={props.fails} />
-      </Grid>
+      {
+        props.showfail == undefined || (props.showfail != undefined && props.showfail) ?
+        <>
+          <Grid item xs={3} sm={2} md={2}>
+            <Typography style={{ fontFamily: 'IBM Plex Sans', color: 'grey', }}>
+              Fails with
+            </Typography>
+          </Grid>
+          <Grid item xs={9} sm={10} md={10}>
+            <Fails fails={props.fails} />
+          </Grid>
+        </> : <div></div>
+      }
       {(props.michelson !== undefined) ? (
         <Grid item xs={12}><Divider className={ styles.divider }/></Grid>
       ) : (<div />)}

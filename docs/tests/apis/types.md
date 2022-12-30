@@ -61,9 +61,14 @@ This section presents types and functions exported by the [`@completium/archetyp
 
 <Builtin data={F['cmp_date']} />
 
+
+### `date_to_mich(v)`
+
+<Builtin data={F[`date_to_mich`]} />
+
 ### `Duration`
 
-<TsType data={types.duration} />
+<Builtin data={types.duration} />
 
 ## `E F`
 
@@ -219,10 +224,6 @@ This section presents types and functions exported by the [`@completium/archetyp
 
 <Builtin data={F['set_annot_to_mich_type']} />
 
-### `set_to_mich(v, toMich)`
-
-<Builtin data={F['set_to_mich']} />
-
 ### `set_to_mich_type(mt)`
 
 <Builtin data={F['set_to_mich_type']} />
@@ -244,11 +245,11 @@ This section presents types and functions exported by the [`@completium/archetyp
 
 <TsType data={types.ticket} />
 
-### `ticket_annots_to_mich_type(a, annots)`
+### `ticket_annots_to_mich_type(mt, annots)`
 
 <Builtin data={F['ticket_annots_to_mich_type']} />
 
-### `ticket_to_mich_type(a)`
+### `ticket_to_mich_type(mt)`
 
 <Builtin data={F['ticket_to_mich_type']} />
 
