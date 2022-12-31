@@ -1,4 +1,4 @@
-Class for integer value that corresponds to Archetype type [`int`](/docs/reference/types#int). It uses the [bignumber.js](https://mikemcl.github.io/bignumber.js/) package to support the arbitrary-precision feature of Tezos.
+Class for integer value that corresponds to Archetype/Michelson type [`int`](/docs/reference/types#int). It uses the [bignumber.js](https://mikemcl.github.io/bignumber.js/) package to support the arbitrary-precision feature of Tezos.
 
 There are several ways to construct an `Int` value:
 

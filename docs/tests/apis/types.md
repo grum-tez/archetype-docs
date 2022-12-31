@@ -68,7 +68,7 @@ This section presents types and functions exported by the [`@completium/archetyp
 
 ### `Duration`
 
-<Builtin data={types.duration} />
+<TsType data={types.duration} />
 
 ## `E F`
 

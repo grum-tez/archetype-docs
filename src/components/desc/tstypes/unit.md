@@ -1,0 +1,1 @@
+Class for a unit value that corresponds to Archetype/Michelson type [`unit`](/docs/reference/types#unit).

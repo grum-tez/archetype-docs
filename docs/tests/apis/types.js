@@ -39,11 +39,11 @@ const getCommons = (t) => [
     desc : <div>Takes a parameter of type {t}, and returns a <code>true</code> if it is equal to <code>this</code> value</div>
   },
   {
-    label : "toMich",
+    label : "to_mich",
     desc : <div>Returns the { getLinkTo("Micheline") } typed value</div>
   },
   {
-    label : "fromMich",
+    label : "from_mich",
     desc : <div><i>Static</i> method that returns a {t} value from the { getLinkTo("Micheline") } argument</div>
   }
 ]
@@ -56,15 +56,19 @@ export const types = {
   address: {
       desc : <Address />,
     ref : "",
-    fails : [],
+    fails : [
+      { keyword: '"No matching prefix found."', desc: <div>When address prefix is not one of <code>tz1</code>, <code>tz2</code>, <code>tz3</code>, <code>tz4</code>, <code>txr1</code>, <code>KT1</code></div> },
+      { keyword: '"Input is not b58 encoding compatible."', desc: <div>When address is not a <Link to="https://en.wikipedia.org/wiki/Binary-to-text_encoding#Base58">b58</Link> encoded value.</div> },
+      { keyword: '"The decoded output is the wrong length for the given prefix."', desc: <div>When address length does not match prefix.</div> },
+    ],
     methods : [
       ...getCommons(getLinkTo("Address"))
-    ]
+    ],
   },
   bls12_381_fr: {
       desc : <Bls12_381_fr />,
     ref : "",
-    fails : [],
+    showfail: false,
     methods : [
       ...getCommons(getLinkTo("Bls12_381_fr"))
     ]
@@ -72,7 +76,7 @@ export const types = {
   bls12_381_g1: {
       desc : <Bls12_381_g1 />,
     ref : "",
-    fails : [],
+    showfail: false,
     methods : [
       ...getCommons(getLinkTo("Bls12_381_g1"))
     ]
@@ -80,7 +84,7 @@ export const types = {
   bls12_381_g2: {
       desc : <Bls12_381_g2 />,
     ref : "",
-    fails : [],
+    showfail: false,
     methods : [
       ...getCommons(getLinkTo("Bls12_381_g2"))
     ]
@@ -88,15 +92,27 @@ export const types = {
   bytes: {
       desc : <Bytes />,
     ref : "",
-    fails : [],
+    showfail: false,
     methods : [
-      ...getCommons(getLinkTo("Bytes"))
+      ...getCommons(getLinkTo("Bytes")),
+      {
+        label : "hex_encode",
+        desc : <div><i>Static</i> method that converts a string to its hexadecimal bytes encoding.</div>
+      },
+      {
+        label : "hex_decode",
+        desc : <div>Converts a bytes values from hexadecimal encoding to a string.</div>
+      },
     ]
   },
   chain_id: {
     desc : <Chain_id />,
     ref : "",
-    fails : [],
+    fails : [
+      { keyword: '"No matching prefix found."', desc: <div>When chain id prefix is not <code>Net</code></div> },
+      { keyword: '"Input is not b58 encoding compatible."', desc: <div>When chain id is not a <Link to="https://en.wikipedia.org/wiki/Binary-to-text_encoding#Base58">b58</Link> encoded value.</div> },
+      { keyword: '"The decoded output is the wrong length for the given prefix."', desc: <div>When chain id length does not match prefix.</div> },
+    ],
     methods : [
       ...getCommons(getLinkTo("Chain_id"))
     ]
@@ -105,7 +121,7 @@ export const types = {
   chest: {
       desc : <Chest />,
     ref : "",
-    fails : [],
+    showfail: false,
     methods : [
       ...getCommons(getLinkTo("Chest"))
     ]
@@ -113,33 +129,36 @@ export const types = {
   chest_key: {
       desc : <Chest_key />,
     ref : "",
-    fails : [],
+    showfail: false,
     methods : [
       ...getCommons(getLinkTo("chest_key"))
     ]
   },
   duration: {
-      desc : <Duration />,
+    desc : <Duration />,
     ref : "",
-    fails : [],
     methods : [
       ...getCommons(getLinkTo("Duration"))
-    ]
+    ],
+    fails : [
+      { keyword: '"Invalid duration input"', desc: <div>When the duration format is invalid.</div> }
+    ],
   },
   entrypoint: {
       desc : <Entrypoint />,
     ref : "",
-    fails : [],
+    showfail: false,
     methods : [
-      ...getCommons(getLinkTo("Entrypoint"))
-    ]
+      ...getCommons(getLinkTo("Duration"))
+    ],
   },
   enum: {
       desc : <Enum />,
     ref : "",
-    fails : [],
+    showfail: false,
     methods : [
-      ...getCommons(getLinkTo("Enum"))
+      ...getCommons(getLinkTo("Entrypoint")).filter(x => x.label != 'from_mich'),
+      { label : 'type', desc: 'Returns the name of the enum as a string' }
     ]
   },
   int : {
@@ -181,7 +200,11 @@ export const types = {
   key: {
       desc : <Key />,
     ref : "",
-    fails : [],
+    fails : [
+      { keyword: '"No matching prefix found."', desc: <div>When key prefix is not <code>edpk</code>, <code>sppk</code>, <code>p2pk</code></div> },
+      { keyword: '"Input is not b58 encoding compatible."', desc: <div>When key is not a <Link to="https://en.wikipedia.org/wiki/Binary-to-text_encoding#Base58">b58</Link> encoded value.</div> },
+      { keyword: '"The decoded output is the wrong length for the given prefix."', desc: <div>When key length does not match prefix.</div> },
+    ],
     methods : [
       ...getCommons(getLinkTo("Key"))
     ]
@@ -189,7 +212,12 @@ export const types = {
   key_hash: {
       desc : <Key_hash />,
     ref : "",
-    fails : [],
+    fails : [
+      { keyword: '"No matching prefix found."', desc: <div>When key hash prefix is not one of <code>tz1</code>, <code>tz2</code>, <code>tz3</code>, <code>tz4</code>, <code>txr1</code>, <code>KT1</code></div> },
+      { keyword: '"Input is not b58 encoding compatible."', desc: <div>When key hash is not a <Link to="https://en.wikipedia.org/wiki/Binary-to-text_encoding#Base58">b58</Link> encoded value.</div> },
+      { keyword: '"The decoded output is the wrong length for the given prefix."', desc: <div>When key hash length does not match prefix.</div> },
+
+    ],
     methods : [
       ...getCommons(getLinkTo("Key_hash"))
     ]
@@ -235,31 +263,98 @@ export const types = {
   option: {
       desc : <Option />,
     ref : "",
-    fails : [],
+    showfail: false,
     methods : [
-      ...getCommons(getLinkTo("Option"))
+      ...getCommons(getLinkTo("Option")),
+      { label: 'Some', desc: <div><i>Static</i> method to make a <code>none</code> option.</div> },
+      { label: 'None', desc: <div><i>Static</i> method to make a <code>some</code> option of its argument.</div> },
+      { label: 'get', desc: <div>Returns the value when <code>is_some</code> returns <code>true</code>, <code>null</code> otherwise.</div> },
+      { label: 'is_some', desc: <div>Returns <code>true</code> if <code>get</code> does not return <code>null</code>, <code>false</code> otherwise.</div> },
+      { label: 'is_none', desc: <div>Returns <code>true</code> if <code>get</code> does return <code>null</code>, <code>false</code> otherwise.</div> },
     ]
   },
   or: {
       desc : <Or />,
     ref : "",
-    fails : [],
+    showfail: false,
     methods : [
-      ...getCommons(getLinkTo("Or"))
+      ...getCommons(getLinkTo("Or")).filter(x => x.label != 'from_mich' && x.label != 'to_mich'),
+      {
+        label: 'from_mich', desc: <div><i>Static</i> methods that returns an <code>Or</code> value. Its arguments are:<ul>
+          <li>a <Link to="/docs/tests/apis/types#micheline"><code>Micheline</code></Link> value</li>
+          <li>a <code>mich_to_left</code> function that returns a value typed <i>left</i></li>
+          <li>a <code>mich_to_right</code> function that returns a value typed <i>right</i></li>
+          </ul> </div>
+      },
+      {
+        label: 'to_mich', desc: <div>Returns a <Link><code>Micheline</code></Link> value from: <ul>
+          <li>a <code>l_left</code> function that returns a <Link to="/docs/tests/apis/types#micheline"><code>Micheline</code></Link> for <i>left</i> typed value</li>
+          <li>a <code>l_left</code> function that returns a <Link to="/docs/tests/apis/types#micheline"><code>Micheline</code></Link> for <i>right</i> typed value</li>
+          </ul></div>
+      },
+      {
+        label: 'Left', desc: <div>Makes an <code>Or</code> value from a <i>left</i> typed value</div>
+      },
+      {
+        label: 'Right', desc: <div>Makes an <code>Or</code> value from a <i>right</i> typed value</div>
+      },
+      {
+        label: 'get', desc: <div>Returns a <i>left</i> or <i>right</i> typed value</div>
+      },
+      {
+        label: 'is_left', desc: <div>Returns <code>true</code> if this is an <code>Or</code> of <i>left</i> value, <code>false</code> otherwise</div>
+      },
+      {
+        label: 'is_right', desc: <div>Returns <code>true</code> if this is an <code>Or</code> of <i>right</i> value, <code>false</code> otherwise</div>
+      }
     ]
   },
   rational: {
       desc : <Rational />,
     ref : "",
-    fails : [],
+    fails : [
+      { keyword: '"Rational error"', desc: <div>When the <code>string</code> value is not a number</div> }
+    ],
     methods : [
-      ...getCommons(getLinkTo("Rational"))
+      ...getCommons(getLinkTo("Rational")),
+      {
+        label : "to_big_number",
+        desc : <div>Returns the <code>bignumber.js</code> value</div>
+      },
+      {
+        label : "to_number",
+        desc : <div>Returns the <code>number</code> value. It is approximated if <code>this</code> is over <code>number</code> representation capacity.</div>
+      },
+      {
+        label : "plus",
+        desc : <div>Takes a parameter of type { getLinkTo("Rational") }, and returns the <i>sum</i> as an { getLinkTo("Rational") } value</div>
+      },
+      {
+        label : "minus",
+        desc : <div>Takes a parameter of type { getLinkTo("Rational") }, and returns the <i>subtraction</i> as an { getLinkTo("Rational") } value</div>
+      },
+      {
+        label : "times",
+        desc : <div>Takes a parameter of type { getLinkTo("Rational") }, and returns the <i>multiplication</i> as an { getLinkTo("Rational") } value</div>
+      },
+      {
+        label : "div",
+        desc : <div>Takes a parameter of type { getLinkTo("Rational") }, and returns the <i>division</i> of <code>this</code> by the parameter as a { getLinkTo("Rational") } value</div>
+      },
+      {
+        label: "floor",
+        desc: <div>Returns the { getLinkTo("Int") } floored value.</div>
+      },
+      {
+        label: "ceil",
+        desc: <div>Returns the { getLinkTo("Int") } ceiled value.</div>
+      }
     ]
   },
   sapling_state: {
       desc : <Sapling_state />,
     ref : "",
-    fails : [],
+    showfail : false,
     methods : [
       ...getCommons(getLinkTo("Sapling_state"))
     ]
@@ -267,7 +362,7 @@ export const types = {
   sapling_transaction: {
       desc : <Sapling_transaction />,
     ref : "",
-    fails : [],
+    showfail : false,
     methods : [
       ...getCommons(getLinkTo("Sapling_transaction"))
     ]
@@ -275,7 +370,7 @@ export const types = {
   signature: {
       desc : <Signature />,
     ref : "",
-    fails : [],
+    showfail : false,
     methods : [
       ...getCommons(getLinkTo("Signature"))
     ]
@@ -283,15 +378,29 @@ export const types = {
   tez: {
       desc : <Tez />,
     ref : "",
-    fails : [],
+    fails : [
+      { keyword: '"Invalid Tez value"', desc: <div>When <code>string</code> value is not a number</div> }
+    ],
     methods : [
-      ...getCommons(getLinkTo("Tez"))
+      ...getCommons(getLinkTo("Tez")),
+      {
+        label : "to_big_number",
+        desc : <div>Returns the <code>bignumber.js</code> value</div>
+      },
+      {
+        label : "plus",
+        desc : <div>Takes a parameter of type { getLinkTo("Tez") }, and returns the <i>sum</i> as an { getLinkTo("Tez") } value</div>
+      },
+      {
+        label : "times",
+        desc : <div>Takes a parameter of type { getLinkTo("Tez") }, and returns the <i>multiplication</i> as an { getLinkTo("Tez") } value</div>
+      },
     ]
   },
   ticket: {
       desc : <Ticket />,
     ref : "",
-    fails : [],
+    showfail : false,
     methods : [
       ...getCommons(getLinkTo("Ticket"))
     ]
@@ -299,7 +408,7 @@ export const types = {
   tx_rollup_l2_address: {
       desc : <Tx_rollup_l2_address />,
     ref : "",
-    fails : [],
+    showfail : false,
     methods : [
       ...getCommons(getLinkTo("Tx_rollup_l2_address"))
     ]
@@ -307,7 +416,7 @@ export const types = {
   unit: {
       desc : <Unit />,
     ref : "",
-    fails : [],
+    showfail : false,
     methods : [
       ...getCommons(getLinkTo("Unit"))
     ]
@@ -661,19 +770,25 @@ export const types_functions = {
   option_annot_to_mich_type: {
     sig: 'todo',
     ref: 'option_annot_to_mich_typea-annots',
-    desc: <div>TODO</div>,
+    desc: <div>Makes an <code>option</code> Micheline type of <code>a</code></div>,
     parameters: [
       {
-        type: 'string',
+        type: 'MichelineType',
         alias: 'a',
-        desc: <div>Contract address</div>,
+        desc: <div>Micheline type</div>,
+        prefix: prefix
+      },
+      {
+        type: 'string[]',
+        alias: 'annots',
+        desc: <div>Annotations</div>,
         withLink: false
       }
     ],
     returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
+      type: 'MichlineType',
+      desc: <div><code>option</code> Micheline type</div>,
+      prefix: prefix
     }
   },
   option_to_mich_type: {
