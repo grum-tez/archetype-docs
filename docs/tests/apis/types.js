@@ -282,8 +282,8 @@ export const types = {
       {
         label: 'from_mich', desc: <div><i>Static</i> methods that returns an <code>Or</code> value. Its arguments are:<ul>
           <li>a <Link to="/docs/tests/apis/types#micheline"><code>Micheline</code></Link> value</li>
-          <li>a <code>mich_to_left</code> function that returns a value typed <i>left</i></li>
-          <li>a <code>mich_to_right</code> function that returns a value typed <i>right</i></li>
+          <li>a <code>mich_to_left</code> function that returns a <i>left</i> typed value</li>
+          <li>a <code>mich_to_right</code> function that returns a <i>right</i> typed value</li>
           </ul> </div>
       },
       {
