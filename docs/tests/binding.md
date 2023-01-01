@@ -243,6 +243,39 @@ async expect_to_fail(async () => {
 }, example.errors.r0)
 ```
 
+## Events
+
+A class and a register method are generated for each [`event`](/docs/reference/declarations/compositetypes#event) declaration. The class name is the same as the event's name and it has the same fields.
+
+The register method's is prefixed with `register_` followed by the event name. It takes one argument that is a callback function  called each time the event is emitted. It uses the [event listener](/docs/dapps/project/packagesapi/#completiumevent-listener) package. See [here](/docs/dapps/example/interaction#listening-to-events) for an example.
+
+:::info
+The event listener is **not** available in [mockup mode](/docs/tests/framework#michelson-execution). See below for more information about how to work with events in mockup mode.
+:::
+
+In mockup mode, events are available in the [`CallResult`](/docs/tests/apis/experiment#callresult) object returned by the call to an entry point. The `events` field is the list of events emitted by the call to the entry point.
+
+For example, consider the following entry point:
+```archetype
+archetype example
+
+event HelloEvent {
+  msg : string
+}
+
+entry exec() {
+  emit<HelloEvent>({ "Hello from exec!" })
+}
+```
+
+The following code illustrates how to test the event emission:
+```ts
+//...
+const res = await example.exec({ as : alice })
+assert(res.events.length == 1)
+assert(res.events[0].label == "HelloEvent")
+```
+
 ## Type bindings
 
 This section presents how Archetype/Michelson types ar bound to Typescript types.

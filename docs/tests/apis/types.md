@@ -146,7 +146,15 @@ This section presents types and functions exported by the [`@completium/archetyp
 
 ### `Micheline`
 
+Micheline refers here to the *JSON* format of a [Michelson](https://tezos.gitlab.io/active/michelson.html) literal. It is *in fine* the format used to interact with the Tezos blockchain: entry point parameters, contract storage and so on, are exchanged in Micheline format. The goal of the [contract binding](/docs/tests/binding) is to provide a native TypeScript interface that translates to low-level Micheline values. Hence in most cases, tanks to the binding generation, the user should not deal with Micheline values.
+
+The type provided here is a full-featured Typescript implementation of a Micheline value, such that a Micheline-typed value is ensured to be a valid Micheline value.
+
 ### `MichelineType`
+
+Micheline type refers here to the *JSON* format of a [Michelson](https://tezos.gitlab.io/active/michelson.html) literal's type.
+
+The type provided here is a full-featured Typescript implementation of a Micheline type value, such that a MichelineType-typed value is ensured to be a valid Micheline type value.
 
 ### `Nat`
 
