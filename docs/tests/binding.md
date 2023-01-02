@@ -271,9 +271,11 @@ entry exec() {
 The following code illustrates how to test the event emission:
 ```ts
 //...
-const res = await example.exec({ as : alice })
+const ref_event = new HelloEvent("Hello from exec!")
+const res = await example.exec({as : alice});
 assert(res.events.length == 1)
-assert(res.events[0].label == "HelloEvent")
+const res_event = HelloEvent.from_mich(res.events[0].payload);
+assert(res_event.equals(ref_event))
 ```
 
 ## Type bindings
