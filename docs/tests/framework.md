@@ -95,12 +95,12 @@ See the [binding](/docs/tests/binding) document for a detailed presentation of t
 
 ## Michelson execution
 
-In a test environement, the contract is executed locally with the *mockup* mode of the [Octez](https://research-development.nomadic-labs.com/announcing-octez.html) distribution's client (named `tezos-client`, see install [instructions](https://assets.tqtezos.com/docs/setup/1-tezos-client/)). It is hence *necessary* to install it and [inform](https://completium.com/docs/cli/network#mockup) Completium CLI about its path.
+In a test environement, the contract is executed locally with the *mockup* mode of the [Octez](https://research-development.nomadic-labs.com/announcing-octez.html) distribution's client (named `tezos-client`, see install [instructions](https://assets.tqtezos.com/docs/setup/1-tezos-client/)). It is hence *necessary* to install it and [inform](/docs/cli/network#mockup-init) Completium CLI about its path.
 
 The benefit of the mockup mode is that it is uses the same execution engine as the tezos node. This removes the risk of a difference of exectuion semantics between test and production.
 
 :::info
-Note that it is also possible to use a sandbox or to connect to the testnet. See [here](https://completium.com/docs/cli/network) for more information.
+Note that it is also possible to use a sandbox or to connect to the testnet. See [here](/docs/cli/network) for more information.
 :::
 
 ## Test library

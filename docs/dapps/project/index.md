@@ -62,7 +62,7 @@ A plug-and-play *constate* context for Beacon services `connect` and `disconnect
 
 When interacting with a contract (read and write), it is *strongly* recommended to use its generated [TypeScript binding](/docs/tests/binding), that is a typed high-level TypeScript interface. It greatly reduces the effort to call a contract, read its storage and the number of runtime errors, as the compilier and LSP guides you through the contract interface.
 
-TypeScript bindings may be obtained with the following [Completium CLI](https://completium.com/docs/cli) command:
+TypeScript bindings may be obtained with the following [Completium CLI](/docs/cli/introduction) command:
 
 ```completium
 completium-cli generate binding-dapp-ts mycontract.arl > mycontract.ts

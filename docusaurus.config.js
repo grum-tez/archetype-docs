@@ -112,6 +112,13 @@ const config = {
             sidebarId: 'dapps',
             label: 'DApps',
           },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            docId: 'templates/contracts',
+            sidebarId: 'cli',
+            label: 'CLI',
+          },
           {to: '/blog', label: 'Blog', position: 'left'},
           {to: '/docs/installation', label: 'latest: 1.4.0', position: 'right'},
           {

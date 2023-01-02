@@ -2,7 +2,7 @@
 
 ## Completium CLI
 
-[Completium CLI](https://completium.com/docs/cli) is the command line utility to install Archetype compiler and manage contracts (deploy, call).
+[Completium CLI](/docs/cli/introduction) is the command line utility to install Archetype compiler and manage contracts (deploy, call).
 
 Install it and initialize its configuration:
 ```completium

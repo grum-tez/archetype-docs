@@ -13,7 +13,7 @@ This section presents the main technical elements to setup, write and run tests.
 
 ### Create project
 
-[Completium CLI](https://completium.com/docs/cli) provides the `create project` command to set up a simple project with contracts and tests.
+[Completium CLI](/docs/cli/introduction) provides the `create project` command to set up a simple project with contracts and tests.
 
 The command below creates a project named `myproject`:
 
@@ -108,7 +108,7 @@ The `test` command is defined in `package.json` as:
 Note that It is possible to create a new rule in the `scripts` section to run a specific test file.
 
 :::info
-The *mockup* mode must be initialised with the `completium-cli mockup init` command for the `test` command to run. More information [here](https://completium.com/docs/cli/network#mockup).
+The *mockup* mode must be initialised with the `completium-cli mockup init` command for the `test` command to run. More information [here](/docs/cli/network#mockup-init).
 :::
 
 ## Configuration
@@ -129,7 +129,7 @@ Another network (sandbox, test) may be set with the `set_network` function.
 
 ### Account
 
-Calling a contract's entry point require to specify the caller account. An account is declared with Completium CLI (see [here](https://completium.com/docs/cli/account) for information). An account is referred to with an alias.
+Calling a contract's entry point require to specify the caller account. An account is declared with Completium CLI (see [here](/docs/cli/account) for information). An account is referred to with an alias.
 
 The `get_account` function returns a Completium account from its alias.
 
