@@ -6,7 +6,7 @@ import Link from '@docusaurus/Link';
 
 # Introduction
 
-`completium-cli` is a command line interface to interact (orginate, call, ...) with Archetype and Michelson smart contracts on the <Link to='/docs/dapp-tools/tezos'>Tezos</Link> blockchain.
+`completium-cli` is a command line interface that provides an account and endpoint management system, to interact (orginate, call, ...) with Archetype and Michelson smart contracts on the <Link to='https://tezos.com/'>Tezos</Link> blockchain.
 
 The list of available commands is displayed with:
 
