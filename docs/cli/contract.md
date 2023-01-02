@@ -194,6 +194,10 @@ $ completium-cli show storage simple --json
 
 ## Call
 
+:::info
+The `call` command presented below is suitable for quick tests. For process automation, it is strongly recommended to use the [binding generation](/docs/tests/binding) feature and a Node.js program.
+:::
+
 ```completium
 $ completium-cli call <CONTRACT_ADDRESS|CONTRACT_ALIAS> \
   [--as <ACCOUNT_ALIAS>] \
