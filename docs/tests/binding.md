@@ -278,7 +278,7 @@ assert(res.events[0].label == "HelloEvent")
 
 ## Type bindings
 
-This section presents how Archetype/Michelson types ar bound to Typescript types.
+This section presents how Archetype/Michelson types are bound to Typescript types.
 
 <TypeMap data={bindings} />
 
