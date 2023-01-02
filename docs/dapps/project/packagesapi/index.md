@@ -1,6 +1,6 @@
+import Builtin from '@site/src/components/Builtin.js';
 
 import { dapp, event } from './api.js'
-import Builtin from '@site/src/components/Builtin.js';
 
 # Packages API
 
@@ -56,6 +56,10 @@ The `@completium/archetype-ts-types` package is presented [here](/docs/tests/api
 <Builtin data={dapp['set_binder_tezos_toolkit']} />
 
 ## `@completium/event-listener`
+
+### `register_event(p)`
+
+<Builtin data={event['register_event']} />
 
 ### `run_listener(o)`
 

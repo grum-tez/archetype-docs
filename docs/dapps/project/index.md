@@ -56,7 +56,7 @@ npm install @taquito/beacon-wallet @airgap/beacon-sdk
 
 The main drawback of Beacon is the lack of control over the UI elements (typically the wallet selection popup), which can be a no-go if you want a tight control of the DApp L&F. In that case, each wallet needs to be integrated separately.
 
-A plug-and-play constate context for Beacon services `connect` and `disconnect` is available [`here`](/docs/dapps/project/beacon).
+A plug-and-play *constate* context for Beacon services `connect` and `disconnect` is available [`here`](/docs/dapps/project/beacon).
 
 ### Contract binding
 
@@ -120,8 +120,8 @@ Schema below illustrates the module and package architecture of the DApp and the
 * `Contexts` and `UI` interact with contract via `Binding`
 * `Contexts` uses Beacon's services to connect to a wallet
 * Taquito's Tezos toolkit uses Beacon as transaction signer
-* `Binding` uses `@completium/dapp-ts` package services to interact with blockchain
-* `@completium/dapp-ts` uses `@completium/event-listener` to listen to emitted events
+* `Binding` uses [`@completium/dapp-ts`](/docs/dapps/project/packagesapi/#completiumdapp-ts) package services to interact with blockchain
+* `@completium/dapp-ts` uses [`@completium/event-listener`](/docs/dapps/project/packagesapi/#completiumevent-listener) to listen to emitted events
 
 ## File structure
 

@@ -1,5 +1,5 @@
-import React from "react"
 import Link from '@docusaurus/Link';
+import React from "react"
 
 const prefix = "/docs/tests/apis/types#"
 const exp_prefix = "/docs/tests/apis/experiment#"
@@ -302,58 +302,51 @@ export const dapp = {
 }
 
 export const event = {
-  registerevent: {
+  register_event: {
     sig: 'todo',
-    ref: 'registereventp',
-    desc: <div>TODO</div>,
+    ref: 'register_eventp',
+    desc: <div>Low-level function to register an event listener. It is used by contract binding's <Link to="/docs/tests/binding#events">register event methods</Link>.</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'RegisterParam',
+        alias: 'p',
+        desc: <div>Parameter object:<ul>
+          <li>source as <code>string</code>: emiting contract's address</li>
+          <li>filter as <code>EventFilter</code>: filter function to discriminate the event to listen to</li>
+          <li>process as <code>EventProcessor</code>: callback function to trigger when an event is emitted</li>
+        </ul></div>,
         withLink: false
       }
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    showfail: false
   },
   run_listener: {
     sig: 'todo',
     ref: 'run_listenero',
-    desc: <div>TODO</div>,
+    desc: <div>Starts event listener "worker" (potentially-indefinite loop with timer)</div>,
     parameters: [
       {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
+        type: 'EventListenerOptions',
+        alias: 'o',
+        desc: <div>Event listener optional options:<ul>
+          <li>delay: number of milliseconds between two lookups of the event well contract </li>
+          <li>horizon: number of blocks to look back (the higher, the higher the probability to read the main branch)</li>
+          <li>endpoint: endpoint used by the event listener</li>
+          <li>bottom: block hash to start crawling from (defaulted to <code>head~2</code>)</li>
+          <li>verbose: flag to turn crank's verbose mode on/off</li>
+        </ul></div>,
         withLink: false
       }
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    showfail: false
   },
   stop_listener: {
     sig: 'todo',
     ref: 'stop_listener',
-    desc: <div>TODO</div>,
+    desc: <div>Stops event listener.</div>,
     parameters: [
-      {
-        type: 'string',
-        alias: 'a',
-        desc: <div>Contract address</div>,
-        withLink: false
-      }
+
     ],
-    returns: {
-      type: 'any',
-      desc: <div>TODO</div>,
-      withLink: false
-    }
+    showfail: false
   },
 }
