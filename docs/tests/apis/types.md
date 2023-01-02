@@ -57,10 +57,9 @@ This section presents types and functions exported by the [`@completium/archetyp
 
 <TsType data={types.chest_key} />
 
-### `cmp_date(a, b)`
+### `date_cmp(a, b)`
 
-<Builtin data={F['cmp_date']} />
-
+<Builtin data={F['date_cmp']} />
 
 ### `date_to_mich(v)`
 

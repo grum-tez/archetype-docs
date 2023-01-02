@@ -477,9 +477,9 @@ export const types_functions = {
       prefix: prefix
     }
   },
-  cmp_date: {
+  date_cmp: {
     sig: 'todo',
-    ref: 'cmp_datea-b',
+    ref: 'date_cmpa-b',
     desc: <div>Compares two dates at second precision, ie milliseconds are ignored. It is typically used to compare a TypesScript date with a date retrieved from the blockchain.</div>,
     parameters: [
       {
