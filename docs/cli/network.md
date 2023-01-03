@@ -80,7 +80,7 @@ completium-cli remove endpoint <ENDPOINT_URL>
 The mockup mode is used to [test smart contracts](/docs/tests/introduction). It runs smart contracts locally without the need to interact with a network.
 
 :::warning
-The mockup mode requires the Tezos client to be installed and executed with the command `tezos-client`. Please refer to [this page](https://assets.tqtezos.com/docs/setup/1-tezos-client/) for installation instructions. See instructions below to configure `completium-cli` to use the Tezos client.
+The mockup mode requires the Tezos client to be installed and executed with the command `octez-client`. Please refer to [this page](https://assets.tqtezos.com/docs/setup/1-tezos-client/) for installation instructions. See instructions below to configure `completium-cli` to use the Tezos client.
 :::
 
 The following command must be run the first time and every time you need to reinitialise it:
@@ -104,9 +104,9 @@ bootstrap4 : tz1b7tUupMgCNw2cCLpKTkSD1NZzB5TkP2sv
 bootstrap5 : tz1ddb9NMYHZi5UzPdzTZMYQQZoMub195zgv
 ```
 
-#### Tezos client
+#### Octez client
 
-Once the Tezos client is installed, the `set binary path` command tells `completium-cli` how to invoke it:
+Once the Tezos client is [installed](https://assets.tqtezos.com/docs/setup/1-tezos-client/), the `set binary path` command tells `completium-cli` how to invoke it:
 ```completium
 completium-cli set binary path tezos-client <PATH>
 ```
@@ -118,5 +118,5 @@ The `show binary path` command displays the path.
 For example:
 ```completium
 $ completium-cli show binary path tezos-client
-tezos-client binary path: /Users/user1/nomadiclabs/tezos/tezos-client
+tezos-client binary path: /Users/user1/nomadiclabs/tezos/octez-client
 ```

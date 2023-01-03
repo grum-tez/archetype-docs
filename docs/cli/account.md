@@ -39,7 +39,12 @@ For example:
 completium-cli import privatekey edsk3QoqBuvdamxouPhin7swCvkQNgq4jP5KZPbwWNnwdZpSpJiEbq as alice
 ```
 
-In the [Temple wallet](https://templewallet.com/), it is possible to display the private key of an account by selecting "Reveal Private Key" in the "Settings" menu.
+In order to display the private key of an existing account held by:
+* [Temple wallet](https://templewallet.com/), select "Reveal Private Key" in the "Settings" menu
+* [Octez client](https://assets.tqtezos.com/docs/setup/1-tezos-client/), run the following command:
+```completium
+octez-client show address <ACCOUNT_ALIAS> --show-secret
+```
 
 ### `show account`
 
