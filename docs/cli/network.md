@@ -79,17 +79,44 @@ completium-cli remove endpoint <ENDPOINT_URL>
 
 The mockup mode is used to [test smart contracts](/docs/tests/introduction). It runs smart contracts locally without the need to interact with a network.
 
-The following command initialises a new mockup (erases previous one) :
+:::warning
+The mockup mode requires the Tezos client to be installed and executed with the command `tezos-client`. Please refer to [this page](https://assets.tqtezos.com/docs/setup/1-tezos-client/) for installation instructions. See instructions below to configure `completium-cli` to use the Tezos client.
+:::
+
+The following command must be run the first time and every time you need to reinitialise it:
 ```completium
 completium-cli mockup init
 ```
-This command makes all registered accounts available in the mockup mode and tansfers 1000 XTZ to each.
-
-To turn mockup mode on, use the following command:
+The command above also sets the current endpoint to `mockup`. The `set endpoint` and `switch endpoint` commands can also be used:
 ```completium
-completium-cli set endpoint mockup
+$ completium-cli set endpoint mockup
 ```
 
-:::info
-The mockup mode requires the Tezos client to be installed and executed with the command `tezos-client`. Please refer to [this page](https://assets.tqtezos.com/docs/setup/1-tezos-client/) for installation instructions.
-:::
+The effect of the `mockup init` command is to make all registered accounts available to the mockup mode, and to initialise each account balance to 1000XTZ. By default, 8 accounts are available to the mockup mode:
+```
+alice      : tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb
+bob        : tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6
+carl       : tz1aGDrJ58LbcnD47CkwSk3myfTxJxipYJyk
+bootstrap1 : tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx
+bootstrap2 : tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN
+bootstrap3 : tz1faswCTDciRzE4oJ9jn2Vm2dvjeyA9fUzU
+bootstrap4 : tz1b7tUupMgCNw2cCLpKTkSD1NZzB5TkP2sv
+bootstrap5 : tz1ddb9NMYHZi5UzPdzTZMYQQZoMub195zgv
+```
+
+#### Tezos client
+
+Once the Tezos client is installed, the `set binary path` command tells `completium-cli` how to invoke it:
+```completium
+completium-cli set binary path tezos-client <PATH>
+```
+
+`PATH` is the absolute path to the Tezos client binary.
+
+The `show binary path` command displays the path.
+
+For example:
+```completium
+$ completium-cli show binary path tezos-client
+tezos-client binary path: /Users/user1/nomadiclabs/tezos/tezos-client
+```
