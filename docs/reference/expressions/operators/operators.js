@@ -1,5 +1,5 @@
-import React from "react"
 import Link from '@docusaurus/Link';
+import React from "react"
 
 import DivDesc from "../../../../src/components/desc/div_desc.md"
 import ModDesc from "../../../../src/components/desc/mod_desc.md"
@@ -310,9 +310,12 @@ export const operators = {
     desc: <div><ul>
     <li><code>true</code> if <code>a</code> is <code>false</code></li>
     <li><code>false</code> if <code>a</code> is <code>true</code></li>
+    <li><Link to="https://en.wikipedia.org/wiki/Two%27s_complement">2-complement</Link> if <code>a</code> is a natural or an integer</li>
     </ul></div>,
     types: [
       { typa: 'bool', typr: 'bool' },
+      { typa: 'int', typr: 'int' },
+      { typa: 'nat', typr: 'int' },
     ]
   },
   eq: {
