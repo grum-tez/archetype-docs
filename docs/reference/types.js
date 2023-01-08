@@ -23,6 +23,7 @@ import IterableBigMapDesc from '../../src/components/desc/iterable_big_map_desc.
 import AssetContainer from '../../src/components/desc/asset_container.md'
 import AssetKey from '../../src/components/desc/asset_key.md'
 import AssetView from '../../src/components/desc/asset_view.md'
+import Never from '../../src/components/desc/never.md'
 
 export const types = {
   address :
@@ -601,7 +602,7 @@ export const types = {
   },
   never :
   {
-    desc: <div>Empty type.</div>,
+    desc: <Never />,
     link: '#never',
     examples: [],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],

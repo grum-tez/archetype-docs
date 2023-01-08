@@ -104,6 +104,11 @@ bootstrap4 : tz1b7tUupMgCNw2cCLpKTkSD1NZzB5TkP2sv
 bootstrap5 : tz1ddb9NMYHZi5UzPdzTZMYQQZoMub195zgv
 ```
 
+It is possible to specify the protocol for mockup mode. For example:
+```completium
+$ completium-cli mockup init --protocol PtLimaPtLMwfNinJi9rCfDPWea8dFgTZ1MeJ9f1m2SRic6ayiwW
+```
+
 #### Octez client
 
 Once the Tezos client is [installed](https://assets.tqtezos.com/docs/setup/1-tezos-client/), the `set binary path` command tells `completium-cli` how to invoke it:
