@@ -11,6 +11,10 @@ import TemplateInfo from '@site/src/components/TemplateInfo.js';
 
 Implements [TZIP-17](https://tzip.tezosagora.org/proposal/tzip-17/) norm for fee-less operations.
 
+:::info
+The *Permits* contract presented below have been audited by [Inference AG](https://inference.ag/) as part of the FA 2 contracts. The full audit report may be found [here](https://github.com/InferenceAG/ReportPublications/blob/master/Inference%20AG%20-%20Archetype%20-%20FA2%20smart%20contract%20templates%20-%20v1.0.pdf).
+:::
+
 <TemplateInfo data={templates.permits.info} />
 
 <p/>

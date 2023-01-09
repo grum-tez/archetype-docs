@@ -13,6 +13,10 @@ import TabItem from '@theme/TabItem';
 
 Implements [TZIP-12](https://tzip.tezosagora.org/proposal/tzip-12/) norm for token, including non fungible.
 
+:::info
+The *FA 2* contracts presented below (NFT, Fungible, Multi-asset) have been audited by [Inference AG](https://inference.ag/). The full audit report may be found [here](https://github.com/InferenceAG/ReportPublications/blob/master/Inference%20AG%20-%20Archetype%20-%20FA2%20smart%20contract%20templates%20-%20v1.0.pdf).
+:::
+
 FA 2 is a norm for any kind of tokens. It provides the following elements (marked 🔸):
 * [`ledger`](/docs/templates/fa2#ledger-) that associates tokens and owners
 * [`operator`](/docs/templates/fa2#operators-) that defines which addresses can transfer tokens on the behalf of their owners
