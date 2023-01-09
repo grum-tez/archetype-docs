@@ -275,10 +275,13 @@ export const operators = {
     link: 'a-and-b',
     desc: <div><Link to="/blog/shortcut-evaluation">Shortcut evaluation</Link> of logical conjonction:<ul>
       <li><code>true</code> if <code>a</code> and <code>b</code> are <code>true</code></li>
-      <li><code>false</code> otherwise.</li>
+      <li><code>false</code> otherwise</li>
+      <li>Bitwise <code>and</code> of integers</li>
       </ul></div>,
     types: [
       { typa: 'bool',          typb : 'bool',          typr: 'bool' },
+      { typa: 'nat',          typb : 'nat',          typr: 'nat' },
+      { typa: 'int',          typb : 'nat',          typr: 'nat' },
     ],
   },
   or: {
@@ -287,9 +290,11 @@ export const operators = {
     desc: <div><Link to="/blog/shortcut-evaluation">Shortcut evaluation</Link> of logical disjonction:<ul>
     <li><code>true</code> if <code>a</code> or <code>b</code> is <code>true</code></li>
     <li><code>false</code> otherwise</li>
+    <li>Bitwise <code>or</code> of naturals</li>
     </ul></div>,
     types: [
       { typa: 'bool',          typb : 'bool',          typr: 'bool' },
+      { typa: 'nat',          typb : 'nat',          typr: 'nat' },
     ]
   },
   xor: {
@@ -298,9 +303,11 @@ export const operators = {
     desc: <div><ul>
     <li><code>true</code> if <code>a</code> and <code>b</code> are different</li>
     <li><code>false</code> otherwise</li>
+    <li>Bitwise <code>xor</code> of naturals</li>
     </ul></div>,
     types: [
       { typa: 'bool',          typb : 'bool',          typr: 'bool' },
+      { typa: 'nat',          typb : 'nat',          typr: 'nat' },
     ]
   },
   not: {
