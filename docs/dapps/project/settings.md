@@ -36,7 +36,7 @@ export const [
       network         :  NetworkType.GHOSTNET,
       contract        : 'KT1...',
     });
-    return settings;
+    return settingState;
   },
   v => v.app_name,
   v => v.endpoint,
