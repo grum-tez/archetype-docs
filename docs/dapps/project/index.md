@@ -58,7 +58,7 @@ npm install @taquito/beacon-wallet @airgap/beacon-sdk
 
 The main drawback of Beacon is the lack of control over the UI elements (typically the wallet selection popup), which can be a no-go if you want a tight control of the DApp L&F. In that case, each wallet needs to be integrated separately.
 
-A plug-and-play constate context for Beacon services `connect` and `disconnect` is available [`here`](/docs/dapps/project/beacon).
+A plug-and-play constate context for Beacon services `connect` and `disconnect` is available [`here`](/docs/dapps/project/beacon.md). 
 
 ### Contracts bindings
 
@@ -94,10 +94,10 @@ npm install constate
 The main 4 blockchain-related contexts are provided as plug-and-play code:
 
 <Api title="Contexts" data={[
-  { label: 'Settings.tsx', link : '/docs/dapps/project/settings', desc: 'Blockchain-related DApp settings' },
-  { label: 'Taquito.tsx', link : '/docs/dapps/project/taquito', desc: "Provides Taquito's Tezos Toolkit hook" },
-  { label: 'Beacon.tsx', link : '/docs/dapps/project/beacon', desc: <div>Beacon's <code>connect</code> <code>connect</code> and wallet address services</div> },
-  { label: 'Contract.tsx', link : '/docs/dapps/project/contract', desc: 'Provides contract binder'}
+  { label: 'Settings.tsx', link : '/docs/dapps/project/settings.md', desc: 'Blockchain-related DApp settings' },
+  { label: 'Taquito.tsx', link : '/docs/dapps/project/taquito.md', desc: "Provides Taquito's Tezos Toolkit hook" },
+  { label: 'Beacon.tsx', link : '/docs/dapps/project/beacon.md', desc: <div>Beacon's <code>connect</code> <code>connect</code> and wallet address services </div> },
+  { label: 'Contract.tsx', link : '/docs/dapps/project/contract.md', desc: 'Provides contract binder'}
 ]} />
 
 ## Architecture
@@ -143,7 +143,7 @@ The typical file structure of the react project is presented below:
 └── `src`<br/>
     &ensp;&ensp;&ensp;&ensp;├── App.css<br/>
     &ensp;&ensp;&ensp;&ensp;├── App.test.tsx<br/>
-    &ensp;&ensp;&ensp;&ensp;├── [App.tsx](/docs/dapps/project/app)<br/>
+    &ensp;&ensp;&ensp;&ensp;├── [App.tsx](/docs/dapps/project/app.md)<br/>
     &ensp;&ensp;&ensp;&ensp;├── index.css<br/>
     &ensp;&ensp;&ensp;&ensp;├── index.tsx<br/>
     &ensp;&ensp;&ensp;&ensp;├── react-app-env.d.ts<br/>
@@ -156,10 +156,10 @@ The typical file structure of the react project is presented below:
     &ensp;&ensp;&ensp;&ensp;├── `routes`<br/>
     &ensp;&ensp;&ensp;&ensp;│   &ensp;&ensp;└── ...<br/>
     &ensp;&ensp;&ensp;&ensp;└── `contexts`<br/>
-    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Beacon.tsx](/docs/dapps/project/beacon)<br/>
-    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Taquito.tsx](/docs/dapps/project/taquito)<br/>
-    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Contract.tsx](/docs/dapps/project/contract)<br/>
-    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Settings.tsx](/docs/dapps/project/settings)<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Beacon.tsx](/docs/dapps/project/beacon.md)<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Taquito.tsx](/docs/dapps/project/taquito.md)<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Contract.tsx](/docs/dapps/project/contract.md)<br/>
+    &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;├── [Settings.tsx](/docs/dapps/project/settings.md)<br/>
     &ensp;&ensp;&ensp;&ensp;    &ensp;&ensp;&ensp;└── ...<br/>
 
 </div>
