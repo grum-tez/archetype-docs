@@ -30,6 +30,10 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['blake2b']} />
 
+<h3 {...{"id":builtins['bytes_to_nat'].sig}}> <code> {builtins['bytes_to_nat'].sig} </code> </h3>
+
+<Builtin data={builtins['bytes_to_nat']} />
+
 ## `C D`
 
 <h3 {...{"id":builtins['call_view'].sig}}> <code> {builtins['call_view'].sig} </code> </h3>

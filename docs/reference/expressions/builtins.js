@@ -1005,6 +1005,26 @@ export const builtins = {
       { keyword: 'floor', link: '/docs/reference/expressions/builtins#floor(r%20:%20rational)' },
     ]
   },
+  bytes_to_nat: {
+    sig: 'bytes_to_nat(b : bytes)',
+    desc: <div>Converts bytes to a natural.</div>,
+    parameters: [
+      {
+        type: 'bytes',
+        alias: 'b',
+        desc: <div>Bytes to convert</div>
+      }
+    ],
+    returns: {
+      type: 'nat',
+      desc: <div>Natural converted to bytes</div>
+    },
+    related: [
+      { keyword: 'Conversion', link: '/docs/language-basics/types#conversion' },
+      { keyword: 'bytes', link: '/docs/reference/types#bytes' },
+      { keyword: 'nat', link: '/docs/reference/types#nat' },
+    ]
+  },
   nat_to_bytes: {
     sig: 'nat_to_bytes(n : nat)',
     desc: <div>Converts a natural to bytes.</div>,
@@ -1017,7 +1037,7 @@ export const builtins = {
     ],
     returns: {
       type: 'string',
-      desc: <div>Bytes value</div>
+      desc: <div>Bytes converted to nat</div>
     },
     related: [
       { keyword: 'Conversion', link: '/docs/language-basics/types#conversion' },
