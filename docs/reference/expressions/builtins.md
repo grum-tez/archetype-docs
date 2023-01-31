@@ -84,9 +84,17 @@ import { builtins } from './builtins.js';
 
 ## `G H`
 
+<h3 {...{"id":builtins['get_denominator'].sig}}> <code> {builtins['get_denominator'].sig} </code> </h3>
+
+<Builtin data={builtins['get_denominator']} />
+
 <h3 {...{"id":builtins['get_entrypoint'].sig}}> <code> {builtins['get_entrypoint'].sig} </code> </h3>
 
 <Builtin data={builtins['get_entrypoint']} />
+
+<h3 {...{"id":builtins['get_numerator'].sig}}> <code> {builtins['get_numerator'].sig} </code> </h3>
+
+<Builtin data={builtins['get_numerator']} />
 
 <h3 {...{"id":builtins['greedy_and'].sig}}> <code> {builtins['greedy_and'].sig} </code> </h3>
 
@@ -267,6 +275,10 @@ import { builtins } from './builtins.js';
 <h3 {...{"id":builtins['sha512'].sig}}> <code> {builtins['sha512'].sig} </code> </h3>
 
 <Builtin data={builtins['sha512']} />
+
+<h3 {...{"id":builtins['simplify_rational'].sig}}> <code> {builtins['simplify_rational'].sig} </code> </h3>
+
+<Builtin data={builtins['simplify_rational']} />
 
 <h3 {...{"id":builtins['slice'].sig}}> <code> {builtins['slice'].sig} </code> </h3>
 

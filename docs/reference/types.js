@@ -427,6 +427,7 @@ export const types = {
       { keyword: 'abs', link:'/docs/reference/expressions/builtins#abs(t%20:%20T)'},
       { keyword: 'ceil', link:'/docs/reference/expressions/builtins#ceil(r%20:%20rational)'},
       { keyword: 'floor', link:'/docs/reference/expressions/builtins#floor(r%20:%20rational)'},
+      { keyword: 'get_numerator', link: '/docs/reference/expressions/builtins#get_numerator(r%20:%20rational)' },
       { keyword: 'int_to_date', link:'/docs/reference/expressions/builtins#int_to_date(i%20:%20int)'},
       { keyword: 'int_to_nat', link:'/docs/reference/expressions/builtins#int_to_nat(i%20:%20int)'},
     ],
@@ -601,6 +602,7 @@ export const types = {
       { keyword: 'split_ticket', link:'/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)'},
       { keyword: 'sub_nat', link:'/docs/reference/expressions/builtins#sub_nat(a%20:%20nat,%20b%20:%20nat)'},
       { keyword: 'voting_power', link:'/docs/reference/expressions/builtins#voting_power(k%20:%20key_hash)'},
+      { keyword: 'get_denominator', link: '/docs/reference/expressions/builtins#get_denominator(r%20:%20rational)' },
     ],
   },
   never :
@@ -731,6 +733,9 @@ export const types = {
       { keyword: 'abs', link:'/docs/reference/expressions/builtins#abs(t%20:%20T)'},
       { keyword: 'ceil', link: '/docs/reference/expressions/builtins#ceil(r%20:%20rational)' },
       { keyword: 'floor', link: '/docs/reference/expressions/builtins#floor(r%20:%20rational)' },
+      { keyword: 'simplify_rational', link: '/docs/reference/expressions/builtins#simplify_rational(r%20:%20rational)' },
+      { keyword: 'get_numerator', link: '/docs/reference/expressions/builtins#get_numerator(r%20:%20rational)' },
+      { keyword: 'get_denominator', link: '/docs/reference/expressions/builtins#get_denominator(r%20:%20rational)' },
     ],
   },
   record :

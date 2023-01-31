@@ -1005,6 +1005,68 @@ export const builtins = {
       { keyword: 'floor', link: '/docs/reference/expressions/builtins#floor(r%20:%20rational)' },
     ]
   },
+  simplify_rational: {
+    sig: 'simplify_rational(r : rational)',
+    desc: <div>Simplify a <Link to="/docs/reference/types#rational"><code>rational</code></Link></div>,
+    parameters: [
+      {
+        type: 'rational',
+        alias: 'r',
+        desc: <div></div>
+      }
+    ],
+    returns: {
+      type: 'rational',
+      desc: <div>Rational simplified</div>
+    },
+    related: [
+      { keyword: 'rational', link: '/docs/reference/types#rational' },
+      { keyword: 'get_numerator', link: '/docs/reference/expressions/builtins#get_numerator(r%20:%20rational)' },
+      { keyword: 'get_denominator', link: '/docs/reference/expressions/builtins#get_denominator(r%20:%20rational)' },
+    ]
+  },
+  get_numerator: {
+    sig: 'get_numerator(r : rational)',
+    desc: <div>Get numerator of a <Link to="/docs/reference/types#rational"><code>rational</code></Link></div>,
+    parameters: [
+      {
+        type: 'rational',
+        alias: 'r',
+        desc: <div></div>
+      }
+    ],
+    returns: {
+      type: 'int',
+      desc: <div>Numerator of the rational</div>
+    },
+    related: [
+      { keyword: 'rational', link: '/docs/reference/types#rational' },
+      { keyword: 'int', link: '/docs/reference/types#int' },
+      { keyword: 'simplify_rational', link: '/docs/reference/expressions/builtins#simplify_rational(r%20:%20rational)' },
+      { keyword: 'get_denominator', link: '/docs/reference/expressions/builtins#get_denominator(r%20:%20rational)' },
+    ]
+  },
+  get_denominator: {
+    sig: 'get_denominator(r : rational)',
+    desc: <div>Get denominator of a <Link to="/docs/reference/types#rational"><code>rational</code></Link></div>,
+    parameters: [
+      {
+        type: 'rational',
+        alias: 'r',
+        desc: <div></div>
+      }
+    ],
+    returns: {
+      type: 'nat',
+      desc: <div>Denominator of the rational</div>
+    },
+    related: [
+      { keyword: 'rational', link: '/docs/reference/types#rational' },
+      { keyword: 'nat', link: '/docs/reference/types#nat' },
+      { keyword: 'simplify_rational', link: '/docs/reference/expressions/builtins#simplify_rational(r%20:%20rational)' },
+      { keyword: 'get_numerator', link: '/docs/reference/expressions/builtins#get_numerator(r%20:%20rational)' },
+    ]
+  },
   bytes_to_nat: {
     sig: 'bytes_to_nat(b : bytes)',
     desc: <div>Converts bytes to a natural.</div>,
