@@ -182,6 +182,10 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['mutez_to_nat']} />
 
+<h3 {...{"id":builtins['nat_to_bytes'].sig}}> <code> {builtins['nat_to_bytes'].sig} </code> </h3>
+
+<Builtin data={builtins['nat_to_bytes']} />
+
 <h3 {...{"id":builtins['nat_to_string'].sig}}> <code> {builtins['nat_to_string'].sig} </code> </h3>
 
 <Builtin data={builtins['nat_to_string']} />

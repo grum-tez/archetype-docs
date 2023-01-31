@@ -23,6 +23,7 @@ export const types = {
     { label : 'key_to_address', link : builtin_link_prefix + 'key_to_address(k%20:%20key)', desc: 'Converts key to address' },
     { label : 'key_to_key_hash', link : builtin_link_prefix + 'key_to_key_hash(k%20:%20key)', desc: 'Converts key to hash key' },
     { label : 'mutez_to_nat', link : builtin_link_prefix + 'mutez_to_nat(v%20:%20tez)', desc: 'Converts a mutez amount to natural' },
+    { label : 'nat_to_bytes', link : builtin_link_prefix + 'nat_to_bytes(n%20:%20nat)', desc: 'Converts a natural to bytes' },
     { label : 'nat_to_string', link : builtin_link_prefix + 'nat_to_string(n%20:%20nat)', desc: 'Converts a natural to its string representation' },
   ]
 }

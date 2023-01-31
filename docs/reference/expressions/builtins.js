@@ -86,7 +86,7 @@ export const builtins = {
   },
   make_big_map: {
     sig: 'make_big_map<K, T>(m)',
-    desc: <div>Create a big_map from literal.<br/>This is used for example to create an empty big map with <code>make_big_map&lt;K, V&gt;([])</code>.</div>,
+    desc: <div>Create a big_map from literal.<br />This is used for example to create an empty big map with <code>make_big_map&lt;K, V&gt;([])</code>.</div>,
     parameters: [
       {
         type: 'big_map',
@@ -101,7 +101,7 @@ export const builtins = {
   },
   make_big_map: {
     sig: 'make_big_map<K, V>(m)',
-    desc: <div>Makes a big_map from <i>literal</i> or variable.<br/>This is useful to solve the type amiguity of literals, like for example the empty big_map <code>[]</code>.</div>,
+    desc: <div>Makes a big_map from <i>literal</i> or variable.<br />This is useful to solve the type amiguity of literals, like for example the empty big_map <code>[]</code>.</div>,
     parameters: [
       {
         type: 'big_map<K, V>',
@@ -116,7 +116,7 @@ export const builtins = {
   },
   make_map: {
     sig: 'make_map<K, V>(m)',
-    desc: <div>Makes a map from <i>literal</i> or variable.<br/>This is useful to solve the type amiguity of literals, like for example the empty map <code>[]</code>.</div>,
+    desc: <div>Makes a map from <i>literal</i> or variable.<br />This is useful to solve the type amiguity of literals, like for example the empty map <code>[]</code>.</div>,
     parameters: [
       {
         type: 'map<K, V>',
@@ -131,7 +131,7 @@ export const builtins = {
   },
   make_list: {
     sig: 'make_list<T>(l)',
-    desc: <div>Makes a list from <i>literal</i> or variable.<br/>This is useful to solve the type amiguity of literals, like for example the empty list <code>[]</code>.</div>,
+    desc: <div>Makes a list from <i>literal</i> or variable.<br />This is useful to solve the type amiguity of literals, like for example the empty list <code>[]</code>.</div>,
     parameters: [
       {
         type: 'list<T>',
@@ -146,7 +146,7 @@ export const builtins = {
   },
   make_set: {
     sig: 'make_set<T>(s)',
-    desc: <div>Makes a set from <i>literal</i> or variable.<br/>This is useful to solve the type amiguity of literals, like for example the empty set <code>[]</code>.</div>,
+    desc: <div>Makes a set from <i>literal</i> or variable.<br />This is useful to solve the type amiguity of literals, like for example the empty set <code>[]</code>.</div>,
     parameters: [
       {
         type: 'set<T>',
@@ -516,7 +516,7 @@ export const builtins = {
   },
   nth: {
     sig: 'nth(l : list<T>, n : nat)',
-    desc: <NthDesc/>,
+    desc: <NthDesc />,
     parameters: [
       {
         type: 'list<T>',
@@ -595,9 +595,9 @@ export const builtins = {
     sig: 'update(s : set<T>, e : T, b : bool)',
     index: 'update',
     desc: <div>Adds or removes element <code>e</code> in set <code>s</code>: <ul>
-    <li>removes <code>e</code> when <code>b</code> is <code>false</code></li>
-    <li>adds <code>e</code> when <code>b</code> is <code>true</code></li>
-  </ul></div>,
+      <li>removes <code>e</code> when <code>b</code> is <code>false</code></li>
+      <li>adds <code>e</code> when <code>b</code> is <code>true</code></li>
+    </ul></div>,
     parameters: [
       {
         type: 'set<T>',
@@ -630,9 +630,9 @@ export const builtins = {
     sig: 'update(m : map<K, V>, k : K, v : option<T>)',
     index: 'update',
     desc: <div>Adds or removes value <code>v</code> from associated to key <code>k</code> in map <code>m</code>: <ul>
-    <li><code>none</code> removes key <code>k</code></li>
-    <li><code>some(v)</code>, adds key <code>k</code> with value <code>v</code></li>
-  </ul></div>,
+      <li><code>none</code> removes key <code>k</code></li>
+      <li><code>some(v)</code>, adds key <code>k</code> with value <code>v</code></li>
+    </ul></div>,
     parameters: [
       {
         type: 'map<K, V>',
@@ -972,7 +972,7 @@ export const builtins = {
   },
   floor: {
     sig: 'floor(r : rational)',
-    desc: <div>Converts a <Link to="/docs/reference/types#rational"><code>rational</code></Link> to an <Link to="/docs/reference/types#int"><code>int</code></Link> with <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions" target="_blank">floor</a> policy</div>,    parameters: [
+    desc: <div>Converts a <Link to="/docs/reference/types#rational"><code>rational</code></Link> to an <Link to="/docs/reference/types#int"><code>int</code></Link> with <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions" target="_blank">floor</a> policy</div>, parameters: [
       {
         type: 'rational',
         alias: 'r',
@@ -1003,6 +1003,26 @@ export const builtins = {
     },
     related: [
       { keyword: 'floor', link: '/docs/reference/expressions/builtins#floor(r%20:%20rational)' },
+    ]
+  },
+  nat_to_bytes: {
+    sig: 'nat_to_bytes(n : nat)',
+    desc: <div>Converts a natural to bytes.</div>,
+    parameters: [
+      {
+        type: 'nat',
+        alias: 'n',
+        desc: <div>Nat to convert</div>
+      }
+    ],
+    returns: {
+      type: 'string',
+      desc: <div>Bytes value</div>
+    },
+    related: [
+      { keyword: 'Conversion', link: '/docs/language-basics/types#conversion' },
+      { keyword: 'nat', link: '/docs/reference/types#nat' },
+      { keyword: 'bytes', link: '/docs/reference/types#bytes' },
     ]
   },
   nat_to_string: {
@@ -1136,10 +1156,10 @@ export const builtins = {
   address_to_contract: {
     sig: 'address_to_contract<T>(a : address)',
     desc: <div><p>Converts address <code>a</code> to a <code>contract&lt;T&gt;</code> value to be used as parameter of <Link to="/docs/reference/expressions/builtins#make_operation(a%20:%20tez,%20c%20:%20contract<T>,%20arg%20:%20T)"><code>make_operation</code></Link>.</p>
-        <p><code>T</code> is:<ul>
-          <li><code>unit</code> for an account address (<code>tz1...</code>)</li>
-          <li>the type of the <i>parameter</i> section for a contract address</li>
-        </ul>When the contract's parameter is annotated it is easier to use <Link to="/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)"><code>get_entrypoint</code></Link> builtin.</p></div>,
+      <p><code>T</code> is:<ul>
+        <li><code>unit</code> for an account address (<code>tz1...</code>)</li>
+        <li>the type of the <i>parameter</i> section for a contract address</li>
+      </ul>When the contract's parameter is annotated it is easier to use <Link to="/docs/reference/expressions/builtins#get_entrypoint<T>(s,%20a%20:%20address)"><code>get_entrypoint</code></Link> builtin.</p></div>,
     parameters: [
       {
         type: 'address',
@@ -1151,9 +1171,9 @@ export const builtins = {
       type: 'option<contract<T>>',
       withLink: false,
       desc: <div><ul>
-          <li><code>none</code> when the address or the path to entrypoint is invalid</li>
-          <li><code>some</code> of a <code>contract&lt;T&gt;</code> value</li>
-        </ul>
+        <li><code>none</code> when the address or the path to entrypoint is invalid</li>
+        <li><code>some</code> of a <code>contract&lt;T&gt;</code> value</li>
+      </ul>
       </div>
     },
     related: [
@@ -1393,15 +1413,15 @@ export const builtins = {
     ],
     returns: {
       type: 'option<ticket<T>>',
-      withLink : false,
+      withLink: false,
       desc: <div>Returns an <Link to={'/docs/reference/types#option<T>'}>option</Link> of ticket. It is <Link to={'/docs/reference/expressions/builtins#none<T>'}><code>none</code></Link> if <code>n</code> is equal to <code>0</code> (ie. it is not possible to create 0-valued ticket).</div>
     },
     michelson: "TICKET",
     michelson_ref_url: michelson_ref_base_url + '#instr-TICKET',
     related: [
-      { keyword: "join_tickets", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
-      { keyword: "read_ticket", link:"/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },
-      { keyword: "split_ticket", link:"/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },
+      { keyword: "join_tickets", link: "/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
+      { keyword: "read_ticket", link: "/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },
+      { keyword: "split_ticket", link: "/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },
     ]
   },
   read_ticket: {
@@ -1422,9 +1442,9 @@ export const builtins = {
     michelson: "READ_TICKET",
     michelson_ref_url: michelson_ref_base_url + '#instr-READ_TICKET',
     related: [
-      { keyword: "create_ticket", link:"/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
-      { keyword: "join_tickets", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
-      { keyword: "split_ticket", link:"/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },    ]
+      { keyword: "create_ticket", link: "/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
+      { keyword: "join_tickets", link: "/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
+      { keyword: "split_ticket", link: "/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },]
   },
   split_ticket: {
     sig: 'split_ticket(t : ticket<T>, n1 : nat, n2 : nat)',
@@ -1454,9 +1474,9 @@ export const builtins = {
     michelson: "SPLIT_TICKET",
     michelson_ref_url: michelson_ref_base_url + '#instr-SPLIT_TICKET',
     related: [
-      { keyword: "create_ticket", link:"/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
-      { keyword: "join_tickets", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
-      { keyword: "read_ticket", link:"/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },
+      { keyword: "create_ticket", link: "/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
+      { keyword: "join_tickets", link: "/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
+      { keyword: "read_ticket", link: "/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },
     ]
   },
   join_tickets: {
@@ -1482,9 +1502,9 @@ export const builtins = {
     michelson: "JOIN_TICKETS",
     michelson_ref_url: michelson_ref_base_url + '#instr-JOIN_TICKETS',
     related: [
-      { keyword: "create_ticket", link:"/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
-      { keyword: "read_ticket", link:"/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },
-      { keyword: "split_ticket", link:"/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },    ]
+      { keyword: "create_ticket", link: "/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
+      { keyword: "read_ticket", link: "/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },
+      { keyword: "split_ticket", link: "/docs/reference/expressions/builtins#split_ticket(t%20:%20ticket<T>,%20n1%20:%20nat,%20n2%20:%20nat)" },]
   },
 
   // sapling
@@ -1715,7 +1735,7 @@ export const builtins = {
     michelson: "OR",
     michelson_ref_url: michelson_ref_base_url + '#instr-OR',
   },
-  create_contract : {
+  create_contract: {
     sig: 'create_contract(path, delegator, amount, storage)',
     desc: <CreateContract />,
     parameters: [
@@ -1749,7 +1769,7 @@ export const builtins = {
       desc: <div>Returns a pair of:<ul>
         <li>Operation for contract creation</li>
         <li>Address of created contract</li>
-        </ul></div>
+      </ul></div>
     },
     related: [
       { keyword: 'operation', link: '/docs/reference/types#operation' },
