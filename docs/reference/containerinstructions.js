@@ -131,40 +131,6 @@ export const containerinstructions = {
       { keyword: 'reverse', link: '/docs/reference/instructions/containers#lreverse' }
     ]
   },
-  head: {
-    desc: <ListHead/>,
-    sig: 'L.head(i)',
-    parameters: [
-      {
-        type: 'nat',
-        withLink : true,
-        alias: 'i',
-        desc: <div>Number of elements to consider</div>
-      },
-    ],
-    fails: [
-    ],
-    related: [
-      { keyword: 'list', link: '/docs/reference/types#list<T>' }
-    ]
-  },
-  tail: {
-    desc: <ListTail/>,
-    sig: 'L.tail(i)',
-    parameters: [
-      {
-        type: 'nat',
-        withLink : true,
-        alias: 'i',
-        desc: <div>Number of elements to consider</div>
-      },
-    ],
-    fails: [
-    ],
-    related: [
-      { keyword: 'list', link: '/docs/reference/types#list<T>' },
-    ]
-  },
   put : {
     desc: <div>Associates key <code>k</code> with value <code>v</code> in <Link to="/docs/reference/types#map<K,%20V>">map</Link> (or <Link to="/docs/reference/types#big_map<K,%20V>">big_map</Link>) <code>M</code>.</div>,
     sig: 'M.put(k, v)',

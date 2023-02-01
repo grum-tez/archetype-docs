@@ -104,6 +104,10 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['greedy_or']} />
 
+<h3 {...{"id":builtins['head'].sig}}> <code> {builtins['head'].sig} </code> </h3>
+
+<Builtin data={builtins['head']} />
+
 ## `I J`
 
 <h3 {...{"id":builtins['int_to_date'].sig}}> <code> {builtins['int_to_date'].sig} </code> </h3>
@@ -301,6 +305,10 @@ import { builtins } from './builtins.js';
 <Builtin data={builtins['sub_nat']} />
 
 ## `T U`
+
+<h3 {...{"id":builtins['tail'].sig}}> <code> {builtins['tail'].sig} </code> </h3>
+
+<Builtin data={builtins['tail']} />
 
 <h3 {...{"id":builtins['unpack'].sig}}> <code> {builtins['unpack'].sig} </code> </h3>
 

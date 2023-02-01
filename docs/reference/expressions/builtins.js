@@ -19,6 +19,8 @@ import NthDesc from "../../../src/components/desc/nth_builtin_desc.md"
 import RightDesc from "../../../src/components/desc/right_desc.md"
 import SliceDesc from "../../../src/components/desc/slice_desc.md"
 import UnpackDesc from "../../../src/components/desc/unpack_desc.md"
+import ListHead from "../../../src/components/desc/list_head.md"
+import ListTail from "../../../src/components/desc/list_tail.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -1859,5 +1861,57 @@ export const builtins = {
     ],
     michelson: "CREATE_CONTRACT",
     michelson_ref_url: michelson_ref_base_url + '#instr-CREATE_CONTRACT',
-  }
+  },
+  head: {
+    sig: 'head(l : list<T>, n : nat)',
+    desc: <ListHead/>,
+    parameters: [
+      {
+        type: 'list<T>',
+        alias: 'l',
+        desc: <div>List to get n first elements</div>
+      },
+      {
+        type: 'nat',
+        withLink : true,
+        alias: 'n',
+        desc: <div>Number of elements to consider</div>
+      },
+    ],
+    returns: {
+      type: 'list<T>',
+      desc: <div>List with n first elements</div>
+    },
+    fails: [
+    ],
+    related: [
+      { keyword: 'list', link: '/docs/reference/types#list<T>' }
+    ]
+  },
+  tail: {
+    desc: <ListTail/>,
+    sig: 'tail(l : list<T>, n : nat)',
+    parameters: [
+      {
+        type: 'list<T>',
+        alias: 'l',
+        desc: <div>List to get n last elements</div>
+      },
+      {
+        type: 'nat',
+        withLink : true,
+        alias: 'n',
+        desc: <div>Number of elements to consider</div>
+      },
+    ],
+    returns: {
+      type: 'list<T>',
+      desc: <div>List with n last elements</div>
+    },
+    fails: [
+    ],
+    related: [
+      { keyword: 'list', link: '/docs/reference/types#list<T>' },
+    ]
+  },
 }
