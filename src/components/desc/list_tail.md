@@ -1,4 +1,4 @@
-Returns the last i elements of list `L` according to its order.
+Returns the last n elements of list `L` according to its order.
 
 For example:
 ```archetype

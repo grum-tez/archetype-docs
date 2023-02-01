@@ -1,4 +1,4 @@
-Returns the first i elements of list `L` according to its order.
+Returns the first n elements of list `L` according to its order.
 
 For example:
 ```archetype
