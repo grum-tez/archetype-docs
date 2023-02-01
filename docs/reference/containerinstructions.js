@@ -3,6 +3,8 @@ import Link from '@docusaurus/Link';
 
 import ReverseDesc from '../../src/components/desc/reverse_desc.md'
 import ConcatDesc from '../../src/components/desc/concat_desc.md'
+import ListHead from '../../src/components/desc/list_head.md'
+import ListTail from '../../src/components/desc/list_tail.md'
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -127,6 +129,40 @@ export const containerinstructions = {
       { keyword: 'list', link: '/docs/reference/types#list<T>' },
       { keyword: 'prepend', link: '/docs/reference/instructions/containers#lprepende' },
       { keyword: 'reverse', link: '/docs/reference/instructions/containers#lreverse' }
+    ]
+  },
+  head: {
+    desc: <ListHead/>,
+    sig: 'L.head(i)',
+    parameters: [
+      {
+        type: 'nat',
+        withLink : true,
+        alias: 'i',
+        desc: <div>Number of elements to consider</div>
+      },
+    ],
+    fails: [
+    ],
+    related: [
+      { keyword: 'list', link: '/docs/reference/types#list<T>' }
+    ]
+  },
+  tail: {
+    desc: <ListTail/>,
+    sig: 'L.tail(i)',
+    parameters: [
+      {
+        type: 'nat',
+        withLink : true,
+        alias: 'i',
+        desc: <div>Number of elements to consider</div>
+      },
+    ],
+    fails: [
+    ],
+    related: [
+      { keyword: 'list', link: '/docs/reference/types#list<T>' },
     ]
   },
   put : {

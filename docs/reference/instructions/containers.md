@@ -34,6 +34,15 @@ import Builtin from '@site/src/components/Builtin.js';
 
 <Builtin data={containerinstructions['concat']} />
 
+### `L.head(i : nat)`
+
+<Builtin data={containerinstructions['head']} />
+
+
+### `L.tail(i : nat)`
+
+<Builtin data={containerinstructions['tail']} />
+
 ## Map
 
 ### `M.put(k, v)`
