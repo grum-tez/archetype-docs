@@ -69,3 +69,47 @@ match m[k] with
 | none    -> fail(("KEY_NOT_FOUND", k))
 end
 ```
+
+## `detach`
+
+// TODO
+
+```archetype
+archetype ticket_detach_option
+
+variable input : option<ticket<string>> = none<ticket<string>>
+
+variable output : option<ticket<string>> = none<ticket<string>>
+
+entry init() {
+  input := create_ticket("info", 1)
+}
+
+entry exec() {
+  detach t from input : "ERROR";
+  output := some(t)
+}
+```
+
+```archetype
+archetype ticket_detach_big_map_record
+
+record my_record {
+  v : string;
+  t : ticket<string>
+}
+
+variable input : big_map<nat, my_record> = []
+
+variable output : option<ticket<string>> = none<ticket<string>>
+
+entry init() {
+  const nt ?= create_ticket("info", 1) : "ERROR";
+  input.put(0, {v = "mystr"; t = nt});
+}
+
+entry exec() {
+  detach dt from input[0] : "ERROR";
+  output := some(dt.t)
+}
+```

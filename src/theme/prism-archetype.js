@@ -29,6 +29,14 @@
 				}
 			},
     	},
+		'detach-rule': {
+			pattern: /detach\s+(.*)\s+from/,
+			inside: {
+				'decl': {
+					pattern: /detach|from/,
+				}
+			},
+   	},
 		'constant-rule': {
 			pattern: /(constant) {/,
 			inside: {
