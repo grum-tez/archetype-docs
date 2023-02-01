@@ -1098,7 +1098,7 @@ export const builtins = {
       }
     ],
     returns: {
-      type: 'string',
+      type: 'bytes',
       desc: <div>Bytes converted to nat</div>
     },
     related: [
