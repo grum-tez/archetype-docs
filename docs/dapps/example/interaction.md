@@ -17,6 +17,12 @@ The following [Completium CLI](/docs/cli/introduction) command generates the con
 completium-cli generate binding-dapp-ts ./poll-contract/contracts/poll.arl > ./src/bindings/poll.ts
 ```
 
+By default, the `originate` method is **not** generated in the DApp bindings (to reduce binding size). If the Dapp is required to originate the contract, use the `--with-dapp-originate` argument:
+```completium
+completium-cli generate binding-dapp-ts --with-dapp-originate ./poll-contract/contracts/poll.arl > ./src/bindings/poll.ts
+```
+
+
 ## Retrieving poll data
 
 The Typescript binding provides the method `get_poll` that returns the [poll](/docs/dapps/example/contract#poll) *container* as a list of pair of poll key and `poll_value`, whose type finally reduces to:

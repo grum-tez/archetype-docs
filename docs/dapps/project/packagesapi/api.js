@@ -299,6 +299,31 @@ export const dapp = {
     ],
     showfail: false
   },
+  originate: {
+    sig: 'todo',
+    ref: 'originate',
+    desc: <div>Originates a contract with code <code>c</code> and initial storage <code>s</code></div>,
+    parameters: [
+      {
+        type: 'Micheline',
+        alias: 'c',
+        desc: <div>Contract Code</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Micheline',
+        alias: 's',
+        desc: <div>Initial contract storage</div>,
+        prefix: prefix
+      },
+      {
+        type: 'Parameters',
+        alias: 'p',
+        desc: <div>Parameters</div>,
+        prefix: prefix
+      },
+    ],
+  }
 }
 
 export const event = {

@@ -6,6 +6,21 @@ import Link from '@docusaurus/Link';
 
 # Contract
 
+## Global Constants
+
+`register global constant` is the command to register a new global constant. It displays the hash value of the global constant to be used in the contract by the [`global_constant`](/docs/reference/expressions/builtins#global_constant<T>(hash)) builtin.
+
+```completium
+completium-cli register global constant <MICHELSON DATA> [--as <CALLER_ADDRESS>]
+```
+
+For example:
+```completium
+$ completium-cli register global constant 'Pair 2 1'
+...
+      Global address: exprungfiFAFCszmNHNCDMtNkxiiHDpJUp128aLCJ5YxdsQZmyYt6S
+```
+
 ## Deploy / originate
 
 `deploy` is the command to originate an archetype contract (with file extension `.arl`), and `originate` is the command to originate a michelson contract (with file extension `.tz`).

@@ -139,6 +139,12 @@ This section presents types and functions exported by the [`@completium/experime
 
 <Builtin data={experiment['pack']} />
 
+## `Q R`
+
+### `register_global_constant(input, p)`
+
+<Builtin data={experiment['register']} />
+
 ## `S T`
 
 ### `set_endpoint(e)`

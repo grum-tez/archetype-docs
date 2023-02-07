@@ -1826,6 +1826,30 @@ export const experiment = {
       prefix: prefix
     }
   },
+  register: {
+    sig: 'todo',
+    ref: 'register_global_constant-input-p',
+    desc: <div>Registers a global constant from <code>input</code> micheline value. </div>,
+    parameters: [
+      {
+        type: 'Micheline',
+        alias: 'input',
+        desc: <div>Value to register</div>,
+      },
+      {
+        type: 'Parameters',
+        alias: 'p',
+        desc: <div>Call parameter (<Link to="/docs/reference/expressions/constants#caller"><code>caller</code></Link> and <Link to="/docs/reference/expressions/constants#transferred"><code>transferred</code></Link>)</div>,
+        withLink: false
+      },
+    ],
+    showfail : false,
+    returns: {
+      type: 'RegisterGlobalConstantResult',
+      desc: <div>Provides global content's hash value when register is successful.</div>,
+      withLink: false
+    }
+  },
   set_endpoint: {
     sig: 'todo',
     ref: 'set_endpointe',
