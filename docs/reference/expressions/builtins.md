@@ -96,6 +96,10 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['get_numerator']} />
 
+<h3 {...{"id":builtins['global_constant'].sig}}> <code> {builtins['global_constant'].sig} </code> </h3>
+
+<Builtin data={builtins['global_constant']} />
+
 <h3 {...{"id":builtins['greedy_and'].sig}}> <code> {builtins['greedy_and'].sig} </code> </h3>
 
 <Builtin data={builtins['greedy_and']} />

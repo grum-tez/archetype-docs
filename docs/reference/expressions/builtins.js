@@ -1914,4 +1914,21 @@ export const builtins = {
       { keyword: 'list', link: '/docs/reference/types#list<T>' },
     ]
   },
+  global_constant: {
+    sig: 'global_constant<T>(hash)',
+    desc: <div>Get global constant <Link to={'https://tezos.gitlab.io/active/global_constants.html'} >tezos doc</Link> (available in 1.4.1-rev1)</div>,
+    parameters: [
+      {
+        type: 'T',
+        alias: 'hash',
+        desc: <div>Hash of the michelson expression (e.g. expruQN5r2umbZVHy6WynYM8f71F8zS4AERz9bugF8UkPBEqrHLuU8)</div>
+      }
+    ],
+    returns: {
+      type: 'T',
+      desc: <div>Global constant</div>
+    },
+    related: [
+    ]
+  },
 }
