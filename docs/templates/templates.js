@@ -686,7 +686,7 @@ export const templates = {
   },
   a2: {
     info: {
-      repo: 'https://gitlab.com/tezos-paris-hub/whitelist-smart-contract-archetype',
+      repo: 'https://github.com/completium/archetype-a2',
       author: 'Completium',
       authorurl: 'https://completium.com/',
       norms: [
