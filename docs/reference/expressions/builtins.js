@@ -1918,19 +1918,17 @@ export const builtins = {
   },
   global_constant: {
     sig: 'global_constant<T>(hash)',
-    desc: <div>Get global constant <Link to={'https://tezos.gitlab.io/active/global_constants.html'} >tezos doc</Link> (available in 1.4.1-rev1)</div>,
+    desc: <div>Gets the <Link to={'https://tezos.gitlab.io/active/global_constants.html'} >global constant</Link> associated to <code>hash</code>. <br/> <br/>Check <Link to="https://tzkt.io/constants">here</Link> the list of available global constants on mainnet.</div>,
     parameters: [
       {
         type: 'T',
         alias: 'hash',
-        desc: <div>Hash of the michelson expression (e.g. expruQN5r2umbZVHy6WynYM8f71F8zS4AERz9bugF8UkPBEqrHLuU8)</div>
+        desc: <div>Hash of the michelson expression (e.g. <code>expruQN5r2umbZVHy6WynYM8f71F8zS4AERz9bugF8UkPBEqrHLuU8</code>)</div>
       }
     ],
     returns: {
       type: 'T',
       desc: <div>Global constant</div>
     },
-    related: [
-    ]
   },
 }
