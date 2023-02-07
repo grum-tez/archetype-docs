@@ -12,6 +12,8 @@ import GetEntrypointDesc from "../../../src/components/desc/getentrypoint_desc.m
 import IsNoneDesc from "../../../src/components/desc/is_none_desc.md"
 import IsSomeDesc from "../../../src/components/desc/is_some_desc.md"
 import LeftDesc from "../../../src/components/desc/left_desc.md"
+import ListHead from "../../../src/components/desc/list_head.md"
+import ListTail from "../../../src/components/desc/list_tail.md"
 import MakeAsset from "../../../src/components/desc/make_asset.md"
 import MapDesc from "../../../src/components/desc/map_desc.md"
 import MutezNatDesc from "../../../src/components/desc/mutez_nat_desc.md"
@@ -19,8 +21,6 @@ import NthDesc from "../../../src/components/desc/nth_builtin_desc.md"
 import RightDesc from "../../../src/components/desc/right_desc.md"
 import SliceDesc from "../../../src/components/desc/slice_desc.md"
 import UnpackDesc from "../../../src/components/desc/unpack_desc.md"
-import ListHead from "../../../src/components/desc/list_head.md"
-import ListTail from "../../../src/components/desc/list_tail.md"
 
 const michelson_ref_base_url = 'https://tezos.gitlab.io/michelson-reference/'
 
@@ -1009,7 +1009,7 @@ export const builtins = {
   },
   simplify_rational: {
     sig: 'simplify_rational(r : rational)',
-    desc: <div>Simplify a <Link to="/docs/reference/types#rational"><code>rational</code></Link></div>,
+    desc: <div>Simplifies a <Link to="/docs/reference/types#rational"><code>rational</code></Link> with <Link to="https://en.wikipedia.org/wiki/Euclidean_algorithm">Euclidean</Link> algorithm</div>,
     parameters: [
       {
         type: 'rational',
@@ -1029,7 +1029,7 @@ export const builtins = {
   },
   get_numerator: {
     sig: 'get_numerator(r : rational)',
-    desc: <div>Get numerator of a <Link to="/docs/reference/types#rational"><code>rational</code></Link></div>,
+    desc: <div>Gets the numerator of a <Link to="/docs/reference/types#rational"><code>rational</code></Link></div>,
     parameters: [
       {
         type: 'rational',
@@ -1050,7 +1050,7 @@ export const builtins = {
   },
   get_denominator: {
     sig: 'get_denominator(r : rational)',
-    desc: <div>Get denominator of a <Link to="/docs/reference/types#rational"><code>rational</code></Link></div>,
+    desc: <div>Gets the denominator of a <Link to="/docs/reference/types#rational"><code>rational</code></Link></div>,
     parameters: [
       {
         type: 'rational',
@@ -1885,7 +1885,8 @@ export const builtins = {
     fails: [
     ],
     related: [
-      { keyword: 'list', link: '/docs/reference/types#list<T>' }
+      { keyword: 'list', link: '/docs/reference/types#list<T>' },
+      { keyword: 'length', link: '/docs/reference/expressions/builtins#length(o%20:%20T)' }
     ]
   },
   tail: {
@@ -1912,6 +1913,7 @@ export const builtins = {
     ],
     related: [
       { keyword: 'list', link: '/docs/reference/types#list<T>' },
+      { keyword: 'length', link: '/docs/reference/expressions/builtins#length(o%20:%20T)' }
     ]
   },
   global_constant: {

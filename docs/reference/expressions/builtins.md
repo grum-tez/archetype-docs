@@ -134,9 +134,9 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['join_tickets']} />
 
-<h3 {...{"id":builtins['keccak'].sig}}> <code> {builtins['keccak'].sig} </code> </h3>
-
 ## `K L`
+
+<h3 {...{"id":builtins['keccak'].sig}}> <code> {builtins['keccak'].sig} </code> </h3>
 
 <Builtin data={builtins['keccak']} />
 
