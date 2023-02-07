@@ -30,10 +30,10 @@
 			},
     	},
 		'detach-rule': {
-			pattern: /detach\s+(.*)\s+from/,
+			pattern: /detach\s+(.*)\s+as/,
 			inside: {
 				'decl': {
-					pattern: /detach|from/,
+					pattern: /detach|as/,
 				}
 			},
    	},
@@ -62,7 +62,7 @@
     	'declaration': /\b(?:import|event|constant|archetype|enum|states|variable|asset|to big_map|to iterable_big_map|record|as|initial|identified by|initialized with)\b/,
     	'entry': /\b(?:entry|transition|function|getter|view)\b/,
     	'verif': /\b(?:invariant|specification)\b/,
-    	'type': /\b(?:unit|lambda|contract|big_map|map|set|option|list|int|nat|tez|string|rational|bytes|key|key_hash|address|sapling|signature|date|duration|bool|operation|aggregate|partition|asset_view|asset_key|asset_value|iterable_big_map)\b/,
+    	'type': /\b(?:ticket|unit|lambda|contract|big_map|map|set|option|list|int|nat|tez|string|rational|bytes|key|key_hash|address|sapling|signature|date|duration|bool|operation|aggregate|partition|asset_view|asset_key|asset_value|iterable_big_map)\b/,
     	'constant': /\b(?:self_chain_id|now|balance|transferred|self|caller|source|self_address|state|operations|metadata)\b/,
 		'control': /\b(?:assert|iter|begin|end|do|done|else|return|before|for|if|in|match|in|forall|added|removed|exists|then|the|from|to|while|with)\b/,
 		'decl': /\b(?:const|var|let some|let)\b/,

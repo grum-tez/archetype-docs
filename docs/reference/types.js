@@ -894,6 +894,7 @@ export const types = {
     michelson: "ticket",
     michelson_ref_url: michelson_ref_base_url + '/#type-ticket',
     related: [
+      { keyword: "detach", link:"/docs/reference/instructions/localvariable#detach-as" },
       { keyword: "create_ticket", link:"/docs/reference/expressions/builtins#create_ticket(s%20:%20T,%20n%20:%20nat)" },
       { keyword: "join_tickets", link:"/docs/reference/expressions/builtins#join_tickets(t1%20:%20ticket<T>,%20t2%20:%20ticket<T>)" },
       { keyword: "read_ticket", link:"/docs/reference/expressions/builtins#read_ticket(t%20:%20ticket<T>)" },

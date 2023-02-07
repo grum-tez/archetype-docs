@@ -70,46 +70,61 @@ match m[k] with
 end
 ```
 
-## `detach`
+## `detach as`
 
-// TODO
+It is possible to *detach* a value of type [`option`](/docs/reference/types#option<T>), [`map`](/docs/reference/types#map<K,%20V>) or [`big_map`](/docs/reference/types#big_map<K,%20V>), and create a fresh local variable with it. The storage value is *mutated* the following way:
+* an `option` value is set to `none`
+* the entry is removed from the `map` or `big_map` value
 
+It fails if the option is already `none` or if the map entry does not exist.
+
+For example on an `option` value:
 ```archetype
-archetype ticket_detach_option
-
-variable input : option<ticket<string>> = none<ticket<string>>
-
-variable output : option<ticket<string>> = none<ticket<string>>
-
-entry init() {
-  input := create_ticket("info", 1)
-}
+variable os : option<string> = some("Hello detach!")
+variable res : string = ""
 
 entry exec() {
-  detach t from input : "ERROR";
-  output := some(t)
+  detach os as v : "ALREADY_NONE";
+  /* os is now 'none' and v equals "Hello detach!" */
+  res := v
+  /* res is now "Hello detach!" */
 }
 ```
 
+For example on a `map` value:
+
 ```archetype
-archetype ticket_detach_big_map_record
-
-record my_record {
-  v : string;
-  t : ticket<string>
-}
-
-variable input : big_map<nat, my_record> = []
-
-variable output : option<ticket<string>> = none<ticket<string>>
-
-entry init() {
-  const nt ?= create_ticket("info", 1) : "ERROR";
-  input.put(0, {v = "mystr"; t = nt});
-}
+variable ms : map<nat, string> = [(0, "Hello detach!")]
+variable res : string = ""
 
 entry exec() {
-  detach dt from input[0] : "ERROR";
-  output := some(dt.t)
+  detach ms[0] as v : "KEY_DOES_NOT_EXIST";
+  /* ms[0] is now 'none' and v equals "Hello detach!" */
+  res := v
+  /* res is now "Hello detach!" */
 }
 ```
+
+:::info
+Note that it is the **only** way to get a [ticket](/docs/reference/types#ticket<T>) from a storage or local container (option, map). For example:
+
+```archetype
+variable my_ticket : option<ticket<nat * option<bytes>>> = none
+
+entry transfer_ticket(fa2_1: address, to_ : address) {
+  detach my_ticket as t : "NO_TICKET";
+  transfer 0tz to fa2_1 call import_ticket<list<import_ticket_param>>([{
+    itp_to      = to_ ;
+    itp_tickets = t
+  }]);
+}
+```
+:::
+
+:::warning
+In current version, the detached value is limited to value of form:
+* `id`
+* `id[expr]`
+
+where `id` is a simple identifier, and `expr` is an expression.
+:::
