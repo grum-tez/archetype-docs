@@ -26,7 +26,7 @@ Click on a language element to learn more:
 [`archetype`](/docs/reference/declarations/contract) [`variable`](/docs/reference/declarations/storage#variable) [`string`](/docs/reference/types#string) [`entry`](/docs/reference/declarations/entrypoint) [`+=`](/docs/reference/instructions/assignment#a--b-1) [`length`](/docs/reference/expressions/builtins#length(o%20:%20T)) [`>`](/docs/reference/expressions/operators/arithmetic#a--b-11) [`? :`](/docs/reference/expressions/controls#a--b--c) [`+`](/docs/reference/expressions/operators/arithmetic#a--b)
 
 Deploy contract with [Completium CLI](/docs/installation#completium-cli):
-```
+```completium
 completium-cli deploy hello.arl
 ```
 

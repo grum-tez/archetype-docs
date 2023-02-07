@@ -89,7 +89,7 @@ const config = {
             docId: 'introduction',
             position: 'left',
             sidebarId: 'docs',
-            label: 'Docs',
+            label: 'Language',
           },
           {
             type: 'docSidebar',
@@ -101,9 +101,23 @@ const config = {
           {
             type: 'docSidebar',
             position: 'left',
+            docId: 'templates/contracts',
+            sidebarId: 'tests',
+            label: 'Tests',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
             docId: 'templates/dapps',
             sidebarId: 'dapps',
             label: 'DApps',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            docId: 'templates/contracts',
+            sidebarId: 'cli',
+            label: 'CLI',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {to: '/docs/installation', label: 'latest: 1.4.1', position: 'right'},
@@ -129,7 +143,7 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Language',
             items: [
               {
                 label: 'Tutorial',

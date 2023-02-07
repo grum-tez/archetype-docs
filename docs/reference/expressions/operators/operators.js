@@ -1,5 +1,5 @@
-import React from "react"
 import Link from '@docusaurus/Link';
+import React from "react"
 
 import DivDesc from "../../../../src/components/desc/div_desc.md"
 import ModDesc from "../../../../src/components/desc/mod_desc.md"
@@ -90,7 +90,7 @@ export const operators = {
       { typa: 'tez',          typb : 'tez',          typr: 'tez' },
       { typa: 'rational',     typb : 'rational',     typr: 'rational' },
       { typa: 'duration',     typb : 'duration',     typr: 'duration' },
-      { typa: 'date',         typb : 'duration',     typr: 'date' },
+      { typa: 'date',         typb : 'date',     typr: 'duration' },
       { typa: 'bls12_381_fr', typb : 'bls12_381_fr', typr: 'bls12_381_fr' },
       { typa: 'bls12_381_g1', typb : 'bls12_381_g1', typr: 'bls12_381_g1' },
       { typa: 'bls12_381_g2', typb : 'bls12_381_g2', typr: 'bls12_381_g2' },
@@ -275,10 +275,13 @@ export const operators = {
     link: 'a-and-b',
     desc: <div><Link to="/blog/shortcut-evaluation">Shortcut evaluation</Link> of logical conjonction:<ul>
       <li><code>true</code> if <code>a</code> and <code>b</code> are <code>true</code></li>
-      <li><code>false</code> otherwise.</li>
+      <li><code>false</code> otherwise</li>
+      <li>Bitwise <code>and</code> of integers</li>
       </ul></div>,
     types: [
       { typa: 'bool',          typb : 'bool',          typr: 'bool' },
+      { typa: 'nat',          typb : 'nat',          typr: 'nat' },
+      { typa: 'int',          typb : 'nat',          typr: 'nat' },
     ],
   },
   or: {
@@ -287,9 +290,11 @@ export const operators = {
     desc: <div><Link to="/blog/shortcut-evaluation">Shortcut evaluation</Link> of logical disjonction:<ul>
     <li><code>true</code> if <code>a</code> or <code>b</code> is <code>true</code></li>
     <li><code>false</code> otherwise</li>
+    <li>Bitwise <code>or</code> of naturals</li>
     </ul></div>,
     types: [
       { typa: 'bool',          typb : 'bool',          typr: 'bool' },
+      { typa: 'nat',          typb : 'nat',          typr: 'nat' },
     ]
   },
   xor: {
@@ -298,9 +303,11 @@ export const operators = {
     desc: <div><ul>
     <li><code>true</code> if <code>a</code> and <code>b</code> are different</li>
     <li><code>false</code> otherwise</li>
+    <li>Bitwise <code>xor</code> of naturals</li>
     </ul></div>,
     types: [
       { typa: 'bool',          typb : 'bool',          typr: 'bool' },
+      { typa: 'nat',          typb : 'nat',          typr: 'nat' },
     ]
   },
   not: {
@@ -310,9 +317,12 @@ export const operators = {
     desc: <div><ul>
     <li><code>true</code> if <code>a</code> is <code>false</code></li>
     <li><code>false</code> if <code>a</code> is <code>true</code></li>
+    <li><Link to="https://en.wikipedia.org/wiki/Two%27s_complement">2-complement</Link> if <code>a</code> is a natural or an integer</li>
     </ul></div>,
     types: [
       { typa: 'bool', typr: 'bool' },
+      { typa: 'int', typr: 'int' },
+      { typa: 'nat', typr: 'int' },
     ]
   },
   eq: {

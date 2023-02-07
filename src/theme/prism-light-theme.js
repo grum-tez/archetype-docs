@@ -25,7 +25,7 @@ var theme = {
       color: "rgb(255, 85, 85)"
     }
   }, {
-    types: ["changed"],
+    types: ["changed", "first"],
     style: {
       color: "rgb(255, 184, 108)"
     }
@@ -51,7 +51,7 @@ var theme = {
       color: "rgb(98, 114, 164)"
     }
   }, {
-    types: ["archetype"],
+    types: ["archetype", "top", "checked"],
     style: {
       color: "#2FCAC3"
     }
@@ -61,7 +61,7 @@ var theme = {
       color: "rgb(233, 72, 21)"
     }
   }, {
-    types: ["section"],
+    types: ["section", "first"],
     style: {
       color: "rgb(255, 184, 108)"
     }

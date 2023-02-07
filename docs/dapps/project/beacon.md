@@ -8,7 +8,7 @@ import Api from '../../../src/components/Api.js';
 
 ```
 └── src
-    └── store
+    └── contexts
         ├── Beacon.tsx
 ```
 

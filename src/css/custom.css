@@ -44,6 +44,7 @@ pre {
 code {
   --ifm-code-font-size: 85%;
   --ifm-code-border-radius: 0px;
+  --docusaurus-highlighted-code-line-bg: rgb(100 100 100 / 20%);
   position: relative;
   top: -1px;
 }
@@ -51,7 +52,6 @@ code {
 [data-theme='dark'] code {
   --ifm-code-background: #2fcac221;
 }
-
 
 h1 {
   font-family: 'Roboto';

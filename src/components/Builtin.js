@@ -28,7 +28,7 @@ const Parameter = (props) => {
               <Typography> { (props.withLink !== undefined && !props.withLink) ? (
                 <code>{props.type}</code>
               ) : (
-                <Link to={'/docs/reference/types#'+props.type}><code>{props.type}</code></Link>
+                <Link to={props.prefix+props.type.toLowerCase()}><code>{props.type}</code></Link>
               )}
               </Typography>
             </Grid>
@@ -56,7 +56,7 @@ const Returns = (props) => {
             { (props.withLink !== undefined && !props.withLink) ? (
               <code>{props.type}</code>
             ) : (
-              <Link to={'/docs/reference/types#'+props.type}><code>{props.type}</code></Link>
+              <Link to={props.prefix+props.type.toLowerCase()}><code>{props.type}</code></Link>
             )}
           </Typography>
         </Grid>
@@ -118,7 +118,7 @@ export default function Builtin(props) {
       }
       {(props.data.parameters !== undefined && props.data.parameters.length > 0) ? (
         props.data.parameters.map((p,i) => {
-          return <Parameter key={"bp"+i} alias={p.alias} type={p.type} desc={p.desc} xs={paramXS} withLink={p.withLink}/>
+          return <Parameter key={"bp"+i} alias={p.alias} type={p.type} desc={p.desc} xs={paramXS} withLink={p.withLink} prefix={(p.prefix ? p.prefix : '/docs/reference/types#')}/>
         })
         ) : (<div />)
       }
@@ -132,11 +132,11 @@ export default function Builtin(props) {
         </Grid>
       )}
       {(props.data.returns !== undefined) ? (
-          <Returns type={props.data.returns.type} withLink={props.data.returns.withLink} desc={props.data.returns.desc} />
+          <Returns type={props.data.returns.type} withLink={props.data.returns.withLink} desc={props.data.returns.desc} prefix={(props.data.returns.prefix ? props.data.returns.prefix : '/docs/reference/types#')}/>
         ) : (<div />)
       }
       <Grid item xs={12}>
-        <Info fails={props.data.fails} michelson={props.data.michelson} michelson_ref_url={props.data.michelson_ref_url} emits={props.data.emits} related={props.data.related} />
+        <Info fails={props.data.fails} michelson={props.data.michelson} michelson_ref_url={props.data.michelson_ref_url} emits={props.data.emits} related={props.data.related} showfail={props.data.showfail}/>
       </Grid>
     </Grid>
     </StyledEngineProvider>

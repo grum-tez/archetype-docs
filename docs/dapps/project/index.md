@@ -10,25 +10,23 @@ This section presents how to create and setup a DApp's User Interface (UI) proje
 
 ## Technical stack
 
-### JS Runtime
+### App Framework
 
-The use of [Nodejs](https://nodejs.org/en/) as the javascript execution environment is a no brainer. It is best installed with [`nvm`](https://github.com/nvm-sh/nvm).
+Any framework is suitable to create a DApp application as long as a Tezos library is available for it. We present here how to create a *web* DApp with [React](https://reactjs.org/).
 
-### UI Framework
-
-Any UI framework is suitable to create a web DApp interface (Angular, Vue, Svelte, ...). We present here how to create a DApp UI project with [React](https://reactjs.org/).
+The choice of the React framework depends on the objective and the size of the application; typically a framework like [Next.js](https://nextjs.org/) is suited for large applications with needs for server side rendering. We are choosing [create-react-app](https://create-react-app.dev/) for its simplicity to create simple client-side & single-page applications: it installs and configures the whole pack of required bricks ([webpack](https://webpack.js.org/), [babel](https://babeljs.io/), ...)
 
 ### Language
 
-It is *strongly* recommended to use [Typescript](https://www.typescriptlang.org/) language as it will greatly shorten and ease up the development cycle. Its typed aspect makes that many errors are detected at compilation time (ie. at the time of writing code) rather than later at execution. It just doesn't make sense to developp with untyped languages when you think of it ...
+It is *strongly* recommended to use [TypeScript](https://www.TypeScriptlang.org/) language as it will greatly shorten and ease up the development cycle. Its typed aspect makes that many errors are detected at compilation time (ie. at the time of writing code) rather than later at execution. It just doesn't make sense to developp with untyped languages when you think of it ...
 
-Project templates configured with typescript are available with most UI frameworks. The following command uses `create-react-app` template with typescript:
+Project templates configured with TypeScript are available with most UI frameworks. The following command uses `create-react-app` template with TypeScript:
 
+```completium
+npx create-react-app my-dapp --template TypeScript
 ```
-npx create-react-app my-dapp --template typescript
-```
 
-This creates the `my-dapp` project. More information may be found [here](https://create-react-app.dev/docs/adding-typescript/)
+This creates the `my-dapp` project. More information may be found [here](https://create-react-app.dev/docs/adding-TypeScript/)
 
 ### Tezos library
 
@@ -36,7 +34,7 @@ While it is always possible to interact directly with the [Tezos endpoint's RPC 
 
 In the context of web DApps for Tezos, the main library is [Taquito](https://tezostaquito.io/):
 
-```
+```completium
 npm install @taquito/taquito
 ```
 
@@ -52,21 +50,21 @@ As a comment, `create-react-app` uses [webpack](https://webpack.js.org/) (versio
 
 A DApp needs to interact with a wallet to *sign* operations (transfers, calls to a smart contract, ...). Many wallets are available on Tezos ([Temple](https://templewallet.com/download/), [Kukai](https://wallet.kukai.app), [Umami](https://umamiwallet.com/), ...). It is common practice to interact with them all via [Beacon](https://docs.walletbeacon.io/) that implements the interaction standard [TZIP-10](https://tzip.tezosagora.org/proposal/tzip-10/) between a wallet and a dApp, as it greatly reduces the integration effort with wallets.
 
-```
+```completium
 npm install @taquito/beacon-wallet @airgap/beacon-sdk
 ```
 
 The main drawback of Beacon is the lack of control over the UI elements (typically the wallet selection popup), which can be a no-go if you want a tight control of the DApp L&F. In that case, each wallet needs to be integrated separately.
 
-A plug-and-play constate context for Beacon services `connect` and `disconnect` is available [`here`](/docs/dapps/project/beacon).
+A plug-and-play *constate* context for Beacon services `connect` and `disconnect` is available [`here`](/docs/dapps/project/beacon).
 
-### Contracts bindings
+### Contract binding
 
-When interacting with a contract (read and write), it is *strongly* recommended to use its generated typescript bindings, that is a typed high-level typescript interface. It greatly reduces the effort to call a contract, read its storage and the number of runtime errors, as the compilier and LSP guides you through the contract interface.
+When interacting with a contract (read and write), it is *strongly* recommended to use its generated [TypeScript binding](/docs/tests/binding), that is a typed high-level TypeScript interface. It greatly reduces the effort to call a contract, read its storage and the number of runtime errors, as the compilier and LSP guides you through the contract interface.
 
-Typescript bindings may be obtained with the following [Completium CLI](https://completium.com/docs/cli) command:
+TypeScript bindings may be obtained with the following [Completium CLI](/docs/cli/introduction) command:
 
-```
+```completium
 completium-cli generate binding-dapp-ts mycontract.arl > mycontract.ts
 ```
 
@@ -75,7 +73,7 @@ Bindings generation is also available for Michelson (.tz) files.
 :::
 
 The generated binding interface relies on two packages:
-```
+```completium
 npm install @completium/dapp-ts @completium/archetype-ts-types
 ```
 
@@ -85,7 +83,7 @@ With React applications, it is *strongly* recommended to setup [*contexts*](http
 
 The DApp example presented here is using *constate* for its lightweight aspect.
 
-```
+```completium
 npm install constate
 ```
 
@@ -122,8 +120,8 @@ Schema below illustrates the module and package architecture of the DApp and the
 * `Contexts` and `UI` interact with contract via `Binding`
 * `Contexts` uses Beacon's services to connect to a wallet
 * Taquito's Tezos toolkit uses Beacon as transaction signer
-* `Binding` uses `@completium/dapp-ts` package services to interact with blockchain
-* `@completium/dapp-ts` uses `@completium/event-listener` to listen to emitted events
+* `Binding` uses [`@completium/dapp-ts`](/docs/dapps/project/packagesapi/#completiumdapp-ts) package services to interact with blockchain
+* `@completium/dapp-ts` uses [`@completium/event-listener`](/docs/dapps/project/packagesapi/#completiumevent-listener) to listen to emitted events
 
 ## File structure
 

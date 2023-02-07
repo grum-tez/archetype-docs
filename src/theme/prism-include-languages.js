@@ -22,5 +22,6 @@ export default function prismIncludeLanguages(PrismObject) {
     require(`prismjs/components/prism-${lang}`);
   });
   require('./prism-archetype.js');
+  require('./prism-completium.js');
   delete globalThis.Prism;
 }

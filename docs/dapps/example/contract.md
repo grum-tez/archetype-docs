@@ -27,8 +27,8 @@ When a user adds a poll (IPFS hash), it needs to be approved by a special accoun
 
 ## Project
 
-Poll contract project was created with the following [Completium CLI](https://completium.com/docs/cli) command:
-```
+Poll contract project was created with the following [Completium CLI](/docs/cli/introduction) command:
+```completium
 completium-cli create project poll-contract
 ```
 Command `npm i` installs required packages:
@@ -42,8 +42,8 @@ Command `npm i` installs required packages:
 
 ## Deployment
 
-The following [Completium CLI](https://completium.com/docs/cli) command is used to deploy the contract:
-```
+The following [Completium CLI](/docs/cli/introduction) command is used to deploy the contract:
+```completium
 completium-cli deploy ./contracts/poll.arl --parameters '{ "owner": "tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P" }' --metadata-uri "ipfs://QmXbuUyyJXW1RRuL3k81Kpe2HULbYLj1sUUq44Nuxa5z8h"
 ```
 

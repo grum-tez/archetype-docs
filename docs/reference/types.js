@@ -23,6 +23,7 @@ import IterableBigMapDesc from '../../src/components/desc/iterable_big_map_desc.
 import AssetContainer from '../../src/components/desc/asset_container.md'
 import AssetKey from '../../src/components/desc/asset_key.md'
 import AssetView from '../../src/components/desc/asset_view.md'
+import Never from '../../src/components/desc/never.md'
 
 export const types = {
   address :
@@ -570,6 +571,9 @@ export const types = {
       { keyword: '-', link: '/docs/reference/expressions/operators/arithmetic#--a' },
       { keyword: '*', link: '/docs/reference/expressions/operators/arithmetic#a--b-1' },
       { keyword: '/', link: '/docs/reference/expressions/operators/arithmetic#a--b-2' },
+      { keyword: 'and', link: '/docs/reference/expressions/operators/arithmetic#a-and-b' },
+      { keyword: 'or', link: '/docs/reference/expressions/operators/arithmetic#a-or-b' },
+      { keyword: 'xor', link: '/docs/reference/expressions/operators/arithmetic#a-xor-b' },
       { keyword: 'div', link: '/docs/reference/expressions/operators/arithmetic#a-div-b' },
       { keyword: '%', link: '/docs/reference/expressions/operators/arithmetic#a--b-3' },
       { keyword: '/%', link: '/docs/reference/expressions/operators/arithmetic#a--b-4' },
@@ -607,7 +611,7 @@ export const types = {
   },
   never :
   {
-    desc: <div>Empty type.</div>,
+    desc: <Never />,
     link: '#never',
     examples: [],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],

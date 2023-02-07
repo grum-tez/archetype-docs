@@ -2,12 +2,12 @@
 
 ## Completium CLI
 
-[Completium CLI](https://completium.com/docs/cli) is the command line utility to install Archetype compiler and manage contracts (deploy, call).
+[Completium CLI](/docs/cli/introduction) is the command line utility to install Archetype compiler and manage contracts (deploy, call).
 
 Install it and initialize its configuration:
-```
-npm i -g @completium/completium-cli
-completium-cli init
+```completium
+$ npm install -g @completium/completium-cli
+$ completium-cli init
 ```
 ### JS
 
@@ -18,13 +18,13 @@ The JS version of Archetype compiler fails when the contract reaches a certain s
 :::
 
 Switch back to JS compiler from other compiler modes (docker, binary) with:
-```
+```completium
 completium-cli set mode archetype js
 ```
 ### Docker
 
 Install Docker container of Archetype compiler with:
-```
+```completium
 completium-cli install archetype
 ```
 
@@ -39,15 +39,15 @@ This command runs docker command `docker pull completium/archetype:latest`, henc
 It is possible to configure Completium CLI to use a [binary version](/docs/installation#install-binary) of the Archetype compiler.
 
 Switch to binary compiler:
-```
-completium-cli set binary path archetype <PATH_TO_ARCHETYPE_BIN>
-completium-cli set mode archetype binary
+```completium
+$ completium-cli set binary path archetype <PATH_TO_ARCHETYPE_BIN>
+$ completium-cli set mode archetype binary
 ```
 
 ### Utility commands
 
 It is possible to open a menu to switch archetype install 'mode':
-```bash
+```completium
 $ completium-cli switch mode archetype
 Current archetype mode: binary
 ? Switch archetype mode …
@@ -59,12 +59,12 @@ Current archetype mode: binary
 Select mode with up/down arrows, then press enter.
 
 Print Archetype's install 'mode' with:
-```bash
+```completium
 completium-cli show mode archetype
 ```
 
 Print current version of Archetype compiler with:
-```
+```completium
 completium-cli archetype version
 ```
 
@@ -112,7 +112,7 @@ Download the binary compiler from the github [release](https://github.com/eduker
 ### Opam
 
 Install with [opam](https://opam.ocaml.org/):
-```
+```completium
 opam install archetype
 ```
 
@@ -120,7 +120,7 @@ opam install archetype
 
 Requires [opam](https://opam.ocaml.org/) to be installed:
 
-```
+```completium
 git clone git@github.com:edukera/archetype-lang.git
 cd archetype-lang
 make build-deps

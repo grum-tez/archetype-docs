@@ -1,0 +1,256 @@
+---
+sidebar_position: 4
+sidebar_label: Contract
+---
+import Link from '@docusaurus/Link';
+
+# Contract
+
+## Deploy / originate
+
+`deploy` is the command to originate an archetype contract (with file extension `.arl`), and `originate` is the command to originate a michelson contract (with file extension `.tz`).
+
+```completium
+$ completium-cli (deploy <FILE.arl> | originate <FILE.tz>) \
+    [--as <ACCOUNT_ALIAS>] \
+    [--named <CONTRACT_ALIAS>] \
+    [--parameters <PARAM> ] \
+    [--amount <AMOUNT>(tz|utz)] \
+    [--metadata-storage <PATH_TO_JSON> | --metadata-uri <VALUE_URI>]
+    [--init <MICHELSON_DATA>]
+    [--test-mode]
+    [--force]
+```
+
+| Command | Description |
+| -- | -- |
+| `--as` | Deploys with specified account. Default account is the one returned by command `completium-cli show account`. |
+| `--name` | Names deployed contract with specified logical name. Logical name is used to refer to contract when calling or displaying contract. |
+| `--parameters` | Specifies archetype parameter values (only with archetype contract) |
+| `--amount` | Amount of XTZ to sent when deploying contract.  |
+| `--metadata-storage` | Adds metadata to contract from json file (only with archetype contract). |
+| `--metadata-uri` | Adds metadata to contract from uri (only with archetype contract). |
+| `--init` | Overwrites contract initial storage with Michelson value. |
+| `--force` | Does not prompt for parameter validation. |
+
+For example:
+
+```completium
+$ completium-cli deploy mycontract.arl --amount 15.5tz
+```
+
+This creates a contract alias `mycontract`.
+
+### Parameters
+
+The following archetype contract requires one parameter `fee` when deployed:
+
+```archetype title="payment.arl"
+archetype payment(fee : tez)
+
+variable amount : tez = 150tz
+
+entry pay(seller : address) {
+  transfer (amount - fee) to seller
+}
+```
+
+The command to deploy:
+```completium
+$ completium-cli deploy payment.arl --parameters '{ "fee" : "5tz" }'
+```
+
+### Metadata
+
+One way to set *metadata* is to provide a json file as the `--metadata-storage` argument.
+
+For example the following metadata file:
+
+```completium
+$ cat fa12_metadata.json
+{
+  "symbol": "MTK",
+  "name": "MyToken",
+  "decimals": "1",
+  "description": "description of MyToken",
+  "thumbnailUri": "https://completium.com/img/logo_completium_128.png"
+}
+```
+
+Then the command to deploy the FA 1.2 contract:
+
+```completium
+$ completium-cli deploy fa12.arl --metadata-storage fa12_metadata.json
+```
+
+## Show
+
+### `show info`
+
+It is possible to show data related to a contract alias:
+
+```completium
+$ completium-cli show contract <CONTRACT_ALIAS>
+```
+
+For example:
+
+```completium
+$ completium-cli show contract demo
+Name:     demo
+Network:  edo
+Address:  KT1CQmaCLLdEQ3X9PmxoqEAy3Xusvs1J5wW1
+Source:   /home/dev/.completium/sources/demo.arl
+Language: archetype
+Version:  1.2.2
+Url:      https://better-call.dev/edo2net/KT1CQmaCLLdEQ3X9PmxoqEAy3Xusvs1J5wW1
+```
+
+### `show contracts`
+
+The following command lists all contracts managed by `$completium-cli`:
+
+```completium
+completium-cli show contracts
+```
+
+### `show source`
+
+It is possible to show the contract source with:
+
+```completium
+$ completium-cli show source <CONTRACT_ALIAS>
+```
+### `show entries`
+
+```completium
+completium-cli show entries <CONTRACT_ADDRESS|CONTRACT_ALIAS>
+```
+
+The command also works with a remote contract address:
+
+```completium
+completium-cli show entries KT1EFgRdrT4r6QLx2riZiPNHjo7gcQM8n7f7
+%confirm (_ : unit)
+%submit (%ckey : address, %pscore : int)
+%decide (_ : unit)
+```
+
+### `show storage`
+
+It is possible to show contract's storage:
+
+```completium
+$ completium-cli show storage <CONTRACT_ALIAS|CONTRACT_ADDRESS>
+```
+
+or in json format:
+```completium
+$ completium-cli show storage <CONTRACT_ALIAS|CONTRACT_ADDRESS> --json
+```
+
+For example:
+```completium
+$ cat simple.arl
+archetype simple
+variable v  : nat = 0
+entry setvalue(p : nat) { v := p }
+
+$ completium-cli deploy simple.arl
+? simple already exists, overwrite it? Yes
+Originate settings:
+  network	  : granada
+  contract    : simple
+  by          : admin
+  send  	  : 0 ꜩ
+  storage	  : 0
+  total cost  : 0.082488 ꜩ
+? Confirm settings Yes
+Forging operation...
+Waiting for confirmation of origination for KT1WVrMD4RWVEkW9gWqH4ntEMNBckG7Lucm8 ...
+Origination completed for KT1WVrMD4RWVEkW9gWqH4ntEMNBckG7Lucm8 named simple.
+https://better-call.dev/granadanet/KT1WVrMD4RWVEkW9gWqH4ntEMNBckG7Lucm8
+
+$ completium-cli call simple --arg '{ "p" : 2 }'
+Call settings:
+  network	  : granada
+  contract    : simple_nat
+  by		  : admin
+  send		  : 0 ꜩ
+  entrypoint  : default
+  argument	  : 2
+  total cost  : 0.000532 ꜩ
+? Confirm settings Yes
+Forging operation...
+Waiting for ooGRwqf9GKYsvvggiyqYEF1xRqa9gnXcQDvJJjDt73M1yTrmyAV to be confirmed...
+Operation injected: https://granada.tzstats.com/ooGRwqf9GKYsvvggiyqYEF1xRqa9gnXcQDvJJjDt73M1yTrmyAV
+
+$ completium-cli show storage simple
+2
+
+$ completium-cli show storage simple --json
+{ "int" : 2 }
+```
+
+## Call
+
+:::info
+The `call` command presented below is suitable for quick tests. For process automation, it is strongly recommended to use the [binding generation](/docs/tests/binding) feature and a Node.js program.
+:::
+
+```completium
+$ completium-cli call <CONTRACT_ADDRESS|CONTRACT_ALIAS> \
+  [--as <ACCOUNT_ALIAS>] \
+  [--entry <ENTRYPOINT>] \
+  [--arg <ARG>] \
+  [--arg-michelson <MICHELSON_ARG>] \
+  [--amount <AMOUNT>(tz|utz)] \
+  [--force]
+```
+
+| Command | Description |
+| -- | -- |
+| `--as` | Deploys with specified account. Default account is the one returned by command `completium-cli show account`. |
+| `--entry` | Name of the entrypoint to call. *Must* be omitted if the contract has only one entrypoint. |
+| `--arg` | Specifies entrypoints parameter values (see example below). |
+| `--arg-michelson` | Specifies entrypoints parameter values in Michelson format. |
+| `--amount` | Amount of XTZ to sent when calling contract.  |
+| `--force` | Does not prompt for parameter validation. |
+
+For example, if `mycontract.arl` defines a (non-unique) entry point `payback`:
+
+```archetype
+entry payback (i : int, n : nat) {
+  // ...
+}
+```
+
+The command to call the entry is:
+
+```completium
+$ completium-cli call mycontract --entry payback --arg '{ "i" : -4, "n" : 5 }'
+```
+
+### Argument
+
+This section presents exemples of parameter and argument values to pass to `deploy --param` and `call --arg` commands.
+
+| Archetype type | Michelson type | Value examples |
+| -- | -- | -- |
+| `nat` | `nat` | `5` |
+| `int` | `int` | `5`, `-10` |
+| `string` | `string` | `"hello"` |
+| `date` | `timestamp` |  `"1629965551"`, `"2022-01-01T12:00:00Z"` |
+| `bool` | `bool` | `true`, `false` |
+| `duration` | `int` | `-965551` |
+| `address` | `address` | `"tz1..."` |
+| `bytes` | `bytes` | `"10abff"` |
+| `rational` | `pair int nat` | `[-5, 2]` |
+| `tez` | `mutez` | `5000000`, `"5tz"`, `"5000000utz"` |
+| `int * string` | `pair int string` | `[-5, "hello"]` |
+| `option<int>` | `option int` | `null` (for `none`), `1` (for `some(1)`) |
+| `or<int, string>` | `or int string` | `{ "kind" : "right", "value" : "hello" }` |
+| `list<string>` | `list string` | `["world", "hello"]`  |
+| `set<string>` | `set string` | `["hello", "world"]` (mind order) |
+| `map<nat, string>` | `map nat string` | `[{ "key" : 0, "value" : "value for 0" }, { "key" : 1, "value" : "value for 1" }]` (mind order)|
+| `asset myasset { id : nat, value : string }` | `map nat string` | `[{ "key" : 0, "value" : "value for 0" }, { "key" : 1, "value" : "value for 1" }]` (mind order)|

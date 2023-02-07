@@ -58,7 +58,7 @@ For example, below is the "What is your favorite food?" poll definition:
 }
 ```
 
-The poll JSON file must be then uploaded to IPFS. The online [IPFS Browser](https://permanentupload.com/) may be used for that. Once uploaded, the data is identified by a unique hash value.
+The poll JSON file must be then uploaded to IPFS. The online app [Pinata](https://www.pinata.cloud/) may be used for that. Once uploaded, the data is identified by a unique hash value.
 
 For example, the hash of the above poll definition is `QmZ8GxAwPvVDEtGxyUmfbB1dtmrdDR6tmMv9HUATaippqU`
 
