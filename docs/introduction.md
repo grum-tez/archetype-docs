@@ -32,7 +32,7 @@ completium-cli deploy hello.arl
 
 Call contract's entrypoint `input` with argument `"Archetype"`:
 ```bash
-completium-cli call hello --arg '{ "name": "Archetype" }'
+completium-cli call hello --entry input --arg '{ "name": "Archetype" }'
 ```
 
 
