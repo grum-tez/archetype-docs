@@ -262,10 +262,6 @@ The type provided here is a full-featured Typescript implementation of a Micheli
 
 <Builtin data={F['ticket_to_mich_type']} />
 
-### `Tx_rollup_l2_address`
-
-<TsType data={types.tx_rollup_l2_address} />
-
 ## `U V`
 
 ### `Unit`
