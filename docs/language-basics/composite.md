@@ -49,8 +49,8 @@ A literal for the `person` record is for example:
 const p = {
   first = "Albert";
   last  = "Michelson";
-  birth = 1852-12-19;
-}
+  birth = 1852-12-19
+};
 ```
 
 Below is the list of record-related instructions and operators.
