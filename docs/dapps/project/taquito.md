@@ -32,7 +32,7 @@ export const [
 ] = constate(
   () => {
     const endpoint = useEndpoint()
-    const [taquito] = useState(() : { tezos : TezosToolkit } => ({
+    const [taquito] = useState(() : { ttk : TezosToolkit } => ({
       ttk: new TezosToolkit(endpoint),
     }));
     return taquito;
