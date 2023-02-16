@@ -120,8 +120,10 @@ opam install archetype
 
 Requires [opam](https://opam.ocaml.org/) to be installed:
 
+Fork the [archetype-lang repository](https://github.com/completium/archetype-lang/). Replace the link in following snippet with a link to your fork of the repository.
+
 ```completium
-git clone git@github.com:edukera/archetype-lang.git
+git clone https://github.com/your-github-username/archetype-lang.git
 cd archetype-lang
 make build-deps
 eval $(opam env)
