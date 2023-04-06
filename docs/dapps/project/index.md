@@ -23,7 +23,7 @@ It is *strongly* recommended to use [TypeScript](https://www.TypeScriptlang.org/
 Project templates configured with TypeScript are available with most UI frameworks. The following command uses `create-react-app` template with TypeScript:
 
 ```completium
-npx create-react-app my-dapp --template TypeScript
+npx create-react-app my-dapp --template typescript
 ```
 
 This creates the `my-dapp` project. More information may be found [here](https://create-react-app.dev/docs/adding-TypeScript/)
