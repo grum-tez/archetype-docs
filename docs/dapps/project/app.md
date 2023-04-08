@@ -18,7 +18,6 @@ The role of this component is to wrap the main panel component `<MainPanel />` w
 function App() {
   return (
     <div className="App">
-      <CssBaseline />
       <SettingsProvider>
         <TaquitoProvider>
           <BeaconProvider>
@@ -32,3 +31,4 @@ function App() {
   );
 }
 ```
+
