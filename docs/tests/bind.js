@@ -36,7 +36,6 @@ export const bindings = [
   { link: 'tez', archetype: 'tez', michelson: 'mutez', ts: 'Tez' },
   { link: 'ticket<T>', archetype: 'ticket', michelson: 'ticket', ts: 'Ticket' },
   { link: 'tuple', archetype: 'tuple', michelson: 'pair', ts: 'Array', native: true },
-  { link: 'tx_rollup_l2_address', archetype: 'tx_rollup_l2_address', michelson: 'tx_rollup_l2_address', ts: 'Tx_rollup_l2_address' },
   { link: 'unit', archetype: 'unit', michelson: 'unit', ts: 'Unit' }
 ]
 

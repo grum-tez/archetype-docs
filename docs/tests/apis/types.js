@@ -26,7 +26,6 @@ import Sapling_transaction from '../../../src/components/desc/tstypes/sapling_tr
 import Signature from '../../../src/components/desc/tstypes/signature.md'
 import Tez from '../../../src/components/desc/tstypes/tez.md'
 import Ticket from '../../../src/components/desc/tstypes/ticket.md'
-import Tx_rollup_l2_address from '../../../src/components/desc/tstypes/tx_rollup_l2_address.md'
 import Unit from '../../../src/components/desc/tstypes/unit.md'
 
 const getCommons = (t) => [
@@ -405,14 +404,6 @@ export const types = {
       ...getCommons(getLinkTo("Ticket"))
     ]
   },
-  tx_rollup_l2_address: {
-      desc : <Tx_rollup_l2_address />,
-    ref : "",
-    showfail : false,
-    methods : [
-      ...getCommons(getLinkTo("Tx_rollup_l2_address"))
-    ]
-  },
   unit: {
       desc : <Unit />,
     ref : "",
@@ -425,7 +416,7 @@ export const types = {
 
 const prims = [ "address", "bls12_381_fr", "bls12_381_g1", "bls12_381_g2", "bool", "bytes",
     "chain_id", "chest", "chest_key", "int", "key", "key_hash", "mutez", "nat",
-    "never", "operation", "signature", "string", "timestamp", "tx_rollup_l2_address", "unit" ]
+    "never", "operation", "signature", "string", "timestamp", "unit" ]
 
 const prefix = "/docs/tests/apis/types#"
 const exp_prefix = "/docs/tests/apis/experiment#"

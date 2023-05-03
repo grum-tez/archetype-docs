@@ -121,9 +121,17 @@ opam install archetype
 Requires [opam](https://opam.ocaml.org/) to be installed:
 
 ```completium
-git clone git@github.com:edukera/archetype-lang.git
+git clone https://github.com/completium/archetype-lang.git -b master
 cd archetype-lang
 make build-deps
 eval $(opam env)
 make all
+```
+
+## Check Binary
+
+In order to check if the binary is working, this following command print the version of archetype:
+
+```bash
+_build/default/src/compiler.exe -v
 ```
