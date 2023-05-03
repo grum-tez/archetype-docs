@@ -56,7 +56,7 @@ export const types = {
       desc : <Address />,
     ref : "",
     fails : [
-      { keyword: '"No matching prefix found."', desc: <div>When address prefix is not one of <code>tz1</code>, <code>tz2</code>, <code>tz3</code>, <code>tz4</code>, <code>txr1</code>, <code>KT1</code></div> },
+      { keyword: '"No matching prefix found."', desc: <div>When address prefix is not one of <code>tz1</code>, <code>tz2</code>, <code>tz3</code>, <code>tz4</code>, <code>KT1</code></div> },
       { keyword: '"Input is not b58 encoding compatible."', desc: <div>When address is not a <Link to="https://en.wikipedia.org/wiki/Binary-to-text_encoding#Base58">b58</Link> encoded value.</div> },
       { keyword: '"The decoded output is the wrong length for the given prefix."', desc: <div>When address length does not match prefix.</div> },
     ],
@@ -212,7 +212,7 @@ export const types = {
       desc : <Key_hash />,
     ref : "",
     fails : [
-      { keyword: '"No matching prefix found."', desc: <div>When key hash prefix is not one of <code>tz1</code>, <code>tz2</code>, <code>tz3</code>, <code>tz4</code>, <code>txr1</code>, <code>KT1</code></div> },
+      { keyword: '"No matching prefix found."', desc: <div>When key hash prefix is not one of <code>tz1</code>, <code>tz2</code>, <code>tz3</code>, <code>tz4</code>, <code>KT1</code></div> },
       { keyword: '"Input is not b58 encoding compatible."', desc: <div>When key hash is not a <Link to="https://en.wikipedia.org/wiki/Binary-to-text_encoding#Base58">b58</Link> encoded value.</div> },
       { keyword: '"The decoded output is the wrong length for the given prefix."', desc: <div>When key hash length does not match prefix.</div> },
 
