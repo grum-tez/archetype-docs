@@ -28,9 +28,9 @@ import Never from '../../src/components/desc/never.md'
 export const types = {
   address :
   {
-    desc: <div>Account or contract address on the Tezos blockchain. <p></p>An address is formed of a prefix (<code>tz1</code> <code>tz2</code> <code>tz3</code> and <code>KT1</code> for contracts) followed by a Base58 encoded hash and terminated by a 4-byte checksum.</div>,
+    desc: <div>Account or contract address on the Tezos blockchain. <p></p>An address is formed of a prefix (<code>tz1</code> <code>tz2</code> <code>tz3</code> <code>tz4</code> and <code>KT1</code> for contracts) followed by a Base58 encoded hash and terminated by a 4-byte checksum.</div>,
     link: '#address',
-    examples: [ 'tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg', 'tz2BFTyPeYRzxd5aiBchbXN3WCZhx7BqbMBq', 'tz3hFR7NZtjT2QtzgMQnWb4xMuD6yt2YzXUt', 'KT1VMCj69PwwKK7aRLRPnWoYh4X1xQqk2Vm2' ],
+    examples: [ 'tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg', 'tz2BFTyPeYRzxd5aiBchbXN3WCZhx7BqbMBq', 'tz3hFR7NZtjT2QtzgMQnWb4xMuD6yt2YzXUt', 'tz4HVR6aty9KwsQFHh81C1G7gBdhxT8kuytm', 'KT1VMCj69PwwKK7aRLRPnWoYh4X1xQqk2Vm2' ],
     tags: [ COMPARABLE, PASSABLE, STORABLE, PACKABLE ],
     michelson: "address",
     michelson_ref_url: michelson_ref_base_url + '/#type-address',
