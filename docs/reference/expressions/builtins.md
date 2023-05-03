@@ -122,6 +122,10 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['int_to_nat']} />
 
+<h3 {...{"id":builtins['is_implicit_address'].sig}}> <code> {builtins['is_implicit_address'].sig} </code> </h3>
+
+<Builtin data={builtins['is_implicit_address']} />
+
 <h3 {...{"id":builtins['is_none'].sig}}> <code> {builtins['is_none'].sig} </code> </h3>
 
 <Builtin data={builtins['is_none']} />

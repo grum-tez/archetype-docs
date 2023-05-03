@@ -902,6 +902,21 @@ export const builtins = {
       { keyword: 'Containers', link: '/docs/language-basics/container' },
     ]
   },
+  is_implicit_address: {
+    sig: 'is_implicit_address(a : address)',
+    desc: <div>Returns whether the address parameter is a <code>tz1</code> <code>tz2</code> <code>tz3</code> or <code>tz4</code>, that is whether it is an <a href="https://opentezos.com/tezos-basics/operations/#implicit-accounts-and-originated-accounts" target="_blank">implicit address</a>.</div>,
+    parameters: [
+      {
+        type: 'address',
+        alias: 'a',
+        desc: <div>Address to check</div>
+      }
+    ],
+    returns: {
+      type: 'bool',
+      desc: <div><code>true</code> if a is implicit, <code>false</code> otherwise</div>
+    },
+  },
   is_none: {
     sig: 'is_none(o : option<T>)',
     desc: <IsNoneDesc />,
@@ -1820,14 +1835,14 @@ export const builtins = {
     michelson_ref_url: michelson_ref_base_url + '#instr-OR',
   },
   create_contract: {
-    sig: 'create_contract(path, delegator, amount, storage)',
+    sig: 'create_contract(handler, delegator, amount, init)',
     desc: <CreateContract />,
     parameters: [
       {
-        type: 'string literal',
+        type: 'identifier',
         withLink: false,
-        alias: 'path',
-        desc: <div>Path to Michelson code file to create (*.tz)</div>
+        alias: 'handler',
+        desc: <div>Contract handler declared with <Link to="/docs/reference/declarations/external-contract">import</Link> declaration</div>
       },
       {
         type: 'option<address>',
@@ -1843,8 +1858,8 @@ export const builtins = {
       {
         type: 'any',
         withLink: false,
-        alias: 'storage',
-        desc: <div>Initial storage value</div>
+        alias: 'init',
+        desc: <div><ul><li>Record of parameters for Archetype contract</li><li>Initial storage value for Michelson contrat</li></ul></div>
       },
     ],
     returns: {
