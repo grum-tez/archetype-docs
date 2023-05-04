@@ -6,13 +6,13 @@ sidebar_position: 8
 
 It is possible to import external Archetype contracts (`.arl` extension), or contracts compiled in Michelson (`.tz` extension).
 
-Importing an archetype contract means that the following elements are available in the current contract:
+Importing an Archetype contract gives access to the following elements in the current contract:
 * named composite types ([enum](/docs/reference/declarations/compositetypes#enum), [record](/docs/reference/declarations/compositetypes#record), [event](/docs/reference/declarations/compositetypes#event) and [asset](/docs/reference/instructions/asset))
 * [entrypoints](/docs/reference/declarations/entrypoint)' signatures
 * [views](/docs/reference/declarations/view)' signatures
 * [constants](/docs/reference/declarations/inlined#constant) declarations
 
-When importing a Michelson contract, only entrpoint's signatures are imported.
+When importing a Michelson contract, only entrpoint's signatures are available.
 
 ## Composite types
 
@@ -55,9 +55,9 @@ In the `somecontract` contract, the file name and the archetype identifier (id a
 
 ## Entrypoint
 
-External contract's entrypoints can be used without specifying their signature. The imported contract handler is passed the contract address, followed by the entrypoint name as illustrated in the following example.
+External contract's [entrypoints](/docs/reference/declarations/entrypoint) can be used without specifying their signature, as it is required by the [transfer](/docs/reference/instructions/operation#transfer) instruction when only the contract address available.
 
-Consider the `register` entry declaration in `somecontract.arl`:
+The imported contract handler is passed the contract address, followed by the entrypoint name as illustrated in the following example. Consider the `register` entry declaration in `somecontract.arl`:
 
 ```archetype title="somecontract.arl"
 archetype somecontract
@@ -122,7 +122,7 @@ entry get_info() {
 
 ## Michelson
 
-It is also possible to import Michelson contract.
+It is also possible to import a Michelson contract.
 
 Consider the following Michelson contract that provides one entrypoint that takes a [`nat`](/docs/reference/types#nat) parameter:
 
