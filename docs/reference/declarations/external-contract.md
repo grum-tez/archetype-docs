@@ -10,6 +10,7 @@ Importing an Archetype contract gives access to the following elements in the cu
 * named composite types ([enum](/docs/reference/declarations/compositetypes#enum), [record](/docs/reference/declarations/compositetypes#record), [event](/docs/reference/declarations/compositetypes#event) and [asset](/docs/reference/instructions/asset))
 * [entrypoints](/docs/reference/declarations/entrypoint)' signatures
 * [views](/docs/reference/declarations/view)' signatures
+* pure [functions](/docs/reference/declarations/function)
 * [constants](/docs/reference/declarations/inlined#constant) declarations
 
 When importing a Michelson contract, only entrpoint's signatures are available.
@@ -106,7 +107,7 @@ view get_age_average() : rational {
 }
 ```
 
-The `get_age_average` viexw may be called in `anothercontract.arl` by importing `somecontract`:
+The `get_age_average` view may be called in `anothercontract.arl` by importing `somecontract`:
 
 ```archetype title="anothercontract.arl" {8}
 archetype anothercontract(person_storage : address)
@@ -117,6 +118,36 @@ variable max_average : rational = 0.0
 
 entry get_info() {
   max_average ?:= somecontract(person_storage).get_age_average(Unit) : "ERROR"
+}
+```
+
+## Functions
+
+An external contract function can be imported *if and only if* it does not read or write the local storage (it may fail). Such a function is called *pure* (potentially divergent).
+
+Consider the pure function `get_area`:
+
+```archetype title="circle.arl"
+archetype circle
+
+constant pi : rational = 3.14159265358979323846264338327950288419716939937510
+
+function get_area(radius : rational) : rational {
+  return (pi * radius * radius)
+}
+```
+
+It may be used in another contract:
+
+```archetype title="another.arl"
+archetype another
+
+import "./circle.arl"
+
+variable area : rational = 0
+
+entry exec(radius : rational) {
+ area := circle::get_area(radius)
 }
 ```
 

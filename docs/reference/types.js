@@ -164,7 +164,7 @@ export const types = {
   {
     desc: <div>Multplicative scalar for the BLS12_381 curves <Link to="/docs/reference/types#bls12_381_g1">g1</Link> and <Link to="/docs/reference/types#bls12_381_g2">g2</Link>.<br/>Literals can either be a raw bytes representation or a natural.</div>,
     link: '#bls12_381_fr',
-    examples: [ '0x02', '2' ],
+    examples: [ '0x2fr', '-42fr' ],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "bls12_381_fr",
     michelson_ref_url: michelson_ref_base_url + '/#type-bls12_381_fr',
@@ -179,7 +179,7 @@ export const types = {
   {
     desc: <div>Point on the elliptic curve <Link to="/docs/reference/types#bls12_381_g1">g1</Link>.</div>,
     link: '#bls12_381_g1',
-    examples: [ '0x063bd6e11e2fcaac1dd8cf68c6b1925a73c3c583e298ed37c41c3715115cf96358a42dbe85a0228cbfd8a6c8a8c54cd015b5ae2860d1cc47f84698d951f14d9448d03f04df2ca0ffe609a2067d6f1a892163a5e05e541279134cae52b1f23c6b' ],
+    examples: [ '0x063bd6e11e2fcaac1dd8cf68c6b1925a73c3c583e298ed37c41c3715115cf96358a42dbe85a0228cbfd8a6c8a8c54cd015b5ae2860d1cc47f84698d951f14d9448d03f04df2ca0ffe609a2067d6f1a892163a5e05e541279134cae52b1f23c6bg1' ],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "bls12_381_g1",
     michelson_ref_url: michelson_ref_base_url + '/#type-bls12_381_g1',
@@ -194,7 +194,7 @@ export const types = {
   {
     desc: <div>Point on the elliptic curve <Link to="/docs/reference/types#bls12_381_g2">g2</Link>.</div>,
     link: '#bls12_381_g2',
-    examples: [ '0x10c6d5cdca84fc3c7f33061add256f48e0ab03a697832b338901898b650419eb6f334b28153fb73ad2ecd1cd2ac67053161e9f46cfbdaf7b1132a4654a55162850249650f9b873ac3113fa8c02ef1cd1df481480a4457f351d28f4da89d19fa405c3d77f686dc9a24d2681c9184bf2b091f62e6b24df651a3da8bd7067e14e7908fb02f8955b84af5081614cb5bc49b416d9edf914fc608c441b3f2eb8b6043736ddb9d4e4d62334a23b5625c14ef3e1a7e99258386310221b22d83a5eac035c' ],
+    examples: [ '0x10c6d5cdca84fc3c7f33061add256f48e0ab03a697832b338901898b650419eb6f334b28153fb73ad2ecd1cd2ac67053161e9f46cfbdaf7b1132a4654a55162850249650f9b873ac3113fa8c02ef1cd1df481480a4457f351d28f4da89d19fa405c3d77f686dc9a24d2681c9184bf2b091f62e6b24df651a3da8bd7067e14e7908fb02f8955b84af5081614cb5bc49b416d9edf914fc608c441b3f2eb8b6043736ddb9d4e4d62334a23b5625c14ef3e1a7e99258386310221b22d83a5eac035cg2' ],
     tags: [ PASSABLE, STORABLE, PACKABLE ],
     michelson: "bls12_381_g2",
     michelson_ref_url: michelson_ref_base_url + '/#type-bls12_381_g2',

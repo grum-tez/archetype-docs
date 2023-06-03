@@ -7,6 +7,8 @@ sidebar_label: Introduction
 
 This section presents how to build a *DApp* (Decentralized Application) with Archetype and Completium CLI.
 
+We also recommend the [TZombies](https://superlouis.gitbook.io/tzombies/introduction/what-is-tzombies) tutorial for a complete step-by-step overview of how to build a DApp.
+
 ## Definition
 
 Compared to a standard application, a DApp uses *decentralized* (peer to peer) backends (that is not owned by any private or public entity):

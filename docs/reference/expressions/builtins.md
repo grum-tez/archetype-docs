@@ -74,6 +74,10 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['exec_lambda']} />
 
+<h3 {...{"id":builtins['exp_horner'].sig}}> <code> {builtins['exp_horner'].sig} </code> </h3>
+
+<Builtin data={builtins['exp_horner']} />
+
 <h3 {...{"id":builtins['floor'].sig}}> <code> {builtins['floor'].sig} </code> </h3>
 
 <Builtin data={builtins['floor']} />
@@ -156,6 +160,10 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['key_to_key_hash']} />
 
+<h3 {...{"id":builtins['lambda_michelson'].sig}}> <code> {builtins['lambda_michelson'].sig} </code> </h3>
+
+<Builtin data={builtins['lambda_michelson']} />
+
 <h3 {...{"id":builtins['left'].sig}}> <code> {builtins['left'].sig} </code> </h3>
 
 <Builtin data={builtins['left']} />
@@ -197,6 +205,10 @@ import { builtins } from './builtins.js';
 <h3 {...{"id":builtins['max'].sig}}> <code> {builtins['max'].sig} </code> </h3>
 
 <Builtin data={builtins['max']} />
+
+<h3 {...{"id":builtins['michelson'].sig}}> <code> {builtins['michelson'].sig} </code> </h3>
+
+<Builtin data={builtins['michelson']} />
 
 <h3 {...{"id":builtins['min'].sig}}> <code> {builtins['min'].sig} </code> </h3>
 

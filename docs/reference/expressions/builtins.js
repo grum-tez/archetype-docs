@@ -8,9 +8,12 @@ import ConcatDesc from "../../../src/components/desc/concat_desc.md"
 import CreateContract from "../../../src/components/desc/create_contract.md"
 import ExecLambdaDesc from "../../../src/components/desc/execlambda_desc.md"
 import FoldDesc from "../../../src/components/desc/fold_desc.md"
+import ExpHornerDesc from "../../../src/components/desc/exp_horner_desc.md"
 import GetEntrypointDesc from "../../../src/components/desc/getentrypoint_desc.md"
 import IsNoneDesc from "../../../src/components/desc/is_none_desc.md"
 import IsSomeDesc from "../../../src/components/desc/is_some_desc.md"
+import LambdaMichelsonDesc from "../../../src/components/desc/lambda_michelson_desc.md"
+import MichelsonDesc from "../../../src/components/desc/michelson_desc.md"
 import LeftDesc from "../../../src/components/desc/left_desc.md"
 import ListHead from "../../../src/components/desc/list_head.md"
 import ListTail from "../../../src/components/desc/list_tail.md"
@@ -288,6 +291,26 @@ export const builtins = {
       { keyword: 'apply_lambda', link: '/docs/reference/expressions/builtins#apply_lambda(f%20:%20lambda<A%20*%20T,%20R>,%20x%20:%20A)' },
     ]
   },
+  exp_horner : {
+    sig: 'exp_horner(v : rational, p : nat)',
+    desc: <ExpHornerDesc />,
+    parameters: [
+      {
+        type: 'rational',
+        alias: 'v',
+        desc: <div>exponential argument</div>
+      },
+      {
+        type: 'nat',
+        alias: 'p',
+        desc: <div>precision (number of iterations)</div>
+      }
+    ],
+    returns: {
+      type: 'rational',
+      desc: <div>Exponential of <code>v</code></div>
+    }
+  },
   apply_lambda: {
     sig: 'apply_lambda(f : lambda<A * T, R>, x : A)',
     desc: <ApplyLambdaDesc />,
@@ -376,7 +399,22 @@ export const builtins = {
       { keyword: 'tez', link: '/docs/reference/types#tez' },
     ]
   },
-
+  lambda_michelson : {
+    sig : 'lambda_michelson<T, R>({ MICHELSON })',
+    desc : <LambdaMichelsonDesc />,
+    parameters: [
+      {
+        type: 'Michelson',
+        alias: 'code',
+        withLink: false,
+        desc: <div>Michleson code that takes a value of type <code>T</code> and returns a value of type <code>R</code></div>
+      }
+    ],
+    returns: {
+      type : 'lambda<T, R>',
+      desc: 'The lambda value'
+    }
+  },
   // composite type constructors
   left: {
     sig: 'left<(L,)? T>(x : L)',
@@ -739,7 +777,24 @@ export const builtins = {
       { keyword: 'Containers', link: '/docs/language-basics/container' },
     ]
   },
-
+  michelson: {
+    sig: 'michelson<R>({ MICHELSON }) [ STACK ]',
+    desc: <MichelsonDesc />,
+    parameters: [
+      {
+        type: 'Michelson',
+        alias: 'code',
+        withLink: false,
+        desc: <div>Michelson code</div>
+      },
+      {
+        type: 'Stack',
+        alias: 'args',
+        withLink: false,
+        desc: <div>Arguments</div>
+      }
+    ]
+  },
   // builtin functions
   min: {
     sig: 'min(a : T, b : T)',

@@ -41,3 +41,24 @@ entry exec() {
   end
 }
 ```
+
+## Michelson
+
+It is possible to provide a sequence of Michelson instructions with the `michelson` instruction. For example the following fails if the argument `i` is positive:
+
+```archetype
+archetype michelson_instruction
+
+entry exec (i : nat) {
+  michelson {
+    PUSH nat 0;
+    COMPARE;
+    NEQ;
+    IF { PUSH string "NOT_ZERO"; FAILWITH } { PUSH nat 0 }
+  }
+}
+```
+
+:::warning
+Michelson code's type is not checked by archetype compiler
+:::
