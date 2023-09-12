@@ -182,6 +182,10 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['make_big_map']} />
 
+<h3 {...{"id":builtins['make_event'].sig}}> <code> {builtins['make_event'].sig} </code> </h3>
+
+<Builtin data={builtins['make_event']} />
+
 <h3 {...{"id":builtins['make_map'].sig}}> <code> {builtins['make_map'].sig} </code> </h3>
 
 <Builtin data={builtins['make_map']} />

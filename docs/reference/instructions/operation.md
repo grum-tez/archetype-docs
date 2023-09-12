@@ -105,6 +105,6 @@ Then the following emits the `HighestBidIncreased` event:
 emit<HighestBidIncreased>({ source; transferred })
 ```
 
-An operation to call the *event well* contract is then generated.
+The low level instruction is [`make_event`](/docs/reference/expressions/builtins#make_event<T>(tag,%20v))
 
 See this [blog entry](/blog/events) for further information.

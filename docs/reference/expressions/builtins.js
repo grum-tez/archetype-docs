@@ -13,6 +13,7 @@ import GetEntrypointDesc from "../../../src/components/desc/getentrypoint_desc.m
 import IsNoneDesc from "../../../src/components/desc/is_none_desc.md"
 import IsSomeDesc from "../../../src/components/desc/is_some_desc.md"
 import LambdaMichelsonDesc from "../../../src/components/desc/lambda_michelson_desc.md"
+import MakeEventDesc from "../../../src/components/desc/make_event_desc.md"
 import MichelsonDesc from "../../../src/components/desc/michelson_desc.md"
 import LeftDesc from "../../../src/components/desc/left_desc.md"
 import ListHead from "../../../src/components/desc/list_head.md"
@@ -118,6 +119,29 @@ export const builtins = {
       type: 'big_map<K, V>',
       desc: <div>Returns big_map</div>
     },
+  },
+  make_event: {
+    sig: 'make_event<T>(tag, v)',
+    desc: <MakeEventDesc />,
+    parameters: [
+      {
+        type: 'string',
+        alias: 'tag',
+        desc: <div>The tag of the event, must be a literal string.</div>
+      },
+      {
+        type: 'T',
+        alias: 'v',
+        desc: <div>The value of generated event</div>
+      },
+    ],
+    returns: {
+      type: 'operation',
+      desc: <div>The generated event</div>
+    },
+    related: [
+      { keyword: 'emit', link: '/docs/reference/instructions/operation#emit' },
+    ]
   },
   make_map: {
     sig: 'make_map<K, V>(m)',
