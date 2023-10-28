@@ -111,7 +111,7 @@ $ completium-cli mockup init --protocol PtLimaPtLMwfNinJi9rCfDPWea8dFgTZ1MeJ9f1m
 
 #### Octez client
 
-Once the Tezos client is [installed](https://assets.tqtezos.com/docs/setup/1-tezos-client/), the `set binary path` command tells `completium-cli` how to invoke it:
+Once the Tezos client is [installed](https://tezos.gitlab.io/introduction/howtoget.html), the `set binary path` command tells `completium-cli` how to invoke it:
 ```completium
 completium-cli set binary path tezos-client <PATH>
 ```
