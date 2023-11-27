@@ -7,19 +7,19 @@ import CallviewDesc from "../../../src/components/desc/callview_desc.md"
 import ConcatDesc from "../../../src/components/desc/concat_desc.md"
 import CreateContract from "../../../src/components/desc/create_contract.md"
 import ExecLambdaDesc from "../../../src/components/desc/execlambda_desc.md"
-import FoldDesc from "../../../src/components/desc/fold_desc.md"
 import ExpHornerDesc from "../../../src/components/desc/exp_horner_desc.md"
+import FoldDesc from "../../../src/components/desc/fold_desc.md"
 import GetEntrypointDesc from "../../../src/components/desc/getentrypoint_desc.md"
 import IsNoneDesc from "../../../src/components/desc/is_none_desc.md"
 import IsSomeDesc from "../../../src/components/desc/is_some_desc.md"
 import LambdaMichelsonDesc from "../../../src/components/desc/lambda_michelson_desc.md"
-import MakeEventDesc from "../../../src/components/desc/make_event_desc.md"
-import MichelsonDesc from "../../../src/components/desc/michelson_desc.md"
 import LeftDesc from "../../../src/components/desc/left_desc.md"
 import ListHead from "../../../src/components/desc/list_head.md"
 import ListTail from "../../../src/components/desc/list_tail.md"
 import MakeAsset from "../../../src/components/desc/make_asset.md"
+import MakeEventDesc from "../../../src/components/desc/make_event_desc.md"
 import MapDesc from "../../../src/components/desc/map_desc.md"
+import MichelsonDesc from "../../../src/components/desc/michelson_desc.md"
 import MutezNatDesc from "../../../src/components/desc/mutez_nat_desc.md"
 import NthDesc from "../../../src/components/desc/nth_builtin_desc.md"
 import RightDesc from "../../../src/components/desc/right_desc.md"
@@ -1778,13 +1778,9 @@ export const builtins = {
       }
     ],
     returns: {
-      type: 'or<bytes, bool>',
+      type: 'option<bytes>',
       withLink: false,
-      desc: <div>The returned value has 3 possible values:<ul>
-        <li><code>left(v)</code>, <code>v</code> being the value in the chest</li>
-        <li><code>right(true)</code> when chest key <code>k</code> does not open the chest</li>
-        <li><code>right(false)</code> when chest key <code>k</code> opens the chest but <code>t</code> parameter is not the value used to lock the chest</li>
-      </ul></div>
+      desc: <div>The result is a byte option depending if the opening is correct or not. See <a href="https://tezos.gitlab.io/alpha/timelock.html" target="_blank">Timelock</a> for more</div>
     },
     michelson: "OPEN_CHEST",
     michelson_ref_url: michelson_ref_base_url + '#instr-OPEN_CHEST',

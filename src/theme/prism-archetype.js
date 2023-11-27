@@ -64,7 +64,7 @@
     	'verif': /\b(?:invariant|specification)\b/,
     	'type': /\b(?:ticket|unit|lambda|contract|big_map|map|set|option|list|int|nat|tez|string|rational|bytes|key|key_hash|address|sapling|signature|date|duration|bool|operation|aggregate|partition|asset_view|asset_key|asset_value|iterable_big_map)\b/,
     	'constant': /\b(?:self_chain_id|now|balance|transferred|self|caller|source|self_address|state|operations|metadata)\b/,
-		'control': /\b(?:assert|iter|begin|end|do|done|else|return|before|for|if|michelson|in|match|in|forall|added|removed|exists|then|the|from|to|while|with)\b/,
+		'control': /\b(?:assert|iter|begin|end|do|done|else|return|before|for|if|michelson|in|match|match_detach|in|forall|added|removed|exists|then|the|from|to|while|with)\b/,
 		'decl': /\b(?:const|var|let some|let)\b/,
 		'boolean': /\b(?:false|true)\b/,
     	'logic': /\b(?:and|or|=|not|asr|land|lor|lsl|lsr|lxor)\b/,

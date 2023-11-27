@@ -125,7 +125,7 @@ import { set_mockup } from "@completium/experiment-ts"
 set_mockup()
 ```
 
-Another network (sandbox, test) may be set with the `set_network` function.
+Another network (test, ghostnet) may be set with the `set_network` function.
 
 ### Account
 

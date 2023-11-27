@@ -99,10 +99,6 @@ In a test environement, the contract is executed locally with the *mockup* mode 
 
 The benefit of the mockup mode is that it is uses the same execution engine as the tezos node. This removes the risk of a difference of exectuion semantics between test and production.
 
-:::info
-Note that it is also possible to use a sandbox or to connect to the testnet. See [here](/docs/cli/network) for more information.
-:::
-
 ## Test library
 
 It is best practise, and recommended, to use a generic purpose test library like [Mocha](https://mochajs.org/) or [Jest](https://jestjs.io/).

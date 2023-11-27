@@ -77,7 +77,11 @@ Witness in real-time the generated operations and, with the help of the `octez-c
 
 Consumed gas is displayed as code decoration on every instruction. The delta information tells the gas of the instruction.
 
-### Contract Context
+## `launch.json`
+
+Contract developpement often requires a high number of test/debug iterations. Entering the storage and input values at each iteration may be tedious. In order to speed up the process, it is possible to set the default values in the `launch.json` file.
+
+### Contract context
 
 Entrypoint and contract execution context may be set in the `env` section of the `launch.json` file:
 * [`caller`](/docs/reference/expressions/constants#caller)
@@ -99,4 +103,84 @@ Below is the default context values:
 }
 ```
 
+### Default inputs
 
+It is possible to specify default input values in the `inputs` section in the `env` section. For example:
+
+```json
+"env": {
+  "inputs": {
+    "spender": "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+    "from": "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+    "to": "tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6",
+    "value": "50
+  }
+}
+```
+
+### Default storage
+
+It is possible to set the default values in the `storage` section in the `env` section of the `launch.json` file. For example:
+
+```json
+"storage": {
+  "ledger": "{ Elt \"tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb\" (Pair 1000 {  }) }",
+  "token_metadata": "{ Elt 0 (Pair 0 { Elt \"\" 0x00 }) }"
+}
+```
+
+It is possible to specify only some specific storage elements.
+
+### Default constant parameter
+
+A constant parameter may be specified in the `const_params` section in the `env` section of the `launch.json` file. For example:
+
+```json
+ "const_params": {
+  "initial_holder": "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+  "total_supply": "1000",
+  "metadata_coin": "0x00"
+},
+```
+
+### Example
+
+```json
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "archetype",
+      "request": "launch",
+      "name": "Archetype : debug",
+      "program": "${file}",
+      "env": {
+        "now": "2023-10-27 09:25:11",
+        "level": "10000",
+        "caller": "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+        "source": "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+        "transferred": "0",
+        "balance": "1000000",
+        "inputs": {
+          "spender": "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+          "from": "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+          "to": "tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6",
+          "value": "500"
+        },
+        "const_params": {
+          "initial_holder": "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+          "total_supply": "1000",
+          "metadata_coin": "0x00"
+        },
+        "storage": {
+          "ledger": "{ Elt \"tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb\" (Pair 1000 {  }) }",
+          "token_metadata": "{ Elt 0 (Pair 0 { Elt \"\" 0x00 }) }"
+        }
+      }
+    }
+  ]
+}
+```
