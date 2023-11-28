@@ -45,3 +45,8 @@ entry exec() {
 Such functions are inlined, even if they do not change the contract's storage.
 
 
+## Inlining strategy
+
+A function that does not modify the storage nor emit operations is *inlined*. Any other function is compiled as a [lambda](/docs/reference/types/#lambda<T,%20R>) expression.
+
+In [views](/docs/reference/declarations/view) a function is *always* inlined.
