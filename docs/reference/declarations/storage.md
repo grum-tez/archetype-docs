@@ -108,7 +108,11 @@ asset vehicle to iterable_big_map {
 
 ### Initial collection
 
-It is possible to specify the initial value of the asset collection at origination with the `initialized with` modifier followed by the collection literal: a set of asset definitions.
+It is possible to specify the initial value of the asset collection at origination.
+
+#### Inlined
+
+Initialize the collection with the `initialized with` modifier followed by the collection literal: a set of asset definitions.
 
 For example, the following declaration initializes the vehicle asset with 2 assets:
 ```archetype
@@ -124,6 +128,23 @@ asset vehicle {
 ```
 
 The initial value of an asset collection is interpreted by the completium CLI's `deploy` command to set the initial storage Michelson value.
+
+#### Constant parameter
+
+It is also possible to parameter the initial collection value with a [constant parameter](/docs/reference/declarations/contract#constant):
+
+```archetype
+archetype sample_vehicle(const initial_collection : map<string, (string * date * nat)>)
+
+asset vehicle {
+  vin          : string;
+  manufacturer : string;
+  release      : date;
+  nbdoors      : nat;
+} initialized with initial_collection
+
+```
+
 
 ### Michelson representation
 

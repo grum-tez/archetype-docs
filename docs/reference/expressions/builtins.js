@@ -32,6 +32,33 @@ export const to_link = s => s.replace(/ /g, '%20')
 
 export const builtins = {
   // entrypoint
+  make_sandbox_exec_operation: {
+    sig: 'make_sandbox_exec_operation(f : lambda<list<ticket<nat * option<bytes>>>, l : list<ticket<nat * option<bytes>>, a : tez)',
+    desc: <div>Makes an operation to sandbox contract that executes the <code>f</code> lambda.</div>,
+    parameters: [
+      {
+        type: 'lambda<list<ticket<nat * option<bytes>>>',
+        alias: 'f',
+        withLink: false,
+        desc: <div>Lambda to execute in sandbox</div>
+      },
+      {
+        type: 'list<ticket<nat * option<bytes>>',
+        alias: 'l',
+        withLink: false,
+        desc: <div>List of tickets to pass to <code>f</code></div>
+      },
+      {
+        type: 'tez',
+        alias: 'a',
+        desc: <div>operation's transferred amount</div>
+      }
+    ],
+    returns : {
+      type: 'operation',
+      desc: <div>Call operation to sandbox contract</div>
+    }
+  },
   call_view: {
     sig: 'call_view<T>(a : address, id : string, arg : X)',
     desc: <CallviewDesc />,

@@ -198,6 +198,10 @@ import { builtins } from './builtins.js';
 
 <Builtin data={builtins['make_operation']} />
 
+<h3 {...{"id":builtins['make_sandbox_exec_operation'].sig}}> <code> {builtins['make_sandbox_exec_operation'].sig} </code> </h3>
+
+<Builtin data={builtins['make_sandbox_exec_operation']} />
+
 <h3 {...{"id":builtins['make_set'].sig}}> <code> {builtins['make_set'].sig} </code> </h3>
 
 <Builtin data={builtins['make_set']} />

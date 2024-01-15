@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Function
 
-Entrypoints' effect may call functions. A function returns a value, may fail, but cannot change the contract storage.
+Entrypoints' effect may call functions. A function returns a value, may fail, and can change the contract storage.
 
 A function is declared with the `function` keyword followed by a unique [identifier](/docs/reference/declarations/identifier).
 ## `return`

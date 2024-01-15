@@ -108,3 +108,7 @@ emit<HighestBidIncreased>({ source; transferred })
 The low level instruction is [`make_event`](/docs/reference/expressions/builtins#make_event<T>(tag,%20v))
 
 See this [blog entry](/blog/events) for further information.
+
+## `sandbox_exec`
+
+This instruction is used to exec a lambda typed `lambda<list<ticket<nat * option<bytes>>>, list<operation>>` in a sandbox contract for security reason: the contract that executes the lambda is the sandbox, not `self`.
