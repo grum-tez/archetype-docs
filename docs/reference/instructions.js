@@ -63,6 +63,6 @@ export const instructions = {
     blockchain: [
       { label : 'transfer', link : link_prefix + '/operation#transfer' },
       { label : 'emit', link : link_prefix + '/operation#emit' },
-      { lable : 'sandbox_exec', link : link_prefix + 'operation#sandbox_exec'}
+      { lable : 'sandbox_exec', link : link_prefix + '/operation#sandbox_exec'}
     ]
 }
