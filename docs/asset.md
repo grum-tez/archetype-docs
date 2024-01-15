@@ -104,7 +104,7 @@ See *partition* section of [`add`](/docs/reference/instructions/asset#aadda) and
 
 ### Aggregate
 
-A partition defines a many-to-many relation between an asset B (*aggregating* asset) and an asset A (*aggregated* asset) so that an asset from collection *A* is in relation with zero, one or many assets from collection *B*; conversely an asset from collection *B* is in relation with zero, one or many assets from collection *A*.
+An aggregate defines a many-to-many relation between an asset B (*aggregating* asset) and an asset A (*aggregated* asset) so that an asset from collection *A* is in relation with zero, one or many assets from collection *B*; conversely an asset from collection *B* is in relation with zero, one or many assets from collection *A*.
 
 The following declarations define asset *B* with an aggregate of *A*, typed [`aggregate<A>`](/docs/reference/types#aggregate<A>):
 ```archetype
