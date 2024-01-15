@@ -8,7 +8,7 @@ Archetype provides user-defined [composite types](/docs/language-basics/composit
 
 ## Tuple
 
-A [tuple](/docs/language-basics/composite#tuple) is a list of anonymous values of different types. The type is a list of types separated by `*`. A tuple litteral is a list of values separated by `,` and surrounded by parentheis.
+A [tuple](/docs/language-basics/composite#tuple) is a list of anonymous values of different types. The type is a list of types separated by `*`. A tuple literal is a list of values separated by `,` and surrounded by parentheses.
 
 For example:
 ```archetype
