@@ -1204,6 +1204,8 @@ export const builtins = {
       type: 'nat',
       desc: <div>Natural converted to bytes</div>
     },
+    michelson: "NAT",
+    michelson_ref_url: michelson_ref_base_url + '#instr-NAT',
     related: [
       { keyword: 'Conversion', link: '/docs/language-basics/types#conversion' },
       { keyword: 'bytes', link: '/docs/reference/types#bytes' },
@@ -1224,9 +1226,33 @@ export const builtins = {
       type: 'bytes',
       desc: <div>Bytes converted to nat</div>
     },
+    michelson: "BYTES",
+    michelson_ref_url: michelson_ref_base_url + '#instr-BYTES',
     related: [
       { keyword: 'Conversion', link: '/docs/language-basics/types#conversion' },
       { keyword: 'nat', link: '/docs/reference/types#nat' },
+      { keyword: 'bytes', link: '/docs/reference/types#bytes' },
+    ]
+  },
+  int_to_bytes: {
+    sig: 'int_to_bytes(i : int)',
+    desc: <div>Converts an integer to bytes.</div>,
+    parameters: [
+      {
+        type: 'int',
+        alias: 'i',
+        desc: <div>Int to convert</div>
+      }
+    ],
+    returns: {
+      type: 'bytes',
+      desc: <div>Bytes converted to int</div>
+    },
+    michelson: "BYTES",
+    michelson_ref_url: michelson_ref_base_url + '#instr-BYTES',
+    related: [
+      { keyword: 'Conversion', link: '/docs/language-basics/types#conversion' },
+      { keyword: 'int', link: '/docs/reference/types#int' },
       { keyword: 'bytes', link: '/docs/reference/types#bytes' },
     ]
   },

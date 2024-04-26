@@ -118,6 +118,10 @@ import { builtins } from './builtins.js';
 
 ## `I J`
 
+<h3 {...{"id":builtins['int_to_bytes'].sig}}> <code> {builtins['int_to_bytes'].sig} </code> </h3>
+
+<Builtin data={builtins['int_to_bytes']} />
+
 <h3 {...{"id":builtins['int_to_date'].sig}}> <code> {builtins['int_to_date'].sig} </code> </h3>
 
 <Builtin data={builtins['int_to_date']} />
