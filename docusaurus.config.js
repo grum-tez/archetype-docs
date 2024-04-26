@@ -120,7 +120,7 @@ const config = {
             label: 'CLI',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/docs/installation', label: 'latest: 1.5.1', position: 'right'},
+          {to: '/docs/installation', label: 'latest: 1.5.2', position: 'right'},
           {
             href: 'https://tezos.com',
             label: 'Tezos',
