@@ -14,7 +14,7 @@ archetype escrow
 ```
 
 :::warning
-If generating contract [bindings](/docs/tests/framework#contract-binding) for test purposes, it is mandatory that the contract identifier be the same as the contract file name. For example, the identifier for the contract file `auction.arl` should be `auction`.
+If generating contract [bindings](/docs/tests/framework#contract-binding) for test purposes, it is mandatory that the contract identifier be the same as the contract file name and that both are lower case. For example, the identifier for the contract file `auction.arl` should be `auction`.
 :::
 
 ## Parameters
