@@ -37,7 +37,7 @@ entry increase(values : list<bool * nat>) {
 ```
 
 :::warning
-It is mandatory that the [contract identifier](/docs/reference/declarations/contract) be the same are the contract filename.
+It is mandatory that the [contract identifier](/docs/reference/declarations/contract) be the same are the contract filename and that both are lower case. For example, the identifier for the contract file `auction.arl` should be `auction`.
 :::
 
 The generated binding object provides, among other utilities, the following Typescript methods:
