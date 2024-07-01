@@ -36,6 +36,10 @@ entry increase(values : list<bool * nat>) {
 }
 ```
 
+:::warning
+It is mandatory that the [contract identifier](/docs/reference/declarations/contract) be the same are the contract filename.
+:::
+
 The generated binding object provides, among other utilities, the following Typescript methods:
 * `deploy(params: Partial<ex.Parameters>): Promise<void>`
 * `increase(values: Array<[ boolean, Nat]>, params: Partial<Parameters>): Promise<any>`

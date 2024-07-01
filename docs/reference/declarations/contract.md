@@ -13,6 +13,10 @@ archetype escrow
 /* ... */
 ```
 
+:::warning
+If generating contract [bindings](/docs/tests/framework#contract-binding) for test purposes, it is mandatory that the contract identifier be the same as the contract file name. For example, the identifier for the contract file auction.arl should be auction.
+:::
+
 ## Parameters
 
 A contract may have parameters. A parameter value is not in the source code and is provided at deployment (origination) time. For example, the address of the contract owner is typically a contract parameter.
